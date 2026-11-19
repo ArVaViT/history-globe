@@ -10,6 +10,7 @@ import {
   formatCentury,
   isYearInput,
   parseYearInput,
+  formatRange,
   formatYearRange,
   inclusiveRange,
   parseLabel,
@@ -135,6 +136,13 @@ describe("labels and ids", () => {
     expect(formatYear(30, "ro")).toBe("30 d.Hr.");
     expect(formatYear(-1199, "bg")).toBe("1200 г. пр.н.е.");
     expect(formatYear(30, "bg")).toBe("30 г. н.е.");
+  });
+});
+
+describe("formatRange", () => {
+  it("writes a half-open range by the last year it covers", () => {
+    expect(formatRange({ from: -999, to: -829 }, "en")).toBe("1000–831 BC");
+    expect(formatRange({ from: 30, to: 71 }, "en")).toBe(formatYearRange(30, 70, "en"));
   });
 });
 

@@ -1,12 +1,8 @@
 """The Roman roads build (pipeline/roads)."""
 
-import pathlib
-import sys
 import unittest
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent / "roads"))
-
-from build_roads import clip_line, fwd, inv, merge, stitch  # noqa: E402
+from pipeline.roads.build_roads import clip_line, fwd, inv, merge, stitch
 
 
 class Projection(unittest.TestCase):

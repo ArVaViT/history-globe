@@ -1,57 +1,5 @@
-import { isDeuterocanon, type Locale } from "@hg/model";
-
-/** Bible Gateway's edition for each language's readers (its own codes). */
-const GATEWAY_VERSION: Readonly<Partial<Record<Locale, string>>> = {
-  ru: "RUSV",
-  uk: "UKR",
-  es: "RVR1960",
-  pt: "ARC",
-  fr: "LSG",
-  de: "LUTH1545",
-  it: "NR2006",
-  nl: "HTB",
-  pl: "UBG",
-  cs: "B21",
-  zh: "CUVS",
-  sv: "SFB15",
-  da: "DN1933",
-  nb: "DNB1930",
-  sr: "NSP",
-  tl: "MBBTAG",
-  hu: "KAR",
-  fi: "R1933",
-  vi: "BD2011",
-  // Cornilescu 1924 and the Bulgarian Bible of 1940, the classic text of each.
-  ro: "RMNN",
-  bg: "BG1940",
-};
-
-/**
- * A verse or passage on Bible Gateway. It reads OSIS references as they are and keeps the
- * English numbering, showing the Synodal verse under it (RUSV: Ps 68:15 is shown as
- * "(67-16) Гора Божия…"), so no conversion is needed.
- */
-export function verseUrl(osis: string, locale: Locale): string {
-  // 1-2 Maccabees are in neither of those: the Synodal text at Azbyka (its own address form,
-  // 1Mac.4:36-59), in English a version with the Apocrypha.
-  if (isDeuterocanon(osis)) {
-    if (locale === "ru") {
-      const [a = "", b] = osis.split("-");
-      const [book = "", c = "", v = ""] = a.split(".");
-      const end = b?.split(".") ?? [];
-      const tail =
-        end.length === 3
-          ? end[1] === c
-            ? `-${end[2] ?? ""}`
-            : `-${end[1] ?? ""}:${end[2] ?? ""}`
-          : "";
-      return `https://azbyka.ru/biblia/?${book.replace("Macc", "Mac")}.${c}:${v}${tail}`;
-    }
-    return `https://www.biblegateway.com/passage/?search=${encodeURIComponent(osis)}&version=NRSVUE`;
-  }
-  const version = GATEWAY_VERSION[locale] ?? "ESV";
-  return `https://www.biblegateway.com/passage/?search=${encodeURIComponent(osis)}&version=${version}`;
-}
+// The verse links are the model's, so the static pages link a verse as the cards do.
+export { verseUrl } from "@hg/model";
 
 /** The place's point on Google Maps: where it is today. */
 export function mapsUrl([lon, lat]: readonly [number, number]): string {

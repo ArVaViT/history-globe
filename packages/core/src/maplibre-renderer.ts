@@ -6,6 +6,13 @@ import { edgeStateLabels } from "./edge-labels.ts";
 import { elevationReader } from "./elevation.ts";
 import { Emitter } from "./emitter.ts";
 import { emptyClicks } from "./empty-click.ts";
+import {
+  attributionBox,
+  attributionText,
+  type MapControls,
+  refreshAttribution,
+  relabelControls,
+} from "./maplibre-internals.ts";
 import { drawIcon } from "./icons.ts";
 import { thinMajors, weight } from "./majors.ts";
 import { alongPath, pointsAlongPath } from "./polyline.ts";
@@ -49,6 +56,8 @@ export interface MapUiWords {
   readonly north: string;
   readonly sources: string;
   readonly title: string;
+  /** The link the credits end with, to the page of every source (the terrain's is long). */
+  readonly sourcesPage: { readonly href: string; readonly label: string };
 }
 const ENGLISH_UI: MapUiWords = {
   km: "km",
@@ -58,6 +67,7 @@ const ENGLISH_UI: MapUiWords = {
   north: "Reset bearing to north",
   sources: "Map sources",
   title: "Map",
+  sourcesPage: { href: "docs/sources.html", label: "Sources" },
 };
 /** The words as MapLibre keys them. */
 const toMapLibre = (w: MapUiWords) =>
@@ -71,27 +81,12 @@ const toMapLibre = (w: MapUiWords) =>
     "Map.Title": w.title,
   }) as const;
 
-interface MapControls {
-  readonly attribution: maplibregl.AttributionControl;
-  readonly nav: maplibregl.NavigationControl;
-  readonly scale: maplibregl.ScaleControl;
-}
+const withoutSuffix = (text: string, suffix: string) =>
+  text.endsWith(suffix) ? text.slice(0, -suffix.length) : text;
 
-/**
- * MapLibre's interface in other words. MapLibre 6.11.2 has no public way to change its
- * language: its controls read `map._locale` when they write a title or the scale's unit, so
- * the table is patched and each control writes its words again.
- */
-function relabelMapUi(map: MLMap, controls: MapControls, ui: ReturnType<typeof toMapLibre>) {
-  Object.assign(map._locale, ui);
-  map.getCanvas().setAttribute("aria-label", ui["Map.Title"]);
-  const { nav, attribution, scale } = controls;
-  nav._setButtonTitle(nav._zoomInButton, "ZoomIn");
-  nav._setButtonTitle(nav._zoomOutButton, "ZoomOut");
-  nav._setButtonTitle(nav._compass, "ResetBearing");
-  attribution._setElementTitle(attribution._compactButton, "ToggleAttribution");
-  scale._onMove();
-}
+/** The link to the sources' page, after the relief's credit, in the reader's language. */
+const sourcesLink = (w: MapUiWords) =>
+  ` · <a href="${w.sourcesPage.href}">${w.sourcesPage.label}</a>`;
 
 const PLACE_LAYERS = [
   "place-label-major",
@@ -177,6 +172,9 @@ export class MapLibreRenderer implements Renderer {
   /** Whether the route has stops, and whether their discs are drawn (the routes layer on). */
   private readonly stops = { route: false, shown: false };
   private readonly mapUi: (locale: string) => MapUiWords;
+  /** The words of the language shown, and the relief's credit the sources' link follows. */
+  private ui: MapUiWords;
+  private readonly terrainCredit: string;
 
   /** Heights above sea level from the relief's tiles (elevation.ts), for the tours. */
   readonly heightsAt: (points: readonly LonLat[]) => Promise<(number | null)[]>;
@@ -185,12 +183,17 @@ export class MapLibreRenderer implements Renderer {
 
   constructor(o: MapLibreRendererOptions) {
     this.mapUi = o.mapUi ?? (() => ENGLISH_UI);
+    this.ui = this.mapUi(o.initialLocale);
+    this.terrainCredit = o.terrainAttribution;
     this.heightsAt = elevationReader(o.terrainTiles);
     const coarse = elevationReader(o.terrainTiles, PROFILE_ZOOM);
     this.profileAlong = (path, n) => coarse(pointsAlongPath(path, n));
     this.viewPadding = o.viewPadding;
     this.dataUrl = o.dataUrl;
-    const style = buildStyle(o);
+    const style = buildStyle({
+      ...o,
+      terrainAttribution: o.terrainAttribution + sourcesLink(this.ui),
+    });
     this.groups = {
       borders: layersInGroup(style, "borders"),
       places: layersInGroup(style, "places"),
@@ -218,7 +221,7 @@ export class MapLibreRenderer implements Renderer {
       attributionControl: false,
       // MapLibre's words in the page's language from the first frame: the scale draws
       // before setLocale runs and would stay "km" until the map moved.
-      locale: toMapLibre(this.mapUi(o.initialLocale)),
+      locale: toMapLibre(this.ui),
       canvasContextAttributes: { antialias: true },
       // Wheel handled below: two fingers pan, a pinch or a mouse wheel zooms.
       scrollZoom: false,
@@ -293,7 +296,7 @@ export class MapLibreRenderer implements Renderer {
    * back, so the (i) only opens when someone presses it.
    */
   private foldAttribution(): void {
-    const attrib = this.controls.attribution._container;
+    const attrib = attributionBox(this.controls.attribution);
     const fold = new MutationObserver(() => {
       if (!attrib.classList.contains("maplibregl-compact-show")) return;
       attrib.classList.remove("maplibregl-compact-show");
@@ -700,22 +703,25 @@ export class MapLibreRenderer implements Renderer {
   }
 
   /**
-   * Point a source at a data file, parsed in MapLibre's worker, once the file answers:
-   * false when it does not, so the caller can try again (setData(url) itself reports a
-   * failed fetch only as an error event).
+   * Point a source at a data file, fetched and parsed in MapLibre's worker: false when the
+   * file did not come, so the caller can try again. setData(url) reports a failed fetch only
+   * as the source's error event, and keeps the data it had.
    */
   private async fill(source: string, file: string): Promise<boolean> {
-    const url = `${this.dataUrl}/${file}`;
-    try {
-      const res = await fetch(url, { method: "HEAD" });
-      if (!res.ok) return false;
-    } catch {
-      return false;
-    }
     const src = this.map.getSource<GeoJSONSource>(source);
     if (!src || this.destroyed) return false;
-    await src.setData(url);
-    return true;
+    let failed = false;
+    // The style adds the source's id to the events its sources send.
+    const onError = (e: maplibregl.ErrorEvent) => {
+      if ((e as { sourceId?: string }).sourceId === source) failed = true;
+    };
+    this.map.on("error", onError);
+    try {
+      await src.setData(`${this.dataUrl}/${file}`);
+    } finally {
+      this.map.off("error", onError);
+    }
+    return !failed;
   }
 
   /**
@@ -750,9 +756,16 @@ export class MapLibreRenderer implements Renderer {
 
   setLocale(locale: Locale): void {
     this.edgeDirty = true;
-    relabelMapUi(this.map, this.controls, toMapLibre(this.mapUi(locale)));
+    this.ui = this.mapUi(locale);
+    relabelControls(this.map, this.controls, toMapLibre(this.ui));
+    const credit = this.terrainCredit + sourcesLink(this.ui);
     this.whenLoaded(() => {
       this.map.setGlobalStateProperty("locale", locale);
+      const dem = this.map.getSource("dem");
+      if (dem && dem.attribution !== credit) {
+        dem.attribution = credit;
+        refreshAttribution(this.controls.attribution);
+      }
     });
   }
 
@@ -1266,11 +1279,11 @@ export class MapLibreRenderer implements Renderer {
           image: canvas.toDataURL("image/png"),
           width: canvas.width,
           height: canvas.height,
-          // The "Sources" link points at the About page: no use on a picture.
-          attribution: this.controls.attribution._innerContainer.textContent
-            .replace(/\s+/g, " ")
-            .replace(/\s*·\s*Sources$/, "")
-            .trim(),
+          // The link to the sources' page is no use on a picture.
+          attribution: withoutSuffix(
+            attributionText(this.controls.attribution).replace(/\s+/g, " ").trim(),
+            ` · ${this.ui.sourcesPage.label}`,
+          ),
         });
       });
       this.map.triggerRepaint();

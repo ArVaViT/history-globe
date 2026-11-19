@@ -22,7 +22,7 @@ language:
   - tl
   - uk
   - vi
-pretty_name: "History Globe: Bible places, people and journeys"
+pretty_name: "History Globe dataset"
 tags:
   - bible
   - geography
@@ -57,7 +57,7 @@ configs:
     data_files: data/ancient_writers.csv
 ---
 
-# History Globe: Bible places, people and journeys
+# History Globe dataset
 
 The places of the Bible on the map: where each one was, how sure that is, which verses name it, and its name in ${languages} languages. With them come the people of the Bible, dated events and battles, journeys stop by stop, and what ancient writers outside the Bible say about the places. The ancient world's cities, sanctuaries and ports that the Bible does not name come in a table of their own, because some journeys and events stand on them.
 
@@ -199,10 +199,12 @@ Corrections are welcome in this dataset's Community tab or at historyglobe.vadym
 
 ```bibtex
 @misc{arnaut2026historyglobe,
-  author = {Arnaut, Vadym},
-  title  = {History Globe: Bible places, people and journeys},
-  year   = {2026},
-  url    = {https://historyglobe.app},
-  note   = {Dataset, CC BY 4.0, https://huggingface.co/datasets/ArVaViT/history-globe}
+  author    = {Arnaut, Vadym},
+  title     = {History Globe dataset},
+  year      = {2026},
+  version   = {${version}},
+  publisher = {Hugging Face},
+  url       = {https://huggingface.co/datasets/ArVaViT/history-globe},
+  note      = {Snapshot of ${snapshot}; the data of History Globe, https://historyglobe.app. CC BY 4.0}
 }
 ```

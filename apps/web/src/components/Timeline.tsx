@@ -1,7 +1,7 @@
 import { YEAR_MAX, YEAR_MIN } from "@hg/core";
 import {
   formatYear,
-  formatYearRange,
+  formatRange,
   PERIODS,
   periodAt,
   type Locale,
@@ -31,7 +31,7 @@ const SPAN = YEAR_MAX - YEAR_MIN;
  * language («Железный век IIB» did not, nor most Russian names); the era itself is in the
  * line above the track. In English; the other languages' are in their data (ageName).
  */
-const AGES: readonly { first: string; last: string; en: string }[] = [
+export const AGES: readonly { first: string; last: string; en: string }[] = [
   { first: "eb1", last: "eb4", en: "Early Bronze" },
   { first: "mb2", last: "mb2", en: "Middle Bronze" },
   { first: "lb", last: "lb", en: "Late Bronze" },
@@ -43,7 +43,7 @@ const AGES: readonly { first: string; last: string; en: string }[] = [
   { first: "byzantine", last: "byzantine", en: "Byzantine" },
   { first: "early-islamic", last: "mamluk", en: "Middle Ages" },
 ];
-const AGE_SPANS = AGES.flatMap((a) => {
+export const AGE_SPANS = AGES.flatMap((a) => {
   const from = PERIODS.find((p) => p.id === a.first)?.range.from;
   const to = PERIODS.find((p) => p.id === a.last)?.range.to;
   return from === undefined || to === undefined ? [] : [{ ...a, from, to }];
@@ -124,11 +124,6 @@ export function ticksFor(v: TimeView): number[] {
     out.push(YEAR_MAX);
   }
   return out;
-}
-
-/** "1000–831 BC": the first and the last year of a half-open range. */
-export function formatPeriodRange(range: { from: number; to: number }, locale: Locale): string {
-  return formatYearRange(range.from, range.to - 1, locale);
 }
 
 export function Timeline({
@@ -288,9 +283,7 @@ export function Timeline({
           className={`pointer-events-none absolute bottom-full mb-2 rounded-lg bg-ink px-2.5 py-1.5 text-[12px] leading-tight text-paper shadow-lg ${narrow ? "right-3 left-3" : `whitespace-nowrap ${hover.x < 15 ? "" : hover.x > 85 ? "-translate-x-full" : "-translate-x-1/2"}`}`}
         >
           <div className="font-medium">{periodName(hovered, locale)}</div>
-          <div className="text-paper/75 tabular-nums">
-            {formatPeriodRange(hovered.range, locale)}
-          </div>
+          <div className="text-paper/75 tabular-nums">{formatRange(hovered.range, locale)}</div>
           {hovered.disputed && (
             <div className="mt-0.5 text-gold">{periodDisputed(hovered, locale)}</div>
           )}

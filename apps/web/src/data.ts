@@ -14,13 +14,14 @@ import {
   hasNameIn,
   namesOf,
   formatYear,
-  formatYearRange,
+  formatRange,
   LOCALES,
   ALL_LOCALES,
+  foldName,
 } from "@hg/model";
 import type { Feature, FeatureCollection, Point } from "geojson";
 
-export { siteCertainty } from "@hg/model";
+export { foldName, siteCertainty } from "@hg/model";
 
 export interface PlaceProps {
   readonly id: string;
@@ -149,8 +150,6 @@ export interface LoadedData {
   readonly battles: readonly HistoryBattle[];
   /** Places with an article (place id → article id); the texts load on demand. */
   readonly articles: Readonly<Record<string, string>>;
-  /** Questions answered with a place on the map: place id → their ids and wording. */
-  readonly questions: NonNullable<ContentRelease["questions"]>;
   /** Photos by place id (content/photos.yaml); the image is data/photos/<id>.jpg. */
   readonly photos: Readonly<Record<string, PlacePhoto>>;
   /** Pleiades record and attested span by place id (content/pleiades.json). */
@@ -350,12 +349,11 @@ export function standingSpan(
   t: (key: string, o?: Readonly<Record<string, string | number>>) => string,
   locale: Locale,
 ): string {
-  const from = p.life_from ?? 0;
-  const to = (p.life_until ?? YEAR_MAX + 1) - 1;
+  const range = { from: p.life_from ?? 0, to: p.life_until ?? YEAR_MAX + 1 };
   const circa = p.approx ? `${t("place.circa")} ` : "";
-  return to >= YEAR_MAX
-    ? t("ancient.since", { year: circa + formatYear(from, locale) })
-    : circa + formatYearRange(from, to, locale);
+  return range.to > YEAR_MAX
+    ? t("ancient.since", { year: circa + formatYear(range.from, locale) })
+    : circa + formatRange(range, locale);
 }
 
 /** A data file as JSON; a missing file (404, a host's HTML page) fails by its name. */
@@ -491,25 +489,10 @@ export async function loadData(): Promise<LoadedData> {
     events: content.events ?? [],
     battles: content.battles ?? [],
     articles: content.articles ?? {},
-    questions: content.questions ?? {},
     photos: content.photos ?? {},
     pleiades: content.pleiades ?? {},
     chapterYears: content.chapter_years ?? {},
   };
-}
-
-/**
- * A name as the search compares it: lower case, "ё" as "е", no accents ("Ḥ", "é"), and
- * no hyphens, apostrophes or spaces, so "беф шемеш" finds "Беф-Шемеш".
- */
-export function foldName(s: string): string {
-  return s
-    .toLocaleLowerCase("ru")
-    .replaceAll("ё", "е")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .normalize("NFC")
-    .replace(/[\s\-\u2010-\u2015'\u2019\u02bc]+/g, "");
 }
 
 /** Prepositions a Russian query may start with: «в Вифлееме», «из Дамаска». */

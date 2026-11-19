@@ -2,7 +2,7 @@
 on the map has, in every language Wikidata gives a fitting one, and years fixed by hand where
 the periods cannot give them.
 
-    WAVE=2 python3 -I pipeline/ancient/assemble.py <work>
+    WAVE=2 python3 -E -s -m pipeline.ancient.assemble <work>
 
 Run after `pnpm data`: the names already taken are read from the built map.
 """
@@ -17,137 +17,19 @@ import pathlib
 import re
 import sys
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from ancient.common import ROOT, read  # noqa: E402
+from pipeline.ancient.common import ROOT, read
 
+# Corrections by hand (content/ancient-wave-corrections.json, checked by the content build):
+# labels left out, years the periods cannot give, English labels, names and kinds.
+_FIXES = json.loads((ROOT / "content/ancient-wave-corrections.json").read_text(encoding="utf-8"))
 # Moved away, or not the ancient place the item is about.
-MOVED = re.compile(r"San Vincenzo al Volturno|Dendur|Debod|Taffeh|Ellesy|^Thinis$|Wadi Hammamat", re.I)
-# Years the periods cannot give (a town destroyed in the middle of one), from the history
-# itself, astronomical: (from or None, to, why).
-FIX = {
-    "Gamla": (-149, 67, "a town from the 2nd century BC, destroyed by Vespasian in AD 67 (Josephus, Jewish War 4.1)"),
-    "Stabiae": (None, 79, "buried by Vesuvius in AD 79"),
-    "Helike": (None, -372, "sunk by the earthquake of 373 BC"),
-    "Potidaea": (None, -355, "destroyed by Philip II in 356 BC; refounded as Cassandreia"),
-    "Luxor Temple": (None, 400, "a temple from Amenhotep III, a Roman camp in the 3rd-4th centuries AD"),
-    "Mangup": (500, 1300, "the fortress from the 5th-6th centuries AD, Theodoro until 1475"),
-    "Eryx": (-549, 640, "the Elymian sanctuary town; Wikidata's founding (AD 1) is wrong"),
-    "Gerf Hussein": (-1269, 640, "the rock temple of Ramesses II, built c. 1270 BC"),
-    "Methone": (-732, -353, "the Eretrian colony of c. 733 BC, razed by Philip II in 354 BC"),
-    "Kainua": (-549, -350, "the Etruscan town of the late 6th century BC, left after the Gauls came in the 4th"),
-    "Phintias": (-281, 300, "founded by Phintias of Akragas c. 282 BC"),
-    "Ptolemais Theron": (-269, 300, "founded by Ptolemy II c. 270 BC"),
-    "Jebel Khalid": (-299, -69, "the Seleucid fortress, left c. 70 BC"),
-    "Segeda": (None, -71, "the Celtiberian town, taken by Rome in 153 BC, its successor left c. 72 BC"),
-    "Tyritake": (None, 640, "most accounts end the town c. 370, after the Huns; kept to the last Pleiades period, not Wikidata's 800"),
-}
-
-# English labels Wikidata gives in another language or with a note.
-RENAME = {
-    "Temple romain de Château-Bas": "Temple of Château-Bas",
-    "Archeological site of Alba-la-Romaine": "Alba Helviorum",
-    "Cala Morell Settlement": "Cala Morell",
-    "Portus Magnus, Algeria": "Portus Magnus",
-    "Poblat talaiòtic de Montefí": "Montefí",
-    "Sa Caleta Phoenician Settlement": "Sa Caleta",
-    "Nicaea, Locris": "Nicaea in Locris",
-    "Epiphania, Cilicia": "Epiphania in Cilicia",
-    "Temple of Janus": "Temple of Janus at Autun",
-    "Hosn Niha Site": "Hosn Niha",
-    "Ancient Tenea": "Tenea",
-    "Ancient Lappa": "Lappa",
-    "Gremanu nuraghe sacred place": "Gremanu",
-    "Pharsalos ancient city": "Pharsalus",
-    "Ancient Tithorea": "Tithorea",
-    "Gytheion ancient polis": "Gytheion",
-    "Kisamos ancient city": "Kisamos",
-    "Mochlos site": "Mochlos",
-    "Ciudad romana de Lacipo": "Lacipo",
-    "Area archeologica del Castrum Inui": "Castrum Inui",
-    "Santuario italico di Schiavi d'Abruzzo": "Sanctuary of Schiavi d'Abruzzo",
-    "Poblat ibèric de Can Fatjó": "Can Fatjó",
-    "Poblat ibèric de la Cadira del Bisbe": "Cadira del Bisbe",
-    "Poblat ibèric de les Maleses": "Les Maleses",
-    "Poblat Ibèric del Turó de Castellruf": "Turó de Castellruf",
-    "Povoado fortificado e Santuário de Endovélico": "Sanctuary of Endovelicus",
-    "Camp celtique de la Bure": "La Bure",
-    "Necropolis of Manduria": "Manduria",
-    "Minoan villa of Achladia": "Achladia",
-    "Üçtepe Mound": "Üçtepe",
-    "Agios Konstantinos, Methana": "Sanctuary of Agios Konstantinos",
-    "Aventicum, Roman city - Avenches, medieval-modern city": "Aventicum",
-    "Castro, Lazio": "Castro",
-    "Ancient Maroneia": "Maroneia",
-    "Sanctuary of Isthmian Poseidon, Isthmia": "Isthmia",
-}
-
-# A name in one language where Wikidata's label names something else: the village it became
-# (Helenopolis as «Дрепан»), a later town (Histiaia as «Орей»), a battle (Elegeia), or a name
-# too bare to tell it from another (Phthiotic Thebes as «Фивы»).
-NAME = {
-    ("Helenopolis", "ru"): "Еленополь",
-    ("Aegae", "ru"): "Эги Киликийские",
-    ("Histiaia", "ru"): "Гистиея",
-    ("Roman temple of Vic", "ru"): "Римский храм в Вике",
-    ("Serrion Teichos", "ru"): "Серрион-Тейхос",
-    ("Elegeia", "ru"): "Элегея",
-    ("Forum Novum", "ru"): "Форум Новум",
-    ("Temple of Apollo Epicurius in Bassae", "sr"): "Храм Аполона Епикурија",
-    ("Haluza", "it"): "Elusa",
-    ("Thagaste", "ru"): "Тагаст",
-    ("Dardanos", "ru"): "Дардан",
-    ("Lavinium", "ru"): "Лавиний",
-    ("Beneventum", "ru"): "Беневент",
-    ("Koroneia", "ru"): "Коронея",
-    ("Marcianopolis", "ru"): "Марцианополь",
-    ("Pharae", "ru"): "Феры Мессенские",
-    ("Prusias ad Hypium", "ru"): "Прусиада-на-Гипии",
-    ("Teuthis", "ru"): "Тевфида",
-    ("Tium", "ru"): "Тиос",
-    ("Stageira", "ru"): "Стагира",
-    ("Histria", "ru"): "Гистрия",
-    ("Phthiotic Thebes", "ru"): "Фивы Фтиотидские",
-}
-
-# No name in these languages, the English stands: Wikidata's is a modern village, another
-# place, a description, or a label in the wrong language.
-NO_NAME = {
-    "Acropolis of Arpino": {"cs", "da", "es", "fi", "fr", "nb", "pl", "pt", "ro", "sr", "sv", "tl"},
-    "Aegae": {"es", "it", "nl", "uk"},
-    "Alba Helviorum": {"fr", "nl"},
-    "Anthemous": {"sv"},
-    "Aventicum": {"de", "fr"},
-    "Bakchias": {"sv"},
-    "Diocletianopolis in Thrace": {"pl"},
-    "Gnatia": {"es"},
-    "Haïdra": {"es"},
-    "Histiaia": {"es", "nl", "uk"},
-    "Iluro": {"es"},
-    "Issus": {"nl"},
-    "Kandyba": {"vi"},
-    "L'Alcúdia": {"es", "sv"},
-    "Macistus": {"fi"},
-    "Malgium": {"nl"},
-    "Manduria": {"fr", "it", "nl"},
-    "Olba": {"de"},
-    "Panionium": {"nl"},
-    "Porto Pisano": {"de"},
-    "Raphana": {"nb"},
-    "Sa Caleta": {"de"},
-    "Scoglietto sanctuary": {"it", "nl"},
-    "Sippar-Amnanum": {"fr", "nl", "pl", "sv"},
-    "Temple of Château-Bas": {"de", "nl"},
-    "Tigranocerta": {"de"},
-    "Tintignac": {"it"},
-    "Xyniae": {"bg", "sr"},
-}
-
-# Kinds Wikidata's classes get wrong.
-KIND = {
-    "Villa of Herodes Atticus": "site",
-    "Necropolis of Pranu Muttedu": "site",
-    "Achladia": "site",
-}
+MOVED = re.compile("|".join(_FIXES["left_out"]), re.I)
+# Years the periods cannot give, astronomical: (from or None, to, why).
+FIX = {y["site"]: (y.get("from"), y["to"], y["why"]) for y in _FIXES["years"]}
+RENAME: dict[str, str] = _FIXES["renamed"]
+NAME = {(n["site"], n["lang"]): n["name"] for n in _FIXES["names"]}
+NO_NAME = {site: set(langs) for site, langs in _FIXES["no_names"].items()}
+KIND: dict[str, str] = _FIXES["kinds"]
 
 CYRILLIC = ("ru", "uk", "bg", "sr")
 # Cyrillic names where Wikidata has none: ours, as that language's classical scholarship

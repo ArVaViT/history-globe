@@ -20,19 +20,21 @@ Not yet: `theme`, and an origin allowlist (needed once a host sends anything sen
 https://<globe-host>/embed/v1?year=30&place=af2161c&locale=ru
 ```
 
-| Parameter | Type                             | Meaning                                                                  |
-| --------- | -------------------------------- | ------------------------------------------------------------------------ |
-| `year`    | integer, astronomical (ADR 0003) | initial year                                                             |
-| `place`   | place id (below)                 | place to select and fly to (Capernaum: `af2161c`)                        |
-| `camera`  | `lon,lat,zoom,pitch,bearing`     | the map opens here; with `place`, the place is selected without a flight |
-| `hide`    | comma list                       | listed layers off, the rest on (`relief,battles`)                        |
-| `layers`  | comma list (older links)         | listed layers on, the rest off; a layer added later on                   |
-| `ref`     | OSIS chapter, range or book      | the chapter's places (`Acts.16`)                                         |
-| `tour`    | tour id                          | start a guided tour                                                      |
-| `stop`    | 2, 3, … (with `tour`)            | open the tour at that stop                                               |
-| `measure` | two place ids, comma-separated   | the distance line between them (the figure is in the tools)              |
-| `locale`  | one of the 21 site languages     | UI and names (`LOCALES`, `packages/model/src/locales.ts`)                |
-| `ui`      | `map`                            | map only: no card, no chapter bar, the year folded, the ring             |
+| Parameter | Type                                                              | Meaning                                                                                     |
+| --------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| `year`    | integer, astronomical (ADR 0003)                                  | initial year                                                                                |
+| `place`   | place id (below)                                                  | place to select and fly to (Capernaum: `af2161c`)                                           |
+| `camera`  | `lon,lat,zoom,pitch,bearing`                                      | the map opens here; with `place`, the place is selected without a flight                    |
+| `hide`    | comma list                                                        | listed layers off, the rest on (`relief,battles`)                                           |
+| `layers`  | comma list (older links)                                          | listed layers on, the rest off; a layer added later on                                      |
+| `ref`     | OSIS chapter, range or book                                       | the chapter's places (`Acts.16`)                                                            |
+| `tour`    | tour id                                                           | start a guided tour                                                                         |
+| `stop`    | 2, 3, … (with `tour`)                                             | open the tour at that stop                                                                  |
+| `measure` | two place ids, comma-separated                                    | the distance line between them (the figure is in the tools)                                 |
+| `lesson`  | place ids with years, `~`- and `.`-separated (with `tour=lesson`) | a lesson built in the tools: `a15257a~30.a112427~30`, each place at its year, run as a tour |
+| `title`   | text, up to 80 characters (with `lesson`)                         | the lesson's name, at the head of its tour and its printed sheet                            |
+| `locale`  | one of the 21 site languages                                      | UI and names (`LOCALES`, `packages/model/src/locales.ts`)                                   |
+| `ui`      | `map`                                                             | map only: no card, no chapter bar, the year folded, the ring                                |
 
 Layers: `borders`, `places`, `relief`, `routes`, `roads`, `battles` (`ancient` in an older
 link is passed over: the ancient world's places are places, ADR 0018).
@@ -41,9 +43,10 @@ link is passed over: the ancient world's places are places, ADR 0018).
 of the ancient world the Bible does not name (ADR 0018): its Pleiades number (`678146`,
 Gamla; `678387`, Sepphoris) or, without one, its Wikidata item (Constantinople is `Q16869`). Both go out in
 `view.place` and `hg:place-clicked`, and both are taken by `hg:set-view`; a host keyed on
-OpenBible tests the form. 54 of OpenBible's 1342 records are not on the map (21 left out for
-want of a point that may be published, 33 with no point; `manifest.json` stats); their ids
-are ignored.
+OpenBible tests the form. Some of OpenBible's records are not on the map, left out for want of
+a point that may be published or with no point at all (`manifest.json`: `excluded_places`
+and `stats.without_point`; the embedding page gives the counts of the current data); their
+ids are ignored.
 
 ## Messages
 
@@ -95,3 +98,5 @@ double-click, a drag's release and a press that stopped the camera clear nothing
   selected is now flown to again: before, `hg:set-view {place}` for the selected place did
   nothing; now, without `camera`, it flies back to the place, so a host must not answer
   `hg:view-changed` with `{place}` alone.
+- 2026-11-19: `lesson` and `title` written into the table above; the app has taken them since
+  the lessons came (`apps/web/src/lesson.ts`), and the embedding page has listed them.

@@ -22,6 +22,7 @@
  */
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { BOOKS } from "../packages/model/src/scripture.ts";
 import { placeSlugs } from "../packages/model/src/slugs.ts";
 import { LOCALES } from "../packages/model/src/locales.ts";
 import { openApi, violations } from "./api-openapi.ts";
@@ -73,6 +74,7 @@ const content = JSON.parse(readFileSync(join(data, "content.json"), "utf8")) as 
     approximate: boolean;
     title: Record<string, string>;
     place: string;
+    event?: string;
     ref?: string;
     sides: Record<string, string>;
     outcome: Record<string, string>;
@@ -157,6 +159,41 @@ const write = (file: string, value: unknown) => {
 };
 
 const slugs = placeSlugs(places.map((f) => f.properties));
+// The ancient world's sites the map draws (ADR 0018): a tour stop, a battle or an event may
+// stand at one, by its Pleiades number; that id is in no file of the API, so the site's name
+// and point go with it.
+const ancient = new Map(
+  (
+    JSON.parse(readFileSync(join(data, "ancient.geojson"), "utf8")) as {
+      features: {
+        geometry: { coordinates: [number, number] };
+        properties: Record<string, unknown>;
+      }[];
+    }
+  ).features.map(({ geometry: g, properties: p }) => [
+    String(p.id),
+    {
+      id: String(p.id),
+      // English first, then the other languages in which it has a name.
+      name: {
+        en: String(p.en),
+        ...Object.fromEntries(
+          LOCALES.flatMap((l) => (l !== "en" && typeof p[l] === "string" ? [[l, p[l]]] : [])),
+        ),
+      },
+      lon: g.coordinates[0],
+      lat: g.coordinates[1],
+    },
+  ]),
+);
+const placeIds = new Set(places.map((f) => f.properties.id));
+/** A place id of places.json as it is, or an ancient site's id with the site beside it. */
+const siteOf = (id: string, where: string) => {
+  if (placeIds.has(id)) return {};
+  const site = ancient.get(id);
+  if (!site) apiErrors.push(`${where}: ${id} is neither a place nor an ancient site`);
+  return site ? { site } : {};
+};
 // The marks a copy can be told by (scripts/canary.ts): none without HG_CANARY_SEED.
 const canaries = new Canaries();
 // A page in every language the site is published in, under the same path.
@@ -196,6 +233,9 @@ write(
 
 // Verse → places, a file per book: "Acts.16.12" → ["a49e1d0", …], in the order of the data.
 const books = new Map<string, Map<string, string[]>>();
+const ORDER = Object.keys(BOOKS);
+/** A book's place in the Bible; one the list does not know goes last. */
+const canon = (book: string) => (ORDER.includes(book) ? ORDER.indexOf(book) : ORDER.length);
 for (const { properties: p } of places)
   for (const ref of p.osis) {
     const book = ref.split(".")[0] ?? "";
@@ -226,9 +266,9 @@ write(
     year: e.year,
     ...(e.approximate ? { approximate: true } : {}),
     title: e.title,
-    ...(e.place ? { place: e.place } : {}),
-    // Or a site of the ancient world the Bible does not name: where it is.
-    ...(e.site ? { site: { id: e.site.id, lon: e.site.lon, lat: e.site.lat } } : {}),
+    ...(e.place ? { place: e.place, ...siteOf(e.place, `events.json ${e.id}`) } : {}),
+    // Or a site of the ancient world the Bible does not name: its name and where it is.
+    ...(e.site ? siteOf(e.site.id, `events.json ${e.id}`) : {}),
     ...(e.ref ? { ref: e.ref } : {}),
     sources: e.sources,
   })),
@@ -242,6 +282,9 @@ write(
     ...(b.approximate ? { approximate: true } : {}),
     title: b.title,
     place: b.place,
+    ...siteOf(b.place, `battles.json ${b.id}`),
+    // The event of events.json that tells the same story.
+    ...(b.event ? { event: b.event } : {}),
     ...(b.ref ? { ref: b.ref } : {}),
     sides: b.sides,
     outcome: b.outcome,
@@ -259,6 +302,7 @@ write(
     ...(t.people ? { people: t.people } : {}),
     stops: t.stops.map((s) => ({
       place: s.place,
+      ...siteOf(s.place, `tours.json ${t.id}`),
       ...(s.ref ? { ref: s.ref } : {}),
       ...(s.source ? { source: s.source } : {}),
       note: s.note,
@@ -298,6 +342,10 @@ write(
     scripture: q.scripture,
     sources: q.sources,
     page: pages(`q/${q.id}/`),
+    // The answers' own licence on each record, not CC BY as the rest of the API: a copy
+    // of the file carries it without the index or the HTTP header (ADR 0016).
+    license: "CC BY-NC-ND 4.0",
+    license_url: "https://creativecommons.org/licenses/by-nc-nd/4.0/",
   })),
 );
 
@@ -438,7 +486,7 @@ for (const [book, inBook] of chapters)
   );
 
 write("index.json", {
-  name: "History Globe open data",
+  name: "History Globe dataset",
   version: 1,
   ...(manifest.built_at ? { built_at: manifest.built_at } : {}),
   license: LICENSE,
@@ -470,8 +518,15 @@ write("index.json", {
     "places.json":
       "wikidata (Wikidata item, from OpenBible's links, checked against Wikidata) and pleiades (Pleiades id), 2026-10; tipnr (STEPBible TIPNR unique name, the id people.json uses), 2026-10-19",
     "index.json": "notice (what may be taken and how), 2026-10",
+    "questions.json": "license and license_url (the answers' licence) on each question, 2026-11",
+    "tours.json":
+      "site (id, name in each language, lon, lat) on a stop at an ancient site, whose id is in no other file, 2026-11",
+    "battles.json":
+      "site, as in tours.json; event (the id in events.json that tells the same story), 2026-11",
+    "events.json": "site.name (the ancient site's name in each language), 2026-11",
   },
-  books: [...books.keys()],
+  // In the order of the Bible, as a reader of the list expects them.
+  books: [...books.keys()].sort((a, b) => canon(a) - canon(b)),
 });
 
 write("openapi.json", openApi("1"));

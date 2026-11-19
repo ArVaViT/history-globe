@@ -1,7 +1,8 @@
 # Paul's second missionary journey, Acts 15:36–18:22. Named towns only, in the order of the
 # text; regions crossed "in passing" (Syria and Cilicia, Phrygia and Galatia, Mysia) are left
 # out rather than drawn as guessed stops. Year approximate: Pauline chronology is debated.
-# Source for the stop list: research note 16, section 4.2.
+# Berea to Athens (Acts 17:14-15, "as it were to the sea") leaves open whether by sea or by
+# road: that leg is untold.
 id: paul-2
 title:
   en: "Paul's second journey"
@@ -298,6 +299,7 @@ stops:
       bg: "Верийците изследват Писанията всеки ден."
   - place: a1fe6e7
     ref: Acts.17.15-Acts.17.34
+    by: untold
     note:
       en: "Paul at the Areopagus."
       ru: "Павел в Ареопаге."

@@ -1,8 +1,8 @@
 """What the wave scripts share: where things are, the content's sites, Wikidata's class labels.
 
 A wave works in a directory outside the repository (`work`), which holds Pleiades' dumps and
-the steps' files under `wave/`. The scripts run isolated (`python3 -I`), with pipeline/ on
-their path, so they import this as `ancient.common`.
+the steps' files under `wave/`. The scripts run as modules of the pipeline package from the
+repository root, without the environment's Python settings (`python3 -E -s -m`).
 """
 
 from __future__ import annotations
@@ -16,7 +16,7 @@ import pathlib
 import re
 from collections.abc import Iterator
 
-from net import entity, sparql
+from pipeline.net import entity, sparql
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 

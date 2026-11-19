@@ -26,8 +26,10 @@ what is missing.
 - The hand-written pages name every language: `apps/web/index.html`, `public/404.html`,
   `public/about.html`, and `LANGS` in `public/hg-places.js`. `apps/web/src/static-pages.test.ts`
   fails until each has it.
+- `LANGS` in `pipeline/build_dataset.py` (the dataset's name columns): `pipeline/test_mirrored.py`
+  fails until it has the language.
 - `apps/web/public/og/<code>.jpg` (the link preview) and `apps/web/public/shots/<code>-*.jpg`
-  (the screenshots in the documentation): the app in the language, at the size of the files
+  (the screenshots on the front page): the app in the language, at the size of the files
   already there.
 
 ## 3. The content
@@ -45,7 +47,7 @@ what is missing.
 
 Where a language declines names, the places-in-any-text index needs their forms
 (`scripts/inflected-forms.ts`, read by `scripts/build-text-places.ts`), checked against that
-language's Bible. Russian keeps its own case forms for the print quiz (`scripts/russian-forms.ts`).
+language's Bible. Russian keeps its own case forms for the print quiz (`packages/model/src/russian-forms.ts`).
 
 ## 5. Check
 

@@ -9,7 +9,7 @@ description: De onde vem cada lugar, fronteira, data e pessoa do History Globe, 
   o que mudamos e o que não sabemos.
 </p>
 
-<h2>Lugares da Bíblia</h2>
+<h2 id="places-of-the-bible">Lugares da Bíblia</h2>
 <p>
   Os {{places}} lugares e seus versículos vêm do
   <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
@@ -22,7 +22,7 @@ description: De onde vem cada lugar, fronteira, data e pessoa do History Globe, 
   marca, e cada um tem sua própria página; os outros {{unnamed}} são registros que o OpenBible
   mantém e que nenhum versículo desses livros nomeia (Adasa, de 1 Macabeus, por exemplo).
   {{articles}} lugares têm artigo. Outros {{excluded}} ficaram de fora por não terem um ponto que
-  possa ser publicado (veja abaixo).
+  possa ser publicado (veja abaixo). Outros {{without_point}} não têm ponto nenhum no OpenBible.
 </p>
 <ul>
   <li>
@@ -45,7 +45,7 @@ description: De onde vem cada lugar, fronteira, data e pessoa do History Globe, 
   </li>
 </ul>
 
-<h2>Quando os lugares existiram</h2>
+<h2 id="when-places-stood">Quando os lugares existiram</h2>
 <p>
   Uma cidade no mapa é desenhada por inteiro apenas nos anos em que existiu. Para {{life}} lugares
   da Bíblia, os anos de fundação, destruição e abandono são registrados à mão, cada um com suas
@@ -53,23 +53,23 @@ description: De onde vem cada lugar, fronteira, data e pessoa do History Globe, 
   firmes: uma cidade cuja fundação ou fim é disputado não recebe ano para isso.
 </p>
 <p>
-  As {{ancient}} cidades do mundo antigo que a Bíblia não nomeia — capitais, portos e santuários
-  como Ugarit, Hattusa, Mari ou Delfos — foram escolhidas e datadas uma a uma: cada uma é situada
-  pelo seu registro no <a href="https://pleiades.stoa.org">Pleiades</a> ou no Wikidata, sobre o
-  sítio antigo, e não sobre a cidade moderna, e datada a partir desses registros e de obras
-  enciclopédicas, conciliados à mão. Cerca de mil e quatrocentas outras foram escolhidas por um
+  Das {{ancient}} cidades do mundo antigo que a Bíblia não nomeia — capitais, portos e santuários
+  como Ugarit, Hattusa, Mari ou Delfos —, {{ancient_hand}} foram escolhidas e datadas uma a uma:
+  cada uma é situada pelo seu registro no <a href="https://pleiades.stoa.org">Pleiades</a> ou no
+  Wikidata, sobre o sítio antigo, e não sobre a cidade moderna, e datada a partir desses registros e
+  de obras enciclopédicas, conciliados à mão. As outras {{ancient_script}} foram escolhidas por um
   script: povoados, santuários e portos do Pleiades cujo item no Wikidata é um sítio antigo, e não
   uma cidade moderna; os seus pontos são os do Pleiades, os seus nomes os do Wikidata (onde o
   Wikidata não tem nenhum em russo, ucraniano, búlgaro ou sérvio, os nossos, na forma usada pelos
-  estudos clássicos dessa língua), e os seus anos o intervalo dos períodos em que o Pleiades as
-  atesta, por isso todas levam a marca “c.”. Onde uma cidade foi destruída no meio de um período, o
-  seu fim é fixado à mão a partir da história. Um lugar aparece em um nível de zoom definido pela
-  frequência com que a Bíblia o nomeia; uma cidade que a Bíblia mal nomeia, mas que o mundo conhece
-  bem — Cartago, Esparta, Ur —, aparece antes, pelo número de artigos da Wikipedia sobre o próprio
-  sítio antigo.
+  estudos clássicos dessa língua; nas outras línguas, onde não tem nenhum, o inglês), e os seus anos
+  o intervalo dos períodos em que o Pleiades as atesta, por isso todas levam a marca “c.”. Onde uma
+  cidade foi destruída no meio de um período, o seu fim é fixado à mão a partir da história. Um
+  lugar aparece em um nível de zoom definido pela frequência com que a Bíblia o nomeia; uma cidade
+  que a Bíblia mal nomeia, mas que o mundo conhece bem — Cartago, Esparta, Ur —, aparece antes, pelo
+  número de artigos da Wikipedia sobre o próprio sítio antigo.
 </p>
 
-<h2>Fronteiras</h2>
+<h2 id="borders">Fronteiras</h2>
 <p>
   Os estados e suas fronteiras ano a ano vêm do
   <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatria</a> (Seshat Global History Databank,
@@ -100,22 +100,22 @@ description: De onde vem cada lugar, fronteira, data e pessoa do History Globe, 
   tornou.
 </p>
 
-<h2>Pessoas</h2>
+<h2 id="people">Pessoas</h2>
 <p>
   As {{people}} pessoas da Bíblia e os seus vínculos familiares vêm do TIPNR do STEP Bible (Tyndale
   House, Cambridge). Não aceitamos os vínculos sem conferir:
 </p>
 <ul>
   <li>
-    os vínculos familiares das 1.200 pessoas que o texto mais nomeia, e as genealogias de 1
+    os vínculos familiares das {{n:1200}} pessoas que o texto mais nomeia, e as genealogias de 1
     Crônicas, foram confrontados com os versículos; 153 vínculos que o texto não afirma foram
     removidos — os irmãos de Jesus como filhos de José e Maria, Jezabel como mãe de Acazias — e os
     vínculos ausentes da genealogia de Jesus foram acrescentados a partir do texto;
   </li>
   <li>
-    todos os 1.136 vínculos entre uma pessoa e um lugar em que ela tem papel central ou secundário
-    foram lidos versículo por versículo; 344 foram removidos (Moisés “em Canaã”, Abraão “em Sodoma”,
-    lugares de um filho atribuídos ao pai) e 94 receberam um versículo melhor;
+    todos os {{n:1136}} vínculos entre uma pessoa e um lugar em que ela tem papel central ou
+    secundário foram lidos versículo por versículo; 344 foram removidos (Moisés “em Canaã”, Abraão
+    “em Sodoma”, lugares de um filho atribuídos ao pai) e 94 receberam um versículo melhor;
   </li>
   <li>
     os homônimos são distinguidos como o texto os distingue: “João Batista”, “João filho de
@@ -133,14 +133,16 @@ description: De onde vem cada lugar, fronteira, data e pessoa do History Globe, 
   domínio público de cada idioma, listadas na página de <a href="sources.html">fontes</a>. Nenhum
   roteiro passou pela primeira revisão sem alterações; cada um foi corrigido e conferido de novo. Na
   última revisão completa, concluída em 17 de outubro de 2026, todos os 746 artigos foram conferidos
-  de novo com as fontes, cerca de 210 deles duas vezes; foram feitas 1.088 correções, cada uma nos
-  11 idiomas que o site tinha então, e erros evidentes foram encontrados em 157 artigos. Os cinco
-  idiomas acrescentados em 24 de outubro de 2026 (sueco, norueguês, dinamarquês, tagalo e sérvio)
-  foram traduzidos a partir dos textos já corrigidos; depois, uma passagem de revisão independente
-  conferiu cada um dos seus textos com o inglês, e cada citação com a Bíblia desse idioma. Essas
-  passagens são verificações próprias do projeto, não revisão por pares. As revisões de
-  especialistas são publicadas com o seu nome na página de <a href="reviews.html">revisões</a>, e
-  cada artigo que um especialista revisou nomeia o revisor e leva à sua revisão.
+  de novo com as fontes, cerca de 210 deles duas vezes; foram feitas {{n:1088}} correções, cada uma
+  nos 11 idiomas que o site tinha então, e erros evidentes foram encontrados em 157 artigos. Os
+  cinco idiomas acrescentados em 24 de outubro de 2026 (sueco, norueguês, dinamarquês, tagalo e
+  sérvio) e os cinco acrescentados em 26 de outubro de 2026 (húngaro, finlandês, vietnamita, romeno
+  e búlgaro) foram traduzidos a partir dos textos já corrigidos; depois, uma passagem de revisão
+  independente conferiu cada um dos seus textos com o inglês, e cada citação com a Bíblia desse
+  idioma. Essas passagens são verificações próprias do projeto, não revisão por pares. As revisões
+  de especialistas são publicadas com o seu nome na página de <a href="reviews.html">revisões</a>, e
+  cada artigo que um especialista revisou nomeia o revisor e leva à sua revisão. Publicadas até
+  agora: <span class="reviews"></span>.
 </p>
 <p>
   A distância até uma parada é dada em linha reta. A partir de 312 a.C., quando começam as estradas
@@ -161,8 +163,8 @@ description: De onde vem cada lugar, fronteira, data e pessoa do History Globe, 
   decidiram o destino de Israel. Cada um fica no lugar onde foi travado e aparece no mapa nos seus
   anos. Os da Bíblia são datados como os roteiros datam as mesmas histórias; os demais não trazem
   versículo, mas uma fonte antiga ou acadêmica. Uma segunda verificação, independente, confrontou o
-  rascunho com o texto Sinodal e a King James Version: de 58 entradas, 16 foram corrigidas e uma foi
-  descartada, porque o mapa não tem ponto para o seu sítio.
+  rascunho com o texto Sinodal e a King James Version: de 58 entradas (outubro de 2026), 16 foram
+  corrigidas e uma foi descartada, porque o mapa não tem ponto para o seu sítio.
 </p>
 
 <p>
@@ -212,7 +214,7 @@ description: De onde vem cada lugar, fronteira, data e pessoa do History Globe, 
   </li>
 </ul>
 
-<h2>Verificações a cada compilação</h2>
+<h2 id="checks-on-every-build">Verificações a cada compilação</h2>
 <p>Nada é publicado se alguma verificação falhar:</p>
 <ul>
   <li>
@@ -231,7 +233,7 @@ description: De onde vem cada lugar, fronteira, data e pessoa do History Globe, 
   </li>
 </ul>
 
-<h2>O que é incerto</h2>
+<h2 id="what-is-uncertain">O que é incerto</h2>
 <ul>
   <li>
     As datas anteriores ao primeiro milênio a.C. são aproximadas, e algumas são disputadas; o mapa
@@ -278,7 +280,7 @@ https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
   Com uma conta no GitHub você também pode usar o link <i>Encontrou um erro?</i> de cada ficha de
   lugar, que abre uma issue no repositório público com o lugar já indicado, ou abrir uma
   diretamente:
-  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+  <a href="https://github.com/ArVaViT/history-globe/issues/new?template=report-an-error.yml"
     >github.com/ArVaViT/history-globe/issues</a
   >.
 </p>

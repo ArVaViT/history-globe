@@ -1,6 +1,8 @@
 # Solomon, 1 Kings 1-11, in the order of the text. The tour's year (970 BC) is the
 # conventional start of his reign (c. 970-931 BC, Thiele); the Temple stop shows his
-# fourth year (1 Kgs 6:1), the last his death. Points for the map.
+# fourth year (1 Kgs 6:1), the last his death. Megiddo, Ezion-geber and Sheba (1 Kgs
+# 9:15-10:13) come "at the end of twenty years" of building from that year (9:10) and show
+# 946 BC. Points for the map.
 id: solomon
 title:
   en: "Solomon"
@@ -129,6 +131,7 @@ stops:
       bg: "В четвъртата си година той започва храма; при освещаването му облакът изпълва Господния дом."
   - place: a8554e3 # Megiddo
     ref: 1Kgs.9.15
+    year: "946 BC"
     note:
       en: "With the levy he raises he builds the wall of Jerusalem, Hazor, Megiddo and Gezer."
       ru: "Наложив подать, он строит стену Иерусалимскую, Гацор, Мегиддо и Газер."
@@ -153,6 +156,7 @@ stops:
       bg: "С наложената от него ангария той съгражда стената на Йерусалим, Хацор, Мегидо и Гезер."
   - place: a8e53d5 # Ezion-geber
     ref: 1Kgs.9.26-1Kgs.9.28
+    year: "946 BC"
     note:
       en: "At Ezion-geber on the Red Sea he builds ships, and his servants and Hiram's sailors bring gold from Ophir."
       ru: "В Ецион-Гавере на берегу Чермного моря он строит корабль, и его подданные вместе с моряками Хирама привозят золото из Офира."
@@ -177,6 +181,7 @@ stops:
       bg: "В Ецион-Гавер на Червено море той строи кораби, а слугите му и моряците на Хирам донасят злато от Офир."
   - place: a81ab85 # Sheba
     ref: 1Kgs.10.1-1Kgs.10.13
+    year: "946 BC"
     note:
       en: "The queen of Sheba hears of his fame and comes to test him with hard questions."
       ru: "Царица Савская, услышав о славе Соломона, приходит испытать его загадками."

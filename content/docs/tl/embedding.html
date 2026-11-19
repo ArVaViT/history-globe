@@ -9,10 +9,10 @@ description: Ilagay ang globo sa sarili mong site sa isang linya — ang mapa ng
   nagpapanatili ng pagkakasabay ng dalawa.
 </p>
 
-<h2>Mabilis na simula</h2>
+<h2 id="quick-start">Mabilis na simula</h2>
 <pre><code>&lt;iframe
-  src="{{site}}/embed/v1?ref=Acts.16&amp;locale=en"
-  title="Map of Acts 16"
+  src="{{site}}/embed/v1?ref=Acts.16&amp;locale=tl"
+  title="Mapa ng Gawa 16"
   style="width: 100%; height: 480px; border: 0; border-radius: 12px"
   allow="fullscreen"
   loading="lazy"
@@ -33,7 +33,7 @@ description: Ilagay ang globo sa sarili mong site sa isang linya — ang mapa ng
   <li>Gumagana ang frame hanggang sa lapad ng isang telepono; sapat na ang taas na 480 px.</li>
 </ul>
 
-<h2>Isang kabanata o isang sipi</h2>
+<h2 id="a-chapter-or-a-passage">Isang kabanata o isang sipi</h2>
 <p>
   Tumatanggap ang <code>ref</code> ng reperensiyang OSIS na may mga pinaikling pangalan ng aklat sa
   Ingles at bilang ng talata sa Ingles:
@@ -73,7 +73,7 @@ description: Ilagay ang globo sa sarili mong site sa isang linya — ang mapa ng
   na walang alinman sa dalawa ay pinananatili ang kasalukuyang taon ng mapa.
 </p>
 
-<h2>Mga parameter</h2>
+<h2 id="parameters">Mga parameter</h2>
 <div class="table">
   <table>
     <thead>
@@ -181,7 +181,7 @@ description: Ilagay ang globo sa sarili mong site sa isang linya — ang mapa ng
   gumagana ang parehong mga parameter pagkatapos ng <code>/embed/v1</code>.
 </p>
 
-<h2>Mga mensahe</h2>
+<h2 id="messages">Mga mensahe</h2>
 <p>
   Nag-uusap ang globo at ang iyong pahina sa pamamagitan ng <code>postMessage</code>. Bawat mensahe
   ay isang object na may <code>type</code> at <code>v: 1</code>. Ang ipinapadala lamang ng globo ay
@@ -189,7 +189,7 @@ description: Ilagay ang globo sa sarili mong site sa isang linya — ang mapa ng
   sa magulang na pahina anuman ang pinagmulan nito (target <code>"*"</code>); tumatanggap lamang ito
   ng mga mensahe mula sa pahinang may hawak ng frame.
 </p>
-<h3>Mula sa globo</h3>
+<h3 id="from-the-globe">Mula sa globo</h3>
 <div class="table">
   <table>
     <thead>
@@ -233,7 +233,10 @@ description: Ilagay ang globo sa sarili mong site sa isang linya — ang mapa ng
       <tr>
         <td><code>hg:error</code></td>
         <td><code>{ code, message }</code></td>
-        <td>hindi nai-load ang mapa o ang datos nito</td>
+        <td>
+          hindi nai-load ang mapa o ang datos nito: ang <code>code</code> ay <code>"map"</code> o
+          <code>"data"</code>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -242,9 +245,12 @@ description: Ilagay ang globo sa sarili mong site sa isang linya — ang mapa ng
   Naglalaman ang <code>view</code> ng <code>year</code>, <code>locale</code> at
   <code>layers</code> at, kung itinakda, ng <code>place</code>, <code>tour</code>,
   <code>stop</code>, <code>ref</code> at <code>camera</code>. Ang <code>view</code> na walang
-  <code>place</code> ay nangangahulugang walang napiling lugar.
+  <code>place</code> ay nangangahulugang walang napiling lugar. Ang <code>camera</code> ay isang
+  object, <code>{ center: [35.2, 31.8], zoom: 7, pitch: 30, bearing: 0 }</code>, hindi ang string ng
+  address; binibigyan ng <code>layers</code> ang bawat layer ng <code>true</code> o
+  <code>false</code>: <code>{ relief: false, battles: false }</code>.
 </p>
-<h3>Papunta sa globo</h3>
+<h3 id="to-the-globe">Papunta sa globo</h3>
 <div class="table">
   <table>
     <thead>
@@ -301,11 +307,11 @@ description: Ilagay ang globo sa sarili mong site sa isang linya — ang mapa ng
   <code>Q16869</code>). Parehong uri ay maaaring dumating sa <code>view.place</code> at
   <code>hg:place-clicked</code>, at parehong tinatanggap ng <code>hg:set-view</code>; kung OpenBible
   lamang ang mga lugar sa iyong datos, subukan ang anyo bago ka maghanap ng isa. Sa {{openbible}}
-  lugar ng OpenBible, {{absent}} ang wala sa mapa (wala silang puntong maaaring i-publish);
+  lugar ng OpenBible, {{absent}} ang wala sa mapa (hindi isinama, o walang anumang punto);
   binabalewala ang kanilang mga ID.
 </p>
 
-<h2>Halimbawa: sinusundan ng mapa ang iyong mambabasa</h2>
+<h2 id="example-the-map-follows-your-reader">Halimbawa: sinusundan ng mapa ang iyong mambabasa</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
 // When your reader opens a chapter, show it on the map.
@@ -438,25 +444,25 @@ function closeBox() {
   kadalasang ginagamit ng mismong mga talata ng Biblia para sa ibang bagay (ang “Kades” doon ay
   Kades-barnea, hindi ang Kades ng database). Ang pangalan ng lugar na pangalan din ng isang tao
   (Jordan, Saron) ay hindi ginagalaw kapag katabi ito ng isa pang salitang may malaking titik: ang
-  Jordan Smith ay isang tao, hindi ang ilog. Sa Ruso, Ukrainiano, Polako at Czech, natatagpuan ang
-  mga pangalan sa kanilang mga binagong anyo (“в Египте”, “w Jerozolimie”, “v Jeruzalémě”), at ang
-  mga pangalang Aleman ay sa genitive din (“Jerusalems”). Hindi ginagalaw ang mga link, code, field
-  ng form, button at heading.
+  Jordan Smith ay isang tao, hindi ang ilog. Sa Ruso, Ukrainiano, Polako, Czech, Serbian, Hungarian,
+  Finnish at Romanian, natatagpuan ang mga pangalan sa kanilang mga binagong anyo (“в Египте”, “w
+  Jerozolimie”, “v Jeruzalémě”), at ang mga pangalang Aleman, Swedish, Danish at Norwegian ay sa
+  genitive din (“Jerusalems”). Hindi ginagalaw ang mga link, code, field ng form, button at heading.
 </p>
 <p class="note">
   Walang dependency ang script at hindi ito nagtatakda ng cookie. Binabasa nito ang isang file ng
-  mga pangalan mula sa globo (mga 20 hanggang 35 KB sa network depende sa wika, dagdag ang 7 KB ng
-  script), nang hindi ipinapadala ang address ng iyong pahina bilang referrer, at binabago lamang
-  nito ang mga pangalang iniuugnay nito. Gumagana ito sa ilalim ng mahigpit na Content Security
-  Policy na pinahihintulutan ang address ng globo sa <code>script-src</code> at
-  <code>connect-src</code>. Para sa tekstong idinaragdag ng iyong pahina nang mas huli, tawagin ang
-  <code>HistoryGlobePlaces.scan(element)</code> kapag na-render na ang teksto: hinahati ng script
-  ang mga text node, kaya sa isang pahinang React o Vue, patakbuhin ito sa nilalamang hindi na
-  muling nire-render ng framework.
+  mga pangalan mula sa globo (mga {{names_kb_min}} hanggang {{names_kb_max}} KB sa network depende
+  sa wika, dagdag ang {{script_kb}} KB ng script), nang hindi ipinapadala ang address ng iyong
+  pahina bilang referrer, at binabago lamang nito ang mga pangalang iniuugnay nito. Gumagana ito sa
+  ilalim ng mahigpit na Content Security Policy na pinahihintulutan ang address ng globo sa
+  <code>script-src</code> at <code>connect-src</code>. Para sa tekstong idinaragdag ng iyong pahina
+  nang mas huli, tawagin ang <code>HistoryGlobePlaces.scan(element)</code> kapag na-render na ang
+  teksto: hinahati ng script ang mga text node, kaya sa isang pahinang React o Vue, patakbuhin ito
+  sa nilalamang hindi na muling nire-render ng framework.
 </p>
 <script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
 
-<h2>Katatagan</h2>
+<h2 id="stability">Katatagan</h2>
 <p>
   Ang <code>/embed/v1</code> ay isang kontrata: sa loob ng v1, mga parameter at mensahe ay
   idinaragdag lamang, hindi kailanman binabago o inaalis. Ang pagbabagong makakasira ay ilalabas

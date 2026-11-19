@@ -13,7 +13,11 @@ correction is made in all of them at once.
 ## Code and data
 
 1. Set up as the README says (For developers). No account or key is needed.
-2. Work on a branch; the PR title is a Conventional Commit (`fix(web): …`, `docs: …`).
+2. Work on a branch; the PR title is a Conventional Commit (`fix(web): …`, `docs: …`), CI
+   checks it. The types: `feat`, `fix`, `perf`, `refactor`, `test`, `docs`, `chore`, `ci`,
+   `build`, `style`, `revert`, and for this project `content` (articles, tours, events),
+   `data` (the data build and its sources), `dataset` (the Hugging Face dataset) and `i18n`
+   (translations).
 3. Run `pnpm gate` and read its output; CI runs the part of it that needs no data.
 4. Fill in the pull request checklist.
 

@@ -14,12 +14,9 @@ import {
   translationsRead,
 } from "../packages/model/src/reviews.ts";
 import type { SiteLocale } from "../packages/model/src/locales.ts";
+import { REPOSITORY, SITE_ORIGIN } from "../packages/model/src/site.ts";
 import { esc } from "./page-shell.ts";
 import { REVIEW_WORDS } from "./review-words.ts";
-
-const REPO = "https://github.com/ArVaViT/history-globe";
-/** Where a citation points when the build has no SITE_URL. */
-const HOME = "https://historyglobe.app";
 
 /** A date of our own time (YYYY-MM-DD) in the page's language: "14 November 2026". */
 export function reviewDate(iso: string, l: SiteLocale): string {
@@ -128,7 +125,7 @@ const theirs = (text: string, lang: string, l: SiteLocale) =>
  * Globe. <url> (published 14 November 2026)." and the DOI when there is one.
  */
 export function citation(r: ReviewRecord, site: string): string {
-  const url = `${site || HOME}/en/reviews/${r.id}/`;
+  const url = `${site || SITE_ORIGIN}/en/reviews/${r.id}/`;
   return `${r.reviewer.family}, ${r.reviewer.given}. “Review of History Globe: ${r.title.en}.” In Vadym Arnaut, History Globe. ${url} (published ${reviewDate(r.date, "en")}).${r.doi ? ` https://doi.org/${r.doi}.` : ""}`;
 }
 
@@ -248,7 +245,7 @@ export function reviewPages(o: {
       <div class="table"><table class="response"><thead><tr><th>${esc(W.colPoint)}</th><th>${esc(W.colAction)}</th><th>${esc(W.colCommit)}</th></tr></thead><tbody>${r.response
         .map(
           (p) =>
-            `<tr><td>${theirs(p.point, r.statement.lang, l)}</td><td><b>${esc(W.actions[p.action])}.</b> ${esc(p.detail[l] ?? p.detail.en)}</td><td>${p.commit ? `<a href="${REPO}/commit/${p.commit}"><code>${p.commit.slice(0, 7)}</code></a>` : ""}</td></tr>`,
+            `<tr><td>${theirs(p.point, r.statement.lang, l)}</td><td><b>${esc(W.actions[p.action])}.</b> ${esc(p.detail[l] ?? p.detail.en)}</td><td>${p.commit ? `<a href="${REPOSITORY}/commit/${p.commit}"><code>${p.commit.slice(0, 7)}</code></a>` : ""}</td></tr>`,
         )
         .join(
           "",
@@ -282,7 +279,7 @@ export function reviewPages(o: {
       ${full}
       <p class="note">${licence}${r.doi ? ` · DOI <a href="https://doi.org/${esc(r.doi)}">${esc(r.doi)}</a>` : ""}</p>
       ${response}
-      <p class="note"><a href="${REPO}/tree/${r.version.commit}/content">${esc(W.versionRead)} (${r.version.commit.slice(0, 7)})</a> · <a href="${REPO}/compare/${r.version.commit}...main">${esc(W.versionNow)}</a></p>
+      <p class="note"><a href="${REPOSITORY}/tree/${r.version.commit}/content">${esc(W.versionRead)} (${r.version.commit.slice(0, 7)})</a> · <a href="${REPOSITORY}/compare/${r.version.commit}...main">${esc(W.versionNow)}</a></p>
       <h2>${esc(W.cite)}</h2>
       <p class="cite" lang="en">${esc(citation(r, o.site))}</p>
       <p class="note">${esc(W.consent(reviewDate(r.consent.date, l)))} ${policyLink(up)}</p>

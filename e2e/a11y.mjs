@@ -6,7 +6,7 @@
  * Usage: pnpm e2e:a11y (with the app running; see e2e/browser.mjs)
  */
 import { createRequire } from "node:module";
-import { BASE, launch, mapReady, newPage } from "./browser.mjs";
+import { BASE, launch, mapReady, newPage, settled } from "./browser.mjs";
 
 const b = await launch();
 const p = await newPage(b);
@@ -15,16 +15,18 @@ const acts = {
   verse: async () => {
     await p.getByRole("tab", { name: /^Стихи/ }).click();
     await p.locator("button[data-verse]").first().click();
-    await p.waitForTimeout(600);
+    await p.locator("#verse-text blockquote").waitFor({ timeout: 8000 });
+    await settled(p);
   },
   overview: async () => {
     await p.getByRole("button", { name: /^Обзор/ }).click();
-    await p.waitForTimeout(1200);
+    await p.locator("#more-panels").waitFor({ timeout: 8000 });
+    await settled(p);
   },
   tools: async () => {
     await p.getByRole("button", { name: "Инструменты" }).click();
     await p.getByRole("button", { name: /^Расстояние/ }).waitFor({ timeout: 8000 });
-    await p.waitForTimeout(300);
+    await settled(p);
   },
   measure: async () => {
     await p.getByRole("button", { name: "Расстояние отсюда" }).click();
@@ -34,30 +36,35 @@ const acts = {
     await p.getByRole("button", { name: /^Ещё/ }).click();
     // The panel loads on the press, then fades in: checked once it is all there.
     await p.getByText("Скорость").first().waitFor({ timeout: 8000 });
-    await p.waitForTimeout(600);
+    await settled(p);
   },
   search: async () => {
     await p.getByRole("button", { name: /Поиск/ }).click();
     await p.locator("input[role=combobox]").fill("Давид");
-    await p.waitForTimeout(900);
+    await p.getByRole("option").first().waitFor({ timeout: 8000 });
+    await settled(p);
   },
   person: async () => {
     await p.getByRole("button", { name: /Поиск/ }).click();
     await p.locator("input[role=combobox]").fill("Давид");
-    await p.waitForTimeout(900);
     await p.locator('[id^="search-person-"]').first().dispatchEvent("mousedown");
-    await p.waitForTimeout(2500);
+    await p
+      .getByRole("heading", { name: /^Давид/ })
+      .first()
+      .waitFor({ timeout: 8000 });
+    await settled(p);
   },
   people: async () => {
     if ((await p.getByRole("tab", { name: "Люди" }).count()) === 0)
       await p.getByRole("button", { name: /^Обзор/ }).click();
-    await p.waitForTimeout(800);
     await p.getByRole("tab", { name: "Люди" }).click();
-    await p.waitForTimeout(1200);
+    await p.getByRole("tabpanel").first().waitFor({ timeout: 8000 });
+    await settled(p);
   },
   settings: async () => {
     await p.getByRole("button", { name: "Настройки" }).click();
-    await p.waitForTimeout(400);
+    await p.getByRole("dialog").waitFor({ timeout: 8000 });
+    await settled(p);
   },
 };
 for (const [url, act] of [
@@ -86,7 +93,7 @@ for (const [url, act] of [
   await p.goto(BASE + url);
   if (!/^(docs|export)\//.test(url)) {
     await mapReady(p);
-    await p.waitForTimeout(1500);
+    await settled(p);
   }
   if (act) await acts[act]();
   await p.addScriptTag({ path: axe });

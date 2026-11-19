@@ -10,7 +10,7 @@ description: Ce puteți prelua din History Globe și cum — datele prin API, ha
   copiat. Această pagină arată unde este limita.
 </p>
 
-<h2>Ce puteți prelua</h2>
+<h2 id="what-you-may-take">Ce puteți prelua</h2>
 <div class="table">
   <table>
     <thead>
@@ -72,18 +72,19 @@ description: Ce puteți prelua din History Globe și cum — datele prin API, ha
   globul.
 </p>
 
-<h2>Cum se menționează sursa</h2>
+<h2 id="how-to-credit">Cum se menționează sursa</h2>
 <p>
   Acolo unde afișați datele, numiți sursele lor așa cum le enumeră <code>index.json</code>. Cea mai
   scurtă formă care satisface licențele:
 </p>
 <pre><code>Data: History Globe by Vadym Arnaut ({{site}}), CC BY 4.0;
-places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIPNR (CC BY 4.0).</code></pre>
+places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIPNR (CC BY 4.0); place ids from Pleiades (CC BY 3.0).</code></pre>
 <p>Într-o pagină, cu linkuri:</p>
 <pre><code>&lt;p&gt;Data: &lt;a href="{{site}}/"&gt;History Globe&lt;/a&gt; by Vadym Arnaut,
   &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;CC BY 4.0&lt;/a&gt;;
   places from &lt;a href="https://www.openbible.info/geo/"&gt;OpenBible.info&lt;/a&gt;,
-  people from &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;.&lt;/p&gt;</code></pre>
+  people from &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;,
+  place ids from &lt;a href="https://pleiades.stoa.org/"&gt;Pleiades&lt;/a&gt;.&lt;/p&gt;</code></pre>
 <p>
   <code>{{site}}/api/v1/index.json</code> conține rândurile complete de mențiune a surselor, iar
   fiecare răspuns al API-ului este trimis cu un antet <code>Link</code> care îi numește licența. Un
@@ -91,7 +92,7 @@ places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIP
   un link către pagina lui.
 </p>
 
-<h2>Limite</h2>
+<h2 id="limits">Limite</h2>
 <ul>
   <li>
     <b>Fără cheie, fără cotă.</b> API-ul este alcătuit din fișiere statice în spatele unui cache.
@@ -115,7 +116,7 @@ places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIP
   </li>
 </ul>
 
-<h2>Începeți</h2>
+<h2 id="start">Începeți</h2>
 <pre><code>const api = "{{site}}/api/v1";
 const places = await (await fetch(`${api}/places.json`)).json();
 const byId = new Map(places.map((p) =&gt; [p.id, p]));
@@ -127,7 +128,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   >.
 </p>
 
-<h2>Dacă aveți nevoie de mai mult</h2>
+<h2 id="asking-for-more">Dacă aveți nevoie de mai mult</h2>
 <p>
   O traducere a articolelor, textul lor pe altă platformă sau o licență pe care tabelul de mai sus
   nu o acordă: scrieți la
@@ -135,7 +136,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   o licență scrisă pentru ceea ce le trebuie; licențele publice rămân așa cum sunt.
 </p>
 
-<h2>Pentru agenții IA</h2>
+<h2 id="for-ai-agents">Pentru agenții IA</h2>
 <p>
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> spune același lucru pe o singură pagină.
   Motoarele de căutare și asistenții care răspund cu o citare sunt bineveniți; articolele nu sunt

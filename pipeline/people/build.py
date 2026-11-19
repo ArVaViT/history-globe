@@ -7,15 +7,14 @@ match, for review).
 """
 
 import json
-import math
 import pathlib
 import re
-import sys
 from collections import Counter, defaultdict
 
+from pipeline.build_data import PINS
+from pipeline.geo import great_circle_km
+
 PROJECT = pathlib.Path(__file__).resolve().parent.parent.parent
-sys.path.insert(0, str(PROJECT / "pipeline"))
-from build_data import PINS  # noqa: E402
 
 TIPNR = f"STEPBible TIPNR (CC BY 4.0), commit {PINS['stepbible_tipnr']['commit'][:7]}"
 HERE = PROJECT / "pipeline" / ".cache" / "people"
@@ -181,11 +180,7 @@ def main() -> None:
     def km(a, b) -> float | None:
         if not a or not b:
             return None
-        (lo1, la1), (lo2, la2) = a, b
-        p = math.pi / 180
-        h = (math.sin((la2 - la1) * p / 2) ** 2 +
-             math.cos(la1 * p) * math.cos(la2 * p) * math.sin((lo2 - lo1) * p / 2) ** 2)
-        return round(12742 * math.asin(math.sqrt(h)), 1)
+        return round(great_circle_km(a, b), 1)
 
 
     t_sets = {t["key"]: set(t["refs"]) for t in places_t}
@@ -373,7 +368,13 @@ def main() -> None:
             if not tier:
                 continue
             kept_pairs[tier] += 1
-            key_verses = sorted(vs, key=lambda x: (x.split(".")[0] in POETRY, len(ent_in_verse[x]), sort_key(x)))[:2]
+            # A tie TIPNR states with no verse naming both (a founder or an eponym: Salma "the
+            # father of Bethlehem", Javan of Gen 10:2) takes the verse that first names the
+            # person, for a founder or an eponym the verse of the tie: never a blank verse on the
+            # card. A tie that verse does not bear out is dropped in people-places-not-in-text.json.
+            key_verses = sorted(vs, key=lambda x: (x.split(".")[0] in POETRY, len(ent_in_verse[x]), sort_key(x)))[:2] or sorted(
+                refs, key=sort_key
+            )[:1]
             place_people[pid].append({
                 "person": p["key"], "name": p["name"], "aka": p["total_names"], "gender": p["type"].lower(),
                 "brief": p["desc"].get("brief", ""), "tier": tier, **entry,

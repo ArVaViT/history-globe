@@ -124,11 +124,7 @@ function createGlobe(
     places: forMap(data.places),
     dataUrl: DATA_URL,
     terrainTiles: TERRAIN_TILES,
-    // The credits' "Sources" link opens the docs in the language the map opened in.
-    terrainAttribution: TERRAIN_ATTRIBUTION.replace(
-      'href="docs/sources.html"',
-      `href="${docsPath(init.locale, "sources")}"`,
-    ),
+    terrainAttribution: TERRAIN_ATTRIBUTION,
     fonts: MAP_FONTS,
     initialYear: init.year ?? DEFAULT_STATE.year,
     initialLocale: init.locale,
@@ -140,6 +136,8 @@ function createGlobe(
       north: translate(l, "mapui.north"),
       sources: translate(l, "mapui.sources"),
       title: translate(l, "mapui.title"),
+      // The credits end with a link to the sources' page, in the language shown.
+      sourcesPage: { href: docsPath(l, "sources"), label: translate(l, "mapui.sources_page") },
     }),
     viewPadding: () => {
       const l = layout();

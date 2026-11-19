@@ -9,7 +9,7 @@ description: Waar elke plaats, grens, datum en persoon op History Globe vandaan 
   vandaan komt, wat we hebben veranderd en wat we niet weten.
 </p>
 
-<h2>Plaatsen uit de Bijbel</h2>
+<h2 id="places-of-the-bible">Plaatsen uit de Bijbel</h2>
 <p>
   De {{places}} plaatsen en hun verzen komen uit
   <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
@@ -23,7 +23,8 @@ description: Waar elke plaats, grens, datum en persoon op History Globe vandaan 
   tagt, en elk daarvan heeft een eigen pagina; de overige {{unnamed}} zijn records die OpenBible
   bijhoudt maar die geen vers van die boeken noemt (Adasa uit 1 Makkabeeën bijvoorbeeld).
   {{articles}} plaatsen hebben een artikel. Nog {{excluded}} zijn weggelaten omdat er geen punt is
-  dat gepubliceerd mag worden (zie hieronder).
+  dat gepubliceerd mag worden (zie hieronder). Nog {{without_point}} hebben in OpenBible helemaal
+  geen punt.
 </p>
 <ul>
   <li>
@@ -46,7 +47,7 @@ description: Waar elke plaats, grens, datum en persoon op History Globe vandaan 
   </li>
 </ul>
 
-<h2>Wanneer plaatsen bestonden</h2>
+<h2 id="when-places-stood">Wanneer plaatsen bestonden</h2>
 <p>
   Een stad op de kaart wordt alleen in de jaren dat ze bestond volledig getekend. Voor {{life}}
   plaatsen uit de Bijbel zijn de jaren van stichting, verwoesting en verlating met de hand
@@ -55,23 +56,25 @@ description: Waar elke plaats, grens, datum en persoon op History Globe vandaan 
   einde omstreden is, krijgt daarvoor geen jaar.
 </p>
 <p>
-  De {{ancient}} steden van de oude wereld die de Bijbel niet noemt — hoofdsteden, havens en
-  heiligdommen zoals Ugarit, Hattusa, Mari of Delphi — zijn een voor een gekozen en gedateerd: elk
-  is geplaatst volgens zijn record in <a href="https://pleiades.stoa.org">Pleiades</a> of Wikidata,
-  op de antieke vindplaats in plaats van op de moderne stad, en gedateerd op grond van die records
-  en encyclopedische beschrijvingen, met de hand op elkaar afgestemd. Zo’n veertienhonderd andere
-  zijn door een script gekozen: nederzettingen, heiligdommen en havens in Pleiades waarvan het
-  Wikidata-item een antieke vindplaats is en geen moderne stad; hun punten komen uit Pleiades, hun
-  namen uit Wikidata (waar Wikidata er geen heeft in het Russisch, Oekraïens, Bulgaars of Servisch,
-  de onze, in de vorm die de oudheidkunde in die taal gebruikt) en hun jaren zijn de spanne van de
-  perioden waarin Pleiades ze vermeldt, dus ze zijn allemaal gemarkeerd met “ca.”. Waar een stad
-  midden in een periode werd verwoest, is haar einde met de hand vastgesteld op grond van de
-  geschiedenis. Een plaats verschijnt bij een zoomniveau dat afhangt van hoe vaak de Bijbel haar
-  noemt; een stad die de Bijbel nauwelijks noemt maar die de wereld goed kent — Carthago, Sparta, Ur
-  — verschijnt eerder, naar het aantal Wikipedia-artikelen over de antieke vindplaats zelf.
+  Van de {{ancient}} steden van de oude wereld die de Bijbel niet noemt — hoofdsteden, havens en
+  heiligdommen zoals Ugarit, Hattusa, Mari of Delphi — zijn er {{ancient_hand}} een voor een gekozen
+  en gedateerd: elk is geplaatst volgens zijn record in
+  <a href="https://pleiades.stoa.org">Pleiades</a> of Wikidata, op de antieke vindplaats in plaats
+  van op de moderne stad, en gedateerd op grond van die records en encyclopedische beschrijvingen,
+  met de hand op elkaar afgestemd. De andere {{ancient_script}} zijn door een script gekozen:
+  nederzettingen, heiligdommen en havens in Pleiades waarvan het Wikidata-item een antieke
+  vindplaats is en geen moderne stad; hun punten komen uit Pleiades, hun namen uit Wikidata (waar
+  Wikidata er geen heeft in het Russisch, Oekraïens, Bulgaars of Servisch, de onze, in de vorm die
+  de oudheidkunde in die taal gebruikt; in de andere talen, waar Wikidata er geen heeft, de Engelse)
+  en hun jaren zijn de spanne van de perioden waarin Pleiades ze vermeldt, dus ze zijn allemaal
+  gemarkeerd met “ca.”. Waar een stad midden in een periode werd verwoest, is haar einde met de hand
+  vastgesteld op grond van de geschiedenis. Een plaats verschijnt bij een zoomniveau dat afhangt van
+  hoe vaak de Bijbel haar noemt; een stad die de Bijbel nauwelijks noemt maar die de wereld goed
+  kent — Carthago, Sparta, Ur — verschijnt eerder, naar het aantal Wikipedia-artikelen over de
+  antieke vindplaats zelf.
 </p>
 
-<h2>Grenzen</h2>
+<h2 id="borders">Grenzen</h2>
 <p>
   Staten en hun grenzen, jaar na jaar, komen uit
   <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatria</a> (Seshat Global History Databank,
@@ -103,22 +106,23 @@ description: Waar elke plaats, grens, datum en persoon op History Globe vandaan 
   v.Chr. wordt het land Israël getekend als de Assyrische provincie die het werd.
 </p>
 
-<h2>Personen</h2>
+<h2 id="people">Personen</h2>
 <p>
   De {{people}} personen uit de Bijbel en hun familiebanden komen uit de TIPNR van STEP Bible
   (Tyndale House, Cambridge). We hebben de banden niet zomaar overgenomen:
 </p>
 <ul>
   <li>
-    de familiebanden van de 1.200 personen die de tekst het vaakst noemt, en de geslachtsregisters
-    van 1 Kronieken, zijn naast de verzen gelegd; 153 banden die de tekst niet noemt zijn verwijderd
-    — de broers van Jezus als zonen van Jozef en Maria, Izebel als moeder van Ahazia — en de
-    ontbrekende banden van het geslachtsregister van Jezus zijn uit de tekst aangevuld;
+    de familiebanden van de {{n:1200}} personen die de tekst het vaakst noemt, en de
+    geslachtsregisters van 1 Kronieken, zijn naast de verzen gelegd; 153 banden die de tekst niet
+    noemt zijn verwijderd — de broers van Jezus als zonen van Jozef en Maria, Izebel als moeder van
+    Ahazia — en de ontbrekende banden van het geslachtsregister van Jezus zijn uit de tekst
+    aangevuld;
   </li>
   <li>
-    alle 1.136 banden tussen een persoon en een plaats waar die een centrale of ondersteunende rol
-    speelt, zijn vers voor vers gelezen; 344 zijn verwijderd (Mozes “in Kanaän”, Abraham “in Sodom”,
-    de plaatsen van een zoon aan zijn vader toegewezen) en 94 kregen een beter vers;
+    alle {{n:1136}} banden tussen een persoon en een plaats waar die een centrale of ondersteunende
+    rol speelt, zijn vers voor vers gelezen; 344 zijn verwijderd (Mozes “in Kanaän”, Abraham “in
+    Sodom”, de plaatsen van een zoon aan zijn vader toegewezen) en 94 kregen een beter vers;
   </li>
   <li>
     naamgenoten worden onderscheiden zoals de tekst ze onderscheidt: “Johannes de Doper”, “Johannes,
@@ -137,14 +141,16 @@ description: Waar elke plaats, grens, datum en persoon op History Globe vandaan 
   <a href="sources.html">bronnen</a>. Geen enkele route heeft haar eerste controle ongewijzigd
   doorstaan; elke is gecorrigeerd en opnieuw gecontroleerd. In de laatste volledige ronde, afgerond
   op 17 oktober 2026, zijn alle 746 artikelen opnieuw aan de bronnen getoetst, ongeveer 210 ervan
-  twee keer; er zijn 1.088 correcties aangebracht, elk in alle 11 talen die de site toen had, en in
-  157 artikelen zijn duidelijke fouten gevonden. De vijf talen die op 24 oktober 2026 zijn
-  toegevoegd (Zweeds, Noors, Deens, Tagalog en Servisch) zijn vertaald uit de al gecorrigeerde
-  teksten; daarna is elk van hun teksten in een onafhankelijke controleronde met het Engels
-  vergeleken, en elk citaat met de bijbel van die taal. Deze rondes zijn eigen controles van het
-  project, geen peerreview. Beoordelingen door specialisten worden onder hun naam gepubliceerd op de
-  pagina <a href="reviews.html">beoordelingen</a>, en elk artikel dat een specialist heeft
-  beoordeeld, noemt de beoordelaar en verwijst naar de beoordeling.
+  twee keer; er zijn {{n:1088}} correcties aangebracht, elk in alle 11 talen die de site toen had,
+  en in 157 artikelen zijn duidelijke fouten gevonden. De vijf talen die op 24 oktober 2026 zijn
+  toegevoegd (Zweeds, Noors, Deens, Tagalog en Servisch) en de vijf van 26 oktober 2026 (Hongaars,
+  Fins, Vietnamees, Roemeens en Bulgaars) zijn vertaald uit de al gecorrigeerde teksten; daarna is
+  elk van hun teksten in een onafhankelijke controleronde met het Engels vergeleken, en elk citaat
+  met de bijbel van die taal. Deze rondes zijn eigen controles van het project, geen peerreview.
+  Beoordelingen door specialisten worden onder hun naam gepubliceerd op de pagina
+  <a href="reviews.html">beoordelingen</a>, en elk artikel dat een specialist heeft beoordeeld,
+  noemt de beoordelaar en verwijst naar de beoordeling. Tot nu toe gepubliceerd:
+  <span class="reviews"></span>.
 </p>
 <p>
   De afstand tot een halte wordt hemelsbreed gegeven. Vanaf 312 v.Chr., wanneer de Romeinse wegen
@@ -166,8 +172,8 @@ description: Waar elke plaats, grens, datum en persoon op History Globe vandaan 
   op de kaart in haar jaren. Die van de Bijbel zijn gedateerd zoals de routes dezelfde verhalen
   dateren; de andere dragen geen vers, maar een antieke of wetenschappelijke bron. Een tweede,
   onafhankelijke controleronde heeft het concept getoetst aan de synodale tekst en de King James
-  Version: van 58 items zijn er 16 gecorrigeerd en is er één geschrapt, omdat de kaart geen punt
-  heeft voor zijn locatie.
+  Version: van 58 items (oktober 2026) zijn er 16 gecorrigeerd en is er één geschrapt, omdat de
+  kaart geen punt heeft voor zijn locatie.
 </p>
 
 <p>
@@ -217,7 +223,7 @@ description: Waar elke plaats, grens, datum en persoon op History Globe vandaan 
   </li>
 </ul>
 
-<h2>Controles bij elke build</h2>
+<h2 id="checks-on-every-build">Controles bij elke build</h2>
 <p>Er wordt niets gepubliceerd tenzij elke controle slaagt:</p>
 <ul>
   <li>
@@ -234,7 +240,7 @@ description: Waar elke plaats, grens, datum en persoon op History Globe vandaan 
   </li>
 </ul>
 
-<h2>Wat onzeker is</h2>
+<h2 id="what-is-uncertain">Wat onzeker is</h2>
 <ul>
   <li>
     Data vóór het eerste millennium v.Chr. zijn bij benadering, en sommige zijn omstreden; de kaart
@@ -281,7 +287,7 @@ https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
 <p>
   Met een GitHub-account kun je ook de link <i>Een fout gevonden?</i> op elke plaatskaart gebruiken,
   die een issue opent in de openbare repository met de plaats al ingevuld, of er direct een openen:
-  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+  <a href="https://github.com/ArVaViT/history-globe/issues/new?template=report-an-error.yml"
     >github.com/ArVaViT/history-globe/issues</a
   >.
 </p>

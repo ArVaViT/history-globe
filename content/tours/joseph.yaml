@@ -1,7 +1,8 @@
 # Joseph, Genesis 37-50, in the order of the text. The tour's year (1700 BC) is a
 # conventional point for the map, like Abraham's: the age of the patriarchs is disputed,
 # and the slider says so for the Middle Bronze Age. With the Exodus at 1446 BC it fits a
-# short stay in Egypt; the 430 years of Exod 12:40 would put Joseph near 1900 BC.
+# short stay in Egypt; the 430 years of Exod 12:40 would put Joseph near 1900 BC. Egypt is
+# the land and On a city in it: the leg from one to the other is untold.
 id: joseph
 title:
   en: "Joseph in Egypt"
@@ -82,7 +83,7 @@ stops:
     note:
       en: "At Dothan his brothers throw him into a pit and sell him to the Ishmaelites for twenty pieces of silver."
       ru: "В Дофане братья бросают его в ров и продают Измаильтянам за двадцать сребренников."
-      uk: "У Дофані брати кидають його в яму й продають ізмаїльтянам за двадцять срібняків."
+      uk: "У Дотані брати кидають його в яму й продають ізмаїльтянам за двадцять срібняків."
       es: "En Dotán sus hermanos lo echan en una cisterna y lo venden a los ismaelitas por veinte piezas de plata."
       pt: "Em Dotã, os irmãos o lançam numa cisterna e o vendem aos ismaelitas por vinte peças de prata."
       de: "In Dotan werfen seine Brüder ihn in eine Grube und verkaufen ihn für zwanzig Silberstücke an die Ismaeliter."
@@ -127,6 +128,7 @@ stops:
       bg: "В Египет го купува Потифар, началникът на фараоновата стража, и Господ е с Йосиф."
   - place: acd9137 # Heliopolis (On)
     ref: Gen.41.41-Gen.41.45
+    by: untold
     note:
       en: "Set over all the land of Egypt, he is given Asenath, daughter of Poti-pherah, priest of On, that is Heliopolis."
       ru: "Поставленный над всею землёю Египетскою, он получает в жёны Асенефу, дочь Потифера, жреца Илиопольского."

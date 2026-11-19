@@ -24,10 +24,13 @@ import {
   type SiteLocale,
 } from "../packages/model/src/locales.ts";
 import { bodyEnd, esc, headMeta, sansPreload } from "./page-shell.ts";
-import { hitHtml } from "./docs-script.ts";
+import { clientScript } from "./client-script.ts";
+import { TYPESET } from "./typeset.ts";
+import { REPOSITORY } from "../packages/model/src/site.ts";
 import { NOTICE_COMMENT } from "../packages/model/src/notice.ts";
 import { DOC_PAGES, type DocPage } from "../packages/model/src/docs.ts";
 import { SOURCES } from "./bible-text.ts";
+import { attributionGaps, factMismatches, type Facts } from "./repo-facts.ts";
 import { T as PAGE_WORDS } from "./page-words.ts";
 import {
   copyFileSync,
@@ -39,6 +42,8 @@ import {
   writeFileSync,
 } from "node:fs";
 import { join } from "node:path";
+import { gzipSync } from "node:zlib";
+import { parse as parseYaml } from "yaml";
 
 const root = join(import.meta.dirname, "..");
 const pub = join(root, "apps/web/public");
@@ -46,7 +51,6 @@ const data = join(pub, "data");
 const src = join(root, "content/docs");
 const out = join(pub, "docs");
 const site = process.env.SITE_URL?.replace(/\/+$/, "") ?? "";
-const REPO = "https://github.com/ArVaViT/history-globe";
 
 // The documentation is written in every language the site is published in; the words of a
 // language still waiting to join (Locale) are here before it.
@@ -172,7 +176,6 @@ const GROUP_OF = new Map(GROUPS.flatMap((g) => g.pages.map((p) => [p, g.name] as
 
 const T = {
   en: {
-    language: "Language",
     docs: "Docs",
     menu: "Documentation",
     onPage: "On this page",
@@ -189,15 +192,14 @@ const T = {
     edit: "Edit this page",
     report: "Report an issue",
     source: "Source code",
-    skip: "Skip to content",
     openMenu: "Menu",
     overview: "Overview",
     bibleHead: ["Language", "Edition", "Electronic text", "Licence"],
     crown: "; in the United Kingdom, Crown copyright",
-    notYet: "verse texts only: not yet a language of the site",
+    versesOnly: "verse texts only",
+    none: "none yet",
   },
   ru: {
-    language: "Язык",
     docs: "Документация",
     menu: "Документация",
     onPage: "На странице",
@@ -214,15 +216,14 @@ const T = {
     edit: "Править страницу",
     report: "Сообщить об ошибке",
     source: "Исходный код",
-    skip: "К содержанию",
     openMenu: "Меню",
     overview: "Обзор",
     bibleHead: ["Язык", "Издание", "Электронный текст", "Лицензия"],
     crown: "; в Великобритании — права Короны",
-    notYet: "только тексты стихов: этого языка на сайте ещё нет",
+    versesOnly: "только тексты стихов",
+    none: "пока нет",
   },
   uk: {
-    language: "Мова",
     docs: "Документація",
     menu: "Документація",
     onPage: "На сторінці",
@@ -239,15 +240,14 @@ const T = {
     edit: "Редагувати сторінку",
     report: "Повідомити про помилку",
     source: "Вихідний код",
-    skip: "До змісту",
     openMenu: "Меню",
     overview: "Огляд",
     bibleHead: ["Мова", "Видання", "Електронний текст", "Ліцензія"],
     crown: "; у Великій Британії — права Корони",
-    notYet: "лише тексти віршів: цієї мови на сайті ще немає",
+    versesOnly: "лише тексти віршів",
+    none: "поки немає",
   },
   es: {
-    language: "Idioma",
     docs: "Documentación",
     menu: "Documentación",
     onPage: "En esta página",
@@ -264,15 +264,14 @@ const T = {
     edit: "Editar esta página",
     report: "Informar de un error",
     source: "Código fuente",
-    skip: "Ir al contenido",
     openMenu: "Menú",
     overview: "Resumen",
     bibleHead: ["Idioma", "Edición", "Texto electrónico", "Licencia"],
     crown: "; en el Reino Unido, derechos de la Corona",
-    notYet: "solo textos de versículos: el sitio aún no tiene este idioma",
+    versesOnly: "solo textos de versículos",
+    none: "ninguna todavía",
   },
   pt: {
-    language: "Idioma",
     docs: "Documentação",
     menu: "Documentação",
     onPage: "Nesta página",
@@ -289,15 +288,14 @@ const T = {
     edit: "Editar esta página",
     report: "Relatar um erro",
     source: "Código-fonte",
-    skip: "Ir para o conteúdo",
     openMenu: "Menu",
     overview: "Visão geral",
     bibleHead: ["Idioma", "Edição", "Texto eletrônico", "Licença"],
     crown: "; no Reino Unido, direitos da Coroa",
-    notYet: "só textos de versículos: o site ainda não tem este idioma",
+    versesOnly: "só textos de versículos",
+    none: "nenhuma ainda",
   },
   de: {
-    language: "Sprache",
     docs: "Dokumentation",
     menu: "Dokumentation",
     onPage: "Auf dieser Seite",
@@ -314,15 +312,14 @@ const T = {
     edit: "Seite bearbeiten",
     report: "Fehler melden",
     source: "Quellcode",
-    skip: "Zum Inhalt",
     openMenu: "Menü",
     overview: "Überblick",
     bibleHead: ["Sprache", "Ausgabe", "Elektronischer Text", "Lizenz"],
     crown: "; im Vereinigten Königreich Crown Copyright",
-    notYet: "nur Verstexte: die Website hat diese Sprache noch nicht",
+    versesOnly: "nur Verstexte",
+    none: "noch keine",
   },
   fr: {
-    language: "Langue",
     docs: "Documentation",
     menu: "Documentation",
     onPage: "Sur cette page",
@@ -339,15 +336,14 @@ const T = {
     edit: "Modifier cette page",
     report: "Signaler une erreur",
     source: "Code source",
-    skip: "Aller au contenu",
     openMenu: "Menu",
     overview: "Vue d’ensemble",
     bibleHead: ["Langue", "Édition", "Texte électronique", "Licence"],
     crown: " ; au Royaume-Uni, droits de la Couronne",
-    notYet: "textes des versets seulement : le site n’a pas encore cette langue",
+    versesOnly: "textes des versets seulement",
+    none: "aucune pour l’instant",
   },
   it: {
-    language: "Lingua",
     docs: "Documentazione",
     menu: "Documentazione",
     onPage: "In questa pagina",
@@ -364,15 +360,14 @@ const T = {
     edit: "Modifica questa pagina",
     report: "Segnala un errore",
     source: "Codice sorgente",
-    skip: "Vai al contenuto",
     openMenu: "Menu",
     overview: "Panoramica",
     bibleHead: ["Lingua", "Edizione", "Testo elettronico", "Licenza"],
     crown: "; nel Regno Unito, diritti della Corona",
-    notYet: "solo testi dei versetti: il sito non ha ancora questa lingua",
+    versesOnly: "solo testi dei versetti",
+    none: "nessuna per ora",
   },
   nl: {
-    language: "Taal",
     docs: "Documentatie",
     menu: "Documentatie",
     onPage: "Op deze pagina",
@@ -389,15 +384,14 @@ const T = {
     edit: "Deze pagina bewerken",
     report: "Een fout melden",
     source: "Broncode",
-    skip: "Naar de inhoud",
     openMenu: "Menu",
     overview: "Overzicht",
     bibleHead: ["Taal", "Uitgave", "Elektronische tekst", "Licentie"],
     crown: "; in het Verenigd Koninkrijk Crown copyright",
-    notYet: "alleen verzen: de site heeft deze taal nog niet",
+    versesOnly: "alleen verzen",
+    none: "nog geen",
   },
   pl: {
-    language: "Język",
     docs: "Dokumentacja",
     menu: "Dokumentacja",
     onPage: "Na tej stronie",
@@ -414,15 +408,14 @@ const T = {
     edit: "Edytuj tę stronę",
     report: "Zgłoś błąd",
     source: "Kod źródłowy",
-    skip: "Przejdź do treści",
     openMenu: "Menu",
     overview: "Przegląd",
     bibleHead: ["Język", "Wydanie", "Tekst elektroniczny", "Licencja"],
     crown: "; w Wielkiej Brytanii prawa Korony",
-    notYet: "tylko teksty wersetów: serwisu w tym języku jeszcze nie ma",
+    versesOnly: "tylko teksty wersetów",
+    none: "na razie brak",
   },
   cs: {
-    language: "Jazyk",
     docs: "Dokumentace",
     menu: "Dokumentace",
     onPage: "Na této stránce",
@@ -439,15 +432,14 @@ const T = {
     edit: "Upravit tuto stránku",
     report: "Nahlásit chybu",
     source: "Zdrojový kód",
-    skip: "Přejít na obsah",
     openMenu: "Menu",
     overview: "Přehled",
     bibleHead: ["Jazyk", "Vydání", "Elektronický text", "Licence"],
     crown: "; ve Spojeném království práva Koruny",
-    notYet: "jen texty veršů: v tomto jazyce web zatím není",
+    versesOnly: "jen texty veršů",
+    none: "zatím žádné",
   },
   sv: {
-    language: "Språk",
     docs: "Dokumentation",
     menu: "Dokumentation",
     onPage: "På den här sidan",
@@ -464,15 +456,14 @@ const T = {
     edit: "Redigera sidan",
     report: "Rapportera ett fel",
     source: "Källkod",
-    skip: "Hoppa till innehållet",
     openMenu: "Meny",
     overview: "Översikt",
     bibleHead: ["Språk", "Utgåva", "Elektronisk text", "Licens"],
     crown: "; i Storbritannien Crown copyright",
-    notYet: "bara verstexter: webbplatsen finns ännu inte på detta språk",
+    versesOnly: "bara verstexter",
+    none: "inga ännu",
   },
   da: {
-    language: "Sprog",
     docs: "Dokumentation",
     menu: "Dokumentation",
     onPage: "På denne side",
@@ -489,15 +480,14 @@ const T = {
     edit: "Redigér siden",
     report: "Rapportér en fejl",
     source: "Kildekode",
-    skip: "Gå til indholdet",
     openMenu: "Menu",
     overview: "Oversigt",
     bibleHead: ["Sprog", "Udgave", "Elektronisk tekst", "Licens"],
     crown: "; i Storbritannien Crown copyright",
-    notYet: "kun verstekster: sitet findes endnu ikke på dette sprog",
+    versesOnly: "kun verstekster",
+    none: "ingen endnu",
   },
   nb: {
-    language: "Språk",
     docs: "Dokumentasjon",
     menu: "Dokumentasjon",
     onPage: "På denne siden",
@@ -514,15 +504,14 @@ const T = {
     edit: "Rediger siden",
     report: "Rapporter en feil",
     source: "Kildekode",
-    skip: "Hopp til innholdet",
     openMenu: "Meny",
     overview: "Oversikt",
     bibleHead: ["Språk", "Utgave", "Elektronisk tekst", "Lisens"],
     crown: "; i Storbritannia Crown copyright",
-    notYet: "bare verstekster: nettstedet finnes ennå ikke på dette språket",
+    versesOnly: "bare verstekster",
+    none: "ingen ennå",
   },
   sr: {
-    language: "Језик",
     docs: "Документација",
     menu: "Документација",
     onPage: "На овој страници",
@@ -539,15 +528,14 @@ const T = {
     edit: "Уреди ову страницу",
     report: "Пријави грешку",
     source: "Изворни код",
-    skip: "Пређи на садржај",
     openMenu: "Мени",
     overview: "Преглед",
     bibleHead: ["Језик", "Издање", "Електронски текст", "Лиценца"],
     crown: "; у Уједињеном Краљевству права Круне",
-    notYet: "само текстови стихова: сајт још нема овај језик",
+    versesOnly: "само текстови стихова",
+    none: "још нема",
   },
   tl: {
-    language: "Wika",
     docs: "Dokumentasyon",
     menu: "Dokumentasyon",
     onPage: "Sa pahinang ito",
@@ -564,15 +552,14 @@ const T = {
     edit: "I-edit ang pahinang ito",
     report: "Mag-ulat ng mali",
     source: "Source code",
-    skip: "Lumaktaw sa nilalaman",
     openMenu: "Menu",
     overview: "Pangkalahatang-ideya",
     bibleHead: ["Wika", "Edisyon", "Elektronikong teksto", "Lisensiya"],
     crown: "; sa United Kingdom, Crown copyright",
-    notYet: "mga teksto lamang ng talata: wala pa ang wikang ito sa site",
+    versesOnly: "mga teksto lamang ng talata",
+    none: "wala pa",
   },
   hu: {
-    language: "Nyelv",
     docs: "Dokumentáció",
     menu: "Dokumentáció",
     onPage: "Ezen az oldalon",
@@ -589,15 +576,14 @@ const T = {
     edit: "Az oldal szerkesztése",
     report: "Hiba bejelentése",
     source: "Forráskód",
-    skip: "Ugrás a tartalomra",
     openMenu: "Menü",
     overview: "Áttekintés",
     bibleHead: ["Nyelv", "Kiadás", "Elektronikus szöveg", "Licenc"],
     crown: "; az Egyesült Királyságban a Korona szerzői joga",
-    notYet: "csak a versek szövege: az oldal ezen a nyelven még nem érhető el",
+    versesOnly: "csak a versek szövege",
+    none: "még nincs",
   },
   fi: {
-    language: "Kieli",
     docs: "Dokumentaatio",
     menu: "Dokumentaatio",
     onPage: "Tällä sivulla",
@@ -614,15 +600,14 @@ const T = {
     edit: "Muokkaa tätä sivua",
     report: "Ilmoita virheestä",
     source: "Lähdekoodi",
-    skip: "Siirry sisältöön",
     openMenu: "Valikko",
     overview: "Yleiskatsaus",
     bibleHead: ["Kieli", "Laitos", "Sähköinen teksti", "Lisenssi"],
     crown: "; Yhdistyneessä kuningaskunnassa Crown copyright",
-    notYet: "vain jakeiden tekstit: sivustoa ei vielä ole tällä kielellä",
+    versesOnly: "vain jakeiden tekstit",
+    none: "ei vielä yhtään",
   },
   vi: {
-    language: "Ngôn ngữ",
     docs: "Tài liệu",
     menu: "Tài liệu",
     onPage: "Trên trang này",
@@ -639,15 +624,14 @@ const T = {
     edit: "Sửa trang này",
     report: "Báo lỗi",
     source: "Mã nguồn",
-    skip: "Chuyển đến nội dung",
     openMenu: "Menu",
     overview: "Tổng quan",
     bibleHead: ["Ngôn ngữ", "Ấn bản", "Văn bản điện tử", "Giấy phép"],
     crown: "; tại Vương quốc Anh, bản quyền của Hoàng gia (Crown copyright)",
-    notYet: "chỉ có văn bản câu Kinh Thánh: trang web chưa có ngôn ngữ này",
+    versesOnly: "chỉ có văn bản câu Kinh Thánh",
+    none: "chưa có",
   },
   ro: {
-    language: "Limba",
     docs: "Documentație",
     menu: "Documentație",
     onPage: "Pe această pagină",
@@ -664,15 +648,14 @@ const T = {
     edit: "Editează pagina",
     report: "Raportează o eroare",
     source: "Cod sursă",
-    skip: "Salt la conținut",
     openMenu: "Meniu",
     overview: "Prezentare",
     bibleHead: ["Limba", "Ediția", "Text electronic", "Licența"],
     crown: "; în Regatul Unit, drepturile Coroanei",
-    notYet: "doar textele versetelor: site-ul nu are încă această limbă",
+    versesOnly: "doar textele versetelor",
+    none: "niciuna deocamdată",
   },
   bg: {
-    language: "Език",
     docs: "Документация",
     menu: "Документация",
     onPage: "На тази страница",
@@ -689,12 +672,12 @@ const T = {
     edit: "Редактиране на страницата",
     report: "Съобщаване за грешка",
     source: "Изходен код",
-    skip: "Към съдържанието",
     openMenu: "Меню",
     overview: "Преглед",
     bibleHead: ["Език", "Издание", "Електронен текст", "Лиценз"],
     crown: "; в Обединеното кралство – права на Короната",
-    notYet: "само текстове на стиховете: сайтът още няма този език",
+    versesOnly: "само текстове на стиховете",
+    none: "засега няма",
   },
 } as const satisfies Words<Record<string, string | readonly string[]>>;
 
@@ -715,7 +698,35 @@ function counts(): Record<string, string> {
     const v = content?.[k];
     return v && typeof v === "object" ? Object.keys(v).length : undefined;
   };
-  const overridesText = readFileSync(join(root, "content/polity-overrides.yaml"), "utf8");
+  // The sites of the ancient world chosen one by one; the others a script chose (the waves).
+  const byHand = new Set(
+    (
+      JSON.parse(readFileSync(join(root, "content/ancient-sites.json"), "utf8")) as {
+        sites: { id: string }[];
+      }
+    ).sites.map((s) => s.id),
+  );
+  const ancientHand = ancient?.features.filter((f) =>
+    byHand.has((f as { properties: { id: string } }).properties.id),
+  ).length;
+  const peopleApi = existsSync(join(pub, "api/v1/people.json"))
+    ? (JSON.parse(readFileSync(join(pub, "api/v1/people.json"), "utf8")) as unknown[]).length
+    : undefined;
+  // The corrections to the borders by kind (overrides, starts, clips, …), the vassals apart.
+  const corrections = Object.entries(
+    parseYaml(readFileSync(join(root, "content/polity-overrides.yaml"), "utf8")) as Record<
+      string,
+      unknown[]
+    >,
+  );
+  const entries = (kind: (k: string) => boolean) =>
+    corrections.filter(([k]) => kind(k)).reduce((sum, [, list]) => sum + list.length, 0);
+  // What a reader of the places-in-any-text script downloads, as a server compresses it: the
+  // lightest and the heaviest language's file of names, and the script itself (kB).
+  const gz = (file: string) => Math.round(gzipSync(readFileSync(file), { level: 9 }).length / 1000);
+  const namesKb = readdirSync(data)
+    .filter((f) => /^text-places\.[a-z]+\.json$/.test(f))
+    .map((f) => gz(join(data, f)));
   const n: Record<string, number | undefined> = {
     places: places?.features.length,
     // Of them, the places a verse names: each has a page (build-pages.ts); the others are
@@ -723,7 +734,13 @@ function counts(): Record<string, string> {
     named: places?.features.filter((f) => f.properties.verses > 0).length,
     unnamed: places?.features.filter((f) => !(f.properties.verses > 0)).length,
     ancient: ancient?.features.length,
+    ancient_hand: ancientHand,
+    ancient_script:
+      ancient && ancientHand !== undefined ? ancient.features.length - ancientHand : undefined,
+    // The people on the map with their families (data/people.json); the open data has every
+    // person TIPNR names (api/v1/people.json).
     people: people?.people.length,
+    people_api: peopleApi,
     tours: size("tours"),
     articles: size("articles"),
     events: size("events"),
@@ -733,6 +750,7 @@ function counts(): Record<string, string> {
     names: size("names"),
     chapter_books: size("chapter_years"),
     excluded: manifest?.excluded_places?.length,
+    without_point: manifest?.stats?.without_point,
     // OpenBible's places the globe does not have: left out (above) or with no point at all.
     // A host that sends one of their ids gets nothing (the embedding page).
     absent:
@@ -740,8 +758,10 @@ function counts(): Record<string, string> {
         ? manifest.excluded_places.length + manifest.stats.without_point
         : undefined,
     // Corrections to the borders, and apart from them the periods drawn as vassals.
-    overrides: (overridesText.split(/^vassals:/m)[0]?.match(/^ {2}- polity:/gm) ?? []).length,
-    vassals: (overridesText.split(/^vassals:/m)[1]?.match(/^ {2}- polity:/gm) ?? []).length,
+    overrides: entries((k) => k !== "vassals"),
+    vassals: entries((k) => k === "vassals"),
+    names_kb_min: namesKb.length ? Math.min(...namesKb) : undefined,
+    names_kb_max: namesKb.length ? Math.max(...namesKb) : undefined,
   };
   const out: Record<string, string> = {};
   for (const [k, v] of Object.entries(n)) if (v !== undefined) out[k] = String(v);
@@ -761,6 +781,8 @@ function counts(): Record<string, string> {
   ) as { latest: string; versions: Record<string, string> };
   out.hgPlacesSrc = `${out.site}/hg-places-${releases.latest}.js`;
   out.hgPlacesIntegrity = releases.versions[releases.latest] ?? "";
+  const script = join(pub, `hg-places-${releases.latest}.js`);
+  if (existsSync(script)) out.script_kb = String(gz(script));
   return out;
 }
 
@@ -781,12 +803,52 @@ function biblesTable(l: Lang): string {
     const host = b.file.endsWith("_usfm.zip") ? "eBible.org" : "CrossWire SWORD";
     const own = (LOCALE_NAMES as Partial<Record<string, string>>)[code];
     const name = own ?? new Intl.DisplayNames([code], { type: "language" }).of(code) ?? code;
-    const lic = `${PAGE_WORDS[l].pd}${b.license.includes("Crown") ? t.crown : ""}${own ? "" : ` (${t.notYet})`}`;
+    const lic = `${PAGE_WORDS[l].pd}${b.license.includes("Crown") ? t.crown : ""}${own ? "" : ` (${t.versesOnly})`}`;
     // Wikisource and the Internet Archive name their texts otherwise: the edition's own label.
     const link = b.label ?? `${host} ${id}`;
     return `<tr><td lang="${code}">${esc(name)}</td><td lang="${code}">${esc(b.title)}</td><td><a href="${esc(b.page)}">${esc(link)}</a></td><td>${esc(lic)}</td></tr>`;
   });
   return `<div class="table"><table class="sources"><thead><tr>${t.bibleHead.map((h) => `<th>${esc(h)}</th>`).join("")}</tr></thead><tbody>${rows.join("")}</tbody></table></div>`;
+}
+
+/** The scholars' reviews published so far (content/reviews, via build-content.ts). */
+interface Review {
+  id: string;
+  title: Readonly<Partial<Record<Lang, string>>> & { en: string };
+  reviewer: { name: string; institution: string };
+  date: string;
+}
+const REVIEWS: readonly Review[] = existsSync(join(root, "apps/web/build/reviews.json"))
+  ? (JSON.parse(readFileSync(join(root, "apps/web/build/reviews.json"), "utf8")) as Review[])
+  : [];
+/** A review's own page, from a page of the documentation in that language. */
+const reviewHref = (l: Lang, id: string) => `${l === "en" ? "" : "../"}../${l}/reviews/${id}/`;
+
+/**
+ * The published reviews where a page names them: `<span class="reviews"></span>` in a
+ * sentence, each by its title and its reviewer; `<ul class="reviews"></ul>` as a list, with
+ * the institution and the date. Built from the reviews, so a new one is linked everywhere.
+ */
+function reviewsIn(body: string, l: Lang): string {
+  const title = (r: Review) =>
+    `<a href="${reviewHref(l, r.id)}">${esc(r.title[l] ?? r.title.en)}</a>`;
+  return body
+    .replace('<span class="reviews"></span>', () =>
+      REVIEWS.length
+        ? REVIEWS.map((r) => `${title(r)} (${esc(r.reviewer.name)})`).join("; ")
+        : T[l].none,
+    )
+    .replace(
+      '<ul class="reviews"></ul>',
+      () =>
+        `<ul class="reviews">${(REVIEWS.length
+          ? REVIEWS.map(
+              (r) =>
+                `<li>${title(r)}: ${esc(r.reviewer.name)}, ${esc(r.reviewer.institution)}, ${dateIn(r.date, l)}</li>`,
+            )
+          : [`<li>${T[l].none}</li>`]
+        ).join("")}</ul>`,
+    );
 }
 
 interface Source {
@@ -831,24 +893,29 @@ function plural(l: Lang, n: number, one: string, few: string, many: string): str
 const UNGROUPED_4: ReadonlySet<Lang> = new Set(["ru", "cs", "sr", "es", "pl", "fi", "vi"]);
 
 /**
+ * A count as the pages of the language write their numbers: 1,288 in English, 1.288 in
+ * German and Italian, 1 288 in French, Swedish and Ukrainian, 1288 in Russian, Czech,
+ * Serbian, Spanish, Polish, Finnish and Vietnamese (a number of four digits ungrouped), and
+ * as the language's own rules have it elsewhere (Hungarian and Bulgarian group from five).
+ */
+const number = (v: number, l: Lang) =>
+  new Intl.NumberFormat(l === "en" ? "en-GB" : l, {
+    useGrouping: UNGROUPED_4.has(l) ? "min2" : l === "it" ? "always" : "auto",
+  }).format(v);
+
+/**
  * Fills `{{name}}`; `{{name|город|города|городов}}` with the count and the word in the form
- * the count takes, `{{~name|…}}` with the word alone. An unknown name is an error, so a typo
- * cannot reach a page.
+ * the count takes, `{{~name|…}}` with the word alone; `{{n:1088}}` writes a number the page
+ * gives by hand as the counts are written. An unknown name is an error, so a typo cannot
+ * reach a page.
  */
 function fill(body: string, n: Record<string, string>, file: string, l: Lang): string {
   return body.replace(
-    /\{\{(~?)(\w+)(?:\|([^|}]+)\|([^|}]+)\|([^|}]+))?\}\}/g,
-    (_, bare: string, k: string, one?: string, few?: string, many?: string) => {
-      const v = n[k];
+    /\{\{(~?)(\w+)(?::(\d+))?(?:\|([^|}]+)\|([^|}]+)\|([^|}]+))?\}\}/g,
+    (_, bare: string, k: string, literal?: string, one?: string, few?: string, many?: string) => {
+      const v = k === "n" && literal ? literal : literal ? undefined : n[k];
       if (v === undefined) throw new Error(`${file}: unknown or unavailable {{${k}}}`);
-      // A count as the pages of the language write their numbers: 1,288 in English, 1.288 in
-      // German and Italian, 1288 in Russian, Czech, Serbian, Spanish and Polish (a number of
-      // four digits ungrouped, as the hand-written ones beside it: «1088 правок»).
-      const shown = /^\d+$/.test(v)
-        ? new Intl.NumberFormat(l === "en" ? "en-GB" : l, {
-            useGrouping: UNGROUPED_4.has(l) ? "min2" : l === "it" ? "always" : "auto",
-          }).format(Number(v))
-        : v;
+      const shown = /^\d+$/.test(v) ? number(Number(v), l) : v;
       if (!one || !few || !many) return shown;
       const word = plural(l, Number(v), one, few, many);
       return bare ? word : `${shown} ${word}`;
@@ -856,12 +923,25 @@ function fill(body: string, n: Record<string, string>, file: string, l: Lang): s
   );
 }
 
-const slug = (s: string) =>
-  s
-    .toLowerCase()
-    .replace(/<[^>]+>/g, "")
-    .replace(/[^\p{L}\p{N}]+/gu, "-")
-    .replace(/^-|-$/g, "");
+/**
+ * A number in a page's text (not in code, a tag or an address) written otherwise than the
+ * counts beside it: one grouped with another separator than the language's (1 088 by hand
+ * where the counts write 1088), or one of five digits or more not grouped as they are. A
+ * number of four digits written whole is left alone: it is most often a year (1446 BC).
+ */
+function misgrouped(html: string, l: Lang): string[] {
+  const text = html
+    .replace(/<pre[\s\S]*?<\/pre>|<code[\s\S]*?<\/code>|<script[\s\S]*?<\/script>|<[^>]+>/g, " ")
+    .replace(/&nbsp;/g, "\u00a0");
+  const bad: string[] = [];
+  for (const [m] of text.matchAll(
+    /(?<![\d.,:\-–/])\d{1,3}(?:[ \u00a0\u202f.,]\d{3})+(?![\d\-–])|(?<![\d.,:\-–/])\d{5,}(?![\d\-–])/g,
+  )) {
+    const digits = m.replace(/\D/g, "");
+    if (m !== number(Number(digits), l)) bad.push(m);
+  }
+  return bad;
+}
 
 interface Heading {
   id: string;
@@ -869,16 +949,17 @@ interface Heading {
   level: 2 | 3;
 }
 
-/** Gives every h2 and h3 an id (its own, or one from its text) and lists them for the outline. */
-function headings(body: string): { body: string; toc: Heading[] } {
+/**
+ * Lists every h2 and h3 for the outline. Each carries its own id, in English and the same in
+ * every language (checked below), so a link to a section reaches it whatever the language.
+ */
+function headings(body: string, file: string): { body: string; toc: Heading[] } {
   const toc: Heading[] = [];
-  const seen = new Set<string>();
   const html = body.replace(
-    /<h([23])( id="([^"]+)")?>([\s\S]*?)<\/h\1>/g,
-    (_, level: string, __, own: string | undefined, text: string) => {
-      let id = own ?? slug(text);
-      while (seen.has(id)) id += "-2";
-      seen.add(id);
+    /<h([23])(?: id="([^"]+)")?>([\s\S]*?)<\/h\1>/g,
+    (_, level: string, id: string | undefined, text: string) => {
+      if (!id) throw new Error(`${file}: a heading without its id: <h${level}>${text}`);
+      if (toc.some((h) => h.id === id)) throw new Error(`${file}: two headings with id "${id}"`);
       toc.push({ id, text: text.replace(/<[^>]+>/g, ""), level: level === "3" ? 3 : 2 });
       return `<h${level} id="${id}">${text}<a class="anchor" href="#${id}" aria-hidden="true" tabindex="-1">#</a></h${level}>`;
     },
@@ -961,146 +1042,6 @@ function features(body: string): string {
       )
   );
 }
-
-/**
- * Russian typography in the text (not in tags, code or <pre>): a number keeps its unit
- * («586 г.», «35 КБ», «VIII в.»), «до н. э.» stays whole, and a dash its word before it.
- */
-export function typeset(html: string): string {
-  const NB = "\u00a0";
-  return html
-    .split(/(<pre[\s\S]*?<\/pre>|<code[\s\S]*?<\/code>|<[^>]+>)/)
-    .map((part, i) =>
-      i % 2 === 1
-        ? part
-        : part
-            .replace(/(\d|[IVXLC]) (г\.|гг\.|в\.|вв\.|км|м(?![а-яё])|КБ|МБ)/g, `$1${NB}$2`)
-            .replace(/до н\. э\./g, `до${NB}н.${NB}э.`)
-            .replace(/н\. э\./g, `н.${NB}э.`)
-            .replace(/([^\s>]) — /g, `$1${NB}— `),
-    )
-    .join("");
-}
-
-/** English: a number keeps its BC, AD, km or KB. */
-export function typesetEnglish(html: string): string {
-  const NB = "\u00a0";
-  return html
-    .split(/(<pre[\s\S]*?<\/pre>|<code[\s\S]*?<\/code>|<[^>]+>)/)
-    .map((part, i) =>
-      i % 2 === 1
-        ? part
-        : part.replace(/(\d) (BC|km|KB|MB)\b/g, `$1${NB}$2`).replace(/\bAD (\d)/g, `AD${NB}$1`),
-    )
-    .join("");
-}
-
-/** The text of a page (not its tags, code or <pre>) run through `fix`. */
-const inText = (html: string, fix: (text: string) => string) =>
-  html
-    .split(/(<pre[\s\S]*?<\/pre>|<code[\s\S]*?<\/code>|<[^>]+>)/)
-    .map((part, i) => (i % 2 === 1 ? part : fix(part)))
-    .join("");
-
-/** Ukrainian, as the Russian: «586 р.», «до н. е.» whole, a dash keeps its word before it. */
-export function typesetUkrainian(html: string): string {
-  const NB = "\u00a0";
-  return inText(html, (t) =>
-    t
-      .replace(/(\d|[IVXLC]) (р\.|рр\.|ст\.|км|м(?![а-яіїєґ])|КБ|МБ)/g, `$1${NB}$2`)
-      .replace(/до н\. е\./g, `до${NB}н.${NB}е.`)
-      .replace(/н\. е\./g, `н.${NB}е.`)
-      .replace(/([^\s>]) — /g, `$1${NB}— `),
-  );
-}
-
-/**
- * Serbian, as the Ukrainian: «586. п. н. е.» and «6. век» whole, a one-letter word («у», «с»)
- * on the next word, a dash keeps its word before it.
- */
-export function typesetSerbian(html: string): string {
-  const NB = "\u00a0";
-  return inText(html, (t) =>
-    t
-      .replace(/(\d\.?|[IVXLC]) (век|км|м(?![а-шђјљњћџ])|КБ|МБ)/g, `$1${NB}$2`)
-      .replace(/п\. н\. е\./g, `п.${NB}н.${NB}е.`)
-      .replace(/н\. е\./g, `н.${NB}е.`)
-      .replace(/(\d\.?) (?=п\.\u00a0н|н\.\u00a0е)/g, `$1${NB}`)
-      .replace(/(^|[\s(„])([уУсСкКоОаАиИ]) /g, `$1$2${NB}`)
-      .replace(/([^\s>]) — /g, `$1${NB}— `),
-  );
-}
-
-/**
- * Bulgarian, as the Serbian, with the era as the content writes it: «586 г. пр.н.е.», «30 г. н.е.»
- * and «VI в. пр.н.е.» whole, a dash keeps its word before it.
- */
-export function typesetBulgarian(html: string): string {
-  const NB = "\u00a0";
-  return inText(html, (t) =>
-    t
-      .replace(/(\d|[IVXLC]) (г\.|в\.|км|м(?![а-яъь])|КБ|МБ)/g, `$1${NB}$2`)
-      .replace(/(г\.|в\.) (?=пр\.н\.е\.|н\.е\.)/g, `$1${NB}`)
-      .replace(/([^\s>]) ([–—]) /g, `$1${NB}$2 `),
-  );
-}
-
-/**
- * The languages in Latin script beyond English: a number keeps its unit and its era (586 a. C.,
- * 586 v. Chr., 586 av. J.-C., 586 f.Kr., 1200 BK); French also keeps « », : ; ! ? on their
- * word with a thin no-break space.
- */
-function typesetLatin(l: Locale): (html: string) => string {
-  const NB = "\u00a0";
-  const NNB = "\u202f";
-  return (html) =>
-    inText(html, (t) => {
-      let x = t
-        .replace(/(\d) (km|KB|MB|kB)\b/g, `$1${NB}$2`)
-        .replace(
-          /(\d) (a\. ?C\.|d\. ?C\.|v\. ?Chr\.|n\. ?Chr\.|av\. J\.-C\.|apr\. J\.-C\.|p\.n\.e\.|n\.e\.|př\. n\. l\.|n\. l\.|f\.Kr\.|e\.Kr\.|BK|AD|eaa\.|jaa\.|TCN|SCN|î\. ?Hr\.|d\. ?Hr\.)/g,
-          `$1${NB}$2`,
-        )
-        .replace(/\b(a|d|v|n|av|apr)\. (C\.|Chr\.|J\.-C\.)/g, `$1.${NB}$2`)
-        .replace(/(^|[^\p{L}])(î|d)\. Hr\./gu, `$1$2.${NB}Hr.`)
-        .replace(/př\. n\. l\./g, `př.${NB}n.${NB}l.`)
-        .replace(/\bn\. l\./g, `n.${NB}l.`);
-      // Polish and Czech keep a one-letter word on the next line's word: "w Egipcie", "v Egyptě".
-      if (l === "pl" || l === "cs")
-        x = x.replace(/(^|[\s(„])([aiouwzkvsAIOUWZKVS]) /g, `$1$2${NB}`);
-      if (l === "fr")
-        x = x
-          .replace(/ ([:;!?»])/g, `${NNB}$1`)
-          .replace(/« /g, `«${NNB}`)
-          .replace(/(\S)([;!?])(?=\s|$)/g, `$1${NNB}$2`);
-      return x;
-    });
-}
-
-/** Each language's typography. */
-const TYPESET: Words<(html: string) => string> = {
-  en: typesetEnglish,
-  ru: typeset,
-  uk: typesetUkrainian,
-  es: typesetLatin("es"),
-  pt: typesetLatin("pt"),
-  de: typesetLatin("de"),
-  fr: typesetLatin("fr"),
-  it: typesetLatin("it"),
-  nl: typesetLatin("nl"),
-  pl: typesetLatin("pl"),
-  cs: typesetLatin("cs"),
-  sv: typesetLatin("sv"),
-  da: typesetLatin("da"),
-  nb: typesetLatin("nb"),
-  sr: typesetSerbian,
-  tl: typesetLatin("tl"),
-  hu: typesetLatin("hu"),
-  fi: typesetLatin("fi"),
-  vi: typesetLatin("vi"),
-  ro: typesetLatin("ro"),
-  bg: typesetBulgarian,
-};
 
 /** A code sample's language, from its first line: markup, an HTTP request or JavaScript. */
 const langOf = (code: string) =>
@@ -1219,7 +1160,7 @@ function page(o: {
   const meta = headMeta({ site, title: it.src.title, desc: it.src.description, paths, l });
   // The languages behind one button (seven no longer fit the bar): a list that opens
   // without script, each language under its own name, the page's own marked.
-  const langs = `<details class="langs"><summary class="btn lang" title="${t.language}" aria-label="${t.language}: ${LOCALE_NAMES[l]}">${svg("globe")}<span>${LOCALE_NAMES[l]}</span></summary><ul>${LANGS.map(
+  const langs = `<details class="langs"><summary class="btn lang" title="${PAGE_WORDS[l].language}" aria-label="${PAGE_WORDS[l].language}: ${LOCALE_NAMES[l]}">${svg("globe")}<span>${LOCALE_NAMES[l]}</span></summary><ul>${LANGS.map(
     (x) =>
       `<li><a href="${here(x, it.name)}" hreflang="${x}" lang="${x}"${x === l ? ' aria-current="page"' : ""}>${LOCALE_NAMES[x]}</a></li>`,
   ).join("")}</ul></details>`;
@@ -1258,7 +1199,7 @@ function page(o: {
       ? `<a class="next" href="${here(l, next)}"><span>${t.next}${svg("right")}</span>${esc(o.titles[next])}</a>`
       : ""
   }</nav>`;
-  const editUrl = `${REPO}/edit/main/content/docs/${l}/${it.name}.html`;
+  const editUrl = `${REPOSITORY}/edit/main/content/docs/${l}/${it.name}.html`;
   const toc =
     it.toc.length > 1
       ? `<p class="toc-title">${t.onPage}</p><ul>${it.toc
@@ -1292,7 +1233,7 @@ function page(o: {
     <script defer src="${up}docs.js"></script>
   </head>
   <body>
-    <a class="skip" href="#main">${t.skip}</a>
+    <a class="skip" href="#main">${PAGE_WORDS[l].skip}</a>
     <header class="bar">
       <button type="button" class="btn icon-btn menu-btn" aria-controls="side" aria-expanded="false" aria-label="${t.openMenu}">${svg("menu")}</button>
       <a class="brand" href="${here(l, "index")}"><img src="${up}../favicon.svg" alt="" width="24" height="24" /><span>History Globe</span><span class="tag">${t.docs}</span></a>
@@ -1303,7 +1244,7 @@ function page(o: {
       <span class="bar-end">
         <button type="button" class="btn icon-btn search-btn" aria-label="${t.search}" hidden>${svg("search")}</button>
         ${langs}
-        <a class="btn icon-btn gh" href="${REPO}" aria-label="GitHub"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.3v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg></a>
+        <a class="btn icon-btn gh" href="${REPOSITORY}" aria-label="GitHub"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.3v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg></a>
         <a class="btn open" href="${up}../?locale=${l}">${t.open}${svg("out")}</a>
       </span>
     </header>
@@ -1316,18 +1257,18 @@ function page(o: {
           <h1>${esc(it.src.title)}</h1>
 ${body.trim()}
           <div class="page-meta">
-            ${it.name === "author" ? "<span></span>" : `<span>${t.updated} ${dateIn(o.built, l)}</span>`}
+            ${it.name === "author" ? "<span></span>" : `<span>${TYPESET[l](`${t.updated} ${dateIn(o.built, l)}`)}</span>`}
             <a href="${editUrl}">${svg("edit")}${t.edit}</a>
           </div>
           ${pager}
           <footer class="foot">
             <span>History Globe · ${t.data}</span>
-            <a href="${REPO}">${t.source}</a>
+            <a href="${REPOSITORY}">${t.source}</a>
           </footer>
         </main>
         <aside class="toc" aria-label="${t.onPage}">
           ${toc}
-          <p class="toc-links"><a href="${editUrl}">${svg("edit")}${t.edit}</a><a href="${REPO}/issues/new">${svg("alert")}${t.report}</a></p>
+          <p class="toc-links"><a href="${editUrl}">${svg("edit")}${t.edit}</a><a href="${REPOSITORY}/issues/new?template=report-an-error.yml">${svg("alert")}${t.report}</a></p>
         </aside>
       </div>
     </div>
@@ -1337,158 +1278,8 @@ ${bodyEnd(`${up}../`)}
 `;
 }
 
-/**
- * The page's script (docs.js), one file for every page and language: the phone menu, the
- * search, the outline that follows the reader, and the copy buttons. Without it the pages
- * read and link as they are.
- */
-const SCRIPT = `// History Globe docs: menu, search, outline, copy buttons. Built by scripts/build-docs.ts.
-(() => {
-  const root = document.documentElement;
-  const $ = (s, el = document) => el.querySelector(s);
-  const $$ = (s, el = document) => [...el.querySelectorAll(s)];
-
-  // Without a known address at build time, the samples name the one they are read on,
-  // so a copied snippet works.
-  for (const code of $$("pre code"))
-    if (code.innerHTML.includes("https://&lt;globe-host&gt;"))
-      code.innerHTML = code.innerHTML.replaceAll("https://&lt;globe-host&gt;", location.origin);
-
-  // Copy buttons.
-  for (const b of $$(".copy")) {
-    b.hidden = false;
-    const label = b.querySelector("span");
-    const text = label.textContent;
-    b.addEventListener("click", () => {
-      const code = b.closest(".code").querySelector("code");
-      navigator.clipboard.writeText(code.innerText).then(() => {
-        label.textContent = b.dataset.done;
-        b.classList.add("done");
-        setTimeout(() => {
-          label.textContent = text;
-          b.classList.remove("done");
-        }, 1600);
-      }, () => {});
-    });
-  }
-
-  // The menu: a drawer on narrow screens.
-  const menuBtn = $(".menu-btn");
-  const scrim = $(".scrim");
-  const setMenu = (open) => {
-    root.classList.toggle("nav-open", open);
-    menuBtn.setAttribute("aria-expanded", String(open));
-    scrim.hidden = !open;
-  };
-  menuBtn.addEventListener("click", () => setMenu(!root.classList.contains("nav-open")));
-  scrim.addEventListener("click", () => setMenu(false));
-  for (const a of $$(".side a")) a.addEventListener("click", () => setMenu(false));
-  $(".side [aria-current]")?.scrollIntoView({ block: "center" });
-
-  // The outline follows the section in view.
-  const marks = $$(".toc a[href^='#']");
-  if (marks.length && "IntersectionObserver" in window) {
-    const byId = new Map(marks.map((a) => [a.getAttribute("href").slice(1), a]));
-    const io = new IntersectionObserver(
-      (seen) => {
-        for (const e of seen)
-          if (e.isIntersecting) {
-            for (const a of marks) a.classList.remove("on");
-            byId.get(e.target.id)?.classList.add("on");
-          }
-      },
-      { rootMargin: "-15% 0px -70% 0px" },
-    );
-    for (const h of $$("main h2[id], main h3[id]")) io.observe(h);
-  }
-
-  // Search: the sections of every page and the names the reference tables define.
-  const form = $(".search");
-  const input = $("input", form);
-  const list = $(".results", form);
-  const searchBtn = $(".search-btn");
-  form.hidden = false;
-  searchBtn.hidden = false;
-  let index;
-  let hits = [];
-  let at = 0;
-  const load = () =>
-    (index ??= fetch(input.dataset.index).then((r) => r.json()).catch(() => []));
-  const norm = (s) => s.toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g, "").replace(/ё/g, "е");
-  const esc = (s) => s.replace(/[&<>"]/g, (c) => "&#" + c.charCodeAt(0) + ";");
-  const hitHtml = ${hitHtml.toString().replace(/ {2,}/g, " ").replace(/ +\n/g, "\n")};
-  const show = (open) => {
-    list.hidden = !open;
-    input.setAttribute("aria-expanded", String(open));
-  };
-  const paint = () => {
-    list.innerHTML = hits.length
-      ? hits.map((h, i) => hitHtml(h, i, i === at, esc)).join("")
-      : '<li class="none">' + esc(input.dataset.none) + "</li>";
-    input.setAttribute("aria-activedescendant", hits.length ? "hit-" + at : "");
-  };
-  const run = async () => {
-    const q = norm(input.value.trim());
-    if (!q) return show(false);
-    const words = q.split(/\\s+/);
-    const all = await load();
-    hits = all
-      .map((e) => {
-        const t = norm(e.t);
-        const hay = t + " " + norm(e.p);
-        if (!words.every((w) => hay.includes(w))) return null;
-        const score = (t.startsWith(q) ? 0 : t.includes(q) ? 1 : 2) + (e.p ? 0 : -0.5);
-        return { e, score };
-      })
-      .filter(Boolean)
-      .sort((a, b) => a.score - b.score)
-      .slice(0, 8)
-      .map((x) => x.e);
-    at = 0;
-    paint();
-    show(true);
-  };
-  input.addEventListener("focus", load);
-  input.addEventListener("input", run);
-  input.addEventListener("keydown", (e) => {
-    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
-      e.preventDefault();
-      if (!hits.length) return;
-      at = (at + (e.key === "ArrowDown" ? 1 : hits.length - 1)) % hits.length;
-      paint();
-    } else if (e.key === "Escape") {
-      input.value = "";
-      show(false);
-      root.classList.remove("search-open");
-      input.blur();
-    }
-  });
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const h = hits[at];
-    if (h) location.href = h.u;
-  });
-  document.addEventListener("click", (e) => {
-    if (!form.contains(e.target) && e.target !== searchBtn && !searchBtn.contains(e.target)) {
-      show(false);
-      root.classList.remove("search-open");
-    }
-  });
-  const openSearch = () => {
-    setMenu(false);
-    root.classList.add("search-open");
-    input.focus();
-  };
-  searchBtn.addEventListener("click", openSearch);
-  document.addEventListener("keydown", (e) => {
-    const typing = /^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement?.tagName ?? "");
-    if ((e.key === "/" && !typing) || (e.key === "k" && (e.metaKey || e.ctrlKey))) {
-      e.preventDefault();
-      openSearch();
-    } else if (e.key === "Escape") setMenu(false);
-  });
-})();
-`;
+/** The pages' script (docs.js, scripts/client/docs.ts). */
+const SCRIPT = clientScript("packages/model/src/fold.ts", "scripts/client/docs.ts");
 
 const n = counts();
 rmSync(out, { recursive: true, force: true });
@@ -1498,6 +1289,21 @@ for (const [pkg, file] of FONT_FILES)
   copyFileSync(join(FONTS, pkg, "files", file), join(out, "fonts", file));
 copyFileSync(join(src, "docs.css"), join(out, "docs.css"));
 writeFileSync(join(out, "docs.js"), SCRIPT);
+
+/** The built sources page of every language, for the check of the credits below. */
+const sourcesPages: Record<string, string> = {};
+// What a page must hold in every language, checked as the pages are built: the headings by
+// the same ids as the English, the numbers written as the counts are, the licences by their
+// own address, and a link to every review a scholar has published (content/reviews), so none
+// is published out of reach.
+const problems: string[] = [];
+const PUBLISHED = readdirSync(join(root, "content/reviews"))
+  .filter((f) => f.endsWith(".yaml"))
+  .map(
+    (f) => (parseYaml(readFileSync(join(root, "content/reviews", f), "utf8")) as { id: string }).id,
+  );
+const LINKS_REVIEWS: readonly Page[] = ["index", "methodology", "reviews"];
+const englishIds = new Map<Page, string>();
 
 for (const l of LANGS) {
   const dir = join(src, l);
@@ -1510,10 +1316,26 @@ for (const l of LANGS) {
     PAGES.map((p) => {
       const file = `content/docs/${l}/${p}.html`;
       const source = parse(join(root, file));
-      const filled = fill(source.body, n, file, l).replace('<div class="bibles"></div>', () =>
-        biblesTable(l),
-      );
-      const { body, toc } = headings(highlight(features(TYPESET[l](filled)), l));
+      // A licence is linked by its own address in every language, as index.json gives it.
+      if (/creativecommons\.org\/[^"]*deed\./.test(source.body))
+        problems.push(`${file}: a Creative Commons link to a translated deed, not the licence`);
+      const text = fill(source.body, n, file, l);
+      for (const m of misgrouped(TYPESET[l](text), l))
+        problems.push(`${file}: "${m}" is not written as the counts are (${number(1288, l)})`);
+      const filled = reviewsIn(text, l).replace('<div class="bibles"></div>', () => biblesTable(l));
+      const { body, toc } = headings(highlight(features(TYPESET[l](filled)), l), file);
+      // The documentation has no open licence of its own (LICENSE, part 3): a licence it
+      // links is a source's, and rel="license" would declare the page under it.
+      if (/\brel="[^"]*\blicense\b/.test(body))
+        throw new Error(`${file}: rel="license" on a source's licence; link it plainly`);
+      const ids = toc.map((h) => h.id).join(" ");
+      if (l === "en") englishIds.set(p, ids);
+      else if (ids !== englishIds.get(p))
+        problems.push(`${file}: headings ${ids} where the English has ${englishIds.get(p)}`);
+      if (LINKS_REVIEWS.includes(p))
+        for (const id of PUBLISHED)
+          if (!body.includes(`href="${reviewHref(l, id)}"`))
+            problems.push(`${file}: no link to the published review ${id}`);
       return [p, { name: p, src: source, body, toc }];
     }),
   ) as Record<Page, Built>;
@@ -1529,5 +1351,54 @@ for (const l of LANGS) {
     );
   }
   writeFileSync(join(out, prefix(l), "search.json"), JSON.stringify(search));
+  sourcesPages[l] = all.sources.body;
 }
+if (problems.length) throw new Error(`docs:\n${problems.join("\n")}`);
 console.log(`docs: ${PAGES.length} pages × ${LANGS.length} languages → apps/web/public/docs/`);
+
+// The repository's front pages against the build (scripts/repo-facts.ts): the numbers and
+// the date in README.md and CITATION.cff, and the credits of every source in
+// docs/ATTRIBUTIONS.md and on the sources pages. Only with the data built.
+if (existsSync(join(data, "manifest.json")) && existsSync(join(pub, "api/v1/index.json"))) {
+  const json = (path: string): unknown => JSON.parse(readFileSync(path, "utf8"));
+  const manifest = json(join(data, "manifest.json")) as { sources: object; other_sources?: object };
+  const index = json(join(pub, "api/v1/index.json")) as { built_at: string };
+  const ancientNotes = json(join(data, "ancient-authors.json")) as Record<string, unknown[]>;
+  const facts: Facts = {
+    named: Number(n.named),
+    records: Number(n.places),
+    articles: Number(n.articles),
+    questions: (json(join(pub, "api/v1/questions.json")) as unknown[]).length,
+    tours: Number(n.tours),
+    events: Number(n.events),
+    battles: Number(n.battles),
+    people: (json(join(pub, "api/v1/people.json")) as unknown[]).length,
+    peopleOnMap: Number(n.people),
+    notes: Object.values(ancientNotes).flat().length,
+    notedPlaces: Object.keys(ancientNotes).length,
+    ancient: Number(n.ancient),
+    photos: Number(n.photos),
+    languages: LOCALES.length,
+    built: index.built_at.slice(0, 10),
+  };
+  const problems = [
+    ...["README.md", "CITATION.cff"].flatMap((f) =>
+      factMismatches(f, readFileSync(join(root, f), "utf8"), facts, site !== ""),
+    ),
+    // The registry: the sources the data build reads, and those the other steps read
+    // (an older data build has no other_sources: rebuild it with `pnpm data`).
+    ...(manifest.other_sources
+      ? []
+      : ["manifest.json: no other_sources; rebuild the data (pnpm data)"]),
+    ...attributionGaps(
+      [...Object.keys(manifest.sources), ...Object.keys(manifest.other_sources ?? {})],
+      SOURCES,
+      readFileSync(join(root, "docs/ATTRIBUTIONS.md"), "utf8"),
+      sourcesPages,
+    ),
+  ];
+  if (problems.length) {
+    console.error(`docs: the front pages disagree with the build:\n  ${problems.join("\n  ")}`);
+    process.exit(1);
+  }
+}

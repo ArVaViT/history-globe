@@ -5,7 +5,7 @@
  *
  * Usage: pnpm e2e (with the app running; see e2e/browser.mjs)
  */
-import { BASE, launch, mapReady, newPage } from "./browser.mjs";
+import { BASE, launch, mapReady, newPage, settled } from "./browser.mjs";
 
 const browser = await launch();
 const results = [];
@@ -29,17 +29,30 @@ page.on("console", (m) => {
 const expect = (cond, msg) => {
   if (!cond) throw new Error(msg);
 };
+/**
+ * What a step expects, once the app has done it (it writes the address after a pause, a
+ * panel loads its code on the press): checked again until it holds, or fails with `msg`.
+ */
+async function until(check, msg, timeout = 8000) {
+  const end = Date.now() + timeout;
+  while (!(await check())) {
+    if (Date.now() > end) throw new Error(msg);
+    await new Promise((r) => setTimeout(r, 50));
+  }
+}
 const search = () => new URLSearchParams(new URL(page.url()).search);
+/** The search's word for no results (search.empty in apps/web/src/i18n/ru.json). */
+const EMPTY_SEARCH = "Ничего не найдено";
 // Starting a tour puts the overview away: open it again where a step needs its tabs.
 const overview = async () => {
   const book = page.getByRole("button", { name: /^Обзор/ });
   if ((await book.getAttribute("aria-expanded")) !== "true") await book.click();
-  await page.waitForTimeout(400);
+  await page.locator("#more-panels").waitFor({ timeout: 8000 });
 };
 
 await page.goto(BASE + "?locale=ru");
 await mapReady(page);
-await page.waitForTimeout(1500);
+await settled(page);
 
 await step("search finds Capernaum and opens its card", async () => {
   // The search is a magnifier in the header until pressed.
@@ -63,8 +76,7 @@ await step("Google Maps link has lat,lon", async () => {
   expect(/query=32\.8\d*,35\.5/.test(href ?? ""), `href ${href}`);
 });
 await step("URL holds the place", async () => {
-  await page.waitForTimeout(800);
-  expect(search().get("place") === "af2161c", `place=${search().get("place")}`);
+  await until(() => search().get("place") === "af2161c", `place=${search().get("place")}`);
 });
 await step('"ещё N" opens more verses', async () => {
   const before = await page.locator("button[data-verse]").count();
@@ -84,8 +96,10 @@ await step("Escape closes the card", async () => {
     .click({ position: { x: 900, y: 500 } })
     .catch(() => {});
   await page.keyboard.press("Escape");
-  await page.waitForTimeout(300);
-  expect((await page.getByRole("heading", { name: "Капернаум" }).count()) === 0, "card still open");
+  await until(
+    async () => (await page.getByRole("heading", { name: "Капернаум" }).count()) === 0,
+    "card still open",
+  );
 });
 await step("] moves the year +10, Shift+] +100", async () => {
   await page
@@ -94,11 +108,12 @@ await step("] moves the year +10, Shift+] +100", async () => {
     .click({ position: { x: 1200, y: 300 } });
   const y0 = Number(search().get("year"));
   await page.keyboard.press("]");
-  await page.waitForTimeout(500);
+  await until(() => Number(search().get("year")) === y0 + 10, "] did not step on");
   await page.keyboard.press("Shift+BracketLeft");
-  await page.waitForTimeout(600);
-  const y1 = Number(search().get("year"));
-  expect(y1 === y0 + 10 - 100, `${y0} -> ${y1}`);
+  await until(
+    () => Number(search().get("year")) === y0 + 10 - 100,
+    `${y0} -> ${search().get("year")}`,
+  );
 });
 await step("space plays and pauses, / focuses the search", async () => {
   await page
@@ -107,17 +122,16 @@ await step("space plays and pauses, / focuses the search", async () => {
     .click({ position: { x: 1200, y: 300 } });
   const y0 = Number(search().get("year"));
   await page.keyboard.press(" ");
+  // Played for a while: a span of time, not a state to wait for.
   await page.waitForTimeout(900);
   await page.keyboard.press(" ");
-  await page.waitForTimeout(600);
-  const y1 = Number(search().get("year"));
-  expect(y1 > y0, `${y0} -> ${y1}`);
+  await until(() => Number(search().get("year")) > y0, `${y0} -> ${search().get("year")}`);
   await page.keyboard.press("/");
-  await page.waitForTimeout(300);
-  expect(
-    await page
-      .getByPlaceholder("Место, человек, глава или год")
-      .evaluate((el) => el === document.activeElement),
+  await until(
+    () =>
+      page
+        .getByPlaceholder("Место, человек, глава или год")
+        .evaluate((el) => el === document.activeElement),
     "search not focused",
   );
   await page.keyboard.press("Escape");
@@ -130,10 +144,9 @@ await step("the book opens the overview on its tours", async () => {
 await step("layers off are written to the URL", async () => {
   await page.getByRole("button", { name: "Настройки" }).click();
   await page.getByText("Рельеф").click();
-  await page.waitForTimeout(800);
-  expect(search().get("hide") === "relief", `hide=${search().get("hide")}`);
+  await until(() => search().get("hide") === "relief", `hide=${search().get("hide")}`);
   await page.getByText("Рельеф").click();
-  await page.waitForTimeout(800);
+  await until(() => !search().has("hide"), `hide=${search().get("hide")}`);
   await page.keyboard.press("Escape");
   expect(!search().has("layers"), "layers still in URL");
 });
@@ -145,8 +158,10 @@ await step("map key opens", async () => {
   await page.keyboard.press("Escape");
   await page.getByRole("button", { name: "Условные знаки" }).waitFor({ timeout: 2000 });
   await page.keyboard.press("Escape");
-  await page.waitForTimeout(300);
-  expect((await page.locator("dialog[open]").count()) === 0, "a dialog stayed open");
+  await until(
+    async () => (await page.locator("dialog[open]").count()) === 0,
+    "a dialog stayed open",
+  );
 });
 await step("tour: start, next, back, close", async () => {
   await page.getByRole("tab", { name: "Экскурсии" }).click();
@@ -156,11 +171,9 @@ await step("tour: start, next, back, close", async () => {
   await page.getByText("Остановка 2 из 17").first().waitFor({ timeout: 3000 });
   await page.getByRole("button", { name: "Назад", exact: true }).click({ timeout: 5000 });
   await page.getByText("Остановка 1 из 17").first().waitFor({ timeout: 3000 });
-  await page.waitForTimeout(600);
-  expect(search().get("tour") === "jesus", `tour=${search().get("tour")}`);
+  await until(() => search().get("tour") === "jesus", `tour=${search().get("tour")}`);
   await page.getByRole("button", { name: "Закончить" }).click();
-  await page.waitForTimeout(600);
-  expect(!search().has("tour"), "tour still in URL");
+  await until(() => !search().has("tour"), "tour still in URL");
   expect(!search().has("place"), "a stop's card stayed open");
 });
 await step("events panel: a pick sets the year and opens the place", async () => {
@@ -169,8 +182,7 @@ await step("events panel: a pick sets the year and opens the place", async () =>
   await page.getByRole("tab", { name: "События" }).click();
   await page.getByRole("button", { name: /Ассирия берёт Самарию/ }).click();
   await page.getByRole("heading", { name: "Самария" }).waitFor({ timeout: 5000 });
-  await page.waitForTimeout(800);
-  expect(search().get("year") === "-721", `year=${search().get("year")}`);
+  await until(() => search().get("year") === "-721", `year=${search().get("year")}`);
   await page.keyboard.press("Escape");
 });
 await step("tour: step dot jumps, arrows step, About the place ends the tour", async () => {
@@ -184,8 +196,7 @@ await step("tour: step dot jumps, arrows step, About the place ends the tour", a
   await page.getByText("Остановка 3 из 12").first().waitFor({ timeout: 3000 });
   await page.getByRole("button", { name: "О месте" }).click();
   await page.getByRole("heading", { name: "Сихем" }).waitFor({ timeout: 5000 });
-  await page.waitForTimeout(600);
-  expect(!search().has("tour"), "tour still in URL");
+  await until(() => !search().has("tour"), "tour still in URL");
   // ...and the place card leads back to the same stop.
   await page.getByRole("button", { name: /Вернуться к экскурсии/ }).click();
   await page.getByText("Остановка 3 из 12").first().waitFor({ timeout: 3000 });
@@ -202,19 +213,15 @@ await step("search during a tour ends it and opens the place", async () => {
   await page.getByPlaceholder("Место, человек, глава или год").fill("Капер");
   await page.getByRole("option").first().click();
   await page.getByRole("heading", { name: "Капернаум" }).waitFor({ timeout: 5000 });
-  await page.waitForTimeout(600);
-  expect(!search().has("tour"), "tour still in URL");
+  await until(() => !search().has("tour"), "tour still in URL");
   await page.keyboard.press("Escape");
 });
 await step("book opens and closes the overview", async () => {
   const book = page.getByRole("button", { name: /^Обзор/ });
   const open = async () => (await book.getAttribute("aria-expanded")) === "true";
-  if (await open()) {
-    await book.click();
-    await page.waitForTimeout(300);
-  }
-  expect(
-    !(await open()) && (await page.locator("#more-panels").count()) === 0,
+  if (await open()) await book.click();
+  await until(
+    async () => !(await open()) && (await page.locator("#more-panels").count()) === 0,
     "overview did not close",
   );
   await book.click();
@@ -228,16 +235,14 @@ await step("switch to English", async () => {
   await page
     .getByRole("button", { name: /Find a place|Close the search/ })
     .waitFor({ timeout: 3000 });
-  await page.waitForTimeout(600);
-  expect(search().get("locale") === "en", "locale not in URL");
+  await until(() => search().get("locale") === "en", "locale not in URL");
 });
 await step("slider: keyboard arrow changes the year", async () => {
   const s = page.locator('input[type="range"]');
   await s.focus();
   const before = await s.inputValue();
   await page.keyboard.press("ArrowRight");
-  await page.waitForTimeout(300);
-  expect((await s.inputValue()) !== before, "unchanged");
+  await until(async () => (await s.inputValue()) !== before, "unchanged");
 });
 await step("Nineveh card at 600 BC says it no longer stands", async () => {
   await page.goto(BASE + "?year=-600&place=a70fd5d&locale=ru");
@@ -264,8 +269,7 @@ await step("a person found by name opens their card and takes the map to their t
   );
   await page.locator('[id^="search-person-"]').first().dispatchEvent("mousedown");
   await page.getByRole("heading", { name: "Давид" }).waitFor({ timeout: 8000 });
-  await page.waitForTimeout(1200);
-  expect(search().get("year") === "-1002", `year=${search().get("year")}`);
+  await until(() => search().get("year") === "-1002", `year=${search().get("year")}`);
   expect((await page.getByText("Адам").count()) > 0, "line from Adam");
 });
 await step("Overview → People lists the story's people by century", async () => {
@@ -290,12 +294,14 @@ await step(
     // Gone by AD 30, it is shown pale; its card offers a year it stood (#60).
     await page.getByRole("heading", { name: "Хаттуса" }).waitFor({ timeout: 8000 });
     await page.getByRole("button", { name: /^Перейти в/ }).click({ timeout: 5000 });
-    await page.waitForTimeout(2500);
-    const y = Number(search().get("year"));
     // Its years in content/ancient-sites.json: -1999 to -1179.
-    expect(y <= -1179 && y >= -1999, `year=${y}`);
-    const cam = (search().get("camera") ?? "").split(",").map(Number);
-    expect(Math.abs(cam[0] - 34.6) < 0.5 && Math.abs(cam[1] - 40.0) < 0.5, `camera=${cam}`);
+    const year = () => Number(search().get("year"));
+    await until(() => year() <= -1179 && year() >= -1999, `year=${year()}`);
+    const cam = () => (search().get("camera") ?? "").split(",").map(Number);
+    await until(
+      () => Math.abs(cam()[0] - 34.6) < 0.5 && Math.abs(cam()[1] - 40.0) < 0.5,
+      `camera=${cam()}`,
+    );
   },
 );
 
@@ -305,10 +311,12 @@ await step("a battle found by a word of its title goes to its year and its field
   await page.getByRole("button", { name: /^Поиск/ }).click();
   await page.locator("input[role=combobox]").fill("Гавгамел");
   await page.locator('[id^="search-event-"]').first().dispatchEvent("mousedown", { timeout: 8000 });
-  await page.waitForTimeout(2500);
-  expect(search().get("year") === "-330", `year=${search().get("year")}`);
-  const cam = (search().get("camera") ?? "").split(",").map(Number);
-  expect(Math.abs(cam[0] - 43.5) < 0.5 && Math.abs(cam[1] - 36.6) < 0.5, `camera=${cam}`);
+  await until(() => search().get("year") === "-330", `year=${search().get("year")}`);
+  const cam = () => (search().get("camera") ?? "").split(",").map(Number);
+  await until(
+    () => Math.abs(cam()[0] - 43.5) < 0.5 && Math.abs(cam()[1] - 36.6) < 0.5,
+    `camera=${cam()}`,
+  );
 });
 
 await step("a person without places on the map (Noah) is found and opens their card", async () => {
@@ -358,7 +366,7 @@ await step("the line of Jesus goes back to Adam", async () => {
 await step("a battle's mark opens its place, whose timeline tells the battle", async () => {
   await page.goto(BASE + "?locale=ru&year=-1009&camera=35.4,32.5,8,0,0");
   await mapReady(page);
-  await page.waitForTimeout(1500);
+  await settled(page);
   const at = await page.evaluate(() => {
     const m = window.__hgMap;
     const f = m
@@ -405,11 +413,14 @@ await step(
       null,
       { timeout: 5000 },
     );
+    // Nothing to wait for: the setting must not reach the link at all, now or after the
+    // pause the app writes the link after.
     await page.waitForTimeout(500);
     expect(!search().get("hide")?.includes("ancient"), `hide=${search().get("hide")}`);
     await page.getByRole("button", { name: "Поиск места" }).click();
     await page.getByRole("combobox").fill("Хаттуса");
-    await page.waitForTimeout(800);
+    // The search has answered: it says it found nothing, and offers no option.
+    await page.getByText(EMPTY_SEARCH).waitFor({ timeout: 8000 });
     expect((await page.getByRole("option").count()) === 0, "an ancient site was offered");
     await page.evaluate(() => localStorage.removeItem("hg:bible-only"));
   },
@@ -528,14 +539,13 @@ await step("a person's card offers their tours, and one starts", async () => {
     .click();
   await page.getByRole("heading", { name: "Экскурсии" }).waitFor({ timeout: 8000 });
   await page.getByRole("button", { name: /Первое путешествие Павла/ }).click();
-  await page.waitForTimeout(1000);
-  expect(search().get("tour") === "paul-1", `tour=${search().get("tour")}`);
+  await until(() => search().get("tour") === "paul-1", `tour=${search().get("tour")}`);
 });
 
 await step("Back closes a chapter opened after the map", async () => {
   await page.goto(BASE + "?locale=ru");
   await mapReady(page);
-  await page.waitForTimeout(800);
+  await settled(page);
   await page.getByRole("button", { name: "Поиск места" }).click();
   // The search itself, not the field that stands in while it loads.
   await page.getByRole("combobox").fill("Деян 16");
@@ -545,10 +555,10 @@ await step("Back closes a chapter opened after the map", async () => {
     timeout: 8000,
   });
   await page.goBack();
-  await page.waitForTimeout(1200);
-  expect(!search().has("ref"), `ref=${search().get("ref")}`);
-  expect(
-    (await page.getByRole("button", { name: /Закрыть и показать всю карту/ }).count()) === 0,
+  await until(() => !search().has("ref"), `ref=${search().get("ref")}`);
+  await until(
+    async () =>
+      (await page.getByRole("button", { name: /Закрыть и показать всю карту/ }).count()) === 0,
     "the chapter's chip is still there",
   );
 });
@@ -592,7 +602,10 @@ await step("the distance tool measures from one opened place to the next", async
     .first()
     .click();
   await page.keyboard.type("Вифлеем");
-  await page.waitForTimeout(600);
+  await page
+    .getByRole("option", { name: /Вифлеем/ })
+    .first()
+    .waitFor({ timeout: 8000 });
   await page.keyboard.press("Enter");
   await page.getByText(/^\d+ км по прямой$/).waitFor({ timeout: 8000 });
   await page.getByRole("button", { name: "Закрыть инструменты" }).click();
@@ -606,11 +619,12 @@ await step("a question's link opens the distance tool between its two places", a
   const panel = page.locator("#tools-panel");
   expect(await panel.getByText("Иерусалим").count(), "the first end is Jerusalem");
   expect(await panel.getByText("Иерихон").count(), "the second end is Jericho");
-  await page.waitForTimeout(1500);
-  expect(search().get("measure") === "a15257a,aaf03fa", "the link keeps the distance");
+  await until(() => search().get("measure") === "a15257a,aaf03fa", "the link keeps the distance");
   await page.getByRole("button", { name: "Закрыть инструменты" }).click();
-  await page.waitForTimeout(600);
-  expect(!search().has("measure"), "closing the tool takes the distance out of the link");
+  await until(
+    () => !search().has("measure"),
+    "closing the tool takes the distance out of the link",
+  );
 });
 
 await step(
@@ -670,17 +684,18 @@ await step(
     };
     // A click on the place itself, twice: hg:place-clicked each time.
     const box = await page.locator("iframe").boundingBox();
+    const clicks = () =>
+      page.evaluate(
+        () =>
+          window.__msgs.filter((m) => m?.type === "hg:place-clicked" && m.place === "af2161c")
+            .length,
+      );
     for (let i = 0; i < 2; i++) {
       const at = await capernaum();
       expect(at, "Capernaum is not drawn");
       await page.mouse.click(box.x + at.x, box.y + at.y);
-      await page.waitForTimeout(700);
+      await until(async () => (await clicks()) === i + 1, `${await clicks()} hg:place-clicked`);
     }
-    const clicks = await page.evaluate(
-      () =>
-        window.__msgs.filter((m) => m?.type === "hg:place-clicked" && m.place === "af2161c").length,
-    );
-    expect(clicks === 2, `${clicks} hg:place-clicked`);
     // `place: null` clears it: the view goes out without a place, and the ring goes.
     await send({ place: null });
     await page.waitForFunction(
@@ -720,8 +735,9 @@ await step(
     const empty = await emptySpot();
     expect(empty, "no empty spot on the map");
     // A double-click there zooms and keeps the place.
+    const zoom = await frame.evaluate(() => window.__hgMap.getZoom());
     await page.mouse.dblclick(box.x + empty.x, box.y + empty.y);
-    await page.waitForTimeout(1200);
+    await frame.waitForFunction((z) => window.__hgMap.getZoom() > z, zoom, { timeout: 8000 });
     await still();
     expect(
       await frame.evaluate(() => document.querySelector(".hg-ring") !== null),
@@ -804,12 +820,16 @@ await step("a large frame without ui=map: the column's panels still take clicks"
   const frame = bigFrame;
   const book = frame.getByRole("button", { name: /^Обзор/ });
   if ((await book.getAttribute("aria-expanded")) !== "true") await book.click();
-  await frame.waitForTimeout(400);
-  expect((await book.getAttribute("aria-expanded")) === "true", "the overview did not open");
+  await until(
+    async () => (await book.getAttribute("aria-expanded")) === "true",
+    "the overview did not open",
+  );
   const tab = frame.getByRole("tab", { name: "События" });
   await tab.click();
-  await frame.waitForTimeout(300);
-  expect((await tab.getAttribute("aria-selected")) === "true", "the events tab is not selected");
+  await until(
+    async () => (await tab.getAttribute("aria-selected")) === "true",
+    "the events tab is not selected",
+  );
   await frame.getByRole("tab", { name: "Экскурсии" }).click();
   await frame.getByText("Земная жизнь Иисуса").click({ timeout: 3000 });
   await host.waitForFunction(
@@ -836,18 +856,24 @@ await step(
         });
       const book = low.getByRole("button", { name: /^Обзор/ });
       if ((await book.getAttribute("aria-expanded")) === "true") await book.click();
-      await low.waitForTimeout(400);
-      expect((await column.getAttribute("data-scrolls")) === null, "an empty column scrolls");
-      expect((await top()) === "CANVAS", `${await top()} over the map beside the column`);
+      await until(
+        async () => (await column.getAttribute("data-scrolls")) === null,
+        "an empty column scrolls",
+      );
+      await until(
+        async () => (await top()) === "CANVAS",
+        `${await top()} over the map beside the column`,
+      );
       await book.click();
       await low.getByRole("tab", { name: "Экскурсии" }).click();
       await low.waitForFunction(() => document.querySelector("aside").hasAttribute("data-scrolls"));
       expect((await top()) === "ASIDE", `${await top()} where the column's scrollbar runs`);
       await low.mouse.move(200, 38);
       await low.mouse.wheel(0, 300);
-      await low.waitForTimeout(400);
-      const scrolled = await column.evaluate((el) => el.scrollTop);
-      expect(scrolled > 0, "the wheel over a panel does not scroll the column");
+      await until(
+        async () => (await column.evaluate((el) => el.scrollTop)) > 0,
+        "the wheel over a panel does not scroll the column",
+      );
     } finally {
       await low.context().close();
     }

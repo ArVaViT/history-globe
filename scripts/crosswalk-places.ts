@@ -14,6 +14,7 @@
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { distanceKm } from "../packages/model/src/distance.ts";
 
 const root = join(import.meta.dirname, "..");
 const CSV = join(root, "docs/crosswalk/places.csv");
@@ -126,13 +127,6 @@ if (theographicPath) {
       theographic.set(r.id, [lon, lat]);
   }
 }
-const km = ([lo1, la1]: [number, number], [lo2, la2]: [number, number]) => {
-  const p = Math.PI / 180;
-  const h =
-    Math.sin(((la2 - la1) * p) / 2) ** 2 +
-    Math.cos(la1 * p) * Math.cos(la2 * p) * Math.sin(((lo2 - lo1) * p) / 2) ** 2;
-  return 12742 * Math.asin(Math.sqrt(h));
-};
 
 const rows: Row[] = [];
 let added = 0;
@@ -152,7 +146,7 @@ for (const id of [...order, ...fresh]) {
   let theographicKm = was?.theographic_km ?? "";
   const theirs = was?.theographic_id ? theographic.get(was.theographic_id) : undefined;
   if (theirs) {
-    theographicKm = km([p.lon, p.lat], theirs).toFixed(1);
+    theographicKm = distanceKm([p.lon, p.lat], theirs).toFixed(1);
     distances += 1;
   }
   rows.push({

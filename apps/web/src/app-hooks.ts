@@ -339,9 +339,9 @@ export function useTimelineMarks(
     if (!data) return [];
     const battles = bibleOnly
       ? data.battles.flatMap((b) =>
-          // Told as an event too (Lachish, 588 BC): marked once, as the card lists it once.
-          b.ref === undefined ||
-          events.some((e) => e.place === b.place && Math.abs(e.year - b.year) <= 1)
+          // Told as an event too (Lachish, 588 BC; `event` in battles.yaml): marked once, as
+          // the card lists it once.
+          b.ref === undefined || events.some((e) => e.id === b.event)
             ? []
             : [
                 {

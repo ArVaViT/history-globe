@@ -102,15 +102,22 @@
 
 :root {
   color-scheme: light dark;
-  --ink: #221d15;
-  --ink-soft: #6a5f4f;
-  --ink-faint: #9a8f7d;
-  --paper: #fbf8f2;
-  --paper-2: #f2ece0;
+  /* The documentation's palette (content/docs/docs.css), on every page, so the front page,
+     the place and tour pages, the docs and the map read as one product
+     (scripts/check-pages.ts holds the two files to it). */
+  --paper: #fcfbf8;
+  --paper-2: #f5f2ec;
+  --paper-3: #ede8df;
   --card: #ffffff;
-  --line: #e7dfcf;
+  --ink: #1f1a13;
+  --ink-2: #4a4237;
+  --ink-soft: #625a4e;
+  --ink-faint: #756c5f;
+  --line: #e7e1d6;
   --accent: #9a3b1f;
+  --accent-ink: #8a3219;
   --accent-soft: rgb(154 59 31 / 0.08);
+  --accent-line: rgb(154 59 31 / 0.28);
   --serif: "Literata", Georgia, "Times New Roman", serif;
   --sans: "Golos Text", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
@@ -119,15 +126,19 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --ink: #efe8db;
-    --ink-soft: #a99e8a;
-    --ink-faint: #776d5d;
-    --paper: #0f141b;
-    --paper-2: #161d27;
-    --card: #141b24;
-    --line: #243040;
-    --accent: #e38a61;
-    --accent-soft: rgb(227 138 97 / 0.1);
+    --paper: #0c1218;
+    --paper-2: #111921;
+    --paper-3: #18222d;
+    --card: #111921;
+    --ink: #ece6da;
+    --ink-2: #d2cabb;
+    --ink-soft: #a9a091;
+    --ink-faint: #8d8475;
+    --line: #212c38;
+    --accent: #ec9a72;
+    --accent-ink: #f0a983;
+    --accent-soft: rgb(236 154 114 / 0.1);
+    --accent-line: rgb(236 154 114 / 0.32);
   }
 }
 
@@ -1245,24 +1256,10 @@ ol.stops p {
   }
 }
 
-/* The front page of a language (/ru/, /en/): the documentation's palette and its one sans
-   face (content/docs/docs.css), so the front page, the docs and the map read as one
-   product. The globe first, then what it does, each in a picture taken from the app that
-   opens the same view live; few words. */
+/* The front page of a language (/ru/, /en/): the documentation's one sans face, so the
+   front page, the docs and the map read as one product. The globe first, then what it does,
+   each in a picture taken from the app that opens the same view live; few words. */
 .home {
-  --paper: #fcfbf8;
-  --paper-2: #f5f2ec;
-  --paper-3: #ede8df;
-  --card: #ffffff;
-  --ink: #1f1a13;
-  --ink-2: #4a4237;
-  --ink-soft: #625a4e;
-  --ink-faint: #756c5f;
-  --line: #e7e1d6;
-  --accent: #9a3b1f;
-  --accent-ink: #8a3219;
-  --accent-soft: rgb(154 59 31 / 0.08);
-  --accent-line: rgb(154 59 31 / 0.28);
   --night: #0c1218;
   --frame-shadow:
     0 1px 2px rgb(31 26 19 / 0.05), 0 40px 80px -40px rgb(60 36 12 / 0.45),
@@ -1276,19 +1273,6 @@ ol.stops p {
 }
 @media (prefers-color-scheme: dark) {
   .home {
-    --paper: #0c1218;
-    --paper-2: #111921;
-    --paper-3: #18222d;
-    --card: #111921;
-    --ink: #ece6da;
-    --ink-2: #d2cabb;
-    --ink-soft: #a9a091;
-    --ink-faint: #8d8475;
-    --line: #212c38;
-    --accent: #ec9a72;
-    --accent-ink: #f0a983;
-    --accent-soft: rgb(236 154 114 / 0.1);
-    --accent-line: rgb(236 154 114 / 0.32);
     --frame-shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 40px 90px -40px rgb(0 0 0 / 0.85);
   }
 }
@@ -1849,6 +1833,10 @@ ol.stops p {
   line-height: 1.65;
 }
 .sources .method {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 28px;
   margin-top: 8px;
 }
 

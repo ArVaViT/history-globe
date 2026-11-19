@@ -5,7 +5,7 @@ versification is the one OSIS references in our sources follow. Writes
 packages/model/src/versification.ts; the output is committed, this script only
 regenerates it.
 
-Usage: python3 pipeline/build_versification.py && pnpm exec prettier --write packages/model/src/versification.ts
+Usage: python3 -m pipeline.build_versification && pnpm exec prettier --write packages/model/src/versification.ts
 """
 
 import io
@@ -14,7 +14,8 @@ import pathlib
 import re
 import zipfile
 
-from net import get
+from pipeline.bible_books import USFM_TO_OSIS
+from pipeline.net import get
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 OUT = ROOT / "packages" / "model" / "src" / "versification.ts"
@@ -23,20 +24,6 @@ URL = "https://ebible.org/Scriptures/engwebp_usfm.zip"
 # Apocrypha (public domain), whose numbering the Synodal shares for these books.
 DEUTERO_URL = "https://ebible.org/Scriptures/eng-kjv_usfm.zip"
 DEUTERO = {"1MA": "1Macc", "2MA": "2Macc"}
-
-USFM_TO_OSIS = {
-    "GEN": "Gen", "EXO": "Exod", "LEV": "Lev", "NUM": "Num", "DEU": "Deut", "JOS": "Josh",
-    "JDG": "Judg", "RUT": "Ruth", "1SA": "1Sam", "2SA": "2Sam", "1KI": "1Kgs", "2KI": "2Kgs",
-    "1CH": "1Chr", "2CH": "2Chr", "EZR": "Ezra", "NEH": "Neh", "EST": "Esth", "JOB": "Job",
-    "PSA": "Ps", "PRO": "Prov", "ECC": "Eccl", "SNG": "Song", "ISA": "Isa", "JER": "Jer",
-    "LAM": "Lam", "EZK": "Ezek", "DAN": "Dan", "HOS": "Hos", "JOL": "Joel", "AMO": "Amos",
-    "OBA": "Obad", "JON": "Jonah", "MIC": "Mic", "NAM": "Nah", "HAB": "Hab", "ZEP": "Zeph",
-    "HAG": "Hag", "ZEC": "Zech", "MAL": "Mal", "MAT": "Matt", "MRK": "Mark", "LUK": "Luke",
-    "JHN": "John", "ACT": "Acts", "ROM": "Rom", "1CO": "1Cor", "2CO": "2Cor", "GAL": "Gal",
-    "EPH": "Eph", "PHP": "Phil", "COL": "Col", "1TH": "1Thess", "2TH": "2Thess", "1TI": "1Tim",
-    "2TI": "2Tim", "TIT": "Titus", "PHM": "Phlm", "HEB": "Heb", "JAS": "Jas", "1PE": "1Pet",
-    "2PE": "2Pet", "1JN": "1John", "2JN": "2John", "3JN": "3John", "JUD": "Jude", "REV": "Rev",
-}
 
 # Where the WEB's chapter lengths differ from the English versification OSIS references
 # use: it moves the doxology of Romans to 14:24-26 (KJV and ESV keep it at 16:25-27),

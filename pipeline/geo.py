@@ -6,7 +6,7 @@ import math
 from collections.abc import Callable, Sequence
 from typing import TypeVar
 
-# The region of the map (ADR 0005), west, south, east, north: Tarshish and Spain
+# The region of the map, west, south, east, north: Tarshish and Spain
 # (Rom 15:24) at one end, Punt at the other.
 BBOX = (-12.0, 8.0, 75.0, 50.0)
 
@@ -19,6 +19,14 @@ def km(a: Sequence[float], b: Sequence[float]) -> float:
     under a percent at the few kilometres it is asked about."""
     x = math.radians(b[0] - a[0]) * math.cos(math.radians((a[1] + b[1]) / 2))
     return math.hypot(x, math.radians(b[1] - a[1])) * EARTH_KM
+
+
+def great_circle_km(a: Sequence[float], b: Sequence[float]) -> float:
+    """Kilometres between two lon/lat points along the sphere (haversine), at any distance."""
+    (lo1, la1), (lo2, la2) = a, b
+    p = math.pi / 180
+    h = math.sin((la2 - la1) * p / 2) ** 2 + math.cos(la1 * p) * math.cos(la2 * p) * math.sin((lo2 - lo1) * p / 2) ** 2
+    return 2 * EARTH_KM * math.asin(math.sqrt(h))
 
 
 def line_distance(p: Sequence[float], a: Sequence[float], b: Sequence[float]) -> float:

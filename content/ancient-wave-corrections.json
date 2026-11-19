@@ -1,0 +1,282 @@
+{
+  "_": "Corrections by hand to what Wikidata and Pleiades give the ancient sites of the waves (pipeline/ancient/assemble.py reads them; the content build checks each against the wave files). left_out: labels of items that moved away or are not the ancient place they name. years: years the periods cannot give, astronomical (from left out where the periods' start stands), with why and where it is told. renamed: English labels Wikidata gives in another language or with a note. names: a name in one language where Wikidata's names something else (the village it became, a later town, a battle) or is too bare to tell it from another. no_names: languages in which Wikidata's label is a modern village, another place, a description or the wrong language, so the English stands. kinds: kinds Wikidata's classes get wrong.",
+  "left_out": [
+    "San Vincenzo al Volturno",
+    "Dendur",
+    "Debod",
+    "Taffeh",
+    "Ellesy",
+    "^Thinis$",
+    "Wadi Hammamat"
+  ],
+  "years": [
+    {
+      "site": "Gamla",
+      "from": -149,
+      "to": 67,
+      "why": "a town from the 2nd century BC, destroyed by Vespasian in AD 67 (Josephus, Jewish War 4.1)"
+    },
+    {
+      "site": "Stabiae",
+      "to": 79,
+      "why": "buried by Vesuvius in AD 79"
+    },
+    {
+      "site": "Helike",
+      "to": -372,
+      "why": "sunk by the earthquake of 373 BC"
+    },
+    {
+      "site": "Potidaea",
+      "to": -355,
+      "why": "destroyed by Philip II in 356 BC; refounded as Cassandreia"
+    },
+    {
+      "site": "Luxor Temple",
+      "to": 400,
+      "why": "a temple from Amenhotep III, a Roman camp in the 3rd-4th centuries AD"
+    },
+    {
+      "site": "Mangup",
+      "from": 500,
+      "to": 1300,
+      "why": "the fortress from the 5th-6th centuries AD, Theodoro until 1475"
+    },
+    {
+      "site": "Eryx",
+      "from": -549,
+      "to": 640,
+      "why": "the Elymian sanctuary town; Wikidata's founding (AD 1) is wrong"
+    },
+    {
+      "site": "Gerf Hussein",
+      "from": -1269,
+      "to": 640,
+      "why": "the rock temple of Ramesses II, built c. 1270 BC"
+    },
+    {
+      "site": "Methone",
+      "from": -732,
+      "to": -353,
+      "why": "the Eretrian colony of c. 733 BC, razed by Philip II in 354 BC"
+    },
+    {
+      "site": "Kainua",
+      "from": -549,
+      "to": -350,
+      "why": "the Etruscan town of the late 6th century BC, left after the Gauls came in the 4th"
+    },
+    {
+      "site": "Phintias",
+      "from": -281,
+      "to": 300,
+      "why": "founded by Phintias of Akragas c. 282 BC"
+    },
+    {
+      "site": "Ptolemais Theron",
+      "from": -269,
+      "to": 300,
+      "why": "founded by Ptolemy II c. 270 BC"
+    },
+    {
+      "site": "Jebel Khalid",
+      "from": -299,
+      "to": -69,
+      "why": "the Seleucid fortress, left c. 70 BC"
+    },
+    {
+      "site": "Segeda",
+      "to": -71,
+      "why": "the Celtiberian town, taken by Rome in 153 BC, its successor left c. 72 BC"
+    },
+    {
+      "site": "Tyritake",
+      "to": 640,
+      "why": "most accounts end the town c. 370, after the Huns; kept to the last Pleiades period, not Wikidata's 800"
+    }
+  ],
+  "renamed": {
+    "Temple romain de Château-Bas": "Temple of Château-Bas",
+    "Archeological site of Alba-la-Romaine": "Alba Helviorum",
+    "Cala Morell Settlement": "Cala Morell",
+    "Portus Magnus, Algeria": "Portus Magnus",
+    "Poblat talaiòtic de Montefí": "Montefí",
+    "Sa Caleta Phoenician Settlement": "Sa Caleta",
+    "Nicaea, Locris": "Nicaea in Locris",
+    "Epiphania, Cilicia": "Epiphania in Cilicia",
+    "Temple of Janus": "Temple of Janus at Autun",
+    "Hosn Niha Site": "Hosn Niha",
+    "Ancient Tenea": "Tenea",
+    "Ancient Lappa": "Lappa",
+    "Gremanu nuraghe sacred place": "Gremanu",
+    "Pharsalos ancient city": "Pharsalus",
+    "Ancient Tithorea": "Tithorea",
+    "Gytheion ancient polis": "Gytheion",
+    "Kisamos ancient city": "Kisamos",
+    "Mochlos site": "Mochlos",
+    "Ciudad romana de Lacipo": "Lacipo",
+    "Area archeologica del Castrum Inui": "Castrum Inui",
+    "Santuario italico di Schiavi d'Abruzzo": "Sanctuary of Schiavi d'Abruzzo",
+    "Poblat ibèric de Can Fatjó": "Can Fatjó",
+    "Poblat ibèric de la Cadira del Bisbe": "Cadira del Bisbe",
+    "Poblat ibèric de les Maleses": "Les Maleses",
+    "Poblat Ibèric del Turó de Castellruf": "Turó de Castellruf",
+    "Povoado fortificado e Santuário de Endovélico": "Sanctuary of Endovelicus",
+    "Camp celtique de la Bure": "La Bure",
+    "Necropolis of Manduria": "Manduria",
+    "Minoan villa of Achladia": "Achladia",
+    "Üçtepe Mound": "Üçtepe",
+    "Agios Konstantinos, Methana": "Sanctuary of Agios Konstantinos",
+    "Aventicum, Roman city - Avenches, medieval-modern city": "Aventicum",
+    "Castro, Lazio": "Castro",
+    "Ancient Maroneia": "Maroneia",
+    "Sanctuary of Isthmian Poseidon, Isthmia": "Isthmia"
+  },
+  "names": [
+    {
+      "site": "Helenopolis",
+      "lang": "ru",
+      "name": "Еленополь"
+    },
+    {
+      "site": "Aegae",
+      "lang": "ru",
+      "name": "Эги Киликийские"
+    },
+    {
+      "site": "Histiaia",
+      "lang": "ru",
+      "name": "Гистиея"
+    },
+    {
+      "site": "Roman temple of Vic",
+      "lang": "ru",
+      "name": "Римский храм в Вике"
+    },
+    {
+      "site": "Serrion Teichos",
+      "lang": "ru",
+      "name": "Серрион-Тейхос"
+    },
+    {
+      "site": "Elegeia",
+      "lang": "ru",
+      "name": "Элегея"
+    },
+    {
+      "site": "Forum Novum",
+      "lang": "ru",
+      "name": "Форум Новум"
+    },
+    {
+      "site": "Temple of Apollo Epicurius in Bassae",
+      "lang": "sr",
+      "name": "Храм Аполона Епикурија"
+    },
+    {
+      "site": "Haluza",
+      "lang": "it",
+      "name": "Elusa"
+    },
+    {
+      "site": "Thagaste",
+      "lang": "ru",
+      "name": "Тагаст"
+    },
+    {
+      "site": "Dardanos",
+      "lang": "ru",
+      "name": "Дардан"
+    },
+    {
+      "site": "Lavinium",
+      "lang": "ru",
+      "name": "Лавиний"
+    },
+    {
+      "site": "Beneventum",
+      "lang": "ru",
+      "name": "Беневент"
+    },
+    {
+      "site": "Koroneia",
+      "lang": "ru",
+      "name": "Коронея"
+    },
+    {
+      "site": "Marcianopolis",
+      "lang": "ru",
+      "name": "Марцианополь"
+    },
+    {
+      "site": "Pharae",
+      "lang": "ru",
+      "name": "Феры Мессенские"
+    },
+    {
+      "site": "Prusias ad Hypium",
+      "lang": "ru",
+      "name": "Прусиада-на-Гипии"
+    },
+    {
+      "site": "Teuthis",
+      "lang": "ru",
+      "name": "Тевфида"
+    },
+    {
+      "site": "Tium",
+      "lang": "ru",
+      "name": "Тиос"
+    },
+    {
+      "site": "Stageira",
+      "lang": "ru",
+      "name": "Стагира"
+    },
+    {
+      "site": "Histria",
+      "lang": "ru",
+      "name": "Гистрия"
+    },
+    {
+      "site": "Phthiotic Thebes",
+      "lang": "ru",
+      "name": "Фивы Фтиотидские"
+    }
+  ],
+  "no_names": {
+    "Acropolis of Arpino": ["cs", "da", "es", "fi", "fr", "nb", "pl", "pt", "ro", "sr", "sv", "tl"],
+    "Aegae": ["es", "it", "nl", "uk"],
+    "Alba Helviorum": ["fr", "nl"],
+    "Anthemous": ["sv"],
+    "Aventicum": ["de", "fr"],
+    "Bakchias": ["sv"],
+    "Diocletianopolis in Thrace": ["pl"],
+    "Gnatia": ["es"],
+    "Haïdra": ["es"],
+    "Histiaia": ["es", "nl", "uk"],
+    "Iluro": ["es"],
+    "Issus": ["nl"],
+    "Kandyba": ["vi"],
+    "L'Alcúdia": ["es", "sv"],
+    "Macistus": ["fi"],
+    "Malgium": ["nl"],
+    "Manduria": ["fr", "it", "nl"],
+    "Olba": ["de"],
+    "Panionium": ["nl"],
+    "Porto Pisano": ["de"],
+    "Raphana": ["nb"],
+    "Sa Caleta": ["de"],
+    "Scoglietto sanctuary": ["it", "nl"],
+    "Sippar-Amnanum": ["fr", "nl", "pl", "sv"],
+    "Temple of Château-Bas": ["de", "nl"],
+    "Tigranocerta": ["de"],
+    "Tintignac": ["it"],
+    "Xyniae": ["bg", "sr"]
+  },
+  "kinds": {
+    "Villa of Herodes Atticus": "site",
+    "Necropolis of Pranu Muttedu": "site",
+    "Achladia": "site"
+  }
+}

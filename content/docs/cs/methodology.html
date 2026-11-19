@@ -9,7 +9,7 @@ description: Odkud na History Globe pochází každé místo, hranice, datum a o
   vrstvy, co jsme změnili a co nevíme.
 </p>
 
-<h2>Místa Bible</h2>
+<h2 id="places-of-the-bible">Místa Bible</h2>
 <p>
   Místa Bible ({{places}}) a jejich verše pocházejí z
   <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
@@ -21,7 +21,8 @@ description: Odkud na History Globe pochází každé místo, hranice, datum a o
   Z těchto {{places}} míst je {{named}} jmenováno ve verši knih, které OpenBible označuje, a každé z
   nich má vlastní stránku; zbylých {{unnamed}} jsou záznamy OpenBible, které žádný verš těchto knih
   nejmenuje (například Adasa z 1. knihy Makabejské). Článek má {{articles}} míst. Dalších
-  {{excluded}} bylo vynecháno, protože pro ně není bod, který smíme zveřejnit (viz níže).
+  {{excluded}} bylo vynecháno, protože pro ně není bod, který smíme zveřejnit (viz níže). V
+  OpenBible {{without_point|místo nemá|místa nemají|míst nemá}} vůbec žádný bod.
 </p>
 <ul>
   <li>
@@ -43,7 +44,7 @@ description: Odkud na History Globe pochází každé místo, hranice, datum a o
   </li>
 </ul>
 
-<h2>Kdy místa stála</h2>
+<h2 id="when-places-stood">Kdy místa stála</h2>
 <p>
   Město se na mapě kreslí celé jen v letech, kdy stálo. U {{life}} míst Bible jsou roky založení,
   zničení a opuštění zaznamenány ručně, každý s prameny (antičtí autoři, kroniky, nápisy, zprávy o
@@ -51,22 +52,24 @@ description: Odkud na History Globe pochází každé místo, hranice, datum a o
   ně rok nedostane.
 </p>
 <p>
-  Města starověkého světa, která Bible nejmenuje ({{ancient}}) — hlavní města, přístavy a svatyně
-  jako Ugarit, Chattusa, Mari nebo Delfy — byla vybrána a datována jedno po druhém: každé je
-  umístěno podle svého záznamu v <a href="https://pleiades.stoa.org">Pleiades</a> nebo ve
-  Wikidatech, na starověkém sídlišti, nikoli v dnešním městě, a datováno podle těchto záznamů a
-  encyklopedických výkladů, ručně sladěných. Dalších zhruba čtrnáct set vybral skript: osady,
-  svatyně a přístavy z Pleiades, jejichž položka ve Wikidatech je starověkým sídlištěm, nikoli
-  dnešním městem; jejich body pocházejí z Pleiades, jména z Wikidat (kde tam ruské, ukrajinské,
-  bulharské nebo srbské jméno chybí, naše, v podobě, kterou užívá klasická filologie v daném jazyce)
-  a roky jsou rozpětím období, v nichž je Pleiades dokládá, proto jsou všechna označena „asi“. Kde
-  bylo město zničeno uprostřed období, je jeho konec stanoven ručně podle dějin. Místo se objeví při
-  přiblížení, které určuje, jak často ho Bible jmenuje; město, které Bible sotva zmiňuje, ale které
-  svět dobře zná — Kartágo, Sparta, Ur — se objeví dříve, podle počtu článků na Wikipedii o samotném
-  starověkém sídlišti.
+  Z měst starověkého světa, která Bible nejmenuje ({{ancient}}) — hlavních měst, přístavů a svatyní
+  jako Ugarit, Chattusa, Mari nebo Delfy — {{ancient_hand}} {{~ancient_hand|bylo vybráno a
+  datováno|byla vybrána a datována|bylo vybráno a datováno}} jedno po druhém: každé je umístěno
+  podle svého záznamu v <a href="https://pleiades.stoa.org">Pleiades</a> nebo ve Wikidatech, na
+  starověkém sídlišti, nikoli v dnešním městě, a datováno podle těchto záznamů a encyklopedických
+  výkladů, ručně sladěných. {{~ancient_script|Zbylé|Zbylá|Zbylých}} {{ancient_script}} vybral
+  skript: osady, svatyně a přístavy z Pleiades, jejichž položka ve Wikidatech je starověkým
+  sídlištěm, nikoli dnešním městem; jejich body pocházejí z Pleiades, jména z Wikidat (kde tam
+  ruské, ukrajinské, bulharské nebo srbské jméno chybí, naše, v podobě, kterou užívá klasická
+  filologie v daném jazyce; v ostatních jazycích, kde jméno chybí, anglické) a roky jsou rozpětím
+  období, v nichž je Pleiades dokládá, proto jsou všechna označena „asi“. Kde bylo město zničeno
+  uprostřed období, je jeho konec stanoven ručně podle dějin. Místo se objeví při přiblížení, které
+  určuje, jak často ho Bible jmenuje; město, které Bible sotva zmiňuje, ale které svět dobře zná —
+  Kartágo, Sparta, Ur — se objeví dříve, podle počtu článků na Wikipedii o samotném starověkém
+  sídlišti.
 </p>
 
-<h2>Hranice</h2>
+<h2 id="borders">Hranice</h2>
 <p>
   Státy a jejich hranice rok po roce pocházejí z
   <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatrie</a> (Seshat Global History Databank,
@@ -95,22 +98,22 @@ description: Odkud na History Globe pochází každé místo, hranice, datum a o
   kterou se stala.
 </p>
 
-<h2>Osoby</h2>
+<h2 id="people">Osoby</h2>
 <p>
   Osoby Bible ({{people}}) a jejich rodinné vazby pocházejí z TIPNR projektu STEP Bible (Tyndale
   House, Cambridge). Tyto vazby jsme nepřevzali bez ověření:
 </p>
 <ul>
   <li>
-    rodinné vazby 1200 osob, které text jmenuje nejčastěji, a rodokmeny z První knihy letopisů byly
-    porovnány s verši; 153 vazeb, které text neuvádí, bylo odstraněno — bratři Ježíšovi jako synové
-    Josefa a Marie, Jezábel jako matka Achazjáše — a chybějící články rodokmenu Ježíšova byly
+    rodinné vazby {{n:1200}} osob, které text jmenuje nejčastěji, a rodokmeny z První knihy letopisů
+    byly porovnány s verši; 153 vazeb, které text neuvádí, bylo odstraněno — bratři Ježíšovi jako
+    synové Josefa a Marie, Jezábel jako matka Achazjáše — a chybějící články rodokmenu Ježíšova byly
     doplněny z textu;
   </li>
   <li>
-    všech 1136 vazeb mezi osobou a místem, kde hraje ústřední nebo významnou roli, bylo přečteno
-    verš po verši; 344 jich bylo odstraněno (Mojžíš „v Kanaánu“, Abraham „v Sodomě“, místa syna
-    přisouzená otci) a 94 dostalo lepší verš;
+    všech {{n:1136}} vazeb mezi osobou a místem, kde hraje ústřední nebo významnou roli, bylo
+    přečteno verš po verši; 344 jich bylo odstraněno (Mojžíš „v Kanaánu“, Abraham „v Sodomě“, místa
+    syna přisouzená otci) a 94 dostalo lepší verš;
   </li>
   <li>
     jmenovci se rozlišují tak, jak je rozlišuje text: „Jan Křtitel“, „Jan Zebedeův“, „Achazjáš,
@@ -127,14 +130,15 @@ description: Odkud na History Globe pochází každé místo, hranice, datum a o
   Citace pocházejí jen z Bible, která je v každém jazyce volným dílem; vydání uvádí stránka
   <a href="sources.html">pramenů</a>. Žádná trasa neprošla první kontrolou beze změny; každá byla
   opravena a ověřena znovu. Při poslední úplné kontrole, dokončené 17. října 2026, bylo všech 746
-  článků znovu ověřeno podle pramenů, asi 210 z nich dvakrát; bylo provedeno 1088 oprav, každá ve
-  všech 11 jazycích, které web tehdy měl, a ve 157 článcích se našly zjevné chyby. Pět jazyků
-  přidaných 24. října 2026 (švédština, norština, dánština, tagalština a srbština) bylo přeloženo z
-  již opravených textů; poté byl každý jejich text v nezávislém kontrolním průchodu porovnán s
-  angličtinou a každá citace s Biblí daného jazyka. Tyto průchody jsou vlastní kontroly projektu,
-  nikoli odborné recenzní řízení. Recenze odborníků se zveřejňují pod jejich jmény na stránce
-  <a href="reviews.html">recenzí</a> a každý článek, který odborník recenzoval, uvádí recenzenta a
-  odkazuje na jeho recenzi.
+  článků znovu ověřeno podle pramenů, asi 210 z nich dvakrát; bylo provedeno {{n:1088}} oprav, každá
+  ve všech 11 jazycích, které web tehdy měl, a ve 157 článcích se našly zjevné chyby. Pět jazyků
+  přidaných 24. října 2026 (švédština, norština, dánština, tagalština a srbština) a pět jazyků
+  přidaných 26. října 2026 (maďarština, finština, vietnamština, rumunština a bulharština) bylo
+  přeloženo z již opravených textů; poté byl každý jejich text v nezávislém kontrolním průchodu
+  porovnán s angličtinou a každá citace s Biblí daného jazyka. Tyto průchody jsou vlastní kontroly
+  projektu, nikoli odborné recenzní řízení. Recenze odborníků se zveřejňují pod jejich jmény na
+  stránce <a href="reviews.html">recenzí</a> a každý článek, který odborník recenzoval, uvádí
+  recenzenta a odkazuje na jeho recenzi. Dosud zveřejněné: <span class="reviews"></span>.
 </p>
 <p>
   Vzdálenost k zastávce je uvedena vzdušnou čarou. Od roku 312 př. n. l., kdy začínají římské
@@ -154,8 +158,8 @@ description: Odkud na History Globe pochází každé místo, hranice, datum a o
   rozhodly o osudu Izraele. Každá stojí na místě, kde se bojovalo, a na mapě se zobrazuje ve svých
   letech. Biblické jsou datovány tak, jak trasy datují tytéž příběhy; ostatní nemají verš, ale
   antický nebo odborný pramen. Druhý, nezávislý kontrolní průchod ověřil návrh podle synodního textu
-  a King James Version: z 58 záznamů bylo 16 opraveno a jeden vypuštěn, protože na mapě není bod pro
-  jeho lokalitu.
+  a King James Version: z 58 záznamů (říjen 2026) bylo 16 opraveno a jeden vypuštěn, protože na mapě
+  není bod pro jeho lokalitu.
 </p>
 
 <p>
@@ -201,7 +205,7 @@ description: Odkud na History Globe pochází každé místo, hranice, datum a o
   </li>
 </ul>
 
-<h2>Kontroly při každém sestavení</h2>
+<h2 id="checks-on-every-build">Kontroly při každém sestavení</h2>
 <p>Nic se nezveřejní, dokud neprojdou všechny kontroly:</p>
 <ul>
   <li>
@@ -216,7 +220,7 @@ description: Odkud na History Globe pochází každé místo, hranice, datum a o
   <li>schémata obsahu jsou přísná: neznámé nebo chybně napsané pole zastaví sestavení.</li>
 </ul>
 
-<h2>Co zůstává nejisté</h2>
+<h2 id="what-is-uncertain">Co zůstává nejisté</h2>
 <ul>
   <li>
     Data před 1. tisíciletím př. n. l. jsou přibližná a některá sporná; mapa je označuje „asi“.
@@ -257,7 +261,7 @@ https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
 <p>
   S účtem na GitHubu můžete také použít odkaz <i>Našli jste chybu?</i> na kartě každého místa, který
   otevře issue ve veřejném repozitáři s již vyplněným místem, nebo ho otevřít přímo:
-  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+  <a href="https://github.com/ArVaViT/history-globe/issues/new?template=report-an-error.yml"
     >github.com/ArVaViT/history-globe/issues</a
   >.
 </p>

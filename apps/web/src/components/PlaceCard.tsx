@@ -37,6 +37,7 @@ import { loadPeople, peopleNow, personName, type People } from "../people";
 import { polityText, type PolityName } from "@hg/core";
 import { Credit } from "./Credit";
 import { AncientAuthors } from "./place/AncientAuthors";
+import { PlaceQuestions } from "./place/PlaceQuestions";
 import { ArticleSection } from "./place/ArticleSection";
 import { Rulers } from "./place/Rulers";
 import { VerseText } from "./place/VerseText";
@@ -94,7 +95,6 @@ export function PlaceCard({
   onMeasure,
   onLesson,
   pleiades,
-  questions,
   onPerson,
   onYear,
   onHighlight,
@@ -136,9 +136,6 @@ export function PlaceCard({
   onPerson?: ((person: number) => void) | undefined;
   /** The place in Pleiades, with the span of the periods it is attested in. */
   pleiades?: PleiadesLink | undefined;
-  /** Questions answered with this place on the map (their pages are /{locale}/q/{id}/). */
-  questions?:
-    readonly { readonly id: string; readonly en: string; readonly ru: string }[] | undefined;
   /** Opens the distance tool with this place as its first end. */
   onMeasure?: (() => void) | undefined;
   /** Opens the lesson tool, this place just added to the lesson. */
@@ -836,26 +833,7 @@ export function PlaceCard({
 
       <AncientAuthors placeId={place.id} locale={locale} />
 
-      {questions && questions.length > 0 && (
-        <div className="px-5 pt-3 text-[13px] leading-snug">
-          <h3 className="text-[12px] text-ink-soft">{t("place.questions")}</h3>
-          <ul className="mt-0.5">
-            {questions.map((q) => (
-              <li key={q.id}>
-                <a
-                  href={`${import.meta.env.BASE_URL}${locale}/q/${q.id}/`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-accent"
-                >
-                  {pick(q, locale) ?? ""}
-                  <span className="sr-only"> ({t("new_tab")})</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <PlaceQuestions placeId={place.id} locale={locale} />
 
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 px-5 pt-3 pb-4 text-[11px] text-ink-soft">
         <span>

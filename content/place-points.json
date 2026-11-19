@@ -1,5 +1,5 @@
 {
-  "_source": "Places whose point is chosen by hand (pipeline/build_data.py, move_points and pick_site). `same_as`: the place sits on another OpenBible record's point. OpenBible calls each of these 'another name for' the other record, but resolves the two one hop apart, to different candidate sites (docs/crosswalk/their-errors.md, O6): one place, one point; a chain (Bealoth -> Baalath-beer -> Ramah 6) is followed to its end. `site`: one of OpenBible's modern locations for the place, shown in place of its first identification, with its point, its confidence and its 'where it is today' line; the candidates on the card are unchanged. Chosen where the majority of the atlases and reference works (Pleiades and the Barrington Atlas, Wikidata, OpenBible's count of sources) holds another candidate than OpenBible's recent-trend weighting (docs/crosswalk/their-errors.md, the last section, 'decided by the majority on 2026-10-19'). Checked by hand on 2026-10-19; Zer (a061538) was taken out again the same day on review: the named record's own point fits its verses worse (O6).",
+  "_source": "Places whose point is chosen by hand (pipeline/build_data.py, move_points and pick_site). `same_as`: the place sits on another OpenBible record's point. OpenBible calls each of these 'another name for' the other record, but resolves the two one hop apart, to different candidate sites (docs/crosswalk/their-errors.md, O6): one place, one point; a chain (Bealoth -> Baalath-beer -> Ramah 6) is followed to its end. `site`: one of OpenBible's modern locations for the place, shown in place of its first identification, with its point, its confidence and its 'where it is today' line; the candidates on the card are unchanged. `wikidata`: a land OpenBible puts on a city's point (Judea on Jerusalem, Egypt on On) takes its Wikidata item's point (P625, CC0) instead, so the land is not one dot with the city and a tour's leg from the land to the city is not nil. Chosen where the majority of the atlases and reference works (Pleiades and the Barrington Atlas, Wikidata, OpenBible's count of sources) holds another candidate than OpenBible's recent-trend weighting (docs/crosswalk/their-errors.md, the last section, 'decided by the majority on 2026-10-19'). Checked by hand on 2026-10-19; Zer (a061538) was taken out again the same day on review: the named record's own point fits its verses worse (O6).",
   "places": {
     "ac17675": {
       "same_as": "a3d1c99",
@@ -56,6 +56,22 @@
     "a800159": {
       "same_as": "a14325e",
       "why": "Bealoth 2 (1 Kgs 4:16): another name for Bealoth 1 (OpenBible's only identification, 6 sources), resolved one hop to Bealoth 1's first site, Beer Yeroham (O6). Follows Bealoth 1 to Ramah's point: one place, one point, and the two Bealoths stay one dot on the map, so the place page keeps its address (/place/bealoth/)."
+    },
+    "a149f13": {
+      "wikidata": "Q104028",
+      "why": "Judea (52 verses, the Gospels and Acts): OpenBible's only identification is Jerusalem itself, so the land was a second dot on the city's point. Wikidata's Judea (Q104028, region of ancient Israel) puts it in the hills between Bethlehem and the Dead Sea."
+    },
+    "ab86a69": {
+      "wikidata": "Q104028",
+      "why": "Judea 2 (Ezra 5:8; 9:9), the Persian province: the same land as Judea 1, on its point (OpenBible's only identification is Jerusalem, as for Judea 1)."
+    },
+    "a88310a": {
+      "wikidata": "Q957854",
+      "why": "Beyond the River (Ezra 4-8; Neh 2-3), the Persian province west of the Euphrates: OpenBible's only identification is Jerusalem, where Ezra's letters were read, not the province. Wikidata's Eber-Nari (Q957854) puts its point by Antioch on the Orontes."
+    },
+    "af301ca": {
+      "wikidata": "Q11768",
+      "why": "Egypt (658 verses): OpenBible's only identification is On (Heliopolis), so the land was one dot with the city and the Joseph tour's leg from Egypt to On was nil. Wikidata's ancient Egypt (Q11768) puts it by Memphis."
     }
   }
 }

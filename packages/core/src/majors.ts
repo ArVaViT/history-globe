@@ -9,6 +9,7 @@
  * Left to MapLibre's collision with their names, Tyre's name and the room kept round it would
  * take Damascus off the map at zoom 4.
  */
+import { distanceKm } from "@hg/model";
 import type { Feature, FeatureCollection, Point } from "geojson";
 import { NO_YEAR, NT_FROM } from "./style-expressions.ts";
 
@@ -52,13 +53,8 @@ const KM_PER_WORLD = 40075;
 export function pxApart(a: readonly number[], b: readonly number[], zoom: number): number {
   const [lon1 = 0, lat1 = 0] = a;
   const [lon2 = 0, lat2 = 0] = b;
-  const rad = Math.PI / 180;
-  const dLat = (lat2 - lat1) * rad;
-  const dLon = (lon2 - lon1) * rad;
-  const h =
-    Math.sin(dLat / 2) ** 2 + Math.cos(lat1 * rad) * Math.cos(lat2 * rad) * Math.sin(dLon / 2) ** 2;
-  const km = 2 * 6371 * Math.asin(Math.min(1, Math.sqrt(h)));
-  const lat = ((lat1 + lat2) / 2) * rad;
+  const km = distanceKm([lon1, lat1], [lon2, lat2]);
+  const lat = ((lat1 + lat2) / 2) * (Math.PI / 180);
   return (km * 512 * 2 ** zoom) / (KM_PER_WORLD * Math.cos(lat));
 }
 

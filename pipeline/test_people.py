@@ -1,12 +1,8 @@
 """The people package (pipeline/people)."""
 
-import pathlib
-import sys
 import unittest
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent / "people"))
-
-from package import unnamed  # noqa: E402
+from pipeline.people.package import unnamed
 
 
 class People(unittest.TestCase):

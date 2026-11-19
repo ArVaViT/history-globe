@@ -14,17 +14,17 @@ inside a lake (the Dead Sea, the Sea of Galilee) is cut away.
 Run once, by hand; the output is kept in git and read by build_data.py:
   RiverATLAS_Data_v10_shp.zip from the figshare record above; unzip RiverATLAS_v10_eu.* and _af.*
   into <dir>; uv venv -p 3.12 <venv> && uv pip install pyogrio shapely
-  <venv>/bin/python pipeline/rivers/riveratlas_rivers.py <dir>"""
+  <venv>/bin/python -m pipeline.rivers.riveratlas_rivers <dir>  (from the repository root)"""
 import json, math, sys
 from pathlib import Path
 import pyogrio, shapely
 from shapely.geometry import shape
 from shapely.ops import linemerge, unary_union
 
+from pipeline.build_data import MODERN_LAKES
+from pipeline.geo import simplify
+
 HERE = Path(__file__).parent
-sys.path.insert(0, str(HERE.parent))
-from build_data import MODERN_LAKES  # noqa: E402
-from geo import simplify  # noqa: E402
 
 D = Path(sys.argv[1])
 # The Levant, the Euphrates and the Tigris from their sources to the Gulf, and the Nile from

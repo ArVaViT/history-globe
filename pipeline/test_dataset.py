@@ -5,7 +5,7 @@ import pathlib
 import tempfile
 import unittest
 
-from build_dataset import build, certainty, renumber, snapshot_date, TABLES, write_table, year_label
+from pipeline.build_dataset import build, certainty, renumber, snapshot_date, snapshot_version, TABLES, write_table, year_label
 
 
 class Years(unittest.TestCase):
@@ -132,6 +132,10 @@ class Snapshot(unittest.TestCase):
             write_table(out / "data" / "places.csv", ["id"], [{"id": "a2"}])
             self.assertNotEqual(snapshot_date(out, pub), "3 May 2026")
             self.assertNotEqual(snapshot_date(out, None), "3 May 2026")
+
+    def test_the_snapshot_date_is_its_version(self):
+        self.assertEqual(snapshot_version("4 November 2026"), "2026-11-04")
+        self.assertEqual(snapshot_version("17 May 2027"), "2027-05-17")
 
 
 if __name__ == "__main__":

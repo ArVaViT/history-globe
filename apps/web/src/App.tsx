@@ -1,6 +1,6 @@
 import { YEAR_MAX, YEAR_MIN, type Engine, type Renderer } from "@hg/core";
-import { formatYear, periodAt, periodName, pick, placeName as nameOf } from "@hg/model";
-import { BookOpen, ChevronDown, PencilRuler, Search, Settings, X } from "./components/icons";
+import { formatYear, pick, placeName as nameOf } from "@hg/model";
+import { X } from "./components/icons";
 import type { Tool } from "./components/ToolsPanel";
 import {
   lazy,
@@ -12,18 +12,17 @@ import {
   useRef,
   useEffectEvent,
   useState,
-  type ReactNode,
 } from "react";
 import { useTranslation } from "./i18n";
-import { ErrorBoundary } from "./components/ErrorBoundary";
 import { Panel } from "./components/Panel";
-import { Timeline } from "./components/Timeline";
+import { Header, HeaderButton } from "./components/Header";
+import { Player } from "./components/Player";
 
 import { loadData, type LoadedData } from "./data";
 import { firstPaint } from "./first-paint";
+import { focusNextFrame } from "./focus";
 import { offerAgentTools } from "./webmcp";
 import {
-  useHeightVar,
   useScrollsMark,
   useKeys,
   useMapControlSlots,
@@ -84,10 +83,6 @@ const loadPeoplePanel = () => import("./components/PeoplePanel");
 const ToursPanel = lazy(() => loadTours().then((m) => ({ default: m.ToursPanel })));
 const EventsPanel = lazy(() => loadEvents().then((m) => ({ default: m.EventsPanel })));
 const ArticlesPanel = lazy(() => loadArticles().then((m) => ({ default: m.ArticlesPanel })));
-// The search opens on a press: its code (and the people's and sites' lookups) waits for it.
-const SearchBox = lazy(() =>
-  import("./components/SearchBox").then((m) => ({ default: m.SearchBox })),
-);
 // Only inside another site's frame.
 const EmbedBar = lazy(() => import("./components/EmbedBar").then((m) => ({ default: m.EmbedBar })));
 const ChapterPicker = lazy(() =>
@@ -124,8 +119,6 @@ export function App({ link }: { link: UrlView }) {
   const { embed, mapOnly } = frame;
   const container = useRef<HTMLDivElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
-  /** What was typed into the search before it loaded: it carries on from there. */
-  const typed = useRef("");
   const [data, setData] = useState<LoadedData | null>(null);
   const [dataError, setDataError] = useState<string | null>(null);
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -170,7 +163,6 @@ export function App({ link }: { link: UrlView }) {
   // people.json once a person has been opened: names follow the language.
   const [people, setPeople] = useState<People | null>(null);
   const narrow = useNarrow();
-  const timelineBox = useHeightVar("--hg-timeline-h");
   const columnBox = useScrollsMark();
   // The map's controls, moved from its corners into the player.
   const [scaleSlot, setScaleSlot] = useState<HTMLDivElement | null>(null);
@@ -219,8 +211,6 @@ export function App({ link }: { link: UrlView }) {
   }, [compact, mapOnly, setLayout]);
   // The player folds to its year (a button in it); in a compact frame it starts folded.
   const [timeOpen, setTimeOpen] = useState(!compact);
-  const foldButton = useRef<HTMLButtonElement>(null);
-  const timeRange = useRef<HTMLInputElement>(null);
   const folded = !timeOpen;
   // A frame in a reader's column is short: the card drops its photo and keeps to half of it.
   const short = useMedia("(max-height: 519px)");
@@ -228,7 +218,6 @@ export function App({ link }: { link: UrlView }) {
   useEffect(() => {
     setLayout({ personCard: person !== null });
   }, [person, setLayout]);
-  const periodNow = periodAt(state.year);
   // The way back holds only while the stop's place stays open: another place, or the
   // card closed, and it goes (adjusted during render, as React recommends).
   if (backToTour && state.selectedPlace !== backToTour.place && !state.tour) setBackToTour(null);
@@ -357,9 +346,7 @@ export function App({ link }: { link: UrlView }) {
   const focusSearch = useCallback(() => {
     closeCardOnPhone();
     setSearchOpen(true);
-    requestAnimationFrame(() => {
-      searchRef.current?.focus();
-    });
+    focusNextFrame(searchRef);
   }, [closeCardOnPhone]);
   const closeOwn = useCallback(() => {
     // Escape in a quiz closes the quiz, not the tour under it.
@@ -474,7 +461,9 @@ export function App({ link }: { link: UrlView }) {
         ...events,
         ...(data?.battles ?? [])
           .filter((b) => !bibleOnly || b.ref !== undefined)
-          // Their own ids: a battle may share one with an event (Carchemish).
+          // Told as an event too (Samaria, 722 BC; `event` in battles.yaml): listed once, as
+          // the event the timeline marks.
+          .filter((b) => !events.some((e) => e.id === b.event))
           .map((b) => ({ ...b, id: `battle:${b.id}`, battle: true })),
       ].sort((a, b) => a.year - b.year),
     [events, data, bibleOnly],
@@ -688,149 +677,74 @@ export function App({ link }: { link: UrlView }) {
                 aria-label={t("panels.label")}
                 className={`pointer-events-none absolute top-4 bottom-[calc(var(--hg-timeline-h)+24px)] left-4 -m-4 flex flex-col gap-3 overflow-y-auto p-4 pr-5 [scrollbar-width:thin] *:pointer-events-auto *:shrink-0 data-scrolls:pointer-events-auto max-md:inset-x-3 max-md:top-3 max-md:bottom-auto max-md:z-10 max-md:max-h-[calc(100dvh-var(--hg-timeline-h)-32px)] max-md:pr-4 ${searchOpen ? "max-md:overflow-visible" : ""}`}
               >
-                {/* On a panel, not on the map: state labels run under the corner. The magnifier,
-                  the title, the overview (it opens just below) and the settings; searching,
-                  the field takes the whole bar. */}
-                <Panel className="relative z-10 flex w-[360px] items-center gap-0.5 px-1.5 py-1.5 max-md:w-full">
-                  <h1
-                    className={`order-2 flex-1 pl-1 font-serif text-[19px] font-semibold tracking-tight text-ink ${searchOpen ? "sr-only" : ""}`}
-                  >
-                    History Globe
-                  </h1>
-                  {searchOpen ? (
-                    <>
-                      <ErrorBoundary fallback={null}>
-                        <Suspense
-                          fallback={
-                            // While the search loads: a field that keeps what is typed into it.
-                            <input
-                              autoFocus
-                              aria-label={t("search.placeholder")}
-                              placeholder={t("search.placeholder")}
-                              onChange={(e) => {
-                                typed.current = e.target.value;
-                              }}
-                              className="hg-grow w-full min-w-0 rounded-full bg-paper px-3 py-1.5 pl-9 text-[15px] text-ink outline-hidden ring-2 ring-accent/30 placeholder:text-[14px] placeholder:text-ink-soft/70"
-                            />
-                          }
-                        >
-                          <SearchBox
-                            data={data}
-                            inputRef={searchRef}
-                            bibleOnly={bibleOnly}
-                            takeTyped={() => {
-                              const early = typed.current;
-                              typed.current = "";
-                              return early;
-                            }}
-                            onSelect={(id) => {
-                              engine.selectPlace(id);
-                            }}
-                            onChapter={(focus) => {
-                              setPlaying(false);
-                              engine.stopTour();
-                              engine.selectPlace(null);
-                              engine.focusPlaces(focus);
-                            }}
-                            onYear={(y) => {
-                              setPlaying(false);
-                              engine.stopTour();
-                              engine.setYear(y);
-                            }}
-                            onPerson={(i) => {
-                              setPlaying(false);
-                              openPerson(i, null);
-                            }}
-                            onTour={(id) => {
-                              setPlaying(false);
-                              engine.startTour(id);
-                            }}
-                            events={eventsAndBattles}
-                            onEvent={(ev) => {
-                              setPlaying(false);
-                              goToEvent(engine, globe.renderer, ev);
-                            }}
-                            onClose={(focusBack) => {
-                              typed.current = "";
-                              setSearchOpen(false);
-                              if (focusBack)
-                                requestAnimationFrame(() => searchButton.current?.focus());
-                            }}
-                          />
-                        </Suspense>
-                      </ErrorBoundary>
-                      <span className="order-3">
-                        <HeaderButton
-                          label={t("search.close")}
-                          onClick={() => {
-                            setSearchOpen(false);
-                            requestAnimationFrame(() => searchButton.current?.focus());
-                          }}
-                        >
-                          <X className="size-[18px]" />
-                        </HeaderButton>
-                      </span>
-                    </>
-                  ) : (
-                    <>
-                      <span className="order-1">
-                        <HeaderButton
-                          buttonRef={searchButton}
-                          label={t("search.open")}
-                          onClick={focusSearch}
-                        >
-                          <Search className="size-[18px]" />
-                        </HeaderButton>
-                      </span>
-                      <span className="order-3 flex">
-                        {/* The overview opens right below: tours, events, people and articles. */}
-                        <HeaderButton
-                          buttonRef={overviewButton}
-                          label={t("more")}
-                          active={moreShown}
-                          expanded={moreShown}
-                          controls="more-panels"
-                          onClick={() => {
-                            const next = !moreShown;
-                            if (next) closeCardOnPhone();
-                            setMoreOpen(next);
-                            writeMore(next);
-                          }}
-                        >
-                          <BookOpen className="size-[18px]" />
-                        </HeaderButton>
-                        {!embed && (
-                          <HeaderButton
-                            label={t("tools.title")}
-                            active={tool !== null}
-                            expanded={tool !== null}
-                            controls="tools-panel"
-                            onClick={() => {
-                              const next = tool === null;
-                              // On a phone the tools and the overview share the column.
-                              if (next && narrow) {
-                                setMoreOpen(false);
-                                writeMore(false);
-                              }
-                              openTool(next ? "menu" : null);
-                            }}
-                          >
-                            <PencilRuler className="size-[18px]" />
-                          </HeaderButton>
-                        )}
-                        <HeaderButton
-                          label={t("settings.title")}
-                          dialog
-                          onClick={() => {
-                            setSettingsOpen(true);
-                          }}
-                        >
-                          <Settings className="size-[18px]" />
-                        </HeaderButton>
-                      </span>
-                    </>
-                  )}
-                </Panel>
+                <Header
+                  search={{
+                    data,
+                    bibleOnly,
+                    onSelect: (id) => {
+                      engine.selectPlace(id);
+                    },
+                    onChapter: (focus) => {
+                      setPlaying(false);
+                      engine.stopTour();
+                      engine.selectPlace(null);
+                      engine.focusPlaces(focus);
+                    },
+                    onYear: (y) => {
+                      setPlaying(false);
+                      engine.stopTour();
+                      engine.setYear(y);
+                    },
+                    onPerson: (i) => {
+                      setPlaying(false);
+                      openPerson(i, null);
+                    },
+                    onTour: (id) => {
+                      setPlaying(false);
+                      engine.startTour(id);
+                    },
+                    events: eventsAndBattles,
+                    onEvent: (ev) => {
+                      setPlaying(false);
+                      goToEvent(engine, globe.renderer, ev);
+                    },
+                  }}
+                  searchOpen={searchOpen}
+                  inputRef={searchRef}
+                  searchButton={searchButton}
+                  overviewButton={overviewButton}
+                  onSearch={focusSearch}
+                  onSearchClose={(focusBack) => {
+                    setSearchOpen(false);
+                    if (focusBack) focusNextFrame(searchButton);
+                  }}
+                  overviewOpen={moreShown}
+                  onOverview={() => {
+                    const next = !moreShown;
+                    if (next) closeCardOnPhone();
+                    setMoreOpen(next);
+                    writeMore(next);
+                  }}
+                  tools={
+                    embed
+                      ? null
+                      : {
+                          open: tool !== null,
+                          onToggle: () => {
+                            const next = tool === null;
+                            // On a phone the tools and the overview share the column.
+                            if (next && narrow) {
+                              setMoreOpen(false);
+                              writeMore(false);
+                            }
+                            openTool(next ? "menu" : null);
+                          },
+                        }
+                  }
+                  onSettings={() => {
+                    setSettingsOpen(true);
+                  }}
+                />
                 {/* A chapter picked out from the search: what is shown, and the way back. */}
                 {/* Not while a person's card is open: its title already says whose places these are. */}
                 {state.focus && !(person && !state.selectedPlace) && (
@@ -865,7 +779,7 @@ export function App({ link }: { link: UrlView }) {
                       onClick={() => {
                         engine.focusPlaces(null);
                         // The chip goes away: the focus goes to the search it came from.
-                        requestAnimationFrame(() => searchButton.current?.focus());
+                        focusNextFrame(searchButton);
                       }}
                     >
                       <X className="size-4" />
@@ -946,7 +860,7 @@ export function App({ link }: { link: UrlView }) {
                           setMoreOpen(false);
                           writeMore(false);
                           // The focus goes back to the book that opened it.
-                          requestAnimationFrame(() => overviewButton.current?.focus());
+                          focusNextFrame(overviewButton);
                         }}
                         panels={{
                           tours: (
@@ -1090,17 +1004,13 @@ export function App({ link }: { link: UrlView }) {
                         place={selected}
                         at={data.byId.get(selected.id)?.info.at ?? [0, 0]}
                         sites={data.sites.get(selected.id) ?? []}
-                        questions={data.questions[selected.id]}
                         life={data.life[selected.id]}
-                        // An event told again as a battle here (Samaria, 722 BC; Masada) is listed once, as the battle.
+                        // An event told again as a battle here (Samaria, 722 BC; Masada; `event`
+                        // in battles.yaml) is listed once, as the battle.
                         events={events.filter(
                           (e) =>
                             (e.place ?? e.site?.id) === selected.id &&
-                            !data.battles.some(
-                              (b) =>
-                                b.place === (e.place ?? e.site?.id) &&
-                                Math.abs(b.year - e.year) <= 1,
-                            ),
+                            !data.battles.some((b) => b.event === e.id),
                         )}
                         battles={data.battles.filter(
                           (b) => b.place === selected.id && (!bibleOnly || b.ref !== undefined),
@@ -1201,110 +1111,80 @@ export function App({ link }: { link: UrlView }) {
                 className={`hg-map-slot hg-map-float pointer-events-auto absolute flex items-center gap-2 max-md:right-4 ${cardOpen ? "right-[456px] max-md:hidden" : "right-5"} ${playerFolded ? "bottom-[27px] max-md:bottom-[23px]" : "bottom-[calc(var(--hg-timeline-h)+24px)]"}`}
               ></section>
             )}
-            <section
-              aria-label={t("time.timeline")}
-              ref={timelineBox}
-              className={`absolute inset-x-4 bottom-4 max-md:inset-x-3 max-md:bottom-3 ${playerFolded ? "pointer-events-none" : ""}`}
-            >
-              {playerFolded && (
-                // Folded to its year (embedded, or sideways under a card): the screen is for the map.
-                <button
-                  ref={foldButton}
-                  onClick={() => {
-                    setTimeOpen(true);
-                    setOverCard(true);
-                    // The button goes; the focus moves to the slider it opened.
-                    requestAnimationFrame(() => timeRange.current?.focus());
-                  }}
-                  aria-label={`${formatYear(state.year, state.locale).replace(/\.$/, "")}. ${t("time.expand")}`}
-                  aria-expanded={false}
-                  className="pointer-events-auto flex items-center gap-2.5 rounded-full border border-white/45 bg-paper/90 py-1.5 pr-3 pl-4 shadow-chip backdrop-blur-xl hover:bg-paper"
-                >
-                  <span className="font-serif text-[17px] font-semibold text-ink tabular-nums">
-                    {formatYear(state.year, state.locale)}
-                  </span>
-                  {periodNow && (
-                    <span className="text-[12.5px] text-ink-soft max-[360px]:hidden">
-                      {periodName(periodNow, state.locale)}
-                    </span>
-                  )}
-                  <ChevronDown className="size-4 rotate-180 text-ink-soft" />
-                </button>
-              )}
-              <div className={playerFolded ? "hidden" : undefined}>
-                <Timeline
-                  year={state.year}
-                  locale={state.locale}
-                  playing={playing}
-                  speed={speed}
-                  onSpeed={setSpeed}
-                  onPicture={
-                    // Inside another site's frame a download may be blocked: no picture there.
-                    embed
-                      ? undefined
-                      : () => {
-                          void savePicture();
-                        }
-                  }
-                  onPrint={
-                    embed
-                      ? undefined
-                      : () => {
-                          setPlaying(false);
-                          void printForClass();
-                        }
-                  }
-                  // An outline map, for a tour or a chapter: numbered places to name.
-                  onPrintBlank={
-                    embed || !(state.tour || chapterOf(state.focus))
-                      ? undefined
-                      : () => {
-                          setPlaying(false);
-                          void printForClass(true);
-                        }
-                  }
-                  // The same quiz on screen: a choice shows the place on the map.
-                  onQuiz={
-                    embed || !state.tour
-                      ? undefined
-                      : () => {
-                          setPlaying(false);
-                          if (state.tour) openQuiz(state.tour.id);
-                        }
-                  }
-                  // A quiz, for a tour or a lesson: where each thing happened.
-                  onPrintQuiz={
-                    embed || !state.tour
-                      ? undefined
-                      : () => {
-                          setPlaying(false);
-                          void import("./print").then((m) => m.printQuiz({ globe, data }));
-                        }
-                  }
-                  events={timelineEvents}
-                  scaleSlot={compact ? undefined : setScaleSlot}
-                  life={
-                    ownLife && selected
-                      ? { name: placeName ?? selected.name, life: ownLife }
-                      : undefined
-                  }
-                  onEvent={(ev) => {
-                    setPlaying(false);
-                    goToEvent(engine, globe.renderer, ev);
-                  }}
-                  onYear={engine.setYear}
-                  onPlay={() => {
-                    if (!playing && state.year >= YEAR_MAX) engine.setYear(YEAR_MIN);
-                    setPlaying((p) => !p);
-                  }}
-                  rangeRef={timeRange}
-                  onCollapse={() => {
-                    setTimeOpen(false);
-                    requestAnimationFrame(() => foldButton.current?.focus());
-                  }}
-                />
-              </div>
-            </section>
+            <Player
+              folded={playerFolded}
+              onOpen={() => {
+                setTimeOpen(true);
+                setOverCard(true);
+              }}
+              onFold={() => {
+                setTimeOpen(false);
+              }}
+              year={state.year}
+              locale={state.locale}
+              playing={playing}
+              speed={speed}
+              onSpeed={setSpeed}
+              onPicture={
+                // Inside another site's frame a download may be blocked: no picture there.
+                embed
+                  ? undefined
+                  : () => {
+                      void savePicture();
+                    }
+              }
+              onPrint={
+                embed
+                  ? undefined
+                  : () => {
+                      setPlaying(false);
+                      void printForClass();
+                    }
+              }
+              // An outline map, for a tour or a chapter: numbered places to name.
+              onPrintBlank={
+                embed || !(state.tour || chapterOf(state.focus))
+                  ? undefined
+                  : () => {
+                      setPlaying(false);
+                      void printForClass(true);
+                    }
+              }
+              // The same quiz on screen: a choice shows the place on the map.
+              onQuiz={
+                embed || !state.tour
+                  ? undefined
+                  : () => {
+                      setPlaying(false);
+                      if (state.tour) openQuiz(state.tour.id);
+                    }
+              }
+              // A quiz, for a tour or a lesson: where each thing happened.
+              onPrintQuiz={
+                embed || !state.tour
+                  ? undefined
+                  : () => {
+                      setPlaying(false);
+                      void import("./print").then((m) => m.printQuiz({ globe, data }));
+                    }
+              }
+              events={timelineEvents}
+              scaleSlot={compact ? undefined : setScaleSlot}
+              life={
+                ownLife && selected
+                  ? { name: placeName ?? selected.name, life: ownLife }
+                  : undefined
+              }
+              onEvent={(ev) => {
+                setPlaying(false);
+                goToEvent(engine, globe.renderer, ev);
+              }}
+              onYear={engine.setYear}
+              onPlay={() => {
+                if (!playing && state.year >= YEAR_MAX) engine.setYear(YEAR_MIN);
+                setPlaying((p) => !p);
+              }}
+            />
           </>
         )}
       </div>
@@ -1320,43 +1200,6 @@ function readMore(): boolean {
 
 function writeMore(open: boolean): void {
   writePref("hg:more", open ? "1" : "0");
-}
-
-/** A round icon button in the header; `active` marks what it has opened. */
-function HeaderButton({
-  buttonRef,
-  label,
-  active = false,
-  expanded,
-  controls,
-  dialog = false,
-  onClick,
-  children,
-}: {
-  buttonRef?: React.Ref<HTMLButtonElement>;
-  label: string;
-  active?: boolean;
-  expanded?: boolean;
-  controls?: string | undefined;
-  dialog?: boolean;
-  onClick: () => void;
-  children: ReactNode;
-}) {
-  return (
-    <button
-      ref={buttonRef}
-      onClick={onClick}
-      aria-label={label}
-      title={label}
-      aria-expanded={expanded}
-      aria-controls={expanded ? controls : undefined}
-      aria-haspopup={dialog ? "dialog" : undefined}
-      // The ring sits inside the button: outside, it ran into the title beside it.
-      className={`grid size-9 shrink-0 place-items-center rounded-full hover:bg-paper-2 hover:text-ink focus-visible:outline-offset-[-2px] ${active ? "bg-paper-2 text-accent" : "text-ink-soft"}`}
-    >
-      {children}
-    </button>
-  );
 }
 
 /**

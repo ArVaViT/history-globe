@@ -9,7 +9,7 @@ description: Hvor hvert sted, hver grænse, dato og person på History Globe kom
   ikke ved.
 </p>
 
-<h2>Bibelens steder</h2>
+<h2 id="places-of-the-bible">Bibelens steder</h2>
 <p>
   De {{places}} steder og deres vers stammer fra
   <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
@@ -22,7 +22,7 @@ description: Hvor hvert sted, hver grænse, dato og person på History Globe kom
   af dem har sin egen side; de øvrige {{unnamed}} er poster, OpenBible har, men som intet vers i de
   bøger nævner (Adasa i 1. Makkabæerbog, for eksempel). {{articles}} steder har en artikel.
   Yderligere {{excluded}} er udeladt, fordi de mangler et punkt, der må offentliggøres (se
-  nedenfor).
+  nedenfor). Yderligere {{without_point}} har slet intet punkt i OpenBible.
 </p>
 <ul>
   <li>
@@ -45,7 +45,7 @@ description: Hvor hvert sted, hver grænse, dato og person på History Globe kom
   </li>
 </ul>
 
-<h2>Hvornår stederne eksisterede</h2>
+<h2 id="when-places-stood">Hvornår stederne eksisterede</h2>
 <p>
   En by på kortet tegnes kun fuldt ud i de år, den eksisterede. For {{life}} af Bibelens steder er
   årene for grundlæggelse, ødelæggelse og forladelse registreret i hånden, hver med sine kilder
@@ -53,22 +53,23 @@ description: Hvor hvert sted, hver grænse, dato og person på History Globe kom
   en by, hvis grundlæggelse eller endeligt er omstridt, får intet år for det.
 </p>
 <p>
-  De {{ancient}} byer i oldtiden, som Bibelen ikke nævner – hovedstæder, havne og helligdomme som
-  Ugarit, Hattusa, Mari eller Delfi – er udvalgt og dateret én for én: hver er placeret efter sin
-  post i <a href="https://pleiades.stoa.org">Pleiades</a> eller Wikidata, på den antikke lokalitet i
-  stedet for på nutidens by, og dateret efter disse poster og leksikonopslag, afstemt i hånden.
-  Omkring fjortenhundrede flere er udvalgt af et script: bebyggelser, helligdomme og havne i
-  Pleiades, hvis Wikidata-element er en antik lokalitet og ikke en nutidig by; deres punkter kommer
-  fra Pleiades, deres navne fra Wikidata (hvor Wikidata ikke har et på russisk, ukrainsk, bulgarsk
-  eller serbisk, vores egne, i den form, som oldtidsforskningen på det sprog bruger), og deres år er
-  spændet af de perioder, som Pleiades belægger dem i, så de er alle markeret »ca.«. Hvor en by blev
-  ødelagt midt i en periode, er dens slutning sat i hånden ud fra historien. Et sted vises ved et
-  zoomniveau, der bestemmes af, hvor ofte Bibelen nævner det; en by, som Bibelen knap nævner, men
-  som verden kender godt – Karthago, Sparta, Ur – vises tidligere, efter antallet af
-  Wikipedia-artikler om selve den antikke lokalitet.
+  Af de {{ancient}} byer i oldtiden, som Bibelen ikke nævner – hovedstæder, havne og helligdomme som
+  Ugarit, Hattusa, Mari eller Delfi – er {{ancient_hand}} udvalgt og dateret én for én: hver er
+  placeret efter sin post i <a href="https://pleiades.stoa.org">Pleiades</a> eller Wikidata, på den
+  antikke lokalitet i stedet for på nutidens by, og dateret efter disse poster og leksikonopslag,
+  afstemt i hånden. De øvrige {{ancient_script}} er udvalgt af et script: bebyggelser, helligdomme
+  og havne i Pleiades, hvis Wikidata-element er en antik lokalitet og ikke en nutidig by; deres
+  punkter kommer fra Pleiades, deres navne fra Wikidata (hvor Wikidata ikke har et på russisk,
+  ukrainsk, bulgarsk eller serbisk, vores egne, i den form, som oldtidsforskningen på det sprog
+  bruger; på de øvrige sprog, hvor Wikidata ikke har et, det engelske), og deres år er spændet af de
+  perioder, som Pleiades belægger dem i, så de er alle markeret »ca.«. Hvor en by blev ødelagt midt
+  i en periode, er dens slutning sat i hånden ud fra historien. Et sted vises ved et zoomniveau, der
+  bestemmes af, hvor ofte Bibelen nævner det; en by, som Bibelen knap nævner, men som verden kender
+  godt – Karthago, Sparta, Ur – vises tidligere, efter antallet af Wikipedia-artikler om selve den
+  antikke lokalitet.
 </p>
 
-<h2>Grænser</h2>
+<h2 id="borders">Grænser</h2>
 <p>
   Stater og deres grænser år for år stammer fra
   <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatria</a> (Seshat Global History Databank,
@@ -98,20 +99,20 @@ description: Hvor hvert sted, hver grænse, dato og person på History Globe kom
   tegnes Israels land som den assyriske provins, det blev.
 </p>
 
-<h2>Personer</h2>
+<h2 id="people">Personer</h2>
 <p>
   De {{people}} personer i Bibelen og deres familiebånd stammer fra STEP Bibles TIPNR (Tyndale
   House, Cambridge). Vi tog ikke båndene for gode varer:
 </p>
 <ul>
   <li>
-    familiebåndene for de 1.200 personer, teksten nævner oftest, og slægtsregistrene i 1 Krønikebog
-    blev læst mod versene; 153 bånd, som teksten ikke angiver, blev fjernet – Jesu brødre som sønner
-    af Josef og Maria, Jezabel som mor til Akazja – og de manglende led i Jesu slægtsregister blev
-    føjet til ud fra teksten;
+    familiebåndene for de {{n:1200}} personer, teksten nævner oftest, og slægtsregistrene i 1
+    Krønikebog blev læst mod versene; 153 bånd, som teksten ikke angiver, blev fjernet – Jesu brødre
+    som sønner af Josef og Maria, Jezabel som mor til Akazja – og de manglende led i Jesu
+    slægtsregister blev føjet til ud fra teksten;
   </li>
   <li>
-    alle 1.136 forbindelser mellem en person og et sted, hvor personen spiller en central eller
+    alle {{n:1136}} forbindelser mellem en person og et sted, hvor personen spiller en central eller
     understøttende rolle, blev læst vers for vers; 344 blev fjernet (Moses »i Kana'an«, Abraham »i
     Sodoma«, en søns steder tillagt hans far), og 94 fik et bedre vers;
   </li>
@@ -131,14 +132,15 @@ description: Hvor hvert sted, hver grænse, dato og person på History Globe kom
   hvert sprog; udgaverne står på siden <a href="sources.html">kilder</a>. Ingen tur har bestået sin
   første gennemgang uændret; hver blev rettet og kontrolleret igen. Den seneste fuldstændige
   gennemgang, afsluttet den 17. oktober 2026, genlæste alle 746 artikler mod kilderne, omkring 210
-  af dem to gange, og foretog 1.088 rettelser, hver ført ind på de 11 sprog, sitet havde dengang;
-  egentlige fejl blev fundet i 157 artikler. De fem sprog, der blev tilføjet den 24. oktober 2026
-  (svensk, norsk, dansk, tagalog og serbisk), blev oversat fra de allerede rettede tekster; derefter
-  blev hver af deres tekster sammenlignet med engelsken i en uafhængig kontrolrunde og hvert citat
-  med bibelen på det sprog. Disse runder er projektets egne kontroller, ikke fagfællebedømmelse.
-  Bedømmelser fra fagfolk offentliggøres under deres navn på siden
+  af dem to gange, og foretog {{n:1088}} rettelser, hver ført ind på de 11 sprog, sitet havde
+  dengang; egentlige fejl blev fundet i 157 artikler. De fem sprog, der blev tilføjet den 24.
+  oktober 2026 (svensk, norsk, dansk, tagalog og serbisk), og de fem, der blev tilføjet den 26.
+  oktober 2026 (ungarsk, finsk, vietnamesisk, rumænsk og bulgarsk), blev oversat fra de allerede
+  rettede tekster; derefter blev hver af deres tekster sammenlignet med engelsken i en uafhængig
+  kontrolrunde og hvert citat med bibelen på det sprog. Disse runder er projektets egne kontroller,
+  ikke fagfællebedømmelse. Bedømmelser fra fagfolk offentliggøres under deres navn på siden
   <a href="reviews.html">bedømmelser</a>, og hver artikel, som en fagperson har bedømt, nævner
-  bedømmeren og linker til bedømmelsen.
+  bedømmeren og linker til bedømmelsen. Offentliggjort indtil nu: <span class="reviews"></span>.
 </p>
 <p>
   Afstanden til et stop angives i luftlinje. Fra 312 f.Kr., hvor de romerske veje begynder, angives
@@ -158,8 +160,8 @@ description: Hvor hvert sted, hver grænse, dato og person på History Globe kom
   afgjorde Israels skæbne. Hvert står på det sted, hvor det blev udkæmpet, og vises på kortet i sine
   år. Bibelens er dateret, som turene daterer de samme beretninger; de andre har intet vers, men en
   antik eller faglig kilde. En anden, uafhængig kontrolrunde kontrollerede udkastet mod
-  synodalteksten og King James Version: af 58 poster blev 16 rettet, og én blev droppet, da kortet
-  ikke har noget punkt for dens lokalitet.
+  synodalteksten og King James Version: af 58 poster (oktober 2026) blev 16 rettet, og én blev
+  droppet, da kortet ikke har noget punkt for dens lokalitet.
 </p>
 
 <p>
@@ -205,7 +207,7 @@ description: Hvor hvert sted, hver grænse, dato og person på History Globe kom
   </li>
 </ul>
 
-<h2>Kontrol ved hver bygning</h2>
+<h2 id="checks-on-every-build">Kontrol ved hver bygning</h2>
 <p>Intet udgives, medmindre alle kontroller består:</p>
 <ul>
   <li>hver kilde har en tilladt licens (ingen share-alike, ingen ikke-kommercielle data);</li>
@@ -218,7 +220,7 @@ description: Hvor hvert sted, hver grænse, dato og person på History Globe kom
   <li>indholdsskemaerne er strenge: et ukendt eller fejlstavet felt stopper bygningen.</li>
 </ul>
 
-<h2>Hvad der er usikkert</h2>
+<h2 id="what-is-uncertain">Hvad der er usikkert</h2>
 <ul>
   <li>
     Datoer før 1. årtusinde f.Kr. er omtrentlige, og nogle er omstridte; kortet markerer dem »ca.«.
@@ -259,9 +261,9 @@ https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
   bekræftet fejl bliver rettet.
 </p>
 <p>
-  Med en GitHub-konto kan du også bruge linket <i>Har du fundet en fejl?</i> på hvert stedkort, som
-  åbner en sag i det offentlige repository med stedet udfyldt, eller åbne en direkte:
-  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+  Med en GitHub-konto kan du også bruge linket <i>Fundet en fejl?</i> på hvert stedkort, som åbner
+  en sag i det offentlige repository med stedet udfyldt, eller åbne en direkte:
+  <a href="https://github.com/ArVaViT/history-globe/issues/new?template=report-an-error.yml"
     >github.com/ArVaViT/history-globe/issues</a
   >.
 </p>

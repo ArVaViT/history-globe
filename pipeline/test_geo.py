@@ -3,7 +3,7 @@
 import sys
 import unittest
 
-from geo import line_distance, segment_distance, simplify
+from pipeline.geo import great_circle_km, km, line_distance, segment_distance, simplify
 
 
 class Simplify(unittest.TestCase):
@@ -27,6 +27,15 @@ class Simplify(unittest.TestCase):
         self.assertAlmostEqual(line_distance((5, 1), (0, 0), (1, 0)), 1)
         self.assertAlmostEqual(segment_distance((5, 1), (0, 0), (1, 0)), 17**0.5)
         self.assertAlmostEqual(segment_distance((0, 3), (0, 0), (0, 0)), 3)
+
+
+class Distance(unittest.TestCase):
+    def test_a_degree_of_latitude_is_about_111_km(self):
+        self.assertAlmostEqual(great_circle_km((35, 31), (35, 32)), 111.19, places=2)
+
+    def test_the_flat_measure_agrees_at_a_few_kilometres(self):
+        a, b = (35.23, 31.78), (35.2, 31.7)  # Jerusalem to Bethlehem
+        self.assertAlmostEqual(km(a, b), great_circle_km(a, b), places=3)
 
 
 if __name__ == "__main__":

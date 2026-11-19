@@ -8,7 +8,7 @@ The items come from the sources, not the built map, so the ranks never feed on t
 the Bible's towns from OpenBible with their checked items (content/wikidata.json), the ancient
 sites from content/ancient-sites*.json.
 
-    python3 -I pipeline/ancient/fame.py <work>
+    python3 -E -s -m pipeline.ancient.fame <work>
 """
 
 from __future__ import annotations
@@ -17,11 +17,10 @@ import json
 import pathlib
 import sys
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from ancient.classes import ANC, MOD  # noqa: E402
-from ancient.common import ROOT, class_labels, content_sites, qid_of, values  # noqa: E402
-from build_data import fetch, place_kind  # noqa: E402
-from net import entity, sparql  # noqa: E402
+from pipeline.ancient.classes import ANC, MOD
+from pipeline.ancient.common import ROOT, class_labels, content_sites, qid_of, values
+from pipeline.build_data import fetch, place_kind
+from pipeline.net import entity, sparql
 
 OUT = ROOT / "content" / "fame.json"
 

@@ -3,19 +3,16 @@ printed farthest first. Most are Wikidata's rough points or a disputed site; the
 wrong pairing of Pleiades and Wikidata (Lycian Korykos as the Cilician city) or a wrong
 point, fixed by hand.
 
-    python3 -I pipeline/ancient/coords.py
+    python3 -E -s -m pipeline.ancient.coords
 """
 
 from __future__ import annotations
 
-import pathlib
 import re
-import sys
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from ancient.common import content_sites, qid_of, values  # noqa: E402
-from geo import km  # noqa: E402
-from net import entity, sparql  # noqa: E402
+from pipeline.ancient.common import content_sites, qid_of, values
+from pipeline.geo import km
+from pipeline.net import entity, sparql
 
 APART_KM = 5
 POINT = re.compile(r"Point\(([-\d.eE]+) ([-\d.eE]+)\)")

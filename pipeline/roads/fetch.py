@@ -7,11 +7,10 @@ apps/web/public/data/roads-{major,minor}.geojson.
 
 import hashlib
 import pathlib
-import sys
+
+from pipeline.net import get
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
-sys.path.insert(0, str(ROOT / "pipeline"))
-from net import get  # noqa: E402
 
 DEST = ROOT / "pipeline" / ".cache" / "itinere_roads.geojson"
 URL = "https://zenodo.org/api/records/17122148/files/itinere_roads.geojson/content"

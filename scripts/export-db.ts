@@ -52,10 +52,7 @@ const tables = seedTables({
   articles: Object.values(
     read<Record<string, Record<string, unknown>>>(join(root, "apps/web/build/articles.json")),
   ),
-  polities: [
-    ...read<{ features: Release["polities"] }>(inData("polities.geojson")).features,
-    ...read<{ features: Release["polities"] }>(inData("polities-late.geojson")).features,
-  ],
+  polities: read<{ features: Release["polities"] }>(inData("polities-all.geojson")).features,
   people: read(inData("people.json")),
 });
 

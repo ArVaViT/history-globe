@@ -11,9 +11,9 @@ import pathlib
 import tempfile
 import unittest
 
-from ancient import assemble, periods, select
-from ancient.candidates import in_focus
-from ancient.common import PLACES_CSV, read
+from pipeline.ancient import assemble, periods, select
+from pipeline.ancient.candidates import in_focus
+from pipeline.ancient.common import PLACES_CSV, read
 
 
 class Years(unittest.TestCase):

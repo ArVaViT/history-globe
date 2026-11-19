@@ -405,7 +405,7 @@ places:
   a18873f: Gat
   a7e13e1: Aj
   a513646: Dan
-  ac71e65: Pelištejská země
+  ac71e65: Pelištie
   a2fe63c: Rámot v Gileadu
   a3e21c6: Karmel
   a7e3a59: Élam
@@ -1052,7 +1052,7 @@ places:
   a062b95: Ijón
   a0574da: Ijje-abarím
   a88331e: Moserót
-  a8a6a5b: Asuán
+  a8a6a5b: Syéné
   a7560c2: Abrona
   acf8790: Adumím
   a0fe2be: Bené-jaakan
@@ -1065,7 +1065,7 @@ places:
   a73af5f: Charada
   aaa8a88: Chašmona
   a373106: Potok Kána
-  aeb46a8: Kitejští
+  aeb46a8: Kitim
   af133c0: Kue
   a3e94bd: Libna
   a3668b6: Lykaonie
@@ -1794,6 +1794,11 @@ polities:
   Third Dynasty of Ur: Třetí dynastie z Uru
   Principality of Armenia: Arménské knížectví
 modern:
+  md88865: "Argob"
+  m0df275: "Bocec"
+  m9b1996: "Poušť Jeruel"
+  me0645b: "Ören"
+  m23ce84: "Massa"
   m66c5b8: Jeruzalém
   md561de: Babylón
   me7edbd: Jordán
@@ -1986,7 +1991,7 @@ modern:
   m7d00ce: Umm ar-Rasas
   m112962: Chirbet el-Waten
   m14a95e: Bir es-Seba
-  m1ec77e: At-Tell
+  m1ec77e: Et-Tell
   m518f8e: Baniás
   mdc9182: Ajn Wejbe
   m857981: Ras et-Tahune
@@ -6708,3 +6713,21 @@ ancient:
   Q173474: Veliko Tarnovo
   Q2538648: Wad ban Naga
   Q1462261: Wásit
+# The today line where OpenBible describes the place in free English text, translated whole
+# (as content/modern-names.yaml does for Russian), with this file's names of the places.
+labels:
+  "in the region east of Gibeon": "Východně od Gibeonu"
+  "in the region between Mizpah and Shen": "Mezi Micpou a Šenem"
+  "in the region between Gerar and Beersheba": "Mezi Gerarem a Beer-šebou"
+  "in the region south of Hebron": "Jižně od Hebronu"
+  "in the region between Lachish and Gath": "Mezi Lachiší a Gatem"
+  "in the region between Eshtaol and Zorah": "Mezi Eštaolem a Coreou"
+  "in the region between Damascus and Hamath": "Mezi Damaškem a Chamatem"
+  "in the region between Baalbek and Kadesh": "Mezi Baalbekem a Kádešem"
+  "in the region between Aiath and Michmash": "Mezi Ajatem a Michmasem"
+  "in the region between Ibleam and Megiddo": "Mezi Jibleamem a Megidem"
+  "in the region between Punon and Zered": "Mezi Punonem a potokem Zered"
+  "in the region between Maghfar and Lake Timsah": "Mezi Maghfarem a jezerem Timsáh"
+  "in the region north of the Dead Sea": "Severně od Mrtvého moře"
+  "in the region south of the Lisan": "Jižně od poloostrova Lisán"
+  "in the region between Kedesh-naphtali and Hazor": "Mezi Kedešem v Neftalí a Chacorem"

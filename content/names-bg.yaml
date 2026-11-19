@@ -419,7 +419,7 @@ places:
   ad9b1cd: Яхац
   aacfcda: Сигор
   a355b6e: Ещаол
-  a0b5c50: Син
+  a0b5c50: Цин
   a3a2a75: Дедан
   a5f9092: Мешех
   ac31fee: Цоан
@@ -452,7 +452,7 @@ places:
   ac12af9: Либия
   a6ac675: Морешет-Гат
   a939939: Сихемската кула
-  a84c559: Поле на бояджията
+  a84c559: Нивата на белача
   a32397f: Алуш
   a2f186d: Атад
   a03cc2d: Ваалат-Беер
@@ -623,7 +623,7 @@ places:
   a662eed: Кедес
   a8661e2: Мадмана
   a2f0a70: Михметат
-  a38ad9f: Дъбравата Море
+  a38ad9f: Дъбът Море
   a2d9bc8: Мизия
   a1c7cc1: Филаделфия
   aefdac1: Рецеф
@@ -1118,7 +1118,7 @@ places:
   ac25afc: Ефа
   ad4607c: Хълмът Гареб
   a58df35: Гевим
-  a71d79b: Гихон
+  a71d79b: Гион
   a763368: Гур-Ваал
   ac5e5c4: Хавила
   a1d9047: Хавила
@@ -1794,6 +1794,11 @@ polities:
   Third Dynasty of Ur: Трета династия на Ур
   Principality of Armenia: Арменско княжество
 modern:
+  md88865: "Аргов"
+  m0df275: "Боцец"
+  m9b1996: "Йеруил"
+  me0645b: "Йорен"
+  m23ce84: "Маса"
   m66c5b8: Йерусалим
   md561de: Вавилон
   me7edbd: Река Йордан
@@ -1986,7 +1991,7 @@ modern:
   m7d00ce: Ум ар Рассас
   m112962: Хирбет ел Ватен
   m14a95e: Бир ес Себа
-  m1ec77e: Ат Тел
+  m1ec77e: Ет-Тел
   m518f8e: Банияс
   mdc9182: Ейн Вейбе
   m857981: Рас ет Тахуне
@@ -6708,3 +6713,21 @@ ancient:
   Q173474: Търново
   Q2538648: Вад бан Нага
   Q1462261: Васит
+# The today line where OpenBible describes the place in free English text, translated whole
+# (as content/modern-names.yaml does for Russian), with this file's names of the places.
+labels:
+  "in the region east of Gibeon": "Източно от Гаваон"
+  "in the region between Mizpah and Shen": "Между Мицпа и Сен"
+  "in the region between Gerar and Beersheba": "Между Герар и Вирсавия"
+  "in the region south of Hebron": "Южно от Хеврон"
+  "in the region between Lachish and Gath": "Между Лахис и Гет"
+  "in the region between Eshtaol and Zorah": "Между Ещаол и Цора"
+  "in the region between Damascus and Hamath": "Между Дамаск и Емат"
+  "in the region between Baalbek and Kadesh": "Между Баалбек и Кадеш"
+  "in the region between Aiath and Michmash": "Между Аиат и Михмас"
+  "in the region between Ibleam and Megiddo": "Между Ивлеам и Мегидо"
+  "in the region between Punon and Zered": "Между Пинон и потока Заред"
+  "in the region between Maghfar and Lake Timsah": "Между Магфар и езерото Тимсах"
+  "in the region north of the Dead Sea": "Северно от Мъртво море"
+  "in the region south of the Lisan": "Южно от полуостров Лисан"
+  "in the region between Kedesh-naphtali and Hazor": "Между Кедес в Нефталим и Хацор"

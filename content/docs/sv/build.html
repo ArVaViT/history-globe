@@ -10,7 +10,7 @@ description: Vad du får ta från History Globe och hur – datan via API:et, ka
   går.
 </p>
 
-<h2>Vad du får ta</h2>
+<h2 id="what-you-may-take">Vad du får ta</h2>
 <div class="table">
   <table>
     <thead>
@@ -68,18 +68,19 @@ description: Vad du får ta från History Globe och hur – datan via API:et, ka
   Kort sagt: ta datan via API:et och ange källan; visa kartan via inbäddningen; klona inte globen.
 </p>
 
-<h2>Så anger du källan</h2>
+<h2 id="how-to-credit">Så anger du källan</h2>
 <p>
   Där du visar datan, ange dess källor så som <code>index.json</code> förtecknar dem. Den kortaste
   form som uppfyller licenserna:
 </p>
 <pre><code>Data: History Globe by Vadym Arnaut ({{site}}), CC BY 4.0;
-places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIPNR (CC BY 4.0).</code></pre>
+places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIPNR (CC BY 4.0); place ids from Pleiades (CC BY 3.0).</code></pre>
 <p>På en webbsida, med länkar:</p>
 <pre><code>&lt;p&gt;Data: &lt;a href="{{site}}/"&gt;History Globe&lt;/a&gt; by Vadym Arnaut,
   &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;CC BY 4.0&lt;/a&gt;;
   places from &lt;a href="https://www.openbible.info/geo/"&gt;OpenBible.info&lt;/a&gt;,
-  people from &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;.&lt;/p&gt;</code></pre>
+  people from &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;,
+  place ids from &lt;a href="https://pleiades.stoa.org/"&gt;Pleiades&lt;/a&gt;.&lt;/p&gt;</code></pre>
 <p>
   <code>{{site}}/api/v1/index.json</code> innehåller de fullständiga källraderna, och varje API-svar
   skickas med ett <code>Link</code>-huvud som anger dess licens. En citerad artikel eller ett
@@ -87,7 +88,7 @@ places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIP
   sida.
 </p>
 
-<h2>Begränsningar</h2>
+<h2 id="limits">Begränsningar</h2>
 <ul>
   <li>
     <b>Ingen nyckel, ingen kvot.</b> API:et är statiska filer bakom en cache. Hämta varje fil när du
@@ -111,7 +112,7 @@ places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIP
   </li>
 </ul>
 
-<h2>Kom igång</h2>
+<h2 id="start">Kom igång</h2>
 <pre><code>const api = "{{site}}/api/v1";
 const places = await (await fetch(`${api}/places.json`)).json();
 const byId = new Map(places.map((p) =&gt; [p.id, p]));
@@ -123,7 +124,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   >.
 </p>
 
-<h2>Be om mer</h2>
+<h2 id="asking-for-more">Be om mer</h2>
 <p>
   En översättning av artiklarna, deras text på en annan plattform eller en licens som tabellen ovan
   inte ger: skriv till
@@ -131,7 +132,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   skriftlig licens för det de behöver; de offentliga licenserna förblir som de är.
 </p>
 
-<h2>För AI-agenter</h2>
+<h2 id="for-ai-agents">För AI-agenter</h2>
 <p>
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> säger samma sak på en sida. Sökmotorer och
   de assistenter som svarar med en källhänvisning är välkomna; artiklarna är inte träningsdata

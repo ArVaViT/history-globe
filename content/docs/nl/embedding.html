@@ -8,7 +8,7 @@ description: Zet de wereldbol met één regel op je eigen site — de kaart van 
   hoofdstuk naast de passage op je pagina; een paar berichten houden de twee gelijk.
 </p>
 
-<h2>Snel aan de slag</h2>
+<h2 id="quick-start">Snel aan de slag</h2>
 <pre><code>&lt;iframe
   src="{{site}}/embed/v1?ref=Acts.16&amp;locale=nl"
   title="Kaart van Handelingen 16"
@@ -33,7 +33,7 @@ description: Zet de wereldbol met één regel op je eigen site — de kaart van 
   <li>Het kader werkt tot op de breedte van een telefoon; een hoogte van 480 px is genoeg.</li>
 </ul>
 
-<h2>Een hoofdstuk of een passage</h2>
+<h2 id="a-chapter-or-a-passage">Een hoofdstuk of een passage</h2>
 <p>
   <code>ref</code> neemt een OSIS-verwijzing met Engelse boekafkortingen en Engelse versnummering:
 </p>
@@ -72,7 +72,7 @@ description: Zet de wereldbol met één regel op je eigen site — de kaart van 
   zonder een van beide houdt het huidige jaar van de kaart.
 </p>
 
-<h2>Parameters</h2>
+<h2 id="parameters">Parameters</h2>
 <div class="table">
   <table>
     <thead>
@@ -180,7 +180,7 @@ description: Zet de wereldbol met één regel op je eigen site — de kaart van 
   kopiëren: dezelfde parameters werken na <code>/embed/v1</code>.
 </p>
 
-<h2>Berichten</h2>
+<h2 id="messages">Berichten</h2>
 <p>
   De wereldbol en je pagina communiceren via <code>postMessage</code>. Elk bericht is een object met
   <code>type</code> en <code>v: 1</code>. De wereldbol stuurt alleen wat er op de kaart gebeurt en
@@ -188,7 +188,7 @@ description: Zet de wereldbol met één regel op je eigen site — de kaart van 
   herkomst (doel <code>"*"</code>); hij accepteert alleen berichten van de pagina die het kader
   bevat.
 </p>
-<h3>Van de wereldbol</h3>
+<h3 id="from-the-globe">Van de wereldbol</h3>
 <div class="table">
   <table>
     <thead>
@@ -233,7 +233,10 @@ description: Zet de wereldbol met één regel op je eigen site — de kaart van 
       <tr>
         <td><code>hg:error</code></td>
         <td><code>{ code, message }</code></td>
-        <td>de kaart of haar gegevens konden niet worden geladen</td>
+        <td>
+          de kaart of haar gegevens konden niet worden geladen: <code>code</code> is
+          <code>"map"</code> of <code>"data"</code>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -242,9 +245,12 @@ description: Zet de wereldbol met één regel op je eigen site — de kaart van 
   <code>view</code> bevat <code>year</code>, <code>locale</code> en <code>layers</code> en, indien
   ingesteld, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> en
   <code>camera</code>. Een <code>view</code> zonder <code>place</code> betekent dat er geen plaats
-  is geselecteerd.
+  is geselecteerd. <code>camera</code> is een object,
+  <code>{ center: [35.2, 31.8], zoom: 7, pitch: 30, bearing: 0 }</code>, niet de tekenreeks uit het
+  adres; <code>layers</code> geeft elke laag <code>true</code> of <code>false</code>:
+  <code>{ relief: false, battles: false }</code>.
 </p>
-<h3>Naar de wereldbol</h3>
+<h3 id="to-the-globe">Naar de wereldbol</h3>
 <div class="table">
   <table>
     <thead>
@@ -299,11 +305,11 @@ description: Zet de wereldbol met één regel op je eigen site — de kaart van 
   <code>Q16869</code>). Beide soorten kunnen voorkomen in <code>view.place</code> en
   <code>hg:place-clicked</code>, en beide worden door <code>hg:set-view</code> geaccepteerd; als
   jouw gegevens alleen de plaatsen van OpenBible hebben, test dan de vorm voordat je er een opzoekt.
-  Van de {{openbible}} plaatsen van OpenBible staan er {{absent}} niet op de kaart (ze hebben geen
-  punt dat gepubliceerd mag worden); hun id’s worden genegeerd.
+  Van de {{openbible}} plaatsen van OpenBible staan er {{absent}} niet op de kaart (weggelaten, of
+  helemaal zonder punt); hun id’s worden genegeerd.
 </p>
 
-<h2>Voorbeeld: de kaart volgt je lezer</h2>
+<h2 id="example-the-map-follows-your-reader">Voorbeeld: de kaart volgt je lezer</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
 // When your reader opens a chapter, show it on the map.
@@ -433,23 +439,24 @@ function closeBox() {
   meestal voor iets anders gebruiken (“Kades” is daar Kades-Barnea, niet de Kades uit de database).
   De naam van een plaats die ook een voornaam is (Jordan, Sharon) blijft met rust naast een ander
   woord met hoofdletter: Jordan Smith is een persoon, niet de rivier. In het Russisch, Oekraïens,
-  Pools en Tsjechisch worden namen in hun verbogen vormen gevonden (“в Египте”, “w Jerozolimie”, “v
-  Jeruzalémě”), en in het Duits ook in de genitief (“Jerusalems”). Links, code, formuliervelden,
-  knoppen en koppen blijven met rust.
+  Pools, Tsjechisch, Servisch, Hongaars, Fins en Roemeens worden namen in hun verbogen vormen
+  gevonden (“в Египте”, “w Jerozolimie”, “v Jeruzalémě”), en in het Duits, Zweeds, Deens en Noors
+  ook in de genitief (“Jerusalems”). Links, code, formuliervelden, knoppen en koppen blijven met
+  rust.
 </p>
 <p class="note">
   Het script heeft geen afhankelijkheden en plaatst geen cookies. Het leest één bestand met namen
-  van de wereldbol (ongeveer 20 tot 35 KB over het netwerk, afhankelijk van de taal, plus 7 KB
-  script), zonder het adres van je pagina als referrer, en verandert alleen de namen die het
-  koppelt. Het werkt onder een strikt Content Security Policy dat het adres van de wereldbol
-  toestaat in <code>script-src</code> en <code>connect-src</code>. Voor tekst die je pagina later
-  toevoegt, roep je <code>HistoryGlobePlaces.scan(element)</code> aan zodra de tekst is getekend:
-  het script splitst tekstknooppunten, dus draai het in een React- of Vue-pagina op inhoud die het
-  framework niet meer opnieuw tekent.
+  van de wereldbol (ongeveer {{names_kb_min}} tot {{names_kb_max}} KB over het netwerk, afhankelijk
+  van de taal, plus {{script_kb}} KB script), zonder het adres van je pagina als referrer, en
+  verandert alleen de namen die het koppelt. Het werkt onder een strikt Content Security Policy dat
+  het adres van de wereldbol toestaat in <code>script-src</code> en <code>connect-src</code>. Voor
+  tekst die je pagina later toevoegt, roep je <code>HistoryGlobePlaces.scan(element)</code> aan
+  zodra de tekst is getekend: het script splitst tekstknooppunten, dus draai het in een React- of
+  Vue-pagina op inhoud die het framework niet meer opnieuw tekent.
 </p>
 <script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
 
-<h2>Stabiliteit</h2>
+<h2 id="stability">Stabiliteit</h2>
 <p>
   <code>/embed/v1</code> is een contract: binnen v1 worden parameters en berichten alleen
   toegevoegd, nooit gewijzigd of verwijderd. Een brekende wijziging verschijnt als

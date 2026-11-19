@@ -9,7 +9,7 @@ description: Woher jeder Ort, jede Grenze, jedes Datum und jede Person auf Histo
   verändert haben und was wir nicht wissen.
 </p>
 
-<h2>Orte der Bibel</h2>
+<h2 id="places-of-the-bible">Orte der Bibel</h2>
 <p>
   Die {{places}} Orte und ihre Verse stammen aus
   <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
@@ -23,7 +23,8 @@ description: Woher jeder Ort, jede Grenze, jedes Datum und jede Person auf Histo
   erschließt, und jeder von ihnen hat eine eigene Seite; die übrigen {{unnamed}} sind Einträge, die
   OpenBible führt, die aber kein Vers dieser Bücher nennt (etwa Adasa aus 1 Makkabäer). {{articles}}
   Orte haben einen Artikel. Weitere {{excluded}} wurden weggelassen, weil es für sie keinen Punkt
-  gibt, der veröffentlicht werden darf (siehe unten).
+  gibt, der veröffentlicht werden darf (siehe unten). Weitere {{without_point}} haben in OpenBible
+  überhaupt keinen Punkt.
 </p>
 <ul>
   <li>
@@ -46,7 +47,7 @@ description: Woher jeder Ort, jede Grenze, jedes Datum und jede Person auf Histo
   </li>
 </ul>
 
-<h2>Wann Orte bestanden</h2>
+<h2 id="when-places-stood">Wann Orte bestanden</h2>
 <p>
   Eine Stadt auf der Karte wird nur in den Jahren vollständig gezeichnet, in denen sie bestand. Für
   {{life}} Orte der Bibel sind die Jahre der Gründung, der Zerstörung und der Aufgabe von Hand
@@ -55,23 +56,24 @@ description: Woher jeder Ort, jede Grenze, jedes Datum und jede Person auf Histo
   dafür kein Jahr.
 </p>
 <p>
-  Die {{ancient}} Städte der antiken Welt, die die Bibel nicht nennt – Hauptstädte, Häfen und
-  Heiligtümer wie Ugarit, Hattusa, Mari oder Delphi –, wurden einzeln ausgewählt und datiert: Jede
-  ist nach ihrem Eintrag in <a href="https://pleiades.stoa.org">Pleiades</a> oder Wikidata verortet,
-  auf der antiken Stätte statt auf der modernen Stadt, und nach diesen Einträgen und
-  enzyklopädischen Darstellungen datiert, von Hand abgeglichen. Rund vierzehnhundert weitere hat ein
-  Skript ausgewählt: Siedlungen, Heiligtümer und Häfen in Pleiades, deren Wikidata-Eintrag eine
-  antike Stätte ist und keine moderne Stadt; ihre Punkte stammen aus Pleiades, ihre Namen aus
+  Von den {{ancient}} Städten der antiken Welt, die die Bibel nicht nennt – Hauptstädten, Häfen und
+  Heiligtümern wie Ugarit, Hattusa, Mari oder Delphi –, wurden {{ancient_hand}} einzeln ausgewählt
+  und datiert: Jede ist nach ihrem Eintrag in <a href="https://pleiades.stoa.org">Pleiades</a> oder
+  Wikidata verortet, auf der antiken Stätte statt auf der modernen Stadt, und nach diesen Einträgen
+  und enzyklopädischen Darstellungen datiert, von Hand abgeglichen. Die übrigen {{ancient_script}}
+  hat ein Skript ausgewählt: Siedlungen, Heiligtümer und Häfen in Pleiades, deren Wikidata-Eintrag
+  eine antike Stätte ist und keine moderne Stadt; ihre Punkte stammen aus Pleiades, ihre Namen aus
   Wikidata (wo Wikidata keinen auf Russisch, Ukrainisch, Bulgarisch oder Serbisch hat, von uns, in
-  der Form, die die Altertumswissenschaft der jeweiligen Sprache verwendet) und ihre Jahre aus der
-  Spanne der Perioden, in denen Pleiades sie bezeugt, daher sind alle mit „ca.“ gekennzeichnet. Wo
-  eine Stadt mitten in einer Periode zerstört wurde, ist ihr Ende von Hand nach der Geschichte
-  gesetzt. Ein Ort erscheint ab einer Zoomstufe, die sich danach richtet, wie oft die Bibel ihn
-  nennt; eine Stadt, die die Bibel kaum nennt, die die Welt aber gut kennt – Karthago, Sparta, Ur –,
-  erscheint früher, nach der Zahl der Wikipedia-Artikel über die antike Stätte selbst.
+  der Form, die die Altertumswissenschaft der jeweiligen Sprache verwendet; in den übrigen Sprachen,
+  wo er keinen hat, der englische) und ihre Jahre aus der Spanne der Perioden, in denen Pleiades sie
+  bezeugt, daher sind alle mit „ca.“ gekennzeichnet. Wo eine Stadt mitten in einer Periode zerstört
+  wurde, ist ihr Ende von Hand nach der Geschichte gesetzt. Ein Ort erscheint ab einer Zoomstufe,
+  die sich danach richtet, wie oft die Bibel ihn nennt; eine Stadt, die die Bibel kaum nennt, die
+  die Welt aber gut kennt – Karthago, Sparta, Ur –, erscheint früher, nach der Zahl der
+  Wikipedia-Artikel über die antike Stätte selbst.
 </p>
 
-<h2>Grenzen</h2>
+<h2 id="borders">Grenzen</h2>
 <p>
   Staaten und ihre Grenzen, Jahr für Jahr, stammen aus
   <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatria</a> (Seshat Global History Databank,
@@ -102,20 +104,20 @@ description: Woher jeder Ort, jede Grenze, jedes Datum und jede Person auf Histo
   wird das Land Israel als die assyrische Provinz gezeichnet, die es wurde.
 </p>
 
-<h2>Personen</h2>
+<h2 id="people">Personen</h2>
 <p>
   Die {{people}} Personen der Bibel und ihre Familienbeziehungen stammen aus TIPNR von STEP Bible
   (Tyndale House, Cambridge). Wir haben die Beziehungen nicht auf Treu und Glauben übernommen:
 </p>
 <ul>
   <li>
-    die Familienbeziehungen der 1.200 Personen, die der Text am häufigsten nennt, und die
+    die Familienbeziehungen der {{n:1200}} Personen, die der Text am häufigsten nennt, und die
     Genealogien von 1 Chr wurden an den Versen gelesen; 153 Beziehungen, die der Text nicht nennt,
     wurden entfernt – die Brüder Jesu als Söhne von Josef und Maria, Isebel als Mutter von Ahasja –,
     und die fehlenden Glieder der Genealogie Jesu wurden aus dem Text ergänzt;
   </li>
   <li>
-    alle 1.136 Verknüpfungen zwischen einer Person und einem Ort, an dem sie eine zentrale oder
+    alle {{n:1136}} Verknüpfungen zwischen einer Person und einem Ort, an dem sie eine zentrale oder
     unterstützende Rolle spielt, wurden Vers für Vers gelesen; 344 wurden entfernt (Mose „in
     Kanaan“, Abraham „in Sodom“, die Orte eines Sohnes, die seinem Vater zugeschrieben wurden), und
     94 erhielten einen besseren Vers;
@@ -136,15 +138,17 @@ description: Woher jeder Ort, jede Grenze, jedes Datum und jede Person auf Histo
   der gemeinfreien Bibel der jeweiligen Sprache; die Ausgaben stehen auf der Seite
   <a href="sources.html">Quellen</a>. Keine Tour hat ihre erste Prüfung unverändert bestanden; jede
   wurde korrigiert und erneut geprüft. Im letzten vollständigen Durchgang, abgeschlossen am 17.
-  Oktober 2026, wurden alle 746 Artikel erneut an den Quellen geprüft, etwa 210 davon zweimal; 1.088
-  Korrekturen wurden vorgenommen, jede in allen 11 Sprachen, die die Website damals hatte, und in
-  157 Artikeln fanden sich eindeutige Fehler. Die fünf am 24. Oktober 2026 hinzugekommenen Sprachen
-  (Schwedisch, Norwegisch, Dänisch, Tagalog und Serbisch) wurden aus den bereits korrigierten Texten
-  übersetzt; danach wurde jeder ihrer Texte in einem unabhängigen Prüfdurchgang mit dem Englischen
-  verglichen und jedes Zitat mit der Bibel dieser Sprache. Diese Durchgänge sind Prüfungen des
-  Projekts selbst, kein Peer-Review. Gutachten von Fachleuten erscheinen unter ihrem Namen auf der
-  Seite <a href="reviews.html">Gutachten</a>, und jeder Artikel, den eine Fachperson begutachtet
-  hat, nennt sie und verweist auf ihr Gutachten.
+  Oktober 2026, wurden alle 746 Artikel erneut an den Quellen geprüft, etwa 210 davon zweimal;
+  {{n:1088}} Korrekturen wurden vorgenommen, jede in allen 11 Sprachen, die die Website damals
+  hatte, und in 157 Artikeln fanden sich eindeutige Fehler. Die fünf am 24. Oktober 2026
+  hinzugekommenen Sprachen (Schwedisch, Norwegisch, Dänisch, Tagalog und Serbisch) und die fünf am
+  26. Oktober 2026 hinzugekommenen (Ungarisch, Finnisch, Vietnamesisch, Rumänisch und Bulgarisch)
+  wurden aus den bereits korrigierten Texten übersetzt; danach wurde jeder ihrer Texte in einem
+  unabhängigen Prüfdurchgang mit dem Englischen verglichen und jedes Zitat mit der Bibel dieser
+  Sprache. Diese Durchgänge sind Prüfungen des Projekts selbst, kein Peer-Review. Gutachten von
+  Fachleuten erscheinen unter ihrem Namen auf der Seite <a href="reviews.html">Gutachten</a>, und
+  jeder Artikel, den eine Fachperson begutachtet hat, nennt sie und verweist auf ihr Gutachten.
+  Bisher veröffentlicht: <span class="reviews"></span>.
 </p>
 <p>
   Die Entfernung zu einer Station wird in gerader Linie angegeben. Ab 312 v. Chr., wo die römischen
@@ -166,8 +170,8 @@ description: Woher jeder Ort, jede Grenze, jedes Datum und jede Person auf Histo
   gekämpft wurde, und erscheint auf der Karte in ihren Jahren. Die biblischen sind so datiert, wie
   die Touren dieselben Geschichten datieren; die anderen tragen keinen Vers, sondern eine antike
   oder wissenschaftliche Quelle. Ein zweiter, unabhängiger Prüfdurchgang prüfte den Entwurf an der
-  Synodalübersetzung und der King James Version: Von 58 Einträgen wurden 16 korrigiert und einer
-  gestrichen, weil die Karte für seinen Ort keinen Punkt hat.
+  Synodalübersetzung und der King James Version: Von 58 Einträgen (Oktober 2026) wurden 16
+  korrigiert und einer gestrichen, weil die Karte für seinen Ort keinen Punkt hat.
 </p>
 
 <p>
@@ -216,7 +220,7 @@ description: Woher jeder Ort, jede Grenze, jedes Datum und jede Person auf Histo
   </li>
 </ul>
 
-<h2>Prüfungen bei jedem Build</h2>
+<h2 id="checks-on-every-build">Prüfungen bei jedem Build</h2>
 <p>Nichts wird veröffentlicht, wenn nicht jede Prüfung bestanden wird:</p>
 <ul>
   <li>
@@ -236,7 +240,7 @@ description: Woher jeder Ort, jede Grenze, jedes Datum und jede Person auf Histo
   </li>
 </ul>
 
-<h2>Was unsicher ist</h2>
+<h2 id="what-is-uncertain">Was unsicher ist</h2>
 <ul>
   <li>
     Daten vor dem 1. Jahrtausend v. Chr. sind ungefähr, und einige sind umstritten; die Karte
@@ -281,9 +285,9 @@ https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
   wird gelesen, und ein bestätigter Fehler wird korrigiert.
 </p>
 <p>
-  Mit einem GitHub-Konto können Sie auch den Link <i>Einen Fehler gefunden?</i> in jeder Ortskarte
-  nutzen, der im öffentlichen Repository ein Issue mit dem Ort öffnet, oder direkt eines anlegen:
-  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+  Mit einem GitHub-Konto können Sie auch den Link <i>Fehler gefunden?</i> in jeder Ortskarte nutzen,
+  der im öffentlichen Repository ein Issue mit dem Ort öffnet, oder direkt eines anlegen:
+  <a href="https://github.com/ArVaViT/history-globe/issues/new?template=report-an-error.yml"
     >github.com/ArVaViT/history-globe/issues</a
   >.
 </p>

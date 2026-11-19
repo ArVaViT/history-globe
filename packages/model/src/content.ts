@@ -100,6 +100,8 @@ export const LocaleNamesFile = z.strictObject({
   people: z.record(z.string(), z.string().min(1)),
   /** The ancient world's sites (content/ancient-sites.json) by their id. */
   ancient: z.record(z.string(), z.string().min(1)).optional(),
+  /** OpenBible's free-text today lines ("in the region east of Gibeon"), translated whole. */
+  labels: z.record(z.string(), z.string().min(1)).optional(),
 });
 export type LocaleNamesFile = z.output<typeof LocaleNamesFile>;
 /** The languages whose names come from content/names-<code>.yaml (Russian has its own files). */
@@ -295,6 +297,14 @@ export const BattlesFile = z.strictObject({
       title: localized,
       /** A place of the data build, or an ancient site by its Pleiades number (Gamla). */
       place: placeOrSite,
+      /**
+       * The event of events.yaml that tells the same story (Samaria falls, 722 BC), at the
+       * same place within a year: the lists show the story once.
+       */
+      event: z
+        .string()
+        .regex(/^[a-z0-9-]+$/)
+        .optional(),
       /** The passage that tells it; none for a battle the Bible does not tell. */
       ref: osis.optional(),
       sides: localized,
@@ -311,6 +321,8 @@ export interface HistoryBattle {
   readonly approximate: boolean;
   readonly title: Readonly<Record<string, string>>;
   readonly place: string;
+  /** The event (HistoryEvent) that tells the same story: listed once. */
+  readonly event?: string;
   readonly ref?: string;
   readonly sides: Readonly<Record<string, string>>;
   readonly outcome: Readonly<Record<string, string>>;
@@ -427,27 +439,46 @@ const checked = z.literal("checked", {
   message: '"checked": a review goes into content/reviews, not into the text',
 });
 
+/**
+ * The licence text a photo's credit must link to, in one form: CC BY X.Y and CC0 at their
+ * canonical address (https, the version, a closing slash, no "deed"); none for the public
+ * domain, which has no licence text.
+ */
+export function photoLicenceUrl(license: string): string | undefined {
+  const by = /^CC BY (\d\.\d)$/.exec(license);
+  if (by) return `https://creativecommons.org/licenses/by/${by[1] ?? ""}/`;
+  if (license.startsWith("CC0")) return "https://creativecommons.org/publicdomain/zero/1.0/";
+  return undefined;
+}
+
 /** A photo of a place from Wikimedia Commons: only licences that need no share-alike. */
 export const PhotosFile = z.strictObject({
   photos: z.array(
-    z.strictObject({
-      place: placeId,
-      /** The Commons file name, without "File:". */
-      file: z.string().min(1),
-      author: z.string().optional(),
-      license: z.string().regex(/^(Public domain|CC0( 1\.0)?|CC BY \d\.\d)$/, {
-        message: "only public domain, CC0 or CC BY (no share-alike, ADR 0008)",
+    z
+      .strictObject({
+        place: placeId,
+        /** The Commons file name, without "File:". */
+        file: z.string().min(1),
+        author: z.string().optional(),
+        license: z.string().regex(/^(Public domain|CC0( 1\.0)?|CC BY \d\.\d)$/, {
+          message: "only public domain, CC0 or CC BY (no share-alike, ADR 0008)",
+        }),
+        license_url: z.url().optional(),
+        /**
+         * The candidate site the photo was taken at (its OpenBible id, m… or a…): required
+         * for a disputed place, so the caption names what the picture shows.
+         */
+        site: z
+          .string()
+          .regex(/^[am][0-9a-f]{6}$/)
+          .optional(),
+      })
+      // CC BY asks for a link to the licence: it is required, and it must be the licence
+      // and version named, in its canonical form.
+      .refine((p) => p.license_url === photoLicenceUrl(p.license), {
+        message: "license_url must be the named licence's canonical URL (none for public domain)",
+        path: ["license_url"],
       }),
-      license_url: z.url().optional(),
-      /**
-       * The candidate site the photo was taken at (its OpenBible id, m… or a…): required
-       * for a disputed place, so the caption names what the picture shows.
-       */
-      site: z
-        .string()
-        .regex(/^[am][0-9a-f]{6}$/)
-        .optional(),
-    }),
   ),
 });
 
@@ -608,14 +639,21 @@ export interface ContentRelease {
   readonly pleiades?: Readonly<Record<string, PleiadesLink>>;
   /** When the chapters happen (content/chapter-years.yaml): book → [from, to, year]. */
   readonly chapter_years?: ChapterYears;
-  /** Questions answered with a place on the map (content/questions): place id → id, question. */
-  readonly questions?: Readonly<
-    Record<
-      string,
-      readonly ({ readonly id: string; readonly en: string; readonly ru: string } & Readonly<
-        Partial<Record<Locale, string>>
-      >)[]
-    >
+}
+
+/**
+ * The questions answered with a place on the map (content/questions), in one language:
+ * data/articles/questions/<language>.json. They are the site's own texts, under the licence
+ * of the articles (CC BY-NC-ND 4.0, ADR 0016), so they live beside them and not in
+ * content.json, which is CC BY. Each question is in that language, or in English where the
+ * language has none.
+ */
+export interface QuestionTitles {
+  readonly license: string;
+  readonly license_url: string;
+  /** Place id → its questions: the id (the page /{locale}/q/{id}/) and the wording. */
+  readonly questions: Readonly<
+    Record<string, readonly ({ readonly id: string } & Readonly<Partial<Record<Locale, string>>>)[]>
   >;
 }
 
@@ -703,6 +741,37 @@ export const AncientWaveFile = z.strictObject({
       sources: z.array(z.string().min(1)).min(3),
     }),
   ),
+});
+
+/**
+ * Corrections by hand to the waves of ancient sites (content/ancient-wave-corrections.json),
+ * which pipeline/ancient/assemble.py applies and the content build checks against the waves.
+ */
+export const AncientWaveCorrectionsFile = z.strictObject({
+  _: z.string().min(1),
+  /** Labels (patterns) of items left out: moved away, or not the ancient place they name. */
+  left_out: z.array(z.string().min(1)),
+  /** Years the periods cannot give, astronomical, with why. */
+  years: z.array(
+    z.strictObject({
+      site: z.string().min(1),
+      from: z.number().int().optional(),
+      to: z.number().int(),
+      why: z.string().min(1),
+    }),
+  ),
+  /** Wikidata's English label → the site's name. */
+  renamed: z.record(z.string().min(1), z.string().min(1)),
+  names: z.array(
+    z.strictObject({
+      site: z.string().min(1),
+      lang: z.string().regex(/^[a-z]{2}$/),
+      name: z.string().min(1),
+    }),
+  ),
+  /** Languages whose Wikidata label is not the site's name. */
+  no_names: z.record(z.string().min(1), z.array(z.string().regex(/^[a-z]{2}$/)).min(1)),
+  kinds: z.record(z.string().min(1), z.enum(["city", "sanctuary", "site", "port"])),
 });
 
 /**

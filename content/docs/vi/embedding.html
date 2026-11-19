@@ -9,7 +9,7 @@ description: Đặt quả địa cầu lên trang web của bạn chỉ bằng m
   hai bên luôn khớp với nhau.
 </p>
 
-<h2>Bắt đầu nhanh</h2>
+<h2 id="quick-start">Bắt đầu nhanh</h2>
 <pre><code>&lt;iframe
   src="{{site}}/embed/v1?ref=Acts.16&amp;locale=vi"
   title="Bản đồ Công vụ 16"
@@ -34,7 +34,7 @@ description: Đặt quả địa cầu lên trang web của bạn chỉ bằng m
   <li>Khung hoạt động tốt đến cả chiều rộng của điện thoại; chiều cao 480 px là đủ.</li>
 </ul>
 
-<h2>Một chương hoặc một đoạn</h2>
+<h2 id="a-chapter-or-a-passage">Một chương hoặc một đoạn</h2>
 <p>
   <code>ref</code> nhận một tham chiếu OSIS với tên viết tắt tiếng Anh của các sách và cách đánh số
   câu của các bản tiếng Anh:
@@ -74,7 +74,7 @@ description: Đặt quả địa cầu lên trang web của bạn chỉ bằng m
   có cả hai thì giữ nguyên năm hiện tại của bản đồ.
 </p>
 
-<h2>Tham số</h2>
+<h2 id="parameters">Tham số</h2>
 <div class="table">
   <table>
     <thead>
@@ -183,7 +183,7 @@ description: Đặt quả địa cầu lên trang web của bạn chỉ bằng m
   tham số ấy cũng hoạt động sau <code>/embed/v1</code>.
 </p>
 
-<h2>Thông điệp</h2>
+<h2 id="messages">Thông điệp</h2>
 <p>
   Quả địa cầu và trang của bạn trao đổi với nhau qua <code>postMessage</code>. Mỗi thông điệp là một
   đối tượng có <code>type</code> và <code>v: 1</code>. Quả địa cầu chỉ gửi những gì xảy ra trên bản
@@ -191,7 +191,7 @@ description: Đặt quả địa cầu lên trang web của bạn chỉ bằng m
   bất kể origin của trang đó là gì (đích <code>"*"</code>); nó chỉ nhận thông điệp từ trang chứa
   khung.
 </p>
-<h3>Từ quả địa cầu</h3>
+<h3 id="from-the-globe">Từ quả địa cầu</h3>
 <div class="table">
   <table>
     <thead>
@@ -236,7 +236,10 @@ description: Đặt quả địa cầu lên trang web của bạn chỉ bằng m
       <tr>
         <td><code>hg:error</code></td>
         <td><code>{ code, message }</code></td>
-        <td>không tải được bản đồ hoặc dữ liệu của nó</td>
+        <td>
+          không tải được bản đồ hoặc dữ liệu của nó: <code>code</code> là <code>"map"</code> hoặc
+          <code>"data"</code>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -245,9 +248,12 @@ description: Đặt quả địa cầu lên trang web của bạn chỉ bằng m
   <code>view</code> chứa <code>year</code>, <code>locale</code> và <code>layers</code>, và khi được
   đặt thì có thêm <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> và
   <code>camera</code>. Một <code>view</code> không có <code>place</code> nghĩa là chưa chọn địa điểm
-  nào.
+  nào. <code>camera</code> là một đối tượng,
+  <code>{ center: [35.2, 31.8], zoom: 7, pitch: 30, bearing: 0 }</code>, không phải chuỗi trong địa
+  chỉ; <code>layers</code> gán cho mỗi lớp <code>true</code> hoặc <code>false</code>:
+  <code>{ relief: false, battles: false }</code>.
 </p>
-<h3>Đến quả địa cầu</h3>
+<h3 id="to-the-globe">Đến quả địa cầu</h3>
 <div class="table">
   <table>
     <thead>
@@ -302,11 +308,11 @@ description: Đặt quả địa cầu lên trang web của bạn chỉ bằng m
   <code>Q16869</code>). Cả hai loại đều có thể xuất hiện trong <code>view.place</code> và
   <code>hg:place-clicked</code>, và <code>hg:set-view</code> chấp nhận cả hai; nếu dữ liệu của bạn
   chỉ có các địa điểm của OpenBible, hãy kiểm tra dạng mã định danh trước khi tra cứu. Trong
-  {{openbible}} địa điểm của OpenBible, có {{absent}} địa điểm không có trên bản đồ (chúng không có
-  điểm nào được phép công bố); mã định danh của chúng bị bỏ qua.
+  {{openbible}} địa điểm của OpenBible, có {{absent}} địa điểm không có trên bản đồ (bị loại ra,
+  hoặc hoàn toàn không có điểm); mã định danh của chúng bị bỏ qua.
 </p>
 
-<h2>Ví dụ: bản đồ đi theo trình đọc của bạn</h2>
+<h2 id="example-the-map-follows-your-reader">Ví dụ: bản đồ đi theo trình đọc của bạn</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
 // Khi trình đọc của bạn mở một chương, hiện chương ấy trên bản đồ.
@@ -432,23 +438,24 @@ function closeBox() {
   lớn dùng để chỉ nơi khác cũng vậy (“Ca-đe” ở đó là Ca-đe-Ba-nê-a, không phải Ca-đe trong cơ sở dữ
   liệu). Một tên địa điểm đồng thời là tên người (như Jordan, Sharon trong tiếng Anh) sẽ không được
   liên kết khi đứng cạnh một từ viết hoa khác: Jordan Smith là một người, không phải dòng sông.
-  Trong tiếng Nga, tiếng Ukraina, tiếng Ba Lan và tiếng Séc, tên được nhận ra cả ở các dạng biến
-  cách (“в Египте”, “w Jerozolimie”, “v Jeruzalémě”), và tên tiếng Đức cả ở sở hữu cách
+  Trong tiếng Nga, tiếng Ukraina, tiếng Ba Lan, tiếng Séc, tiếng Serbia, tiếng Hungary, tiếng Phần
+  Lan và tiếng Romania, tên được nhận ra cả ở các dạng biến cách (“в Египте”, “w Jerozolimie”, “v
+  Jeruzalémě”), và tên tiếng Đức, tiếng Thụy Điển, tiếng Đan Mạch và tiếng Na Uy cả ở sở hữu cách
   (“Jerusalems”). Liên kết, mã, trường biểu mẫu, nút và tiêu đề được giữ nguyên.
 </p>
 <p class="note">
-  Tập lệnh không có phụ thuộc nào và không đặt cookie. Nó đọc một tệp tên từ quả địa cầu (khoảng 20
-  đến 35 KB qua mạng tùy ngôn ngữ, cộng thêm 7 KB của tập lệnh), không gửi địa chỉ trang của bạn làm
-  referrer, và chỉ thay đổi những tên mà nó liên kết. Nó hoạt động dưới một Content Security Policy
-  nghiêm ngặt cho phép địa chỉ của quả địa cầu trong <code>script-src</code> và
-  <code>connect-src</code>. Với văn bản mà trang của bạn thêm vào sau, hãy gọi
-  <code>HistoryGlobePlaces.scan(element)</code> khi văn bản đã được hiển thị: tập lệnh tách các nút
-  văn bản, nên trên một trang React hoặc Vue hãy chạy nó trên nội dung mà framework không còn render
-  lại nữa.
+  Tập lệnh không có phụ thuộc nào và không đặt cookie. Nó đọc một tệp tên từ quả địa cầu (khoảng
+  {{names_kb_min}} đến {{names_kb_max}} KB qua mạng tùy ngôn ngữ, cộng thêm {{script_kb}} KB của tập
+  lệnh), không gửi địa chỉ trang của bạn làm referrer, và chỉ thay đổi những tên mà nó liên kết. Nó
+  hoạt động dưới một Content Security Policy nghiêm ngặt cho phép địa chỉ của quả địa cầu trong
+  <code>script-src</code> và <code>connect-src</code>. Với văn bản mà trang của bạn thêm vào sau,
+  hãy gọi <code>HistoryGlobePlaces.scan(element)</code> khi văn bản đã được hiển thị: tập lệnh tách
+  các nút văn bản, nên trên một trang React hoặc Vue hãy chạy nó trên nội dung mà framework không
+  còn render lại nữa.
 </p>
 <script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
 
-<h2>Tính ổn định</h2>
+<h2 id="stability">Tính ổn định</h2>
 <p>
   <code>/embed/v1</code> là một cam kết: trong v1, tham số và thông điệp chỉ được thêm vào, không
   bao giờ bị thay đổi hay gỡ bỏ. Một thay đổi phá vỡ tương thích sẽ ra mắt dưới dạng

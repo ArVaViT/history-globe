@@ -138,9 +138,7 @@ export function savedFiles(publicDir: string): { files: string[]; bytes: number 
   const data = join(publicDir, "data");
   if (existsSync(data))
     for (const path of filesUnder(data)) {
-      // The states' later half (*-late) is kept only to rebuild the data: the app reads
-      // polities-all instead (docs/data-release.md).
-      if (path.endsWith(".map") || path.includes("-late.")) continue;
+      if (path.endsWith(".map")) continue;
       files.push(relative(publicDir, path).split("\\").join("/"));
       bytes += statSync(path).size;
     }

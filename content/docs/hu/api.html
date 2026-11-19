@@ -9,7 +9,7 @@ description: A helyek, az őket megnevező versek, az események és a túrák J
   regisztráció, és a szokásos gyorsítótárazáson túl nincs korlát.
 </p>
 
-<h2>Mely helyeket nevezi meg egy vers</h2>
+<h2 id="which-places-does-a-verse-name">Mely helyeket nevezi meg egy vers</h2>
 <p>
   Egy fájl a Biblia egy-egy könyvéhez: minden vers, amely megnevez egy helyet, a helyek
   azonosítóival.
@@ -27,10 +27,10 @@ description: A helyek, az őket megnevező versek, az események és a túrák J
 [{ "id": "a49e1d0", "name": "Philippi",
    "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
    "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
-   "wikidata": "Q379652", "pleiades": "501482",
+   "wikidata": "Q379652", "pleiades": "501482", "tipnr": "Philippi@Act.16.12-1Th",
    "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
 
-<h2>Ki és hol egy fejezetben</h2>
+<h2 id="who-and-where-in-a-chapter">Ki és hol egy fejezetben</h2>
 <p>
   Egy fájl könyvenként: minden fejezet az általa megnevezett helyekkel és személyekkel. A személyek
   azonosítása megegyezik a STEPBible TIPNR-jével; a nevük és az első versük a
@@ -41,7 +41,7 @@ description: A helyek, az őket megnevező versek, az események és a túrák J
 { "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
                "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
 
-<h2>Az összes fájl</h2>
+<h2 id="all-the-files">Az összes fájl</h2>
 <div class="table">
   <table>
     <thead>
@@ -60,7 +60,9 @@ description: A helyek, az őket megnevező versek, az események és a túrák J
         <td>
           minden hely: azonosító, nevek, fajta, pont, hány vers nevezi meg, az oldala (azoknál a
           helyeknél, amelyeket valamelyik vers megnevez); a <code>wikidata</code> és a
-          <code>pleiades</code>, ugyanaz a hely az említett helynévtárakban, ahol ismert
+          <code>pleiades</code>, ugyanaz a hely az említett helynévtárakban, ahol ismert; a
+          <code>tipnr</code>, a hely neve a STEPBible TIPNR-jében, ugyanabban a sémában, mint a
+          <code>people.json</code> azonosítói, ahol az OpenBible összekapcsolja
         </td>
       </tr>
       <tr>
@@ -77,28 +79,33 @@ description: A helyek, az őket megnevező versek, az események és a túrák J
       <tr>
         <td><code>/api/v1/people.json</code></td>
         <td>
-          a Biblia által megnevezett személyek: TIPNR-azonosító, név, nevek a többi nyelven, ahol az
-          oldalon megvannak, nem, hány vers nevezi meg őket, az első ilyen vers
+          a Biblia által megnevezett {{people_api}} személy (a térkép {{people}} személyt mutat a
+          családjával): TIPNR-azonosító, név, nevek a többi nyelven, ahol az oldalon megvannak, nem,
+          hány vers nevezi meg őket, az első ilyen vers
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/events.json</code></td>
         <td>
-          a keltezett események, <code>ref</code> mezővel, ahol a Biblia elbeszéli az eseményt
+          a keltezett események, <code>ref</code> mezővel, ahol a Biblia elbeszéli az eseményt;
+          <code>site</code> a <code>place</code> helyett az ókori világ olyan városánál, amelyet a
+          Biblia nem nevez meg
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/battles.json</code></td>
         <td>
           csaták és ostromok: hely, év, felek és kimenetel, <code>ref</code> mezővel, ahol a Biblia
-          elbeszéli a csatát
+          elbeszéli a csatát; <code>event</code>: az <code>events.json</code> eseménye, amely
+          ugyanazt a történetet beszéli el
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/questions.json</code></td>
         <td>
           az emberek által feltett kérdések, az oldal minden nyelvén megválaszolva, a térkép
-          nézetével és a forrásokkal
+          nézetével és a forrásokkal; <code>scripture</code>: a válasz által idézett versek;
+          <code>license</code> és <code>license_url</code>: a válaszok licence
         </td>
       </tr>
       <tr>
@@ -106,7 +113,8 @@ description: A helyek, az őket megnevező versek, az események és a túrák J
         <td>
           a túrák: megállóik sorrendben, mindegyik az igeszakaszával és a jegyzetével;
           <code>by: "sea"</code> a hajózott szakaszhoz, és <code>sailed</code> (napok és vers), ahol
-          a szöveg megmondja, mennyi ideig tartott
+          a szöveg megmondja, mennyi ideig tartott; <code>source</code>, ahol egy állomásról nem a
+          Biblia beszél
         </td>
       </tr>
       <tr>
@@ -124,7 +132,7 @@ description: A helyek, az őket megnevező versek, az események és a túrák J
   </table>
 </div>
 
-<h2>Konvenciók</h2>
+<h2 id="conventions">Konvenciók</h2>
 <ul>
   <li>
     A hivatkozások OSIS-ben vannak, angol könyvrövidítésekkel és King James-számozással:
@@ -134,7 +142,8 @@ description: A helyek, az őket megnevező versek, az események és a túrák J
   <li>
     Az a hely, amely a forrásadatokban kétszer szerepel ugyanazon a néven,
     <code>"duplicate": true</code> jelzést kap; az a hely, amelynek helyszíne vitatott,
-    <code>"disputed": true</code> jelzést.
+    <code>"disputed": true</code> jelzést; az az esemény, csata vagy túra, amelynek éve csak
+    hozzávetőleges, <code>"approximate": true</code> jelzést.
   </li>
   <li>
     A fájlok az adatok minden kiadásával újraépülnek; az <code>index.json</code> megadja a dátumát.
@@ -145,7 +154,7 @@ description: A helyek, az őket megnevező versek, az események és a túrák J
   </li>
 </ul>
 
-<h2>Licenc és forrásmegjelölés</h2>
+<h2 id="licence-and-credit">Licenc és forrásmegjelölés</h2>
 <p>
   Az adatok <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> licenc alatt
   állnak. Használhatja és módosíthatja őket, és eladhatja, amit belőlük épít; nevezze meg a

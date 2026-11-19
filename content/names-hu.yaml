@@ -452,7 +452,7 @@ places:
   ac12af9: Líbia
   a6ac675: Móreset-Gát
   a939939: Sikem tornya
-  a84c559: Ványoló mezeje
+  a84c559: Ruhafestők mezeje
   a32397f: Alús
   a2f186d: Átád
   a03cc2d: Baalát-Beér
@@ -1794,6 +1794,11 @@ polities:
   Third Dynasty of Ur: Ur harmadik dinasztiája
   Principality of Armenia: Örmény Fejedelemség
 modern:
+  md88865: "Argób"
+  m0df275: "Bocéc"
+  m9b1996: "Jeruél"
+  me0645b: "Ören"
+  m23ce84: "Massa"
   m66c5b8: Jeruzsálem
   md561de: Babilon
   me7edbd: Jordán
@@ -6708,3 +6713,21 @@ ancient:
   Q173474: Tarnovo
   Q2538648: Vad ban Naga
   Q1462261: Vászit
+# The today line where OpenBible describes the place in free English text, translated whole
+# (as content/modern-names.yaml does for Russian), with this file's names of the places.
+labels:
+  "in the region east of Gibeon": "Gibeontól keletre"
+  "in the region between Mizpah and Shen": "Micpa és Sén között"
+  "in the region between Gerar and Beersheba": "Gerár és Beérseba között"
+  "in the region south of Hebron": "Hebrontól délre"
+  "in the region between Lachish and Gath": "Lákis és Gát között"
+  "in the region between Eshtaol and Zorah": "Estaól és Cora között"
+  "in the region between Damascus and Hamath": "Damaszkusz és Hamát között"
+  "in the region between Baalbek and Kadesh": "Baalbek és Kádes között"
+  "in the region between Aiath and Michmash": "Ajját és Mikmás között"
+  "in the region between Ibleam and Megiddo": "Jibleám és Megiddó között"
+  "in the region between Punon and Zered": "Púnón és a Zéred-patak között"
+  "in the region between Maghfar and Lake Timsah": "Maghfar és a Timszah-tó között"
+  "in the region north of the Dead Sea": "A Holt-tengertől északra"
+  "in the region south of the Lisan": "A Liszán-félszigettől délre"
+  "in the region between Kedesh-naphtali and Hazor": "Kedes-Naftáli és Hácór között"

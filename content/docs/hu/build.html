@@ -9,7 +9,7 @@ description: Mit vehet át a History Globe-ból és hogyan — az adatokat az AP
   a földgömb, a cikkei és a kódja nem másolhatók. Ez az oldal megmondja, hol húzódik a határ.
 </p>
 
-<h2>Mit vehet át</h2>
+<h2 id="what-you-may-take">Mit vehet át</h2>
 <div class="table">
   <table>
     <thead>
@@ -72,18 +72,19 @@ description: Mit vehet át a History Globe-ból és hogyan — az adatokat az AP
   jelenítse meg; a földgömböt ne klónozza.
 </p>
 
-<h2>Hogyan jelölje meg a forrást</h2>
+<h2 id="how-to-credit">Hogyan jelölje meg a forrást</h2>
 <p>
   Ahol az adatokat mutatja, nevezze meg a forrásaikat, ahogyan az <code>index.json</code> felsorolja
   őket. A licenceknek megfelelő legrövidebb forma:
 </p>
 <pre><code>Data: History Globe by Vadym Arnaut ({{site}}), CC BY 4.0;
-places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIPNR (CC BY 4.0).</code></pre>
+places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIPNR (CC BY 4.0); place ids from Pleiades (CC BY 3.0).</code></pre>
 <p>Egy oldalon, hivatkozásokkal:</p>
 <pre><code>&lt;p&gt;Data: &lt;a href="{{site}}/"&gt;History Globe&lt;/a&gt; by Vadym Arnaut,
   &lt;a href="https://creativecommons.org/licenses/by/4.0/"&gt;CC BY 4.0&lt;/a&gt;;
   places from &lt;a href="https://www.openbible.info/geo/"&gt;OpenBible.info&lt;/a&gt;,
-  people from &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;.&lt;/p&gt;</code></pre>
+  people from &lt;a href="https://www.stepbible.org/"&gt;STEPBible&lt;/a&gt;,
+  place ids from &lt;a href="https://pleiades.stoa.org/"&gt;Pleiades&lt;/a&gt;.&lt;/p&gt;</code></pre>
 <p>
   A <code>{{site}}/api/v1/index.json</code> a teljes forrásmegjelölési sorokat tartalmazza, és
   minden API-válasz egy <code>Link</code> fejléccel megy ki, amely megnevezi a licencét. Az idézett
@@ -91,7 +92,7 @@ places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIP
   mutató hivatkozással.
 </p>
 
-<h2>Korlátok</h2>
+<h2 id="limits">Korlátok</h2>
 <ul>
   <li>
     <b>Nincs kulcs, nincs kvóta.</b> Az API statikus fájlok egy gyorsítótár mögött. Minden fájlt
@@ -115,7 +116,7 @@ places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIP
   </li>
 </ul>
 
-<h2>Kezdés</h2>
+<h2 id="start">Kezdés</h2>
 <pre><code>const api = "{{site}}/api/v1";
 const places = await (await fetch(`${api}/places.json`)).json();
 const byId = new Map(places.map((p) =&gt; [p.id, p]));
@@ -127,7 +128,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   >.
 </p>
 
-<h2>További kérések</h2>
+<h2 id="asking-for-more">További kérések</h2>
 <p>
   A cikkek fordítása, a szövegük egy másik platformon, vagy olyan licenc, amelyet a fenti táblázat
   nem ad: írjon a
@@ -135,7 +136,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   írásos licencet kapnak arra, amire szükségük van; a nyilvános licencek változatlanok maradnak.
 </p>
 
-<h2>MI-ágenseknek</h2>
+<h2 id="for-ai-agents">MI-ágenseknek</h2>
 <p>
   Az <a href="{{site}}/llms.txt"><code>llms.txt</code></a> ugyanezt mondja el egy oldalon. A
   keresőmotorok és a hivatkozással válaszoló asszisztensek szívesen látottak; a cikkek nem

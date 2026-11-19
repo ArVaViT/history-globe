@@ -4,7 +4,7 @@
  * falls back to English, then to `defaultValue` when given, else to the key itself.
  *
  * Not i18next and react-i18next: they cost 16 kB gzip before the first frame for these
- * three features (ADR 0010).
+ * three features (ADR 0021).
  */
 import { loadLocaleData } from "@hg/model";
 import { useCallback, useSyncExternalStore } from "react";

@@ -187,8 +187,11 @@ const data: LocaleData = {
     ["Cyrus Cylinder", "Цилиндр Кира"],
     // Royal inscriptions stay as their editions cite them (RINAP, RIMA): a king's name alone
     // in Russian left "Сеннахирим's prism" half in each language.
+    ["Josephus, Jewish Antiquities", "Флавий, «Иудейские древности»"],
     ["Josephus, Antiquities", "Флавий, «Иудейские древности»"],
     ["Josephus, Jewish War", "Флавий, «Иудейская война»"],
+    // Its title alone, after a semicolon ("Antiquities 14.364; Jewish War 1.269").
+    ["Jewish War", "«Иудейская война»"],
     ["Josephus, Life", "Флавий, «Жизнь»"],
     ["Josephus, Against Apion", "Флавий, «Против Апиона»"],
     ["Strabo, Geography", "Страбон, «География»"],
@@ -218,6 +221,7 @@ const data: LocaleData = {
       "Fulcher of Chartres, History of the Expedition to Jerusalem",
       "Фульхерий Шартрский, «Иерусалимская история»",
     ],
+    ["Babylonian Chronicle of the Diadochi", "Вавилонская хроника диадохов"],
     ["Babylonian Chronicle", "Вавилонская хроника"],
     ["Nabonidus Chronicle", "Хроника Набонида"],
     ["Sumerian King List", "Шумерский царский список"],

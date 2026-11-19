@@ -5,6 +5,11 @@
 # established Russian names win over transcription (Яффа, Салоники). A missing id keeps
 # the English name.
 names:
+  md88865: "Аргов"
+  m0df275: "Боцец"
+  m9b1996: "Пустыня Иеруил"
+  me0645b: "Ёрен"
+  m23ce84: "Масса"
   m66c5b8: "Иерусалим"
   md561de: "Вавилон"
   me7edbd: "Иордан"
@@ -1419,6 +1424,7 @@ labels:
   "in the region south of the Lisan": "К югу от полуострова Лисан"
   "in the region between Eshtaol and Zorah": "Между Естаолом и Цорой"
   "in the region between Kedesh-naphtali and Hazor": "Между Кедесом Неффалимовым и Асором"
+  "in the region between Maghfar and Lake Timsah": "Между Магфаром и озером Тимсах"
 # English for the same few ids: OpenBible's name is the ancient site's alone, the card says
 # "Today:", so the town the ruins are by is added (the site's name stays: in English it is
 # what tells Antioch in Pisidia from Antioch on the Orontes).

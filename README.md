@@ -1,10 +1,18 @@
 # History Globe
 
+[![The globe in AD 50: the eastern Mediterranean under Rome, the places of Acts 16 marked, the time slider below](apps/web/public/og/en.jpg)](https://historyglobe.app)
+
 **[historyglobe.app](https://historyglobe.app)** is a free 3D atlas of biblical history. A time
 slider moves the map through the centuries: state borders by year, cities in the years they
 stood, roads, journeys and battles. Each place has the verses that name it, its candidate
 sites when the identification is disputed, where it is today, and, for 746 of them, an
 article with its sources. The site has no accounts, no ads and no fees. It is made by Vadym Arnaut.
+
+[Open the globe](https://historyglobe.app) ·
+[Methodology](https://historyglobe.app/docs/methodology.html) ·
+[API](https://historyglobe.app/docs/api.html) ·
+[Dataset](https://huggingface.co/datasets/ArVaViT/history-globe) ·
+[How to cite](#how-to-cite) · [Changes to the data](CHANGELOG.md)
 
 ## What it holds
 
@@ -83,14 +91,16 @@ A page, by its title and address:
 (data of <built_at>; accessed …).
 ```
 
-The data, by the date of the snapshot that the dataset's card gives:
+The data, by the date of the snapshot that the dataset's card gives (its version), with the
+BibTeX entry on the card:
 
 ```text
 Arnaut, Vadym. History Globe dataset. Hugging Face, snapshot of ….
 https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.
 ```
 
-`CITATION.cff` has the same in machine-readable form.
+`CITATION.cff` has the same in machine-readable form. What changed in the data from one
+release to the next: [`CHANGELOG.md`](CHANGELOG.md).
 
 ## Contact
 

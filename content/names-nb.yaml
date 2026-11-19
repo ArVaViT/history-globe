@@ -437,7 +437,7 @@ places:
   a03cb21: Bet-Aven
   a2bb265: Kinneret
   ad68510: Esjtemoa
-  a2f3001: Ham
+  a2f3001: Kam
   a5c92e1: Jokneam
   a376eed: Lo-Debar
   a0ef1e1: Obot
@@ -500,7 +500,7 @@ places:
   a7ed00e: Kabbon
   aca2b0a: Kauda
   a961693: Kilmad
-  acc1702: Ir-Melah
+  acc1702: Saltbyen
   a74ee0d: Kusj
   ad334c4: Debir
   ac17675: Dimona
@@ -1794,6 +1794,11 @@ polities:
   Third Dynasty of Ur: Tredje dynasti i Ur
   Principality of Armenia: Fyrstedømmet Armenia
 modern:
+  md88865: "Argob"
+  m0df275: "Boses"
+  m9b1996: "Jeruel-ørkenen"
+  me0645b: "Ören"
+  m23ce84: "Massa"
   m66c5b8: Jerusalem
   md561de: Babylon
   me7edbd: Jordan
@@ -2221,7 +2226,7 @@ modern:
   m7d00ce: Umm ar-Rasas
   m112962: Khirbet el-Waten
   m14a95e: Be'er Sheva
-  m1ec77e: At-Tell
+  m1ec77e: Et-Tell
   m518f8e: Banias
   mdc9182: Ein Weibeh
   m857981: Ras et-Tahuneh
@@ -6708,3 +6713,21 @@ ancient:
   Q173474: Tarnovo
   Q2538648: Wad ban Naqa
   Q1462261: Wasit
+# The today line where OpenBible describes the place in free English text, translated whole
+# (as content/modern-names.yaml does for Russian), with this file's names of the places.
+labels:
+  "in the region east of Gibeon": "Øst for Gibeon"
+  "in the region between Mizpah and Shen": "Mellom Mispa og Sjen"
+  "in the region between Gerar and Beersheba": "Mellom Gerar og Beer-Sjeba"
+  "in the region south of Hebron": "Sør for Hebron"
+  "in the region between Lachish and Gath": "Mellom Lakisj og Gat"
+  "in the region between Eshtaol and Zorah": "Mellom Esjtaol og Sora"
+  "in the region between Damascus and Hamath": "Mellom Damaskus og Hamat"
+  "in the region between Baalbek and Kadesh": "Mellom Baalbek og Kadesj"
+  "in the region between Aiath and Michmash": "Mellom Ajjat og Mikmas"
+  "in the region between Ibleam and Megiddo": "Mellom Jibleam og Megiddo"
+  "in the region between Punon and Zered": "Mellom Punon og Sered-bekken"
+  "in the region between Maghfar and Lake Timsah": "Mellom Maghfar og Timsahsjøen"
+  "in the region north of the Dead Sea": "Nord for Dødehavet"
+  "in the region south of the Lisan": "Sør for Lisan-halvøya"
+  "in the region between Kedesh-naphtali and Hazor": "Mellom Kedesj-Naftali og Hasor"

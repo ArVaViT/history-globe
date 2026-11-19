@@ -2,7 +2,7 @@
 wave's candidates (wave/wd.json, kept between runs), and the English labels of those classes
 (wave/classes.json).
 
-    python3 -I pipeline/ancient/fetch.py <work>
+    python3 -E -s -m pipeline.ancient.fetch <work>
 """
 
 from __future__ import annotations
@@ -10,10 +10,9 @@ from __future__ import annotations
 import pathlib
 import sys
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from ancient.common import class_labels, fame_floor, read, values, write  # noqa: E402
-from build_dataset import LANGS  # noqa: E402
-from net import entity, sparql  # noqa: E402
+from pipeline.ancient.common import class_labels, fame_floor, read, values, write
+from pipeline.build_dataset import LANGS
+from pipeline.net import entity, sparql
 
 
 def stale(item: dict) -> bool:

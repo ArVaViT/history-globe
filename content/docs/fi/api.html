@@ -9,7 +9,7 @@ description: Paikat, niitä mainitsevat jakeet, tapahtumat ja kierrokset JSON-ti
   rekisteröitymistä, ei rajoituksia tavallisen välimuistituksen lisäksi.
 </p>
 
-<h2>Mitkä paikat jae mainitsee</h2>
+<h2 id="which-places-does-a-verse-name">Mitkä paikat jae mainitsee</h2>
 <p>
   Yksi tiedosto Raamatun kirjaa kohden: jokainen jae, joka mainitsee paikan, ja näiden paikkojen
   tunnisteet.
@@ -27,10 +27,10 @@ description: Paikat, niitä mainitsevat jakeet, tapahtumat ja kierrokset JSON-ti
 [{ "id": "a49e1d0", "name": "Philippi",
    "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
    "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
-   "wikidata": "Q379652", "pleiades": "501482",
+   "wikidata": "Q379652", "pleiades": "501482", "tipnr": "Philippi@Act.16.12-1Th",
    "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
 
-<h2>Ketkä ja missä luvussa</h2>
+<h2 id="who-and-where-in-a-chapter">Ketkä ja missä luvussa</h2>
 <p>
   Yksi tiedosto kirjaa kohden: jokainen luku ja sen mainitsemat paikat ja henkilöt. Henkilöt
   tunnistetaan kuten STEPBiblen TIPNR-aineistossa; heidän nimensä ja ensimmäinen jakeensa ovat
@@ -41,7 +41,7 @@ description: Paikat, niitä mainitsevat jakeet, tapahtumat ja kierrokset JSON-ti
 { "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
                "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
 
-<h2>Kaikki tiedostot</h2>
+<h2 id="all-the-files">Kaikki tiedostot</h2>
 <div class="table">
   <table>
     <thead>
@@ -60,7 +60,9 @@ description: Paikat, niitä mainitsevat jakeet, tapahtumat ja kierrokset JSON-ti
         <td>
           jokainen paikka: tunniste, nimet, tyyppi, sijaintipiste, kuinka moni jae sen mainitsee,
           sen sivu (jos jokin jae mainitsee paikan); <code>wikidata</code> ja <code>pleiades</code>,
-          sama paikka näissä paikkahakemistoissa, jos se tunnetaan
+          sama paikka näissä paikkahakemistoissa, jos se tunnetaan; <code>tipnr</code>, paikan nimi
+          STEPBiblen TIPNR:ssä, samalla kaavalla kuin <code>people.json</code>-tiedoston tunnisteet,
+          jos OpenBible on linkittänyt sen
         </td>
       </tr>
       <tr>
@@ -77,26 +79,33 @@ description: Paikat, niitä mainitsevat jakeet, tapahtumat ja kierrokset JSON-ti
       <tr>
         <td><code>/api/v1/people.json</code></td>
         <td>
-          Raamatun mainitsemat henkilöt: TIPNR-tunniste, nimi, nimet muilla kielillä, jos ne
-          sivustolla ovat, sukupuoli, kuinka moni jae heidät mainitsee, ensimmäinen niistä
+          Raamatun mainitsemat {{people_api}} henkilöä (kartalla perheineen {{people}}):
+          TIPNR-tunniste, nimi, nimet muilla kielillä, jos ne sivustolla ovat, sukupuoli, kuinka
+          moni jae heidät mainitsee, ensimmäinen niistä
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/events.json</code></td>
-        <td>ajoitetut tapahtumat ja <code>ref</code>, kun Raamattu kertoo tapahtumasta</td>
+        <td>
+          ajoitetut tapahtumat ja <code>ref</code>, kun Raamattu kertoo tapahtumasta;
+          <code>site</code> kentän <code>place</code> sijaan antiikin maailman kaupungille, jota
+          Raamattu ei mainitse
+        </td>
       </tr>
       <tr>
         <td><code>/api/v1/battles.json</code></td>
         <td>
           taistelut ja piiritykset: paikka, vuosi, osapuolet ja lopputulos sekä <code>ref</code>,
-          kun Raamattu kertoo taistelusta
+          kun Raamattu kertoo taistelusta; <code>event</code>, tapahtuma tiedostossa
+          <code>events.json</code>, joka kertoo saman tarinan
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/questions.json</code></td>
         <td>
           ihmisten kysymiä kysymyksiä, joihin on vastattu sivuston jokaisella kielellä,
-          karttanäkymän ja lähteiden kera
+          karttanäkymän ja lähteiden kera; <code>scripture</code>, vastauksen mainitsemat jakeet;
+          <code>license</code> ja <code>license_url</code>, vastausten lisenssi
         </td>
       </tr>
       <tr>
@@ -104,7 +113,8 @@ description: Paikat, niitä mainitsevat jakeet, tapahtumat ja kierrokset JSON-ti
         <td>
           kierrokset: niiden pysäkit järjestyksessä, kukin raamatunkohtineen ja huomautuksineen;
           <code>by: "sea"</code> meritse kuljetulle osuudelle ja <code>sailed</code> (päivät ja
-          jae), kun teksti kertoo, kuinka kauan matka kesti
+          jae), kun teksti kertoo, kuinka kauan matka kesti; <code>source</code>, kun pysähdyksestä
+          kertoo jokin muu kuin Raamattu
         </td>
       </tr>
       <tr>
@@ -124,7 +134,7 @@ description: Paikat, niitä mainitsevat jakeet, tapahtumat ja kierrokset JSON-ti
   </table>
 </div>
 
-<h2>Käytännöt</h2>
+<h2 id="conventions">Käytännöt</h2>
 <ul>
   <li>
     Viittaukset ovat OSIS-muodossa englanninkielisin kirjojen lyhentein ja King James -käännöksen
@@ -133,7 +143,8 @@ description: Paikat, niitä mainitsevat jakeet, tapahtumat ja kierrokset JSON-ti
   <li>Vuodet ovat tähtitieteellisiä: 1 eaa. on 0, 586 eaa. on −585.</li>
   <li>
     Paikalla, joka on lähdeaineistossa kahdesti samalla nimellä, on <code>"duplicate": true</code>;
-    paikalla, jonka sijainti on kiistanalainen, <code>"disputed": true</code>.
+    paikalla, jonka sijainti on kiistanalainen, <code>"disputed": true</code>; tapahtumalla,
+    taistelulla tai kierroksella, jonka vuosi on likimääräinen, <code>"approximate": true</code>.
   </li>
   <li>
     Tiedostot kootaan uudelleen jokaisen datajulkaisun yhteydessä; <code>index.json</code> kertoo
@@ -145,11 +156,11 @@ description: Paikat, niitä mainitsevat jakeet, tapahtumat ja kierrokset JSON-ti
   </li>
 </ul>
 
-<h2>Lisenssi ja lähdetiedot</h2>
+<h2 id="licence-and-credit">Lisenssi ja lähdetiedot</h2>
 <p>
   Data on lisensoitu
-  <a href="https://creativecommons.org/licenses/by/4.0/deed.fi">CC BY 4.0</a> -lisenssillä. Käytä
-  sitä, muokkaa sitä, myy sillä rakentamaasi; mainitse lähteet siellä, missä näytät sen, kuten
+  <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> -lisenssillä. Käytä sitä,
+  muokkaa sitä, myy sillä rakentamaasi; mainitse lähteet siellä, missä näytät sen, kuten
   <code>index.json</code> ne luettelee: History Globe, tekijä Vadym Arnaut, sekä OpenBible.info
   paikkojen, jaemerkintöjen ja sijaintipisteiden osalta ja STEPBiblen TIPNR henkilöiden osalta.
   Venäjänkieliset nimet on luettu synodaalikäännöksestä, joka on tekijänoikeudeton. Muiden kielten
@@ -158,7 +169,7 @@ description: Paikat, niitä mainitsevat jakeet, tapahtumat ja kierrokset JSON-ti
 <p>
   Vastaukset kysymyksiin (<code>questions.json</code>) ovat History Globen omia tekstejä, ja niiden
   lisenssi on
-  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.fi">CC BY-NC-ND 4.0</a>: lainaa
-  niitä ja linkitä niihin lähde mainiten; älä muuta niitä, käännä niitä tai siirrä niitä toiselle
-  sivustolle tai toiseen aineistoon. Sama koskee paikkojen artikkeleita, joita API ei sisällä.
+  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>: lainaa niitä ja
+  linkitä niihin lähde mainiten; älä muuta niitä, käännä niitä tai siirrä niitä toiselle sivustolle
+  tai toiseen aineistoon. Sama koskee paikkojen artikkeleita, joita API ei sisällä.
 </p>

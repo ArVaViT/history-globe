@@ -1,4 +1,7 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { LOCALES } from "../packages/model/src/locales.ts";
 import { openApi, violations } from "./api-openapi.ts";
 
 const spec = openApi("1") as {
@@ -6,7 +9,7 @@ const spec = openApi("1") as {
   components: { schemas: Record<string, object> };
 };
 const { schemas } = spec.components;
-// Philippi as api/v1/places.json has it (2026-10-17), trimmed to two languages.
+// Philippi as api/v1/places.json has it (2026-11-19), trimmed to two languages.
 const philippi = {
   id: "a49e1d0",
   name: "Philippi",
@@ -18,7 +21,7 @@ const philippi = {
   verses: 4,
   wikidata: "Q379652",
   pleiades: "501482",
-  tipnr: "Philippi@Act.16.12-Php",
+  tipnr: "Philippi@Act.16.12-1Th",
   page: { en: "/en/place/philippi/", ru: "/ru/place/philippi/" },
 };
 
@@ -87,5 +90,56 @@ describe("the API description", () => {
     expect(violations({ "Acts.16": { places: ["a49e1d0"] } }, chapters, schemas)).toEqual([
       "$.Acts.16: no people",
     ]);
+  });
+});
+
+/**
+ * The fields the open data page (content/docs/<lang>/api.html) describes in words rather than by
+ * name, each with the words that describe it in English. Every other field of a record must be
+ * named on the page, in code or in an example, in every language: a field added to the API
+ * without a word on the page fails here (tipnr did, until 2026-11-19).
+ */
+const IN_WORDS: Readonly<Record<string, readonly string[]>> = {
+  // "TIPNR id, name, names …, sex, how many verses name them, the first"
+  Person: ["sex", "first"],
+  // "the tours: their stops in order"
+  Tour: ["year", "title", "stops"],
+  // "each with its passage and note"
+  Stop: ["place", "note"],
+  // "the dated events"
+  Event: ["year", "title", "place", "sources"],
+  // "battles and sieges: place, year, sides and outcome"
+  Battle: ["year", "title", "place", "sides", "outcome", "sources"],
+  // "answered in every language of the site, with the view of the map and the sources"
+  Question: ["question", "answer", "map", "sources"],
+  // "author, work, passage, a link to a free text, a summary"
+  AncientMention: ["place", "author", "work", "passage", "url", "note"],
+};
+/** The records of the data files (not the index, whose fields are its own description). */
+const RECORDS = ["Place", "Chapter", "Person", "Tour", "Stop", "Event", "Battle", "Question"];
+
+describe("the open data page", () => {
+  const props = (name: string) =>
+    Object.keys((schemas[name] as { properties?: Record<string, unknown> }).properties ?? {});
+
+  it("lists in words only fields the records have", () => {
+    for (const [name, fields] of Object.entries(IN_WORDS))
+      for (const f of fields) expect(props(name), `${name}.${f}`).toContain(f);
+  });
+
+  it.each([...LOCALES])("names every field of the records in %s", (l) => {
+    const page = readFileSync(join(import.meta.dirname, `../content/docs/${l}/api.html`), "utf8");
+    const named = new Set([
+      ...[...page.matchAll(/<code>([^<]*)<\/code>/g)].flatMap((m) =>
+        [...(m[1] ?? "").matchAll(/"?(\w+)"?(?=\s*:|$)/g)].map((k) => k[1]),
+      ),
+      ...[...page.matchAll(/"(\w+)":/g)].map((m) => m[1]),
+    ]);
+    const missing = [...RECORDS, "AncientMention"].flatMap((name) =>
+      props(name)
+        .filter((f) => !named.has(f) && !IN_WORDS[name]?.includes(f))
+        .map((f) => `${name}.${f}`),
+    );
+    expect(missing).toEqual([]);
   });
 });

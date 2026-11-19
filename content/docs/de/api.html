@@ -9,7 +9,7 @@ description: Die Orte, die Verse, die sie nennen, die Ereignisse und die Touren 
   Schlüssel, keine Anmeldung, keine Grenzen außer dem üblichen Caching.
 </p>
 
-<h2>Welche Orte ein Vers nennt</h2>
+<h2 id="which-places-does-a-verse-name">Welche Orte ein Vers nennt</h2>
 <p>Eine Datei pro Buch der Bibel: jeder Vers, der einen Ort nennt, mit den IDs dieser Orte.</p>
 <pre><code>GET {{site}}/api/v1/verses/Acts.json
 
@@ -24,10 +24,10 @@ description: Die Orte, die Verse, die sie nennen, die Ereignisse und die Touren 
 [{ "id": "a49e1d0", "name": "Philippi",
    "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
    "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
-   "wikidata": "Q379652", "pleiades": "501482",
+   "wikidata": "Q379652", "pleiades": "501482", "tipnr": "Philippi@Act.16.12-1Th",
    "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
 
-<h2>Wer und wo in einem Kapitel</h2>
+<h2 id="who-and-where-in-a-chapter">Wer und wo in einem Kapitel</h2>
 <p>
   Eine Datei pro Buch: jedes Kapitel mit den Orten und den Personen, die es nennt. Die Personen sind
   wie im TIPNR von STEPBible bezeichnet; ihre Namen und ihr erster Vers stehen in
@@ -38,7 +38,7 @@ description: Die Orte, die Verse, die sie nennen, die Ereignisse und die Touren 
 { "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
                "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
 
-<h2>Alle Dateien</h2>
+<h2 id="all-the-files">Alle Dateien</h2>
 <div class="table">
   <table>
     <thead>
@@ -59,7 +59,8 @@ description: Die Orte, die Verse, die sie nennen, die Ereignisse und die Touren 
         <td>
           jeder Ort: ID, Namen, Art, Punkt, wie viele Verse ihn nennen, seine Seite (für einen Ort,
           den ein Vers nennt); <code>wikidata</code> und <code>pleiades</code>, derselbe Ort in
-          diesen Ortsverzeichnissen, wo bekannt
+          diesen Ortsverzeichnissen, wo bekannt; <code>tipnr</code>, sein Name in STEPBibles TIPNR,
+          nach demselben Schema wie die IDs in <code>people.json</code>, wo OpenBible ihn verknüpft
         </td>
       </tr>
       <tr>
@@ -76,26 +77,33 @@ description: Die Orte, die Verse, die sie nennen, die Ereignisse und die Touren 
       <tr>
         <td><code>/api/v1/people.json</code></td>
         <td>
-          die Personen, die die Bibel nennt: TIPNR-ID, Name, Namen in den anderen Sprachen, wo die
-          Website sie hat, Geschlecht, wie viele Verse sie nennen, der erste
+          die {{people_api}} Personen, die die Bibel nennt (die Karte zeigt {{people}} davon mit
+          ihren Familien): TIPNR-ID, Name, Namen in den anderen Sprachen, wo die Website sie hat,
+          Geschlecht, wie viele Verse sie nennen, der erste
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/events.json</code></td>
-        <td>die datierten Ereignisse, mit <code>ref</code>, wo die Bibel das Ereignis erzählt</td>
+        <td>
+          die datierten Ereignisse, mit <code>ref</code>, wo die Bibel das Ereignis erzählt;
+          <code>site</code> statt <code>place</code> für eine Stadt der antiken Welt, die die Bibel
+          nicht nennt
+        </td>
       </tr>
       <tr>
         <td><code>/api/v1/battles.json</code></td>
         <td>
           Schlachten und Belagerungen: Ort, Jahr, Parteien und Ausgang, mit <code>ref</code>, wo die
-          Bibel die Schlacht erzählt
+          Bibel die Schlacht erzählt; <code>event</code>, das Ereignis in <code>events.json</code>,
+          das dieselbe Geschichte erzählt
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/questions.json</code></td>
         <td>
           Fragen, die Menschen stellen, in allen Sprachen der Website beantwortet, mit der Ansicht
-          der Karte und den Quellen
+          der Karte und den Quellen; <code>scripture</code>, die Verse, die eine Antwort anführt;
+          <code>license</code> und <code>license_url</code>, die Lizenz der Antworten
         </td>
       </tr>
       <tr>
@@ -103,7 +111,8 @@ description: Die Orte, die Verse, die sie nennen, die Ereignisse und die Touren 
         <td>
           die Touren: ihre Stationen in der Reihenfolge, jede mit ihrer Textstelle und Anmerkung;
           <code>by: "sea"</code> für eine Strecke zu Schiff und <code>sailed</code> (Tage und Vers),
-          wo der Text sagt, wie lange sie dauerte
+          wo der Text sagt, wie lange sie dauerte; <code>source</code>, wo ein Halt außerhalb der
+          Bibel erzählt wird
         </td>
       </tr>
       <tr>
@@ -121,7 +130,7 @@ description: Die Orte, die Verse, die sie nennen, die Ereignisse und die Touren 
   </table>
 </div>
 
-<h2>Konventionen</h2>
+<h2 id="conventions">Konventionen</h2>
 <ul>
   <li>
     Verweise sind OSIS mit englischen Buchabkürzungen und der Zählung der King-James-Bibel:
@@ -131,7 +140,8 @@ description: Die Orte, die Verse, die sie nennen, die Ereignisse und die Touren 
   <li>
     Ein Ort, der in den Quelldaten zweimal unter einem Namen geführt wird, trägt
     <code>"duplicate": true</code>; ein Ort, dessen Lage umstritten ist,
-    <code>"disputed": true</code>.
+    <code>"disputed": true</code>; ein Ereignis, eine Schlacht oder eine Tour mit ungefährem Jahr
+    <code>"approximate": true</code>.
   </li>
   <li>
     Die Dateien werden mit jeder Veröffentlichung der Daten neu erzeugt; <code>index.json</code>
@@ -143,7 +153,7 @@ description: Die Orte, die Verse, die sie nennen, die Ereignisse und die Touren 
   </li>
 </ul>
 
-<h2>Lizenz und Quellenangabe</h2>
+<h2 id="licence-and-credit">Lizenz und Quellenangabe</h2>
 <p>
   Die Daten stehen unter <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
   Nutzen Sie sie, verändern Sie sie, verkaufen Sie, was Sie damit bauen; nennen Sie die Quellen, wo
@@ -155,8 +165,8 @@ description: Die Orte, die Verse, die sie nennen, die Ereignisse und die Touren 
 <p>
   Die Antworten auf die Fragen (<code>questions.json</code>) sind eigene Texte von History Globe und
   stehen unter
-  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.de">CC BY-NC-ND 4.0</a>: Zitieren
-  und verlinken Sie sie mit Quellenangabe; verändern, übersetzen oder übernehmen Sie sie nicht in
-  eine andere Website oder einen anderen Datensatz. Dasselbe gilt für die Ortsartikel, die die API
-  nicht enthält.
+  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>: Zitieren und
+  verlinken Sie sie mit Quellenangabe; verändern, übersetzen oder übernehmen Sie sie nicht in eine
+  andere Website oder einen anderen Datensatz. Dasselbe gilt für die Ortsartikel, die die API nicht
+  enthält.
 </p>

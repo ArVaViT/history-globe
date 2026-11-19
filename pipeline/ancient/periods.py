@@ -1,7 +1,7 @@
 """Step 6: each site's years, the span of the periods Pleiades attests it in, modern ones left
 out, narrowed by Wikidata's founding and end (wave/wave.json, rewritten).
 
-    python3 -I pipeline/ancient/periods.py <work>
+    python3 -E -s -m pipeline.ancient.periods <work>
 """
 
 from __future__ import annotations
@@ -11,10 +11,9 @@ import pathlib
 import re
 import sys
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from ancient.common import pleiades_places, read, write  # noqa: E402
-from ancient.periods_table import LATE, PERIODS  # noqa: E402
-from build_data import YEAR_MAX, YEAR_MIN  # noqa: E402
+from pipeline.ancient.common import pleiades_places, read, write
+from pipeline.ancient.periods_table import LATE, PERIODS
+from pipeline.build_data import YEAR_MAX, YEAR_MIN
 
 # An end up to this many years past the last period is taken from Wikidata, where Pleiades
 # has not recorded a town's last years (Kamarina, burned by the Arabs in 853).

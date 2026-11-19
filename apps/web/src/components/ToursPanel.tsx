@@ -97,7 +97,7 @@ export function tourSpan(stops: readonly Stop[], locale: Locale): string {
   const cite = stops.find((s) => s.source)?.source?.cite;
   const told = pick(cite, locale);
   // The work, without the passages ("Church History 6.1, 6.2.5-6" → "Church History") or
-  // a note on the translation one stop quotes ("Исповедь (пер. М. Е. Сергеенко) 2.3").
+  // a note on the translation it names in brackets ("Исповедь (пер. …) 2.3").
   if (told) return told.replace(/\s+\d[\d.,:\s–-]*$/, "").replace(/\s*\([^()]*\)$/, "");
   let first = stops[0]?.ref?.split("-")[0];
   const last = stops.at(-1)?.ref?.split("-").at(-1);

@@ -9,7 +9,7 @@ description: Os lugares, os versículos que os nomeiam, os acontecimentos e os r
   comum.
 </p>
 
-<h2>Quais lugares um versículo nomeia</h2>
+<h2 id="which-places-does-a-verse-name">Quais lugares um versículo nomeia</h2>
 <p>
   Um arquivo por livro da Bíblia: cada versículo que nomeia um lugar, com os ids desses lugares.
 </p>
@@ -26,10 +26,10 @@ description: Os lugares, os versículos que os nomeiam, os acontecimentos e os r
 [{ "id": "a49e1d0", "name": "Philippi",
    "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
    "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
-   "wikidata": "Q379652", "pleiades": "501482",
+   "wikidata": "Q379652", "pleiades": "501482", "tipnr": "Philippi@Act.16.12-1Th",
    "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
 
-<h2>Quem e onde em um capítulo</h2>
+<h2 id="who-and-where-in-a-chapter">Quem e onde em um capítulo</h2>
 <p>
   Um arquivo por livro: cada capítulo, com os lugares e as pessoas que ele nomeia. As pessoas são
   identificadas como no TIPNR do STEPBible; seus nomes e o primeiro versículo estão em
@@ -40,7 +40,7 @@ description: Os lugares, os versículos que os nomeiam, os acontecimentos e os r
 { "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
                "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
 
-<h2>Todos os arquivos</h2>
+<h2 id="all-the-files">Todos os arquivos</h2>
 <div class="table">
   <table>
     <thead>
@@ -59,7 +59,9 @@ description: Os lugares, os versículos que os nomeiam, os acontecimentos e os r
         <td>
           todos os lugares: id, nomes, tipo, ponto, quantos versículos o nomeiam, sua página (para
           um lugar que algum versículo nomeia); <code>wikidata</code> e <code>pleiades</code>, o
-          mesmo lugar nesses repertórios, quando é conhecido
+          mesmo lugar nesses repertórios, quando é conhecido; <code>tipnr</code>, o seu nome no
+          TIPNR do STEPBible, o mesmo esquema dos ids de <code>people.json</code>, quando o
+          OpenBible o liga
         </td>
       </tr>
       <tr>
@@ -76,28 +78,33 @@ description: Os lugares, os versículos que os nomeiam, os acontecimentos e os r
       <tr>
         <td><code>/api/v1/people.json</code></td>
         <td>
-          as pessoas que a Bíblia nomeia: id do TIPNR, nome, nomes nos outros idiomas onde o site os
-          tem, sexo, quantos versículos as nomeiam, o primeiro
+          as {{people_api}} pessoas que a Bíblia nomeia (o mapa mostra {{people}} delas, com as suas
+          famílias): id do TIPNR, nome, nomes nos outros idiomas onde o site os tem, sexo, quantos
+          versículos as nomeiam, o primeiro
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/events.json</code></td>
         <td>
-          os acontecimentos datados, com <code>ref</code> quando a Bíblia conta o acontecimento
+          os acontecimentos datados, com <code>ref</code> quando a Bíblia conta o acontecimento;
+          <code>site</code> em vez de <code>place</code> para uma cidade do mundo antigo que a
+          Bíblia não nomeia
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/battles.json</code></td>
         <td>
           batalhas e cercos: lugar, ano, lados e desfecho, com <code>ref</code> quando a Bíblia
-          conta a batalha
+          conta a batalha; <code>event</code>, o evento de <code>events.json</code> que conta a
+          mesma história
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/questions.json</code></td>
         <td>
           perguntas que as pessoas fazem, respondidas em todos os idiomas do site, com a vista do
-          mapa e as fontes
+          mapa e as fontes; <code>scripture</code>, os versículos que a resposta cita;
+          <code>license</code> e <code>license_url</code>, a licença das respostas
         </td>
       </tr>
       <tr>
@@ -105,7 +112,8 @@ description: Os lugares, os versículos que os nomeiam, os acontecimentos e os r
         <td>
           os roteiros: suas paradas em ordem, cada uma com sua passagem e nota;
           <code>by: "sea"</code> para um trecho feito por mar, e <code>sailed</code> (dias e
-          versículo) onde o texto diz quanto durou
+          versículo) onde o texto diz quanto durou; <code>source</code> onde uma parada é contada
+          fora da Bíblia
         </td>
       </tr>
       <tr>
@@ -123,7 +131,7 @@ description: Os lugares, os versículos que os nomeiam, os acontecimentos e os r
   </table>
 </div>
 
-<h2>Convenções</h2>
+<h2 id="conventions">Convenções</h2>
 <ul>
   <li>
     As referências são OSIS, com abreviações inglesas dos livros e numeração da King James:
@@ -132,7 +140,8 @@ description: Os lugares, os versículos que os nomeiam, os acontecimentos e os r
   <li>Os anos são astronômicos: 1 a.C. é 0, 586 a.C. é −585.</li>
   <li>
     Um lugar listado duas vezes com o mesmo nome nos dados de origem traz
-    <code>"duplicate": true</code>; um lugar de sítio disputado, <code>"disputed": true</code>.
+    <code>"duplicate": true</code>; um lugar de sítio disputado, <code>"disputed": true</code>; um
+    evento, batalha ou roteiro de ano aproximado, <code>"approximate": true</code>.
   </li>
   <li>
     Os arquivos são reconstruídos a cada versão dos dados; <code>index.json</code> informa a sua
@@ -144,7 +153,7 @@ description: Os lugares, os versículos que os nomeiam, os acontecimentos e os r
   </li>
 </ul>
 
-<h2>Licença e crédito</h2>
+<h2 id="licence-and-credit">Licença e crédito</h2>
 <p>
   Os dados estão sob <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Use-os,
   altere-os, venda o que construir com eles; nomeie as fontes onde os mostrar, como o
@@ -155,7 +164,7 @@ description: Os lugares, os versículos que os nomeiam, os acontecimentos e os r
 </p>
 <p>
   As respostas às perguntas (<code>questions.json</code>) são textos próprios do History Globe e
-  estão sob <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.pt">CC BY-NC-ND 4.0</a>:
+  estão sob <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>:
   cite-as e crie links para elas, com crédito; não as altere, não as traduza nem as leve para outro
   site ou conjunto de dados. O mesmo vale para os artigos dos lugares, que a API não inclui.
 </p>

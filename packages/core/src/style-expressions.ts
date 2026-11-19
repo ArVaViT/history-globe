@@ -132,12 +132,28 @@ export const UNCERTAIN_SITE: ExpressionSpecification = [
 /** The two browns (0, 8) are near the desert's own colour: their fill is laid on thicker. */
 export const WARM: ExpressionSpecification = ["match", ["get", "c"], [0, 8], 1.6, 1];
 
-export const polityColor: ExpressionSpecification = [
-  "match",
-  ["get", "c"],
-  ...POLITY_COLORS.flatMap((color, i) => [i, color]),
+/**
+ * A `match` on a feature's property from a table of its values. The style spec types `match`
+ * as a fixed tuple, which a table spread into it cannot satisfy: the one cast lives here.
+ */
+function matchOf<O extends string | number>(
+  property: string,
+  table: readonly (readonly [string | number, O])[],
+  otherwise: O,
+): ExpressionSpecification {
+  return [
+    "match",
+    ["get", property],
+    ...table.flat(),
+    otherwise,
+  ] as unknown as ExpressionSpecification;
+}
+
+export const polityColor: ExpressionSpecification = matchOf(
+  "c",
+  POLITY_COLORS.map((color, i) => [i, color] as const),
   POLITY_COLORS[0],
-] as unknown as ExpressionSpecification;
+);
 
 /**
  * The world of the Bible and Acts, from Spain (Tarshish, Rom 15:24) to Persia, from the Black
@@ -198,12 +214,7 @@ export const hasIcon: ExpressionSpecification = [
   true,
   false,
 ];
-export const ICON_OF_KIND: ExpressionSpecification = [
-  "match",
-  ["get", "kind"],
-  ...Object.entries(KIND_ICON).flat(),
-  "",
-] as unknown as ExpressionSpecification;
+export const ICON_OF_KIND: ExpressionSpecification = matchOf("kind", Object.entries(KIND_ICON), "");
 
 /** First year of the New Testament narrative (6 BC, astronomical -5). */
 export const NT_FROM = -5;

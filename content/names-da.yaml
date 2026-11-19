@@ -452,7 +452,7 @@ places:
   ac12af9: Libyen
   a6ac675: Moresjet-Gat
   a939939: Sikems Tårn
-  a84c559: Vaskerens Mark
+  a84c559: Blegerens Ager
   a32397f: Alusj
   a2f186d: Goren-ha-Atad
   a03cc2d: Ba'alat-Be'er
@@ -1794,6 +1794,11 @@ polities:
   Third Dynasty of Ur: Ur III-dynastiet
   Principality of Armenia: Fyrstendømmet Armenien
 modern:
+  md88865: "Argob"
+  m0df275: "Boses"
+  m9b1996: "Jeru'el"
+  me0645b: "Ören"
+  m23ce84: "Massa"
   m66c5b8: Jerusalem
   md561de: Babylon
   me7edbd: Jordan
@@ -1986,7 +1991,7 @@ modern:
   m7d00ce: Umm ar-Rasas
   m112962: Khirbet el-Waten
   m14a95e: Beersheba
-  m1ec77e: At-Tell
+  m1ec77e: Et-Tell
   m518f8e: Banias
   mdc9182: Ein Weibeh
   m857981: Ras et-Tahuneh
@@ -6708,3 +6713,21 @@ ancient:
   Q173474: Veliko Tarnovo
   Q2538648: Wad ban Naqa
   Q1462261: Wasit
+# The today line where OpenBible describes the place in free English text, translated whole
+# (as content/modern-names.yaml does for Russian), with this file's names of the places.
+labels:
+  "in the region east of Gibeon": "Øst for Gibeon"
+  "in the region between Mizpah and Shen": "Mellem Mispa og Sjen"
+  "in the region between Gerar and Beersheba": "Mellem Gerar og Beersheba"
+  "in the region south of Hebron": "Syd for Hebron"
+  "in the region between Lachish and Gath": "Mellem Lakisj og Gat"
+  "in the region between Eshtaol and Zorah": "Mellem Esjtaol og Zora"
+  "in the region between Damascus and Hamath": "Mellem Damaskus og Hamat"
+  "in the region between Baalbek and Kadesh": "Mellem Baalbek og Kadesj"
+  "in the region between Aiath and Michmash": "Mellem Ajjat og Mikmas"
+  "in the region between Ibleam and Megiddo": "Mellem Jible'am og Megiddo"
+  "in the region between Punon and Zered": "Mellem Punon og Zeredbækken"
+  "in the region between Maghfar and Lake Timsah": "Mellem Maghfar og Timsahsøen"
+  "in the region north of the Dead Sea": "Nord for Det Døde Hav"
+  "in the region south of the Lisan": "Syd for Lisanhalvøen"
+  "in the region between Kedesh-naphtali and Hazor": "Mellem Kedesj i Naftali og Hazor"

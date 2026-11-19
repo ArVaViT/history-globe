@@ -1,7 +1,7 @@
 """Move the pins of pipeline/sources.json to the latest commit of each upstream file.
 
-    python3 pipeline/pin_sources.py                 # show what has moved upstream, change nothing
-    python3 pipeline/pin_sources.py --write [name…] # rewrite the pins (all, or the names given)
+    python3 -m pipeline.pin_sources                 # show what has moved upstream, change nothing
+    python3 -m pipeline.pin_sources --write [name…] # rewrite the pins (all, or the names given)
 
 For each source: the latest commit of its repository's default branch that touched the file
 (GitHub API, no token), the file at that commit downloaded and hashed (the extracted member for
@@ -20,7 +20,7 @@ import sys
 import urllib.parse
 import zipfile
 
-from net import get
+from pipeline.net import get
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PINS_FILE = ROOT / "pipeline" / "sources.json"

@@ -2,7 +2,8 @@
 # text; regions crossed in passing (Galatia and Phrygia, Macedonia, Greece) are left out, and
 # the leg to Philippi, months through them, is marked untold: no walking time is guessed.
 # Trogyllium (Acts 20:15) is omitted: it is absent from part of the manuscript tradition.
-# Year approximate. Source for the stop list: research note 16, section 4.3.
+# Year approximate. From Philippi (Acts 20) the stops show AD 57: Paul leaves Ephesus after
+# three years there (20:31), as the trials tour and chapter-years.yaml have it.
 id: paul-3
 title:
   en: "Paul's third journey"
@@ -81,6 +82,7 @@ stops:
   - place: a49e1d0
     ref: Acts.20.1-Acts.20.6
     by: untold
+    year: "AD 57"
     note:
       en: "Through Macedonia to Greece for three months, and back; after the days of unleavened bread they sail from Philippi."
       ru: "Через Македонию в Грецию на три месяца и обратно; после дней опресночных отплывают из Филипп."
@@ -106,6 +108,7 @@ stops:
   - place: a91c509
     ref: Acts.20.6-Acts.20.12
     by: sea
+    year: "AD 57"
     sailed: { days: 5, about: true, ref: Acts.20.6 }
     note:
       en: "Seven days in Troas; Eutychus."
@@ -131,6 +134,7 @@ stops:
       bg: "Седем дни в Троада; Евтих."
   - place: a0a2ca7
     ref: Acts.20.13
+    year: "AD 57"
     note:
       en: "Paul goes on foot to Assos."
       ru: "Павел идёт в Асс пешком."
@@ -156,6 +160,7 @@ stops:
   - place: a33910d
     ref: Acts.20.14
     by: sea
+    year: "AD 57"
     note:
       en: "They come to Mitylene."
       ru: "Прибывают в Митилину."
@@ -181,6 +186,7 @@ stops:
   - place: a4c2c75
     ref: Acts.20.15
     by: sea
+    year: "AD 57"
     sailed: { days: 1, ref: Acts.20.15 }
     note:
       en: "Opposite Chios."
@@ -207,6 +213,7 @@ stops:
   - place: acf6ec0
     ref: Acts.20.15
     by: sea
+    year: "AD 57"
     sailed: { days: 1, ref: Acts.20.15 }
     note:
       en: "They touch at Samos."
@@ -233,6 +240,7 @@ stops:
   - place: a55027d
     ref: Acts.20.17-Acts.20.38
     by: sea
+    year: "AD 57"
     sailed: { days: 1, ref: Acts.20.15 }
     note:
       en: "Farewell to the elders of Ephesus."
@@ -259,6 +267,7 @@ stops:
   - place: a398e5d
     ref: Acts.21.1
     by: sea
+    year: "AD 57"
     note:
       en: "A straight course to Cos."
       ru: "Прямым путём в Кос."
@@ -284,6 +293,7 @@ stops:
   - place: a4218ee
     ref: Acts.21.1
     by: sea
+    year: "AD 57"
     sailed: { days: 1, ref: Acts.21.1 }
     note:
       en: "Rhodes."
@@ -310,6 +320,7 @@ stops:
   - place: ade301b
     ref: Acts.21.1-Acts.21.2
     by: sea
+    year: "AD 57"
     note:
       en: "At Patara they find a ship to Phoenicia."
       ru: "В Патаре находят корабль в Финикию."
@@ -335,6 +346,7 @@ stops:
   - place: a160272
     ref: Acts.21.3-Acts.21.6
     by: sea
+    year: "AD 57"
     note:
       en: "Seven days with the disciples at Tyre."
       ru: "Семь дней у учеников в Тире."
@@ -360,6 +372,7 @@ stops:
   - place: abc2af0
     ref: Acts.21.7
     by: sea
+    year: "AD 57"
     note:
       en: "One day with the brothers at Ptolemais."
       ru: "Один день у братьев в Птолемаиде."
@@ -385,6 +398,7 @@ stops:
   - place: a58735e
     ref: Acts.21.8-Acts.21.14
     by: sea
+    year: "AD 57"
     note:
       en: "In the house of Philip; the prophecy of Agabus."
       ru: "В доме Филиппа; пророчество Агава."
@@ -409,6 +423,7 @@ stops:
       bg: "В дома на Филип; пророчеството на Агав."
   - place: a15257a
     ref: Acts.21.15-Acts.21.17
+    year: "AD 57"
     note:
       en: "The brothers in Jerusalem receive them gladly."
       ru: "Братья в Иерусалиме радушно принимают их."

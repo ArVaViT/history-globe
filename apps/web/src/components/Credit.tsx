@@ -25,7 +25,8 @@ export function Credit({ text }: { text: string }): ReactNode {
         key={parts.length}
         href={href}
         target="_blank"
-        rel={name.startsWith("CC ") ? "noopener noreferrer license" : "noopener noreferrer"}
+        // A data set's licence, not the page's: no rel="license" (ADR 0016).
+        rel="noopener noreferrer"
         className="link-soft"
       >
         {name}

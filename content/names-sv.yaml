@@ -1794,6 +1794,11 @@ polities:
   Third Dynasty of Ur: Urs tredje dynasti
   Principality of Armenia: Furstendömet Armenien
 modern:
+  md88865: "Argov"
+  m0df275: "Boses"
+  m9b1996: "Jeruel"
+  me0645b: "Ören"
+  m23ce84: "Massa"
   m66c5b8: Jerusalem
   md561de: Babylon
   me7edbd: Jordan
@@ -6708,3 +6713,21 @@ ancient:
   Q173474: Tarnovo
   Q2538648: Wad ban Naqa
   Q1462261: Wasit
+# The today line where OpenBible describes the place in free English text, translated whole
+# (as content/modern-names.yaml does for Russian), with this file's names of the places.
+labels:
+  "in the region east of Gibeon": "Öster om Gibeon"
+  "in the region between Mizpah and Shen": "Mellan Mispa och Shen"
+  "in the region between Gerar and Beersheba": "Mellan Gerar och Beer Sheva"
+  "in the region south of Hebron": "Söder om Hebron"
+  "in the region between Lachish and Gath": "Mellan Lakish och Gat"
+  "in the region between Eshtaol and Zorah": "Mellan Eshtaol och Sora"
+  "in the region between Damascus and Hamath": "Mellan Damaskus och Hamat"
+  "in the region between Baalbek and Kadesh": "Mellan Baalbek och Kadesh"
+  "in the region between Aiath and Michmash": "Mellan Ajat och Mikmas"
+  "in the region between Ibleam and Megiddo": "Mellan Jivleam och Megiddo"
+  "in the region between Punon and Zered": "Mellan Punon och bäcken Sered"
+  "in the region between Maghfar and Lake Timsah": "Mellan Maghfar och Timsahsjön"
+  "in the region north of the Dead Sea": "Norr om Döda havet"
+  "in the region south of the Lisan": "Söder om Lisanhalvön"
+  "in the region between Kedesh-naphtali and Hazor": "Mellan Kedesh i Naftali och Hasor"

@@ -3,6 +3,7 @@ import {
   AncientAuthorsFile,
   ArticleFile,
   PhotosFile,
+  photoLicenceUrl,
   PlaceLifeFile,
   PlaceNamesFile,
   PolityOverridesFile,
@@ -137,7 +138,9 @@ describe("PlaceLifeFile", () => {
 });
 
 describe("PhotosFile", () => {
-  const photo = (license: string) => ({ photos: [{ place: "ac9adc9", file: "x.jpg", license }] });
+  const photo = (license: string, license_url = photoLicenceUrl(license)) => ({
+    photos: [{ place: "ac9adc9", file: "x.jpg", license, ...(license_url ? { license_url } : {}) }],
+  });
 
   it.each(["CC0", "CC0 1.0", "CC BY 2.5", "CC BY 4.0", "Public domain"])("takes %s", (license) => {
     expect(PhotosFile.parse(photo(license)).photos[0]?.license).toBe(license);
@@ -146,6 +149,20 @@ describe("PhotosFile", () => {
   // ADR 0008: nothing share-alike or non-commercial.
   it.each(["CC BY-SA 4.0", "CC BY-NC 2.0", "CC BY 4.0 ", "GFDL"])("refuses %s", (license) => {
     expect(() => PhotosFile.parse(photo(license))).toThrow();
+  });
+
+  it("links the licence named, in its canonical form, and requires the link for CC BY", () => {
+    expect(photoLicenceUrl("CC BY 2.5")).toBe("https://creativecommons.org/licenses/by/2.5/");
+    expect(photoLicenceUrl("CC0")).toBe("https://creativecommons.org/publicdomain/zero/1.0/");
+    expect(photoLicenceUrl("Public domain")).toBeUndefined();
+    for (const [license, url] of [
+      ["CC BY 3.0", ""],
+      ["CC BY 3.0", "https://creativecommons.org/licenses/by/3.0"],
+      ["CC BY 3.0", "https://creativecommons.org/licenses/by/4.0/"],
+      ["CC0", "http://creativecommons.org/publicdomain/zero/1.0/deed.en"],
+      ["Public domain", "https://creativecommons.org/publicdomain/zero/1.0/"],
+    ] as const)
+      expect(() => PhotosFile.parse(photo(license, url)), `${license} ${url}`).toThrow();
   });
 });
 

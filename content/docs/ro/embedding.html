@@ -8,7 +8,7 @@ description: Puneți globul pe propriul site cu un singur rând — harta unui c
   lângă pasajul din pagina dumneavoastră; câteva mesaje le sincronizează pe cele două.
 </p>
 
-<h2>Pornire rapidă</h2>
+<h2 id="quick-start">Pornire rapidă</h2>
 <pre><code>&lt;iframe
   src="{{site}}/embed/v1?ref=Acts.16&amp;locale=ro"
   title="Harta: Fapte 16"
@@ -30,7 +30,7 @@ description: Puneți globul pe propriul site cu un singur rând — harta unui c
   <li>Cadrul funcționează până la lățimea unui telefon; o înălțime de 480 px este suficientă.</li>
 </ul>
 
-<h2>Un capitol sau un pasaj</h2>
+<h2 id="a-chapter-or-a-passage">Un capitol sau un pasaj</h2>
 <p>
   <code>ref</code> primește o trimitere OSIS, cu abrevierile englezești ale cărților și numerotarea
   englezească a versetelor:
@@ -70,7 +70,7 @@ description: Puneți globul pe propriul site cu un singur rând — harta unui c
   păstrează anul curent al hărții.
 </p>
 
-<h2>Parametri</h2>
+<h2 id="parameters">Parametri</h2>
 <div class="table">
   <table>
     <thead>
@@ -178,7 +178,7 @@ description: Puneți globul pe propriul site cu un singur rând — harta unui c
   adresa URL: aceiași parametri funcționează după <code>/embed/v1</code>.
 </p>
 
-<h2>Mesaje</h2>
+<h2 id="messages">Mesaje</h2>
 <p>
   Globul și pagina dumneavoastră comunică prin <code>postMessage</code>. Fiecare mesaj este un
   obiect cu <code>type</code> și <code>v: 1</code>. Globul trimite doar ce se întâmplă pe hartă și
@@ -186,7 +186,7 @@ description: Puneți globul pe propriul site cu un singur rând — harta unui c
   indiferent de originea ei (țintă <code>"*"</code>); acceptă mesaje doar de la pagina care conține
   cadrul.
 </p>
-<h3>De la glob</h3>
+<h3 id="from-the-globe">De la glob</h3>
 <div class="table">
   <table>
     <thead>
@@ -231,7 +231,10 @@ description: Puneți globul pe propriul site cu un singur rând — harta unui c
       <tr>
         <td><code>hg:error</code></td>
         <td><code>{ code, message }</code></td>
-        <td>harta sau datele ei nu s-au putut încărca</td>
+        <td>
+          harta sau datele ei nu s-au putut încărca: <code>code</code> este <code>"map"</code> sau
+          <code>"data"</code>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -240,9 +243,12 @@ description: Puneți globul pe propriul site cu un singur rând — harta unui c
   <code>view</code> conține <code>year</code>, <code>locale</code> și <code>layers</code> și, când
   sunt setate, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> și
   <code>camera</code>. Un <code>view</code> fără <code>place</code> înseamnă că niciun loc nu este
-  selectat.
+  selectat. <code>camera</code> este un obiect,
+  <code>{ center: [35.2, 31.8], zoom: 7, pitch: 30, bearing: 0 }</code>, nu șirul din adresă;
+  <code>layers</code> dă fiecărui strat <code>true</code> sau <code>false</code>:
+  <code>{ relief: false, battles: false }</code>.
 </p>
-<h3>Către glob</h3>
+<h3 id="to-the-globe">Către glob</h3>
 <div class="table">
   <table>
     <thead>
@@ -297,10 +303,10 @@ description: Puneți globul pe propriul site cu un singur rând — harta unui c
   <code>view.place</code> și în <code>hg:place-clicked</code>, iar <code>hg:set-view</code> le
   acceptă pe amândouă; dacă datele dumneavoastră au doar locurile OpenBible, verificați forma
   ID-ului înainte de a căuta unul. Din cele {{openbible}} de locuri OpenBible, {{absent}} nu sunt pe
-  hartă (nu au un punct care să poată fi publicat); ID-urile lor sunt ignorate.
+  hartă (au fost omise sau nu au niciun punct); ID-urile lor sunt ignorate.
 </p>
 
-<h2>Exemplu: harta urmează cititorul dumneavoastră</h2>
+<h2 id="example-the-map-follows-your-reader">Exemplu: harta urmează cititorul dumneavoastră</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
 // Când cititorul dumneavoastră deschide un capitol, arătați-l pe hartă.
@@ -429,24 +435,25 @@ function closeBox() {
   obișnuit rămâne text simplu, la fel ca un nume pe care versetele Bibliei înseși îl folosesc mai
   ales pentru altceva („Cades” acolo este Cades-Barnea, nu Cadesul din baza de date). Numele unui
   loc care este și prenume (Jordan, Sharon) este lăsat neatins lângă un alt cuvânt cu majusculă:
-  Jordan Smith este o persoană, nu râul. În rusă, ucraineană, poloneză și cehă, numele sunt găsite
-  și în formele lor flexionate („в Египте”, „w Jerozolimie”, „v Jeruzalémě”), iar numele germane și
-  la genitiv („Jerusalems”). Linkurile, codul, câmpurile de formular, butoanele și titlurile sunt
-  lăsate neatinse.
+  Jordan Smith este o persoană, nu râul. În rusă, ucraineană, poloneză, cehă, sârbă, maghiară,
+  finlandeză și română, numele sunt găsite și în formele lor flexionate („в Египте”, „w
+  Jerozolimie”, „v Jeruzalémě”), iar numele germane, suedeze, daneze și norvegiene și la genitiv
+  („Jerusalems”). Linkurile, codul, câmpurile de formular, butoanele și titlurile sunt lăsate
+  neatinse.
 </p>
 <p class="note">
   Scriptul nu are dependențe și nu setează cookie-uri. Citește de pe glob un singur fișier de nume
-  (aproximativ 20–35 KB transferați, în funcție de limbă, plus 7 KB de script), fără adresa paginii
-  dumneavoastră ca referrer, și modifică doar numele pe care le leagă. Funcționează sub o politică
-  Content Security Policy strictă care permite adresa globului în <code>script-src</code> și
-  <code>connect-src</code>. Pentru textul pe care pagina îl adaugă mai târziu, apelați
-  <code>HistoryGlobePlaces.scan(element)</code> după ce textul a fost afișat: scriptul împarte
-  nodurile de text, așa că într-o pagină React sau Vue rulați-l pe conținut pe care framework-ul nu
-  îl mai redesenează.
+  (aproximativ {{names_kb_min}}–{{names_kb_max}} KB transferați, în funcție de limbă, plus
+  {{script_kb}} KB de script), fără adresa paginii dumneavoastră ca referrer, și modifică doar
+  numele pe care le leagă. Funcționează sub o politică Content Security Policy strictă care permite
+  adresa globului în <code>script-src</code> și <code>connect-src</code>. Pentru textul pe care
+  pagina îl adaugă mai târziu, apelați <code>HistoryGlobePlaces.scan(element)</code> după ce textul
+  a fost afișat: scriptul împarte nodurile de text, așa că într-o pagină React sau Vue rulați-l pe
+  conținut pe care framework-ul nu îl mai redesenează.
 </p>
 <script src="../../hg-places.js" data-scope=".hgp-demo" defer></script>
 
-<h2>Stabilitate</h2>
+<h2 id="stability">Stabilitate</h2>
 <p>
   <code>/embed/v1</code> este un contract: în cadrul v1, parametrii și mesajele doar se adaugă, nu
   sunt niciodată schimbate sau eliminate. O schimbare incompatibilă va apărea ca

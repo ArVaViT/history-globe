@@ -1,4 +1,4 @@
-import { formatYearRange, type Locale } from "@hg/model";
+import { formatRange, type Locale } from "@hg/model";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "../../i18n";
 import { cachedJson } from "../../data";
@@ -50,7 +50,7 @@ export function Rulers({
   const nameOfRun = (k: number) => {
     const [a, b, i] = runs[k] ?? [0, 0, 0];
     const st = data.states[i];
-    return `${st?.names[locale] ?? st?.n ?? ""}, ${formatYearRange(a, b - 1, locale)}`;
+    return `${st?.names[locale] ?? st?.n ?? ""}, ${formatRange({ from: a, to: b }, locale)}`;
   };
   const now = runs.findIndex(([a, b]) => a <= year && year < b);
   // The state of the year shown is named on the line above; this one names what the
@@ -71,7 +71,7 @@ export function Rulers({
       <div
         ref={band}
         role="toolbar"
-        aria-label={t("place.rulers", { span: formatYearRange(from, to - 1, locale) })}
+        aria-label={t("place.rulers", { span: formatRange({ from, to }, locale) })}
         className="flex h-2.5 w-full overflow-hidden rounded-full bg-ink/5"
         onMouseLeave={() => {
           setShown(null);
@@ -123,7 +123,7 @@ export function Rulers({
       <div className="mt-1 text-[11.5px] leading-snug text-ink-soft">
         {line !== null
           ? nameOfRun(line)
-          : t("place.rulers", { span: formatYearRange(from, to - 1, locale) })}
+          : t("place.rulers", { span: formatRange({ from, to }, locale) })}
       </div>
     </div>
   );

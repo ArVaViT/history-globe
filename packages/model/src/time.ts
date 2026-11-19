@@ -131,6 +131,11 @@ export function formatYearRange(from: number, to: number, locale: Locale): strin
   return formatYear(to, locale).replace(String(b.year), `${String(a.year)}–${String(b.year)}`);
 }
 
+/** "1000–831 BC": the first and the last year of a half-open range. */
+export function formatRange(range: YearRange, locale: Locale): string {
+  return formatYearRange(range.from, range.to - 1, locale);
+}
+
 /**
  * The states of the first frame end here (AD 500); the later ones ship apart and load
  * when the slider first passes it (scripts/build-content.ts, MapLibreRenderer).

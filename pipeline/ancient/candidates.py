@@ -2,7 +2,7 @@
 inside the focus ellipse, settlements, sanctuaries and ports, linked to a Wikidata item, none
 within 3 km of a place on the map, nor already a site or refused.
 
-    python3 -I pipeline/ancient/candidates.py <work>
+    python3 -E -s -m pipeline.ancient.candidates <work>
 """
 
 from __future__ import annotations
@@ -12,9 +12,8 @@ import json
 import pathlib
 import sys
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from ancient.common import ROOT, content_sites, pleiades_places, qid_of, write  # noqa: E402
-from geo import km  # noqa: E402
+from pipeline.ancient.common import ROOT, content_sites, pleiades_places, qid_of, write
+from pipeline.geo import km
 
 KEEP = {"settlement", "sanctuary", "temple-2", "port", "temple"}
 NEAR_KM = 3

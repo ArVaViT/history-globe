@@ -1,6 +1,7 @@
 name: Report an error
 description: Something on a place, article, question or tour page is wrong.
 title: "Error: "
+labels: ["correction"]
 body:
   - type: markdown
     attributes:

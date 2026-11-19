@@ -5,7 +5,7 @@ Source: Zenodo 10.5281/zenodo.17122148, file itinere_roads.geojson
 (EPSG:3395, World Mercator). Python standard library only.
 
 Usage (pnpm roads):
-  python3 pipeline/roads/build_roads.py [itinere_roads.geojson] --outdir <dir>
+  python3 -m pipeline.roads.build_roads [itinere_roads.geojson] --outdir <dir>
       [--tol-major 100] [--tol-minor 200] [--prec 4]
 
 Steps: clip to the map frame (Cohen–Sutherland in Mercator metres),
@@ -17,10 +17,9 @@ Output: two levels that together make up the whole network, with no overlap:
 A single file with the whole network does not fit in 3 MB / 800 KB gzip
 without a coarse tolerance.
 """
-import argparse, gzip, json, math, os, pathlib, sys
+import argparse, gzip, json, math, os, pathlib
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from geo import BBOX, segment_distance, simplify  # noqa: E402
+from pipeline.geo import BBOX, segment_distance, simplify
 
 A = 6378137.0                      # WGS84 semi-major axis
 E = 0.0818191908426215             # WGS84 eccentricity

@@ -3,8 +3,8 @@
  * (content/polity-overrides.yaml): shapes copied forward and back, clipped, recoloured,
  * renamed, cut out of years, bridged, annexed, made vassals; one lead label each; the
  * small states' labels moved into the open; Russian names (content/polity-names.yaml).
- * Read from the pipeline's files and written back through `writes`, idempotently: a rerun
- * gives the same files. Part of scripts/build-content.ts, which calls it.
+ * Read from the pipeline's states (pipeline/.cache, `pnpm data`), never from what it wrote
+ * before, and written through `writes`. Part of scripts/build-content.ts, which calls it.
  */
 import { rulersOf } from "./rulers.ts";
 import { pointInRing, type Ring, ringArea } from "./geo.ts";
@@ -17,11 +17,14 @@ import {
   PolityOverridesFile,
 } from "../packages/model/src/content.ts";
 import { POLITY_SPLIT_YEAR } from "../packages/model/src/time.ts";
+import { undocumented } from "./release-doc.ts";
 
 const root = join(import.meta.dirname, "..");
 
 export interface PolityBuild {
   readonly out: string;
+  /** Where the pipeline left the states as Cliopatria draws them (pipeline/.cache). */
+  readonly from: string;
   readonly load: (path: string) => unknown;
   readonly places: {
     features: {
@@ -39,6 +42,7 @@ export interface PolityBuild {
 
 export function buildPolities({
   out,
+  from,
   load,
   places,
   errors,
@@ -46,7 +50,7 @@ export function buildPolities({
   namesIn = {},
 }: PolityBuild): void {
   // Our corrections to Cliopatria (content/polity-overrides.yaml): a polity's last shape and
-  // labels are copied forward to its real end. Idempotent: earlier copies are dropped first.
+  // labels are copied forward to its real end.
   type PolityFeature = {
     geometry: unknown;
     properties: {
@@ -55,55 +59,23 @@ export function buildPolities({
       y1: number;
       rel?: boolean;
       src?: string;
-      /** Cliopatria's own years of a shape an override cut short, restored on a rerun. */
-      cut?: [number, number];
-      /** A copy clipped for some years only (overrides \`clips\` with years). */
+      /** A copy clipped for some years only (overrides \`clips\` with years); not published. */
       clipped?: number;
     };
   };
-  /** A vassal's marks: the overlord's colour in `c`, its own kept in `vc`, the second line. */
-  type VassalProps = { c?: number; vc?: number; v?: string; v_ru?: string };
-  // The polities ship twice (below): what the first frame needs, to AD 500, and all of them,
-  // which the map switches to when the slider first passes AD 500. The later half is also
-  // kept apart, so that a rerun reads the whole set back from the two halves.
-  const polityPath = join(out, "polities.geojson");
-  const polityLatePath = join(out, "polities-late.geojson");
-  const labelsLatePath = join(out, "polity-labels-late.geojson");
-  const readFeatures = (path: string): PolityFeature[] =>
-    existsSync(path)
-      ? (JSON.parse(readFileSync(path, "utf8")) as { features: PolityFeature[] }).features
-      : [];
-  const polities = { features: [...readFeatures(polityPath), ...readFeatures(polityLatePath)] };
-  const polityLabels = {
-    features: [
-      ...readFeatures(join(out, "polity-labels.geojson")),
-      ...readFeatures(labelsLatePath),
-    ],
-  };
-  polities.features = polities.features.filter((f) => f.properties.src !== "override");
-  polityLabels.features = polityLabels.features.filter((f) => f.properties.src !== "override");
-  const labelSet = new Set<unknown>(polityLabels.features);
-  for (const f of [...polities.features, ...polityLabels.features]) {
-    // A vassal's colour and second line (below) come off before anything is applied again.
-    const p = f.properties as PolityFeature["properties"] & VassalProps;
-    if (p.vc !== undefined) {
-      p.c = p.vc;
-      delete p.vc;
-      delete p.v;
-      for (const k of Object.keys(p)) if (k.startsWith("v_")) Reflect.deleteProperty(p, k);
-      delete (p as { vin?: boolean }).vin;
+  /** A vassal's marks: the overlord's colour in `c`, the second line. */
+  type VassalProps = { c?: number; v?: string; v_ru?: string };
+  // The states ship twice (below): what the first frame needs, to AD 500, and all of them,
+  // which the map switches to when the slider first passes AD 500.
+  const readFeatures = (path: string): PolityFeature[] => {
+    if (!existsSync(path)) {
+      errors.push(`polities: ${path} is missing; run pnpm data`);
+      return [];
     }
-    // A label keeps the pipeline's tier in tier0, so a rerun starts from it, not from the
-    // tier this build assigns: a clip that read the assigned one decided differently.
-    const lp = f.properties as { tier?: number; tier0?: number };
-    if (labelSet.has(f)) {
-      if (lp.tier0 === undefined) lp.tier0 = lp.tier ?? 0;
-      else lp.tier = lp.tier0;
-    } else delete lp.tier0;
-    if (!f.properties.cut) continue;
-    [f.properties.y0, f.properties.y1] = f.properties.cut;
-    delete f.properties.cut;
-  }
+    return (JSON.parse(readFileSync(path, "utf8")) as { features: PolityFeature[] }).features;
+  };
+  const polities = { features: readFeatures(join(from, "polities.geojson")) };
+  const polityLabels = { features: readFeatures(join(from, "polity-labels.geojson")) };
   const overridesFile = PolityOverridesFile.parse(load("content/polity-overrides.yaml"));
   for (const o of overridesFile.overrides) {
     const own = polities.features.filter(
@@ -120,11 +92,10 @@ export function buildPolities({
       continue;
     }
     // Ended sooner than Cliopatria has it: its later shapes and labels are cut at the end
-    // (a shape wholly after it gets an empty span), keeping their years to restore.
+    // (a shape wholly after it gets an empty span, and is left out of the files).
     if (until < end) {
       for (const f of [...polities.features, ...polityLabels.features]) {
         if (f.properties.name !== o.polity || f.properties.y1 <= until) continue;
-        f.properties.cut = [f.properties.y0, f.properties.y1];
         f.properties.y1 = Math.max(f.properties.y0, until);
         f.properties.y0 = Math.min(f.properties.y0, f.properties.y1);
       }
@@ -143,8 +114,7 @@ export function buildPolities({
   }
 
   // Polities drawn from earlier than Cliopatria has them (overrides `starts`): their first
-  // shape and labels copied back to the year given. Marked as overrides, so a rebuild drops
-  // the copies before making them again.
+  // shape and labels copied back to the year given, marked as overrides.
   for (const o of overridesFile.starts ?? []) {
     const own = polities.features.filter(
       (f) => f.properties.name === o.polity && !f.properties.rel,
@@ -159,11 +129,10 @@ export function buildPolities({
       continue;
     }
     // Started later than Cliopatria has it: its earlier shapes and labels are cut at the
-    // start (a shape wholly before it gets an empty span), keeping their years to restore.
+    // start (a shape wholly before it gets an empty span, and is left out of the files).
     if (o.first_year > start) {
       for (const f of [...polities.features, ...polityLabels.features]) {
         if (f.properties.name !== o.polity || f.properties.y0 >= o.first_year) continue;
-        f.properties.cut ??= [f.properties.y0, f.properties.y1];
         f.properties.y0 = Math.min(o.first_year, f.properties.y1);
       }
       continue;
@@ -182,7 +151,6 @@ export function buildPolities({
 
   // Shapes cut to where the polity was (overrides `clips`): each ring is clipped to a convex
   // polygon (Sutherland-Hodgman), a label outside it moves to the middle of what is left.
-  // Clipping a clipped shape changes nothing, so a rebuild gives the same files.
   const clipRing = (ring: Ring, clip: Ring): Ring => {
     // Inside = left of each clip edge for a counter-clockwise clip polygon.
     const ccw =
@@ -195,8 +163,8 @@ export function buildPolities({
     for (let i = 0; i < edges.length && out.length > 0; i++) {
       const [ax, ay] = edges[i] ?? [0, 0];
       const [bx, by] = edges[(i + 1) % edges.length] ?? [0, 0];
-      // Within 0.002° of the edge counts as inside: the points written at three decimals
-      // fall just outside it, and a rebuild must leave a clipped shape as it is.
+      // Within 0.002° of the edge counts as inside: a point on the edge, written at three
+      // decimals, may fall just outside it.
       const len = Math.hypot(bx - ax, by - ay);
       const inside = ([x, y]: [number, number]) =>
         (bx - ax) * (y - ay) - (by - ay) * (x - ax) >= -0.002 * len;
@@ -224,8 +192,7 @@ export function buildPolities({
     return out;
   };
   // Clips for all years first: they cut the shapes themselves, and a clip for some years
-  // copies the shapes; copied before the cut on a first build and after it on a rerun, the
-  // copies differed. `k` stays the clip's place in the file.
+  // then copies the shapes as cut. `k` stays the clip's place in the file.
   const clipsInOrder = [...(overridesFile.clips ?? []).entries()].sort(
     ([, x], [, y]) =>
       Number(x.first_year !== undefined || x.last_year !== undefined) -
@@ -234,8 +201,8 @@ export function buildPolities({
   for (const [k, c] of clipsInOrder) {
     const clip = c.within;
     // A clip for some years only: the shapes and labels standing in them are copied for
-    // those years (overrides, made again on every build) and only the copies are clipped;
-    // the originals keep their geometry and give up those years (restored on a rerun).
+    // those years (overrides) and only the copies are clipped; the originals keep their
+    // geometry and give up those years.
     const a = c.first_year ?? -Infinity;
     const b = c.last_year === undefined ? Infinity : c.last_year + 1;
     const limited = Number.isFinite(a) || Number.isFinite(b);
@@ -271,7 +238,6 @@ export function buildPolities({
               geometry: JSON.parse(JSON.stringify(f.geometry)) as unknown,
               properties: { ...p, y0: b, y1, src: "override" },
             });
-          if (p.src !== "override") p.cut ??= [y0, y1];
           p.y1 = Math.max(y0, Math.min(y1, a));
         }
     const shapes = polities.features.filter(
@@ -324,9 +290,7 @@ export function buildPolities({
       if (rings.length === 0 || rings.some((r) => pointInRing(at.coordinates, r))) continue;
       // One of the grid of points an empire is named at up close (tier 1, 2): off the cut
       // shape it is not needed, and moved it would sit on the main one.
-      const p = f.properties as { tier0?: number; cut?: [number, number] };
-      if ((p.tier0 ?? 0) > 0) {
-        if (f.properties.src !== "override") p.cut ??= [f.properties.y0, f.properties.y1];
+      if (((f.properties as { tier?: number }).tier ?? 0) > 0) {
         f.properties.y1 = f.properties.y0;
         continue;
       }
@@ -365,9 +329,8 @@ export function buildPolities({
   // they coexist and their borders come within a cell (1°) of each other; the largest are
   // coloured first, each with a colour whose family of hue (style.ts: two greens, two
   // browns, two violets) no coloured neighbour has, else a colour none has, else the least
-  // used. Deterministic and independent of the colours read back, so a rerun gives the
-  // same map: done after the clips, which cut some shapes in place (Assyria's without
-  // years), so the first build after the pipeline sees the shapes a rerun reads back.
+  // used. Deterministic, and done after the clips, which cut some shapes in place
+  // (Assyria's without years).
   {
     // POLITY_COLORS as they look laid thin on the land: the greens and the teal read as one
     // grey-green, the plum, the violet and the red as one pink (design sweep).
@@ -448,7 +411,7 @@ export function buildPolities({
 
   // A new name from a year on (overrides `renamed`): a shape running across the year is
   // split, the copy after it (an override) takes the new name; the original keeps its years
-  // before (restored on a rerun). The colours were given before, so a renamed shape keeps
+  // before. The colours were given before, so a renamed shape keeps
   // its land's colour; its label is placed and pinned as any other.
   for (const x of overridesFile.renamed ?? []) {
     const a = x.first_year.year;
@@ -464,7 +427,6 @@ export function buildPolities({
         hit = true;
         const p = f.properties;
         if (p.y0 >= a) {
-          if (p.src !== "override") p.cut ??= [p.y0, p.y1];
           list.push({ ...f, properties: { ...p, ...colour, name: x.name, src: "override" } });
           p.y1 = p.y0; // an empty span: the renamed copy draws these years
         } else {
@@ -472,7 +434,6 @@ export function buildPolities({
             ...f,
             properties: { ...p, ...colour, name: x.name, y0: a, src: "override" },
           });
-          if (p.src !== "override") p.cut ??= [p.y0, p.y1];
           p.y1 = a;
         }
       }
@@ -481,8 +442,8 @@ export function buildPolities({
   }
 
   // Years a polity did not exist (overrides `absent`): its shapes and labels are cut out of
-  // them; a shape running past the gap keeps its own years before it (restored on a rerun)
-  // and a copy, marked as an override, takes the years after.
+  // them; a shape running past the gap keeps its own years before it and a copy, marked as
+  // an override, takes the years after.
   for (const x of overridesFile.absent ?? []) {
     const a = x.first_year;
     const b = x.last_year + 1; // half-open, ADR 0003
@@ -499,7 +460,6 @@ export function buildPolities({
         const p = f.properties;
         const { y0, y1 } = p;
         if (b < y1) list.push({ ...f, properties: { ...p, y0: b, y1, src: "override" } });
-        if (p.src !== "override") p.cut ??= [y0, y1];
         // Before the gap, or nothing (an empty span) when the shape starts inside it.
         p.y1 = Math.max(y0, Math.min(y1, a));
         p.y0 = Math.min(y0, p.y1);
@@ -553,8 +513,7 @@ export function buildPolities({
   }
 
   // Lands an empire took over (overrides `annexed`): the polity's last shape, drawn under
-  // the empire's name and colour for those years; marked as an override, so a rerun drops
-  // the copy before making it again.
+  // the empire's name and colour for those years, marked as an override.
   for (const x of overridesFile.annexed ?? []) {
     const a = x.first_year;
     const b = x.last_year + 1; // half-open, ADR 0003
@@ -583,8 +542,8 @@ export function buildPolities({
   // Vassals (overrides `vassals`): in the years a polity paid tribute to an empire or ruled
   // as its client, its shapes take the overlord's colour (drawn lighter, style.ts) and its
   // label a second line, "under Assyria". A shape that runs past those years is split: the
-  // shape itself keeps the vassal years (its own restored on a rerun), copies marked as
-  // overrides take the years before and after.
+  // shape itself keeps the vassal years, copies marked as overrides take the years before
+  // and after.
   for (const v of overridesFile.vassals ?? []) {
     const a = v.first_year.year;
     const b = v.last_year.year + 1; // half-open, ADR 0003
@@ -629,10 +588,8 @@ export function buildPolities({
         });
         if (y0 < a) list.push(copy(y0, a));
         if (b < y1) list.push(copy(b, y1));
-        if (p.src !== "override") p.cut ??= [y0, y1];
         p.y0 = Math.max(y0, a);
         p.y1 = Math.min(y1, b);
-        if (p.c !== undefined) p.vc = p.c;
         p.c = lord.properties.c;
         p.v = v.label.en;
         // The second line in every language it is written in: v_ru, v_uk, …
@@ -704,7 +661,7 @@ export function buildPolities({
   // the middle of the shape, fell among the towns of the hills, whose names always win
   // (style.ts places them first), so at a region's view the kingdoms went unnamed. Their
   // label moves to the point of the shape farthest from any place named by zoom 6 (rank 2
-  // or less), at least 0.12° inside the border. Deterministic: a rerun keeps the point.
+  // or less), at least 0.12° inside the border. Deterministic: a build keeps the point.
   // A state whose shape takes in conquered land keeps its label near its own heartland:
   // Hasmonean and Herodian Judea in Cliopatria includes Idumea and the Negev, and the
   // emptiest point of that shape lay in the Negev, far south of Judea proper (the hill
@@ -829,18 +786,13 @@ export function buildPolities({
     }
   }
 
-  // Copies made by a correction that came to cover no years (renamed twice in a swap) are
-  // dropped: they draw nothing and are made again on every build.
-  polities.features = polities.features.filter(
-    (f) => f.properties.src !== "override" || f.properties.y1 > f.properties.y0,
-  );
-  polityLabels.features = polityLabels.features.filter(
-    (f) => f.properties.src !== "override" || f.properties.y1 > f.properties.y0,
-  );
+  // Shapes and labels a correction left with no years (cut out, or a copy renamed twice in
+  // a swap) draw nothing: they are left out.
+  polities.features = polities.features.filter((f) => f.properties.y1 > f.properties.y0);
+  polityLabels.features = polityLabels.features.filter((f) => f.properties.y1 > f.properties.y0);
 
   // Polity labels get their Russian name; every label on the map must have one.
   const polityNames = PolityNamesFile.parse(load("content/polity-names.yaml")).polities;
-  const labelsPath = join(out, "polity-labels.geojson");
   const labels = polityLabels as { features: { properties: { name: string; name_ru?: string } }[] };
   const missing = new Set<string>();
   for (const f of labels.features) {
@@ -872,19 +824,40 @@ export function buildPolities({
   }
   const early = <T extends { properties: { y0?: number } }>(fs: T[]) =>
     fs.filter((f) => (f.properties.y0 ?? 0) <= POLITY_SPLIT_YEAR);
-  const late = <T extends { properties: { y0?: number } }>(fs: T[]) =>
-    fs.filter((f) => (f.properties.y0 ?? 0) > POLITY_SPLIT_YEAR);
+  // The order the map draws them in: Cliopatria's shapes, the first frame's before the later
+  // ones, then the copies our corrections made, over them.
+  const inDrawingOrder = <T extends { properties: { y0?: number; src?: string } }>(fs: T[]) => {
+    const own = fs.filter((f) => f.properties.src !== "override");
+    return [
+      ...early(own),
+      ...own.filter((f) => (f.properties.y0 ?? 0) > POLITY_SPLIT_YEAR),
+      ...fs.filter((f) => f.properties.src === "override"),
+    ];
+  };
+  polities.features = inDrawingOrder(polities.features);
+  polityLabels.features = inDrawingOrder(polityLabels.features);
   // Three decimals (about 100 m) for borders drawn at a region's zoom: the float noise some
-  // points carried ("31.593257904052734") was 16% of the first frame's states.
+  // points carried ("31.593257904052734") was 16% of the first frame's states. The build's
+  // own marks (`clipped`) stay out.
   const fc = (features: unknown[]) =>
-    JSON.stringify({ type: "FeatureCollection", features }, (_, v: unknown) =>
-      typeof v === "number" && !Number.isInteger(v) ? Math.round(v * 1000) / 1000 : v,
+    JSON.stringify({ type: "FeatureCollection", features }, (k, v: unknown) =>
+      k === "clipped"
+        ? undefined
+        : typeof v === "number" && !Number.isInteger(v)
+          ? Math.round(v * 1000) / 1000
+          : v,
     );
-  writes.push([polityPath, fc(early(polities.features))]);
-  writes.push([polityLatePath, fc(late(polities.features))]);
-  writes.push([labelsPath, fc(early(labels.features as PolityFeature[]))]);
-  writes.push([labelsLatePath, fc(late(labels.features as PolityFeature[]))]);
-  writes.push([join(out, "polities-all.geojson"), fc(polities.features)]);
+  writes.push([join(out, "polities.geojson"), fc(early(polities.features))]);
+  // Each field the files carry is described for their readers (docs/data-release.md).
+  const fields = (fs: { properties: object }[]) =>
+    fs.flatMap((f) => Object.keys(f.properties)).filter((k) => k !== "clipped");
+  errors.push(
+    ...undocumented("polities.geojson", fields(polities.features)),
+    ...undocumented("polity-labels.geojson", fields(polityLabels.features)),
+  );
+  const all = fc(polities.features);
+  writes.push([join(out, "polities-all.geojson"), all]);
+  writes.push([join(out, "polity-labels.geojson"), fc(early(labels.features as PolityFeature[]))]);
   writes.push([join(out, "polity-labels-all.geojson"), fc(labels.features)]);
 
   // Who ruled each place, century by century, for the card's timeline (scripts/rulers.ts):
@@ -895,6 +868,9 @@ export function buildPolities({
       .filter((f) => /^ancient-sites-wave\d+\.json$/.test(f))
       .flatMap((f) => AncientWaveFile.parse(load(`content/${f}`)).sites),
   ].map((a) => ({ geometry: { coordinates: [a.lon, a.lat] }, properties: { id: a.id } }));
-  const { states, rulers } = rulersOf(polities.features, [...places.features, ...ancient]);
+  // Read from the shapes as written, at three decimals: a place a few metres from a border
+  // falls on the side the map draws it.
+  const written = (JSON.parse(all) as { features: typeof polities.features }).features;
+  const { states, rulers } = rulersOf(written, [...places.features, ...ancient]);
   writes.push([join(out, "rulers.json"), JSON.stringify({ states, places: rulers })]);
 }

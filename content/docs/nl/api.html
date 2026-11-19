@@ -9,7 +9,7 @@ description: De plaatsen, de verzen die ze noemen, de gebeurtenissen en de route
   aanmelding, geen beperkingen behalve gewone caching.
 </p>
 
-<h2>Welke plaatsen een vers noemt</h2>
+<h2 id="which-places-does-a-verse-name">Welke plaatsen een vers noemt</h2>
 <p>Eén bestand per bijbelboek: elk vers dat een plaats noemt, met de id’s van die plaatsen.</p>
 <pre><code>GET {{site}}/api/v1/verses/Acts.json
 
@@ -24,10 +24,10 @@ description: De plaatsen, de verzen die ze noemen, de gebeurtenissen en de route
 [{ "id": "a49e1d0", "name": "Philippi",
    "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
    "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
-   "wikidata": "Q379652", "pleiades": "501482",
+   "wikidata": "Q379652", "pleiades": "501482", "tipnr": "Philippi@Act.16.12-1Th",
    "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
 
-<h2>Wie en waar in een hoofdstuk</h2>
+<h2 id="who-and-where-in-a-chapter">Wie en waar in een hoofdstuk</h2>
 <p>
   Eén bestand per bijbelboek: elk hoofdstuk, met de plaatsen en de mensen die het noemt. Mensen
   worden aangeduid zoals in het TIPNR van STEPBible; hun namen en hun eerste vers staan in
@@ -38,7 +38,7 @@ description: De plaatsen, de verzen die ze noemen, de gebeurtenissen en de route
 { "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
                "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
 
-<h2>Alle bestanden</h2>
+<h2 id="all-the-files">Alle bestanden</h2>
 <div class="table">
   <table>
     <thead>
@@ -57,7 +57,9 @@ description: De plaatsen, de verzen die ze noemen, de gebeurtenissen en de route
         <td>
           elke plaats: id, namen, soort, coördinaten, door hoeveel verzen ze wordt genoemd, haar
           pagina (voor een plaats die in een vers voorkomt); <code>wikidata</code> en
-          <code>pleiades</code>, dezelfde plaats in die plaatsenregisters, waar bekend
+          <code>pleiades</code>, dezelfde plaats in die plaatsenregisters, waar bekend;
+          <code>tipnr</code>, haar naam in de TIPNR van STEPBible, volgens hetzelfde schema als de
+          id’s in <code>people.json</code>, waar OpenBible haar koppelt
         </td>
       </tr>
       <tr>
@@ -74,36 +76,42 @@ description: De plaatsen, de verzen die ze noemen, de gebeurtenissen en de route
       <tr>
         <td><code>/api/v1/people.json</code></td>
         <td>
-          de mensen die de Bijbel noemt: TIPNR-id, naam, namen in de andere talen waar de site ze
-          heeft, geslacht, door hoeveel verzen ze worden genoemd, het eerste
+          de {{people_api}} mensen die de Bijbel noemt (de kaart toont er {{people}} met hun
+          families): TIPNR-id, naam, namen in de andere talen waar de site ze heeft, geslacht, door
+          hoeveel verzen ze worden genoemd, het eerste
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/events.json</code></td>
         <td>
-          de gedateerde gebeurtenissen, met <code>ref</code> waar de Bijbel de gebeurtenis vertelt
+          de gedateerde gebeurtenissen, met <code>ref</code> waar de Bijbel de gebeurtenis vertelt;
+          <code>site</code> in plaats van <code>place</code> voor een stad van de oude wereld die de
+          Bijbel niet noemt
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/battles.json</code></td>
         <td>
           veldslagen en belegeringen: plaats, jaar, partijen en uitkomst, met <code>ref</code> waar
-          de Bijbel de veldslag vertelt
+          de Bijbel de veldslag vertelt; <code>event</code>, de gebeurtenis in
+          <code>events.json</code> die hetzelfde verhaal vertelt
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/questions.json</code></td>
         <td>
           vragen die mensen stellen, beantwoord in alle talen van de site, met het kaartbeeld en de
-          bronnen
+          bronnen; <code>scripture</code>, de verzen die een antwoord aanhaalt;
+          <code>license</code> en <code>license_url</code>, de licentie van de antwoorden
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/tours.json</code></td>
         <td>
           de routes: hun haltes op volgorde, elk met zijn passage en toelichting;
-          <code>by: "sea"</code> voor een over zee afgelegd traject, en <code>sailed</code>
-          (dagen en vers) waar de tekst zegt hoe lang het duurde
+          <code>by: "sea"</code> voor een over zee afgelegd traject, en <code>sailed</code> (dagen
+          en vers) waar de tekst zegt hoe lang het duurde; <code>source</code> waar een halte buiten
+          de Bijbel wordt verteld
         </td>
       </tr>
       <tr>
@@ -121,7 +129,7 @@ description: De plaatsen, de verzen die ze noemen, de gebeurtenissen en de route
   </table>
 </div>
 
-<h2>Afspraken</h2>
+<h2 id="conventions">Afspraken</h2>
 <ul>
   <li>
     Verwijzingen zijn OSIS met Engelse boekafkortingen en King James-nummering:
@@ -131,7 +139,8 @@ description: De plaatsen, de verzen die ze noemen, de gebeurtenissen en de route
   <li>
     Een plaats die in de brongegevens twee keer onder één naam staat, draagt
     <code>"duplicate": true</code>; een plaats waarvan de locatie omstreden is,
-    <code>"disputed": true</code>.
+    <code>"disputed": true</code>; een gebeurtenis, slag of route met een jaar bij benadering,
+    <code>"approximate": true</code>.
   </li>
   <li>
     De bestanden worden bij elke release van de gegevens opnieuw gebouwd; <code>index.json</code>
@@ -143,7 +152,7 @@ description: De plaatsen, de verzen die ze noemen, de gebeurtenissen en de route
   </li>
 </ul>
 
-<h2>Licentie en bronvermelding</h2>
+<h2 id="licence-and-credit">Licentie en bronvermelding</h2>
 <p>
   De gegevens vallen onder <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
   Gebruik ze, wijzig ze, verkoop wat je ermee bouwt; noem de bronnen waar je ze toont, zoals
@@ -155,7 +164,7 @@ description: De plaatsen, de verzen die ze noemen, de gebeurtenissen en de route
 <p>
   De antwoorden op de vragen (<code>questions.json</code>) zijn eigen teksten van History Globe en
   vallen onder
-  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.nl">CC BY-NC-ND 4.0</a>: citeer ze
-  en verwijs ernaar, met bronvermelding; wijzig ze niet, vertaal ze niet en neem ze niet over in een
+  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>: citeer ze en
+  verwijs ernaar, met bronvermelding; wijzig ze niet, vertaal ze niet en neem ze niet over in een
   andere site of dataset. Hetzelfde geldt voor de plaatsartikelen, die de API niet bevat.
 </p>

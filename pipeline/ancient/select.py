@@ -1,7 +1,7 @@
 """Step 5: of the candidates, the ancient sites only, never a modern town, museum or castle; one
 per 3 km, the better known (wave/wave.json).
 
-    python3 -I pipeline/ancient/select.py <work>
+    python3 -E -s -m pipeline.ancient.select <work>
 """
 
 from __future__ import annotations
@@ -11,11 +11,10 @@ import pathlib
 import re
 import sys
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from ancient.classes import ANC, MOD  # noqa: E402
-from ancient.common import fame_floor, read, write  # noqa: E402
-from build_data import YEAR_MAX, YEAR_MIN  # noqa: E402
-from geo import km  # noqa: E402
+from pipeline.ancient.classes import ANC, MOD
+from pipeline.ancient.common import fame_floor, read, write
+from pipeline.build_data import YEAR_MAX, YEAR_MIN
+from pipeline.geo import km
 
 SANCTUARY_TYPES = {"sanctuary", "temple-2", "temple"}
 SANCTUARY_CLASSES = {

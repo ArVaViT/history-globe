@@ -9,7 +9,8 @@ in `data-checks.md`; this is what it cannot check.
   (`Acts.13.4`); ancient authors with book and section (Josephus, Antiquities 17.191);
   modern works by author, title and year.
 - **Disputed things are left out or said to be disputed.** A wrong date is worse than a
-  missing one. "c." marks an approximate year and is shown as "ок." / "c.".
+  missing one. "c." marks an approximate year and is shown in each language's own form
+  (`place.circa` in `apps/web/src/i18n/<lang>.json`: "c.", "ок.", "ca.", …).
 - **Scripture is not pulled into scholarly disputes.** No title or note ties a verse to a
   contested date or reading (Luke 2:2 is not named with AD 6; Josiah's death is not
   called a battle, as 2 Kings and 2 Chronicles tell it differently).
@@ -102,7 +103,7 @@ in `data-checks.md`; this is what it cannot check.
   under `verses` with the verse that shows it if they were (one of the place's own).
 - Check each against the KJV and the Synodal text, both read, not recalled.
 
-## The ancient world (`content/ancient-sites.json`, ADR 0013)
+## The ancient world (`content/ancient-sites.json`, ADR 0013 and 0018)
 
 - Capitals, cities, ports and sanctuaries the Bible does not name, inside the map's
   area. The point is on the site itself, not on the modern town over it; the years are
@@ -110,9 +111,10 @@ in `data-checks.md`; this is what it cannot check.
   an encyclopaedia; Wikidata only where its item is the site and not its modern
   successor). Rank 0 for some forty of world importance, 1 for regional centres.
 - A site within 3 km of one of our towns is the same place: the build refuses it.
-- A site chosen by script keeps its scholarly name (Pleiades, else English) in the languages
-  written in Latin script where Wikidata has none of their own: for most of these small sites
-  that is the form the literature in those languages uses too. The four Cyrillic languages
+- A site chosen by script (`content/ancient-sites-wave*.json`) keeps its English name (Wikidata's
+  English label, else Pleiades' title) in the languages written in Latin script where Wikidata
+  has none of their own: for most of these small sites that is the form the literature in those
+  languages uses too. The four Cyrillic languages
   have names for all of them (`pipeline/ancient/names-cyrillic.json`).
 
 ## States (`content/polity-overrides.yaml`)

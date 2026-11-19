@@ -16,6 +16,8 @@ import json
 import re
 import pathlib
 
+from pipeline.bible_books import OSIS_ORDER, STEP_TO_OSIS
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 CACHE = ROOT / "pipeline" / ".cache" / "people"
 OUT = ROOT / "apps" / "web" / "public" / "data" / "people.json"
@@ -40,13 +42,6 @@ def unnamed(pid: str) -> bool:
 
 PER_PLACE = 12
 
-# TIPNR's book abbreviations in canonical order, for "where the text first names them".
-BOOK_ORDER = (
-    "Gen Exo Lev Num Deu Jos Jdg Rut 1Sa 2Sa 1Ki 2Ki 1Ch 2Ch Ezr Neh Est Job Psa Pro Ecc Sng "
-    "Isa Jer Lam Ezk Dan Hos Jol Amo Oba Jon Mic Nam Hab Zep Hag Zec Mal Mat Mrk Luk Jhn Act "
-    "Rom 1Co 2Co Gal Eph Php Col 1Th 2Th 1Ti 2Ti Tit Phm Heb Jas 1Pe 2Pe 1Jn 2Jn 3Jn Jud Rev"
-).split()
-
 
 def first_named(pid: str) -> tuple[int, int, int, str]:
     """The verse in a TIPNR id ("Shem@Gen.5.32") as a sortable key; unknown ones last."""
@@ -55,9 +50,9 @@ def first_named(pid: str) -> tuple[int, int, int, str]:
     try:
         # Some verses carry a letter ("2Ch.23.1a"): the number orders them.
         verse = int(re.match(r"\d+", parts[2]).group())  # type: ignore[union-attr]
-        return (BOOK_ORDER.index(parts[0]), int(parts[1]), verse, pid)
-    except (ValueError, IndexError, AttributeError):
-        return (len(BOOK_ORDER), 0, 0, pid)
+        return (OSIS_ORDER.index(STEP_TO_OSIS[parts[0]]), int(parts[1]), verse, pid)
+    except (KeyError, ValueError, IndexError, AttributeError):
+        return (len(OSIS_ORDER), 0, 0, pid)
 
 
 def main() -> None:
@@ -203,6 +198,8 @@ def main() -> None:
                 t for t in entry["top"] if t["person"] in index and (t["person"], place_id) not in off
             ][:PER_PLACE]
         ]
+        if any(not r[2] for r in row):
+            raise SystemExit(f"people: a tie to {place_id} has no verse (pipeline/people/build.py key_verses)")
         if row:
             places[place_id] = row
     OUT.write_text(

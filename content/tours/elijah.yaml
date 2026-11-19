@@ -1,5 +1,7 @@
 # Elijah, 1 Kings 17 - 2 Kings 2, in the order of the text. The tour's year (860 BC)
-# falls in the reign of Ahab (c. 874-853 BC), a point for the map rather than a date.
+# falls in the reign of Ahab (c. 874-853 BC), a point for the map rather than a date. The
+# last four stops (2 Kgs 2) come after Ahab's death and Ahaziah's two years (2 Kgs 1:17) and
+# show 850 BC.
 id: elijah
 title:
   en: "Elijah the prophet"
@@ -221,6 +223,7 @@ stops:
       bg: "Лозето на Навутей в Изреел: Илия произнася присъда над Ахав и Йезавел."
   - place: a6399b3 # Gilgal
     ref: 2Kgs.2.1
+    year: "850 BC"
     note:
       en: "When the Lord is about to take him up, Elijah sets out from Gilgal with Elisha."
       ru: "Когда Господь готовится вознести Илию, тот выходит с Елисеем из Галгала."
@@ -245,6 +248,7 @@ stops:
       bg: "Когато Господ е на път да го възнесе, Илия тръгва от Галгал с Елисей."
   - place: a64f355 # Bethel
     ref: 2Kgs.2.2-2Kgs.2.3
+    year: "850 BC"
     note:
       en: "Elisha will not leave him: they go down to Bethel."
       ru: "Елисей не оставляет его: они идут в Вефиль."
@@ -269,6 +273,7 @@ stops:
       bg: "Елисей не го оставя: те слизат във Ветил."
   - place: a231f80 # Jericho
     ref: 2Kgs.2.4-2Kgs.2.5
+    year: "850 BC"
     note:
       en: "Then to Jericho, where the sons of the prophets come to Elisha."
       ru: "Затем в Иерихон, где к Елисею подходят сыны пророков."
@@ -293,6 +298,7 @@ stops:
       bg: "После в Йерихон, където пророческите синове идват при Елисей."
   - place: ae686c9 # Jordan
     ref: 2Kgs.2.6-2Kgs.2.14
+    year: "850 BC"
     note:
       en: "Elijah parts the Jordan with his cloak; a chariot of fire separates the two; Elijah goes up in a whirlwind into heaven, and Elisha takes up his cloak."
       ru: "Илия разделяет милотью воды Иордана; колесница огненная разлучает их: Илия возносится в вихре на небо, а Елисей поднимает его милоть."

@@ -89,7 +89,7 @@ places:
   aa805fb: Mar Mediterrâneo
   ab95484: Amaleque
   ad2f6c2: Berseba
-  abed304: Mar Morto
+  abed304: Mar Salgado
   a9bba61: Quiriate-Jearim
   a9bb03e: Monte Horebe
   a341fe8: Monte Hermom
@@ -101,7 +101,7 @@ places:
   a0d784a: Dibom
   a046454: Beerote
   acd63ee: Monte Tabor
-  a871210: Bosra
+  a871210: Bozra
   abf8e4e: Maquedá
   af2ca0c: Azeca
   a8e53d5: Eziom-Geber
@@ -459,7 +459,7 @@ places:
   a5c37fd: Porta Formosa
   a4590cd: Bete-Harã
   a85cbab: Bete-Semes
-  ab0d85b: Muro Largo
+  ab0d85b: Muralha Larga
   abfdefc: Ebenézer
   a34e870: En-Semes
   ac10bcf: Galim
@@ -897,7 +897,7 @@ places:
   a3d7871: Azmavete
   a57df09: Besor
   a6a5e97: Daberate
-  a573b95: Azém
+  a573b95: Ezem
   af19252: Habor
   af8b51e: Porta dos Cavalos
   ad74690: Quedes
@@ -1794,6 +1794,11 @@ polities:
   Third Dynasty of Ur: Terceira Dinastia de Ur
   Principality of Armenia: Principado da Armênia
 modern:
+  md88865: "Argobe"
+  m0df275: "Bozez"
+  m9b1996: "Jeruel"
+  me0645b: "Ören"
+  m23ce84: "Massa"
   m66c5b8: Jerusalém
   md561de: Babilônia
   me7edbd: Jordão
@@ -6708,3 +6713,21 @@ ancient:
   Q173474: Tarnovo
   Q2538648: Wad ban Naqa
   Q1462261: Wasit
+# The today line where OpenBible describes the place in free English text, translated whole
+# (as content/modern-names.yaml does for Russian), with this file's names of the places.
+labels:
+  "in the region east of Gibeon": "A leste de Gibeão"
+  "in the region between Mizpah and Shen": "Entre Mispá e Sem"
+  "in the region between Gerar and Beersheba": "Entre Gerar e Berseba"
+  "in the region south of Hebron": "Ao sul de Hebrom"
+  "in the region between Lachish and Gath": "Entre Laquis e Gate"
+  "in the region between Eshtaol and Zorah": "Entre Estaol e Zorá"
+  "in the region between Damascus and Hamath": "Entre Damasco e Hamate"
+  "in the region between Baalbek and Kadesh": "Entre Baalbek e Cades"
+  "in the region between Aiath and Michmash": "Entre Aiate e Micmás"
+  "in the region between Ibleam and Megiddo": "Entre Ibleão e Megido"
+  "in the region between Punon and Zered": "Entre Punom e o ribeiro de Zerede"
+  "in the region between Maghfar and Lake Timsah": "Entre Maghfar e o lago Timsah"
+  "in the region north of the Dead Sea": "Ao norte do Mar Morto"
+  "in the region south of the Lisan": "Ao sul da península de Lisan"
+  "in the region between Kedesh-naphtali and Hazor": "Entre Quedes-Naftali e Hazor"

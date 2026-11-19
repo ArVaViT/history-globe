@@ -44,6 +44,24 @@ export async function newPage(browser, viewport = { width: 1440, height: 900 }) 
 }
 
 /**
+ * The page at rest, instead of a guessed pause: the map drawn and not moving (when there is
+ * one), and no CSS animation or transition under way (a panel fading in, a card sliding).
+ */
+export async function settled(page, timeout = 15_000) {
+  await page.waitForFunction(
+    () => {
+      const m = window.__hgMap;
+      return (
+        (!m || (m.loaded() && !m.isMoving())) &&
+        document.getAnimations().every((a) => a.playState !== "running")
+      );
+    },
+    null,
+    { timeout, polling: 100 },
+  );
+}
+
+/**
  * The page is ready when the map has drawn its first frame. A map that never does is
  * explained: no handle (a production build), or which sources are still waiting.
  */

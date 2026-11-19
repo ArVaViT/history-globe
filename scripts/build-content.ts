@@ -3,13 +3,14 @@
  * apps/web/public/data/content.json. Fails loudly on any invalid record, and on tour
  * stops that point at places missing from the data build.
  *
- * Usage: node scripts/build-content.ts  (after `python3 pipeline/build_data.py`)
+ * Usage: node scripts/build-content.ts  (after `python3 -m pipeline.build_data`)
  */
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { parse } from "yaml";
 import {
   AncientSitesFile,
+  AncientWaveCorrectionsFile,
   AncientWaveFile,
   ChapterYearsFile,
   PlaceNamesFile,
@@ -29,6 +30,7 @@ import {
   type ContentRelease,
   type PleiadesLink,
   type PlacePhoto,
+  type QuestionTitles,
   SourcesRuFile,
   SourcesOwnFile,
   OWN_SOURCE,
@@ -38,14 +40,29 @@ import {
 import { LOCALES, type Locale } from "../packages/model/src/locales.ts";
 import { inheritLife } from "../packages/model/src/place-life-links.ts";
 import { buildPolities } from "./build-polities.ts";
+import { undocumented } from "./release-doc.ts";
 import { Canaries } from "./canary.ts";
 import { packChapterYears } from "../packages/model/src/chapter-years.ts";
 import { YEAR_MAX, YEAR_MIN } from "../packages/core/src/engine.ts";
+import { distanceKm } from "../packages/model/src/distance.ts";
 import { inFocus } from "../packages/core/src/style.ts";
 import { canonicalPosition, refCovers } from "../packages/model/src/scripture.ts";
 import { siteLabelIn, type SiteLabelParts } from "../packages/model/src/sites.ts";
 import { loadAllLocaleData } from "../packages/model/src/locale-data.ts";
 import { loadReviews } from "./reviews.ts";
+import { readEdition, repair, SOURCES } from "./bible-text.ts";
+import { checkTexts, FoldedBible, type TextRecord } from "./text-checks.ts";
+import { TEXT_EXCEPTIONS } from "./text-exceptions.ts";
+import {
+  type Dated,
+  eventBattleLinks,
+  fadedState,
+  fallsIn,
+  samePassageApart,
+  statesDistance,
+  Water,
+  WATERY_KINDS,
+} from "./content-checks.ts";
 import { itemHash } from "./content-hash.ts";
 
 // Every language is written here, so every language's words are loaded first.
@@ -96,8 +113,34 @@ const manifest = JSON.parse(readFileSync(join(out, "manifest.json"), "utf8")) as
 };
 const parked = new Set(manifest.excluded_places ?? []);
 
+/**
+ * The licence of the site's own texts, the articles and the questions (ADR 0016), written
+ * into each of their files too: a copy carries it without the HTTP header that sends it.
+ */
+const NC_ND = {
+  license: "CC BY-NC-ND 4.0",
+  license_url: "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+} as const;
+
 const errors: string[] = [];
 const warnings: string[] = [];
+
+// The repository is public and content/ is what the data is made of: it names its sources,
+// never a private note a reader cannot open, and carries no "DRAFT" marker (a file not ready
+// to be read stays out of it).
+const PRIVATE_NOTE = /\bresearch notes? \d+|\bsession notes?\b|\bDRAFT\b/;
+const contentFiles = (dir: string): string[] =>
+  readdirSync(join(root, dir), { withFileTypes: true }).flatMap((d) =>
+    d.isDirectory()
+      ? contentFiles(`${dir}/${d.name}`)
+      : /\.(ya?ml|json|html|md)$/.test(d.name)
+        ? [`${dir}/${d.name}`]
+        : [],
+  );
+for (const file of contentFiles("content")) {
+  const m = PRIVATE_NOTE.exec(readFileSync(join(root, file), "utf8"));
+  if (m) errors.push(`${file}: «${m[0]}»: name the source itself, or leave the note out`);
+}
 // Nothing is written until every check has passed: a failed run leaves the data untouched.
 const writes: [path: string, text: string][] = [];
 
@@ -132,7 +175,127 @@ const NAMED_BY_CONTEXT = new Set([
 const FADED_ON_PURPOSE = new Set([
   // Word of Jerusalem's fall reaches Ezekiel (Ezek 33:21): the city lies in ruins.
   "ezekiel a15257a Ezek.33.21-Ezek.33.22",
+  // The burning itself (2 Kgs 25:8-10), in the first year of the ruins.
+  "exile a15257a 2Kgs.25.8-2Kgs.25.10",
 ]);
+
+/**
+ * Events, battles and questions at a place the map draws faded in their year, on purpose or
+ * until the owner decides, by kind and id. An event in the very year its place falls needs no
+ * entry (fallsIn).
+ */
+const FADED_ITEMS = new Map([
+  // Fought by the springs of Paneas, where Caesarea Philippi was built two centuries later
+  // (Polybius 16.18): the battle marks the field, the faded town that it was not yet built.
+  ["events panium", "the town not yet built"],
+  ["battles panium-200", "the town not yet built"],
+  // Heraclius beat the Persians by the ruins of Nineveh (Theophanes, AM 6118).
+  ["events nineveh-627", "by the ruins"],
+  // Places that stood long before the New Testament names them, faded before 6 BC by the
+  // rule for places only it names: place-life.yaml has no way yet to say "stood through the
+  // map's years" without a founding year, which would be a guess. For the owner to decide.
+  ["events sardis-taken", "awaits a way to mark a city standing through the period"],
+  ["events ionian-revolt-sardis", "awaits a way to mark a city standing through the period"],
+  ["events athens-burned-480", "awaits a way to mark a city standing through the period"],
+  ["events pergamum-bequeathed", "awaits a way to mark a city standing through the period"],
+  // Adasa is named in 1 Maccabees only, in no verse of the canon: faded by the same rule.
+  ["battles adasa", "awaits a way to mark a city standing through the period"],
+]);
+
+/**
+ * Items that date the same passage at the same place years apart on purpose (samePassageApart),
+ * as "where where" pairs in the order of the checks (events, battles, tours, questions):
+ * conventional points held two ways, or a verse cited for a name.
+ */
+const SAME_PASSAGE_APART = new Set([
+  // The empires tour shows Ur at its height under its Third Dynasty, c. 2100 BC; the
+  // patriarchs' tours and questions hold their conventional 1900 BC.
+  "tours/abraham 1 tours/empires 1",
+  "tours/empires 1 questions/where-was-ur-of-the-chaldees",
+  // Conventional points either way: the question and the tour each hold one (taste, not a
+  // date the text gives).
+  "tours/abraham 11 questions/where-did-abraham-offer-isaac",
+  "tours/judges 6 questions/where-did-samson-live",
+  "tours/samuel 6 questions/where-was-the-ark-of-the-covenant-kept",
+  // The letters tour holds one year for all the letters; Galatians and Colossians are dated
+  // apart from it in the questions, within the range held for each.
+  "tours/letters 3 questions/where-was-galatia",
+  "tours/letters 6 questions/where-was-colossae",
+  // Acts 23:35 names Herod's praetorium, the governors' seat: Pilate's question cites it.
+  "tours/paul-trials 2 questions/where-did-pilate-live",
+]);
+
+/**
+ * Points drawn deeper than IN_WATER_KM inside the water on purpose, by id, with the reason.
+ * Natural Earth draws today's shores at 1:10m: a submerged city, a sea battle, or an islet it
+ * leaves out lies "in the sea".
+ */
+const IN_WATER = new Map([
+  // Gen 14:3, "the vale of Siddim, which is the salt sea": the cities of the plain at
+  // OpenBible's southern-basin point, disputed and shown so.
+  ["a4a5cce", "Gen 14:3: the vale of Siddim, which is the salt sea"],
+  ["siddim", "Gen 14:3: the battle in the vale, now the Dead Sea"],
+  ["a0aa664", "the cities of the plain, under the southern Dead Sea (disputed)"],
+  ["aa572e2", "the cities of the plain, under the southern Dead Sea (disputed)"],
+  ["a41a054", "the cities of the plain, under the southern Dead Sea (disputed)"],
+  ["abfbfb9", "the cities of the plain, under the southern Dead Sea (disputed)"],
+  ["event:actium", "a sea battle"],
+  ["727120", "Heracleion lies under the sea in Abu Qir Bay"],
+  ["afbf1b5", "Arwad is an island Natural Earth leaves out"],
+  ["854812387", "Despotiko is an islet Natural Earth leaves out"],
+  ["550841", "Pordoselene is an islet of the Moschonisia Natural Earth leaves out"],
+  ["599587", "Delos is an island Natural Earth leaves out"],
+  ["256197", "the temple stood on the islet of Sancti Petri, off Gades"],
+  ["854687", "the sea has taken part of the Taman shore where Tmutarakan stood"],
+  // Wikidata's point of the Indus (OpenBible's India), at its mouth.
+  ["a878481", "the Indus mouth, Wikidata's point of the river"],
+  // Pleiades' point, 3 km off the Locrian shore: for the owner to check.
+  ["540621", "Pleiades' point, off the shore: to check"],
+]);
+/** Deeper than this, a point is in the water rather than on a shore drawn at 1:10m. */
+const IN_WATER_KM = 1.5;
+
+/**
+ * An ancient site on the point of a place of ours that is not a town, yet another thing
+ * ("site place"): OpenBible puts a campsite or a valley of the Bible there, often as a guess.
+ */
+const SITE_APART = new Set([
+  // The shrine of Kuntillet Ajrud; OpenBible's guess (confidence 145) puts the camps of
+  // Makheloth and Kehelathah (Num 33:22-26) on it.
+  "686550284 ac1fbba",
+  "686550284 a32d25a",
+  // Baalbek, and the valley of Aven (Amos 1:5) that OpenBible draws around it.
+  "678179 a0c71dc",
+  // Elusa (Haluza); OpenBible's disputed guess for Bered (Gen 16:14).
+  "687890 aa3ff18",
+  // The Early Bronze town of Numeira on the wadi that carries the waters of Nimrim (Isa 15:6).
+  "324395699 ace3edc",
+]);
+
+/**
+ * Wikipedia is never the only modern support of an article or an answer (content-guide: "one
+ * to three standard modern works"): a text that cites it, or a work through it ("as cited in
+ * Wikipedia", "as quoted in Wikipedia"), also cites a modern work of its own, one with a year
+ * or a reference work, in a source line that does not lean on Wikipedia. These articles do
+ * not yet, and wait for the works Wikipedia rests on (listed for the owner, 2026-11-19); the
+ * list only shrinks.
+ */
+const WIKIPEDIA_ALONE = new Set([
+  "straight-street", // Wikipedia only
+  "mount-moriah", // Josephus; the modern topography from Wikipedia
+  "gihon-eden", // Josephus; Hamblin (Smithsonian 1987) as cited in Wikipedia
+  "hill-of-phinehas", // OpenBible.info and Wikipedia
+  "tiphsah", // Xenophon, Arrian, Strabo; Farrell and Engels only through Wikipedia
+  "trachonitis", // Strabo, Josephus; the Lajat today from Wikipedia
+]);
+/** A source line that leans on Wikipedia, wherever in the line it names it. */
+const THROUGH_WIKIPEDIA = /\bWikipedia\b/;
+const MODERN_WORK = /\b(1[5-9]\d\d|20\d\d)\b|Encyclop|Dictionary|Britannica/;
+/** Whether sources that cite Wikipedia have no modern work of their own; undefined: none cite it. */
+const wikipediaAlone = (sources: readonly string[]): boolean | undefined =>
+  sources.some((x) => THROUGH_WIKIPEDIA.test(x))
+    ? !sources.some((x) => !THROUGH_WIKIPEDIA.test(x) && MODERN_WORK.test(x))
+    : undefined;
 
 /** Evidence read where the Synodal text has words the English one lacks. */
 const SYNODAL_ONLY = new Set([
@@ -219,6 +382,8 @@ if (mostMentioned.length > 0)
   );
 
 const tours: TourFile[] = [];
+/** Translators whose work is in copyright: their wording stays out of the CC BY tours. */
+const PROTECTED_TRANSLATORS = /Сергеенко|Sergeenko/;
 // The ancient world's sites (ADR 0018), which a tour told outside the Bible may stop at.
 // A battle may be fought at one too (Gamla, Masada): their points. Only the sites the map
 // draws (ancient.geojson keeps those in focus): a stop or a battle elsewhere would fly to
@@ -259,6 +424,12 @@ for (const file of readdirSync(join(root, "content/tours")).filter((f) => f.ends
     errors.push(`tours/${file}: id "${result.data.id}" ≠ file name`);
   if (tours.some((t) => t.id === result.data.id))
     errors.push(`tours/${file}: id "${result.data.id}" is taken`);
+  // A translation still in copyright is not quoted in the tours, which are CC BY: M. E.
+  // Sergeenko's Russian Augustine (she died in 1987) is paraphrased instead.
+  if (PROTECTED_TRANSLATORS.test(JSON.stringify(result.data)))
+    errors.push(
+      `tours/${file}: quotes a translation in copyright (${PROTECTED_TRANSLATORS.source})`,
+    );
   result.data.stops.forEach((s, i) => {
     // The stop's passage must name its place: some verse in the range is tagged for it.
     const tagged = versesOf.get(s.place);
@@ -319,6 +490,10 @@ for (const file of existsSync(questionsDir)
   // The place the link opens becomes an end of the distance in the app: it must be one here.
   if (q.map?.place && q.map.measure && !q.map.measure.includes(q.map.place))
     errors.push(`questions/${file}: place ${q.map.place} is not an end of the distance measured`);
+  if (wikipediaAlone(q.sources))
+    errors.push(
+      `questions/${file}: Wikipedia is its only modern source; cite the works it rests on`,
+    );
   questions.push(q);
 }
 
@@ -348,9 +523,37 @@ for (const file of existsSync(articlesDir)
     const words = a.body[lang].join(" ").split(/\s+/).length;
     if (words > 450)
       errors.push(`articles/${file}: the ${lang} text is ${String(words)} words, more than 450`);
-    if (a.body[lang].some((p) => p.includes("  ")))
-      errors.push(`articles/${file}: a double space in the ${lang} text`);
   }
+  const alone = wikipediaAlone(a.sources);
+  if (alone && !WIKIPEDIA_ALONE.has(a.id))
+    errors.push(
+      `articles/${file}: Wikipedia is its only modern source; cite the works it rests on`,
+    );
+  if (alone === false && WIKIPEDIA_ALONE.has(a.id))
+    errors.push(`articles/${file}: has a modern work of its own now; take it off WIKIPEDIA_ALONE`);
+  if (alone === undefined && WIKIPEDIA_ALONE.has(a.id))
+    errors.push(`articles/${file}: cites no Wikipedia now; take it off WIKIPEDIA_ALONE`);
+  // Every language: no double space, and a length near the English (between half and one
+  // and a half times its words), or a paragraph was lost or doubled.
+  const enWords = a.body.en.join(" ").split(/\s+/).length;
+  for (const [lang, body] of Object.entries(a.body)) {
+    if (body.some((p) => p.includes("  ")))
+      errors.push(`articles/${file}: a double space in the ${lang} text`);
+    const words = body.join(" ").split(/\s+/).length;
+    if (words < enWords / 2 || words > enWords * 1.5)
+      errors.push(
+        `articles/${file}: the ${lang} text is ${String(words)} words, the English ${String(enWords)}`,
+      );
+  }
+  // Ukrainian, Bulgarian and Serbian as the Russian below: no straight quotes, a dash and not
+  // a hyphen between words. A quotation keeps its Bible's own marks (the Bulgarian Bible of
+  // 1914 parts its lines with " - "), so only the text outside „…“ and «…» is read.
+  for (const lang of ["uk", "bg", "sr"] as const)
+    for (const p of a.body[lang] ?? []) {
+      if (p.replace(/„[^“]*“|«[^»]*»/g, "").includes(" - "))
+        errors.push(`articles/${file}: a hyphen for a dash in the ${lang} text`);
+      if (p.includes('"')) errors.push(`articles/${file}: straight quotes in the ${lang} text`);
+    }
   // Russian typography: «» quotes, a dash and not a hyphen between words. The digital
   // Synodal text sets its dashes as hyphens; quotations from it are typeset the same way.
   for (const p of a.body.ru) {
@@ -360,9 +563,51 @@ for (const file of existsSync(articlesDir)
   }
   articles.push(a);
 }
+for (const id of WIKIPEDIA_ALONE)
+  if (!articles.some((a) => a.id === id))
+    errors.push(`WIKIPEDIA_ALONE: no article "${id}" now; take it off the list`);
+
+// The texts of every language (ADR 0015, scripts/text-checks.ts): each speaks of its own
+// Bible, an article's title names its place as the map does and no two articles bear one
+// title, and a quotation of Scripture is word for word from the language's Bible, read from
+// pipeline/.cache as build-verses.ts reads it.
+{
+  const cache = join(root, "pipeline/.cache");
+  const bibles = LOCALES.every((l) => existsSync(join(cache, SOURCES[l].file)))
+    ? Object.fromEntries(
+        LOCALES.map((l) => [
+          l,
+          new FoldedBible([...readEdition(SOURCES[l], cache).values()].map((v) => repair(l, v))),
+        ]),
+      )
+    : undefined;
+  if (!bibles) warnings.push("no Bibles in pipeline/.cache: quotations are not checked");
+  const records: TextRecord[] = [
+    ...articles.map((a) => ({
+      key: `articles/${a.id}`,
+      place: a.place,
+      texts: Object.fromEntries(LOCALES.map((l) => [l, [a.title[l] ?? "", ...(a.body[l] ?? [])]])),
+    })),
+    ...questions.map((q) => ({
+      key: `questions/${q.id}`,
+      texts: Object.fromEntries(
+        LOCALES.map((l) => [l, [q.question[l] ?? "", ...(q.answer[l] ?? [])]]),
+      ),
+    })),
+    ...tours.map((t) => ({
+      key: `tours/${t.id}`,
+      texts: Object.fromEntries(
+        LOCALES.map((l) => [l, [t.title[l] ?? "", ...t.stops.map((s) => s.note[l] ?? "")]]),
+      ),
+    })),
+  ];
+  const mapName = (l: Locale, place: string) =>
+    l === "en" ? nameEntries.find((p) => p.id === place)?.en : names[place]?.[l];
+  errors.push(...checkTexts(records, LOCALES, mapName, TEXT_EXCEPTIONS, bibles));
+}
 
 // The states (Cliopatria with our corrections): scripts/build-polities.ts.
-buildPolities({ out, load, places, errors, writes, namesIn });
+buildPolities({ out, from: join(root, "pipeline/.cache"), load, places, errors, writes, namesIn });
 
 // Russian forms of modern names (content/modern-names.yaml): "Tell es Sultan" →
 // «Телль-эс-Султан» in the today line and the candidate sites.
@@ -400,14 +645,18 @@ for (const f of places.features) {
 }
 
 // The today line in the other languages, by the same templates (siteLabelIn): "Tell
-// Balata", "within 5 km of X"; free English text stays English.
+// Balata", "within 5 km of X"; free English text from the language's own labels.
 const whereIn: Partial<Record<Locale, Record<string, string>>> = {};
 for (const [l, file] of Object.entries(namesIn)) {
   const nameOf = (id: string) => names[id]?.[l as Locale] ?? file.modern[id];
   const by: Record<string, string> = {};
   for (const f of places.features) {
     const p = f.properties;
-    if (!p.where_tpl) continue;
+    if (!p.where_tpl) {
+      const own = file.labels?.[p.where];
+      if (own) by[p.id] = own;
+      continue;
+    }
     const text = siteLabelIn(
       l,
       {
@@ -477,7 +726,7 @@ for (const p of PlaceLifeFile.parse(load("content/place-life.yaml")).places) {
 Object.assign(
   life,
   inheritLife(
-    places.features.map((f) => f.properties),
+    places.features.map((f) => ({ ...f.properties, point: f.geometry.coordinates })),
     { ...life },
     (id, locale) => names[id]?.[locale as Locale],
   ),
@@ -503,12 +752,13 @@ for (const f of sites.features) {
   for (const [l, file] of Object.entries(namesIn)) {
     const key = `label_${l}`;
     Reflect.deleteProperty(f.properties, key);
-    const text = siteLabelIn(
-      l,
-      f.properties,
-      (id) => names[id]?.[l as Locale] ?? file.modern[id],
-      names[f.properties.place]?.[l as Locale],
-    );
+    const text =
+      siteLabelIn(
+        l,
+        f.properties,
+        (id) => names[id]?.[l as Locale] ?? file.modern[id],
+        names[f.properties.place]?.[l as Locale],
+      ) ?? (f.properties.tpl === undefined ? file.labels?.[f.properties.label] : undefined);
     if (text) Reflect.set(f.properties, key, text);
   }
 }
@@ -522,6 +772,16 @@ const freeTexts = new Set([
 ]);
 for (const label of Object.keys(freeLabel))
   if (!freeTexts.has(label)) errors.push(`modern-names: label "${label}" is used nowhere`);
+for (const [l, file] of Object.entries(namesIn))
+  for (const label of Object.keys(file.labels ?? {}))
+    if (!freeTexts.has(label)) errors.push(`names-${l}: label "${label}" is used nowhere`);
+// And every free text has its words in every language (ADR 0015): one left out had stood in
+// English on Thisbe's card and under six candidate sites in 19 languages.
+for (const label of freeTexts) {
+  if (!freeLabel[label]) errors.push(`modern-names: no labels entry for "${label}"`);
+  for (const [l, file] of Object.entries(namesIn))
+    if (!file.labels?.[label]) errors.push(`names-${l}: no labels entry for "${label}"`);
+}
 const modernRefs = new Set([
   ...sites.features.map((f) => f.properties.ref),
   ...places.features.map((f) => f.properties.where_ref),
@@ -594,6 +854,7 @@ if (existsSync(join(root, "content/battles.yaml")))
       approximate: b.year.approximate,
       title: b.title,
       place: b.place,
+      ...(b.event ? { event: b.event } : {}),
       ...(b.ref ? { ref: b.ref } : {}),
       sides: b.sides,
       outcome: b.outcome,
@@ -601,6 +862,12 @@ if (existsSync(join(root, "content/battles.yaml")))
     });
   }
 battles.sort((a, b) => a.year - b.year);
+errors.push(
+  ...eventBattleLinks(
+    events.map((e) => ({ id: e.id, year: e.year, place: e.place, site: e.site?.id })),
+    battles,
+  ),
+);
 const pointOf = new Map(places.features.map((f) => [f.properties.id, f.geometry.coordinates]));
 writes.push([
   join(out, "battles.geojson"),
@@ -654,30 +921,82 @@ writes.push([
 // A tour stop the map draws faded in its year (not yet built, in ruins, gone, or
 // named only in the New Testament before its events: apps/web/src/data.ts beforeItsTime)
 // is almost always a wrong year. Warned, not refused: a stop at a ruin can be meant.
-const NT_FROM = -5; // 6 BC, as in apps/web/src/data.ts
 const otVerses = new Map(places.features.map((f) => [f.properties.id, f.properties.ot]));
+const fadedAt = (place: string, year: number) =>
+  known.has(place) ? fadedState(life[place], otVerses.get(place) ?? 0, year) : null;
 for (const t of tours) {
   for (const [i, s] of t.stops.entries()) {
-    const year = s.year ?? t.year;
-    const l = life[s.place];
-    if (!l || (l.inherited && !l.from)) {
-      if (otVerses.get(s.place) === 0 && year < NT_FROM)
-        warnings.push(
-          `tours/${t.id}: stop ${String(i + 1)} (${s.place}) is named only in the New Testament, before its events`,
-        );
-      if (!l) continue;
-    }
-    const state =
-      l.gap && year >= l.gap.from.year && year <= l.gap.until.year
-        ? "in ruins"
-        : l.until && year > l.until.year
-          ? "gone"
-          : l.from && year < l.from.year
-            ? "not yet built"
-            : null;
+    const state = fadedAt(s.place, s.year ?? t.year);
     if (state && !FADED_ON_PURPOSE.has(`${t.id} ${s.place} ${s.ref}`))
       warnings.push(`tours/${t.id}: stop ${String(i + 1)} (${s.place}) is ${state} in its year`);
   }
+}
+// An event, a battle or a question's map at a place drawn faded in its year: refused, unless
+// it is the year the place falls, or listed in FADED_ITEMS with the reason.
+const fadedItems: [where: string, place: string | undefined, year: number][] = [
+  ...events.map((e): [string, string | undefined, number] => [`events ${e.id}`, e.place, e.year]),
+  ...battles.map((b): [string, string, number] => [`battles ${b.id}`, b.place, b.year]),
+  ...questions.flatMap((q): [string, string | undefined, number][] =>
+    q.map?.year ? [[`questions ${q.id}`, q.map.place, q.map.year.year]] : [],
+  ),
+];
+for (const [where, place, year] of fadedItems) {
+  const state = place === undefined ? null : fadedAt(place, year);
+  if (state && place !== undefined && !fallsIn(life[place], year) && !FADED_ITEMS.has(where))
+    errors.push(`${where}: its place ${place} is ${state} in its year (${String(year)})`);
+}
+for (const where of FADED_ITEMS.keys())
+  if (!fadedItems.some(([w, place, year]) => w === where && place && fadedAt(place, year)))
+    errors.push(`FADED_ITEMS: ${where} is no longer drawn faded; take it out`);
+
+// The same passage at the same place, dated years apart in two files: a tour stop at its
+// tour's year where the text dates the story elsewhere. Warned, with SAME_PASSAGE_APART.
+const dated: Dated[] = [
+  ...events.flatMap((e): Dated[] =>
+    e.ref && e.place ? [{ where: `events/${e.id}`, ref: e.ref, place: e.place, year: e.year }] : [],
+  ),
+  ...battles.flatMap((b): Dated[] =>
+    b.ref ? [{ where: `battles/${b.id}`, ref: b.ref, place: b.place, year: b.year }] : [],
+  ),
+  ...tours.flatMap((t) =>
+    t.stops.flatMap((s, i): Dated[] =>
+      s.ref
+        ? [
+            {
+              where: `tours/${t.id} ${String(i + 1)}`,
+              ref: s.ref,
+              place: s.place,
+              year: s.year ?? t.year,
+              tourYear: s.year === undefined,
+            },
+          ]
+        : [],
+    ),
+  ),
+  ...questions.flatMap((q): Dated[] =>
+    q.map?.ref && q.map.place && q.map.year
+      ? [{ where: `questions/${q.id}`, ref: q.map.ref, place: q.map.place, year: q.map.year.year }]
+      : [],
+  ),
+];
+const apart = samePassageApart(dated);
+for (const { pair, message } of apart) if (!SAME_PASSAGE_APART.has(pair)) warnings.push(message);
+for (const pair of SAME_PASSAGE_APART)
+  if (!apart.some((x) => x.pair === pair))
+    errors.push(`SAME_PASSAGE_APART: ${pair} no longer differ; take it out`);
+
+// A "how far" answer states, in every language, the distance between the two points it
+// measures: a point that moves later must not leave the text behind.
+for (const q of questions) {
+  const [from, to] = q.map?.measure ?? [];
+  const a = from === undefined ? undefined : pointOf.get(from);
+  const b = to === undefined ? undefined : pointOf.get(to);
+  if (!a || !b) continue;
+  for (const [l, ps] of Object.entries(q.answer))
+    if (!statesDistance(ps.join(" "), [a[0] ?? 0, a[1] ?? 0], [b[0] ?? 0, b[1] ?? 0]))
+      errors.push(
+        `questions/${q.id}.yaml: the ${l} answer states no distance near the measured one`,
+      );
 }
 
 for (const w of warnings) console.warn(`warning: ${w}`);
@@ -764,18 +1083,24 @@ if (existsSync("content/ancient-sites.json")) {
         ),
       ),
   ];
-  // Towns only: a region's point (Egypt, Assyria) may well lie on an ancient city.
+  // A town within 3 km, or a point of another kind (a campsite, a valley, a wadi) within
+  // 1 km. Not a land, a people, a sea, a river, a range or a natural area: their point may
+  // well lie on an ancient city (Egypt, Assyria).
+  const AREAS = new Set([
+    "region",
+    "people group",
+    "body of water",
+    "river",
+    "mountain range",
+    "natural area",
+  ]);
   const ours = places.features
-    .filter((f) => (f.properties as { kind?: string }).kind === "settlement")
-    .map((f): [string, [number, number]] => [
+    .filter((f) => !AREAS.has((f.properties as { kind?: string }).kind ?? ""))
+    .map((f): [string, [number, number], number] => [
       f.properties.id,
       [f.geometry.coordinates[0] ?? 0, f.geometry.coordinates[1] ?? 0],
+      (f.properties as { kind?: string }).kind === "settlement" ? 3 : 1,
     ]);
-  const km = (a: [number, number], b: [number, number]) => {
-    const r = Math.PI / 180;
-    const x = (b[0] - a[0]) * r * Math.cos(((a[1] + b[1]) / 2) * r);
-    return Math.hypot(x, (b[1] - a[1]) * r) * 6371;
-  };
   const seen = new Set<string>();
   for (const s of sites) {
     if (seen.has(s.id)) errors.push(`ancient-sites: ${s.id} (${s.en}) is listed twice`);
@@ -783,9 +1108,65 @@ if (existsSync("content/ancient-sites.json")) {
     if (s.from > s.to || s.from > YEAR_MAX || s.to < YEAR_MIN)
       errors.push(`ancient-sites: ${s.id} (${s.en}) years ${String(s.from)}..${String(s.to)}`);
     const near = ours.find(
-      ([id, c]) => km(c, [s.lon, s.lat]) < 3 && !("apart_from" in s && s.apart_from === id),
+      ([id, c, within]) =>
+        distanceKm(c, [s.lon, s.lat]) < within &&
+        !("apart_from" in s && s.apart_from === id) &&
+        !SITE_APART.has(`${s.id} ${id}`),
     );
     if (near) errors.push(`ancient-sites: ${s.id} (${s.en}) is our place ${near[0]}`);
+  }
+  for (const pair of SITE_APART) {
+    const [sid, pid] = pair.split(" ");
+    const s = sites.find((x) => x.id === sid);
+    const o = ours.find(([id]) => id === pid);
+    if (!s || !o || distanceKm(o[1], [s.lon, s.lat]) >= o[2])
+      errors.push(`SITE_APART: ${pair} are no longer one point; take it out`);
+  }
+  // The corrections by hand the waves were assembled with (pipeline/ancient/assemble.py):
+  // each still holds in the files, so none is stale or undone by a later edit.
+  {
+    const fixes = AncientWaveCorrectionsFile.parse(load("content/ancient-wave-corrections.json"));
+    const ourCyrillic = JSON.parse(
+      readFileSync("pipeline/ancient/names-cyrillic.json", "utf8"),
+    ) as Record<string, Record<string, string>>;
+    const byName = new Map(sites.map((s) => [s.en, s]));
+    const site = (en: string, what: string) => {
+      const s = byName.get(en);
+      if (!s) errors.push(`ancient-wave-corrections: ${what} "${en}" is no ancient site`);
+      return s;
+    };
+    for (const pattern of fixes.left_out) {
+      const re = new RegExp(pattern, "i");
+      for (const s of sites)
+        if (re.test(s.en)) errors.push(`ancient-wave-corrections: "${s.en}" is left out`);
+    }
+    for (const y of fixes.years) {
+      const s = site(y.site, "years of");
+      if (!s) continue;
+      if (s.to !== y.to || (y.from !== undefined && s.from !== y.from))
+        errors.push(`ancient-wave-corrections: ${y.site} has ${String(s.from)}..${String(s.to)}`);
+      if (!s.sources.some((x) => x.endsWith(`by hand: ${y.why}`)))
+        errors.push(`ancient-wave-corrections: ${y.site} does not say why its years are set`);
+    }
+    for (const [label, en] of Object.entries(fixes.renamed)) {
+      site(en, "renamed to");
+      if (byName.has(label)) errors.push(`ancient-wave-corrections: "${label}" is still a name`);
+    }
+    for (const n of fixes.names) {
+      const s = site(n.site, "a name of");
+      if (s && s.names[n.lang] !== n.name)
+        errors.push(`ancient-wave-corrections: ${n.site} is not "${n.name}" in ${n.lang}`);
+    }
+    for (const [en, langs] of Object.entries(fixes.no_names)) {
+      const s = site(en, "no names of");
+      // Only a name of ours (pipeline/ancient/names-cyrillic.json) stands where Wikidata's went.
+      for (const l of s ? langs : [])
+        if (s?.names[l] !== undefined && s.names[l] !== ourCyrillic[s.id]?.[l])
+          errors.push(`ancient-wave-corrections: ${en} has Wikidata's name in ${l}`);
+    }
+    for (const [en, kind] of Object.entries(fixes.kinds))
+      if (site(en, "the kind of")?.kind !== kind)
+        errors.push(`ancient-wave-corrections: ${en} is not a ${kind}`);
   }
   // Sites beyond the focus mask's outer ring (the Indus, Gaul) stay in the content but
   // are not drawn: names in the greyed-out world would undo the focus.
@@ -817,6 +1198,54 @@ if (existsSync("content/ancient-sites.json")) {
       })),
     }),
   ]);
+}
+
+// A point drawn deep inside the water the map draws (water.geojson, today's shores): a
+// place, an ancient site or a battlefield in the sea is a wrong point, unless it is listed
+// in IN_WATER with the reason (a sunken city, a sea battle, an islet the coast leaves out).
+{
+  const read = (file: string) =>
+    JSON.parse(readFileSync(join(out, file), "utf8")) as {
+      features: { geometry: { type: string; coordinates: unknown } }[];
+    };
+  const rings = read("water.geojson").features.flatMap((f) =>
+    (f.geometry.coordinates as [number, number][][][]).map((poly) => poly[0] ?? []),
+  );
+  const shores = read("coast.geojson").features.flatMap(
+    (f) => f.geometry.coordinates as [number, number][][],
+  );
+  const water = new Water(rings, shores);
+  const points: [id: string, what: string, at: [number, number]][] = [
+    ...places.features
+      .filter((f) => !WATERY_KINDS.has((f.properties as { kind?: string }).kind ?? ""))
+      .map((f): [string, string, [number, number]] => [
+        f.properties.id,
+        f.properties.name,
+        [f.geometry.coordinates[0] ?? 0, f.geometry.coordinates[1] ?? 0],
+      ]),
+    ...[...ancientSites].map(([id, a]): [string, string, [number, number]] => [
+      id,
+      a.en,
+      [a.lon, a.lat],
+    ]),
+    ...battles.flatMap((b): [string, string, [number, number]][] => {
+      const at = pointOf.get(b.place) ?? ancientPoints.get(b.place);
+      return at ? [[b.id, b.title.en ?? b.id, [at[0] ?? 0, at[1] ?? 0]]] : [];
+    }),
+    ...events.flatMap((e): [string, string, [number, number]][] =>
+      e.battlefield
+        ? [[`event:${e.id}`, e.title.en ?? e.id, [e.battlefield.lon, e.battlefield.lat]]]
+        : [],
+    ),
+  ];
+  for (const [id, what, at] of points) {
+    const depth = water.depthKm(at);
+    if (depth > IN_WATER_KM && !IN_WATER.has(id))
+      errors.push(`${id} (${what}) is drawn ${depth.toFixed(1)} km inside the water`);
+  }
+  for (const id of IN_WATER.keys())
+    if (!points.some(([p, , at]) => p === id && water.depthKm(at) > IN_WATER_KM))
+      errors.push(`IN_WATER: ${id} is no longer in the water; take it out`);
 }
 
 // When the chapters happen: the map's year for a chapter or a person.
@@ -945,6 +1374,53 @@ const ancientByPlace: Record<string, AncientMention[]> = {};
   }
 }
 
+// Each language in its own script and its own quotation marks (ADR 0015): no Cyrillic in a
+// language written in Latin letters, and no «» in English, which quotes with “”. The texts
+// listed quote the Synodal text's own form of a name in every language (zaphon-gad:
+// «перешли в Севину»; Харран and Аран); whether readers of other languages keep that note is
+// the owner's call (round-2 audit of the pages, 2026-11), so until then they pass by name.
+const SYNODAL_FORM_QUOTED = new Set([
+  "articles/arabah",
+  "articles/cush",
+  "articles/gibbethon",
+  "articles/javan",
+  "articles/kain",
+  "articles/zaphon-gad",
+  "questions/where-was-haran",
+]);
+const CYRILLIC_LOCALES: ReadonlySet<string> = new Set(["ru", "uk", "sr", "bg"]);
+const scriptOf = (
+  where: string,
+  texts: Readonly<Partial<Record<string, string | readonly string[]>>>,
+) => {
+  for (const l of LOCALES) {
+    const text = [texts[l] ?? []].flat().join(" ");
+    if (
+      !CYRILLIC_LOCALES.has(l) &&
+      !SYNODAL_FORM_QUOTED.has(where) &&
+      /\p{Script=Cyrillic}/u.test(text)
+    )
+      errors.push(`${where}: Cyrillic in the ${l} text`);
+    if (l === "en" && /[«»]/.test(text)) errors.push(`${where}: «» in the English text (“…”)`);
+  }
+};
+for (const a of articles) {
+  scriptOf(`articles/${a.id}`, a.title);
+  scriptOf(`articles/${a.id}`, a.body);
+}
+for (const q of questions) {
+  scriptOf(`questions/${q.id}`, q.question);
+  scriptOf(`questions/${q.id}`, q.answer);
+}
+for (const t of tours) {
+  scriptOf(`tours/${t.id}`, t.title);
+  t.stops.forEach((s, i) => {
+    scriptOf(`tours/${t.id} stop ${String(i + 1)}`, s.note);
+  });
+}
+for (const [place, ms] of Object.entries(ancientByPlace))
+  for (const m of ms) scriptOf(`ancient-authors.yaml: ${place} ${m.author.en}`, m.note);
+
 if (errors.length > 0) {
   console.error(errors.join("\n"));
   process.exit(1);
@@ -985,15 +1461,19 @@ const release: ContentRelease = {
   photos,
   pleiades,
   chapter_years: chapterYears.table,
-  // The card names a place's questions; their answers are the /q/ pages (build-pages.ts).
-  // Each question in every language it is written in (the card falls back to English).
-  questions: questions.reduce<
-    Record<string, ({ id: string; en: string; ru: string } & Partial<Record<Locale, string>>)[]>
-  >((by, q) => {
-    if (q.map?.place) (by[q.map.place] ??= []).push({ id: q.id, ...q.question });
-    return by;
-  }, {}),
 };
+// Every field of content.json and of the articles is described for their readers.
+const unnamed = [
+  ...undocumented("content.json", Object.keys(release)),
+  ...undocumented(
+    "articles/<lang>.json",
+    articlesOut.flatMap((a) => Object.keys(a)),
+  ),
+];
+if (unnamed.length > 0) {
+  console.error(unnamed.join("\n"));
+  process.exit(1);
+}
 writeFileSync(join(build, "questions.json"), JSON.stringify(questionsOut));
 // The reviews for their pages (build-pages.ts); none written when there are none.
 if (reviewed.reviews.length > 0)
@@ -1020,6 +1500,7 @@ for (const l of LOCALES)
           a.place,
           {
             ...a,
+            ...NC_ND,
             title: inLanguage(a.title, l),
             body: inLanguage(a.body, l),
             ...(l === "ru" ? { sources_ru } : {}),
@@ -1029,8 +1510,28 @@ for (const l of LOCALES)
       ),
     ),
   );
+// The card names a place's questions; their answers are the /q/ pages (build-pages.ts).
+// The questions are the site's own texts under CC BY-NC-ND (ADR 0016), as the articles are:
+// one language a file beside them, never in content.json, which is CC BY.
+mkdirSync(join(out, "articles", "questions"));
+for (const l of LOCALES) {
+  const titles: QuestionTitles = {
+    ...NC_ND,
+    questions: questions.reduce<Record<string, { id: string }[]>>((by, q) => {
+      if (q.map?.place) (by[q.map.place] ??= []).push({ id: q.id, ...inLanguage(q.question, l) });
+      return by;
+    }, {}),
+  };
+  writeFileSync(join(out, "articles", "questions", `${l}.json`), JSON.stringify(titles));
+}
 // Written to the data by earlier builds, whole: not served any more.
-for (const name of ["articles.json", "questions.json"]) rmSync(join(out, name), { force: true });
+for (const name of [
+  "articles.json",
+  "questions.json",
+  "polities-late.geojson",
+  "polity-labels-late.geojson",
+])
+  rmSync(join(out, name), { force: true });
 // The people's names in the other languages go into people.json (pipeline/people), beside
 // the Russian slot: names.<code>.<TIPNR id>.
 const peoplePath = join(out, "people.json");

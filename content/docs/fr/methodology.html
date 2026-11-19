@@ -9,7 +9,7 @@ description: D’où vient chaque lieu, chaque frontière, chaque date et chaque
   couche, ce que nous avons modifié et ce que nous ne savons pas.
 </p>
 
-<h2>Les lieux de la Bible</h2>
+<h2 id="places-of-the-bible">Les lieux de la Bible</h2>
 <p>
   Les {{places}} lieux et leurs versets proviennent des
   <a href="https://github.com/openbibleinfo/Bible-Geocoding-Data"
@@ -21,7 +21,8 @@ description: D’où vient chaque lieu, chaque frontière, chaque date et chaque
   Sur ces {{places}} lieux, {{named}} sont nommés dans un verset des livres qu’OpenBible étiquette,
   et chacun a sa propre page ; les {{unnamed}} autres sont des fiches qu’OpenBible conserve et
   qu’aucun verset de ces livres ne nomme (Adasa, de 1 Maccabées, par exemple). {{articles}} lieux
-  ont un article. {{excluded}} autres ont été écartés, faute d’un point publiable (voir plus bas).
+  ont un article. {{excluded}} autres ont été écartés, faute d’un point publiable (voir plus bas),
+  et {{without_point}} n’ont aucun point dans OpenBible.
 </p>
 <ul>
   <li>
@@ -45,7 +46,7 @@ description: D’où vient chaque lieu, chaque frontière, chaque date et chaque
   </li>
 </ul>
 
-<h2>Quand les lieux existaient</h2>
+<h2 id="when-places-stood">Quand les lieux existaient</h2>
 <p>
   Une ville n’est dessinée en entier sur la carte que pendant les années où elle existait. Pour
   {{life}} lieux de la Bible, les années de fondation, de destruction et d’abandon sont consignées à
@@ -54,23 +55,24 @@ description: D’où vient chaque lieu, chaque frontière, chaque date et chaque
   disputée ne reçoit pas d’année pour celle-ci.
 </p>
 <p>
-  Les {{ancient}} villes du monde antique que la Bible ne nomme pas — capitales, ports et
-  sanctuaires comme Ougarit, Hattusa, Mari ou Delphes — ont été choisies et datées une à une :
-  chacune est placée d’après sa fiche dans <a href="https://pleiades.stoa.org">Pleiades</a> ou
-  Wikidata, sur le site antique plutôt que sur la ville moderne, et datée d’après ces fiches et des
-  notices encyclopédiques, conciliées à la main. Quelque mille quatre cents autres ont été choisies
-  par un script : établissements, sanctuaires et ports de Pleiades dont l’élément Wikidata est un
-  site antique et non une ville moderne ; leurs points sont ceux de Pleiades, leurs noms ceux de
-  Wikidata (là où Wikidata n’en donne pas en russe, en ukrainien, en bulgare ou en serbe, les
-  nôtres, sous la forme qu’emploient les études classiques de cette langue), et leurs années
-  l’étendue des périodes où Pleiades les atteste, si bien que toutes portent la marque « v. ».
-  Lorsqu’une ville a été détruite au milieu d’une période, sa fin est fixée à la main d’après
+  Sur les {{ancient}} villes du monde antique que la Bible ne nomme pas — capitales, ports et
+  sanctuaires comme Ougarit, Hattusa, Mari ou Delphes —, {{ancient_hand}} ont été choisies et datées
+  une à une : chacune est placée d’après sa fiche dans
+  <a href="https://pleiades.stoa.org">Pleiades</a> ou Wikidata, sur le site antique plutôt que sur
+  la ville moderne, et datée d’après ces fiches et des notices encyclopédiques, conciliées à la
+  main. Les {{ancient_script}} autres ont été choisies par un script : établissements, sanctuaires
+  et ports de Pleiades dont l’élément Wikidata est un site antique et non une ville moderne ; leurs
+  points sont ceux de Pleiades, leurs noms ceux de Wikidata (là où Wikidata n’en donne pas en russe,
+  en ukrainien, en bulgare ou en serbe, les nôtres, sous la forme qu’emploient les études classiques
+  de cette langue ; dans les autres langues, là où il n’en donne pas, le nom anglais), et leurs
+  années l’étendue des périodes où Pleiades les atteste, si bien que toutes portent la marque « v.
+  ». Lorsqu’une ville a été détruite au milieu d’une période, sa fin est fixée à la main d’après
   l’histoire. Un lieu apparaît à un niveau de zoom fixé par la fréquence à laquelle la Bible le
   nomme ; une ville que la Bible nomme à peine mais que le monde connaît bien — Carthage, Sparte, Ur
   — apparaît plus tôt, selon le nombre d’articles de Wikipedia consacrés au site antique lui-même.
 </p>
 
-<h2>Les frontières</h2>
+<h2 id="borders">Les frontières</h2>
 <p>
   Les États et leurs frontières, année par année, proviennent de
   <a href="https://doi.org/10.5281/zenodo.20274630">Cliopatria</a> (Seshat Global History Databank,
@@ -103,21 +105,22 @@ description: D’où vient chaque lieu, chaque frontière, chaque date et chaque
   d’Israël est dessiné comme la province assyrienne qu’il est devenu.
 </p>
 
-<h2>Les personnages</h2>
+<h2 id="people">Les personnages</h2>
 <p>
   Les {{people}} personnages de la Bible et leurs liens familiaux proviennent du TIPNR de STEP Bible
   (Tyndale House, Cambridge). Nous n’avons pas pris ces liens pour argent comptant :
 </p>
 <ul>
   <li>
-    les liens familiaux des 1 200 personnages que le texte nomme le plus souvent, et les généalogies
-    de 1 Chroniques, ont été lus à la lumière des versets ; 153 liens que le texte n’énonce pas ont
-    été retirés — les frères de Jésus comme fils de Joseph et de Marie, Jézabel comme mère d’Achazia
-    — et les maillons manquants de la généalogie de Jésus ont été ajoutés d’après le texte ;
+    les liens familiaux des {{n:1200}} personnages que le texte nomme le plus souvent, et les
+    généalogies de 1 Chroniques, ont été lus à la lumière des versets ; 153 liens que le texte
+    n’énonce pas ont été retirés — les frères de Jésus comme fils de Joseph et de Marie, Jézabel
+    comme mère d’Achazia — et les maillons manquants de la généalogie de Jésus ont été ajoutés
+    d’après le texte ;
   </li>
   <li>
-    les 1 136 liens entre un personnage et un lieu où il joue un rôle central ou secondaire ont été
-    lus verset par verset ; 344 ont été retirés (Moïse « en Canaan », Abraham « à Sodome », les
+    les {{n:1136}} liens entre un personnage et un lieu où il joue un rôle central ou secondaire ont
+    été lus verset par verset ; 344 ont été retirés (Moïse « en Canaan », Abraham « à Sodome », les
     lieux d’un fils attribués à son père) et 94 ont reçu un meilleur verset ;
   </li>
   <li>
@@ -137,15 +140,16 @@ description: D’où vient chaque lieu, chaque frontière, chaque date et chaque
   énumérées sur la page des <a href="sources.html">sources</a>. Aucun parcours n’a franchi sa
   première relecture sans changement ; chacun a été corrigé et revérifié. Lors de la dernière
   relecture complète, achevée le 17 octobre 2026, les 746 articles ont tous été revérifiés d’après
-  les sources, environ 210 d’entre eux deux fois ; 1 088 corrections ont été apportées, chacune dans
-  les 11 langues que comptait alors le site, et des erreurs manifestes ont été trouvées dans 157
-  articles. Les cinq langues ajoutées le 24 octobre 2026 (suédois, norvégien, danois, tagalog et
-  serbe) ont été traduites à partir des textes déjà corrigés ; puis une relecture indépendante a
-  confronté chacun de leurs textes à l’anglais, et chaque citation à la Bible de cette langue. Ces
-  relectures sont les contrôles propres du projet, non une évaluation par les pairs. Les évaluations
-  de spécialistes sont publiées sous leur nom sur la page des
-  <a href="reviews.html">évaluations</a>, et chaque article qu’un spécialiste a évalué nomme
-  l’évaluateur et renvoie à son évaluation.
+  les sources, environ 210 d’entre eux deux fois ; {{n:1088}} corrections ont été apportées, chacune
+  dans les 11 langues que comptait alors le site, et des erreurs manifestes ont été trouvées dans
+  157 articles. Les cinq langues ajoutées le 24 octobre 2026 (suédois, norvégien, danois, tagalog et
+  serbe) et les cinq ajoutées le 26 octobre 2026 (hongrois, finnois, vietnamien, roumain et bulgare)
+  ont été traduites à partir des textes déjà corrigés ; puis une relecture indépendante a confronté
+  chacun de leurs textes à l’anglais, et chaque citation à la Bible de cette langue. Ces relectures
+  sont les contrôles propres du projet, non une évaluation par les pairs. Les évaluations de
+  spécialistes sont publiées sous leur nom sur la page des <a href="reviews.html">évaluations</a>,
+  et chaque article qu’un spécialiste a évalué nomme l’évaluateur et renvoie à son évaluation.
+  Publiées à ce jour : <span class="reviews"></span>.
 </p>
 <p>
   La distance jusqu’à une étape est donnée en ligne droite. À partir de 312 av. J.-C., date où
@@ -168,7 +172,8 @@ description: D’où vient chaque lieu, chaque frontière, chaque date et chaque
   carte pendant ses années. Ceux de la Bible sont datés comme les parcours datent les mêmes récits ;
   les autres ne portent aucun verset, mais une source antique ou savante. Une seconde relecture,
   indépendante, a confronté le brouillon au texte synodal et à la version du roi Jacques : sur 58
-  entrées, 16 ont été corrigées et une a été écartée, la carte n’ayant aucun point pour son site.
+  entrées (octobre 2026), 16 ont été corrigées et une a été écartée, la carte n’ayant aucun point
+  pour son site.
 </p>
 
 <p>
@@ -219,7 +224,7 @@ description: D’où vient chaque lieu, chaque frontière, chaque date et chaque
   </li>
 </ul>
 
-<h2>Contrôles à chaque construction</h2>
+<h2 id="checks-on-every-build">Contrôles à chaque construction</h2>
 <p>Rien n’est publié si tous les contrôles ne sont pas passés :</p>
 <ul>
   <li>
@@ -238,7 +243,7 @@ description: D’où vient chaque lieu, chaque frontière, chaque date et chaque
   </li>
 </ul>
 
-<h2>Ce qui est incertain</h2>
+<h2 id="what-is-uncertain">Ce qui est incertain</h2>
 <ul>
   <li>
     Les dates antérieures au premier millénaire av. J.-C. sont approximatives, et certaines sont
@@ -288,7 +293,7 @@ https://huggingface.co/datasets/ArVaViT/history-globe. CC BY 4.0.</code></pre>
   Avec un compte GitHub, vous pouvez aussi utiliser le lien <i>Une erreur ?</i> de chaque fiche de
   lieu, qui ouvre une issue dans le dépôt public avec le lieu déjà indiqué, ou en ouvrir une
   directement :
-  <a href="https://github.com/ArVaViT/history-globe/issues/new"
+  <a href="https://github.com/ArVaViT/history-globe/issues/new?template=report-an-error.yml"
     >github.com/ArVaViT/history-globe/issues</a
   >.
 </p>

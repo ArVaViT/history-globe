@@ -77,14 +77,40 @@ function svgFor(tour) {
           d: `M${f1(xy[i][0])} ${f1(xy[i][1])}L${f1(p[0])} ${f1(p[1])}`,
           sea: Boolean(known[i + 1]?.by),
         }));
-  // A place come back to is one disc, with its first number.
-  const seen = new Map();
-  xy.forEach((p, i) => {
-    const key = p.map((v) => v.toFixed(0)).join(",");
-    if (!seen.has(key)) seen.set(key, { p, n: i + 1 });
-  });
-  const stops = [...seen.values()];
-  const r = stops.length > 25 ? 9 : 13;
+  // A place come back to is one marker with all its numbers ("1·18"), and so are stops whose
+  // markers would cover each other's numbers (Paul's 13 and 14 at Troas and Neapolis): a
+  // disc, widened into a pill for a longer label, merged again until none hides another.
+  const spots = new Set(xy.map((p) => p.map((v) => v.toFixed(0)).join(","))).size;
+  const r = spots > 25 ? 9 : 13;
+  /** 6, 7, 8, 18 → "6–8·18". */
+  const label = (ns) =>
+    ns
+      .reduce((runs, n) => {
+        const last = runs.at(-1);
+        if (last && n === last[1] + 1) last[1] = n;
+        else runs.push([n, n]);
+        return runs;
+      }, [])
+      .map(([a, b]) => (a === b ? `${a}` : b === a + 1 ? `${a}·${b}` : `${a}–${b}`))
+      .join("·");
+  const widthOf = (n) => Math.max(2 * r, label(n).length * r * 0.62 + r);
+  // Markers may touch and overlap a little, as the discs always did; not more.
+  const covers = (a, b) =>
+    Math.abs(a.p[0] - b.p[0]) < (widthOf(a.n) + widthOf(b.n)) / 2 - r / 2 &&
+    Math.abs(a.p[1] - b.p[1]) < 1.5 * r;
+  const stops = xy.map((p, i) => ({ p, pts: [p], n: [i + 1] }));
+  for (let i = 0; i < stops.length; i++)
+    for (let j = i + 1; j < stops.length; j++) {
+      const [a, b] = [stops[i], stops[j]];
+      if (!covers(a, b)) continue;
+      a.pts.push(...b.pts);
+      a.n = [...a.n, ...b.n].sort((x, y) => x - y);
+      a.p = [0, 1].map((k) => a.pts.reduce((s, q) => s + q[k], 0) / a.pts.length);
+      stops.splice(j, 1);
+      // The marker moved and grew: look again from the start.
+      i = -1;
+      break;
+    }
   const halo = legs.map(
     (l) =>
       `<path d="${l.d}" stroke="#fffaf0" stroke-width="9" stroke-linecap="round" fill="none" opacity="0.85"/>`,
@@ -93,13 +119,19 @@ function svgFor(tour) {
     (l) =>
       `<path d="${l.d}" stroke="#a63d2a" stroke-width="4.5" stroke-linecap="round" fill="none"${l.sea ? ' stroke-dasharray="10 8"' : ""}/>`,
   );
-  const discs = stops.map(
-    ({ p, n }) =>
-      `<circle cx="${f1(p[0])}" cy="${f1(p[1])}" r="${r}" fill="#a63d2a" stroke="#fffaf0" stroke-width="3"/>` +
+  const discs = stops.map(({ p, n }) => {
+    const text = label(n);
+    // A disc for one or two digits, widened into a pill for more.
+    const w = widthOf(n);
+    return (
+      (w === 2 * r
+        ? `<circle cx="${f1(p[0])}" cy="${f1(p[1])}" r="${r}" fill="#a63d2a" stroke="#fffaf0" stroke-width="3"/>`
+        : `<rect x="${f1(p[0] - w / 2)}" y="${f1(p[1] - r)}" width="${f1(w)}" height="${2 * r}" rx="${r}" fill="#a63d2a" stroke="#fffaf0" stroke-width="3"/>`) +
       (stops.length <= 40
-        ? `<text x="${f1(p[0])}" y="${f1(p[1] + r * 0.36)}" font-family="Helvetica, Arial, sans-serif" font-size="${r * 1.05}" font-weight="700" fill="#fffaf0" text-anchor="middle">${n}</text>`
-        : ""),
-  );
+        ? `<text x="${f1(p[0])}" y="${f1(p[1] + r * 0.36)}" font-family="Helvetica, Arial, sans-serif" font-size="${r * 1.05}" font-weight="700" fill="#fffaf0" text-anchor="middle">${text}</text>`
+        : "")
+    );
+  });
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><rect width="${W}" height="${H}" fill="#cfdde3"/><path d="${polys(land)}" fill="#ece1cb" stroke="#b9a98a" stroke-width="1.2" fill-rule="evenodd"/><path d="${polys(lakes)}" fill="#cfdde3" stroke="#b9a98a" stroke-width="0.8"/>${halo.join("")}${way.join("")}${discs.join("")}</svg>`;
 }
 

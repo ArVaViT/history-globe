@@ -1,4 +1,10 @@
-import { type ArticleFile, isLocale, type ItemReview, type WithSourcesRu } from "@hg/model";
+import {
+  type ArticleFile,
+  isLocale,
+  type ItemReview,
+  type QuestionTitles,
+  type WithSourcesRu,
+} from "@hg/model";
 import { cachedJson } from "./data";
 
 /**
@@ -20,5 +26,21 @@ export function loadArticle(placeId: string, locale: string): Promise<Article | 
   const l = isLocale(locale) ? locale : "en";
   return cachedJson<Readonly<Record<string, Article>>>(`articles/${l}.json`).then(
     (all) => all[placeId],
+  );
+}
+
+/** A question answered with a place on the map, in the reader's language or in English. */
+export type PlaceQuestion = QuestionTitles["questions"][string][number];
+
+/**
+ * The questions answered with a place on the map, from data/articles/questions/<language>.json
+ * (under the articles' licence, ADR 0016); none when the file cannot be read: the card
+ * stands without them.
+ */
+export function loadQuestions(placeId: string, locale: string): Promise<readonly PlaceQuestion[]> {
+  const l = isLocale(locale) ? locale : "en";
+  return cachedJson<QuestionTitles>(`articles/questions/${l}.json`).then(
+    (all) => all.questions[placeId] ?? [],
+    (): readonly PlaceQuestion[] => [],
   );
 }

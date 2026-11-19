@@ -2,7 +2,7 @@
 Wikidata's and Pleiades' (wave/audit.json): a site that ends long after Wikidata's end or
 Pleiades' last period, or starts far from either, is listed to be read one by one.
 
-    python3 -I pipeline/ancient/audit.py <work>
+    python3 -E -s -m pipeline.ancient.audit <work>
 """
 
 from __future__ import annotations
@@ -11,11 +11,10 @@ import pathlib
 import re
 import sys
 
-sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
-from ancient.common import content_sites, pleiades_places, qid_of, values, write  # noqa: E402
-from ancient.periods_table import LATE, PERIODS  # noqa: E402
-from build_data import YEAR_MAX  # noqa: E402
-from net import entity, sparql  # noqa: E402
+from pipeline.ancient.common import content_sites, pleiades_places, qid_of, values, write
+from pipeline.ancient.periods_table import LATE, PERIODS
+from pipeline.build_data import YEAR_MAX
+from pipeline.net import entity, sparql
 
 
 def wikidata_years(qids: list[str]) -> dict[str, dict[str, list[int]]]:

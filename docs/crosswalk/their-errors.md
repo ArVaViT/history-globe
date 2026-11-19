@@ -1,4 +1,4 @@
-# Errors found in Theographic, OpenBible, Pleiades and Wikidata
+# Where we differ from Theographic, OpenBible, Pleiades and Wikidata
 
 Checked 2026-10-17. Sources, all downloaded the same night:
 
@@ -19,7 +19,7 @@ Added 2026-10-24: the five Negeb names of item 16 moved from Horbat Uza to Tel I
 Re-checked 2026-10-24, every item against the sources' current public data: Theographic master `744355c7` (2026-10-23), both `json/places.json` with `json/verses.json` and `geo/bible-places.geojson`, a Linked Places file of 1,030 places they republished on 2026-10-13 (feature ids under `bible.helloao.org/api/c/places/`); OpenBible's GitHub data (unchanged since 2021, so our pinned copy is the current one) and its live pages; live Wikidata `wbgetentities`; STEPBible TIPNR master `be4191f0` (2026-10-24). Each item now has a line "Status 2026-10-24". "json" means `json/places.json` and `verses.json`, which their README calls the preferred source; "geo" means the geojson. Most of the Theographic items are still in json and already fixed in geo; T18 is withdrawn (our error), and T23 and T24 are new.
 
 Distances are haversine (great-circle) distances. Severity: **high** means the record points at the wrong place or the wrong country; **medium** means it misleads a map or a join; **low** is cosmetic or a completeness gap.
-"Confirmed" means I opened the record and the evidence myself. Anything less certain is in "To check".
+"Confirmed" means we opened the record and the evidence ourselves. Anything less certain is in "To check".
 
 ---
 
@@ -80,7 +80,7 @@ Distances are haversine (great-circle) distances. Severity: **high** means the r
 
 ### T10. Place names in the KJV text with no place tag. Severity: medium
 
-I checked every KJV verse whose `verseText` contains the name as a whole word. These verses have **no** link to that place in `verses.places`, and none appears in the place's `verses` list either:
+We checked every KJV verse whose `verseText` contains the name as a whole word. These verses have **no** link to that place in `verses.places`, and none appears in the place's `verses` list either:
 
 - **Jerusalem** (`recL1WV82pXaRBQ59`), 13 of 767 verses: 2Chr.30.26, 2Chr.31.4, 2Chr.32.2, 2Chr.32.9, 2Chr.32.10, 2Chr.32.12, 2Chr.32.18, Jer.7.29, Jer.8.5, Luke.2.42, Luke.24.49, Acts.4.6 and Acts.18.21. The clearest case is 2Chr.32.9: it is tagged with Lachish and Assyria, while "Jerusalem" appears twice in the verse untagged. Luke.24.49 reads "tarry ye in the city of Jerusalem".
 - **Asia** (`recpCMN0bRpzByjaR`): Acts.19.31, Acts.20.4 and Rev.1.11. Rev.1.11 is tagged with the seven cities but not with "the seven churches which are in Asia". Acts.20.4 carries only Derbe; Berea and Asia are missing.
@@ -334,7 +334,7 @@ Achzib `a2270e4` Q54991090→Q1323297; Allammelech `a84cafa` Q28220401→Q657322
 
 ## Pleiades: confirmed
 
-None. Every Pleiades id I looked up in depth resolved and matched its description.
+None. Every Pleiades id we looked up in depth resolved and matched its description.
 
 ## Pleiades: to check
 
@@ -352,7 +352,7 @@ None. Every Pleiades id I looked up in depth resolved and matched its descriptio
 5. **Ramathaim-zophim `a54ef72`**: our `pleiades` = 688014 "Ramathaim/Arimathaia" (Rentis, via Wikidata Q1019146 P1584), but our coordinate (31.854, 35.232, Ramah/Nebi Samwil area) is 29 km away. The record contradicts itself. Either the coordinate or the link has to go. **2026-10-17: the Pleiades link is removed; which site is right is for the owner.**
 6. **Tartessos `a86d7c7`**: Pleiades 256468 is "unlocated". Our point is 24 km from its representative point. Harmless, but it is a guess.
 7. **Coordinates vs Theographic**: for 126 high-confidence matches, Theographic's point is more than 100 km from ours. Gone through one by one on 2026-10-19: 48 regions, 6 rivers, 6 bodies of water, 2 peoples, 1 canal and 1 mountain range are centroids and were set aside; for 107 of the 126 their point is their own `openBibleLat/Long` to the metre, that is the 2007 OpenBible data. Of the 43 settlements, 13 campsites, 5 mountains and 1 promontory left, every case where an independent source decides (Pleiades, Wikidata, the verse itself) decides for our point: Erech, Asshur (withdrawn 2026-10-24: their record is the nation, T18), Pelusium, Punon, Hadrach, Jotbah, Tamar, Salmone, Rimmon of the Negeb, the two Janoahs, Hezron, Zeboim, Hosah, the Negeb towns of T21 and the stations of T22 (T14 to T22 and the "to check" items above). The rest are places nobody has located (the stations of Numbers 33, Dizahab, Luz of Judg 1:26, Ahava, Casiphia, Immer, Raamah, Baal-hamon, Gamad, Hazer-hatticon, Harmon, the northern Mount Hor, Zalmon, Nophah, Ain of Num 34:11, Avva, Sepharvaim, Canneh, Rehob, Aphik, Karkor, Dinhabah), where both points are proposals. None of our points was shown wrong; Wikidata's P625 disagrees with ours only for Pi-hahiroth (116 km), whose site is unknown.
-8. **Verse coverage**: we count verses from all translations, so we have places with no KJV verse at all (Aram-naharaim in the Ps 60 heading, Zaphon, Rhodes in Ezek 27:15, etc.). Theographic is KJV/ESV-based. Those differences are **not** Theographic errors and I did not list them.
+8. **Verse coverage**: we count verses from all translations, so we have places with no KJV verse at all (Aram-naharaim in the Ps 60 heading, Zaphon, Rhodes in Ezek 27:15, etc.). Theographic is KJV/ESV-based. Those differences are **not** Theographic errors and we did not list them.
 9. **OpenBible "same as" chains and TIPNR ids**: checked 2026-10-19 (O5, O6). Still not done: a full audit of Theographic verse tags for places outside the 16 names sampled in T10.
 10. **Our points inherited O6**: nine places that OpenBible calls another name for a record sat 8 to 63 km from that record. **Fixed 2026-10-19 for seven: content/place-points.json puts each on the named record's point** (Dimonah, Bethul, Chesil, Canneh, Sea of Jazer, Ir-moab, Hukok; the reasons are in the file). Zer and Ramoth 2 were moved and taken back the same day on review: the named record's point fits their verses worse (O6). The mutual pairs and the Sea of Egypt are left as OpenBible has them. Ramoth 2 is back on the list since the four Negeb names were put on one point (item 16).
 11. **Our `tipnr` column** carried OpenBible's 2021 links as they were (O5): 763 of our 1128 did not match a current TIPNR unique name, 8 named the wrong record (a ninth, Ramah 6, found and followed by hand on 2026-10-23: O5). **Fixed 2026-10-19: content/tipnr.json (scripts/tipnr-links.ts) follows each link to the current record; api/v1/places.json now carries it as `tipnr`, and places.csv keeps OpenBible's link as `openbible_tipnr`.** Beyond the River (`a88310a`) has no TIPNR record and no id.

@@ -9,7 +9,7 @@ description: Los lugares, los versículos que los nombran, los acontecimientos y
   que la caché habitual.
 </p>
 
-<h2>Qué lugares nombra un versículo</h2>
+<h2 id="which-places-does-a-verse-name">Qué lugares nombra un versículo</h2>
 <p>
   Un archivo por libro de la Biblia: cada versículo que nombra un lugar, con los identificadores de
   esos lugares.
@@ -27,10 +27,10 @@ description: Los lugares, los versículos que los nombran, los acontecimientos y
 [{ "id": "a49e1d0", "name": "Philippi",
    "names": { "cs": "Filipy", "de": "Philippi", "es": "Filipos", …, "ru": "Филиппы", "uk": "Філіппи" },
    "kind": "settlement", "lon": 24.28458, "lat": 41.01207, "verses": 4,
-   "wikidata": "Q379652", "pleiades": "501482",
+   "wikidata": "Q379652", "pleiades": "501482", "tipnr": "Philippi@Act.16.12-1Th",
    "page": { "cs": "/cs/place/philippi/", "de": "/de/place/philippi/", …, "uk": "/uk/place/philippi/" } }, …]</code></pre>
 
-<h2>Quién y dónde en un capítulo</h2>
+<h2 id="who-and-where-in-a-chapter">Quién y dónde en un capítulo</h2>
 <p>
   Un archivo por libro: cada capítulo, con los lugares y las personas que nombra. Las personas se
   identifican como en el TIPNR de STEPBible; sus nombres y su primer versículo están en
@@ -41,7 +41,7 @@ description: Los lugares, los versículos que los nombran, los acontecimientos y
 { "Acts.16": { "places": ["a6a7150", "a49e1d0", …],
                "people": ["Lydia@Act.16.14-", "Paul@Act.7.58-2Pe", "Silas@Act.15.22-1Pe", …] }, … }</code></pre>
 
-<h2>Todos los archivos</h2>
+<h2 id="all-the-files">Todos los archivos</h2>
 <div class="table">
   <table>
     <thead>
@@ -60,7 +60,9 @@ description: Los lugares, los versículos que los nombran, los acontecimientos y
         <td>
           todos los lugares: id, nombres, tipo, punto, cuántos versículos lo nombran y su página
           (para un lugar que algún versículo nombra); <code>wikidata</code> y <code>pleiades</code>,
-          el mismo lugar en esos repertorios, cuando se conoce
+          el mismo lugar en esos repertorios, cuando se conoce; <code>tipnr</code>, su nombre en el
+          TIPNR de STEPBible, el mismo esquema que los ids de <code>people.json</code>, cuando
+          OpenBible lo enlaza
         </td>
       </tr>
       <tr>
@@ -77,26 +79,33 @@ description: Los lugares, los versículos que los nombran, los acontecimientos y
       <tr>
         <td><code>/api/v1/people.json</code></td>
         <td>
-          las personas que nombra la Biblia: id del TIPNR, nombre, nombres en los demás idiomas
-          donde el sitio los tiene, sexo, cuántos versículos las nombran, el primero
+          las {{people_api}} personas que nombra la Biblia (el mapa muestra {{people}} de ellas, con
+          sus familias): id del TIPNR, nombre, nombres en los demás idiomas donde el sitio los
+          tiene, sexo, cuántos versículos las nombran, el primero
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/events.json</code></td>
-        <td>los acontecimientos fechados, con <code>ref</code> cuando la Biblia los narra</td>
+        <td>
+          los acontecimientos fechados, con <code>ref</code> cuando la Biblia los narra;
+          <code>site</code> en lugar de <code>place</code> para una ciudad del mundo antiguo que la
+          Biblia no nombra
+        </td>
       </tr>
       <tr>
         <td><code>/api/v1/battles.json</code></td>
         <td>
           batallas y asedios: lugar, año, bandos y resultado, con <code>ref</code> cuando la Biblia
-          narra la batalla
+          narra la batalla; <code>event</code>, el evento de <code>events.json</code> que cuenta la
+          misma historia
         </td>
       </tr>
       <tr>
         <td><code>/api/v1/questions.json</code></td>
         <td>
           preguntas que la gente hace, respondidas en todos los idiomas del sitio, con la vista del
-          mapa y las fuentes
+          mapa y las fuentes; <code>scripture</code>, los versículos que cita la respuesta;
+          <code>license</code> y <code>license_url</code>, la licencia de las respuestas
         </td>
       </tr>
       <tr>
@@ -104,7 +113,8 @@ description: Los lugares, los versículos que los nombran, los acontecimientos y
         <td>
           las rutas: sus paradas en orden, cada una con su pasaje y su nota;
           <code>by: "sea"</code> para un tramo navegado, y <code>sailed</code> (días y versículo)
-          cuando el texto dice cuánto duró
+          cuando el texto dice cuánto duró; <code>source</code> donde una parada se cuenta fuera de
+          la Biblia
         </td>
       </tr>
       <tr>
@@ -122,7 +132,7 @@ description: Los lugares, los versículos que los nombran, los acontecimientos y
   </table>
 </div>
 
-<h2>Convenciones</h2>
+<h2 id="conventions">Convenciones</h2>
 <ul>
   <li>
     Las referencias están en OSIS, con abreviaturas inglesas de los libros y numeración de la King
@@ -132,7 +142,8 @@ description: Los lugares, los versículos que los nombran, los acontecimientos y
   <li>
     Un lugar que figura dos veces con un mismo nombre en los datos de origen lleva
     <code>"duplicate": true</code>; un lugar cuyo emplazamiento es discutido,
-    <code>"disputed": true</code>.
+    <code>"disputed": true</code>; un evento, una batalla o una ruta de año aproximado,
+    <code>"approximate": true</code>.
   </li>
   <li>
     Los archivos se regeneran con cada versión de los datos; <code>index.json</code> indica su
@@ -144,19 +155,19 @@ description: Los lugares, los versículos que los nombran, los acontecimientos y
   </li>
 </ul>
 
-<h2>Licencia y créditos</h2>
+<h2 id="licence-and-credit">Licencia y créditos</h2>
 <p>
-  Los datos están bajo <a href="https://creativecommons.org/licenses/by/4.0/deed.es">CC BY 4.0</a>.
-  Úsalos, modifícalos, vende lo que construyas con ellos; cita las fuentes allí donde los muestres,
-  tal como las enumera <code>index.json</code>: History Globe, de Vadym Arnaut, y OpenBible.info
-  para los lugares, las etiquetas de versículos y los puntos, y el TIPNR de STEPBible para las
-  personas. Los nombres rusos se leyeron de la traducción sinodal, que es de dominio público. Los
-  nombres en los demás idiomas son de History Globe.
+  Los datos están bajo <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Úsalos,
+  modifícalos, vende lo que construyas con ellos; cita las fuentes allí donde los muestres, tal como
+  las enumera <code>index.json</code>: History Globe, de Vadym Arnaut, y OpenBible.info para los
+  lugares, las etiquetas de versículos y los puntos, y el TIPNR de STEPBible para las personas. Los
+  nombres rusos se leyeron de la traducción sinodal, que es de dominio público. Los nombres en los
+  demás idiomas son de History Globe.
 </p>
 <p>
   Las respuestas a las preguntas (<code>questions.json</code>) son textos propios de History Globe y
   están bajo
-  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.es">CC BY-NC-ND 4.0</a>: cítalas y
+  <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>: cítalas y
   enlázalas, con crédito; no las modifiques, no las traduzcas ni las lleves a otro sitio o conjunto
   de datos. Lo mismo vale para los artículos de los lugares, que la API no incluye.
 </p>

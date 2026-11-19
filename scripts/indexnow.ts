@@ -23,8 +23,9 @@ import {
   sitemapLocs,
   type SentState,
 } from "./indexnow-core.ts";
+import { SITE_ORIGIN } from "../packages/model/src/site.ts";
 
-const site = (process.env.SITE_URL ?? "https://historyglobe.app").replace(/\/+$/, "");
+const site = (process.env.SITE_URL ?? SITE_ORIGIN).replace(/\/+$/, "");
 const args = process.argv.slice(2);
 const stateFile = args.includes("--state") ? args[args.indexOf("--state") + 1] : undefined;
 const all = args.includes("--all");

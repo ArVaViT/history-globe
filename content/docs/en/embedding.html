@@ -8,7 +8,7 @@ description: Put the globe on your own site with one line — the map of a chapt
   to the passage on your page; a few messages keep the two in step.
 </p>
 
-<h2>Quick start</h2>
+<h2 id="quick-start">Quick start</h2>
 <pre><code>&lt;iframe
   src="{{site}}/embed/v1?ref=Acts.16&amp;locale=en"
   title="Map of Acts 16"
@@ -30,7 +30,7 @@ description: Put the globe on your own site with one line — the map of a chapt
   <li>The frame works down to a phone’s width; a height of 480 px is enough.</li>
 </ul>
 
-<h2>A chapter or a passage</h2>
+<h2 id="a-chapter-or-a-passage">A chapter or a passage</h2>
 <p>
   <code>ref</code> takes an OSIS reference with English book abbreviations and English verse
   numbering:
@@ -70,7 +70,7 @@ description: Put the globe on your own site with one line — the map of a chapt
   current year.
 </p>
 
-<h2>Parameters</h2>
+<h2 id="parameters">Parameters</h2>
 <div class="table">
   <table>
     <thead>
@@ -175,14 +175,14 @@ description: Put the globe on your own site with one line — the map of a chapt
   parameters work after <code>/embed/v1</code>.
 </p>
 
-<h2>Messages</h2>
+<h2 id="messages">Messages</h2>
 <p>
   The globe and your page communicate through <code>postMessage</code>. Every message is an object
   with <code>type</code> and <code>v: 1</code>. The globe sends only what happens on the map and
   never anything that identifies the reader, so it posts to the parent page whatever its origin
   (target <code>"*"</code>); it accepts messages only from the page that holds the frame.
 </p>
-<h3>From the globe</h3>
+<h3 id="from-the-globe">From the globe</h3>
 <div class="table">
   <table>
     <thead>
@@ -224,7 +224,10 @@ description: Put the globe on your own site with one line — the map of a chapt
       <tr>
         <td><code>hg:error</code></td>
         <td><code>{ code, message }</code></td>
-        <td>the map or its data could not load</td>
+        <td>
+          the map or its data could not load: <code>code</code> is <code>"map"</code> or
+          <code>"data"</code>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -233,9 +236,12 @@ description: Put the globe on your own site with one line — the map of a chapt
   <code>view</code> holds <code>year</code>, <code>locale</code> and <code>layers</code> and, when
   set, <code>place</code>, <code>tour</code>, <code>stop</code>, <code>ref</code> and
   <code>camera</code>. A <code>view</code> without <code>place</code> means that no place is
-  selected.
+  selected. <code>camera</code> is an object,
+  <code>{ center: [35.2, 31.8], zoom: 7, pitch: 30, bearing: 0 }</code>, not the string of the
+  address; <code>layers</code> gives each layer <code>true</code> or <code>false</code>:
+  <code>{ relief: false, battles: false }</code>.
 </p>
-<h3>To the globe</h3>
+<h3 id="to-the-globe">To the globe</h3>
 <div class="table">
   <table>
     <thead>
@@ -289,11 +295,11 @@ description: Put the globe on your own site with one line — the map of a chapt
   without one, their Wikidata item (Constantinople is <code>Q16869</code>). Both kinds can come in
   <code>view.place</code> and <code>hg:place-clicked</code>, and both are accepted by
   <code>hg:set-view</code>; if your data has only OpenBible’s places, test the form before you look
-  one up. Of OpenBible’s {{openbible}} places, {{absent}} are not on the map (they have no point
-  that may be published); their IDs are ignored.
+  one up. Of OpenBible’s {{openbible}} places, {{absent}} are not on the map (left out, or with no
+  point at all); their IDs are ignored.
 </p>
 
-<h2>Example: the map follows your reader</h2>
+<h2 id="example-the-map-follows-your-reader">Example: the map follows your reader</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
 // When your reader opens a chapter, show it on the map.
@@ -419,22 +425,23 @@ function closeBox() {
   and so does a name the Bible’s own verses mostly use for something else (“Kadesh” there is
   Kadesh-barnea, not the Kadesh of the database). A place’s name that is also a first name (Jordan,
   Sharon) is left alone next to another capitalised word: Jordan Smith is a person, not the river.
-  In Russian, Ukrainian, Polish and Czech, names are found in their inflected forms (“в Египте”, “w
-  Jerozolimie”, “v Jeruzalémě”), and German names in the genitive too (“Jerusalems”). Links, code,
-  form fields, buttons and headings are left alone.
+  In Russian, Ukrainian, Polish, Czech, Serbian, Hungarian, Finnish and Romanian, names are found in
+  their inflected forms (“в Египте”, “w Jerozolimie”, “v Jeruzalémě”), and German, Swedish, Danish
+  and Norwegian names in the genitive too (“Jerusalems”). Links, code, form fields, buttons and
+  headings are left alone.
 </p>
 <p class="note">
   The script has no dependencies and sets no cookies. It reads one file of names from the globe
-  (about 20 to 35 KB over the network depending on the language, plus 7 KB of script), without your
-  page's address as referrer, and changes only the names it links. It works under a strict Content
-  Security Policy that allows the globe's address in <code>script-src</code> and
-  <code>connect-src</code>. For text your page adds later, call
+  (about {{names_kb_min}} to {{names_kb_max}} KB over the network depending on the language, plus
+  {{script_kb}} KB of script), without your page's address as referrer, and changes only the names
+  it links. It works under a strict Content Security Policy that allows the globe's address in
+  <code>script-src</code> and <code>connect-src</code>. For text your page adds later, call
   <code>HistoryGlobePlaces.scan(element)</code> once the text is rendered: the script splits text
   nodes, so in a React or Vue page run it on content the framework no longer re-renders.
 </p>
 <script src="../hg-places.js" data-scope=".hgp-demo" defer></script>
 
-<h2>Stability</h2>
+<h2 id="stability">Stability</h2>
 <p>
   <code>/embed/v1</code> is a contract: within v1, parameters and messages are only added, never
   changed or removed. A breaking change will ship as <code>/embed/v2</code>, and v1 will keep

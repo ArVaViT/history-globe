@@ -1,5 +1,7 @@
+import { Script } from "node:vm";
 import { describe, expect, it } from "vitest";
-import { hitHtml } from "./docs-script.ts";
+import { clientScript } from "../client-script.ts";
+import { hitHtml } from "./docs.ts";
 
 const esc = (s: string) => s.replace(/[&<>"]/g, (c) => `&#${String(c.charCodeAt(0))};`);
 
@@ -26,9 +28,12 @@ describe("a search hit of the docs", () => {
     );
   });
 
-  it("is plain JavaScript once its types are stripped, as docs.js embeds it", () => {
-    const source = hitHtml.toString();
-    expect(source).toMatch(/^function hitHtml\(/);
-    expect(source).not.toMatch(/: string|: number|: boolean/);
+  it("is served as one plain script, the fold it imports joined in", () => {
+    const script = clientScript("packages/model/src/fold.ts", "scripts/client/docs.ts");
+    expect(script).not.toMatch(/^\s*(import|export) /m);
+    expect(script).toMatch(/function foldText\(/);
+    expect(script).toMatch(/function hitHtml\(h, i, selected, esc\)/);
+    // A classic script, as the pages load it: it compiles.
+    expect(() => new Script(script)).not.toThrow();
   });
 });
