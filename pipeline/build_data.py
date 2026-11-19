@@ -70,7 +70,7 @@ SOURCES = {
     # The land behind the tours' pictures (scripts/tour-images.mjs).
     "natural_earth_land": pinned("natural_earth_land", "PD", NATURAL_EARTH),
     # People and their places (pipeline/people), never redistributed raw: its header asks
-    # not to (docs/legal-questions.md, question 1).
+    # not to.
     "stepbible_tipnr": pinned(
         "stepbible_tipnr",
         "CC-BY-4.0",

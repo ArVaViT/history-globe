@@ -36,5 +36,5 @@ first.
 
 - Some convenient datasets are off-limits; the gap (dated places, regional borders) is
   filled by our own curated content — which is the point.
-- Open legal questions (TIPNR wording, vector tiles under ODbL, KJV in the UK) are kept
-  in `docs/legal-questions.md` for a lawyer before commercial launch.
+- Open legal questions (TIPNR wording, vector tiles under ODbL, KJV in the UK) go to a
+  lawyer before any commercial use.
