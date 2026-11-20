@@ -153,6 +153,16 @@ the data first (`pnpm data`).
   stops the build, so the lists only shrink.
 - Nothing is written until every check passes.
 
+## The map (`packages/core`)
+
+- **Every place, selected, is named beside its ring** (`selected-places.test.ts`): each of the
+  built places of the Bible, in AD 30 and in 1000 BC, and each site of the ancient world, in
+  its first year, at the zoom the camera flies to for its kind. A host page (STEPBible)
+  selects places from its own list, any of them; twenty rivers drawn as lines were named only
+  along their course, Abana up the Barada while its ring stood at Damascus.
+- **A selected place never takes a great town off the map** (`majors.test.ts`): kept first,
+  it had Damascus off for Abana, Jerusalem for Golgotha and Bethany, Rome for Italy.
+
 ## Places in any text (`scripts/build-text-places.ts`)
 
 The index behind `hg-places.js`, the verse links in place cards and the links in the static

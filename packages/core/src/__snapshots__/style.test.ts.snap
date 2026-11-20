@@ -17341,13 +17341,6 @@ exports[`style > is built as before 1`] = `
           ],
         ],
         [
-          "!",
-          [
-            "has",
-            "line",
-          ],
-        ],
-        [
           "any",
           [
             ">=",
@@ -17425,6 +17418,11 @@ exports[`style > is built as before 1`] = `
         "icon-allow-overlap": true,
         "icon-image": [
           "case",
+          [
+            "has",
+            "line",
+          ],
+          "",
           [
             "any",
             [

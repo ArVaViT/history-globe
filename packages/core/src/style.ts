@@ -936,16 +936,19 @@ const LABEL_LAYERS: LayerSpecification[] = [
     // The selected region, sea, mountain or spring: their layers are placed after towns,
     // so its own layer, placed first, keeps a town beside it from taking its label's room.
     // A mountain or a spring keeps its mark here, drawn whatever lies near. A river drawn
-    // as a line keeps its line label.
+    // as a line is named here too, beside its ring, with no mark of its own: its line label
+    // stands somewhere along the course, often far from the point the reader asked for
+    // (Abana, named up the Barada while its ring stood at Damascus).
     id: "place-label-selected",
     type: "symbol",
     source: "places",
     metadata: { group: "places" },
-    filter: ["all", IS_SELECTED, ["!", isSettlement], ["!", ["has", "line"]], visibleAtZoom],
+    filter: ["all", IS_SELECTED, ["!", isSettlement], visibleAtZoom],
     layout: {
       ...LANDMARK_MARK_LAYOUT,
-      // Regions and seas have no mark: their name is all there is.
-      "icon-image": ["case", LANDMARK_MARKED, LANDMARK_MARK, ""],
+      // Regions and seas have no mark: their name is all there is. Nor has a river drawn as a
+      // line: the ring marks its point.
+      "icon-image": ["case", ["has", "line"], "", LANDMARK_MARKED, LANDMARK_MARK, ""],
       "icon-allow-overlap": true,
       "text-optional": true,
       "text-field": [

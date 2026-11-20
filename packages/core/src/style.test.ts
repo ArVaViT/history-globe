@@ -232,8 +232,9 @@ describe("every place kind is drawn", () => {
     expect(drawnBy({ kind })).not.toEqual([]);
   });
 
-  it("leaves a river drawn as a line to its line label", () => {
-    expect(drawnBy({ kind: "river", line: true })).toEqual([]);
+  it("leaves a river drawn as a line to its line label until it is selected", () => {
+    // With an id, so it is not taken for the selected place (no place selected here).
+    expect(drawnBy({ id: "a1", kind: "river", line: true })).toEqual([]);
   });
 });
 
@@ -306,7 +307,7 @@ describe("place labels outside English", () => {
     expect(style.layers.at(-1)?.id).toBe("place-label-selected");
   });
 
-  it("label a selected region or sea in the same layer, a town in its own and a river line in none of them", () => {
+  it("label a selected region, sea or river line in the same layer, a town in its own", () => {
     const layersFor = (props: Record<string, unknown>) =>
       style.layers
         .filter((l) => l.id.startsWith("place-label") && "filter" in l)
@@ -317,7 +318,10 @@ describe("place labels outside English", () => {
       "place-label-selected",
     ]);
     expect(layersFor({ kind: "settlement", name: "Samaria" })).toEqual(["place-label-picked"]);
-    expect(layersFor({ kind: "river", name: "Jordan", line: true })).toEqual([]);
+    // Beside its ring: its line label may stand far along the course (Abana up the Barada).
+    expect(layersFor({ kind: "river", name: "Jordan", line: true })).toEqual([
+      "place-label-selected",
+    ]);
   });
 
   it("keep the English name for a region, which has no dot to fall back on", () => {
