@@ -20,6 +20,9 @@ const STRUCTURE_KINDS = [
   "well",
 ];
 
+/** Zoom that frames a town or a landmark: kinds framed farther out are areas, seas, rivers. */
+export const POINT_ZOOM = 9.4;
+
 /** Zoom that frames a place of this kind: regions need more room than towns. */
 export function zoomForKind(kind: string): number {
   switch (kind) {
@@ -36,6 +39,6 @@ export function zoomForKind(kind: string): number {
     case "canal":
       return 8.4;
     default:
-      return STRUCTURE_KINDS.includes(kind) ? 13 : 9.4;
+      return STRUCTURE_KINDS.includes(kind) ? 13 : POINT_ZOOM;
   }
 }

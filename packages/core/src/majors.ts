@@ -18,7 +18,7 @@ export const MIN_PX = 24;
 /** Zooms thinned; from the last one up every great town keeps its ring. */
 export const LAST_ZOOM = 15;
 
-interface Life {
+export interface Life {
   readonly gap_from?: number;
   readonly gap_until?: number;
   readonly life_from?: number;
@@ -43,8 +43,10 @@ export function weight(f: { properties: Record<string, unknown> | null }): numbe
 }
 
 /** A great town drawn by place-label-major: a settlement of rank 0, not a second name. */
-function isMajor(p: Record<string, unknown> | null): boolean {
-  return p?.["kind"] === "settlement" && p["rank"] === 0 && p["where_tpl"] !== "same";
+export function isMajor(
+  p: { readonly kind?: unknown; readonly rank?: unknown; readonly where_tpl?: unknown } | null,
+): boolean {
+  return p?.kind === "settlement" && p.rank === 0 && p.where_tpl !== "same";
 }
 
 const KM_PER_WORLD = 40075;
@@ -101,4 +103,46 @@ export function thinMajors(
       properties: { ...f.properties, keep: keep.get(f) ?? 0 },
     })),
   };
+}
+
+/**
+ * How far apart, in px, a selected place is set from the nearest great town: its ring and
+ * the town's with room between them for both names, as a pool 550 m from Jerusalem stands
+ * at zoom 13. Golgotha, 460 m off, was flown to at zoom 9.4: its ring lay on Jerusalem's
+ * and its name took the town's place, so the reader saw no "Golgotha, by Jerusalem".
+ */
+export const BESIDE_PX = 64;
+/**
+ * The closest the camera flies to set a place apart from its town. Nearer still, the place
+ * stands at the town's own point (a gate, a hall, a second name, by the data `at` the
+ * town): no zoom parts them, and flying in would only show an empty street.
+ */
+export const BESIDE_MAX_ZOOM = 16;
+
+/** A great town as the engine knows it: where it stands and when (outOfTime). */
+export interface GreatTown {
+  readonly id: string;
+  readonly at: readonly number[];
+  readonly life: Life;
+}
+
+/**
+ * The zoom that frames a selected place by the nearest great town standing in the year: the
+ * kind's zoom, or closer until the two lie BESIDE_PX apart. Only the nearest counts: at that
+ * zoom any other town is farther still. The town stays in view, BESIDE_PX from the centre.
+ */
+export function zoomBeside(
+  place: { readonly id: string; readonly at: readonly number[] },
+  zoom: number,
+  towns: Iterable<GreatTown>,
+  year: number,
+): number {
+  let nearest = Infinity;
+  for (const t of towns) {
+    if (t.id === place.id || outOfTime(t.life, year)) continue;
+    nearest = Math.min(nearest, pxApart(place.at, t.at, 0));
+  }
+  // pxApart doubles with each zoom step.
+  const needed = Math.log2(BESIDE_PX / nearest);
+  return needed > zoom && needed <= BESIDE_MAX_ZOOM ? needed : zoom;
 }

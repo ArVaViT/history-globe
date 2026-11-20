@@ -10,6 +10,7 @@ export {
 } from "./engine.ts";
 export { FakeRenderer } from "./fake-renderer.ts";
 export { iconDataUrl } from "./icons.ts";
+export { isMajor, type Life } from "./majors.ts";
 export {
   polityText,
   type BattleInfo,
