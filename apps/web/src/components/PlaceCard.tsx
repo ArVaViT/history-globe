@@ -508,13 +508,14 @@ export function PlaceCard({
       )}
 
       {/* What there is to read about the place, one part at a time (a place of the ancient
-          world may have nothing yet). */}
+          world may have nothing yet). On a touch screen the tabs are a fingertip tall: the
+          scrolling row would cut off a larger hit area around them. */}
       {tab !== undefined && (
         <>
           <div
             role="tablist"
             aria-label={title}
-            className="sticky top-0 z-10 mt-3 flex overflow-x-auto border-b border-line bg-paper/95 px-3 pt-2 backdrop-blur [scrollbar-width:none]"
+            className="sticky top-0 z-10 mt-3 flex overflow-x-auto border-b border-line bg-paper/95 px-3 pt-2 backdrop-blur [scrollbar-width:none] pointer-coarse:pt-0"
             onKeyDown={(e) => {
               const i = tabs.indexOf(tab);
               const d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
@@ -541,7 +542,7 @@ export function PlaceCard({
                 onClick={() => {
                   pickTab(id);
                 }}
-                className={`-mb-px border-b-2 px-1.5 pb-2 text-[13px] whitespace-nowrap ${
+                className={`-mb-px border-b-2 px-1.5 pb-2 text-[13px] whitespace-nowrap pointer-coarse:pt-2 pointer-coarse:pb-3.5 ${
                   tab === id
                     ? "border-accent font-medium text-ink"
                     : "border-transparent text-ink-soft hover:text-ink"

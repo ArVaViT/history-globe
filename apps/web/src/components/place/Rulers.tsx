@@ -101,7 +101,7 @@ export function Rulers({
                 background:
                   POLITY_COLORS[(data.states[runs[k]?.[2] ?? 0]?.c ?? 0) % POLITY_COLORS.length],
               }}
-              className={`min-w-px border-r border-paper/60 last:border-r-0 focus-visible:outline-2 ${
+              className={`hg-tap-own min-w-px border-r border-paper/60 last:border-r-0 focus-visible:outline-2 ${
                 k === now ? "opacity-100" : "opacity-55 hover:opacity-100"
               }`}
               onMouseEnter={() => {

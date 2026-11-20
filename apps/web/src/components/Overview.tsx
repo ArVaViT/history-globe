@@ -33,12 +33,14 @@ export function Overview({
       {/* No cross of its own: the book in the header opens and closes it, and four tabs
           need the room. */}
       <div id="more-panels" className="flex items-center gap-1 px-2 pt-2">
-        {/* The tabs share the row evenly; a language with longer words scrolls it. */}
+        {/* The tabs share the row evenly; a language with longer words scrolls it. On a touch
+            screen the row keeps room above and below for the tabs' larger hit areas, which
+            its scrolling would cut off. */}
         <div className="flex min-w-0 flex-1">
           <div
             role="tablist"
             aria-label={t("overview.title")}
-            className="flex flex-1 gap-0.5 overflow-x-auto [scrollbar-width:none]"
+            className="flex flex-1 gap-0.5 overflow-x-auto [scrollbar-width:none] pointer-coarse:-my-[7px] pointer-coarse:py-[7px]"
             // Arrow keys move between the tabs, as in any tab list (WAI-ARIA).
             onKeyDown={(e) => {
               if (e.key === "Escape") {

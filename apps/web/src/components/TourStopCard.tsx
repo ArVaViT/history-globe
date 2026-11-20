@@ -30,6 +30,7 @@ import { Photo } from "./Photo";
 import { useEffect, useState } from "react";
 import { loadVerse } from "../verses";
 import { cachedJson } from "../data";
+import { useScrollsMark } from "../app-hooks";
 
 export function TourStopCard({
   tour,
@@ -65,6 +66,7 @@ export function TourStopCard({
   compact?: boolean;
 }) {
   const { t } = useTranslation();
+  const scrolls = useScrollsMark();
   const roads = useRoadLegs();
   const leg = useLegProfile(tour, step, profileAlong);
   const profile = leg?.values;
@@ -132,8 +134,12 @@ export function TourStopCard({
   const shape = profile && onFoot ? profileShape(profile, PROFILE_W, PROFILE_H) : null;
 
   return (
-    <Panel className="w-card px-5 pt-4 pb-4">
-      <div className="flex items-center justify-between">
+    // On a phone on its side it keeps above the player in the same way, the stepping in view.
+    // On a phone the card stands on the folded player under the stop, at most half the
+    // screen tall, so the stop and its route stay on the map above it: the stop's text
+    // scrolls between the tour's name and its verse and stepping, which stay put.
+    <Panel className="w-card px-5 pt-4 pb-4 max-md:flex max-md:max-h-[48dvh] max-md:flex-col sideways:flex sideways:max-h-[calc(100dvh-var(--hg-timeline-h)-44px)] sideways:flex-col">
+      <div className="flex shrink-0 items-center justify-between">
         <div className="text-[12px] text-ink-soft">
           {/* Where we are is the dots below; screen readers hear it in the live region. */}
           {pick(tour.title, locale)}
@@ -146,43 +152,53 @@ export function TourStopCard({
           <X className="size-4" />
         </button>
       </div>
-      {/* Read out when the stop changes, by the buttons, the dots or the arrow keys. */}
-      <div aria-live="polite" aria-atomic="true">
-        <span className="sr-only">
-          {t("tours.stop", { n: step + 1, total: tour.stops.length })}.{" "}
-        </span>
-        <h2 className="mt-1 font-serif text-[26px] leading-tight font-semibold text-ink">{name}</h2>
-        {line && <p className="mt-0.5 text-[12px] text-ink-soft">{line}</p>}
-        {shape && prev && (
-          <LegProfile
-            shape={shape}
-            locale={locale}
-            from={stopName(prev.placeId)}
-            to={name}
-            road={leg?.road ?? false}
+      <div
+        ref={scrolls}
+        className="hg-fade-phone max-md:-mx-5 max-md:min-h-0 max-md:overflow-y-auto max-md:px-5 max-md:[scrollbar-width:thin] sideways:-mx-5 sideways:min-h-0 sideways:overflow-y-auto sideways:px-5 sideways:[scrollbar-width:thin]"
+      >
+        {/* Read out when the stop changes, by the buttons, the dots or the arrow keys. */}
+        {/* On a phone the stop's words come before the relief, which can wait for a scroll. */}
+        <div aria-live="polite" aria-atomic="true" className="max-md:flex max-md:flex-col">
+          <span className="sr-only">
+            {t("tours.stop", { n: step + 1, total: tour.stops.length })}.{" "}
+          </span>
+          <h2 className="mt-1 font-serif text-[26px] leading-tight font-semibold text-ink">
+            {name}
+          </h2>
+          {line && <p className="mt-0.5 text-[12px] text-ink-soft">{line}</p>}
+          {shape && prev && (
+            <div className="max-md:order-last">
+              <LegProfile
+                shape={shape}
+                locale={locale}
+                from={stopName(prev.placeId)}
+                to={name}
+                road={leg?.road ?? false}
+              />
+            </div>
+          )}
+          {stop.note[locale] || stop.note.en ? (
+            <p className="mt-2 font-serif text-[16px] leading-relaxed text-ink">
+              {stop.note[locale] || stop.note.en}
+            </p>
+          ) : (
+            // A stop without a note (a teacher's lesson): the verse that names the place.
+            stop.ref && <StopVerse key={stop.ref} osis={stop.ref} locale={locale} />
+          )}
+        </div>
+        {/* Outside the live region: the credit is not read out at every stop. */}
+        {photo && (
+          <Photo
+            key={stop.placeId}
+            photo={photo}
+            placeId={stop.placeId}
+            title={name}
+            className="mt-3 max-md:hidden"
+            aspect="aspect-[21/9]"
           />
         )}
-        {stop.note[locale] || stop.note.en ? (
-          <p className="mt-2 font-serif text-[16px] leading-relaxed text-ink">
-            {stop.note[locale] || stop.note.en}
-          </p>
-        ) : (
-          // A stop without a note (a teacher's lesson): the verse that names the place.
-          stop.ref && <StopVerse key={stop.ref} osis={stop.ref} locale={locale} />
-        )}
       </div>
-      {/* Outside the live region: the credit is not read out at every stop. */}
-      {photo && (
-        <Photo
-          key={stop.placeId}
-          photo={photo}
-          placeId={stop.placeId}
-          title={name}
-          className="mt-3 max-md:hidden"
-          aspect="aspect-[21/9]"
-        />
-      )}
-      <div className="mt-3 flex items-center gap-2">
+      <div className="mt-3 flex shrink-0 items-center gap-2">
         {/* The verse, or the ancient author who tells it (Josephus): a free translation. */}
         <a
           href={stop.ref ? verseUrl(stop.ref, locale) : stop.source?.url}
@@ -231,7 +247,7 @@ export function TourStopCard({
       </div>
       {/* One dot per stop: where we are, and a jump to any stop. */}
       <ol
-        className={`mt-4 flex flex-wrap items-center gap-1 ${compact ? "hidden" : ""}`}
+        className={`mt-4 flex shrink-0 flex-wrap items-center gap-1 ${compact ? "hidden" : ""}`}
         aria-label={t("tours.stops_list")}
       >
         {tour.stops.map((s, i) => (
@@ -243,12 +259,12 @@ export function TourStopCard({
               aria-current={i === step ? "step" : undefined}
               aria-label={`${String(i + 1)}. ${stopName(s.placeId)}`}
               title={`${String(i + 1)}. ${stopName(s.placeId)}`}
-              className={`block rounded-full transition-all ${i === step ? "h-2.5 w-6 bg-accent" : i < step ? "size-2.5 bg-accent/55 hover:bg-accent" : "size-2.5 bg-paper-2 ring-1 ring-line hover:bg-accent/40"}`}
+              className={`hg-tap-own block rounded-full transition-all ${i === step ? "h-2.5 w-6 bg-accent" : i < step ? "size-2.5 bg-accent/55 hover:bg-accent" : "size-2.5 bg-paper-2 ring-1 ring-line hover:bg-accent/40"}`}
             />
           </li>
         ))}
       </ol>
-      <div className={`mt-3 flex justify-between ${compact ? "hidden" : ""}`}>
+      <div className={`mt-3 flex shrink-0 justify-between ${compact ? "hidden" : ""}`}>
         <button
           disabled={step === 0}
           onClick={() => {

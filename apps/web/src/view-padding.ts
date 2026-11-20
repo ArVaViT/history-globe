@@ -2,6 +2,8 @@
 export const NARROW_MAX_PX = 767;
 /** The same as a media query, for `useMedia`. */
 export const NARROW = `(max-width: ${String(NARROW_MAX_PX)}px)`;
+/** A phone on its side: wider than a phone upright, too short for a panel over the player. */
+export const SIDEWAYS = "(min-width: 768px) and (max-height: 560px)";
 export const isNarrow = (w = innerWidth): boolean => w <= NARROW_MAX_PX;
 
 /** The timeline's height before it is measured (`--hg-timeline-h`). */
@@ -34,6 +36,8 @@ export interface PaddingLayout {
   readonly panel?: boolean;
   /** A map-only frame (`ui=map`): no card, whatever is selected. */
   readonly mapOnly?: boolean;
+  /** A phone with no card: how far down the column's panels reach over the map, in px. */
+  readonly cover?: number;
 }
 
 /**
@@ -53,6 +57,7 @@ export function viewPadding({
   chip = false,
   panel = true,
   mapOnly = false,
+  cover = 0,
 }: PaddingLayout = {}) {
   const open = card && !(embed && mapOnly);
   // Embedded, the chip (or map-only, the smaller link to the globe) sits at the top and the
@@ -73,8 +78,9 @@ export function viewPadding({
     embed && !open
       ? { top, bottom, left: 0, right: 0 }
       : isNarrow(w) && !open
-        ? // A phone with no card open (a chapter; a person's places come with their card).
-          underHeader
+        ? // A phone with no card open (a chapter; a person's places come with their card;
+          // a place picked for a tool, under the tool's panel).
+          { ...underHeader, top: Math.max(underHeader.top, cover + 8) }
         : isNarrow(w)
           ? // The card stands on the timeline (20 px above it), up to 48% of the screen tall.
             {
@@ -101,4 +107,24 @@ export function viewPadding({
     left: Math.round(p.left * kx),
     right: Math.round(p.right * kx),
   };
+}
+
+/**
+ * The points a phone frames for a disputed place: the place and each of its candidate
+ * sites, and a margin of a fifth of their width on either side, so that a site at the edge
+ * of a narrow screen keeps its name in view. None for a place with one site or none, which
+ * its own flight shows.
+ */
+export function sitesFrame(
+  at: readonly [number, number],
+  sites: readonly { readonly at: readonly [number, number] }[] | undefined,
+): (readonly [number, number])[] | null {
+  if (!sites || sites.length < 2) return null;
+  const points = [at, ...sites.map((x) => x.at)];
+  const lons = points.map((p) => p[0]);
+  const west = Math.min(...lons);
+  const east = Math.max(...lons);
+  const side = Math.max((east - west) * 0.2, 0.01);
+  const lat = at[1];
+  return [...points, [west - side, lat], [east + side, lat]];
 }

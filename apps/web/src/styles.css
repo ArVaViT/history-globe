@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* A phone on its side (SIDEWAYS in view-padding.ts): wide as a tablet, short as a phone. */
+@custom-variant sideways (@media (min-width: 768px) and (max-height: 560px));
+
 @theme {
   --color-ink: #2b2418;
   --color-ink-soft: #6b5d48;
@@ -265,6 +268,34 @@ summary {
   }
 }
 
+/* On a touch screen a control smaller than a fingertip takes the tap over at least 44 px
+   (WCAG 2.5.5): an invisible layer centred on it, so it looks as it does with a mouse. A
+   control set closer to its neighbours than half that (the tour's dots, the ages on a
+   place's ruler) keeps its own size, or a tap would land on the next one (hg-tap-own). In the base layer, so a control
+   placed with a utility (absolute, sticky) keeps its own position. */
+@layer base {
+  @media (pointer: coarse) {
+    :where(button, [role="tab"], [role="option"], summary):not(.hg-tap-own) {
+      position: relative;
+    }
+    :where(button, [role="tab"], [role="option"], summary):not(.hg-tap-own)::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: max(100%, 44px);
+      height: max(100%, 44px);
+      translate: -50% -50%;
+    }
+    /* A button in a row of buttons (the header's, the player's, a card's) widens only
+       upward and downward: sideways its layer would cover the next one's edge. One whose
+       neighbour sits in another box says so itself (hg-tap-row). */
+    :where(button:has(+ button), button + button, .hg-tap-row):not(.hg-tap-own)::after {
+      width: 100%;
+    }
+  }
+}
+
 /* A phone: pinch zooms and the compass is two fingers away, so the buttons and the
    scale go; the (i) stays in the player. */
 @media (max-width: 767px) {
@@ -404,6 +435,23 @@ summary {
   height: 24px;
   pointer-events: none;
   background: linear-gradient(to bottom, transparent, var(--color-paper));
+}
+
+/* The same on a phone only (upright or on its side), and only while there is more to
+   scroll to (useScrollsMark): a tour's stop, whose text scrolls there alone. */
+@media (max-width: 767px), (min-width: 768px) and (max-height: 560px) {
+  .hg-fade-phone {
+    scroll-padding-bottom: 24px;
+  }
+  .hg-fade-phone[data-scrolls]::after {
+    content: "";
+    position: sticky;
+    bottom: 0;
+    display: block;
+    height: 24px;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent, var(--color-paper));
+  }
 }
 
 /* The sheet for a class (print.ts): hidden on screen; printed alone, on its own A4 page
