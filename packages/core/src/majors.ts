@@ -3,8 +3,8 @@
  * names, states, battles or seas lie near (style.ts place-label-major), so MapLibre's
  * collision cannot thin them: it is done here instead, between the great towns themselves.
  * At each zoom the most named town standing in the year keeps its ring, and a lesser one
- * within MIN_PX of a ring already kept waits for a closer view. The selected place counts
- * as kept first (its gold dot is drawn whatever lies near).
+ * within MIN_PX of a ring already kept waits for a closer view. The selected place takes no
+ * room from them: a great town stays on the map beside it.
  *
  * Left to MapLibre's collision with their names, Tyre's name and the room kept round it would
  * take Damascus off the map at zoom 4.
@@ -79,10 +79,12 @@ export function thinMajors(
         weight(b) - weight(a) ||
         String(a.properties["id"]).localeCompare(String(b.properties["id"])),
     );
-  const picked = all.find((f) => selected !== null && f.properties["id"] === selected);
+  // The selected place never takes a great town off the map: the town is its setting. Kept
+  // first, Abana (a river, 300 m from Damascus) kept Damascus off up to zoom 15, Golgotha and
+  // Bethany Jerusalem, Italy Rome. Its gold dot is drawn over the ring (place-label-picked).
   const keep = new Map<PlaceFeature, number>(majors.map((f) => [f, 0]));
   for (let z = 0; z <= LAST_ZOOM; z++) {
-    const kept: PlaceFeature[] = picked ? [picked] : [];
+    const kept: PlaceFeature[] = [];
     for (const f of majors) {
       const near = kept.some(
         (k) => pxApart(k.geometry.coordinates, f.geometry.coordinates, z) < MIN_PX,
