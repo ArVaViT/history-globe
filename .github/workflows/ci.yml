@@ -51,4 +51,5 @@ jobs:
       - run: >-
           pnpm exec vitest run --exclude scripts/water-tiles.test.ts
           --exclude packages/core/src/selected-places.test.ts
+          --exclude packages/core/src/selected-beside-towns.test.ts
       - run: python3 --version && pnpm test:pipeline

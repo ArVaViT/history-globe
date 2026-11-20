@@ -1,5 +1,6 @@
 import type { Locale } from "@hg/model";
-import { zoomForKind } from "./kinds.ts";
+import { POINT_ZOOM, zoomForKind } from "./kinds.ts";
+import { type GreatTown, type Life, zoomBeside } from "./majors.ts";
 import type { LonLat, Renderer } from "./renderer.ts";
 import {
   createStore,
@@ -26,6 +27,8 @@ export interface PlaceInfo {
   readonly at: LonLat;
   /** OpenBible type: settlement, region, body of water, mountain, … (kinds.ts) */
   readonly kind: string;
+  /** A great town (majors.ts isMajor): when it stands, for the places flown to beside it. */
+  readonly great?: Life;
 }
 
 export interface TourStop {
@@ -104,6 +107,9 @@ export function createEngine(options: {
   readonly initial?: Partial<GlobeState>;
 }): Engine {
   const { renderer, places } = options;
+  const greatTowns: GreatTown[] = [];
+  for (const p of places.values())
+    if (p.great) greatTowns.push({ id: p.id, at: p.at, life: p.great });
   const tours = new Map((options.tours ?? []).map((t) => [t.id, t]));
   // A walk through Jerusalem flies much closer than a journey, so its stops do not pile
   // into one point.
@@ -166,7 +172,7 @@ export function createEngine(options: {
       const camera = renderer.getCamera();
       renderer.flyTo({
         center: place.at,
-        zoom: Math.max(camera.zoom, zoomForKind(place.kind)),
+        zoom: Math.max(camera.zoom, selectedZoom(place, greatTowns, store.get().year)),
         pitch: Math.max(camera.pitch, 45),
       });
     }
@@ -275,6 +281,23 @@ export function createEngine(options: {
       renderer.destroy();
     },
   };
+}
+
+/**
+ * The zoom a selected place is flown to: its kind's, and for a town or a landmark close
+ * enough to set it apart from the great town beside it (Golgotha by Jerusalem). Regions,
+ * seas and rivers keep their kind's: they are framed whole, not set beside a town.
+ */
+export function selectedZoom(
+  place: PlaceInfo,
+  greatTowns: readonly GreatTown[],
+  year: number,
+): number {
+  const zoom = zoomForKind(place.kind);
+  // A great town is itself the setting: Jerusalem is not flown in to part it from the City
+  // of David, 400 m off, whose ring waits for a closer view (majors.ts thinMajors).
+  if (zoom < POINT_ZOOM || place.great) return zoom;
+  return zoomBeside(place, zoom, greatTowns, year);
 }
 
 /**
