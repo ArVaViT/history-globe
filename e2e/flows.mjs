@@ -880,6 +880,100 @@ await step(
   },
 );
 
+// A phone upright (390 x 844): the card takes the lower part of the screen, and what it is
+// about has to stay on the map above it, where a finger can still reach the map.
+const phone = await newPage(browser, { width: 390, height: 844 });
+phone.on("pageerror", (e) => errors.push(`pageerror: ${e.message}`));
+/** Where a place is drawn, and what is on top of the screen there: the map, or a panel. */
+const onMap = (id) =>
+  phone.evaluate((id) => {
+    const m = window.__hgMap;
+    const f = m.queryRenderedFeatures().find((x) => x.properties?.id === id);
+    if (!f) return null;
+    const p = m.project(f.geometry.coordinates);
+    const card = document.querySelector("section.hg-card")?.getBoundingClientRect();
+    return {
+      x: Math.round(p.x),
+      y: Math.round(p.y),
+      top: document.elementFromPoint(p.x, p.y)?.tagName,
+      cardTop: card && card.height > 0 ? Math.round(card.top) : null,
+    };
+  }, id);
+async function visibleOnPhone(id, what) {
+  await mapReady(phone);
+  await settled(phone, 25_000);
+  const at = await onMap(id);
+  expect(at, `${what} is not drawn`);
+  expect(at.top === "CANVAS", `${at.top} over ${what} at ${at.x},${at.y}`);
+  expect(
+    at.cardTop !== null && at.y < at.cardTop,
+    `${what} at y ${at.y}, the card at ${at.cardTop}`,
+  );
+}
+await step("phone: a place's card leaves the place on the map above it", async () => {
+  await phone.goto(BASE + "?locale=ru&year=30&place=a15257a");
+  await phone.getByRole("heading", { name: "Иерусалим" }).waitFor({ timeout: 10000 });
+  await visibleOnPhone("a15257a", "Jerusalem");
+});
+await step("phone: a tour's stop stays on the map above its card", async () => {
+  // Paul's second journey at Troas: a stop with the relief of its leg and a long line.
+  await phone.goto(BASE + "?locale=ru&tour=paul-2&stop=4");
+  await phone.getByRole("heading", { name: "Троада" }).waitFor({ timeout: 10000 });
+  await visibleOnPhone("a91c509", "Troas");
+  // The stepping stays in reach under the stop's text, however long it is.
+  const next = await phone.getByRole("button", { name: /^Дальше/ }).boundingBox();
+  expect(next && next.y + next.height <= 844, `Next at ${JSON.stringify(next)}`);
+});
+await step("phone: the distance between two places picked on the map by tap", async () => {
+  await phone.goto(BASE + "?locale=ru&year=30&ref=Luke.10");
+  await mapReady(phone);
+  await phone.getByRole("button", { name: "Инструменты" }).click();
+  await phone.getByRole("button", { name: /^Расстояние/ }).click();
+  await phone.getByText("Выберите первое место").waitFor({ timeout: 8000 });
+  // A place drawn on the open map, not under a panel, and not the one picked before.
+  const pick = async (not) => {
+    await settled(phone, 25_000);
+    const at = await phone.evaluate((not) => {
+      const m = window.__hgMap;
+      for (const f of m.queryRenderedFeatures()) {
+        const id = f.properties?.id;
+        if (!id || id === not || f.geometry.type !== "Point") continue;
+        const p = m.project(f.geometry.coordinates);
+        if (p.x < 30 || p.x > 360 || p.y < 0 || p.y > 844) continue;
+        if (document.elementFromPoint(p.x, p.y)?.tagName === "CANVAS") return { id, ...p };
+      }
+      return null;
+    }, not);
+    expect(at, "no place to pick on the open map");
+    await phone.mouse.click(at.x, at.y);
+    return at.id;
+  };
+  const first = await pick(null);
+  await phone.getByText("Теперь второе").waitFor({ timeout: 8000 });
+  // The first pick opened no card over the map: the second is still in reach.
+  expect((await phone.locator("section.hg-card h2").count()) === 0, "a card opened");
+  await pick(first);
+  await phone.getByText(/^\d+ км по прямой$/).waitFor({ timeout: 8000 });
+  // The picks leave no place selected: a link copied now opens no card.
+  await until(async () => {
+    const url = await phone.evaluate(() => location.search);
+    return !new URLSearchParams(url).has("place");
+  }, "a pick left place= in the link");
+  await phone.getByRole("button", { name: "Закрыть инструменты" }).click();
+  // Closed, the tool gives back the map, not the last pick's card.
+  await phone.waitForTimeout(500);
+  expect((await phone.locator("section.hg-card h2").count()) === 0, "a card opened on close");
+});
+await step("phone on its side: a tour's stepping stays on screen", async () => {
+  await phone.setViewportSize({ width: 844, height: 390 });
+  await phone.goto(BASE + "?locale=ru&tour=paul-2&stop=4");
+  await phone.getByRole("heading", { name: "Троада" }).waitFor({ timeout: 10000 });
+  await settled(phone, 25_000);
+  const next = await phone.getByRole("button", { name: /^Дальше/ }).boundingBox();
+  expect(next && next.y + next.height <= 390, `Next at ${JSON.stringify(next)}`);
+});
+await phone.context().close();
+
 console.log(results.join("\n"));
 console.log(errors.length ? [...new Set(errors)].join("\n") : "no page errors");
 await browser.close();

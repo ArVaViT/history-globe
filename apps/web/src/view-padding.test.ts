@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { viewPadding } from "./view-padding";
+import { sitesFrame, viewPadding } from "./view-padding";
 
 describe("viewPadding", () => {
   it("keeps a phone's place between the header and the card on the timeline", () => {
@@ -213,5 +213,39 @@ describe("viewPadding", () => {
         mapOnly: true,
       }),
     ).toEqual(viewPadding({ w: 1440, h: 900 }));
+  });
+});
+
+describe("a phone picking places for a tool", () => {
+  it("frames the map below the tool's panel, and under the header without one", () => {
+    const at = { w: 390, h: 844, timeline: 60, card: false };
+    expect(viewPadding(at).top).toBe(64);
+    // The distance's panel reaching 380 px down: the places land under it.
+    expect(viewPadding({ ...at, cover: 380 })).toEqual({
+      top: 388,
+      bottom: 84,
+      left: 0,
+      right: 0,
+    });
+    // A card open keeps its own frame: the column folds under it.
+    expect(viewPadding({ ...at, card: true, cover: 380 }).top).toBe(64);
+  });
+});
+
+describe("sitesFrame", () => {
+  const at = [35.0, 31.8] as const;
+  it("frames a disputed place with all its candidate sites", () => {
+    const sites = [{ at: [34.99, 31.84] as const }, { at: [35.13, 31.83] as const }];
+    const frame = sitesFrame(at, sites) ?? [];
+    expect(frame.slice(0, 3)).toEqual([at, ...sites.map((x) => x.at)]);
+    // A fifth of the width more on either side: 34.99 to 35.13 is 0.14 wide.
+    const lons = frame.map((p) => p[0]);
+    expect(Math.min(...lons)).toBeCloseTo(34.962);
+    expect(Math.max(...lons)).toBeCloseTo(35.158);
+  });
+  it("leaves a place with one site or none to its own flight", () => {
+    expect(sitesFrame(at, undefined)).toBeNull();
+    expect(sitesFrame(at, [])).toBeNull();
+    expect(sitesFrame(at, [{ at }])).toBeNull();
   });
 });
