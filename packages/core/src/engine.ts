@@ -284,10 +284,6 @@ export function createEngine(options: {
 }
 
 /**
- * The zoom for a tour from how far its stops spread: TOUR_ZOOM for 150 km and more, one step
- * closer for each halving, at most 13 (a city's streets).
- */
-/**
  * The zoom a selected place is flown to: its kind's, and for a town or a landmark close
  * enough to set it apart from the great town beside it (Golgotha by Jerusalem). Regions,
  * seas and rivers keep their kind's: they are framed whole, not set beside a town.
@@ -304,6 +300,10 @@ export function selectedZoom(
   return zoomBeside(place, zoom, greatTowns, year);
 }
 
+/**
+ * The zoom for a tour from how far its stops spread: TOUR_ZOOM for 150 km and more, one step
+ * closer for each halving, at most 13 (a city's streets).
+ */
 export function zoomForSpread(points: readonly LonLat[]): number {
   if (points.length === 0) return TOUR_ZOOM;
   const lons = points.map((p) => p[0]);
