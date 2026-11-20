@@ -514,10 +514,12 @@ export function App({ link }: { link: UrlView }) {
   // A place opened while a tool is open is the tool's next step: an end of the distance, or
   // a stop of the lesson (at the year shown). Opening the tool with a place open counts it.
   const pickedFor = tool === "measure" || tool === "lesson" ? tool : null;
-  // On a phone a place picked for the distance or the lesson opens no card: the card would
-  // take the lower half of the map and the next place could not be reached. The tool's
-  // panel at the top names what was picked.
-  const picking = narrow && pickedFor !== null && !compact;
+  // A phone on its side (SIDEWAYS): wider than `narrow`, as short as a phone.
+  const sideways = useMedia(SIDEWAYS) && !compact;
+  // On a phone, upright or on its side, a place picked for the distance or the lesson opens
+  // no card: the card would take half the map and the next place could not be reached. The
+  // tool's panel names what was picked.
+  const picking = (narrow || sideways) && pickedFor !== null && !compact;
   const opened = state.selectedPlace;
   const [stepSeen, setStepSeen] = useState<string | null>(null);
   const stepKey = pickedFor && opened ? `${pickedFor}:${opened}` : null;
@@ -537,6 +539,12 @@ export function App({ link }: { link: UrlView }) {
     // Only a place with verses makes a stop.
     if (data?.byId.get(opened)?.props.osis.length) addStop(opened);
   }, [pickedFor, opened, data]);
+  // Taken by the tool, a pick on a phone leaves no place selected behind: closing the tool
+  // comes back to the map, not to the last pick's card, and a link copied meanwhile opens
+  // none. (The effects above have read it by now.)
+  useEffect(() => {
+    if (picking && opened) engine?.selectPlace(null, { fly: false });
+  }, [picking, opened, engine]);
   const fromEntry = measure.from ? data?.byId.get(measure.from) : undefined;
   const toEntry = measure.to ? data?.byId.get(measure.to) : undefined;
   const toAt = toEntry?.info.at;
@@ -562,12 +570,22 @@ export function App({ link }: { link: UrlView }) {
   useEffect(() => {
     const entry = framedSites ? data?.byId.get(framedSites) : undefined;
     const points = entry ? sitesFrame(entry.info.at, data?.sites.get(entry.props.id)) : null;
-    if (!globe || !points) return;
+    // One more move after the flight: not for those who asked for less motion.
+    if (!globe || !points || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const id = setTimeout(() => {
       globe.renderer.fitTo(points);
     }, MEASURE_FIT_DELAY_MS);
+    // A reader who takes the map meanwhile keeps it where they put it.
+    const el = container.current;
+    const yours = () => {
+      clearTimeout(id);
+    };
+    el?.addEventListener("pointerdown", yours);
+    el?.addEventListener("wheel", yours, { passive: true });
     return () => {
       clearTimeout(id);
+      el?.removeEventListener("pointerdown", yours);
+      el?.removeEventListener("wheel", yours);
     };
   }, [globe, data, framedSites]);
   const tour = state.tour ? data?.tours.find((x) => x.id === state.tour?.id) : undefined;
@@ -597,7 +615,6 @@ export function App({ link }: { link: UrlView }) {
   // until the card closes.
   // On its side a phone has no room for the overview or a tool above the open player
   // either: it folds while one is open too.
-  const sideways = useMedia(SIDEWAYS) && !compact;
   const sidePanel = sideways && ((moreOpen && !searchOpen) || tool !== null);
   const covered = ((sideways || narrow) && cardOpen) || sidePanel;
   const [overCard, setOverCard] = useState(false);
@@ -853,7 +870,11 @@ export function App({ link }: { link: UrlView }) {
                     <Suspense fallback={null}>
                       <ToolsPanel
                         tool={tool}
-                        compact={narrow && cardOpen}
+                        // On its side a phone has no height for the distance's steps under
+                        // the header: one line, the distance in it.
+                        compact={
+                          (narrow && cardOpen) || (sideways && picking && tool === "measure")
+                        }
                         onTool={openTool}
                         onClose={() => {
                           openTool(null);

@@ -134,10 +134,11 @@ export function TourStopCard({
   const shape = profile && onFoot ? profileShape(profile, PROFILE_W, PROFILE_H) : null;
 
   return (
+    // On a phone on its side it keeps above the player in the same way, the stepping in view.
     // On a phone the card stands on the folded player under the stop, at most half the
     // screen tall, so the stop and its route stay on the map above it: the stop's text
     // scrolls between the tour's name and its verse and stepping, which stay put.
-    <Panel className="w-card px-5 pt-4 pb-4 max-md:flex max-md:max-h-[48dvh] max-md:flex-col">
+    <Panel className="w-card px-5 pt-4 pb-4 max-md:flex max-md:max-h-[48dvh] max-md:flex-col sideways:flex sideways:max-h-[calc(100dvh-var(--hg-timeline-h)-44px)] sideways:flex-col">
       <div className="flex shrink-0 items-center justify-between">
         <div className="text-[12px] text-ink-soft">
           {/* Where we are is the dots below; screen readers hear it in the live region. */}
@@ -153,7 +154,7 @@ export function TourStopCard({
       </div>
       <div
         ref={scrolls}
-        className="hg-fade-phone max-md:-mx-5 max-md:min-h-0 max-md:overflow-y-auto max-md:px-5 max-md:[scrollbar-width:thin]"
+        className="hg-fade-phone max-md:-mx-5 max-md:min-h-0 max-md:overflow-y-auto max-md:px-5 max-md:[scrollbar-width:thin] sideways:-mx-5 sideways:min-h-0 sideways:overflow-y-auto sideways:px-5 sideways:[scrollbar-width:thin]"
       >
         {/* Read out when the stop changes, by the buttons, the dots or the arrow keys. */}
         {/* On a phone the stop's words come before the relief, which can wait for a scroll. */}

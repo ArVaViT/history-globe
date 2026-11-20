@@ -767,7 +767,7 @@ function MoreMenu({
         title={t("time.more")}
         aria-expanded={open}
         aria-controls={open ? "player-more" : undefined}
-        className={`grid size-8 place-items-center rounded-full hover:bg-paper-2 hover:text-ink ${open ? "bg-paper-2 text-ink" : "text-ink-soft"}`}
+        className={`hg-tap-row grid size-8 place-items-center rounded-full hover:bg-paper-2 hover:text-ink ${open ? "bg-paper-2 text-ink" : "text-ink-soft"}`}
       >
         <Ellipsis className="size-5" />
         {speed !== 1 && (

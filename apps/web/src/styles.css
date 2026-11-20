@@ -287,6 +287,12 @@ summary {
       height: max(100%, 44px);
       translate: -50% -50%;
     }
+    /* A button in a row of buttons (the header's, the player's, a card's) widens only
+       upward and downward: sideways its layer would cover the next one's edge. One whose
+       neighbour sits in another box says so itself (hg-tap-row). */
+    :where(button:has(+ button), button + button, .hg-tap-row):not(.hg-tap-own)::after {
+      width: 100%;
+    }
   }
 }
 
@@ -431,9 +437,9 @@ summary {
   background: linear-gradient(to bottom, transparent, var(--color-paper));
 }
 
-/* The same on a phone only, and only while there is more to scroll to (useScrollsMark):
-   a tour's stop, whose text scrolls there alone and mostly fits. */
-@media (max-width: 767px) {
+/* The same on a phone only (upright or on its side), and only while there is more to
+   scroll to (useScrollsMark): a tour's stop, whose text scrolls there alone. */
+@media (max-width: 767px), (min-width: 768px) and (max-height: 560px) {
   .hg-fade-phone {
     scroll-padding-bottom: 24px;
   }

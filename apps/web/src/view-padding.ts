@@ -111,12 +111,20 @@ export function viewPadding({
 
 /**
  * The points a phone frames for a disputed place: the place and each of its candidate
- * sites. None for a place with one site or none, which its own flight shows.
+ * sites, and a margin of a fifth of their width on either side, so that a site at the edge
+ * of a narrow screen keeps its name in view. None for a place with one site or none, which
+ * its own flight shows.
  */
 export function sitesFrame(
   at: readonly [number, number],
   sites: readonly { readonly at: readonly [number, number] }[] | undefined,
 ): (readonly [number, number])[] | null {
   if (!sites || sites.length < 2) return null;
-  return [at, ...sites.map((x) => x.at)];
+  const points = [at, ...sites.map((x) => x.at)];
+  const lons = points.map((p) => p[0]);
+  const west = Math.min(...lons);
+  const east = Math.max(...lons);
+  const side = Math.max((east - west) * 0.2, 0.01);
+  const lat = at[1];
+  return [...points, [west - side, lat], [east + side, lat]];
 }

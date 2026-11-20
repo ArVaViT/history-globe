@@ -954,7 +954,23 @@ await step("phone: the distance between two places picked on the map by tap", as
   expect((await phone.locator("section.hg-card h2").count()) === 0, "a card opened");
   await pick(first);
   await phone.getByText(/^\d+ км по прямой$/).waitFor({ timeout: 8000 });
+  // The picks leave no place selected: a link copied now opens no card.
+  await until(async () => {
+    const url = await phone.evaluate(() => location.search);
+    return !new URLSearchParams(url).has("place");
+  }, "a pick left place= in the link");
   await phone.getByRole("button", { name: "Закрыть инструменты" }).click();
+  // Closed, the tool gives back the map, not the last pick's card.
+  await phone.waitForTimeout(500);
+  expect((await phone.locator("section.hg-card h2").count()) === 0, "a card opened on close");
+});
+await step("phone on its side: a tour's stepping stays on screen", async () => {
+  await phone.setViewportSize({ width: 844, height: 390 });
+  await phone.goto(BASE + "?locale=ru&tour=paul-2&stop=4");
+  await phone.getByRole("heading", { name: "Троада" }).waitFor({ timeout: 10000 });
+  await settled(phone, 25_000);
+  const next = await phone.getByRole("button", { name: /^Дальше/ }).boundingBox();
+  expect(next && next.y + next.height <= 390, `Next at ${JSON.stringify(next)}`);
 });
 await phone.context().close();
 
