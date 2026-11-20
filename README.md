@@ -16,7 +16,7 @@ article with its sources. The site has no accounts, no ads and no fees. It is ma
 
 ## What it holds
 
-As of the release of 2026-11-17 (`api/v1/index.json`, `built_at`):
+As of the release of 2026-11-20 (`api/v1/index.json`, `built_at`):
 
 - 21 languages: English, Russian, Ukrainian, Spanish, Portuguese, German, French, Italian,
   Dutch, Polish, Czech, Swedish, Norwegian Bokmål, Danish, Tagalog, Serbian, Hungarian, Finnish,
