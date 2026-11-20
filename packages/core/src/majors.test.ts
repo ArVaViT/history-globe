@@ -91,11 +91,30 @@ describe("the great towns kept at each zoom", () => {
     expect(names(30)).toContain("Capernaum");
   });
 
-  it("gives the selected place's room first, and leaves it to the picked layer", () => {
+  it("leaves the selected town to the picked layer and the great towns round it on the map", () => {
+    const plain = thinMajors(levant, -1000, null);
     const majors = thinMajors(levant, -1000, String(bethel.properties?.["id"]));
     expect(keptAt(majors, "Bethel")).toBeNull();
-    // Bethel's gold dot, 17 km from Jerusalem, keeps Jerusalem's ring off at zoom 5.
-    expect(keptAt(majors, "Jerusalem")).not.toContain(5);
+    // Bethel selected, 17 km from Jerusalem: Jerusalem keeps its ring wherever it had it.
+    expect(keptAt(majors, "Jerusalem")).toEqual(keptAt(plain, "Jerusalem"));
+  });
+
+  it("keeps the great towns round a selected river or hill", () => {
+    const place = (name: string, kind: string, lon: number, lat: number, props = {}) =>
+      town(name, lon, lat, { kind, rank: 3, ...props });
+    // Abana, a river drawn as a line, at OpenBible's point 300 m from Damascus.
+    const abana = place("Abana", "river", 36.305, 33.51354, { line: true });
+    // Golgotha, a hill, beside Jerusalem.
+    const golgotha = place("Golgotha", "hill", 35.2296, 31.7785);
+    const all = { ...levant, features: [...levant.features, abana, golgotha] };
+    const plain = thinMajors(all, -1000, null);
+    for (const [picked, town] of [
+      [abana, "Damascus"],
+      [golgotha, "Jerusalem"],
+    ] as const) {
+      const majors = thinMajors(all, -1000, String(picked.properties?.["id"]));
+      expect(keptAt(majors, town)).toEqual(keptAt(plain, town));
+    }
   });
 
   it("reads the years as the style does (OUT_OF_TIME)", () => {

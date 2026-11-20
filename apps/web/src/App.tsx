@@ -553,13 +553,14 @@ export function App({ link }: { link: UrlView }) {
   // On a phone an open card takes the lower half: the column folds to its header.
   // A quiz on the tour stands where the tour's card was: its stop would give answers.
   const cardOpen = parts.card && Boolean((tour && state.tour) || selected);
-  // A phone on its side: the open player would leave the card a strip above it, so the
-  // player folds to its year while a card is open and opens again when the card closes.
-  // Opened again from its year, it stays open until the card closes.
+  // A phone, upright or on its side: the open player under the card left the map a strip
+  // above them (a 360 x 640 phone: 140 px), so the player folds to its year while a card
+  // is open and opens again when the card closes. Opened again from its year, it stays open
+  // until the card closes.
   const sideways = useMedia("(min-width: 768px) and (max-height: 560px)") && !compact;
   const [overCard, setOverCard] = useState(false);
   if (overCard && !cardOpen) setOverCard(false);
-  const playerFolded = folded || (sideways && cardOpen && !overCard);
+  const playerFolded = folded || ((sideways || narrow) && cardOpen && !overCard);
   // The quiz is the tour's: it ends with the tour.
   // Ended with its tour: closed and opened again, the tour opens on its card. (A stop moved
   // to is the same tour: the quiz stays.)
