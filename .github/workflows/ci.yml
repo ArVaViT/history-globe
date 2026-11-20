@@ -47,6 +47,8 @@ jobs:
       - run: pnpm format:check
       - run: pnpm lint
       - run: pnpm typecheck
-      # water-tiles.test.ts reads apps/web/public/data/water.geojson, which `pnpm data` builds.
-      - run: pnpm exec vitest run --exclude scripts/water-tiles.test.ts
+      # These read apps/web/public/data, which `pnpm data` builds: they run in the local gate.
+      - run: >-
+          pnpm exec vitest run --exclude scripts/water-tiles.test.ts
+          --exclude packages/core/src/selected-places.test.ts
       - run: python3 --version && pnpm test:pipeline
