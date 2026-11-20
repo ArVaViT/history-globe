@@ -112,6 +112,11 @@ describe("engine", () => {
     expect(zoomOf("judah")).toBe(zoomForKind("region"));
     // In the exile Jerusalem is not drawn: nothing to set Golgotha apart from.
     expect(zoomOf("golgotha", -560)).toBe(zoomForKind("hill"));
+    // placeZoom tells the same zoom without flying (the phone frames a place's sites by it).
+    const engine = createEngine({ renderer: new FakeRenderer(), places: near });
+    expect(engine.placeZoom("golgotha")).toBe(golgotha);
+    expect(engine.placeZoom("judah")).toBe(zoomForKind("region"));
+    expect(engine.placeZoom("atlantis")).toBeUndefined();
   });
 
   it("ignores unknown places", () => {

@@ -874,7 +874,7 @@ export class MapLibreRenderer implements Renderer {
       this.map.easeTo({ center: [at[0], at[1]], padding: pad, duration: 700 });
   }
 
-  fitTo(points: readonly LonLat[]): void {
+  fitTo(points: readonly LonLat[], options?: { readonly maxZoom?: number }): void {
     if (points.length === 0) return;
     // This framing is now the current one: setPadding and fitBounds below stop any move
     // under way, and the moveend that sends must not run an earlier fit's correction.
@@ -901,7 +901,7 @@ export class MapLibreRenderer implements Renderer {
         // More at the top, where the chapter's chip sits on a phone, and below, where the
         // names of the lowest places hang under their points.
         padding: margin,
-        maxZoom: 9,
+        maxZoom: options?.maxZoom ?? 9,
         pitch: 30,
         bearing: 0,
         duration: 1600,
