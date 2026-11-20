@@ -9,6 +9,8 @@ import {
   type Tour,
 } from "./engine.ts";
 import { FakeRenderer } from "./fake-renderer.ts";
+import { zoomForKind } from "./kinds.ts";
+import { BESIDE_PX, pxApart } from "./majors.ts";
 
 const places = new Map<string, PlaceInfo>([
   ["capernaum", { id: "capernaum", at: [35.575, 32.881], kind: "settlement" }],
@@ -81,6 +83,35 @@ describe("engine", () => {
     engine.selectPlace("capernaum");
     expect(renderer.last("selected")?.placeId).toBe("capernaum");
     expect(renderer.last("flyTo")?.zoom).toBeGreaterThan(regionZoom);
+  });
+
+  it("flies close enough to set a place apart from the great town beside it, in the town's years", () => {
+    const jerusalem = { gap_from: -585, gap_until: -537 };
+    const near = new Map<string, PlaceInfo>([
+      [
+        "jerusalem",
+        { id: "jerusalem", at: [35.23417, 31.77667], kind: "settlement", great: jerusalem },
+      ],
+      ["golgotha", { id: "golgotha", at: [35.2297, 31.7786], kind: "hill" }],
+      ["sinai", { id: "sinai", at: [33.97333, 28.53972], kind: "mountain" }],
+      ["judah", { id: "judah", at: [35.2, 31.7], kind: "region" }],
+    ]);
+    // A fresh engine for each: a flight never zooms out from the camera's zoom.
+    const zoomOf = (id: string, year = 30) => {
+      const renderer = new FakeRenderer();
+      createEngine({ renderer, places: near, initial: { year } }).selectPlace(id);
+      return renderer.last("flyTo")?.zoom ?? 0;
+    };
+    // 460 m apart: from zoom 13.2 the rings stand BESIDE_PX apart, Jerusalem still in view.
+    const golgotha = zoomOf("golgotha");
+    expect(pxApart([35.2297, 31.7786], [35.23417, 31.77667], golgotha)).toBeCloseTo(BESIDE_PX);
+    expect(golgotha).toBeGreaterThan(zoomForKind("hill"));
+    // The town itself, a mountain far from towns and a region keep their kind's zoom.
+    expect(zoomOf("jerusalem")).toBe(zoomForKind("settlement"));
+    expect(zoomOf("sinai")).toBe(zoomForKind("mountain"));
+    expect(zoomOf("judah")).toBe(zoomForKind("region"));
+    // In the exile Jerusalem is not drawn: nothing to set Golgotha apart from.
+    expect(zoomOf("golgotha", -560)).toBe(zoomForKind("hill"));
   });
 
   it("ignores unknown places", () => {

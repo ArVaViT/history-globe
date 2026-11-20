@@ -1,4 +1,4 @@
-import { NT_FROM, YEAR_MAX, type PlaceInfo, type Tour } from "@hg/core";
+import { isMajor, NT_FROM, YEAR_MAX, type PlaceInfo, type Tour } from "@hg/core";
 import type {
   ChapterYears,
   ContentRelease,
@@ -425,7 +425,15 @@ export async function loadData(): Promise<LoadedData> {
     };
     f.properties = props;
     const [lon = 0, lat = 0] = f.geometry.coordinates;
-    byId.set(props.id, { props, info: { id: props.id, at: [lon, lat], kind: props.kind } });
+    byId.set(props.id, {
+      props,
+      info: {
+        id: props.id,
+        at: [lon, lat],
+        kind: props.kind,
+        ...(isMajor(props) ? { great: props } : {}),
+      },
+    });
   }
   const lastId = Math.max(-1, ...places.features.map((f) => Number(f.id ?? -1)));
   for (const f of ancientPlaces(ancientFc, lastId + 1)) {
