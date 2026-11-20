@@ -48,6 +48,10 @@ export interface Layout {
   readonly personCard: boolean;
   /** A panel open in the left column: the overview, a tool or the search. */
   readonly leftPanel: boolean;
+  /** A place picked for a tool on a phone: its card stays closed, the map is the screen's. */
+  readonly noCard: boolean;
+  /** How far down the column's panels cover the map on a phone while it picks, in px. */
+  readonly cover: number;
 }
 
 export function useGlobe(
@@ -68,6 +72,8 @@ export function useGlobe(
     mapOnly: false,
     personCard: false,
     leftPanel: false,
+    noCard: false,
+    cover: 0,
   });
   const renderer = useRef<MapLibreRenderer | null>(null);
   const setLayout = useCallback((change: Partial<Layout>) => {
@@ -148,6 +154,7 @@ function createGlobe(
         chip: chipShown(),
         panel: l.leftPanel,
         mapOnly: l.compact && l.mapOnly,
+        cover: l.cover,
       });
     },
   });
@@ -165,7 +172,8 @@ function createGlobe(
   chipShown = () => !layout().compact && engine.store.get().focus !== null;
   cardOpen = () => {
     const s = engine.store.get();
-    return s.selectedPlace !== null || s.tour !== null || layout().personCard;
+    if (s.tour !== null || layout().personCard) return true;
+    return s.selectedPlace !== null && !layout().noCard;
   };
   // Until now the padding guessed a card was open: set the real one before the first frame,
   // then let the centre follow a card or a chapter's chip opening and closing.

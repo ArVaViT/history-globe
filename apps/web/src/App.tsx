@@ -48,7 +48,7 @@ import { FrameContext, frameParts } from "./frame";
 import { rememberLocale, startLocale, type UrlView } from "./url";
 import { loadPeople, personName, personYear, type People } from "./people";
 import { useGlobe, useGlobeState } from "./useGlobe";
-import { isNarrow } from "./view-padding";
+import { isNarrow, SIDEWAYS, sitesFrame } from "./view-padding";
 import { readPref, writePref } from "./storage";
 
 // Opened on demand, not needed for the first frame: loaded when first shown (ADR 0011).
@@ -514,6 +514,10 @@ export function App({ link }: { link: UrlView }) {
   // A place opened while a tool is open is the tool's next step: an end of the distance, or
   // a stop of the lesson (at the year shown). Opening the tool with a place open counts it.
   const pickedFor = tool === "measure" || tool === "lesson" ? tool : null;
+  // On a phone a place picked for the distance or the lesson opens no card: the card would
+  // take the lower half of the map and the next place could not be reached. The tool's
+  // panel at the top names what was picked.
+  const picking = narrow && pickedFor !== null && !compact;
   const opened = state.selectedPlace;
   const [stepSeen, setStepSeen] = useState<string | null>(null);
   const stepKey = pickedFor && opened ? `${pickedFor}:${opened}` : null;
@@ -548,19 +552,57 @@ export function App({ link }: { link: UrlView }) {
       clearTimeout(id);
     };
   }, [globe, fromEntry, toAt]);
+  // A disputed place on a phone: its candidate sites lie around it, some beyond the narrow
+  // map's sides, so once its flight has set off the frame widens to all of them, above the
+  // card. Not on a tour's stop, which frames its own way.
+  const framedSites =
+    narrow && !compact && !state.tour && !picking && state.selectedPlace
+      ? state.selectedPlace
+      : null;
+  useEffect(() => {
+    const entry = framedSites ? data?.byId.get(framedSites) : undefined;
+    const points = entry ? sitesFrame(entry.info.at, data?.sites.get(entry.props.id)) : null;
+    if (!globe || !points) return;
+    const id = setTimeout(() => {
+      globe.renderer.fitTo(points);
+    }, MEASURE_FIT_DELAY_MS);
+    return () => {
+      clearTimeout(id);
+    };
+  }, [globe, data, framedSites]);
   const tour = state.tour ? data?.tours.find((x) => x.id === state.tour?.id) : undefined;
   const tourStop = tour && state.tour ? tour.stops[state.tour.step] : undefined;
   // On a phone an open card takes the lower half: the column folds to its header.
   // A quiz on the tour stands where the tour's card was: its stop would give answers.
-  const cardOpen = parts.card && Boolean((tour && state.tour) || selected);
+  const cardOpen = parts.card && Boolean((tour && state.tour) || (selected && !picking));
+  // Picking, the tool's panel stands over the top of the map: the frame keeps below it.
+  useEffect(() => {
+    setLayout({ noCard: picking });
+    const el = picking ? document.getElementById("tools-panel") : null;
+    if (!el) {
+      setLayout({ cover: 0 });
+      return;
+    }
+    const sizes = new ResizeObserver(() => {
+      setLayout({ cover: Math.round(el.getBoundingClientRect().bottom) });
+    });
+    sizes.observe(el);
+    return () => {
+      sizes.disconnect();
+    };
+  }, [picking, setLayout]);
   // A phone, upright or on its side: the open player under the card left the map a strip
   // above them (a 360 x 640 phone: 140 px), so the player folds to its year while a card
   // is open and opens again when the card closes. Opened again from its year, it stays open
   // until the card closes.
-  const sideways = useMedia("(min-width: 768px) and (max-height: 560px)") && !compact;
+  // On its side a phone has no room for the overview or a tool above the open player
+  // either: it folds while one is open too.
+  const sideways = useMedia(SIDEWAYS) && !compact;
+  const sidePanel = sideways && ((moreOpen && !searchOpen) || tool !== null);
+  const covered = ((sideways || narrow) && cardOpen) || sidePanel;
   const [overCard, setOverCard] = useState(false);
-  if (overCard && !cardOpen) setOverCard(false);
-  const playerFolded = folded || ((sideways || narrow) && cardOpen && !overCard);
+  if (overCard && !covered) setOverCard(false);
+  const playerFolded = folded || (covered && !overCard);
   // The quiz is the tour's: it ends with the tour.
   // Ended with its tour: closed and opened again, the tour opens on its card. (A stop moved
   // to is the same tour: the quiz stays.)
@@ -999,7 +1041,8 @@ export function App({ link }: { link: UrlView }) {
                       }
                     />
                   ) : (
-                    selected && (
+                    selected &&
+                    !picking && (
                       <PlaceCard
                         key={selected.id}
                         place={selected}

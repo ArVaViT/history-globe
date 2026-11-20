@@ -34,7 +34,7 @@ export function ToursPanel({
           (the panel then fits above the timeline and fades out instead of being cut), each
           testament's heading stays in view over its own tours, and a focused tour is kept
           clear of it. */}
-      <div className="hg-fade max-h-[min(460px,52vh)] max-md:max-h-[calc(100dvh-var(--hg-timeline-h)-200px)] scroll-pt-7 overflow-y-auto [scrollbar-width:thin]">
+      <div className="hg-fade max-h-[min(460px,52vh)] max-md:max-h-[calc(100dvh-var(--hg-timeline-h)-200px)] sideways:max-h-[calc(100dvh-var(--hg-timeline-h)-160px)] scroll-pt-7 overflow-y-auto [scrollbar-width:thin]">
         {(["whole", "ot", "nt", "beyond"] as const).map((testament) => {
           // Tours come sorted by year: the Old Testament ones are before the era. One that
           // runs through both (the empires, Genesis to Acts) stands above them.

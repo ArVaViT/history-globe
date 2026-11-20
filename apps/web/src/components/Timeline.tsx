@@ -503,7 +503,9 @@ export function Timeline({
             }
             // Zoomed away from the year, the thumb waits at the edge, faded.
             data-away={year < view.from || year > view.to ? "" : undefined}
-            className="timeline-range absolute inset-x-0 top-[11px] h-6 w-full"
+            // On a touch screen it takes a fingertip's height, its band centred as before;
+            // the strip of marks above stays on top of it.
+            className="timeline-range absolute inset-x-0 top-[11px] h-6 w-full pointer-coarse:top-[3px] pointer-coarse:h-10"
           />
           {onEvent && inView.length > 0 && (
             // The strip of marks above the band: a press takes the nearest mark (within
