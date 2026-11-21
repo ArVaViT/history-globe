@@ -570,10 +570,13 @@ export function App({ link }: { link: UrlView }) {
   useEffect(() => {
     const entry = framedSites ? data?.byId.get(framedSites) : undefined;
     const points = entry ? sitesFrame(entry.info.at, data?.sites.get(entry.props.id)) : null;
+    // Sites a street apart (Golgotha's) are framed as close as the place's own flight, which
+    // sets it beside its great town; sites far apart (Emmaus's) still widen the frame.
+    const maxZoom = Math.max(9, (framedSites && globe?.engine.placeZoom(framedSites)) || 0);
     // One more move after the flight: not for those who asked for less motion.
     if (!globe || !points || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const id = setTimeout(() => {
-      globe.renderer.fitTo(points);
+      globe.renderer.fitTo(points, { maxZoom });
     }, MEASURE_FIT_DELAY_MS);
     // A reader who takes the map meanwhile keeps it where they put it.
     const el = container.current;

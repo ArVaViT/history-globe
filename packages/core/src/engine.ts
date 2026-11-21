@@ -68,6 +68,8 @@ export interface Engine {
   readonly setYear: (year: number) => void;
   readonly stepYear: (delta: number) => void;
   readonly selectPlace: (placeId: string | null, options?: { readonly fly?: boolean }) => void;
+  /** The zoom a place is flown to when selected (selectedZoom), at the current year. */
+  readonly placeZoom: (placeId: string) => number | undefined;
   readonly setLocale: (locale: Locale) => void;
   readonly setLayer: (layer: keyof LayerVisibility, visible: boolean) => void;
   /** Start a tour, at its first stop or at `step` (back from a stop's place card). */
@@ -222,6 +224,10 @@ export function createEngine(options: {
       store.set({ year: clampYear(store.get().year + delta) });
     },
     selectPlace,
+    placeZoom: (placeId) => {
+      const place = places.get(placeId);
+      return place ? selectedZoom(place, greatTowns, store.get().year) : undefined;
+    },
     setLocale: (locale) => {
       store.set({ locale });
     },
