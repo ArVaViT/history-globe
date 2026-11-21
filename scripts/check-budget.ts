@@ -8,6 +8,7 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
 import { gzipSync } from "node:zlib";
+import { LOCALES } from "../packages/model/src/locales.ts";
 
 const BUDGET_KB = 440;
 const dist = join(import.meta.dirname, "../apps/web/dist");
@@ -51,17 +52,24 @@ for (const f of js) {
  * The language a chunk belongs to, when all it holds is one language's words: its UI
  * dictionary (apps/web/src/i18n/<l>.json) or its model data (packages/model/src/locales/<l>.ts),
  * as the chunk's source map (apps/web/maps) says. A reader fetches only the language shown.
+ * Vite 8.3.8 leaves a JSON module's map without sources; such a chunk is named for its
+ * dictionary ("nb-<hash>.js"), so the name tells its language.
  */
 const languageOf = (file: string): string | undefined => {
+  const rel = relative(dist, file);
   let sources: string[];
   try {
     sources = (
-      JSON.parse(readFileSync(join(maps, `${relative(dist, file)}.map`), "utf8")) as {
+      JSON.parse(readFileSync(join(maps, `${rel}.map`), "utf8")) as {
         sources: string[];
       }
     ).sources;
   } catch {
     return undefined;
+  }
+  if (sources.length === 0) {
+    const named = /^assets\/([a-z]{2})-[\w-]+\.js$/.exec(rel)?.[1];
+    return named && (LOCALES as readonly string[]).includes(named) ? named : undefined;
   }
   const langs = new Set(
     sources.map((s) => /(?:\/i18n\/|\/locales\/)([a-z]{2})\.(?:json|ts)$/.exec(s)?.[1] ?? "-"),
