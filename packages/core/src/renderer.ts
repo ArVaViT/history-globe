@@ -98,8 +98,11 @@ export interface Renderer {
   ): void;
   /** The places of the running tour (empty when none): the rest of the map steps back. */
   setTourPlaces(placeIds: readonly string[]): void;
-  /** Frame these points (a chapter's places), clear of the interface. */
-  fitTo(points: readonly LonLat[]): void;
+  /**
+   * Frame these points (a chapter's places), clear of the interface; no closer than
+   * `maxZoom` (9 when not given).
+   */
+  fitTo(points: readonly LonLat[], options?: { readonly maxZoom?: number }): void;
   getCamera(): Camera;
   on<E extends keyof RendererEvents>(event: E, handler: RendererEvents[E]): () => void;
   destroy(): void;
