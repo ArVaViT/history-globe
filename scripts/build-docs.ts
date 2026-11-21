@@ -1357,7 +1357,7 @@ if (problems.length) throw new Error(`docs:\n${problems.join("\n")}`);
 console.log(`docs: ${PAGES.length} pages × ${LANGS.length} languages → apps/web/public/docs/`);
 
 // The repository's front pages against the build (scripts/repo-facts.ts): the numbers and
-// the date in README.md and CITATION.cff, and the credits of every source in
+// the release date in README.md and CITATION.cff, and the credits of every source in
 // docs/ATTRIBUTIONS.md and on the sources pages. Only with the data built.
 if (existsSync(join(data, "manifest.json")) && existsSync(join(pub, "api/v1/index.json"))) {
   const json = (path: string): unknown => JSON.parse(readFileSync(path, "utf8"));
@@ -1383,7 +1383,7 @@ if (existsSync(join(data, "manifest.json")) && existsSync(join(pub, "api/v1/inde
   };
   const problems = [
     ...["README.md", "CITATION.cff"].flatMap((f) =>
-      factMismatches(f, readFileSync(join(root, f), "utf8"), facts, site !== ""),
+      factMismatches(f, readFileSync(join(root, f), "utf8"), facts),
     ),
     // The registry: the sources the data build reads, and those the other steps read
     // (an older data build has no other_sources: rebuild it with `pnpm data`).
