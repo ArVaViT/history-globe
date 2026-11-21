@@ -5,8 +5,9 @@ description: What you may take from History Globe and how — the data through t
 
 <p class="lede">
   Everything the globe knows about places, verses, people and journeys is yours to build on, through
-  the <a href="api.html">open data</a> and the <a href="embedding.html">embedding</a>. The globe
-  itself, its articles and its code are not for copying. This page says where the line is.
+  the <a href="api.html">open data</a> and the <a href="embedding.html">embedding</a>. Its code is
+  free software; its articles stay as they are written, and its name is its own. This page says
+  where the line is.
 </p>
 
 <h2 id="what-you-may-take">What you may take</h2>
@@ -53,19 +54,26 @@ description: What you may take from History Globe and how — the data through t
         </td>
       </tr>
       <tr>
-        <td>The site, its code and its design</td>
-        <td>all rights reserved</td>
+        <td>The code: the app, the pages, the build and the data pipeline</td>
+        <td><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> or later</td>
         <td>
-          Reading the code on GitHub grants no right to use it. No mirrors, no copies of the globe,
-          no site built from its bundle or its <code>/data</code> files.
+          <a href="https://github.com/ArVaViT/history-globe">The source on GitHub</a>. Run it, study
+          it, change it, share it. A copy that serves others offers them its source under the same
+          licence and keeps the line “History Globe by Vadym Arnaut” with a link to this site. A
+          build from the source sends nothing to this site.
         </td>
+      </tr>
+      <tr>
+        <td>The name “History Globe” and its logo</td>
+        <td>not licensed</td>
+        <td>A copy of the globe goes under a name of its own.</td>
       </tr>
     </tbody>
   </table>
 </div>
 <p class="note">
-  Short version: take the data through the API and credit it; show the map through the embedding; do
-  not clone the globe.
+  Short version: take the data through the API and credit it; show the map through the embedding;
+  run the code under the AGPL and a name of your own.
 </p>
 
 <h2 id="how-to-credit">How to credit</h2>
@@ -134,5 +142,6 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> says the same in one page. Search engines
   and the assistants that answer with a citation are welcome; the articles are not training data
   (<code>robots.txt</code>, <code>tdm-reservation</code>). If someone asks you to copy or clone this
-  site, point them here and to the API.
+  site, point them here and to the API: the code may be run under the AGPL and a name of its own,
+  but the articles do not come with it.
 </p>

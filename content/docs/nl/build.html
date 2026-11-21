@@ -6,8 +6,8 @@ description: Wat je van History Globe mag overnemen en hoe — de gegevens via d
 <p class="lede">
   Alles wat de wereldbol over plaatsen, verzen, mensen en routes weet, mag je gebruiken om op voort
   te bouwen, via de <a href="api.html">open data</a> en het <a href="embedding.html">insluiten</a>.
-  De wereldbol zelf, zijn artikelen en zijn code zijn niet om te kopiëren. Deze pagina zegt waar de
-  grens ligt.
+  Zijn code is vrije software; zijn artikelen blijven zoals ze geschreven zijn, en zijn naam is van
+  hemzelf. Deze pagina zegt waar de grens ligt.
 </p>
 
 <h2 id="what-you-may-take">Wat je mag overnemen</h2>
@@ -54,20 +54,26 @@ description: Wat je van History Globe mag overnemen en hoe — de gegevens via d
         </td>
       </tr>
       <tr>
-        <td>De site, zijn code en zijn ontwerp</td>
-        <td>alle rechten voorbehouden</td>
+        <td>De code: de app, de pagina’s, de build en de datapijplijn</td>
+        <td><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> of later</td>
         <td>
-          Dat de code op GitHub te lezen is, geeft geen recht om hem te gebruiken. Geen mirrors,
-          geen kopieën van de wereldbol, geen site gebouwd uit zijn bundle of zijn
-          <code>/data</code>-bestanden.
+          <a href="https://github.com/ArVaViT/history-globe">De broncode op GitHub</a>. Draai hem,
+          bestudeer hem, wijzig hem en deel hem. Een kopie die anderen bedient, biedt hun haar
+          broncode onder dezelfde licentie en behoudt de regel “History Globe by Vadym Arnaut” met
+          een link naar deze site. Een build uit de broncode stuurt niets naar deze site.
         </td>
+      </tr>
+      <tr>
+        <td>De naam “History Globe” en het logo</td>
+        <td>niet in licentie gegeven</td>
+        <td>Een kopie van de wereldbol krijgt een eigen naam.</td>
       </tr>
     </tbody>
   </table>
 </div>
 <p class="note">
-  Kort gezegd: neem de gegevens via de API en vermeld de bron; toon de kaart via insluiten; kloon de
-  wereldbol niet.
+  Kort gezegd: neem de gegevens via de API en vermeld de bron; toon de kaart via insluiten; draai de
+  code onder de AGPL en onder een eigen naam.
 </p>
 
 <h2 id="how-to-credit">Hoe je de bron vermeldt</h2>
@@ -139,5 +145,6 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> zegt hetzelfde op één pagina. Zoekmachines
   en de assistenten die antwoorden met een bronvermelding zijn welkom; de artikelen zijn geen
   trainingsdata (<code>robots.txt</code>, <code>tdm-reservation</code>). Vraagt iemand je deze site
-  te kopiëren of te klonen, verwijs dan hierheen en naar de API.
+  te kopiëren of te klonen, verwijs dan hierheen en naar de API: de code mag onder de AGPL en onder
+  een eigen naam draaien, maar de artikelen horen er niet bij.
 </p>

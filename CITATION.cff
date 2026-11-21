@@ -25,8 +25,8 @@ abstract: >-
   Licences differ by part: the data (places, names, tours, events, people and
   the open API at https://historyglobe.app/api/v1/) is under CC BY 4.0; the
   place articles and the answered questions are under CC BY-NC-ND 4.0; the
-  code, the site and its design are all rights reserved (source-available,
-  not open source). Third-party data keeps its own licence. See LICENSE.
+  code is free software under AGPL-3.0-or-later, and the name and the logo are
+  not licensed. Third-party data keeps its own licence. See LICENSE.
 keywords:
   - Bible
   - historical geography
@@ -34,6 +34,10 @@ keywords:
   - ancient Near East
   - digital humanities
   - open data
+license:
+  - AGPL-3.0-or-later
+  - CC-BY-4.0
+  - CC-BY-NC-ND-4.0
 license-url: "https://github.com/ArVaViT/history-globe/blob/main/LICENSE"
 preferred-citation:
   type: website

@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { runInNewContext } from "node:vm";
 import { describe, expect, it } from "vitest";
-import { BEACON_PATH, BEACON_SCRIPT, BEACON_TAG, OWN_HOSTS } from "./beacon.ts";
+import { BEACON_PATH, BEACON_SCRIPT, BEACON_TAG, beaconTag, OWN_HOSTS } from "./beacon.ts";
 
 /** Runs the very script a page carries, on a page at this address, and tells what it did. */
 function runOn(hostname: string, protocol = "https:") {
@@ -36,7 +36,7 @@ describe("the beacon", () => {
     "history-globe.vercel.app",
     "history-globe-i3d5uoxab-vadyms-projects-dfb6f76f.vercel.app",
     "history-globe-git-auto-protection-1019-vadyms-projects-dfb6f76f.vercel.app",
-    "vadyms-macbook.local",
+    "dev-laptop.local",
     "10.0.0.7",
     "172.16.0.1",
     "172.31.255.254",
@@ -107,5 +107,16 @@ describe("the beacon", () => {
       expect(/img-src([^;]*)/.exec(p)?.[1]).toContain(" https://historyglobe.app");
     }
     expect(BEACON_TAG).toBe(`<script>${BEACON_SCRIPT}</script>`);
+  });
+
+  // A build from the source is a lawful copy under the AGPL (ADR 0019): it must not report.
+  it.each([
+    ["https://historyglobe.app", BEACON_TAG],
+    ["https://historyglobe.app/", BEACON_TAG],
+    ["https://globe.example.org", ""],
+    ["", ""],
+    [undefined, ""],
+  ])("is in a build for %s only if that is the site's own address", (site, tag) => {
+    expect(beaconTag(site)).toBe(tag);
   });
 });

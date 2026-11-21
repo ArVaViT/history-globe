@@ -5,8 +5,9 @@ description: Hvad du må tage fra History Globe, og hvordan – dataene gennem A
 
 <p class="lede">
   Alt, hvad globussen ved om steder, vers, personer og rejser, kan du bygge videre på gennem de
-  <a href="api.html">åbne data</a> og <a href="embedding.html">indlejringen</a>. Selve globussen,
-  dens artikler og dens kode er ikke til kopiering. Denne side siger, hvor grænsen går.
+  <a href="api.html">åbne data</a> og <a href="embedding.html">indlejringen</a>. Dens kode er fri
+  software; dens artikler forbliver, som de er skrevet, og dens navn er dens eget. Denne side siger,
+  hvor grænsen går.
 </p>
 
 <h2 id="what-you-may-take">Hvad du må tage</h2>
@@ -53,19 +54,26 @@ description: Hvad du må tage fra History Globe, og hvordan – dataene gennem A
         </td>
       </tr>
       <tr>
-        <td>Webstedet, dets kode og dets design</td>
-        <td>alle rettigheder forbeholdes</td>
+        <td>Koden: appen, siderne, bygget og datapipelinen</td>
+        <td><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> eller senere</td>
         <td>
-          At læse koden på GitHub giver ingen ret til at bruge den. Ingen spejle, ingen kopier af
-          globussen, intet websted bygget af dens bundle eller dens <code>/data</code>-filer.
+          <a href="https://github.com/ArVaViT/history-globe">Kildekoden på GitHub</a>. Kør den,
+          studér den, ændr den og del den. En kopi, der betjener andre, tilbyder dem sin kildekode
+          under samme licens og beholder linjen »History Globe by Vadym Arnaut« med et link til
+          dette websted. Et byg fra kildekoden sender intet til dette websted.
         </td>
+      </tr>
+      <tr>
+        <td>Navnet »History Globe« og dets logo</td>
+        <td>ikke licenseret</td>
+        <td>En kopi af globussen bærer sit eget navn.</td>
       </tr>
     </tbody>
   </table>
 </div>
 <p class="note">
-  Kort fortalt: tag dataene gennem API’et og angiv kilden; vis kortet gennem indlejringen; klon ikke
-  globussen.
+  Kort fortalt: tag dataene gennem API’et og angiv kilden; vis kortet gennem indlejringen; kør koden
+  under AGPL og under et eget navn.
 </p>
 
 <h2 id="how-to-credit">Sådan angiver du kilden</h2>
@@ -136,5 +144,6 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> siger det samme på én side. Søgemaskiner og
   de assistenter, der svarer med en kildehenvisning, er velkomne; artiklerne er ikke træningsdata
   (<code>robots.txt</code>, <code>tdm-reservation</code>). Hvis nogen beder dig om at kopiere eller
-  klone dette websted, så henvis dem hertil og til API’et.
+  klone dette websted, så henvis dem hertil og til API’et: koden må køres under AGPL og under et
+  eget navn, men artiklerne følger ikke med.
 </p>

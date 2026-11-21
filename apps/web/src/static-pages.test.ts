@@ -21,7 +21,7 @@ describe("the static pages", () => {
   });
 
   it("carry the notice to the programs that read them, as the built pages do", () => {
-    for (const file of ["index.html", "public/404.html"])
+    for (const file of ["index.html", "public/404.html", "public/export/index.html"])
       expect(read(file), file).toContain(`<head>\n    ${NOTICE_COMMENT}\n`);
   });
 

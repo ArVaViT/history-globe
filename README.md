@@ -63,14 +63,18 @@ with their evidence in [`docs/crosswalk/their-errors.md`](docs/crosswalk/their-e
 
 ## Licences
 
-| What                                                 | Licence                             |
-| ---------------------------------------------------- | ----------------------------------- |
-| The data (places, names, tours, events, people, API) | CC BY 4.0                           |
-| The place articles and the answered questions        | CC BY-NC-ND 4.0                     |
-| The code, the site and its design                    | all rights reserved; public to read |
+| What                                                 | Licence                       |
+| ---------------------------------------------------- | ----------------------------- |
+| The code                                             | AGPL-3.0-or-later (`COPYING`) |
+| The data (places, names, tours, events, people, API) | CC BY 4.0                     |
+| The place articles and the answered questions        | CC BY-NC-ND 4.0               |
+| The reviews                                          | their authors'                |
+| The name "History Globe" and its logo                | not licensed                  |
 
-Third-party data keeps its own licence (`docs/ATTRIBUTIONS.md`). Details: `LICENSE`, ADR 0014
-and ADR 0016.
+Under section 7 of the AGPL, a modified version keeps the attribution "History Globe by Vadym
+Arnaut" with a link to https://historyglobe.app in what it shows its users, and goes under a
+name of its own. Third-party data keeps its own licence (`docs/ATTRIBUTIONS.md`). The map of
+paths to licences: `LICENSE`; the decisions: ADR 0016 and ADR 0019.
 
 ## How to cite
 
@@ -131,6 +135,15 @@ pull request; the whole gate runs locally before a merge, and releases are deplo
 (ADR 0012). What the data and content checks refuse, and why: `docs/data-checks.md`. The
 browser checks: `e2e/README.md`. How to contribute: `CONTRIBUTING.md`.
 
+### Running your own copy
+
+The code is yours to run under the AGPL. A copy that serves others must offer them its
+source, keep the attribution above and take a name of its own. The build needs no secret:
+`pnpm data && pnpm content && pnpm build` makes a complete site from the open data. Without
+`content/articles/` and `content/questions/` (CC BY-NC-ND, not for other sites) it builds
+without them. The origin beacon (ADR 0017) is written only into a build for
+`SITE_URL=https://historyglobe.app`, so a copy built from the source sends nothing to it.
+
 Keys in the app: `[` `]` move the year by 10 (with Shift by 100), Space plays, `/` searches,
 `←` `→` step through a tour, `N` turns north up, Esc closes.
 
@@ -165,6 +178,7 @@ maintainers' credentials; none of it is needed to work on the code or the conten
 ### Docs
 
 - `AGENTS.md` — rules for coding agents (and humans).
+- `CONTRIBUTING.md` — how to contribute, and how a contribution is licensed (DCO).
 - [`docs/adr/`](docs/adr/README.md) — architecture decisions, with their index and status.
 - `docs/content-guide.md` — how articles, tours, events and the years of towns are written.
 - `docs/data-checks.md` — what the build refuses, and why.

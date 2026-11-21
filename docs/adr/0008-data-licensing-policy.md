@@ -30,7 +30,7 @@ first.
   `pipeline/build_data.py`, the per-point filter above, and `assert_no_banned_points`,
   which fails the build if a shipped point sits on a banned coordinate
   (`pipeline/test_build_data.py` covers the rules).
-- `docs/ATTRIBUTIONS.md` is generated from provenance for every release.
+- `docs/ATTRIBUTIONS.md` is kept by hand and reviewed with every new source.
 
 ## Consequences
 

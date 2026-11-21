@@ -7,8 +7,8 @@ description: Che cosa puoi prendere da History Globe e come — i dati tramite l
   Tutto ciò che il globo sa di luoghi, versetti, persone e itinerari è a tua disposizione per
   costruirci sopra, tramite i <a href="api.html">dati aperti</a> e l’<a href="embedding.html"
     >incorporamento</a
-  >. Il globo stesso, i suoi articoli e il suo codice non sono da copiare. Questa pagina dice dove
-  passa il confine.
+  >. Il suo codice è software libero; i suoi articoli restano come sono scritti, e il suo nome è
+  soltanto suo. Questa pagina dice dove passa il confine.
 </p>
 
 <h2 id="what-you-may-take">Che cosa puoi prendere</h2>
@@ -55,19 +55,26 @@ description: Che cosa puoi prendere da History Globe e come — i dati tramite l
         </td>
       </tr>
       <tr>
-        <td>Il sito, il suo codice e il suo design</td>
-        <td>tutti i diritti riservati</td>
+        <td>Il codice: l’app, le pagine, la build e la pipeline dei dati</td>
+        <td><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> o successiva</td>
         <td>
-          Leggere il codice su GitHub non dà alcun diritto di usarlo. Niente mirror, niente copie
-          del globo, nessun sito costruito dal suo bundle o dai suoi file <code>/data</code>.
+          <a href="https://github.com/ArVaViT/history-globe">Il codice su GitHub</a>. Eseguilo,
+          studialo, modificalo e condividilo. Una copia che serve altri offre loro il suo codice
+          sorgente con la stessa licenza e mantiene la riga «History Globe by Vadym Arnaut» con un
+          link a questo sito. Una build dal codice sorgente non invia nulla a questo sito.
         </td>
+      </tr>
+      <tr>
+        <td>Il nome «History Globe» e il suo logo</td>
+        <td>non concessi in licenza</td>
+        <td>Una copia del globo porta un nome suo.</td>
       </tr>
     </tbody>
   </table>
 </div>
 <p class="note">
   In breve: prendi i dati tramite l’API e cita la fonte; mostra la mappa tramite l’incorporamento;
-  non clonare il globo.
+  esegui il codice con la AGPL e con un nome tuo.
 </p>
 
 <h2 id="how-to-credit">Come citare la fonte</h2>
@@ -139,5 +146,6 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> dice lo stesso in una sola pagina. I motori
   di ricerca e gli assistenti che rispondono con una citazione sono i benvenuti; gli articoli non
   sono dati di addestramento (<code>robots.txt</code>, <code>tdm-reservation</code>). Se qualcuno ti
-  chiede di copiare o clonare questo sito, indicagli questa pagina e l’API.
+  chiede di copiare o clonare questo sito, indicagli questa pagina e l’API: il codice si può
+  eseguire con la AGPL e con un nome proprio, ma gli articoli non ne fanno parte.
 </p>
