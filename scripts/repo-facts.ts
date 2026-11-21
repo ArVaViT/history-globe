@@ -2,7 +2,8 @@
  * What the repository's own front pages say of the data, checked against the build
  * (build-docs.ts runs both checks, so `pnpm content` and `pnpm gate` refuse a stale page):
  *
- * - the numbers and the date in README.md and CITATION.cff, against the built data;
+ * - the numbers in README.md and CITATION.cff, against the built data, and their release date,
+ *   which must not be later than the data;
  * - docs/ATTRIBUTIONS.md and the sources page in every language, against the registry of
  *   sources: every source the data build reads (manifest.json, `sources` and
  *   `other_sources`) and every Bible edition (scripts/bible-text.ts) is credited in both.
@@ -53,25 +54,18 @@ const PHRASES: readonly (readonly [RegExp, keyof Facts])[] = [
   [/(\d[\d,]*)\s+languages/g, "languages"],
 ];
 
-/** The date each front page gives the data. */
+/** The release date a front page gives (CITATION.cff; README.md's numbers are always the build's). */
 const DATES: readonly RegExp[] = [
-  /As of the release of (\d{4}-\d{2}-\d{2})/g,
   /date-released: (\d{4}-\d{2}-\d{2})/g,
   /^version: "(\d{4}-\d{2}-\d{2})"/gm,
 ];
 
 /**
- * Where a front page disagrees with the build. Its numbers must be the build's. Its date must
- * be the data's date in a release build (`release`: SITE_URL set, as for the official site);
- * in any other build it must not be later than the data, which may be newer than the last
- * release.
+ * Where a front page disagrees with the build. Its numbers must be the build's. Its date is
+ * the last release's and must not be later than the data: every data build stamps
+ * `built_at` with its own day, so the data is never older than the release it belongs to.
  */
-export function factMismatches(
-  file: string,
-  text: string,
-  facts: Facts,
-  release: boolean,
-): string[] {
+export function factMismatches(file: string, text: string, facts: Facts): string[] {
   const out: string[] = [];
   for (const [re, key] of PHRASES)
     for (const m of text.matchAll(re)) {
@@ -83,10 +77,7 @@ export function factMismatches(
   for (const re of DATES)
     for (const m of text.matchAll(re)) {
       const said = m[1] ?? "";
-      if (release ? said !== facts.built : said > facts.built)
-        out.push(
-          `${file}: «${m[0]}», the data is of ${facts.built}${release ? " (a release build)" : ""}`,
-        );
+      if (said > facts.built) out.push(`${file}: «${m[0]}», the data is of ${facts.built}`);
     }
   return out;
 }
