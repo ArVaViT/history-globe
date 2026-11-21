@@ -20,32 +20,26 @@ const facts: Facts = {
 };
 
 describe("the front pages against the build", () => {
-  const readme = `As of the release of 2026-11-17:
-- 21 languages; 1,231 places named in the Bible (1,288 place
+  const readme = `- 21 languages; 1,231 places named in the Bible (1,288 place
   records in all); 746 place articles and 200 answered questions.
 - 62 tours, 329 dated events and 60
   battles; 2,994 people, 2,153 of them with their families.`;
 
-  it("accepts numbers that are the build's, and an earlier date outside a release", () => {
-    expect(factMismatches("README.md", readme, facts, false)).toEqual([]);
+  it("accepts numbers that are the build's, and a release date before the data's", () => {
+    expect(factMismatches("README.md", readme, facts)).toEqual([]);
   });
 
   it("names a number that is not, across a line break", () => {
-    expect(
-      factMismatches("README.md", readme, { ...facts, battles: 61, records: 1290 }, false),
-    ).toEqual([
+    expect(factMismatches("README.md", readme, { ...facts, battles: 61, records: 1290 })).toEqual([
       "README.md: «(1,288 place records», the build has 1290",
       "README.md: «60 battles», the build has 61",
     ]);
   });
 
-  it("wants the data's own date in a release build, and never a later one", () => {
-    expect(factMismatches("README.md", readme, facts, true)).toEqual([
-      "README.md: «As of the release of 2026-11-17», the data is of 2026-11-19 (a release build)",
+  it("refuses a release date later than the data", () => {
+    expect(factMismatches("CITATION.cff", "date-released: 2026-11-20", facts)).toEqual([
+      "CITATION.cff: «date-released: 2026-11-20», the data is of 2026-11-19",
     ]);
-    expect(factMismatches("CITATION.cff", "date-released: 2026-11-20", facts, false)).toHaveLength(
-      1,
-    );
   });
 });
 
