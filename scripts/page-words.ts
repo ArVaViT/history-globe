@@ -79,6 +79,7 @@ const T_UK = {
     `${n} (${k}) на мапі біблійної історії: де це місце сьогодні, його історія та згадки в Біблії (${String(v)}).`,
   about: "Про проєкт",
   privacy: "Конфіденційність",
+  report: "Знайшли помилку?",
   allSources: "усі джерела",
   data: "Дані",
   // The language switch is an icon: «Мова: English» names it for a pointer and a screen reader.
@@ -162,7 +163,7 @@ const LANDING_UK = {
 const LISTS_UK: ListWords = {
   placesLead: (n, k, a) => `${n} ${uk(k, "місце", "місця", "місць")}, ${a} зі статтею`,
   toursLead: (n, k) =>
-    `${n} ${uk(k, "екскурсія", "екскурсії", "екскурсій")}. Відстань — по прямій між зупинками.`,
+    `${n} ${uk(k, "екскурсія", "екскурсії", "екскурсій")}. Відстань — по прямій між зупинками, а де шлях ішов римськими дорогами, то й по них.`,
   questionsLead: (n, k) =>
     `${n} ${uk(k, "питання", "питання", "питань")} з відповіддю на мапі, у порядку книг Біблії.`,
   all: "Усі",
@@ -257,6 +258,7 @@ const T_ES = {
     `${n} (${k}) en el mapa de la historia bíblica: dónde está hoy este lugar, su historia y las menciones en la Biblia (${String(v)}).`,
   about: "Acerca del proyecto",
   privacy: "Privacidad",
+  report: "¿Has encontrado un error?",
   allSources: "todas las fuentes",
   data: "Datos",
   // The language switch is an icon: «Idioma: English» names it for a pointer and a screen reader.
@@ -339,7 +341,7 @@ const LANDING_ES = {
 const LISTS_ES: ListWords = {
   placesLead: (n, k, a) => `${n} ${es(k, "lugar", "lugares")}, ${a} con artículo`,
   toursLead: (n, k) =>
-    `${n} ${es(k, "ruta", "rutas")}. Las distancias son líneas rectas entre las paradas.`,
+    `${n} ${es(k, "ruta", "rutas")}. Las distancias son líneas rectas entre las paradas y, donde la ruta las siguió, por calzadas romanas.`,
   questionsLead: (n, k) =>
     `${n} ${es(k, "pregunta respondida", "preguntas respondidas")} en el mapa, en el orden de los libros de la Biblia.`,
   all: "Todos",
@@ -434,6 +436,7 @@ const T_PT = {
     `${n} (${k}) no mapa da história bíblica: onde fica hoje este lugar, sua história e as menções na Bíblia (${String(v)}).`,
   about: "Sobre o projeto",
   privacy: "Privacidade",
+  report: "Encontrou um erro?",
   allSources: "todas as fontes",
   data: "Dados",
   // The language switch is an icon: «Idioma: English» names it for a pointer and a screen reader.
@@ -516,7 +519,7 @@ const LANDING_PT = {
 const LISTS_PT: ListWords = {
   placesLead: (n, k, a) => `${n} ${pt(k, "lugar", "lugares")}, ${a} com artigo`,
   toursLead: (n, k) =>
-    `${n} ${pt(k, "roteiro", "roteiros")}. As distâncias são linhas retas entre as paradas.`,
+    `${n} ${pt(k, "roteiro", "roteiros")}. As distâncias são linhas retas entre as paradas e, onde o roteiro as seguiu, por estradas romanas.`,
   questionsLead: (n, k) =>
     `${n} ${pt(k, "pergunta respondida", "perguntas respondidas")} no mapa, na ordem dos livros da Bíblia.`,
   all: "Todos",
@@ -611,6 +614,7 @@ const T_DE = {
     `${n} (${k}) auf der Karte der biblischen Geschichte: wo dieser Ort heute liegt, seine Geschichte und die Erwähnungen in der Bibel (${String(v)}).`,
   about: "Über das Projekt",
   privacy: "Datenschutz",
+  report: "Fehler gefunden?",
   allSources: "alle Quellen",
   data: "Daten",
   // The language switch is an icon: «Sprache: English» names it for a pointer and a screen reader.
@@ -693,7 +697,7 @@ const LANDING_DE = {
 const LISTS_DE: ListWords = {
   placesLead: (n, k, a) => `${n} ${de(k, "Ort", "Orte")}, davon ${a} mit Artikel`,
   toursLead: (n, k) =>
-    `${n} ${de(k, "Tour", "Touren")}. Die Entfernungen sind Luftlinien zwischen den Halten.`,
+    `${n} ${de(k, "Tour", "Touren")}. Die Entfernungen sind Luftlinien zwischen den Halten, dazu der Weg auf Römerstraßen, wo die Tour ihnen folgte.`,
   questionsLead: (n, k) =>
     `${n} ${de(k, "beantwortete Frage", "beantwortete Fragen")} auf der Karte, in der Reihenfolge der Bücher der Bibel.`,
   all: "Alle",
@@ -788,6 +792,7 @@ const T_FR = {
     `${n} (${k}) sur la carte de l’histoire biblique\u202f: où se trouve aujourd’hui ce lieu, son histoire et les versets de la Bible qui le nomment (${String(v)}).`,
   about: "À propos du projet",
   privacy: "Confidentialité",
+  report: "Une erreur ?",
   allSources: "toutes les sources",
   data: "Données",
   // The language switch is an icon: «Langue\u202f: English» names it for a pointer and a screen reader.
@@ -870,7 +875,7 @@ const LANDING_FR = {
 const LISTS_FR: ListWords = {
   placesLead: (n, k, a) => `${n} ${fr(k, "lieu", "lieux")}, dont ${a} avec article`,
   toursLead: (n, k) =>
-    `${n} ${fr(k, "parcours", "parcours")}. Les distances sont des lignes droites entre les étapes.`,
+    `${n} ${fr(k, "parcours", "parcours")}. Les distances sont des lignes droites entre les étapes, et par voies romaines là où le parcours les suivait.`,
   questionsLead: (n, k) =>
     `${n} ${fr(k, "question avec réponse", "questions avec réponse")} sur la carte, dans l’ordre des livres de la Bible.`,
   all: "Tous",
@@ -967,6 +972,7 @@ const T_IT = {
     `${n} (${k}) sulla mappa della storia biblica: dov’è oggi questo luogo, la sua storia e i versetti della Bibbia che lo nominano (${String(v)}).`,
   about: "Il progetto",
   privacy: "Privacy",
+  report: "Hai trovato un errore?",
   allSources: "tutte le fonti",
   data: "Dati",
   // The language switch is an icon: «Lingua: English» names it for a pointer and a screen reader.
@@ -1049,7 +1055,7 @@ const LANDING_IT = {
 const LISTS_IT: ListWords = {
   placesLead: (n, k, a) => `${n} ${it(k, "luogo", "luoghi", "di luoghi")}, ${a} con articolo`,
   toursLead: (n, k) =>
-    `${n} ${it(k, "itinerario", "itinerari", "di itinerari")}. Le distanze sono linee rette tra le tappe.`,
+    `${n} ${it(k, "itinerario", "itinerari", "di itinerari")}. Le distanze sono linee rette tra le tappe e, dove l’itinerario le seguiva, su strade romane.`,
   questionsLead: (n, k) =>
     `${n} ${it(k, "domanda con risposta", "domande con risposta", "di domande con risposta")} sulla mappa, nell’ordine dei libri della Bibbia.`,
   all: "Tutti",
@@ -1144,6 +1150,7 @@ const T_NL = {
     `${n} (${k}) op de kaart van de bijbelse geschiedenis: waar deze plaats nu ligt, haar geschiedenis en de Bijbelverzen die haar noemen (${String(v)}).`,
   about: "Over het project",
   privacy: "Privacy",
+  report: "Een fout gevonden?",
   allSources: "alle bronnen",
   data: "Gegevens",
   // The language switch is an icon: «Taal: English» names it for a pointer and a screen reader.
@@ -1226,7 +1233,7 @@ const LANDING_NL = {
 const LISTS_NL: ListWords = {
   placesLead: (n, k, a) => `${n} ${nl(k, "plaats", "plaatsen")}, ${a} met een artikel`,
   toursLead: (n, k) =>
-    `${n} ${nl(k, "route", "routes")}. Afstanden zijn hemelsbreed tussen de haltes.`,
+    `${n} ${nl(k, "route", "routes")}. Afstanden zijn hemelsbreed tussen de haltes, en over Romeinse wegen waar de route ze volgde.`,
   questionsLead: (n, k) =>
     `${n} ${nl(k, "beantwoorde vraag", "beantwoorde vragen")} op de kaart, in de volgorde van de Bijbelboeken.`,
   all: "Alle",
@@ -1323,6 +1330,7 @@ const T_PL = {
     `${n} (${k}) na mapie historii biblijnej: gdzie to miejsce leży dziś, jego historia i wzmianki w Biblii (${String(v)}).`,
   about: "O projekcie",
   privacy: "Prywatność",
+  report: "Widzisz błąd?",
   allSources: "wszystkie źródła",
   data: "Dane",
   // The language switch is an icon: «Język: English» names it for a pointer and a screen reader.
@@ -1406,7 +1414,7 @@ const LANDING_PL = {
 const LISTS_PL: ListWords = {
   placesLead: (n, k, a) => `${n} ${pl(k, "miejsce", "miejsca", "miejsc")}, w tym ${a} z artykułem`,
   toursLead: (n, k) =>
-    `${n} ${pl(k, "trasa", "trasy", "tras")}. Odległości to linie proste między przystankami.`,
+    `${n} ${pl(k, "trasa", "trasy", "tras")}. Odległości to linie proste między przystankami, a tam, gdzie trasa biegła drogami rzymskimi, także nimi.`,
   questionsLead: (n, k) =>
     `${n} ${pl(k, "pytanie", "pytania", "pytań")} z odpowiedzią na mapie, w kolejności ksiąg Biblii.`,
   all: "Wszystkie",
@@ -1500,6 +1508,7 @@ const T_CS = {
     `${n} (${k}) na mapě biblických dějin: kde toto místo leží dnes, jeho dějiny a zmínky v Bibli (${String(v)}).`,
   about: "O projektu",
   privacy: "Soukromí",
+  report: "Našli jste chybu?",
   allSources: "všechny prameny",
   data: "Data",
   // The language switch is an icon: «Jazyk: English» names it for a pointer and a screen reader.
@@ -1583,7 +1592,7 @@ const LANDING_CS = {
 const LISTS_CS: ListWords = {
   placesLead: (n, k, a) => `${n} ${cs(k, "místo", "místa", "míst")}, z toho ${a} s článkem`,
   toursLead: (n, k) =>
-    `${n} ${cs(k, "trasa", "trasy", "tras")}. Vzdálenosti jsou vzdušnou čarou mezi zastávkami.`,
+    `${n} ${cs(k, "trasa", "trasy", "tras")}. Vzdálenosti jsou vzdušnou čarou mezi zastávkami, a kde trasa vedla po římských silnicích, i po nich.`,
   questionsLead: (n, k) =>
     `${n} ${cs(k, "zodpovězená otázka", "zodpovězené otázky", "zodpovězených otázek")} na mapě, v pořadí biblických knih.`,
   all: "Vše",
@@ -1678,6 +1687,7 @@ const T_SV = {
     `${n} (${k}) på kartan över Bibelns historia: var platsen ligger i dag, dess historia och omnämnanden i Bibeln (${String(v)}).`,
   about: "Om projektet",
   privacy: "Integritet",
+  report: "Hittat ett fel?",
   allSources: "alla källor",
   data: "Data",
   // The language switch is an icon: «Språk: English» names it for a pointer and a screen reader.
@@ -1760,7 +1770,7 @@ const LANDING_SV = {
 const LISTS_SV: ListWords = {
   placesLead: (n, k, a) => `${n} ${sv(k, "plats", "platser")}, varav ${a} med artikel`,
   toursLead: (n, k) =>
-    `${n} ${sv(k, "rundtur", "rundturer")}. Avstånden är fågelvägen mellan stoppen.`,
+    `${n} ${sv(k, "rundtur", "rundturer")}. Avstånden är fågelvägen mellan stoppen, och längs romerska vägar där rundturen följde dem.`,
   questionsLead: (n, k) =>
     `${n} ${sv(k, "besvarad fråga", "besvarade frågor")} på kartan, i Bibelns bokordning.`,
   all: "Alla",
@@ -1857,6 +1867,7 @@ const T_DA = {
     `${n} (${k}) på kortet over bibelsk historie: hvor stedet ligger i dag, dets historie og omtaler i Bibelen (${String(v)}).`,
   about: "Om projektet",
   privacy: "Privatliv",
+  report: "Fundet en fejl?",
   allSources: "alle kilder",
   data: "Data",
   // The language switch is an icon: «Sprog: English» names it for a pointer and a screen reader.
@@ -1939,7 +1950,7 @@ const LANDING_DA = {
 const LISTS_DA: ListWords = {
   placesLead: (n, k, a) => `${n} ${da(k, "sted", "steder")}, heraf ${a} med artikel`,
   toursLead: (n, k) =>
-    `${n} ${da(k, "tur", "ture")}. Afstandene er målt i luftlinje mellem stoppene.`,
+    `${n} ${da(k, "tur", "ture")}. Afstandene er målt i luftlinje mellem stoppene og ad romerske veje, hvor turen fulgte dem.`,
   questionsLead: (n, k) =>
     `${n} ${da(k, "besvaret spørgsmål", "besvarede spørgsmål")} på kortet, i Bibelens bogrækkefølge.`,
   all: "Alle",
@@ -2036,6 +2047,7 @@ const T_NB = {
     `${n} (${k}) på kartet over bibelhistorien: hvor stedet ligger i dag, dets historie og omtalene i Bibelen (${String(v)}).`,
   about: "Om prosjektet",
   privacy: "Personvern",
+  report: "Funnet en feil?",
   allSources: "alle kilder",
   data: "Data",
   // The language switch is an icon: «Språk: English» names it for a pointer and a screen reader.
@@ -2117,7 +2129,8 @@ const LANDING_NB = {
 
 const LISTS_NB: ListWords = {
   placesLead: (n, k, a) => `${n} ${nb(k, "sted", "steder")}, ${a} av dem med artikkel`,
-  toursLead: (n, k) => `${n} ${nb(k, "rute", "ruter")}. Avstandene er i luftlinje mellom stoppene.`,
+  toursLead: (n, k) =>
+    `${n} ${nb(k, "rute", "ruter")}. Avstandene er i luftlinje mellom stoppene, og langs romerske veier der ruten fulgte dem.`,
   questionsLead: (n, k) =>
     `${n} ${nb(k, "besvart spørsmål", "besvarte spørsmål")} på kartet, i bibelbøkenes rekkefølge.`,
   all: "Alle",
@@ -2211,6 +2224,7 @@ const T_SR = {
     `${n} (${k}) на мапи библијске историје: где је то место данас, његова историја и стихови Библије који га помињу (${String(v)}).`,
   about: "О пројекту",
   privacy: "Приватност",
+  report: "Нашли сте грешку?",
   allSources: "сви извори",
   data: "Подаци",
   // The language switch is an icon: «Језик: English» names it for a pointer and a screen reader.
@@ -2294,7 +2308,7 @@ const LANDING_SR = {
 const LISTS_SR: ListWords = {
   placesLead: (n, k, a) => `${n} ${sr(k, "место", "места", "места")}, од тога ${a} са чланком`,
   toursLead: (n, k) =>
-    `${n} ${sr(k, "тура", "туре", "тура")}. Растојања су ваздушном линијом између станица.`,
+    `${n} ${sr(k, "тура", "туре", "тура")}. Растојања су ваздушном линијом између станица, а где је тура ишла римским путевима, и њима.`,
   questionsLead: (n, k) =>
     `${n} ${sr(k, "одговорено питање", "одговорена питања", "одговорених питања")} на мапи, по редоследу библијских књига.`,
   all: "Све",
@@ -2394,6 +2408,7 @@ const T_TL = {
     `${n} (${k}) sa mapa ng kasaysayan ng Biblia: saan ito ngayon, ang kasaysayan nito at ang mga talata ng Biblia na bumabanggit dito (${String(v)}).`,
   about: "Tungkol sa proyekto",
   privacy: "Pagkapribado",
+  report: "May nakita kang mali?",
   allSources: "lahat ng sanggunian",
   data: "Datos",
   // The language switch is an icon: «Wika: English» names it for a pointer and a screen reader.
@@ -2476,7 +2491,7 @@ const LANDING_TL = {
 const LISTS_TL: ListWords = {
   placesLead: (n, k, a) => `${n} ${tl(k, "lugar", "lugar")}, ${a} ang may artikulo`,
   toursLead: (n, k) =>
-    `${n} ${tl(k, "paglalakbay", "paglalakbay")}. Ang mga layo ay tuwid na linya sa pagitan ng mga hintuan.`,
+    `${n} ${tl(k, "paglalakbay", "paglalakbay")}. Ang mga layo ay tuwid na linya sa pagitan ng mga hintuan, at sa mga daang Romano kung saan doon dumaan ang paglalakbay.`,
   questionsLead: (n, k) =>
     `${n} ${tl(k, "tanong", "tanong")} na nasagot sa mapa, sa pagkakasunod ng mga aklat ng Biblia.`,
   all: "Lahat",
@@ -2571,6 +2586,7 @@ const T_HU = {
     `${n} (${k}) a bibliai történelem térképén: hol található ma, története és bibliai említései (${String(v)}).`,
   about: "A projektről",
   privacy: "Adatvédelem",
+  report: "Hibát talált?",
   allSources: "minden forrás",
   data: "Adatok",
   // The language switch is an icon: «Nyelv: English» names it for a pointer and a screen reader.
@@ -2653,7 +2669,7 @@ const LANDING_HU = {
 const LISTS_HU: ListWords = {
   placesLead: (n, k, a) => `${n} ${hu(k, "hely", "hely")}, ebből ${a} cikkel`,
   toursLead: (n, k) =>
-    `${n} ${hu(k, "túra", "túra")}. A távolságokat a megállók között légvonalban mérjük.`,
+    `${n} ${hu(k, "túra", "túra")}. A távolságokat a megállók között légvonalban mérjük, és római utakon is, ahol a túra azokon haladt.`,
   questionsLead: (n, k) =>
     `${n} ${hu(k, "megválaszolt kérdés", "megválaszolt kérdés")} a térképen, a Biblia könyveinek sorrendjében.`,
   all: "Mind",
@@ -2748,6 +2764,7 @@ const T_FI = {
     `${n} (${k}) Raamatun historian kartalla: missä paikka sijaitsee nykyään, sen historia ja maininnat Raamatussa (${String(v)}).`,
   about: "Hankkeesta",
   privacy: "Tietosuoja",
+  report: "Löysitkö virheen?",
   allSources: "kaikki lähteet",
   data: "Data",
   // The language switch is an icon: «Kieli: English» names it for a pointer and a screen reader.
@@ -2830,7 +2847,7 @@ const LANDING_FI = {
 const LISTS_FI: ListWords = {
   placesLead: (n, k, a) => `${n} ${fi(k, "paikka", "paikkaa")}, artikkeli ${a} paikasta`,
   toursLead: (n, k) =>
-    `${n} ${fi(k, "kierros", "kierrosta")}. Etäisyydet on mitattu linnuntietä pysäkkien välillä.`,
+    `${n} ${fi(k, "kierros", "kierrosta")}. Etäisyydet on mitattu linnuntietä pysäkkien välillä ja Rooman teitä pitkin, missä kierros kulki niitä.`,
   questionsLead: (n, k) =>
     `${n} ${fi(k, "kysymys", "kysymystä")} vastauksineen kartalla, Raamatun kirjojen järjestyksessä.`,
   all: "Kaikki",
@@ -2923,6 +2940,7 @@ const T_VI = {
     `${n} (${k}) trên bản đồ lịch sử Kinh Thánh: vị trí ngày nay, lịch sử và những lần được nhắc đến trong Kinh Thánh (${String(v)}).`,
   about: "Về dự án",
   privacy: "Quyền riêng tư",
+  report: "Bạn thấy có chỗ sai?",
   allSources: "tất cả nguồn",
   data: "Dữ liệu",
   // The language switch is an icon: «Ngôn ngữ: English» names it for a pointer and a screen reader.
@@ -3005,7 +3023,8 @@ const LANDING_VI = {
 
 const LISTS_VI: ListWords = {
   placesLead: (n, _k, a) => `${n} địa điểm, trong đó ${a} có bài viết`,
-  toursLead: (n) => `${n} hành trình. Khoảng cách tính theo đường chim bay giữa các chặng.`,
+  toursLead: (n) =>
+    `${n} hành trình. Khoảng cách tính theo đường chim bay giữa các chặng, và theo đường La Mã ở những chặng đi trên đó.`,
   questionsLead: (n) =>
     `${n} câu hỏi có đáp án trên bản đồ, theo thứ tự các sách trong Kinh Thánh.`,
   all: "Tất cả",
@@ -3102,6 +3121,7 @@ const T_RO = {
     `${n} (${k}) pe harta istoriei biblice: unde se află astăzi, istoria sa și mențiunile din Biblie (${String(v)}).`,
   about: "Despre proiect",
   privacy: "Confidențialitate",
+  report: "Ai găsit o greșeală?",
   allSources: "toate sursele",
   data: "Date",
   // The language switch is an icon: «Limba: English» names it for a pointer and a screen reader.
@@ -3186,7 +3206,7 @@ const LISTS_RO: ListWords = {
   placesLead: (n, k, a) =>
     `${n} ${ro(k, "loc", "locuri", "de locuri")}, dintre care ${a} cu articol`,
   toursLead: (n, k) =>
-    `${n} ${ro(k, "traseu", "trasee", "de trasee")}. Distanțele sunt în linie dreaptă între opriri.`,
+    `${n} ${ro(k, "traseu", "trasee", "de trasee")}. Distanțele sunt în linie dreaptă între opriri și pe drumuri romane, acolo unde traseul le-a urmat.`,
   questionsLead: (n, k) =>
     `${n} ${ro(k, "întrebare cu răspuns", "întrebări cu răspuns", "de întrebări cu răspuns")} pe hartă, în ordinea cărților Bibliei.`,
   all: "Toate",
@@ -3283,6 +3303,7 @@ const T_BG = {
     `${n} (${k}) на картата на библейската история: къде се намира мястото днес, неговата история и споменаванията му в Библията (${String(v)}).`,
   about: "За проекта",
   privacy: "Поверителност",
+  report: "Намерихте грешка?",
   allSources: "всички източници",
   data: "Данни",
   // The language switch is an icon: «Език: English» names it for a pointer and a screen reader.
@@ -3365,7 +3386,7 @@ const LANDING_BG = {
 const LISTS_BG: ListWords = {
   placesLead: (n, k, a) => `${n} ${bg(k, "място", "места")}, от тях ${a} със статия`,
   toursLead: (n, k) =>
-    `${n} ${bg(k, "маршрут", "маршрута")}. Разстоянията са по права линия между спирките.`,
+    `${n} ${bg(k, "маршрут", "маршрута")}. Разстоянията са по права линия между спирките, а където маршрутът е минавал по римски пътища, и по тях.`,
   questionsLead: (n, k) =>
     `${n} ${bg(k, "отговорен въпрос", "отговорени въпроса")} на картата, по реда на книгите в Библията.`,
   all: "Всички",
@@ -3475,6 +3496,7 @@ export const T = {
       `${n} (${k}) на карте библейской истории: где это место сегодня, его история и упоминания в Библии (${String(v)}).`,
     about: "О проекте",
     privacy: "Конфиденциальность",
+    report: "Нашли ошибку?",
     allSources: "все источники",
     data: "Данные",
     // The other language's switch is an icon: «Язык: English» names it.
@@ -3544,6 +3566,7 @@ export const T = {
       `${n} (${k}) on the map of biblical history: where it is today, its history and the Bible verses that name it (${String(v)}).`,
     about: "About",
     privacy: "Privacy",
+    report: "Found a mistake?",
     allSources: "all sources",
     data: "Data",
     // The other language's switch is an icon; this names it for a pointer and a screen reader.
@@ -3812,7 +3835,7 @@ export const LISTS: Record<SiteLocale, ListWords> & Partial<Record<Locale, ListW
   ru: {
     placesLead: (n, k, a) => `${n} ${ru(k, "место", "места", "мест")}, ${a} со статьёй`,
     toursLead: (n, k) =>
-      `${n} ${ru(k, "экскурсия", "экскурсии", "экскурсий")}. Расстояние — по прямой между остановками.`,
+      `${n} ${ru(k, "экскурсия", "экскурсии", "экскурсий")}. Расстояние — по прямой между остановками, а где путь шёл римскими дорогами, то и по ним.`,
     questionsLead: (n, k) =>
       `${n} ${ru(k, "вопрос", "вопроса", "вопросов")} с ответом на карте, в порядке книг Библии.`,
     all: "Все",
@@ -3843,7 +3866,8 @@ export const LISTS: Record<SiteLocale, ListWords> & Partial<Record<Locale, ListW
   },
   en: {
     placesLead: (n, k, a) => `${n} ${en(k, "place")}, ${a} with an article`,
-    toursLead: (n, k) => `${n} ${en(k, "tour")}. Distances are straight lines between the stops.`,
+    toursLead: (n, k) =>
+      `${n} ${en(k, "tour")}. Distances are straight lines between the stops, and by Roman roads where the tour took them.`,
     questionsLead: (n, k) =>
       `${n} ${en(k, "question")} answered on the map, in the order of the Bible's books.`,
     all: "All",
