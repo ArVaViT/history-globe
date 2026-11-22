@@ -67,6 +67,38 @@ describe("the notice", () => {
     expect(read(file)).not.toMatch(/all rights reserved|do not clone|source-available/i);
   });
 
+  // CITATION.cff lists its licences as alternatives (CFF 1.2.0): one more would offer the
+  // whole repository under it. The data's CC BY stands on the dataset in its references.
+  it("gives the repository one licence in CITATION.cff", () => {
+    const cff = read("CITATION.cff");
+    expect(cff).toMatch(/^license: AGPL-3\.0-or-later$/m);
+    expect(cff).toMatch(/^ {4}license: CC-BY-4\.0$/m);
+  });
+
+  // CC BY-NC-ND 4.0 lets anyone share unchanged copies for non-commercial use, on another
+  // site or in a dataset too (section 2(a)(1)(A)); it bars commercial use and changed or
+  // translated versions. The reservation of text and data mining is stated apart from it.
+  it("states what CC BY-NC-ND allows and forbids, and the mining reservation apart", () => {
+    expect(NOTICE).toContain("copy and share them unchanged");
+    expect(NOTICE).toMatch(/Text and data mining of them.*reserved apart from that licence/);
+  });
+
+  it.each([
+    "LICENSE",
+    "README.md",
+    "apps/web/src/agent-tools.ts",
+    "scripts/build-api.ts",
+    "scripts/api-openapi.ts",
+    "scripts/build-pages.ts",
+    "pipeline/dataset_card.md",
+    "content/docs/en/build.html",
+    "content/docs/en/api.html",
+  ])("does not forbid more than CC BY-NC-ND in %s", (file) => {
+    expect(read(file)).not.toMatch(
+      /republish|into (?:another site|a dataset)|not for other sites|do not come with it|may not be put into/i,
+    );
+  });
+
   it.each(LOCALES)("is the licence the Build and Author pages give the code in %s", (l) => {
     for (const page of ["build", "author"]) {
       const html = read(`content/docs/${l}/${page}.html`);

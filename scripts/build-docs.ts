@@ -1331,8 +1331,8 @@ for (const l of LANGS) {
         problems.push(`${file}: "${m}" is not written as the counts are (${number(1288, l)})`);
       const filled = reviewsIn(text, l).replace('<div class="bibles"></div>', () => biblesTable(l));
       const { body, toc } = headings(highlight(features(TYPESET[l](filled)), l), file);
-      // The documentation has no open licence of its own (LICENSE, part 3): a licence it
-      // links is a source's, and rel="license" would declare the page under it.
+      // A licence the documentation links is a source's or one part's of the project
+      // (LICENSE); rel="license" would declare the page itself under it.
       if (/\brel="[^"]*\blicense\b/.test(body))
         throw new Error(`${file}: rel="license" on a source's licence; link it plainly`);
       // The comments in an example's code are read in the page's language too.

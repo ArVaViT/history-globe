@@ -98,7 +98,7 @@ OTHER_SOURCES = {
     },
     "pleiades": {
         "license": "CC-BY-3.0",
-        "credit": "Pleiades: A Gazetteer of Past Places (ISAW, NYU), CC BY 3.0, modified",
+        "credit": "Roger Bagnall et al. (eds.), Pleiades: A Gazetteer of Past Places (ISAW, NYU, and the Ancient World Mapping Center), CC BY 3.0, modified",
         "url": "https://pleiades.stoa.org",
         "read_by": "content/pleiades.json, content/ancient-sites.json",
     },

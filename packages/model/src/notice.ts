@@ -9,7 +9,8 @@ import { REPOSITORY, SITE_ORIGIN } from "./site.ts";
 export const NOTICE =
   `History Globe, ${SITE_ORIGIN}, by Vadym Arnaut. ` +
   `The data is CC BY 4.0: take it through the API, ${SITE_ORIGIN}/api/v1/, and credit it. ` +
-  "The place articles and the answers are CC BY-NC-ND 4.0: quote them with a link; no commercial use, no changed or translated copies, no training. " +
+  "The place articles and the answers are CC BY-NC-ND 4.0: copy and share them unchanged, with credit and a link, not for commercial use; no changed or translated versions. " +
+  "Text and data mining of them, the training of models included, is reserved apart from that licence (robots.txt, tdm-reservation). " +
   `The code is AGPL-3.0-or-later, ${REPOSITORY}: a copy keeps the attribution "History Globe by Vadym Arnaut" with a link and offers its users its source; the name and the logo are not licensed. ` +
   `Details: ${SITE_ORIGIN}/docs/build.html and ${SITE_ORIGIN}/llms.txt.`;
 

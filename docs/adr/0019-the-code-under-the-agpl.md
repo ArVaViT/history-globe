@@ -21,10 +21,13 @@ licence can change without anyone else's consent.
   of the project. Version 3 or, at the user's option, any later version the Free Software
   Foundation publishes, so that the code can follow the licence as it is revised without
   asking every contributor again.
-- **Two additional terms under section 7.** (b) A modified version keeps the attribution
-  "History Globe by Vadym Arnaut", with a link to https://historyglobe.app, in the notice or
-  "about" information it shows its users. (e) The licence grants no right to the name
-  "History Globe" or its logo: a copy goes under a name of its own.
+- **Three additional terms, as section 7 permits them.** (b) A modified version keeps the
+  attribution "History Globe by Vadym Arnaut", with a link to https://historyglobe.app, in
+  the notice or "about" information it shows its users. (c) A modified version is marked as
+  different from the original and may not present itself as History Globe or as made or
+  endorsed by its author. (e) The licence grants no right under trademark law to the name
+  "History Globe" or its logo. Under (c) and (e) together, a modified version goes under a
+  name of its own; (e) alone only declines the trademark rights.
 - **The source is offered to every user** (section 13): the Settings panel, the footer of
   every built page and of the documentation link to the repository, and the notice in the
   head of every page names the licence and the repository.
@@ -34,9 +37,9 @@ licence can change without anyone else's consent.
   it is served by the site and only framed by the host page.
 - **The rest stays as decided.** The articles and the answers stay CC BY-NC-ND 4.0, with
   text and data mining reserved for them alone (ADR 0016); the data stays CC BY 4.0
-  (ADR 0014); the reviews belong to their authors; the name, the logo and the preview images
-  stay reserved. The reservation of text and data mining no longer covers the code: the
-  AGPL forbids further restrictions (sections 7 and 10).
+  (ADR 0014); the reviews belong to their authors; the name, the logo and the project's
+  own part of the preview images stay reserved. The reservation of text and data mining no
+  longer covers the code: the AGPL forbids further restrictions (sections 7 and 10).
 - **The beacon is the production build's alone** (ADR 0017): a build from the source for
   any other address carries no script that reports to historyglobe.app.
 

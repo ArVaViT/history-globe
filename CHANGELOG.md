@@ -33,6 +33,10 @@ pull requests on GitHub have them.
 - `questions.json`, the years of the questions' maps: when-was-the-second-temple-built
   `c. 515 BC` (was `c. 516 BC`); where-was-the-ark-of-the-covenant-kept and
   who-were-the-philistines `c. 1070 BC` (was `c. 1050 BC`).
+- `index.json` and `openapi.json`: the notice and the licence of `questions.json` say what
+  CC BY-NC-ND 4.0 allows (unchanged copies, with credit and the licence named, not for commercial use)
+  and state the reservation of text and data mining apart from it; Pleiades is credited in the form
+  it asks for (Roger Bagnall et al., eds.).
 - `questions.json`: every question carries its licence, `license` (CC BY-NC-ND 4.0) and
   `license_url`, in the record itself.
 - The map's data (`/data/`, not the API): the questions answered with a place moved out of

@@ -18,13 +18,17 @@ name them by path; a path that no part names is code (part 1).
    even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. The
    full text of the licence is in COPYING.
 
-   Additional terms, under section 7 of the licence:
+   Additional terms, as section 7 of the licence permits them ((b), (c) and (e)):
 
    (b) A modified version must keep the attribution "History Globe by Vadym Arnaut",
        with a link to https://historyglobe.app, in the notice or "about" information it
        shows its users (in the original: the Author and Build pages of the Help).
-   (e) The licence grants no right to use the name "History Globe" or its logo (part 6).
-       A modified version that users interact with goes under a name of its own.
+   (c) A modified version must be marked as different from the original: it may not
+       present itself as History Globe, or as made or endorsed by its author.
+   (e) The licence grants no right under trademark law to use the name "History Globe"
+       or its logo (part 6).
+   Under (c) and (e) together, a modified version that users interact with goes under a
+   name of its own.
 
    Two exceptions, so that the parts meant to run inside other sites can be used there
    freely:
@@ -45,10 +49,12 @@ name them by path; a path that no part names is code (part 1).
    Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International licence:
    https://creativecommons.org/licenses/by-nc-nd/4.0/
 
-   You may read them, quote them, link to them and share them as they are, with credit
-   and not for money. You may not change them, translate them, or put them into
-   another site, dataset or product. Credit: "History Globe (Vadym Arnaut),
-   CC BY-NC-ND 4.0", with a link to the page.
+   In short (the licence's own text governs): you may copy and share them unchanged,
+   in any medium or format, with credit and not for commercial purposes, on another
+   site or in a collection too. You may not share a changed or translated version of
+   them. Short quotations with credit, as the law allows them, and links need no
+   licence. Credit: "History Globe (Vadym Arnaut), CC BY-NC-ND 4.0", with a link to
+   the page.
 
    Until 2026-10-17 these texts were offered under CC BY 4.0. Copies made under that
    licence keep it (a Creative Commons licence cannot be revoked); what is published
@@ -67,8 +73,8 @@ name them by path; a path that no part names is code (part 1).
    - The curated content in content/ other than articles/, questions/, docs/, reviews/
      and drafts/: place names in every language, tours, events, battles, when towns stood,
      ancient-author notes, photo records and the rest;
-   - the data the build makes from it: apps/web/public/data/ except articles/, and the
-     open API in apps/web/public/api/ except questions.json;
+   - the data the build makes from it: apps/web/public/data/ except articles/, photos/
+     and verses/, and the open API in apps/web/public/api/ except questions.json;
    - the data files kept beside the code: pipeline/rivers/rivers.geojson (derived from
      RiverATLAS, CC BY 4.0), pipeline/rivers/targets.json,
      pipeline/ancient/names-cyrillic.json, pipeline/dataset_card.md, and the crosswalk
@@ -85,6 +91,11 @@ name them by path; a path that no part names is code (part 1).
    are cited, not licensed here. content/drafts/ holds Wikidata labels (CC0) and stays
    under CC0.
 
+   Not licensed here: apps/web/public/data/photos/ holds Wikimedia Commons photographs,
+   each under the licence its record names (content/photos.yaml; the place card and the
+   place page show it), and apps/web/public/data/verses/ holds the Bible text of
+   public-domain editions (docs/ATTRIBUTIONS.md, "Scripture").
+
 4. The reviews
 
    The reviews in content/reviews/ belong to their authors. Each file names its author
@@ -94,12 +105,22 @@ name them by path; a path that no part names is code (part 1).
 
    Third-party data, images and software included or referenced here remain under their
    own licences (OpenBible.info, STEPBible TIPNR, Cliopatria, Pleiades, Itiner-e,
-   RiverATLAS, Natural Earth, Wikimedia Commons photographs, MapLibre, React, Lucide,
-   the fonts and others); see docs/ATTRIBUTIONS.md and apps/web/public/licenses/. The
-   grants above cover this project's own contribution and relicense none of them.
+   RiverATLAS, Natural Earth, Copernicus WorldDEM-30 and the other elevation models,
+   Wikimedia Commons photographs, the public-domain Bible editions, MapLibre, React,
+   Lucide, the fonts and others); see docs/ATTRIBUTIONS.md and apps/web/public/licenses/.
+   The grants in parts 1 to 3 and the reservation in part 6 cover this project's own
+   contribution only; they relicense and reserve none of these.
 
 6. The name and the logo: not licensed
 
-   The name "History Globe", its logo (apps/web/public/favicon.*, icon-*.png,
-   apple-touch-icon.png) and the preview images made from them (apps/web/public/og.jpg,
-   og/, shots/) are not licensed under any of the above. All rights reserved.
+   The name "History Globe" and its logo (apps/web/public/favicon.*, icon-*.png,
+   apple-touch-icon.png) are not licensed under any of the above. All rights reserved.
+
+   The preview images (apps/web/public/og.jpg, og/, shots/) are pictures of the site.
+   The project's own part of them, its interface with the name and the logo, is not
+   licensed either. What they show of the data and the texts keeps the licence of its
+   part above, and what they show from third parties keeps its own licence (part 5):
+   the borders from Cliopatria (CC BY 4.0), the relief from Copernicus WorldDEM-30 and
+   the other elevation models, Natural Earth, and the photographs in the place card,
+   each under the licence printed on it (in shots/*-place.jpg, Jerusalem by Kok Leng
+   Yeo, CC BY 2.0).

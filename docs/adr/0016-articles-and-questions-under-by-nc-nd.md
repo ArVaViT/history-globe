@@ -16,12 +16,14 @@ reaches readers through the site and through the assistants that cite it.
 
 ## Decision
 
-- **The articles and the questions: CC BY-NC-ND 4.0** (`LICENSE`, part 1): the place
+- **The articles and the questions: CC BY-NC-ND 4.0** (`LICENSE`, part 2): the place
   articles and the questions with their answers, in every language, and what the build
   makes of them (`data/articles/`, the article text on the place pages, the question
-  pages, `api/v1/questions.json`). Readers quote, link and share them as they are, with
-  credit, not for money; nobody changes, translates or republishes them.
-- **The rest of the data stays CC BY 4.0** (part 2): names in every language, tours,
+  pages, `api/v1/questions.json`). Readers may quote and link them, and copy and share
+  them unchanged, with credit and not for commercial use, on another site or in a
+  collection too (section 2(a)(1)(A) of the licence); nobody may share a changed or
+  translated version.
+- **The rest of the data stays CC BY 4.0** (part 3): names in every language, tours,
   events, battles, the years of towns, the notes of ancient authors, the photo records and
   the open API but for `questions.json`. The API keeps its licence and its credit lines;
   its index names the exception.
@@ -53,9 +55,11 @@ reaches readers through the site and through the assistants that cite it.
 
 ## Consequences
 
-- A community translation or a partner's republication of an article needs a written
-  licence from the owner; that is intended (one licence for all, individual ones for
-  partners).
+- A community translation, a commercial use or a partner's edited version of an article
+  needs a written licence from the owner; that is intended (one licence for all,
+  individual ones for partners). The licence does not stop an unchanged, non-commercial
+  copy of the texts, on another site or in a dataset. The reservation of text and data
+  mining is a statement of its own, not a term of the licence.
 - `questions.json` stays in the API for the sites that read it, under its own licence,
   stated in `index.json`, the OpenAPI description and the API page.
 - The WebMCP `get_place` tool labels the article it returns with its licence.

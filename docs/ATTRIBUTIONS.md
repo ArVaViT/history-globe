@@ -35,13 +35,12 @@ Roman roads
   12W-75E, 8N-50N, geometry simplified, segments merged by name (pipeline/roads).
 
 Periods in which places are attested
-  Pleiades: A Gazetteer of Past Places. Ed. by Tom Elliott, Sean Gillies,
-  Jeffrey Becker et al. Institute for the Study of the Ancient World, New York
-  University, 2006–. https://pleiades.stoa.org. Data downloaded 2 October 2026.
-  Licensed CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/us/).
-  Modified: matched to our places, periods reduced to a span of years.
-  Pleiades' own form of citation: Roger Bagnall et al. (eds.), Pleiades: A Gazetteer
-  of Past Places (https://pleiades.stoa.org), with the date of access.
+  Roger Bagnall et al. (eds.), Pleiades: A Gazetteer of Past Places,
+  https://pleiades.stoa.org (the form of citation Pleiades asks for). Data
+  downloaded 2 October 2026. Copyright Ancient World Mapping Center and Institute
+  for the Study of the Ancient World, New York University; licensed CC BY 3.0
+  (https://creativecommons.org/licenses/by/3.0/us/). Modified: matched to our
+  places, periods reduced to a span of years.
 
 Ancient sites outside the Bible (the "Ancient world" layer)
   Points and identifiers from Pleiades (as above, CC BY 3.0), selected and checked
@@ -147,8 +146,12 @@ Photos
 
 Articles, answers and events
   Written for the project; the sources each one rests on are listed with it
-  (content/articles, content/questions, content/events.yaml). Quotations come only
-  from the public-domain edition of each language listed under Scripture.
+  (content/articles, content/questions, content/events.yaml). Quotations of the
+  Bible come only from the public-domain edition of each language listed under
+  Scripture. Other works are quoted briefly, as quotations with the work named in
+  the text's list of sources: ancient texts (Josephus in William Whiston's
+  public-domain translation, the Mishnah and the Talmud, the chronicles and
+  inscriptions of Assyria and Babylon, and others) and modern scholars.
 
 Crosswalk (docs/crosswalk/places.csv, not shipped with the site)
   The theographic_* columns cite Theographic Bible Metadata

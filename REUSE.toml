@@ -1,0 +1,124 @@
+# The licence of every file, in the REUSE format (https://reuse.software), for tools that
+# read it. LICENSE says the same in words and governs; the texts are in LICENSES/. Where
+# several annotations match a file, the last one applies. scripts/reuse-toml.test.ts keeps
+# this file in step with LICENSE and the reviews; `uvx reuse lint` checks it whole.
+version = 1
+SPDX-PackageName = "History Globe"
+SPDX-PackageSupplier = "Vadym Arnaut <historyglobe.vadym@gmail.com>"
+SPDX-PackageDownloadLocation = "https://github.com/ArVaViT/history-globe"
+
+# LICENSE, part 1: the code and the documentation of the project.
+[[annotations]]
+path = "**"
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Vadym Arnaut"
+SPDX-License-Identifier = "AGPL-3.0-or-later"
+
+# Part 1, the exceptions: the places-in-any-text script, and the code examples on the
+# documentation pages.
+[[annotations]]
+path = ["apps/web/public/hg-places.js", "apps/web/public/hg-places-*.js"]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Vadym Arnaut"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["content/docs/*/api.html", "content/docs/*/build.html", "content/docs/*/embedding.html"]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Vadym Arnaut"
+SPDX-License-Identifier = "AGPL-3.0-or-later AND CC0-1.0"
+
+# Part 3: the data in content/ and beside the code.
+[[annotations]]
+path = [
+  "content/*",
+  "content/tours/**",
+  "pipeline/rivers/targets.json",
+  "pipeline/ancient/names-cyrillic.json",
+  "pipeline/dataset_card.md",
+  "docs/crosswalk/*.csv",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Vadym Arnaut"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+# Part 3, data with points taken from Pleiades (CC BY 3.0) or lines from RiverATLAS.
+[[annotations]]
+path = ["content/pleiades.json", "content/ancient-sites*.json"]
+precedence = "override"
+SPDX-FileCopyrightText = [
+  "2026 Vadym Arnaut",
+  "Ancient World Mapping Center and Institute for the Study of the Ancient World (Pleiades)",
+]
+SPDX-License-Identifier = "CC-BY-4.0 AND CC-BY-3.0-US"
+
+[[annotations]]
+path = "pipeline/rivers/rivers.geojson"
+precedence = "override"
+SPDX-FileCopyrightText = [
+  "2026 Vadym Arnaut",
+  "2019 Linke, Lehner, Ouellet Dallaire et al. (RiverATLAS)",
+]
+SPDX-License-Identifier = "CC-BY-4.0"
+
+# Part 3: Wikidata labels, CC0 as Wikidata gives them.
+[[annotations]]
+path = "content/drafts/**"
+precedence = "override"
+SPDX-FileCopyrightText = "Wikidata contributors"
+SPDX-License-Identifier = "CC0-1.0"
+
+# Part 2: the articles and the questions.
+[[annotations]]
+path = ["content/articles/**", "content/questions/**"]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Vadym Arnaut"
+SPDX-License-Identifier = "CC-BY-NC-ND-4.0"
+
+# Part 4: each review under the licence its reviewer gave it (its "licence" field).
+[[annotations]]
+path = "content/reviews/2026-10-edom-arabah.yaml"
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Juan Manuel Tebes", "2026 Vadym Arnaut"]
+SPDX-License-Identifier = "CC-BY-4.0"
+
+# Part 5: the icons copied from Lucide, some of them from Feather.
+[[annotations]]
+path = "apps/web/src/components/icons.tsx"
+precedence = "override"
+SPDX-FileCopyrightText = [
+  "2026 Vadym Arnaut",
+  "2026 Lucide Icons and Contributors",
+  "2013-present Cole Bemis",
+]
+SPDX-License-Identifier = "AGPL-3.0-or-later AND ISC AND MIT"
+
+[[annotations]]
+path = "apps/web/public/licenses/lucide-icons.txt"
+precedence = "override"
+SPDX-FileCopyrightText = ["2026 Lucide Icons and Contributors", "2013-present Cole Bemis"]
+SPDX-License-Identifier = "ISC AND MIT"
+
+# Part 5: the licence texts of the software the site ships, written by
+# scripts/third-party-licenses.ts; the copyright lines are those in the file.
+[[annotations]]
+path = "apps/web/public/licenses/third-party.txt"
+precedence = "aggregate"
+SPDX-License-Identifier = "MIT AND OFL-1.1"
+
+# Part 6: the name and the logo, and the preview images.
+[[annotations]]
+path = [
+  "apps/web/public/favicon.*",
+  "apps/web/public/icon-*.png",
+  "apps/web/public/apple-touch-icon.png",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Vadym Arnaut"
+SPDX-License-Identifier = "LicenseRef-NotLicensed"
+
+[[annotations]]
+path = ["apps/web/public/og.jpg", "apps/web/public/og/**", "apps/web/public/shots/**"]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Vadym Arnaut"
+SPDX-License-Identifier = "LicenseRef-PreviewImages"
