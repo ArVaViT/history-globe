@@ -2,7 +2,11 @@
 # CC0 and CC BY (no share-alike, ADR 0008), checked against the file's Commons metadata;
 # the image is the place's Wikidata image (P18) where it shows the ancient site or its
 # landscape. `pnpm data` downloads them (scripts/build-photos.ts); the card credits the
-# author and the licence with a link to the file page. Chosen 2026-10-01.
+# author and the licence with a link to the file page. Where the file's Commons page asks
+# for a credit line of its own ("Uzi Paz Pikiwiki Israel"), `credit` has it word for word
+# and is shown in the author's place; `credit_with_author` adds the author after a credit
+# that does not name them (an agency or a collection). `pnpm photo-credits` compares the
+# licences and credits with Commons. Chosen 2026-10-01, credits checked again 2026-11-21.
 photos:
   - place: a91b732 # bethsaida
     file: "Ruins of Bethsaida village in summer 2011 (7).JPG"
@@ -33,6 +37,7 @@ photos:
   - place: a8ec269 # memphis
     file: "Memphis, Ramses II, Ancient Egypt.jpg"
     author: "Vyacheslav Argenberg"
+    credit: "© Vyacheslav Argenberg"
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
   - place: af5884f # nazareth
@@ -77,11 +82,13 @@ photos:
   - place: a58735e # caesarea
     file: "124996 caesarea national park PikiWiki Israel.jpg"
     author: "מיכל פריימן"
+    credit: "michal freiman Pikiwiki Israel"
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
   - place: ab7bf48 # caesarea-philippi
     file: "145946 archaeological site in banias PikiWiki Israel.jpg"
     author: "רוני קניגסברג"
+    credit: "Ronnie Kenigsberg Pikiwiki Israel"
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
   - place: a6f437a # corinth
@@ -181,6 +188,7 @@ photos:
   - place: a9674fc # thebes
     file: "Luxor, Egypt, Karnak.jpg"
     author: "Vyacheslav Argenberg"
+    credit: "© Vyacheslav Argenberg"
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
   - place: ae41ab4 # antioch
@@ -191,11 +199,13 @@ photos:
   - place: a160272 # tyre
     file: "Roman Hippodrome, Tyre, Lebanon.jpg"
     author: "Vyacheslav Argenberg"
+    credit: "© Vyacheslav Argenberg / http://www.vascoplanet.com/"
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
   - place: a98e4d7 # sidon
     file: "Sidon Sea Castle, Mediterranean Sea, Sidon, Lebanon.jpg"
     author: "Vyacheslav Argenberg"
+    credit: "© Vyacheslav Argenberg / https://www.vascoplanet.com/"
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
   - place: ae0bf4a # jezreel
@@ -229,6 +239,7 @@ photos:
   - place: a341fe8 # Mount Hermon
     file: "PikiWiki Israel 56987 golan and hermon snow.jpg"
     author: "עוזי פז"
+    credit: "Uzi Paz Pikiwiki Israel"
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
   - place: acd63ee # Mount Tabor
@@ -238,6 +249,7 @@ photos:
   - place: a730058 # Lebanon
     file: "Cedar of Lebanon (Cedar of God), Lebanon.jpg"
     author: "Vyacheslav Argenberg"
+    credit: "© Vyacheslav Argenberg / http://www.vascoplanet.com/"
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
   - place: a84f426 # City of David
@@ -271,6 +283,7 @@ photos:
   - place: ac87d4c # ashkelon
     file: "PikiWiki Israel 14163 Ashkelon National Park.JPG"
     author: 'ד"ר אבישי טייכר'
+    credit: 'צילום:ד"ר אבישי טייכר'
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
   - place: a2a8df0 # beth-shan
@@ -281,6 +294,7 @@ photos:
   - place: ac62cbc # hamath
     file: "Norias of Hama, Orontes River, Hama, Syria.jpg"
     author: "Vyacheslav Argenberg"
+    credit: "© Vyacheslav Argenberg"
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
   - place: a3cc590 # lachish
@@ -305,6 +319,7 @@ photos:
   - place: a593a48 # chorazin
     file: "107188 korzim the ancient synagogue PikiWiki Israel.jpg"
     author: "שלמה רודד"
+    credit: "Roded Shlomo Pikiwiki Israel"
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
   - place: ab635e4 # dothan
@@ -454,6 +469,7 @@ photos:
   - place: a8e53d5 # Ezion-geber
     file: "Pharaon Island (997008872599305171.jpg"
     author: "Moshe Marlin Levin"
+    credit: "Moshe Marlin Levin /Meitar Collection / National Library of Israel / The Pritzker Family National Photography Collection"
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
     site: mb1c0e5
@@ -472,7 +488,7 @@ photos:
     license: "Public domain"
   - place: a3a2a75 # Dedan
     file: "Ancient site of Dadan at al-Ula, 1st millenium BCE, Saudi Arabia 20.jpg"
-    author: "Prof. Mortel"
+    author: "Richard Mortel"
     license: "CC BY 2.0"
     license_url: "https://creativecommons.org/licenses/by/2.0/"
   - place: a2c5cc7 # Lod
@@ -486,6 +502,7 @@ photos:
   - place: ad6eb0b # Jattir
     file: "122131 the ruin of yatir PikiWiki Israel.jpg"
     author: "זאב שטיין"
+    credit: "zeev stein Pikiwiki Israel"
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
   - place: af9cfc9 # En-rogel
@@ -529,6 +546,7 @@ photos:
   - place: a6f048c # gibbethon
     file: "99859 tel malot PikiWiki Israel.jpg"
     author: "יואל פיקסלר"
+    credit: "photografed by yoel fixler Pikiwiki Israel"
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
     site: m40394a
@@ -579,6 +597,9 @@ photos:
   - place: ac9adc9 # tiberias
     file: "PikiWiki Israel 84009 the roman theater in ancient tiberias.jpg"
     author: "נחום סיון וצביקה סחייק"
+    credit: "Heritage Conservation Tveria and Surrounding Pikiwiki Israel"
+    # The credit names an organisation, not the author, whom Commons names only in Hebrew.
+    credit_with_author: true
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
   - place: a5feb15 # ephesus
@@ -610,6 +631,8 @@ photos:
   - place: ad2f6c2 # beersheba
     file: "PikiWiki Israel 71724 tel sheva national park.jpg"
     author: "Zeev Stein"
+    credit: "Heritage Conservation Outside The City Pikiwiki Israel"
+    credit_with_author: true
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
   # Added 2026-10-03: places that had none; the same checks (licence from the Commons API,
@@ -635,6 +658,7 @@ photos:
   - place: a30c937 # Ashdod
     file: "112058 tel ashdod PikiWiki Israel.jpg"
     author: "סתיו קונשטיק"
+    credit: "Stav Konchtyk Pikiwiki Israel"
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
   - place: a3fc47a # Ekron
@@ -684,6 +708,7 @@ photos:
   - place: a2bb5ef # Arabah
     file: "Wadi Musa, Jordan, A view over Wadi Arabah.jpg"
     author: "Vyacheslav Argenberg"
+    credit: "© Vyacheslav Argenberg"
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
   - place: a197f19 # Asia
@@ -698,6 +723,7 @@ photos:
   - place: aa7a40a # Bashan
     file: "130476 views of the northern golan heights on the syrian PikiWiki Israel.jpg"
     author: "Shlomo Roded"
+    credit: "Roded Shlomo Pikiwiki Israel"
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
   - place: a581f0c # Canaan
@@ -721,6 +747,7 @@ photos:
   - place: a9cf1e8 # Galilee
     file: "115552 the lower galilee mountains PikiWiki Israel.jpg"
     author: "Davidi Vardi"
+    credit: "Davidi Vardi Pikiwiki Israel"
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
   - place: ae73b90 # Gilead
@@ -737,11 +764,13 @@ photos:
   - place: aa805fb # Great Sea
     file: "PikiWiki Israel 38177 Jaffa.jpg"
     author: "Eldad Cohen Tzedek"
+    credit: "Eldad Cohen Tzedek Pikiwiki Israel"
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
   - place: a149f13 # Judea
     file: "94741 the forests of the judean mountains PikiWiki Israel.jpg"
     author: "Davidi Vardi"
+    credit: "Davidi Vardi Pikiwiki Israel"
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
   - place: a69e1b8 # Macedonia
@@ -757,6 +786,7 @@ photos:
   - place: ae981db # Mount Seir
     file: "View over Wadi Arabah from Petra mountains, Petra, Jordan.jpg"
     author: "Vyacheslav Argenberg"
+    credit: "© Vyacheslav Argenberg"
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
   - place: a1cb244 # Negeb
@@ -811,6 +841,7 @@ photos:
   - place: a3f0756 # Babylon - Babylon of Revelation, which the map puts at Rome: the Roman Forum
     file: "Rom (IT), Forum Romanum -- 2024 -- 0554.jpg"
     author: "Anil Öztas"
+    credit: "© Anil Öztas"
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
   - place: a9ed5a4 # Bahurim
@@ -855,6 +886,8 @@ photos:
   - place: a212ef7 # Ecbatana
     file: "Ecbatana 13970108 03.jpg"
     author: "Behzad Alipour"
+    credit: "Fars Media Corporation"
+    credit_with_author: true
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
   - place: a7e3a59 # Elam - Chogha Zanbil
@@ -882,6 +915,9 @@ photos:
   - place: af6c325 # Geshur
     file: "PikiWiki Israel 69980 the golan heights.jpg"
     author: "רוני קניגסברג"
+    credit: "Heritage Conservation Outside The City Pikiwiki Israel"
+    # The credit names an organisation, not the author, whom Commons names only in Hebrew.
+    credit_with_author: true
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
   - place: a60f092 # Goshen
@@ -910,6 +946,7 @@ photos:
   - place: aa54aa4 # Jordan Valley
     file: "PikiWiki Israel 31590 Sartaba lookout (Mustra).JPG"
     author: "Dr. Avishai Teicher"
+    credit: "Dr. Avishai Teicher Pikiwiki Israel"
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
   - place: a68d1a9 # Kedar - Dumat al-Jandal (Adummatu), the Qedarite capital
@@ -924,6 +961,7 @@ photos:
   - place: a5a6458 # Kishon
     file: "150561 kishon river PikiWiki Israel.jpg"
     author: "ורד פרחי"
+    credit: "vered parhi - VARDOONA"
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
   - place: a094036 # Lower Beth-horon
@@ -977,6 +1015,8 @@ photos:
   - place: ad8027f # Mount Hor
     file: "PikiWiki Israel 70862 mount tzin.jpg"
     author: "זאב שטיין - Zeev Stein"
+    credit: "Heritage Conservation Outside The City Pikiwiki Israel"
+    credit_with_author: true
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
     site: m700b87
@@ -1021,6 +1061,7 @@ photos:
   - place: a83fd43 # Sharon
     file: "PikiWiki Israel 11781 Geography of Israel.jpg"
     author: "אורן פלס"
+    credit: "צילום: אורן פלס, Oren Peles"
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
   - place: a81ab85 # Sheba
@@ -1079,6 +1120,7 @@ photos:
   - place: ad0d82f # achzib (Galilee)
     file: "Tel Achziv 997009323993005171.jpg"
     author: "Boris Carmi"
+    credit: "Boris Carmi /Meitar Collection / National Library of Israel / The Pritzker Family National Photography Collection"
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
   - place: a8ce5c4 # achshaph
@@ -1099,6 +1141,7 @@ photos:
   - place: a39267b # akrabbim
     file: "Ma'ale Akrabim (997008137143105171).jpg"
     author: "Benno Rothenberg"
+    credit: "Benno Rothenberg /Meitar Collection / National Library of Israel / The Pritzker Family National Photography Collection"
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
   - place: a6fc60d # aphek (Golan)
@@ -1196,6 +1239,7 @@ photos:
   - place: a2bb265 # chinnereth
     file: "Tel Kinarot (997009157635305171).jpg"
     author: "Benno Rothenberg"
+    credit: "Benno Rothenberg /Meitar Collection / National Library of Israel / The Pritzker Family National Photography Collection"
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
   - place: a529e92 # city of palms (Jericho)
@@ -1245,11 +1289,13 @@ photos:
   - place: a9a2541 # Gebal
     file: "Byblos ancient ruins, old Phoenician city of Byblos, Lebanon.jpg"
     author: "Vyacheslav Argenberg"
+    credit: "© Vyacheslav Argenberg / http://www.vascoplanet.com/"
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
   - place: a7de69e # Gennesaret
     file: "Ginosar (997009157635605171).jpg"
     author: "Benno Rothenberg"
+    credit: "Benno Rothenberg /Meitar Collection / National Library of Israel / The Pritzker Family National Photography Collection"
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
   - place: a42418f # Gethsemane
@@ -1284,6 +1330,7 @@ photos:
   - place: a7adb01 # Jabneel
     file: "PikiWiki Israel 10243 yavne hill.jpg"
     author: 'ד"ר אבישי טייכר'
+    credit: 'צילום:ד"ר אבישי טייכר'
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
 
@@ -1295,6 +1342,7 @@ photos:
   - place: a5c92e1 # Jokneam
     file: "Tel Yokneam 997008137015505171.jpg"
     author: "Benno Rothenberg"
+    credit: "Benno Rothenberg /Meitar Collection / National Library of Israel / The Pritzker Family National Photography Collection"
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
   - place: a373106 # Kanah
@@ -1304,6 +1352,7 @@ photos:
   - place: a321cb8 # Kedesh
     file: "126623 tel kadesh the eastern site naphtali mountains PikiWiki Israel.jpg"
     author: "זאב שטיין"
+    credit: "zeev stein Pikiwiki Israel"
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
     site: m48684e
@@ -1365,6 +1414,7 @@ photos:
   - place: a6ac675 # Moresheth-gath
     file: "Tel Goded 997009157517305171.jpg"
     author: "Benno Rothenberg"
+    credit: "Benno Rothenberg /Meitar Collection / National Library of Israel / The Pritzker Family National Photography Collection"
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
   - place: ac0d1a5 # Mount Ephraim
@@ -1378,6 +1428,7 @@ photos:
   - place: a62fa2d # Mount Hor (north)
     file: "PikiWiki Israel 56987 golan and hermon snow.jpg"
     author: "עוזי פז"
+    credit: "Uzi Paz Pikiwiki Israel"
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
     site: a341fe8
@@ -1415,6 +1466,7 @@ photos:
   - place: ab8ae56 # Phrygia
     file: "Midas City Midas Monument from E (1993) 02.jpg"
     author: "Mark Landon"
+    credit: "Mark Landon / Wikimedia Commons"
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
   - place: a83a43e # Pontus
@@ -1426,6 +1478,7 @@ photos:
   - place: aefdac1 # Rezeph
     file: "Resafa, Sergiopolis 2, Syria.jpg"
     author: "Vyacheslav Argenberg"
+    credit: "© Vyacheslav Argenberg"
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
     site: m4b3ec6
@@ -1457,6 +1510,7 @@ photos:
   - place: ad27e17 # Senir
     file: "PikiWiki Israel 56987 golan and hermon snow.jpg"
     author: "עוזי פז"
+    credit: "Uzi Paz Pikiwiki Israel"
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
   - place: af6476f # Shamir
@@ -1470,6 +1524,7 @@ photos:
   - place: a072bae # Shimron
     file: "Tel Shimron (997009157429405171).jpg"
     author: "Benno Rothenberg"
+    credit: "Benno Rothenberg /Meitar Collection / National Library of Israel / The Pritzker Family National Photography Collection"
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
   - place: a39a6b9 # Socoh
@@ -1535,5 +1590,6 @@ photos:
   - place: a78e845 # Zaphon
     file: "Jebel Aqra (Kel Dağı, Mount Casius), 2008.jpg"
     author: "Anthiok at English Wikipedia"
+    credit: "Anthiok at en.wikipedia"
     license: "CC BY 3.0"
     license_url: "https://creativecommons.org/licenses/by/3.0/"

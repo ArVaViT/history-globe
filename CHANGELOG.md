@@ -24,6 +24,13 @@ pull requests on GitHub have them.
   carries `license` and `license_url`.
 - `index.json`: the data is named "History Globe dataset", as in `CITATION.cff` and on Hugging
   Face.
+- Photos: a new field `credit` in `content.json` → `photos` (and the column
+  `place_photo.credit` in the database) holds the credit line the author asks for, word for
+  word as the file's Commons page gives it ("Uzi Paz Pikiwiki Israel"); it is shown in place
+  of `author`. `credit_with_author` (`place_photo.credit_with_author`) is true where that line
+  names an agency or a collection rather than the author, who is then shown after it ("Fars
+  Media Corporation (Behzad Alipour)"). 45 photos carry a credit; one author is corrected
+  (Richard Mortel).
 - Photos: each licence is linked at its canonical address
   (`https://creativecommons.org/licenses/by/4.0/`, with the closing slash; CC0 without
   "deed.en").

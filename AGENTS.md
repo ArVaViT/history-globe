@@ -18,8 +18,8 @@ A change is done only when **all** of these hold:
 
 - `pnpm gate` passes locally, and `pnpm gate:full` for anything touching the pipeline or
   the data it builds. Never report success without running it and reading its output.
-  `gate` = format, lint, types, unit and pipeline tests, content checks, links, build, CSP
-  hashes and the JS budget; `gate:full` builds the data afresh first (`pnpm data`). CI runs
+  `gate` = format, lint, types, unit and pipeline tests, content checks, links, build, the
+  third-party licence notices, CSP hashes and the JS budget; `gate:full` builds the data afresh first (`pnpm data`). CI runs
   the part of it that needs no data (ADR 0020). The browser checks (`pnpm e2e`,
   `pnpm e2e:a11y`; e2e/README.md) run against the running app, apart from the gate; for a
   change to rendering or the embed, run them too.

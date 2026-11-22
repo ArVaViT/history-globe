@@ -12,3 +12,24 @@ export function licenceUrl(photo: {
 }): string | undefined {
   return photo.license_url?.replace(/^http:\/\//, "https://");
 }
+
+/**
+ * Who a photo's credit names: the credit line its author asks for (content/photos.yaml
+ * `credit`, as the file's Commons page gives it), with the author after it when that line
+ * does not name them (`credit_with_author`: "Fars Media Corporation (Behzad Alipour)"), else
+ * the author; none for an unknown author.
+ */
+export function creditLine(photo: {
+  readonly author?: string | undefined;
+  readonly credit?: string | undefined;
+  readonly credit_with_author?: boolean | undefined;
+}): string | undefined {
+  if (photo.credit !== undefined && photo.credit_with_author && photo.author)
+    return `${photo.credit} (${photo.author})`;
+  return photo.credit ?? photo.author;
+}
+
+/** Whether a photo's credit line names Wikimedia Commons itself, which then is not repeated. */
+export function creditNamesCommons(line: string | undefined): boolean {
+  return line?.includes("Wikimedia Commons") ?? false;
+}

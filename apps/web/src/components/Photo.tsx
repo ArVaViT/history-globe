@@ -1,12 +1,13 @@
-import { pick, commonsPage, licenceUrl } from "@hg/model";
+import { pick, commonsPage, creditLine, creditNamesCommons, licenceUrl } from "@hg/model";
 import type { PlacePhoto } from "@hg/model";
 import { useState } from "react";
 import { useTranslation } from "../i18n";
 import { DATA_URL } from "../data";
 
 /**
- * The place's photo, served from the site, with its author and licence linked to the
- * file's Commons page (CC BY asks for the credit next to the image).
+ * The place's photo, served from the site, with its credit (the line the author asks for,
+ * else the author) linked to the file's Commons page and its licence linked to the licence
+ * text (CC BY asks for the credit next to the image).
  */
 export function Photo({
   photo,
@@ -30,6 +31,10 @@ export function Photo({
   const page = commonsPage(photo.file);
   const free = photo.license === "Public domain" || photo.license.startsWith("CC0");
   const licence = licenceUrl(photo);
+  const credit = creditLine(photo);
+  const licenceName = photo.license === "Public domain" ? t("place.photo_pd") : photo.license;
+  // "Wikimedia Commons" once: not after a credit that names it already.
+  const source = creditNamesCommons(credit) ? "" : ", Wikimedia Commons";
   return (
     <figure className={className}>
       {/* The credit sits on the photo's corner: next to the image, as CC BY asks, without a
@@ -44,28 +49,28 @@ export function Photo({
           }}
           className={`${aspect} w-full rounded-xl object-cover`}
         />
-        <span className="absolute right-1.5 bottom-1.5 flex max-w-[85%] rounded-full bg-black/60 px-2 py-0.5 text-[10.5px] text-white/95 hover:bg-black/75">
-          {/* The licence stays in sight (CC BY asks for it, and a phone has no tooltip); a
-              long name is cut instead. No copyright to mark on a free photo. The author's
-              name opens the file's page, the licence its text (CC BY asks for its link). */}
+        <span className="absolute right-1.5 bottom-1.5 max-w-[85%] rounded-[10px] bg-black/60 px-2 py-0.5 text-[10.5px] leading-snug text-white/95 hover:bg-black/75">
+          {/* The licence stays in sight (CC BY asks for it, and a phone has no tooltip), and
+              so does the whole credit: a long one wraps rather than being cut. No copyright
+              to mark on a free photo, nor twice where the credit carries its own. The credit
+              opens the file's page, the licence its text (CC BY asks for its link). */}
           <a
             href={page}
             target="_blank"
             rel="noopener noreferrer"
-            title={`${t("place.photo")}: ${photo.author ? `${photo.author}, ` : ""}${photo.license === "Public domain" ? t("place.photo_pd") : photo.license}, Wikimedia Commons`}
-            className="truncate"
+            title={`${t("place.photo")}: ${credit ? `${credit}, ` : ""}${licenceName}${source}`}
+            className="break-words"
           >
-            {free ? "" : "© "}
-            {photo.author ?? "Wikimedia Commons"}
+            {free || credit?.startsWith("©") ? "" : "© "}
+            <bdi>{credit ?? "Wikimedia Commons"}</bdi>
             <span className="sr-only">
               {" "}
-              ({t("place.photo")}:{" "}
-              {photo.license === "Public domain" ? t("place.photo_pd") : photo.license}, Wikimedia
-              Commons, {t("new_tab")})
+              ({t("place.photo")}: {licenceName}
+              {source}, {t("new_tab")})
             </span>
           </a>
           {photo.license !== "Public domain" && (
-            <span className="shrink-0">
+            <span className="whitespace-nowrap">
               &nbsp;·{" "}
               {licence ? (
                 <a href={licence} target="_blank" rel="noopener noreferrer">

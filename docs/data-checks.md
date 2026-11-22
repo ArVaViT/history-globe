@@ -45,6 +45,14 @@ the data first (`pnpm data`).
 - **Photos** (`content/photos.yaml`): public domain, CC0 or CC BY only, and the licence linked
   at its canonical address (`https://creativecommons.org/licenses/by/X.Y/`; CC0's
   `…/publicdomain/zero/1.0/`), required for CC BY.
+  `pnpm photo-credits` (`scripts/check-photo-credits.ts`, by hand: it reads Wikimedia
+  Commons) compares each photo with its file's Commons metadata: the licence and its
+  version, the licence link, and the credit the author asks for (`credit`, word for word),
+  or for CC BY without one, the author Commons names. A credit that does not name the
+  author shows the author after it (`credit_with_author`): the check demands the flag when
+  Commons writes the author in Latin letters and the credit has none of those words, and
+  refuses it when the credit has them; for an author written only in Hebrew the flag is set
+  by hand.
 - **References exist**: OSIS book, chapter and verse are checked against
   `packages/model/src/versification.ts` (generated from the public-domain World English
   Bible by `pipeline/build_versification.py`; English numbering, not Synodal: Synodal
@@ -221,6 +229,17 @@ the translation numbers it otherwise, with its link (an empty row had stood unde
 references); a page's description is neither its title nor opens with it; `pages.css` has the
 documentation's palette (`content/docs/docs.css`) with text colours at 4.5:1 at least, and every
 page, the 404 among them, colours the browser's bar with the paper.
+
+## Third-party notices
+
+`scripts/third-party-licenses.ts --check`, after the build: `apps/web/public/licenses/third-party.txt`
+has the licence text and copyright of every package the build ships, read from the build itself
+(the app chunks' source maps, the source maps MapLibre publishes for the files under `vendor/`
+and those of the copies its packages carry, the fonts by their package, Tailwind's base styles
+in the stylesheet, and the bundler's helpers no map lists: Rolldown's runtime chunk and Vite's
+module preload code). A package that enters or
+leaves a bundle, or a new version, fails the gate until `pnpm licenses` rewrites the file; a
+package without a licence text, or one that names no copyright holder, fails it too.
 
 ## Budget
 
