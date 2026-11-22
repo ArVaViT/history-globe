@@ -33,7 +33,7 @@ const DEMO_SCRIPT =
   /^\s+src="(?:\.\.\/)+hg-places\.js"(?:\s+data-[a-z-]+="[^"<>]*")*(?:\s+defer)?\s*$/;
 /** The site's own globe, by a path from the page or by the site's address. */
 const OWN_EMBED = new RegExp(
-  `^(?:(?:\\.\\./)+|${SITE_ORIGIN.replace(/\./g, "\\.")}/)embed/v1(?:[?#]|$)`,
+  `^(?:(?:\\.\\./)+|${SITE_ORIGIN.replace(/[.*+?^${}()|[\]\\/]/g, "\\$&")}/)embed/v1(?:[?#]|$)`,
 );
 const ATTR = /([^\s"'=<>/]+)(?:\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s"'=<>`]+)))?/g;
 
