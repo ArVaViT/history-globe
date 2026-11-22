@@ -100,6 +100,19 @@ describe("checkPolities", () => {
       }),
     ).toEqual([]);
   });
+  it("fails an anchor whose card names another state drawn over it", () => {
+    const empire = shape("Empire", 0, 10, box(0, 0, 10, 10));
+    const raid = shape("Raiders", 5, 7, box(0, 0, 2, 2));
+    const anchor = {
+      name: "City",
+      at: [1, 1] as [number, number],
+      periods: [{ first_year: 0, last_year: 9, polity: "Empire" }],
+    };
+    expect(run({ shapes: [empire, raid], anchors: [anchor] }).join()).toMatch(
+      /City AD 5-AD 6: in Raiders within Empire, not Empire/,
+    );
+    expect(run({ shapes: [empire], anchors: [anchor] })).toEqual([]);
+  });
   it("fails a clip that leaves land blank unless it says so", () => {
     const cutAways = [{ k: 0, y0: 0, y1: 10, rings: [box(0, 0, 1, 1)] }];
     expect(run({ clips: [{ name: "A", blank: false }], cutAways }).join()).toMatch(

@@ -7,6 +7,7 @@ import {
   fallsIn,
   givesFigure,
   kmFigures,
+  lateTransfers,
   nearDistance,
   ownDistances,
   samePassageApart,
@@ -228,5 +229,35 @@ describe("givesFigure", () => {
     expect(givesFigure("noin 12,5 km", 12.5)).toBe(true);
     expect(givesFigure("about 12.5 km", 12.5)).toBe(true);
     expect(givesFigure("about 12 km", 12.5)).toBe(false);
+  });
+});
+
+describe("lateTransfers", () => {
+  // Place p: state 1 until year 10, state 2 from 10.
+  const rulers = { p: [[0, 10, 1] as const, [10, 20, 2] as const] };
+  it("passes an item in the year of the change, and one with no state", () => {
+    expect(
+      lateTransfers(
+        [
+          ["events a", "p", 10],
+          ["events b", "q", 9],
+        ],
+        rulers,
+        new Map(),
+      ),
+    ).toEqual([]);
+  });
+  it("refuses an item the year before the change unless allowed", () => {
+    expect(lateTransfers([["events a", "p", 9]], rulers, new Map())).toEqual([
+      expect.stringMatching(/^events a: the map changes the state of p the year after 9/),
+    ]);
+    expect(lateTransfers([["events a", "p", 9]], rulers, new Map([["events a", "siege"]]))).toEqual(
+      [],
+    );
+  });
+  it("refuses an allowance no item needs", () => {
+    expect(lateTransfers([["events a", "p", 10]], rulers, new Map([["events a", "x"]]))).toEqual([
+      "TRANSFER_LAG: events a no longer needs it; take it out",
+    ]);
   });
 });

@@ -1,11 +1,18 @@
 # Corrections on top of Cliopatria for the biblical Levant (borders audit, 2026-09-29).
 # An entry keeps a polity on the map for more years, reusing Cliopatria's last shape of
 # it, or ends it sooner when Cliopatria keeps it too long. The shape is approximate: Judah's borders moved under Hezekiah and Josiah.
+#
+# The year a place changes hands: a place passes to the state that took it in the year of
+# the event that tells it (events.yaml, battles.yaml), so the map in an event's year shows
+# its outcome. The old state's last year is the year before (Samaria falls in 722 BC: Israel
+# is drawn to 723 BC, Assyria from 722). The content build refuses an event, battle,
+# question map or tour stop whose place changes state the year after it (TRANSFER_LAG in
+# scripts/build-content.ts lists the real exceptions).
 overrides:
   - polity: Kingdom of Judah
-    last_year: "586 BC"
+    last_year: "587 BC"
     reason: >-
-      Cliopatria ends Judah in 702 BC, after Sennacherib's campaign. Judah remained a kingdom, vassal in turn to Assyria, Egypt and Babylon, until Jerusalem fell in 587 or 586 BC.
+      Cliopatria ends Judah in 702 BC, after Sennacherib's campaign. Judah remained a kingdom, vassal in turn to Assyria, Egypt and Babylon, until Jerusalem fell in 587 or 586 BC. The atlas dates the fall 586 BC (event jerusalem-falls), the first year the map shows the land as Babylon's.
     sources:
       - "2 Kgs 18-25"
       - "Jer 39:1-10; 52:4-16"
@@ -38,9 +45,9 @@ overrides:
       - "H. Kennedy, Muslim Spain and Portugal: A Political History of al-Andalus (1996)"
       - "C. E. Bosworth, The New Islamic Dynasties (1996), s.v. Spanish Umayyads"
   - polity: Latin Empire
-    last_year: "AD 1261"
+    last_year: "AD 1260"
     reason: >-
-      Cliopatria keeps the Latin Empire in Constantinople until 1278. Michael VIII's general Alexios Strategopoulos retook the city on 25 July 1261 and the Byzantine Empire was restored there.
+      Cliopatria keeps the Latin Empire in Constantinople until 1278. Michael VIII's general Alexios Strategopoulos retook the city on 25 July 1261 and the Byzantine Empire was restored there (event constantinople-1261): the city is the restored empire's from 1261 (annexed).
     sources:
       - "R. L. Wolff, The Latin Empire of Constantinople, 1204-1261, in K. M. Setton (ed.), A History of the Crusades, vol. 2 (1969)"
       - "D. M. Nicol, The Last Centuries of Byzantium, 1261-1453, 2nd ed. (1993)"
@@ -66,9 +73,9 @@ overrides:
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 8 (J. Bourriau)"
       - "D. B. Redford, Egypt, Canaan, and Israel in Ancient Times (1992), ch. 5"
   - polity: Kingdom of Israel
-    last_year: "722 BC"
+    last_year: "723 BC"
     reason: >-
-      Samaria fell after a three-year siege by Shalmaneser V; the Babylonian Chronicle says he "ravaged Samaria" in his short reign (727-722 BC), and 2 Kings dates the capture to Hoshea's ninth year. Sargon II later claimed the conquest and in 720 BC put down a revolt in which Samaria took part, which is why some scholars write c. 720; 722 BC is the usual textbook year for the end of the kingdom.
+      Samaria fell after a three-year siege by Shalmaneser V; the Babylonian Chronicle says he "ravaged Samaria" in his short reign (727-722 BC), and 2 Kings dates the capture to Hoshea's ninth year. Sargon II later claimed the conquest and in 720 BC put down a revolt in which Samaria took part, which is why some scholars write c. 720; 722 BC is the usual textbook year for the end of the kingdom, the year of the event samaria-falls, and the first year the map shows Samaria as Assyria's (annexed).
     sources:
       - "2 Kgs 17:5-6"
       - "2 Kgs 18:9-10"
@@ -82,9 +89,9 @@ overrides:
       - "Wikipedia, Commagene; Antiochus IV of Commagene"
 
   - polity: Neo-Assyrian Empire
-    last_year: "609 BC"
+    last_year: "611 BC"
     reason: >-
-      Nineveh fell to the Medes and Babylonians in 612 BC; the last king, Ashur-uballit II, held out at Harran until 610-609 BC. Cliopatria draws the empire until 601 BC; its heartland after 609 is left without a state rather than given the wrong one.
+      Nineveh fell to the Medes and Babylonians in 612 BC; the last king, Ashur-uballit II, held out at Harran until the Babylonians and the Medes took it in 610 BC (event harran-falls), and his attempt to retake it in 609 failed. Cliopatria draws the empire until 601 BC; the map ends it in 611 BC. Harran is Babylon's from 610 (extends); the heartland around Nineveh and Assur, which the Medes and the Babylonians divided in ways the sources do not draw, is left without a state until Cliopatria's shapes of 600 BC.
     sources:
       - "Babylonian Chronicle ABC 3 (Fall of Nineveh Chronicle)"
       - "Wikipedia, Ashur-uballit II; Fall of Nineveh"
@@ -123,16 +130,16 @@ overrides:
       - "Wikipedia, Sargon II (Melid 712, Gurgum 711, Kummuh 708 BC)"
       - "Wikipedia, Kummuh (a tributary state allied with Assyria from the 9th to the mid-8th century BC)"
   - polity: Neo-Babylonian Empire
-    last_year: "539 BC"
+    last_year: "540 BC"
     reason: >-
-      Cliopatria draws the Neo-Babylonian Empire until 532 BC. After the battle of Opis the army of Cyrus entered Babylon without a battle in October 539 BC and Nabonidus was captured; the empire ended.
+      Cliopatria draws the Neo-Babylonian Empire until 532 BC. After the battle of Opis the army of Cyrus entered Babylon without a battle in October 539 BC and Nabonidus was captured; the empire ended. The map shows Babylon as Persian from 539 BC, the year of the event babylon-taken (annexed).
     sources:
       - "Nabonidus Chronicle (ABC 7) iii 12-16 (livius.org)"
       - "Wikipedia, Fall of Babylon (Persian forces entered Babylon on 12 October 539 BC)"
   - polity: Achaemenid Empire
-    last_year: "330 BC"
+    last_year: "331 BC"
     reason: >-
-      Cliopatria draws the Achaemenid Empire over Mesopotamia and Iran until 328 BC. Alexander won at Gaugamela on 1 October 331 BC and took Babylon, Susa and Persepolis; Darius III was killed by Bessus in 330 BC.
+      Cliopatria draws the Achaemenid Empire over Mesopotamia and Iran until 328 BC. Alexander won at Gaugamela on 1 October 331 BC and took Babylon and Susa that year (clips) and Persepolis early in 330 BC (event persepolis-burned); Darius III was killed by Bessus in 330 BC. The empire is drawn to 331 BC and its land as Alexander's from 330 (annexed).
     sources:
       - "Wikipedia, Darius III (reigned 336 BC to his death in 330 BC)"
       - "Wikipedia, Battle of Gaugamela (1 October 331 BC)"
@@ -151,17 +158,17 @@ overrides:
       - "Wikipedia, Battle of Hormozdgan (28 April 224)"
       - "Wikipedia, Ardashir I (coronation at Ctesiphon in 226 according to Wiesehöfer)"
   - polity: Kingdom of Pergamon
-    last_year: "133 BC"
+    last_year: "134 BC"
     reason: >-
-      Cliopatria draws the Attalid kingdom until 128 BC. Attalus III died in 133 BC and left his kingdom to the Roman people. Aristonicus, who claimed the throne as Eumenes III, fought Rome for it until the consul Perperna took his surrender in 130 BC; the revolt was over by 129 BC, and the land became the province of Asia.
+      Cliopatria draws the Attalid kingdom until 128 BC. Attalus III died in 133 BC and left his kingdom to the Roman people. Aristonicus, who claimed the throne as Eumenes III, fought Rome for it until the consul Perperna took his surrender in 130 BC; the revolt was over by 129 BC, and the land became the province of Asia. Drawn as Rome's from 133 BC, the year of the bequest (event pergamum-bequeathed; annexed).
     sources:
       - "Strabo, Geography 13.4.2 (Attalus Philometor reigned five years and left the Romans his heirs; they made the country a province, Asia) (LacusCurtius)"
       - "Livy, Periochae 58-59 (livius.org)"
       - "Wikipedia, Attalus III (138-133 BC; the uprising of Aristonicus put down in 129 BC)"
   - polity: Antigonid Macedonia
-    last_year: "168 BC"
+    last_year: "169 BC"
     reason: >-
-      Cliopatria draws the Antigonid kingdom until 166 BC. Aemilius Paullus defeated Perseus at Pydna in 168 BC; the monarchy was abolished and Macedonia was divided into four tribute-paying republics (merides). Cliopatria draws them as Greek city-states from 165 BC.
+      Cliopatria draws the Antigonid kingdom until 166 BC. Aemilius Paullus defeated Perseus at Pydna in 168 BC; the monarchy was abolished and Macedonia was divided into four tribute-paying republics (merides). Cliopatria draws them as Greek city-states from 165 BC; the map does from 168 BC, the year of Pydna (annexed).
     sources:
       - "Livy 44.40-42 (Pydna); 45.18 (the Senate's decision: Macedonia free, in four regions, paying half the old tribute); 45.29-30 (the four regions) (Perseus)"
       - "Wikipedia, Battle of Pydna (168 BC; the kingdom dissolved and replaced with four republics)"
@@ -174,9 +181,9 @@ overrides:
       - "Livy, Periochae 70.5 (Ptolemy Apion of Cyrene makes the Roman people his heir; the Senate frees the towns) (livius.org)"
       - "Wikipedia, Ptolemy Apion (died 96 BC); Crete and Cyrenaica (Cyrenaica annexed as a province in 74 BC)"
   - polity: Ptolemaic Kingdom
-    last_year: "30 BC"
+    last_year: "31 BC"
     reason: >-
-      Cliopatria draws the Ptolemaic kingdom in Egypt until 29 BC. Octavian took Alexandria in 30 BC, Cleopatra VII died, and Egypt was made a tributary province under Cornelius Gallus.
+      Cliopatria draws the Ptolemaic kingdom in Egypt until 29 BC. Octavian took Alexandria in 30 BC, Cleopatra VII died, and Egypt was made a tributary province under Cornelius Gallus. Drawn as Rome's from 30 BC, the year of the event egypt-roman (annexed).
     sources:
       - "Cassius Dio 51.9-17 (51.17.1: he made Egypt tributary and gave it in charge of Cornelius Gallus) (LacusCurtius)"
       - "Wikipedia, Ptolemaic Kingdom (ended with the death of Cleopatra VII in 30 BC)"
@@ -218,17 +225,17 @@ overrides:
       - "S. Runciman, A History of the Crusades, vol. 2 (1952)"
       - "Wikipedia, County of Edessa; Joscelin II, Count of Edessa"
   - polity: Abbasid Caliphate
-    last_year: "AD 1258"
+    last_year: "AD 1257"
     reason: >-
-      Cliopatria draws the Abbasid Caliphate over Iraq until 1259. Hulagu took Baghdad, where the caliph al-Musta'sim surrendered on 10 February 1258 and was put to death; Iraq passed to the Mongols (annexed). The caliphs later kept at Cairo by the Mamluks held no land.
+      Cliopatria draws the Abbasid Caliphate over Iraq until 1259. Hulagu took Baghdad, where the caliph al-Musta'sim surrendered on 10 February 1258 and was put to death; Iraq passed to the Mongols, from 1258 on the map (event baghdad-1258; annexed). The caliphs later kept at Cairo by the Mamluks held no land.
     sources:
       - "S. Runciman, A History of the Crusades, vol. 3 (1954), the fall of Baghdad"
       - "J. A. Boyle, Dynastic and Political History of the Il-Khans, in The Cambridge History of Iran, vol. 5 (1968)"
       - "Wikipedia, Siege of Baghdad (1258)"
   - polity: Principality of Antioch
-    last_year: "AD 1268"
+    last_year: "AD 1267"
     reason: >-
-      Cliopatria draws the principality until 1271. Baybars took Antioch by storm on 18 May 1268; Bohemond VI kept only the title and the county of Tripoli, and the city and its land were the Mamluks' from then (annexed).
+      Cliopatria draws the principality until 1271. Baybars took Antioch by storm on 18 May 1268; Bohemond VI kept only the title and the county of Tripoli, and the city and its land were the Mamluks' from then, 1268 on the map (event antioch-1268; annexed).
     sources:
       - "S. Runciman, A History of the Crusades, vol. 3 (1954), pp. 324-7"
       - "Wikipedia, Siege of Antioch (1268)"
@@ -240,12 +247,73 @@ overrides:
       - "S. Runciman, A History of the Crusades, vol. 3 (1954), the fall of Tripoli"
       - "Wikipedia, Fall of Tripoli (1289)"
   - polity: Kingdom of Jerusalem
-    last_year: "AD 1291"
+    last_year: "AD 1290"
     reason: >-
-      Cliopatria draws the coastal kingdom until 1293. Al-Ashraf Khalil took Acre on 18 May 1291; Tyre, Sidon, Beirut and Haifa were given up in the following weeks and Atlit, the last castle, on 14 August, and nothing of the kingdom was left on the mainland (annexed).
+      Cliopatria draws the coastal kingdom until 1293. Al-Ashraf Khalil took Acre on 18 May 1291; Tyre, Sidon, Beirut and Haifa were given up in the following weeks and Atlit, the last castle, on 14 August, and nothing of the kingdom was left on the mainland: the Mamluks' from 1291 on the map (event acre-1291; annexed).
     sources:
       - "S. Runciman, A History of the Crusades, vol. 3 (1954), the fall of Acre"
       - "Wikipedia, Siege of Acre (1291)"
+  - polity: Twenty-sixth Dynasty of Egypt
+    last_year: "526 BC"
+    reason: >-
+      Cliopatria draws the Twenty-sixth Dynasty in Egypt until 501 BC. Cambyses defeated Psamtik III at Pelusium in 525 BC, took Memphis and made Egypt a Persian satrapy; Cyprus and the Libyans submitted to him the same year (annexed).
+    sources:
+      - "Herodotus 3.10-16; 3.19"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 13 (A. B. Lloyd, The Late Period)"
+  - polity: Thirtieth Dynasty of Egypt
+    last_year: "344 BC"
+    reason: >-
+      Cliopatria draws the Thirtieth Dynasty until 338 BC. Artaxerxes III took Pelusium and Memphis in the winter of 343/342 BC; Nectanebo II fled south, and Egypt was a Persian satrapy again until Alexander came in 332 BC (annexed).
+    sources:
+      - "Diodorus Siculus 16.46-51"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 13 (A. B. Lloyd, The Late Period)"
+  - polity: Ostrogoths
+    last_year: "AD 492"
+    reason: >-
+      Cliopatria draws Theoderic's Ostrogoths over northern Italy until AD 499 beside the Ostrogothic Kingdom of 500. From the fall of Ravenna in 493 they are the Ostrogothic Kingdom, drawn from then (starts).
+    sources:
+      - "Anonymus Valesianus, Pars Posterior 11.53-56"
+      - "J. Moorhead, Theoderic in Italy (1992), ch. 1"
+  - polity: Carthage
+    last_year: "147 BC"
+    reason: >-
+      Cliopatria draws Carthage until 146 BC. Scipio Aemilianus took and destroyed the city in the spring of 146 BC (event carthage-destroyed), and its land became the province of Africa: the map shows it as Rome's from 146 BC (annexed).
+    sources:
+      - "Appian, Punic Wars 127-135"
+      - "Polybius 38.19-22"
+  - polity: Achaean League
+    last_year: "147 BC"
+    reason: >-
+      Cliopatria draws the Achaean League until 146 BC. Lucius Mummius defeated the League's army and sacked Corinth in 146 BC (event corinth-destroyed); the League was dissolved and its cities put under the governor of Macedonia. The map shows them as Rome's from 146 BC (annexed).
+    sources:
+      - "Pausanias 7.15-16"
+      - "Polybius 38.9-18"
+
+# A change of shape Cliopatria puts at a round year, moved to the year it happened
+# (build-content.ts): the shapes that begin in `data_year` begin in `first_year`, and the
+# shapes before them end then.
+# Only for a change no neighbour shares: when the neighbours' shapes change in the same
+# round year, the build refuses the seam (it would draw one state over another), and a clip
+# of the land that changed hands is used instead (Hattin 1187, Acre 1191, Larsa 1763 BC).
+seams:
+  - polity: Kingdom of Israel
+    data_year: "901 BC"
+    first_year: "931 BC"
+    reason: >-
+      Cliopatria divides the kingdom of David and Solomon at the turn of the century, in 901 BC. The northern tribes made Jeroboam king at Shechem on Solomon's death, which Thiele's chronology, the one the map's events follow, puts in 931/930 BC; the map shows the divided kingdoms from 931 BC, the year of the event kingdom-divided. Shishak's campaign against Rehoboam (c. 925 BC) falls after it.
+    sources:
+      - "1 Kgs 11:42-12:20; 14:25"
+      - "E. R. Thiele, The Mysterious Numbers of the Hebrew Kings, new rev. ed. (1983)"
+      - "K. A. Kitchen, On the Reliability of the Old Testament (2003), ch. 2"
+  - polity: Kingdom of Judah
+    data_year: "901 BC"
+    first_year: "931 BC"
+    reason: >-
+      Judah under Rehoboam from the division of the kingdom, as for Israel above: Cliopatria's first shape of Judah is drawn from 931 BC instead of 901.
+    sources:
+      - "1 Kgs 12:16-24"
+      - "E. R. Thiele, The Mysterious Numbers of the Hebrew Kings, new rev. ed. (1983)"
+
 starts:
   - polity: Kingdom of Israel
     first_year: "1050 BC"
@@ -283,6 +351,28 @@ starts:
     sources:
       - "Wikipedia, Urartu (Arame c. 860-843 BC; Sarduri I c. 832-820 BC, capital moved to Tushpa)"
       - "Wikipedia, Arame of Urartu (fought Shalmaneser III, r. 859-824 BC)"
+  - polity: Thirtieth Dynasty of Egypt
+    first_year: "404 BC"
+    reason: >-
+      Cliopatria draws Egypt as Persian until 384 BC and the Thirtieth Dynasty only from 383 BC. Amyrtaeus of Sais rose against Persia on the death of Darius II in 404 BC and was recognised as king in Upper Egypt by 400 BC; his Twenty-eighth Dynasty and then the Twenty-ninth and Thirtieth kept Egypt independent until 343 BC. The shape is drawn from 404 BC and renamed for each dynasty (renamed).
+    sources:
+      - "Diodorus Siculus 14.35; 15.42-43"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 13 (A. B. Lloyd, The Late Period)"
+      - "Wikipedia, Twenty-eighth Dynasty of Egypt; Twenty-ninth Dynasty of Egypt"
+  - polity: Ostrogothic Kingdom
+    first_year: "AD 493"
+    reason: >-
+      Cliopatria draws the Ostrogothic Kingdom from AD 500. Theoderic took Ravenna and killed Odoacer in 493 and ruled Italy from then; the years 493-499 take the kingdom's first shape.
+    sources:
+      - "Anonymus Valesianus, Pars Posterior 11.53-56"
+      - "J. Moorhead, Theoderic in Italy (1992), ch. 1"
+  - polity: Kingdom of Cyprus
+    first_year: "AD 1191"
+    reason: >-
+      Cliopatria draws the Lusignan kingdom from 1192 and Cyprus as Byzantine before it. Richard I took the island from Isaac Comnenus in May 1191 (event cyprus-1191) and sold it to the Templars, who held it into 1192; Guy of Lusignan bought it in 1192 and ruled it as lord until 1194, and his brother Aimery was crowned king in 1197. The map shows Cyprus as Latin from 1191; the name of the kingdom for 1191-1196 is Cliopatria's simplification, kept here.
+    sources:
+      - "Roger of Howden, Gesta Regis Ricardi"
+      - "P. W. Edbury, The Kingdom of Cyprus and the Crusades, 1191-1374 (1991)"
 clips:
   - polity: Philistia
     # The coastal plain from Nahal Besor to the Yarkon, east to the edge of the Shephelah:
@@ -689,11 +779,11 @@ clips:
       - [38.9, 38.0]
       - [38.9, 45.0]
       - [30.0, 45.0]
-    first_year: "AD 1145"
+    first_year: "AD 1144"
     last_year: "AD 1146"
-    leaves_blank: true
+    to: Zengid dynasty
     reason: >-
-      Cliopatria draws Edessa itself as the county's until 1146. Zengi took the city on 24 December 1144 and Saruj after it; Joscelin II kept his lands west of the Euphrates, and his return to Edessa after Zengi's death in 1146 lasted only weeks, from October to early November. The land east of the river is left without a state in 1145-1146; Cliopatria gives it to the Zengids from 1147.
+      Cliopatria draws Edessa itself as the county's until 1146. Zengi took the city on 24 December 1144 (event edessa-1144) and Saruj after it; Joscelin II kept his lands west of the Euphrates, and his return to Edessa after Zengi's death in 1146 lasted only weeks, from October to early November. The land east of the river is drawn as the Zengids' from 1144, as Cliopatria draws it from 1147.
     sources:
       - "S. Runciman, A History of the Crusades, vol. 2 (1952)"
       - "Wikipedia, Siege of Edessa (1144); County of Edessa; Joscelin II, Count of Edessa"
@@ -774,10 +864,10 @@ clips:
       - [44.6, 37.9]
       - [37.0, 37.9]
     first_year: "614 BC"
-    last_year: "612 BC"
+    last_year: "613 BC"
     leaves_blank: true
     reason: >-
-      The Medes took Assur in 614 BC; in 612 BC the Medes and the Babylonians took Nineveh. What Assyria still held in these years was the land between Nineveh and Harran; Assur, Syria and the Levant are left without a state, which neither the Medes' nor Babylon's shape of these years reaches.
+      The Medes took Assur in 614 BC; in 612 BC the Medes and the Babylonians took Nineveh (event nineveh-falls). What Assyria still held in 614-613 BC was the land between Nineveh and Harran; Assur, Syria and the Levant are left without a state, which neither the Medes' nor Babylon's shape of these years reaches.
     sources:
       - "Babylonian Chronicle ABC 3 (Fall of Nineveh Chronicle), 24-47 (A. K. Grayson, Assyrian and Babylonian Chronicles, 1975)"
       - "J. Oates, The Fall of Assyria (635-609 B.C.), in The Cambridge Ancient History, 2nd ed., vol. III/2 (1991), ch. 25"
@@ -788,11 +878,11 @@ clips:
       - [40.6, 36.0]
       - [40.6, 37.7]
       - [38.3, 37.7]
-    first_year: "611 BC"
-    last_year: "609 BC"
+    first_year: "612 BC"
+    last_year: "611 BC"
     leaves_blank: true
     reason: >-
-      Cliopatria draws the whole empire until 601 BC. After the fall of Nineveh in 612 BC, Ashur-uballit II took the throne at Harran and held out there, with Egyptian help, until the Babylonians and the Medes took Harran in 610 and his attempt to retake it failed in 609 BC. Only the land of Harran is drawn as Assyria; the heartland around Nineveh and Assur is left without a state, which the Medes and Babylon are not drawn over until 600 BC.
+      Cliopatria draws the whole empire until 601 BC. After the fall of Nineveh in 612 BC, Ashur-uballit II took the throne at Harran and held out there, with Egyptian help, until the Babylonians and the Medes took Harran in 610 (event harran-falls) and his attempt to retake it failed in 609 BC. Only the land of Harran is drawn as Assyria, in 612-611 BC; the heartland around Nineveh and Assur is left without a state, which the Medes and Babylon are not drawn over until 600 BC.
     sources:
       - "Babylonian Chronicle ABC 3 (Fall of Nineveh Chronicle), 49-75 (A. K. Grayson, Assyrian and Babylonian Chronicles, 1975)"
       - "K. Radner, Ancient Assyria: A Very Short Introduction (2015)"
@@ -852,13 +942,646 @@ clips:
     sources:
       - "P. E. Zimansky, Ecology and Empire: The Structure of the Urartian State (1985)"
       - "Wikipedia, Urartu (capital Tushpa; the end of the kingdom)"
+  - polity: Achaemenid Empire
+    # Cyrenaica, west of Catabathmus.
+    without:
+      - [15.0, 15.0]
+      - [25.1, 15.0]
+      - [25.1, 34.0]
+      - [15.0, 34.0]
+    first_year: "404 BC"
+    last_year: "385 BC"
+    leaves_blank: true
+    reason: >-
+      Cliopatria draws Cyrenaica as Persian until 384 BC and as part of the Thirtieth Dynasty's Egypt after it. Cyrene and the Greek cities of Cyrenaica were independent of both in the 4th century BC; no state of theirs is drawn, so the land is left blank in 404-333 BC (and below).
+    sources:
+      - "Diodorus Siculus 18.19-21"
+      - "Wikipedia, Cyrenaica (Greek period)"
+  - polity: Thirtieth Dynasty of Egypt
+    # Cyrenaica, west of Catabathmus.
+    without:
+      - [15.0, 15.0]
+      - [25.1, 15.0]
+      - [25.1, 34.0]
+      - [15.0, 34.0]
+    first_year: "404 BC"
+    last_year: "344 BC"
+    leaves_blank: true
+    reason: >-
+      As above: Cyrenaica was not Egypt's in 404-344 BC.
+    sources:
+      - "Diodorus Siculus 18.19-21"
+  - polity: Achaemenid Empire
+    # Egypt: from Catabathmus (25.1 degrees E) to a line from the sea off Gaza through Raphia
+    # to Aila.
+    without:
+      - [25.1, 15.0]
+      - [40.0, 15.0]
+      - [35.0, 29.4]
+      - [34.25, 31.25]
+      - [34.0, 32.0]
+      - [25.1, 33.0]
+    first_year: "404 BC"
+    last_year: "385 BC"
+    to: Thirtieth Dynasty of Egypt
+    reason: >-
+      Cliopatria keeps Egypt Persian until 384 BC. It was independent from Amyrtaeus' revolt in 404 BC (starts); Artaxerxes II's attempt to retake it failed in 373 BC. The land is drawn as Egypt's own.
+    sources:
+      - "Diodorus Siculus 14.35; 15.41-43"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 13 (A. B. Lloyd, The Late Period)"
+  - polity: Visigoths
+    # Greece south of Epirus and Thessaly: Attica, Boeotia and the Peloponnese.
+    without:
+      - [20.6, 38.3]
+      - [21.3, 38.75]
+      - [22.9, 39.0]
+      - [25.5, 39.0]
+      - [25.5, 35.5]
+      - [20.6, 35.5]
+    first_year: "AD 396"
+    last_year: "AD 401"
+    to: Eastern Roman Empire
+    reason: >-
+      Cliopatria draws the Visigoths over Attica and the Peloponnese in 396-401. Alaric's Goths plundered Greece in 395-396, sacking Corinth, Argos and Sparta and sparing Athens, but held none of it: trapped by Stilicho at Pholoe in 397, they withdrew to Epirus, where the eastern court made Alaric magister militum of Illyricum. Southern Greece stayed Roman; Epirus is left to the Goths.
+    sources:
+      - "Zosimus, New History 5.5-7"
+      - "P. Heather, Goths and Romans, 332-489 (1991), ch. 6"
+  - polity: Visigoths
+    # Rome and the land around it.
+    without:
+      - [11.4, 41.3]
+      - [13.2, 41.3]
+      - [13.2, 42.7]
+      - [11.4, 42.7]
+    first_year: "AD 407"
+    last_year: "AD 413"
+    to: Western Roman Empire
+    reason: >-
+      Cliopatria draws the Visigoths over Rome in 407-413. Alaric besieged the city in 408 and 409 and sacked it in August 410, and his successor Athaulf led the Goths into Gaul in 412; Rome itself remained the Western Empire's. Without the city the Visigoths have no shape in these years, and none is drawn.
+    sources:
+      - "Zosimus, New History 5.36-6.13"
+      - "P. Heather, The Fall of the Roman Empire (2005), ch. 5"
+  - polity: Vandal Kingdom
+    # Rome and the land around it.
+    without:
+      - [11.4, 41.3]
+      - [13.2, 41.3]
+      - [13.2, 42.7]
+      - [11.4, 42.7]
+    first_year: "AD 455"
+    last_year: "AD 457"
+    to: Western Roman Empire
+    reason: >-
+      Cliopatria draws the Vandals over Rome in 455-457. Gaiseric's fleet sacked the city for fourteen days in June 455 and sailed back to Carthage with its plunder and the empress Eudoxia; the Vandals never ruled it.
+    sources:
+      - "Procopius, Wars 3.5.1-6"
+      - "A. Merrills and R. Miles, The Vandals (2010), ch. 5"
+  - polity: Vandal Kingdom
+    # The coast of Campania.
+    without:
+      - [13.5, 40.6]
+      - [14.7, 40.6]
+      - [14.7, 41.6]
+      - [13.5, 41.6]
+    first_year: "AD 458"
+    last_year: "AD 468"
+    to: Western Roman Empire
+    reason: >-
+      Cliopatria draws the Vandals over a stretch of the Campanian coast in 458-468: the landing of 458, which Majorian's army drove off at the mouth of the Liris. Campania stayed Roman.
+    sources:
+      - "Sidonius Apollinaris, Carmen 5.385-440"
+      - "A. Merrills and R. Miles, The Vandals (2010), ch. 5"
+  - polity: Sasanian Empire
+    # The Roman East as it stood in 539: Syria, Euphratensis, Osrhoene and Mesopotamia,
+    # west of the frontier the data draws before and after.
+    without:
+      - [34.5, 33.5]
+      - [37.0, 33.5]
+      - [39.124, 34.486]
+      - [39.509, 34.486]
+      - [40.103, 34.293]
+      - [40.618, 34.744]
+      - [40.772, 34.744]
+      - [41.112, 35.001]
+      - [41.086, 36.031]
+      - [41.663, 36.288]
+      - [41.68, 36.417]
+      - [41.533, 36.482]
+      - [41.55, 36.61]
+      - [41.212, 36.997]
+      - [41.128, 38.093]
+      - [40.911, 38.222]
+      - [40.948, 38.481]
+      - [40.87, 38.481]
+      - [40.966, 38.61]
+      - [40.982, 39.256]
+      - [41.257, 39.514]
+      - [41.326, 39.967]
+      - [34.5, 39.967]
+    first_year: "AD 540"
+    last_year: "AD 545"
+    to: Eastern Roman Empire
+    reason: >-
+      Cliopatria draws the Sasanians over Syria and Roman Mesopotamia in 540-545. Khosrow I's campaign of 540 sacked Antioch and took ransom from Hierapolis, Beroea, Apamea and Edessa, and he withdrew across the Euphrates the same year; the five years' truce of 545 left the frontier where it had been. The land is drawn as Roman.
+    sources:
+      - "Procopius, Wars 2.5-14; 2.28.7-11"
+      - "G. Greatrex and S. N. C. Lieu, The Roman Eastern Frontier and the Persian Wars, Part II, AD 363-630 (2002), ch. 7"
+  - polity: Ptolemaic Kingdom
+    # Everything but Egypt and Cyprus: Cyrenaica, Crete, Greece, Asia Minor and Syria.
+    without:
+      - [15.0, 44.0]
+      - [42.0, 44.0]
+      - [42.0, 29.0]
+      - [35.0, 29.4]
+      - [34.25, 31.25]
+      - [34.0, 31.6]
+      - [34.75, 33.6]
+      - [35.25, 35.25]
+      - [34.7, 35.95]
+      - [32.9, 35.92]
+      - [28.0, 35.75]
+      - [26.6, 34.6]
+      - [24.9, 34.2]
+      - [24.9, 29.0]
+      - [15.0, 29.0]
+    first_year: "32 BC"
+    last_year: "32 BC"
+    to: Roman Empire
+    reason: >-
+      Cliopatria's Ptolemaic shape of 32 BC is the whole of Mark Antony's East, from Greece to Syria, so Athens, Corinth, Tyre and Damascus showed as Cleopatra's. Antony held those lands as a Roman triumvir. Cleopatra's own kingdom was Egypt and Cyprus; the lands he gave her and her children in 37-34 BC (parts of Coele-Syria and Crete, Cyrenaica) are not drawn, their extent being uncertain. The rest is drawn as Rome's, under the name Cliopatria gives it from 32 BC.
+    sources:
+      - "Plutarch, Antony 36; 54; 56-61"
+      - "Cassius Dio 49.32.4-5; 49.41.1-3"
+      - "D. W. Roller, Cleopatra: A Biography (2010), ch. 8"
+  - polity: Eastern Roman Empire
+    # Syria north of Tyre, to the Orontes and the Euphrates.
+    without:
+      - [34.39, 33.0]
+      - [35.2, 35.3]
+      - [35.75, 36.3]
+      - [38.5, 36.3]
+      - [38.5, 33.0]
+    first_year: "AD 613"
+    last_year: "AD 613"
+    to: Sasanian Empire
+    reason: >-
+      Cliopatria keeps Damascus and Phoenicia Roman until 616. Shahrbaraz's army took Antioch and then Damascus in 613. The land is drawn as Persian from that year.
+    sources:
+      - "Chronicon Paschale, AD 613-614"
+      - "J. Howard-Johnston, Witnesses to a World Crisis (2010), ch. 15"
+      - "G. Greatrex and S. N. C. Lieu, The Roman Eastern Frontier and the Persian Wars, Part II, AD 363-630 (2002), ch. 13"
+  - polity: Eastern Roman Empire
+    # Palestine and Syria: from Raphia and Aila to the Orontes.
+    without:
+      - [33.9, 31.6]
+      - [35.2, 35.3]
+      - [35.75, 36.3]
+      - [38.5, 36.3]
+      - [38.5, 29.0]
+      - [35.0, 29.4]
+      - [34.25, 31.25]
+    first_year: "AD 614"
+    last_year: "AD 622"
+    to: Sasanian Empire
+    reason: >-
+      Cliopatria keeps Palestine Roman until 616, and the Negev, Gaza and Aila until 622. The Persians took Caesarea and, after a siege of about three weeks in May 614, Jerusalem, carrying off the patriarch Zacharias and the True Cross; Palestine stayed Persian until 629. Drawn as Persian from 614 to 622, after which Cliopatria's Persian shape holds it, the year of the event jerusalem-persians-614.
+    sources:
+      - "Antiochus Strategos, The Capture of Jerusalem by the Persians in 614"
+      - "Chronicon Paschale, AD 614"
+      - "J. Howard-Johnston, Witnesses to a World Crisis (2010), ch. 15"
+  - polity: Great Seljuk Empire
+    # The coast from Caesarea to Sidon, with Acre and Tyre.
+    without:
+      - [34.7, 32.4]
+      - [34.98, 32.4]
+      - [35.08, 32.68]
+      - [35.22, 32.82]
+      - [35.25, 33.09]
+      - [35.32, 33.3]
+      - [35.45, 33.5]
+      - [35.55, 33.62]
+      - [35.35, 33.7]
+      - [35.0, 33.3]
+      - [34.7, 32.6]
+    first_year: "AD 1072"
+    last_year: "AD 1103"
+    to: Fatimid Caliphate
+    reason: >-
+      Cliopatria draws the Seljuks over the coast of Palestine and Lebanon from 1072. The Turkmen under Atsiz took Jerusalem and Damascus, but not the ports: Badr al-Jamali held Acre, Caesarea and Sidon at the start of the 1070s; Turkmen chiefs held Acre for a time after he left for Egypt; Tyre was ruled by its qadis, the Banu Abi Aqil, from 1070; and Badr's campaign of 1089 brought Acre and Tyre back to the Fatimids, who kept Acre until Baldwin I took it in 1104 and Tyre and Sidon after it. The map draws the coast as Fatimid throughout, a simplification of the years of the Turkmen and the qadis.
+    sources:
+      - "Ibn al-Qalanisi, The Damascus Chronicle of the Crusades, tr. H. A. R. Gibb (1932), AH 467-497"
+      - "K. M. Setton (ed.), A History of the Crusades, vol. 1 (1955)"
+      - "Wikipedia, Badr al-Jamali (Acre, Ascalon, Sidon and Caesarea in the early 1070s)"
+      - "S. Runciman, A History of the Crusades, vol. 2 (1952), pp. 87-89"
+  - polity: Great Seljuk Empire
+    # The coast from Haifa Bay to Sidon: Acre, Tyre and Sidon.
+    without:
+      - [34.95, 32.8]
+      - [35.22, 32.8]
+      - [35.25, 33.09]
+      - [35.32, 33.3]
+      - [35.45, 33.5]
+      - [35.55, 33.62]
+      - [35.35, 33.7]
+      - [35.0, 33.3]
+    first_year: "AD 1104"
+    last_year: "AD 1110"
+    reason: >-
+      As above. Acre is drawn as the Kingdom of Jerusalem's from 1104, Tyre and Sidon as Fatimid until Sidon fell in December 1110 (extends).
+    sources:
+      - "Fulcher of Chartres, Historia Hierosolymitana 2.25; 2.44"
+      - "S. Runciman, A History of the Crusades, vol. 2 (1952), pp. 87-92"
+  - polity: Kingdom of Jerusalem
+    # Tyre and its plain.
+    without:
+      - [35.0, 33.15]
+      - [35.3, 33.15]
+      - [35.34, 33.38]
+      - [35.0, 33.38]
+    first_year: "AD 1111"
+    last_year: "AD 1123"
+    to: Fatimid Caliphate
+    reason: >-
+      Cliopatria draws Tyre in the Kingdom of Jerusalem from 1111. Baldwin I's siege of 1111-1112 failed; the city was held under Fatimid sovereignty, by Tughtekin of Damascus's governor from 1112 and the Fatimids again from 1122, until it surrendered to the Franks and the Venetians in July 1124 (event tyre-1124).
+    sources:
+      - "William of Tyre, Historia 11.17; 13.4-14"
+      - "Ibn al-Qalanisi, The Damascus Chronicle of the Crusades, tr. H. A. R. Gibb (1932), AH 505-518"
+      - "S. Runciman, A History of the Crusades, vol. 2 (1952), pp. 92-93, 166-171"
+  - polity: Ayyubid Sultanate
+    # Jerusalem, Bethlehem and the road down to Lydda.
+    without:
+      - [35.0, 31.92]
+      - [35.3, 31.92]
+      - [35.3, 31.66]
+      - [35.14, 31.66]
+      - [35.0, 31.78]
+    first_year: "AD 1229"
+    last_year: "AD 1243"
+    to: Kingdom of Jerusalem
+    reason: >-
+      Cliopatria keeps Jerusalem Ayyubid in 1229-1243. By the treaty of Jaffa of February 1229 al-Kamil gave Frederick II Jerusalem, without the Temple Mount, with Bethlehem and a corridor to the coast; an-Nasir Dawud took the city at the end of 1239 and razed the Tower of David, and the treaties of 1240-1241 gave it back to the Franks, who held it until the Khwarazmians took it in 1244. Drawn as the kingdom's in 1229-1243.
+    sources:
+      - "S. Runciman, A History of the Crusades, vol. 3 (1954), pp. 187-189, 211-212, 224-225"
+      - "R. S. Humphreys, From Saladin to the Mongols (1977), ch. 7"
+  - polity: Mamluk Sultanate
+    # Jerusalem, as above; this shape is the Ayyubid princes' Syria (renamed).
+    without:
+      - [35.0, 31.92]
+      - [35.3, 31.92]
+      - [35.3, 31.66]
+      - [35.14, 31.66]
+      - [35.0, 31.78]
+    first_year: "AD 1241"
+    last_year: "AD 1243"
+    to: Kingdom of Jerusalem
+    reason: >-
+      As for the Ayyubid shape above: Jerusalem was the Franks' until 1244.
+    sources:
+      - "S. Runciman, A History of the Crusades, vol. 3 (1954), pp. 211-212, 224-225"
+  - polity: Mamluk Sultanate
+    # Syria and Palestine from Raphia and Aila to the Euphrates.
+    without:
+      - [34.25, 31.25]
+      - [33.9, 31.6]
+      - [35.2, 35.3]
+      - [35.75, 36.3]
+      - [37.0, 38.8]
+      - [42.5, 38.8]
+      - [42.5, 33.0]
+      - [36.5, 29.4]
+      - [35.0, 29.45]
+    first_year: "AD 1250"
+    last_year: "AD 1259"
+    to: Ayyubid Sultanate
+    drawn_from_cut: true
+    reason: >-
+      Cliopatria draws the Mamluks over Syria and Palestine from 1250. The Mamluks took power in Egypt only; an-Nasir Yusuf, the Ayyubid of Aleppo, took Damascus in 1250 and held Syria, with Jerusalem, until the Mongols came in 1260, and Kerak stayed with another Ayyubid. The accord of 1253 gave Egypt Gaza, Jerusalem and Nablus for a short time, which a new agreement undid; the map leaves those lands with the Ayyubids. Jerusalem passed to the Mamluks after Ain Jalut in 1260.
+    sources:
+      - "R. S. Humphreys, From Saladin to the Mongols (1977), chs. 9-10"
+      - "P. M. Holt, The Age of the Crusades (1986), ch. 7"
+      - "Wikipedia, An-Nasir Yusuf (the accord of 1253)"
+  - polity: Achaemenid Empire
+    # Babylonia, Assyria east of the Tigris to Gaugamela, and Susiana.
+    without:
+      - [38.0, 29.5]
+      - [50.0, 29.5]
+      - [49.5, 32.5]
+      - [47.0, 33.6]
+      - [45.4, 35.4]
+      - [44.6, 37.3]
+      - [38.0, 37.5]
+    first_year: "331 BC"
+    last_year: "331 BC"
+    reason: >-
+      Alexander defeated Darius III at Gaugamela on 1 October 331 BC (event gaugamela), entered Babylon in October and received the surrender of Susa in December. The land from Gaugamela to Susa is drawn as his from 331 BC (extends).
+    sources:
+      - "Arrian, Anabasis 3.8-16"
+      - "Wikipedia, Battle of Gaugamela; Babylon (taken October 331 BC)"
+  - polity: Hamdanid Emirates
+    # Antioch, the coast of northern Syria and the Amanus, as the Byzantine shape of 970.
+    without:
+      - [35.0, 34.5]
+      - [36.3, 34.5]
+      - [36.28, 34.67]
+      - [36.17, 34.94]
+      - [36.35, 35.28]
+      - [36.35, 35.9]
+      - [36.69, 36.22]
+      - [37.03, 36.36]
+      - [37.28, 36.67]
+      - [38.39, 36.86]
+      - [38.72, 37.14]
+      - [39.5, 37.42]
+      - [39.5, 38.6]
+      - [35.0, 38.6]
+    first_year: "AD 969"
+    last_year: "AD 969"
+    to: Byzantine Empire
+    reason: >-
+      Cliopatria draws Antioch as Byzantine from 970. Michael Bourtzes and Peter Phokas took the city on 28 October 969 (event antioch-retaken-969); the land Byzantium held there in 970 is drawn as its own from 969.
+    sources:
+      - "Leo the Deacon, History 5.4"
+      - "Wikipedia, Siege of Antioch (968-969)"
+  - polity: Abbasid Caliphate
+    # Egypt and Cyrenaica: west of a line from the sea off Gaza through Raphia to Aila.
+    without:
+      - [15.0, 15.0]
+      - [40.0, 15.0]
+      - [35.0, 29.4]
+      - [34.25, 31.25]
+      - [34.0, 32.0]
+      - [15.0, 34.0]
+    first_year: "AD 969"
+    last_year: "AD 969"
+    to: Fatimid Caliphate
+    reason: >-
+      Cliopatria draws Egypt as the Abbasids' (under the Ikhshidids) until 969. Jawhar's army entered Fustat in July 969 and founded Cairo (event fatimids-egypt); Egypt is drawn as Fatimid from 969. Palestine, which the Fatimids took in 970, stays as the data draws it.
+    sources:
+      - "M. Brett, The Fatimid Empire (2017)"
+      - "Wikipedia, Fatimid conquest of Egypt (Fustat taken July 969)"
+  - polity: Great Seljuk Empire
+    # The principality of Antioch as Cliopatria draws it in 1099.
+    without:
+      - [35.889, 35.258]
+      - [35.993, 35.516]
+      - [35.845, 35.58]
+      - [35.872, 35.838]
+      - [35.99, 36.224]
+      - [35.849, 36.353]
+      - [36.265, 36.61]
+      - [36.272, 36.675]
+      - [36.512, 36.739]
+      - [36.69, 36.933]
+      - [36.768, 36.933]
+      - [36.845, 36.933]
+      - [36.838, 36.868]
+      - [36.675, 36.804]
+      - [36.618, 36.288]
+      - [36.456, 36.224]
+      - [36.428, 35.966]
+      - [36.35, 35.966]
+      - [36.373, 35.451]
+      - [36.114, 35.194]
+      - [35.96, 35.194]
+      - [35.882, 35.194]
+    first_year: "AD 1098"
+    last_year: "AD 1098"
+    to: Principality of Antioch
+    drawn_from_cut: true
+    reason: >-
+      Cliopatria draws the principality from 1099. The crusaders took Antioch on 3 June 1098 (event antioch-crusade-1098) and Bohemond held it from then; the Seljuk land within the principality of 1099 is drawn as the principality's in 1098. Land the Seljuks did not hold that year (the Byzantine coast) is left as the data draws it.
+    sources:
+      - "Gesta Francorum 8.20"
+      - "S. Runciman, A History of the Crusades, vol. 1 (1951)"
+  - polity: Byzantine Empire
+    # Cyprus.
+    without:
+      - [32.0, 34.4]
+      - [34.8, 34.4]
+      - [34.8, 35.8]
+      - [32.0, 35.8]
+    first_year: "AD 1191"
+    last_year: "AD 1191"
+    to: Kingdom of Cyprus
+    reason: >-
+      Cyprus was the Latins' from Richard I's conquest of May 1191 (starts).
+    sources:
+      - "P. W. Edbury, The Kingdom of Cyprus and the Crusades, 1191-1374 (1991)"
+  - polity: Byzantine Empire
+    # Constantinople and eastern Thrace.
+    without:
+      - [25.6, 40.6]
+      - [26.4, 40.1]
+      - [27.5, 40.3]
+      - [29.0, 40.85]
+      - [29.4, 41.25]
+      - [28.2, 42.1]
+      - [26.4, 42.2]
+      - [25.6, 41.6]
+    first_year: "AD 1204"
+    last_year: "AD 1205"
+    to: Latin Empire
+    drawn_from_cut: true
+    reason: >-
+      Cliopatria draws the Latin Empire from 1206. The Fourth Crusade took Constantinople on 13 April 1204 (event constantinople-1204) and crowned Baldwin of Flanders emperor in May; Constantinople and eastern Thrace are drawn as the Latin Empire's from 1204. Its other lands of 1204-1205 are left to the data.
+    sources:
+      - "Geoffrey of Villehardouin, The Conquest of Constantinople"
+      - "R. L. Wolff, The Latin Empire of Constantinople, 1204-1261, in K. M. Setton (ed.), A History of the Crusades, vol. 2 (1969)"
+  - polity: Ostrogothic Kingdom
+    # Italy south of Rome's latitude band: Rome, Campania, the south and Sicily.
+    without:
+      - [10.0, 36.0]
+      - [19.0, 36.0]
+      - [19.0, 42.5]
+      - [10.0, 42.5]
+    first_year: "AD 536"
+    last_year: "AD 539"
+    to: Eastern Roman Empire
+    reason: >-
+      Cliopatria draws Rome as Ostrogothic until 539 beside the Roman shape of the south. Belisarius took Sicily in 535 and Naples and then Rome, which he entered in December 536 and held through Vitiges' siege of 537-538. The land south of Rome is drawn as Roman from 536.
+    sources:
+      - "Procopius, Wars 5.14.14; 6.10"
+      - "Wikipedia, Gothic War (535-554)"
+  - polity: Ostrogothic Kingdom
+    # As above.
+    without:
+      - [10.0, 36.0]
+      - [19.0, 36.0]
+      - [19.0, 42.9]
+      - [10.0, 42.9]
+    first_year: "AD 552"
+    last_year: "AD 554"
+    to: Eastern Roman Empire
+    reason: >-
+      Rome changed hands four more times: Totila took it in December 546, Belisarius retook it in 547, Totila took it again in January 550, and Narses in 552 after Totila's defeat at Busta Gallorum. The map keeps Cliopatria's Gothic shape for 546-551, a simplification over the Roman years 547-549, and draws Rome and the south as Roman from 552.
+    sources:
+      - "Procopius, Wars 7.20-22; 7.36; 8.33"
+      - "Wikipedia, Gothic War (535-554)"
+  - polity: Mongol Empire
+    # Syria west of the Euphrates, from Aleppo to Damascus, without the Frankish coast.
+    without:
+      - [35.7, 33.4]
+      - [36.3, 34.3]
+      - [36.4, 35.0]
+      - [36.3, 35.6]
+      - [36.5, 35.95]
+      - [36.9, 36.6]
+      - [38.0, 36.9]
+      - [38.3, 36.0]
+      - [39.0, 35.9]
+      - [40.15, 35.3]
+      - [40.9, 34.4]
+      - [38.5, 32.5]
+      - [36.0, 33.0]
+    first_year: "AD 1260"
+    last_year: "AD 1271"
+    to: Mamluk Sultanate
+    reason: >-
+      Cliopatria draws the Mongols over Syria in 1260-1271. Hulagu's army took Aleppo and Damascus early in 1260, but after Ain Jalut (3 September 1260, event ain-jalut) the Mamluks took Damascus and Aleppo, and the Euphrates became the frontier. Syria is drawn as Mamluk from 1260.
+    sources:
+      - "R. Amitai-Preiss, Mongols and Mamluks: The Mamluk-Ilkhanid War, 1260-1281 (1995)"
+      - "P. M. Holt, The Age of the Crusades (1986)"
 
+  - polity: Judea
+    # All of Cliopatria's Judea of these years.
+    without:
+      - [33.0, 29.0]
+      - [37.5, 29.0]
+      - [37.5, 34.0]
+      - [33.0, 34.0]
+    first_year: "145 BC"
+    last_year: "143 BC"
+    to: Seleucid Empire
+    reason: >-
+      Cliopatria draws Hasmonean Judea from 145 BC. Until 142 BC the Hasmoneans ruled under the Seleucid kings, who named Jonathan high priest and governor and kept a garrison in the Akra of Jerusalem; in 142 BC Demetrius II freed Judea of tribute and "the yoke of the heathen was taken away from Israel" (1 Macc 13:41), the date of the event hasmonean-independence. Judea's land is drawn as Seleucid in 145-143 BC and as Judea from 142.
+    sources:
+      - "1 Macc 10:18-21; 11:57-59; 13:36-42"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Vandal Kingdom
+    # Sicily east of Lilybaeum.
+    without:
+      - [12.6, 37.0]
+      - [16.0, 36.3]
+      - [16.0, 38.5]
+      - [12.6, 38.4]
+    first_year: "AD 477"
+    last_year: "AD 489"
+    reason: >-
+      Gaiseric ceded Sicily to Odoacer for a yearly tribute, keeping only a small part of it (Lilybaeum, the western tip); Cliopatria draws the island as Vandal until 489. It is drawn as Odoacer's (drawn) from 477.
+    sources:
+      - "Victor of Vita, History of the Vandal Persecution 1.14"
+      - "A. Merrills and R. Miles, The Vandals (2010)"
+  - polity: Ostrogoths
+    # Ravenna and the coast of Romagna.
+    without:
+      - [11.8, 44.1]
+      - [12.6, 44.1]
+      - [12.6, 44.75]
+      - [11.8, 44.75]
+    first_year: "AD 490"
+    last_year: "AD 492"
+    reason: >-
+      Cliopatria draws Theoderic's Ostrogoths over Ravenna from 490. Odoacer held Ravenna, his capital, through a siege of almost three years until he gave it up in March 493; it is drawn as his (drawn) in 490-492.
+    sources:
+      - "Anonymus Valesianus, Pars Posterior 11.53-56"
+      - "J. Moorhead, Theoderic in Italy (1992)"
+  - polity: Great Seljuk Empire
+    # Damascus and its oasis, with the Hauran.
+    without:
+      - [35.9, 32.6]
+      - [36.9, 32.6]
+      - [37.0, 33.6]
+      - [36.0, 33.9]
+    first_year: "AD 1072"
+    last_year: "AD 1075"
+    to: Fatimid Caliphate
+    reason: >-
+      Cliopatria draws Damascus as Seljuk from 1072. Atsiz took it only in 1076, after years of blockade; it is drawn as Fatimid until 1075.
+    sources:
+      - "Ibn al-Qalanisi, The Damascus Chronicle of the Crusades, tr. H. A. R. Gibb (1932), AH 468"
+      - "K. M. Setton (ed.), A History of the Crusades, vol. 1 (1955)"
+  - polity: Kingdom of Jerusalem
+    # All of the kingdom but Tyre and its land, as Cliopatria draws what was left of it in
+    # 1188 (the ring runs round that land).
+    without:
+      - [34.0, 29.0]
+      - [37.0, 29.0]
+      - [37.0, 34.5]
+      - [34.0, 34.5]
+      - [34.0, 33.5]
+      - [35.1, 33.5]
+      - [35.346, 33.65]
+      - [35.435, 33.779]
+      - [35.665, 33.779]
+      - [35.806, 33.65]
+      - [35.776, 33.329]
+      - [35.445, 33.072]
+      - [35.1, 33.136]
+      - [34.0, 33.136]
+    first_year: "AD 1187"
+    last_year: "AD 1187"
+    to: Ayyubid Sultanate
+    reason: >-
+      Cliopatria reduces the kingdom to Tyre from 1188. Saladin destroyed its army at Hattin on 4 July 1187, took Acre and the other towns of the kingdom that summer and Jerusalem on 2 October (events hattin, jerusalem-saladin); only Tyre held out. The kingdom's land but Tyre is drawn as Ayyubid from 1187. His northern campaign against Tripoli and Antioch (Latakia, Jabala, Sahyun, Baghras) was in 1188 and stays as the data draws it.
+    sources:
+      - "S. Runciman, A History of the Crusades, vol. 2 (1952)"
+      - "Ibn Shaddad, The Rare and Excellent History of Saladin, tr. D. S. Richards (2001)"
+  - polity: Ayyubid Sultanate
+    # The coastal plain from Acre to Jaffa.
+    without:
+      - [34.95, 33.05]
+      - [35.15, 33.05]
+      - [35.15, 32.75]
+      - [35.0, 32.5]
+      - [34.95, 32.2]
+      - [34.88, 31.95]
+      - [34.6, 31.95]
+      - [34.6, 32.2]
+      - [34.8, 32.6]
+      - [34.9, 32.95]
+    first_year: "AD 1191"
+    last_year: "AD 1191"
+    to: Kingdom of Jerusalem
+    reason: >-
+      Cliopatria gives the coast back to the kingdom from 1192. The Third Crusade took Acre on 12 July 1191 (event acre-1191), won at Arsuf on 7 September and took Jaffa after it; the coast from Acre to Jaffa is drawn as the kingdom's from 1191. The rest of the treaty of Jaffa's coast follows the data from 1192.
+    sources:
+      - "S. Runciman, A History of the Crusades, vol. 3 (1954)"
+      - "Ibn Shaddad, The Rare and Excellent History of Saladin, tr. D. S. Richards (2001)"
+  - polity: Sumerian City-States
+    # All of Rim-Sin's kingdom of Larsa.
+    without:
+      - [40.0, 25.0]
+      - [52.0, 25.0]
+      - [52.0, 38.0]
+      - [40.0, 38.0]
+    first_year: "1763 BC"
+    last_year: "1762 BC"
+    to: Babylonia
+    reason: >-
+      Cliopatria's last shape of the Sumerian cities, Rim-Sin's kingdom of Larsa, runs to 1762 BC. Hammurabi took Larsa about 1763 BC (event larsa-conquered, middle chronology); its land is drawn as Babylon's from then. Elam's and Babylon's other borders change in 1761 BC as the data draws them.
+    sources:
+      - "M. Van De Mieroop, King Hammurabi of Babylon: A Biography (2005)"
+      - "Wikipedia, Rim-Sin I (Larsa taken by Hammurabi c. 1763 BC)"
+  - polity: Achaemenid Empire
+    # Cyrenaica, west of Catabathmus.
+    without:
+      - [15.0, 15.0]
+      - [25.1, 15.0]
+      - [25.1, 34.0]
+      - [15.0, 34.0]
+    first_year: "338 BC"
+    last_year: "333 BC"
+    leaves_blank: true
+    reason: >-
+      Cliopatria draws Cyrenaica as Persian again from 338 BC. Cyrene stayed independent until it submitted to Alexander in 331 BC; the land is left blank until Cliopatria's Cyrenaica begins in 332 BC.
+    sources:
+      - "Diodorus Siculus 17.49.2-3; 18.19-21"
 # Land a polity held that Cliopatria's shape of it leaves out: the outline is joined to its
 # shapes of those years. Approximate, to the precision of the sources.
 extends:
   - polity: Kingdom of Israel
     first_year: "1010 BC"
-    last_year: "902 BC"
+    last_year: "932 BC"
     # The Shephelah west to Philistia's line (clips) and the Negev to the Beersheba-Arad
     # valley.
     outline:
@@ -878,8 +1601,8 @@ extends:
       - "Y. Aharoni, The Land of the Bible: A Historical Geography, rev. ed. (1979)"
       - "A. Curtis (ed.), Oxford Bible Atlas, 4th ed. (2007)"
   - polity: Kingdom of Judah
-    first_year: "901 BC"
-    last_year: "586 BC"
+    first_year: "931 BC"
+    last_year: "587 BC"
     outline:
       - [34.8857, 31.65]
       - [34.98, 31.62]
@@ -915,9 +1638,102 @@ extends:
     sources:
       - "P. E. Zimansky, Ecology and Empire: The Structure of the Urartian State (1985)"
       - "M. Salvini, Geschichte und Kultur der Urartäer (1995)"
+  - polity: Fatimid Caliphate
+    first_year: "AD 1028"
+    last_year: "AD 1071"
+    # Galilee, the Lebanese coast to Tripoli, Damascus and the Hauran.
+    outline:
+      - [34.8, 32.6]
+      - [36.9, 32.6]
+      - [37.0, 33.6]
+      - [36.5, 34.45]
+      - [35.7, 34.6]
+    reason: >-
+      Cliopatria's Fatimid shape of 1028-1071 stops at Galilee, and the Hamdanid shape north of it is cut at 1004 (overrides), so Acre, Tyre, Sidon and Damascus were left without a state. They were Fatimid: Anushtakin al-Dizbari governed Syria from Damascus for the caliph from 1029, and the ports stayed Fatimid until the Turkmen came in the 1070s. Aleppo, under the Mirdasids, is left out.
+    sources:
+      - "Ibn al-Qalanisi, The Damascus Chronicle of the Crusades, tr. H. A. R. Gibb (1932)"
+      - "H. Kennedy, The Prophet and the Age of the Caliphates, 3rd ed. (2016)"
+      - "M. Brett, The Fatimid Empire (2017)"
+  - polity: Kingdom of Jerusalem
+    first_year: "AD 1104"
+    last_year: "AD 1110"
+    # The plain of Acre, from Haifa Bay to Ras en-Naqura.
+    outline:
+      - [34.95, 32.8]
+      - [35.22, 32.8]
+      - [35.25, 33.09]
+      - [34.95, 33.09]
+    reason: >-
+      Baldwin I took Acre with a Genoese fleet in May 1104 (event acre-1104); Cliopatria's shape of the kingdom reaches it only from 1111. The land is cut from the Seljuk shape of these years (clips).
+    sources:
+      - "Fulcher of Chartres, Historia Hierosolymitana 2.25"
+      - "S. Runciman, A History of the Crusades, vol. 2 (1952)"
+  - polity: Fatimid Caliphate
+    first_year: "AD 1104"
+    last_year: "AD 1110"
+    # The coast from Ras en-Naqura to Sidon, with Tyre.
+    outline:
+      - [35.0, 33.09]
+      - [35.25, 33.09]
+      - [35.32, 33.3]
+      - [35.45, 33.5]
+      - [35.55, 33.62]
+      - [35.35, 33.7]
+      - [35.0, 33.3]
+    reason: >-
+      Tyre and Sidon stayed Fatimid after Acre fell; Sidon surrendered to Baldwin I and Sigurd of Norway in December 1110. The land is cut from the Seljuk shape of these years (clips).
+    sources:
+      - "Fulcher of Chartres, Historia Hierosolymitana 2.44"
+      - "S. Runciman, A History of the Crusades, vol. 2 (1952)"
+  - polity: Seleucid Empire
+    first_year: "165 BC"
+    last_year: "146 BC"
+    # The hill country of Judea, from Beth-zur to the Jordan and north to Gophna.
+    outline:
+      - [34.85, 32.13]
+      - [35.6, 32.13]
+      - [35.6, 31.85]
+      - [35.42, 31.55]
+      - [34.85, 31.55]
+    reason: >-
+      Cliopatria leaves Judea without a state from 165 to 146 BC. Judas Maccabaeus rededicated the Temple in 164 BC, but Judea stayed in the Seleucid kingdom, with a garrison in the Akra of Jerusalem; his brothers Jonathan and Simon ruled it as the Seleucid kings' high priests and governors until Demetrius II freed it of tribute in 142 BC (clips). Drawn as Seleucid.
+    sources:
+      - "1 Macc 4:36-59; 10:18-21; 11:57-59; 13:36-42"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Macedonian Empire
+    first_year: "331 BC"
+    last_year: "328 BC"
+    # Babylonia, Assyria east of the Tigris to Gaugamela, and Susiana, as cut from the
+    # Achaemenid shape (clips).
+    outline:
+      - [38.0, 29.5]
+      - [50.0, 29.5]
+      - [49.5, 32.5]
+      - [47.0, 33.6]
+      - [45.4, 35.4]
+      - [44.6, 37.3]
+      - [38.0, 37.5]
+    reason: >-
+      Alexander held Babylon and Susa from the autumn of 331 BC; Cliopatria's shape of his empire reaches Mesopotamia only from 327 BC, and the Achaemenid shape drawn as his in 330-328 BC (annexed) is the one cut in 331.
+    sources:
+      - "Arrian, Anabasis 3.16"
+  - polity: Babylonia
+    first_year: "610 BC"
+    last_year: "602 BC"
+    # Harran and the Balikh, as drawn for Ashur-uballit II in 612-611 BC (clips).
+    outline:
+      - [38.3, 36.0]
+      - [40.6, 36.0]
+      - [40.6, 37.7]
+      - [38.3, 37.7]
+    reason: >-
+      The Babylonians and the Medes took Harran in 610 BC (event harran-falls); Nabopolassar left a garrison there, which Ashur-uballit II and the Egyptians besieged in vain in 609 BC. Cliopatria draws no Babylonian shape there; Harran is drawn as Babylon's from 610 BC.
+    sources:
+      - "Babylonian Chronicle ABC 3 (Fall of Nineveh Chronicle), 58-75 (A. K. Grayson, Assyrian and Babylonian Chronicles, 1975)"
 # States Cliopatria does not draw: our approximate outline, less the land of the polities
-# in `minus` standing in the same years. Moab, Ammon and Edom are drawn from 901 BC, when
-# the data's divided kingdoms begin; under David and Solomon the data's Israel covers them.
+# in `minus` standing in the same years. Moab and Ammon are drawn from 931 BC, when the
+# divided kingdoms begin (seams), Edom from 845 BC; under David and Solomon the data's
+# Israel covers them.
 drawn:
   - polity: Aram-Damascus
     first_year: "950 BC"
@@ -1006,7 +1822,7 @@ drawn:
       - "J. D. Hawkins, Karkamiš, in Reallexikon der Assyriologie, vol. 5 (1976-80)"
   - polity: Carchemish
     first_year: "740 BC"
-    last_year: "717 BC"
+    last_year: "718 BC"
     outline:
       - [37.55, 36.45]
       - [38.05, 36.4]
@@ -1017,12 +1833,12 @@ drawn:
     label: [37.82, 36.85]
     minus: [Neo-Hittite states]
     reason: >-
-      Carchemish stood as a tributary of Assyria (vassals) until Sargon II took it and deported Pisiri, its last king, in 717 BC; the Assyrian shape covers it in these years.
+      Carchemish stood as a tributary of Assyria (vassals) until Sargon II took it and deported Pisiri, its last king, in 717 BC (event carchemish-annexed), the first year the Assyrian shape alone covers it.
     sources:
       - "A. Fuchs, Die Inschriften Sargons II. aus Khorsabad (1994), Annals (Pisiri of Carchemish, 717 BC)"
       - "J. D. Hawkins, Corpus of Hieroglyphic Luwian Inscriptions, vol. 1 (2000), Carchemish"
   - polity: Ammon
-    first_year: "901 BC"
+    first_year: "931 BC"
     last_year: "582 BC"
     # The upper Jabbok around Rabbah.
     outline:
@@ -1042,7 +1858,7 @@ drawn:
       - "Josephus, Jewish Antiquities 10.181-182"
       - "B. MacDonald and R. W. Younker (eds.), Ancient Ammon (1999)"
   - polity: Moab
-    first_year: "901 BC"
+    first_year: "931 BC"
     last_year: "853 BC"
     # The plateau from the Zered to just north of the Arnon, with Dibon.
     outline:
@@ -1101,6 +1917,59 @@ drawn:
       - "P. Bienkowski (ed.), Early Edom and Moab: The Beginning of the Iron Age in Southern Jordan (1992)"
       - "T. E. Levy, M. Najjar and E. Ben-Yosef (eds.), New Insights into the Iron Age Archaeology of Edom, Southern Jordan (2014)"
       - "Wikipedia, Edom (Nabonidus's campaign about 553-552 BC)"
+  - polity: Kingdom of Odoacer
+    first_year: "AD 476"
+    last_year: "AD 492"
+    # Italy from the Alps to Calabria, and Sicily.
+    outline:
+      - [7.5, 43.75]
+      - [6.9, 44.2]
+      - [6.65, 45.1]
+      - [7.0, 45.85]
+      - [8.4, 46.45]
+      - [10.4, 46.6]
+      - [12.4, 46.75]
+      - [13.7, 46.5]
+      - [13.9, 45.6]
+      - [12.6, 44.3]
+      - [14.5, 42.5]
+      - [16.4, 42.0]
+      - [18.7, 40.2]
+      - [18.5, 39.7]
+      - [17.3, 38.95]
+      - [16.3, 37.8]
+      - [15.7, 37.7]
+      - [15.4, 37.2]
+      - [15.2, 36.55]
+      - [12.2, 37.55]
+      - [12.2, 38.2]
+      - [13.3, 38.3]
+      - [15.6, 38.35]
+      - [15.7, 39.5]
+      - [14.5, 40.5]
+      - [12.8, 41.2]
+      - [11.6, 42.0]
+      - [10.9, 42.4]
+      - [10.0, 43.3]
+      - [9.6, 44.0]
+      - [8.0, 43.85]
+    label: [14.8, 41.3]
+    minus:
+      [
+        Vandal Kingdom,
+        Ostrogoths,
+        Kingdom of Soissons,
+        Rugiland,
+        Eastern Roman Empire,
+        Burgundian Kingdom,
+        Visigothic Kingdom,
+      ]
+    reason: >-
+      Odoacer deposed Romulus Augustulus in 476 and ruled Italy as king until Theoderic took Ravenna in 493; the Vandals ceded him most of Sicily. Cliopatria draws no state over Italy in these years. The outline is Italy and Sicily; Dalmatia, which he took in 481, and the land north of the Alps are left out. From 490 Theoderic's Ostrogoths hold the north (the data's shape).
+    sources:
+      - "Anonymus Valesianus, Pars Posterior 8.38-11.56"
+      - "Victor of Vita, History of the Vandal Persecution 1.14"
+      - "Wikipedia, Odoacer; Kingdom of Italy (476-493)"
 # A polity the data names by one era for longer than it lasted (build-content.ts): a new
 # name from the year given.
 renamed:
@@ -1228,6 +2097,39 @@ renamed:
     sources:
       - "R. S. Humphreys, From Saladin to the Mongols (1977), ch. 8"
       - "S. Runciman, A History of the Crusades, vol. 3 (1954) (the siege of Damascus, April-October 1245)"
+  # The three dynasties of independent Egypt, 404-343 BC, on the one shape (starts):
+  # renamed in three steps.
+  - polity: Thirtieth Dynasty of Egypt
+    first_year: "404 BC"
+    name: Twenty-eighth Dynasty of Egypt
+    reason: >-
+      Amyrtaeus of Sais, the only king of the Twenty-eighth Dynasty, 404-399 BC.
+    sources:
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 13 (A. B. Lloyd, The Late Period)"
+      - "Wikipedia, Twenty-eighth Dynasty of Egypt"
+  - polity: Twenty-eighth Dynasty of Egypt
+    first_year: "399 BC"
+    name: Twenty-ninth Dynasty of Egypt
+    reason: >-
+      Nepherites I of Mendes overthrew Amyrtaeus in 399 BC; his dynasty, with Hakor, ruled until 380 BC.
+    sources:
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 13 (A. B. Lloyd, The Late Period)"
+      - "Wikipedia, Twenty-ninth Dynasty of Egypt"
+  - polity: Twenty-ninth Dynasty of Egypt
+    first_year: "380 BC"
+    name: Thirtieth Dynasty of Egypt
+    reason: >-
+      Nectanebo I of Sebennytos took the throne in 380 BC; Nectanebo II, the last of his dynasty, lost Egypt to Artaxerxes III in 343 BC.
+    sources:
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 13 (A. B. Lloyd, The Late Period)"
+      - "Wikipedia, Thirtieth Dynasty of Egypt"
+  - polity: Nicaean Empire
+    first_year: "AD 1261"
+    name: Byzantine Empire
+    reason: >-
+      Michael VIII's empire of Nicaea retook Constantinople in 1261 and was the Byzantine Empire again; Cliopatria keeps the name of Nicaea until 1278.
+    sources:
+      - "D. M. Nicol, The Last Centuries of Byzantium, 1261-1453, 2nd ed. (1993)"
 
 # Years a polity is drawn but did not exist (build-content.ts): cut out of the map.
 absent:
@@ -1358,7 +2260,7 @@ bridges:
 annexed:
   - polity: Kingdom of Israel
     by: Neo-Assyrian Empire
-    first_year: "721 BC"
+    first_year: "722 BC"
     last_year: "702 BC"
     reason: >-
       After Samaria fell in 722 BC the northern kingdom became Samerina, a province of the Neo-Assyrian Empire; Sargon II, who put down a revolt in which Samaria took part in 720 BC, organised it under a governor, deported part of its people and settled others in its towns. Cliopatria's Assyrian shape reaches the land only from 701 BC, so without this the land of Israel was left without a state for twenty years.
@@ -1400,7 +2302,7 @@ annexed:
       - "Wikipedia, Ptolemy of Mauretania (section Annexation of Mauretania)"
   - polity: Neo-Babylonian Empire
     by: Achaemenid Empire
-    first_year: "538 BC"
+    first_year: "539 BC"
     last_year: "532 BC"
     reason: >-
       Babylonia was Persian from Cyrus's entry in October 539 BC; Cliopatria's Achaemenid shape reaches it only from 531 BC.
@@ -1409,7 +2311,7 @@ annexed:
       - "Wikipedia, Fall of Babylon"
   - polity: Achaemenid Empire
     by: Macedonian Empire
-    first_year: "329 BC"
+    first_year: "330 BC"
     last_year: "328 BC"
     reason: >-
       After Gaugamela (331 BC) and Darius's death (330 BC) the Persian lands were Alexander's; Cliopatria's shape of his empire reaches Mesopotamia and Iran only from 327 BC.
@@ -1451,7 +2353,7 @@ annexed:
       - "Wikipedia, Sasanian Armenia (Marzpanate period from 428)"
   - polity: Kingdom of Pergamon
     by: Roman Republic
-    first_year: "132 BC"
+    first_year: "133 BC"
     last_year: "128 BC"
     reason: >-
       The kingdom passed to Rome by Attalus III's will in 133 BC; Rome fought Aristonicus for it until 130-129 BC and organised the province of Asia. Cliopatria's Roman shape reaches it only from 127 BC.
@@ -1470,7 +2372,7 @@ annexed:
       - "Wikipedia, Treaty of Dardanos"
   - polity: Antigonid Macedonia
     by: Greek City-States
-    first_year: "167 BC"
+    first_year: "168 BC"
     last_year: "166 BC"
     reason: >-
       After Pydna (168 BC) Macedonia was divided into four tribute-paying republics, which Cliopatria draws as Greek city-states from 165 BC; the same is drawn from 167 BC.
@@ -1488,7 +2390,7 @@ annexed:
       - "Wikipedia, Ptolemy Apion"
   - polity: Ptolemaic Kingdom
     by: Roman Empire
-    first_year: "29 BC"
+    first_year: "30 BC"
     last_year: "29 BC"
     reason: >-
       Egypt was a Roman province from 30 BC; Cliopatria's Roman shape reaches it only from 28 BC.
@@ -1530,7 +2432,7 @@ annexed:
       - "Wikipedia, Tulunids"
   - polity: Abbasid Caliphate
     by: Mongol Empire
-    first_year: "AD 1259"
+    first_year: "AD 1258"
     last_year: "AD 1259"
     reason: >-
       Iraq was Hulagu's from 1258; Cliopatria's Mongol shape takes it in only from 1260.
@@ -1538,7 +2440,7 @@ annexed:
       - "J. A. Boyle, Dynastic and Political History of the Il-Khans, in The Cambridge History of Iran, vol. 5 (1968)"
   - polity: Principality of Antioch
     by: Mamluk Sultanate
-    first_year: "AD 1269"
+    first_year: "AD 1268"
     last_year: "AD 1271"
     reason: >-
       Antioch was Baybars' from 1268; Cliopatria's Mamluk shape takes it in only from 1272.
@@ -1554,12 +2456,54 @@ annexed:
       - "S. Runciman, A History of the Crusades, vol. 3 (1954), the fall of Tripoli"
   - polity: Kingdom of Jerusalem
     by: Mamluk Sultanate
-    first_year: "AD 1292"
+    first_year: "AD 1291"
     last_year: "AD 1293"
     reason: >-
       The coast from Acre to Atlit was the Mamluks' from 1291; Cliopatria's Mamluk shape takes it in only from 1294.
     sources:
       - "S. Runciman, A History of the Crusades, vol. 3 (1954), the fall of Acre"
+  - polity: Twenty-sixth Dynasty of Egypt
+    by: Achaemenid Empire
+    first_year: "525 BC"
+    last_year: "502 BC"
+    reason: >-
+      Egypt and Cyprus were Persian from Cambyses' conquest in 525 BC (event cambyses-egypt); Cliopatria's Achaemenid shape reaches them only from 501 BC.
+    sources:
+      - "Herodotus 3.10-16; 3.19; 3.91"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 13 (A. B. Lloyd, The Late Period)"
+  - polity: Thirtieth Dynasty of Egypt
+    by: Achaemenid Empire
+    first_year: "343 BC"
+    last_year: "339 BC"
+    reason: >-
+      Artaxerxes III reconquered Egypt in 343 BC (event artaxerxes-iii-egypt); Cliopatria's Achaemenid shape reaches it only from 338 BC.
+    sources:
+      - "Diodorus Siculus 16.46-51"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 13 (A. B. Lloyd, The Late Period)"
+  - polity: Carthage
+    by: Roman Republic
+    first_year: "146 BC"
+    last_year: "146 BC"
+    reason: >-
+      Carthage was destroyed and its land made the province of Africa in 146 BC; Cliopatria's Roman shape reaches it from 145 BC.
+    sources:
+      - "Appian, Punic Wars 135"
+  - polity: Achaean League
+    by: Roman Republic
+    first_year: "146 BC"
+    last_year: "146 BC"
+    reason: >-
+      The League's cities were Rome's from Mummius' victory in 146 BC; Cliopatria's Roman shape reaches them from 145 BC.
+    sources:
+      - "Pausanias 7.16.9-10"
+  - polity: Latin Empire
+    by: Byzantine Empire
+    first_year: "AD 1261"
+    last_year: "AD 1278"
+    reason: >-
+      Constantinople was the restored Byzantine Empire's from 1261; Cliopatria draws no shape of it there until 1279, so the Latin Empire's last shape is drawn as Byzantine.
+    sources:
+      - "D. M. Nicol, The Last Centuries of Byzantium, 1261-1453, 2nd ed. (1993)"
 
 # Years a polity was a vassal or client (build-content.ts): drawn in the overlord's colour,
 # lighter, with the label as a second line. Checked against the sources in two passes
@@ -3036,7 +3980,7 @@ vassals:
   - polity: Carchemish
     of: Neo-Assyrian Empire
     first_year: "740 BC"
-    last_year: "717 BC"
+    last_year: "718 BC"
     label:
       en: "under Assyria"
       ru: "под Ассирией"
@@ -3064,3 +4008,34 @@ vassals:
     sources:
       - "H. Tadmor and S. Yamada, The Royal Inscriptions of Tiglath-pileser III and Shalmaneser V (RINAP 1, 2011), the tribute lists of 740-738 BC"
       - "A. Fuchs, Die Inschriften Sargons II. aus Khorsabad (1994), Annals"
+  - polity: Babylonia
+    of: Neo-Assyrian Empire
+    first_year: "647 BC"
+    last_year: "632 BC"
+    label:
+      en: "under Assyria"
+      ru: "под Ассирией"
+      uk: "під Ассирією"
+      es: "bajo Asiria"
+      pt: "sob a Assíria"
+      de: "unter Assyrien"
+      fr: "sous l’Assyrie"
+      pl: "pod władzą Asyrii"
+      it: "sotto l’Assiria"
+      nl: "onder Assyrië"
+      cs: "pod Asýrií"
+      sv: "under Assyrien"
+      nb: "under Assyria"
+      tl: "sa ilalim ng Asiria"
+      da: "under Assyrien"
+      sr: "под Асиријом"
+      hu: "Asszíria alatt"
+      fi: "Assyrian alaisuudessa"
+      vi: "thuộc A-si-ri"
+      ro: "sub Asiria"
+      bg: "под властта на Асирия"
+    reason: >-
+      Cliopatria draws Babylonia in 650-631 BC as a kingdom of its own beside Assyria. Shamash-shum-ukin's revolt against his brother Ashurbanipal ended with the fall of Babylon in 648 BC (event babylon-648); from 647 Kandalanu reigned there under Assyria until 627 BC (clips). Drawn as Assyria's vassal from 647 BC to the end of Cliopatria's shape, 632 BC; in 631-627 BC the Assyrian shape alone covers Babylon.
+    sources:
+      - "J. Oates, The Fall of Assyria (635-609 B.C.), in The Cambridge Ancient History, 2nd ed., vol. III/2 (1991), ch. 25"
+      - "G. Frame, Babylonia 689-627 B.C.: A Political History (1992)"

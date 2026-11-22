@@ -16,9 +16,10 @@ export type RulerState = { n: string; c: number; names: Record<string, string> }
 /** [from, to) years and the index of the state in `states`. */
 export type Run = [number, number, number];
 
-type Shape = { box: [number, number, number, number]; polys: Ring[][]; area: number };
+export type Shape = { box: [number, number, number, number]; polys: Ring[][]; area: number };
 
-function shapeOf(g: Geometry): Shape {
+/** A shape's box, polygons and area (outer rings), by which the card picks the smallest. */
+export function shapeOf(g: Geometry): Shape {
   const polys = (g.type === "Polygon" ? [g.coordinates] : g.coordinates) as Ring[][];
   let x0 = Infinity;
   let y0 = Infinity;

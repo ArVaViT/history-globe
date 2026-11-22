@@ -179,6 +179,23 @@ export const PolityOverridesFile = z.strictObject({
     }),
   ),
   /**
+   * A change of shape Cliopatria puts at a round year, moved to the year it happened: the
+   * polity's shapes and labels that begin in `data_year` begin in `first_year`, and those
+   * that end there end then (Israel and Judah divided in 931 BC, not 901).
+   */
+  seams: z
+    .array(
+      z.strictObject({
+        polity: z.string().min(1),
+        /** The first year of the shape as Cliopatria draws it. */
+        data_year: yearLabel,
+        first_year: yearLabel,
+        reason: z.string().min(1),
+        sources,
+      }),
+    )
+    .optional(),
+  /**
    * Polities Cliopatria starts too late or too early: drawn from `first_year`, earlier
    * with their first shape (Israel under David, before Cliopatria's 1000 BC) or later
    * with the earlier shapes cut (the Hyksos from 1650 BC, not 1800).
@@ -197,8 +214,9 @@ export const PolityOverridesFile = z.strictObject({
    * Shapes Cliopatria draws too far: every shape of the polity is cut to the area given,
    * a convex polygon of [lon, lat] points (Philistia on the coastal plain, not the hills),
    * or the area given is cut out of it (`without`, any simple polygon, years required).
-   * The land cut away goes to the polity named in `to` in the same years; land it leaves
-   * without any state must be declared with `leaves_blank` (the build checks).
+   * The land cut away goes to the polity named in `to` in the same years (as a shape of
+   * its own, with `drawn_from_cut`, if the data draws none of that polity then); land it
+   * leaves without any state must be declared with `leaves_blank` (the build checks).
    */
   clips: z
     .array(
@@ -214,6 +232,11 @@ export const PolityOverridesFile = z.strictObject({
           to: z.string().min(1).optional(),
           /** The land cut away is left without a state on purpose; the reason says why. */
           leaves_blank: z.literal(true).optional(),
+          /**
+           * The state in `to` has no shape in these years (Syria to the Ayyubids, 1250-1259):
+           * the land cut away is drawn as its own shape, named at its middle.
+           */
+          drawn_from_cut: z.literal(true).optional(),
           reason: z.string().min(1),
           sources,
         })
@@ -228,6 +251,9 @@ export const PolityOverridesFile = z.strictObject({
         )
         .refine((c) => c.to === undefined || c.leaves_blank === undefined, {
           message: "land given `to` a polity is not left blank",
+        })
+        .refine((c) => c.drawn_from_cut === undefined || c.to !== undefined, {
+          message: "`drawn_from_cut` needs `to`",
         }),
     )
     .optional(),

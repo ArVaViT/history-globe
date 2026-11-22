@@ -15,47 +15,49 @@ anchors:
   - name: Jerusalem
     place: a15257a
     periods:
-      - { first_year: "1010 BC", last_year: "902 BC", polity: Kingdom of Israel }
-      - { first_year: "901 BC", last_year: "586 BC", polity: Kingdom of Judah }
+      - { first_year: "1010 BC", last_year: "932 BC", polity: Kingdom of Israel }
+      - { first_year: "931 BC", last_year: "587 BC", polity: Kingdom of Judah }
+      - { first_year: "586 BC", last_year: "540 BC", polity: Neo-Babylonian Empire }
+      - { first_year: "539 BC", last_year: "333 BC", polity: Achaemenid Empire }
     sources:
       - "2 Sam 5:6-9; 1 Kgs 12:21; 2 Kgs 25:1-10"
 
   - name: Samaria
     place: a041bb3
     periods:
-      - { first_year: "880 BC", last_year: "722 BC", polity: Kingdom of Israel }
+      - { first_year: "880 BC", last_year: "723 BC", polity: Kingdom of Israel }
+      - { first_year: "722 BC", last_year: "630 BC", polity: Neo-Assyrian Empire }
     sources:
       - "1 Kgs 16:24; 2 Kgs 17:5-6"
 
   - name: Dan
     place: a513646
     periods:
-      - { first_year: "1010 BC", last_year: "902 BC", polity: Kingdom of Israel }
-      - { first_year: "901 BC", last_year: "733 BC", polity: Kingdom of Israel }
+      - { first_year: "1010 BC", last_year: "733 BC", polity: Kingdom of Israel }
     sources:
       - "1 Kgs 4:25; 12:29; 2 Kgs 10:29; 15:29"
 
   - name: Lachish
     place: a3cc590
     periods:
-      - { first_year: "1010 BC", last_year: "902 BC", polity: Kingdom of Israel }
-      - { first_year: "901 BC", last_year: "587 BC", polity: Kingdom of Judah }
+      - { first_year: "1010 BC", last_year: "932 BC", polity: Kingdom of Israel }
+      - { first_year: "931 BC", last_year: "587 BC", polity: Kingdom of Judah }
     sources:
       - "2 Chr 11:5-9; Jer 34:7"
 
   - name: Beersheba
     place: ad2f6c2
     periods:
-      - { first_year: "1010 BC", last_year: "902 BC", polity: Kingdom of Israel }
-      - { first_year: "901 BC", last_year: "586 BC", polity: Kingdom of Judah }
+      - { first_year: "1010 BC", last_year: "932 BC", polity: Kingdom of Israel }
+      - { first_year: "931 BC", last_year: "587 BC", polity: Kingdom of Judah }
     sources:
       - "1 Kgs 4:25; 2 Kgs 23:8"
 
   - name: Arad
     place: abc358b
     periods:
-      - { first_year: "1010 BC", last_year: "902 BC", polity: Kingdom of Israel }
-      - { first_year: "901 BC", last_year: "586 BC", polity: Kingdom of Judah }
+      - { first_year: "1010 BC", last_year: "932 BC", polity: Kingdom of Israel }
+      - { first_year: "931 BC", last_year: "587 BC", polity: Kingdom of Judah }
     sources:
       - "Y. Aharoni, Arad Inscriptions (1981)"
 
@@ -85,30 +87,31 @@ anchors:
   - name: Carchemish
     place: af6c730
     periods:
-      - { first_year: "1000 BC", last_year: "717 BC", polity: Carchemish }
+      - { first_year: "1000 BC", last_year: "718 BC", polity: Carchemish }
+      - { first_year: "717 BC", last_year: "613 BC", polity: Neo-Assyrian Empire }
     sources:
       - "J. D. Hawkins, Corpus of Hieroglyphic Luwian Inscriptions, vol. 1 (2000)"
 
   - name: Rabbah
     place: ae067b5
     periods:
-      - { first_year: "1010 BC", last_year: "902 BC", polity: Kingdom of Israel }
-      - { first_year: "901 BC", last_year: "582 BC", polity: Ammon }
+      - { first_year: "1010 BC", last_year: "932 BC", polity: Kingdom of Israel }
+      - { first_year: "931 BC", last_year: "582 BC", polity: Ammon }
     sources:
       - "2 Sam 12:26-31; Jer 49:2"
 
   - name: Dibon
     place: a0d784a
     periods:
-      - { first_year: "1010 BC", last_year: "902 BC", polity: Kingdom of Israel }
-      - { first_year: "901 BC", last_year: "582 BC", polity: Moab }
+      - { first_year: "1010 BC", last_year: "932 BC", polity: Kingdom of Israel }
+      - { first_year: "931 BC", last_year: "582 BC", polity: Moab }
     sources:
       - "Mesha Stele (KAI 181), 1-2"
 
   - name: Kir-hareseth
     place: ab55371
     periods:
-      - { first_year: "901 BC", last_year: "582 BC", polity: Moab }
+      - { first_year: "931 BC", last_year: "582 BC", polity: Moab }
     sources:
       - "2 Kgs 3:25; Isa 16:7"
 
@@ -122,10 +125,17 @@ anchors:
   - name: Babylon
     place: a217d18
     periods:
+      - { first_year: "700 BC", last_year: "652 BC", polity: Neo-Assyrian Empire }
+      - { first_year: "651 BC", last_year: "632 BC", polity: Babylonia }
+      - { first_year: "631 BC", last_year: "627 BC", polity: Neo-Assyrian Empire }
       - { first_year: "626 BC", last_year: "602 BC", polity: Babylonia }
-      - { first_year: "601 BC", last_year: "539 BC", polity: Neo-Babylonian Empire }
+      - { first_year: "601 BC", last_year: "540 BC", polity: Neo-Babylonian Empire }
+      - { first_year: "539 BC", last_year: "332 BC", polity: Achaemenid Empire }
+      - { first_year: "331 BC", last_year: "325 BC", polity: Macedonian Empire }
     sources:
       - "Babylonian Chronicle ABC 2"
+      - "Nabonidus Chronicle (ABC 7) iii 12-16; Arrian, Anabasis 3.16"
+      - "G. Frame, Babylonia 689-627 B.C.: A Political History (1992)"
 
   - name: Nineveh
     place: a70fd5d
@@ -143,9 +153,11 @@ anchors:
   - name: Nippur
     at: [45.23, 32.127]
     periods:
-      - { first_year: "700 BC", last_year: "627 BC", polity: Neo-Assyrian Empire }
+      - { first_year: "700 BC", last_year: "652 BC", polity: Neo-Assyrian Empire }
+      - { first_year: "651 BC", last_year: "632 BC", polity: Babylonia }
+      - { first_year: "631 BC", last_year: "627 BC", polity: Neo-Assyrian Empire }
       - { first_year: "626 BC", last_year: "602 BC", polity: Babylonia }
-      - { first_year: "601 BC", last_year: "539 BC", polity: Neo-Babylonian Empire }
+      - { first_year: "601 BC", last_year: "540 BC", polity: Neo-Babylonian Empire }
     sources:
       - "Babylonian Chronicle ABC 2 (Kandalanu's reign under Assyria to 627 BC)"
       - "J. Oates, The Fall of Assyria (635-609 B.C.), in The Cambridge Ancient History, 2nd ed., vol. III/2 (1991), ch. 25"
@@ -153,9 +165,11 @@ anchors:
   - name: Ur
     place: a6cf75c
     periods:
-      - { first_year: "700 BC", last_year: "627 BC", polity: Neo-Assyrian Empire }
+      - { first_year: "700 BC", last_year: "652 BC", polity: Neo-Assyrian Empire }
+      - { first_year: "651 BC", last_year: "632 BC", polity: Babylonia }
+      - { first_year: "631 BC", last_year: "627 BC", polity: Neo-Assyrian Empire }
       - { first_year: "626 BC", last_year: "602 BC", polity: Babylonia }
-      - { first_year: "601 BC", last_year: "539 BC", polity: Neo-Babylonian Empire }
+      - { first_year: "601 BC", last_year: "540 BC", polity: Neo-Babylonian Empire }
     sources:
       - "Babylonian Chronicle ABC 2"
       - "J. Oates, The Fall of Assyria (635-609 B.C.), in The Cambridge Ancient History, 2nd ed., vol. III/2 (1991), ch. 25"
@@ -175,7 +189,8 @@ anchors:
   - name: Harran
     at: [39.03, 36.86]
     periods:
-      - { first_year: "611 BC", last_year: "609 BC", polity: Neo-Assyrian Empire }
+      - { first_year: "612 BC", last_year: "611 BC", polity: Neo-Assyrian Empire }
+      - { first_year: "610 BC", last_year: "602 BC", polity: Babylonia }
     sources:
       - "Babylonian Chronicle ABC 3"
 
@@ -217,8 +232,8 @@ anchors:
   - name: Gaza
     place: aa8edd2
     periods:
-      - { first_year: "600 BC", last_year: "539 BC", polity: Neo-Babylonian Empire }
-      - { first_year: "538 BC", last_year: "333 BC", polity: Achaemenid Empire }
+      - { first_year: "600 BC", last_year: "540 BC", polity: Neo-Babylonian Empire }
+      - { first_year: "539 BC", last_year: "333 BC", polity: Achaemenid Empire }
     sources:
       - "Herodotus 3.5"
 
@@ -233,11 +248,298 @@ anchors:
     place: Q16869
     periods:
       - { first_year: "AD 330", last_year: "AD 1300", polity: any }
-    blank:
-      - first_year: "AD 1262"
-        last_year: "AD 1278"
-        reason: >-
-          The Latin Empire ends with the Byzantine recovery of 1261 (overrides), and
-          Cliopatria has no shape of the restored empire before 1279.
     sources:
       - "Wikidata Q16869"
+
+  # The seams of content/polity-overrides.yaml whose places carry the atlas's events and
+  # questions: the divided kingdom, Persian and independent Egypt, raids that are not rule,
+  # the Hasmoneans, Persian and crusader Jerusalem, the Fatimid coast.
+  - name: Shechem
+    place: adf74d4
+    periods:
+      - { first_year: "1010 BC", last_year: "723 BC", polity: Kingdom of Israel }
+      - { first_year: "722 BC", last_year: "630 BC", polity: Neo-Assyrian Empire }
+    sources:
+      - "1 Kgs 12:1, 25; 2 Kgs 17:5-6"
+
+  - name: Memphis
+    place: a8ec269
+    periods:
+      - { first_year: "655 BC", last_year: "526 BC", polity: Twenty-sixth Dynasty of Egypt }
+      - { first_year: "525 BC", last_year: "405 BC", polity: Achaemenid Empire }
+      - { first_year: "404 BC", last_year: "400 BC", polity: Twenty-eighth Dynasty of Egypt }
+      - { first_year: "399 BC", last_year: "381 BC", polity: Twenty-ninth Dynasty of Egypt }
+      - { first_year: "380 BC", last_year: "344 BC", polity: Thirtieth Dynasty of Egypt }
+      - { first_year: "343 BC", last_year: "333 BC", polity: Achaemenid Empire }
+      - { first_year: "332 BC", last_year: "325 BC", polity: Macedonian Empire }
+    sources:
+      - "Herodotus 3.10-16; Diodorus Siculus 14.35; 16.46-51"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 13"
+
+  - name: Jerusalem, Seleucid and Hasmonean
+    place: a15257a
+    periods:
+      - { first_year: "190 BC", last_year: "143 BC", polity: Seleucid Empire }
+      - { first_year: "142 BC", last_year: "100 BC", polity: Judea }
+    sources:
+      - "1 Macc 13:36-42"
+
+  - name: Athens under Antony
+    place: a1fe6e7
+    periods:
+      - { first_year: "40 BC", last_year: "33 BC", polity: Roman Republic }
+      - { first_year: "32 BC", last_year: "25 BC", polity: Roman Empire }
+    sources:
+      - "Plutarch, Antony 57"
+
+  - name: Athens in Alaric's years
+    place: a1fe6e7
+    periods:
+      - { first_year: "AD 395", last_year: "AD 420", polity: Eastern Roman Empire }
+    sources:
+      - "Zosimus, New History 5.5-6"
+
+  - name: Corinth under Antony
+    place: a6f437a
+    periods:
+      - { first_year: "40 BC", last_year: "33 BC", polity: Roman Republic }
+      - { first_year: "32 BC", last_year: "25 BC", polity: Roman Empire }
+    sources:
+      - "Plutarch, Antony 67"
+
+  - name: Corinth in Alaric's years
+    place: a6f437a
+    periods:
+      - { first_year: "AD 395", last_year: "AD 420", polity: Eastern Roman Empire }
+    sources:
+      - "Zosimus, New History 5.6"
+
+  - name: Tyre under Antony
+    place: a160272
+    periods:
+      - { first_year: "40 BC", last_year: "33 BC", polity: Roman Republic }
+      - { first_year: "32 BC", last_year: "25 BC", polity: Roman Empire }
+    sources:
+      - "Plutarch, Antony 36"
+
+  - name: Damascus under Antony
+    place: a69c1d4
+    periods:
+      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
+      - { first_year: "32 BC", last_year: "25 BC", polity: Roman Empire }
+    sources:
+      - "Plutarch, Antony 36"
+
+  - name: Rome
+    place: afc8e7a
+    periods:
+      - { first_year: "AD 395", last_year: "AD 475", polity: Western Roman Empire }
+      - { first_year: "AD 476", last_year: "AD 492", polity: Kingdom of Odoacer }
+      - { first_year: "AD 493", last_year: "AD 535", polity: Ostrogothic Kingdom }
+      - { first_year: "AD 536", last_year: "AD 545", polity: Eastern Roman Empire }
+      - { first_year: "AD 546", last_year: "AD 551", polity: Ostrogothic Kingdom }
+      - { first_year: "AD 552", last_year: "AD 565", polity: Eastern Roman Empire }
+    sources:
+      - "Zosimus, New History 5.36-6.13; Procopius, Wars 3.5.1-6"
+      - "Anonymus Valesianus, Pars Posterior 8.38-11.56"
+
+  - name: Antioch
+    place: ae41ab4
+    periods:
+      - { first_year: "AD 530", last_year: "AD 612", polity: Eastern Roman Empire }
+      - { first_year: "AD 613", last_year: "AD 626", polity: Sasanian Empire }
+    sources:
+      - "Procopius, Wars 2.8-14; Chronicon Paschale, AD 613"
+
+  - name: Damascus, Persian
+    place: a69c1d4
+    periods:
+      - { first_year: "AD 590", last_year: "AD 612", polity: Eastern Roman Empire }
+      - { first_year: "AD 613", last_year: "AD 626", polity: Sasanian Empire }
+    sources:
+      - "Chronicon Paschale, AD 613"
+
+  - name: Jerusalem, Middle Ages
+    place: a15257a
+    periods:
+      - { first_year: "AD 590", last_year: "AD 613", polity: Eastern Roman Empire }
+      - { first_year: "AD 614", last_year: "AD 628", polity: Sasanian Empire }
+      - { first_year: "AD 970", last_year: "AD 1071", polity: Fatimid Caliphate }
+      - { first_year: "AD 1072", last_year: "AD 1098", polity: Great Seljuk Empire }
+      - { first_year: "AD 1099", last_year: "AD 1186", polity: Kingdom of Jerusalem }
+      - { first_year: "AD 1187", last_year: "AD 1228", polity: Ayyubid Sultanate }
+      - { first_year: "AD 1229", last_year: "AD 1243", polity: Kingdom of Jerusalem }
+      - { first_year: "AD 1244", last_year: "AD 1259", polity: Ayyubid Sultanate }
+      - { first_year: "AD 1260", last_year: "AD 1300", polity: Mamluk Sultanate }
+    sources:
+      - "Antiochus Strategos, The Capture of Jerusalem by the Persians in 614"
+      - "S. Runciman, A History of the Crusades, vols. 1-3 (1951-1954)"
+      - "R. S. Humphreys, From Saladin to the Mongols (1977)"
+
+  - name: Acre
+    place: abc2af0
+    periods:
+      - { first_year: "AD 970", last_year: "AD 1103", polity: Fatimid Caliphate }
+      - { first_year: "AD 1104", last_year: "AD 1186", polity: Kingdom of Jerusalem }
+      - { first_year: "AD 1187", last_year: "AD 1190", polity: Ayyubid Sultanate }
+      - { first_year: "AD 1191", last_year: "AD 1290", polity: Kingdom of Jerusalem }
+      - { first_year: "AD 1291", last_year: "AD 1300", polity: Mamluk Sultanate }
+    sources:
+      - "Fulcher of Chartres, Historia Hierosolymitana 2.25"
+
+  - name: Tyre, Fatimid and Frankish
+    place: a160272
+    periods:
+      - { first_year: "AD 970", last_year: "AD 1123", polity: Fatimid Caliphate }
+      - { first_year: "AD 1124", last_year: "AD 1290", polity: Kingdom of Jerusalem }
+      - { first_year: "AD 1291", last_year: "AD 1300", polity: Mamluk Sultanate }
+    sources:
+      - "William of Tyre, Historia 13.4-14"
+
+  - name: Damascus, Fatimid
+    place: a69c1d4
+    periods:
+      - { first_year: "AD 1028", last_year: "AD 1075", polity: Fatimid Caliphate }
+      - { first_year: "AD 1076", last_year: "AD 1100", polity: Great Seljuk Empire }
+    sources:
+      - "Ibn al-Qalanisi, The Damascus Chronicle of the Crusades, tr. H. A. R. Gibb (1932)"
+
+  - name: Damascus under an-Nasir Yusuf
+    place: a69c1d4
+    periods:
+      - { first_year: "AD 1250", last_year: "AD 1259", polity: Ayyubid Sultanate }
+      - { first_year: "AD 1260", last_year: "AD 1300", polity: Mamluk Sultanate }
+    sources:
+      - "R. S. Humphreys, From Saladin to the Mongols (1977)"
+      - "R. Amitai-Preiss, Mongols and Mamluks (1995)"
+
+  # A place passes to its new state in the year of the event that tells it
+  # (content/polity-overrides.yaml, header): the places of the atlas's transfers.
+  - name: Constantinople, Latin and restored
+    place: Q16869
+    periods:
+      - { first_year: "AD 1195", last_year: "AD 1203", polity: Byzantine Empire }
+      - { first_year: "AD 1204", last_year: "AD 1260", polity: Latin Empire }
+      - { first_year: "AD 1261", last_year: "AD 1300", polity: Byzantine Empire }
+    sources:
+      - "Geoffrey of Villehardouin, The Conquest of Constantinople"
+      - "D. M. Nicol, The Last Centuries of Byzantium, 1261-1453, 2nd ed. (1993)"
+
+  - name: Antioch, Byzantine
+    place: ae41ab4
+    periods:
+      - { first_year: "AD 950", last_year: "AD 968", polity: Hamdanid Emirates }
+      - { first_year: "AD 969", last_year: "AD 1000", polity: Byzantine Empire }
+    sources:
+      - "Leo the Deacon, History 5.4"
+
+  - name: Antioch, Frankish
+    place: ae41ab4
+    periods:
+      - { first_year: "AD 1090", last_year: "AD 1097", polity: Great Seljuk Empire }
+      - { first_year: "AD 1098", last_year: "AD 1267", polity: Principality of Antioch }
+      - { first_year: "AD 1268", last_year: "AD 1300", polity: Mamluk Sultanate }
+    sources:
+      - "Gesta Francorum 8.20"
+      - "S. Runciman, A History of the Crusades, vol. 3 (1954)"
+
+  - name: Egypt, Fatimid
+    place: af301ca
+    periods:
+      - { first_year: "AD 950", last_year: "AD 968", polity: Abbasid Caliphate }
+      - { first_year: "AD 969", last_year: "AD 1100", polity: Fatimid Caliphate }
+    sources:
+      - "M. Brett, The Fatimid Empire (2017)"
+
+  - name: Alexandria
+    place: aee7248
+    periods:
+      - { first_year: "100 BC", last_year: "31 BC", polity: Ptolemaic Kingdom }
+      - { first_year: "30 BC", last_year: "1 BC", polity: Roman Empire }
+    sources:
+      - "Cassius Dio 51.17.1"
+
+  - name: Carthage
+    place: aa56bd1
+    periods:
+      - { first_year: "160 BC", last_year: "147 BC", polity: Carthage }
+      - { first_year: "146 BC", last_year: "100 BC", polity: Roman Republic }
+    sources:
+      - "Appian, Punic Wars 127-135"
+
+  - name: Corinth and the Achaean League
+    place: a6f437a
+    periods:
+      - { first_year: "160 BC", last_year: "147 BC", polity: Achaean League }
+      - { first_year: "146 BC", last_year: "100 BC", polity: Roman Republic }
+    sources:
+      - "Pausanias 7.16"
+
+  - name: Pergamum
+    place: a75d2c1
+    periods:
+      - { first_year: "150 BC", last_year: "134 BC", polity: Kingdom of Pergamon }
+      - { first_year: "133 BC", last_year: "100 BC", polity: Roman Republic }
+    sources:
+      - "Strabo 13.4.2"
+
+  - name: Cyprus
+    place: a2e7601
+    periods:
+      - { first_year: "AD 1150", last_year: "AD 1190", polity: Byzantine Empire }
+      - { first_year: "AD 1191", last_year: "AD 1300", polity: Kingdom of Cyprus }
+    sources:
+      - "P. W. Edbury, The Kingdom of Cyprus and the Crusades, 1191-1374 (1991)"
+
+  - name: Baghdad
+    place: "893952"
+    periods:
+      - { first_year: "AD 1202", last_year: "AD 1257", polity: Abbasid Caliphate }
+      - { first_year: "AD 1258", last_year: "AD 1259", polity: Mongol Empire }
+    sources:
+      - "Wikipedia, Siege of Baghdad (1258)"
+
+  - name: Edessa
+    place: "658457"
+    periods:
+      - { first_year: "AD 1100", last_year: "AD 1143", polity: County of Edessa }
+      - { first_year: "AD 1144", last_year: "AD 1150", polity: Zengid dynasty }
+    sources:
+      - "S. Runciman, A History of the Crusades, vol. 2 (1952)"
+
+  - name: Larsa
+    place: "912897"
+    periods:
+      - { first_year: "1790 BC", last_year: "1764 BC", polity: Sumerian City-States }
+      - { first_year: "1763 BC", last_year: "1750 BC", polity: Babylonia }
+    sources:
+      - "M. Van De Mieroop, King Hammurabi of Babylon: A Biography (2005)"
+
+  - name: Ravenna
+    place: "393480"
+    periods:
+      - { first_year: "AD 476", last_year: "AD 492", polity: Kingdom of Odoacer }
+      - { first_year: "AD 493", last_year: "AD 539", polity: Ostrogothic Kingdom }
+    sources:
+      - "Anonymus Valesianus, Pars Posterior 11.53-56"
+
+  - name: Syracuse under Odoacer
+    at: [15.29, 37.07]
+    periods:
+      - { first_year: "AD 477", last_year: "AD 492", polity: Kingdom of Odoacer }
+    sources:
+      - "Victor of Vita, History of the Vandal Persecution 1.14"
+
+  - name: Cyrene
+    at: [21.86, 32.82]
+    periods:
+      - { first_year: "450 BC", last_year: "405 BC", polity: Achaemenid Empire }
+      - { first_year: "332 BC", last_year: "330 BC", polity: Cyrenaica }
+    blank:
+      - first_year: "404 BC"
+        last_year: "333 BC"
+        reason: >-
+          Cyrene and the Greek cities of Cyrenaica were independent of Persia and of Egypt;
+          no state of theirs is drawn.
+    sources:
+      - "Diodorus Siculus 18.19-21"

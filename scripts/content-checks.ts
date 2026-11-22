@@ -276,3 +276,34 @@ export const nearDistance = (km: number, a: Point, b: Point): boolean => {
   const real = distanceKm(a, b);
   return Math.abs(km - real) <= Math.max(1.5, 0.1 * real);
 };
+
+/**
+ * Items (events, battles, question maps, tour stops) whose place changes state the year
+ * after theirs: a place passes to its new state in the year of the event that tells it
+ * (content/polity-overrides.yaml, header). `rulers` is rulers.json's `places`: for each
+ * place its states as [from, to (exclusive), state]. An item listed in `allowed` (by its
+ * `where`) is let through; an entry no item needs any more is refused.
+ */
+export function lateTransfers(
+  items: readonly (readonly [where: string, place: string | undefined, year: number])[],
+  rulers: Readonly<Record<string, readonly (readonly [number, number, number])[]>>,
+  allowed: ReadonlyMap<string, string>,
+): string[] {
+  const stateAt = (place: string, year: number) =>
+    rulers[place]?.find(([a, b]) => a <= year && year < b)?.[2];
+  const errors: string[] = [];
+  const late = new Set<string>();
+  for (const [where, place, year] of items) {
+    if (place === undefined) continue;
+    const now = stateAt(place, year);
+    if (now === undefined || now === stateAt(place, year + 1)) continue;
+    late.add(where);
+    if (!allowed.has(where))
+      errors.push(
+        `${where}: the map changes the state of ${place} the year after ${String(year)}: a place passes to its new state in the year of the event (TRANSFER_LAG for a real exception)`,
+      );
+  }
+  for (const where of allowed.keys())
+    if (!late.has(where)) errors.push(`TRANSFER_LAG: ${where} no longer needs it; take it out`);
+  return errors;
+}
