@@ -1039,6 +1039,15 @@ await step("phone: a tour's stop stays on the map above its card", async () => {
   await phone.goto(BASE + "?locale=ru&tour=paul-2&stop=4");
   await phone.getByRole("heading", { name: "Троада" }).waitFor({ timeout: 10000 });
   await visibleOnPhone("a91c509", "Troas");
+  // The lights that run along the leg pass over the stop at the end of every run: they are
+  // signs only and never take a tap (the check above once found one over Troas).
+  const catching = await phone.evaluate(
+    () =>
+      [...document.querySelectorAll(".maplibregl-marker[aria-hidden=true]")].filter(
+        (m) => getComputedStyle(m).pointerEvents !== "none",
+      ).length,
+  );
+  expect(catching === 0, `${String(catching)} of the route's lights take the pointer`);
   // The stepping stays in reach under the stop's text, however long it is.
   const next = await phone.getByRole("button", { name: /^Дальше/ }).boundingBox();
   expect(next && next.y + next.height <= 844, `Next at ${JSON.stringify(next)}`);

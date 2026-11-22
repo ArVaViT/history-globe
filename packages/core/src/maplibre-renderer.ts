@@ -799,6 +799,8 @@ export class MapLibreRenderer implements Renderer {
       if (!this.ring) {
         const el = this.doc.createElement("div");
         el.setAttribute("aria-hidden", "true");
+        // Only a sign: a press on the place under it reaches the map.
+        el.style.pointerEvents = "none";
         const ring = this.doc.createElement("div");
         ring.className = "hg-ring";
         el.append(ring);
@@ -1238,6 +1240,10 @@ export class MapLibreRenderer implements Renderer {
       // light fades on an inner element, so the two never fight.
       const el = this.doc.createElement("div");
       el.setAttribute("aria-hidden", "true");
+      // Only a sign: a light passing over the stop, as it does at the end of every run along
+      // the leg, does not take the tap meant for the stop (MapLibre's marker takes the
+      // pointer; the light inside it already lets it through).
+      el.style.pointerEvents = "none";
       const light = this.doc.createElement("div");
       light.className = "hg-pulse";
       el.append(light);
