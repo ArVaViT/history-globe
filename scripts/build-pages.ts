@@ -36,7 +36,12 @@ import { TYPESET } from "./typeset.ts";
 import { clientScript } from "./client-script.ts";
 import { SITE_ORIGIN } from "../packages/model/src/site.ts";
 import { DOC_PAGES, docsPath } from "../packages/model/src/docs.ts";
-import { commonsPage, creditLine, licenceUrl } from "../packages/model/src/photos.ts";
+import {
+  commonsPage,
+  creditLine,
+  creditNamesCommons,
+  licenceUrl,
+} from "../packages/model/src/photos.ts";
 import { LANDING, LISTS, T } from "./page-words.ts";
 import { siteCertainty } from "../packages/model/src/sites.ts";
 import { loadAllLocaleData } from "../packages/model/src/locale-data.ts";
@@ -429,7 +434,7 @@ function photoHtml(id: string, name: string, l: Lang): string {
   // rel="license". A credit that names Wikimedia Commons itself is not followed by it again.
   const licence = licenceUrl(ph);
   const credit = creditLine(ph);
-  const source = credit?.includes("Wikimedia Commons")
+  const source = creditNamesCommons(credit)
     ? ""
     : `, ${credit ? "Wikimedia Commons" : `<a href="${esc(page)}">Wikimedia Commons</a>`}`;
   const shows = ph.shows && ((ph.shows as Partial<Record<Lang, string>>)[l] ?? ph.shows.en);

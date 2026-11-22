@@ -1,5 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { canonicalLicenceUrl, compare, plain, type CommonsMeta } from "./photo-credits.ts";
+import {
+  canonicalLicenceUrl,
+  compare,
+  namesAuthor,
+  plain,
+  type CommonsMeta,
+} from "./photo-credits.ts";
 
 const meta = (fields: Record<string, string>): CommonsMeta =>
   Object.fromEntries(Object.entries(fields).map(([k, value]) => [k, { value }]));
@@ -110,5 +116,68 @@ describe("compare", () => {
       license_url: "https://creativecommons.org/publicdomain/zero/1.0/",
     };
     expect(compare(photo, cc0)).toEqual([]);
+  });
+
+  it("asks for the author after a credit that does not name them", () => {
+    const fars = meta({
+      LicenseShortName: "CC BY 4.0",
+      Artist: "Behzad Alipour",
+      Attribution: "Fars Media Corporation",
+    });
+    const photo = {
+      place: "a212ef7",
+      file: "Ecbatana 13970108 03.jpg",
+      author: "Behzad Alipour",
+      credit: "Fars Media Corporation",
+      license: "CC BY 4.0",
+      license_url: "https://creativecommons.org/licenses/by/4.0/",
+    };
+    expect(compare(photo, fars)).toEqual([expect.stringContaining("set credit_with_author")]);
+    expect(compare({ ...photo, credit_with_author: true }, fars)).toEqual([]);
+    const own = meta({
+      LicenseShortName: "CC BY 4.0",
+      Artist: "Vyacheslav Argenberg",
+      Attribution: "© Vyacheslav Argenberg / http://www.vascoplanet.com/",
+    });
+    const named = {
+      ...photo,
+      author: "Vyacheslav Argenberg",
+      credit: "© Vyacheslav Argenberg / http://www.vascoplanet.com/",
+    };
+    expect(compare(named, own)).toEqual([]);
+    expect(compare({ ...named, credit_with_author: true }, own)).toEqual([
+      expect.stringContaining("drop credit_with_author"),
+    ]);
+    // An author named only in Hebrew: the flag is the hand's choice either way.
+    expect(
+      compare({ ...byTwoFive, author: "עוזי פז", credit: "Uzi Paz Pikiwiki Israel" }, pikiwiki),
+    ).toEqual([]);
+    expect(
+      compare(
+        {
+          ...byTwoFive,
+          author: "עוזי פז",
+          credit: "Uzi Paz Pikiwiki Israel",
+          credit_with_author: true,
+        },
+        pikiwiki,
+      ),
+    ).toEqual([]);
+  });
+});
+
+describe("namesAuthor", () => {
+  it("reads the author's Latin words, not Commons' own", () => {
+    expect(namesAuthor("Fars Media Corporation", "Behzad Alipour")).toBe(false);
+    expect(
+      namesAuthor("Anthiok at en.wikipedia", "Original uploader was Anthiok at en.wikipedia"),
+    ).toBe(true);
+    expect(
+      namesAuthor(
+        "Heritage Conservation Outside The City Pikiwiki Israel",
+        "זאב שטיין - Zeev Stein",
+      ),
+    ).toBe(false);
+    expect(namesAuthor("Uzi Paz Pikiwiki Israel", "עוזי פז")).toBeUndefined();
   });
 });

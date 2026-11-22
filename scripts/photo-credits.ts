@@ -10,6 +10,12 @@
  * - Otherwise a CC BY photo names the author Commons names (`Artist`). Our name may be the
  *   fuller one ("Kok Leng Yeo (yeowatzup)" for "yeowatzup"), and may leave out the place
  *   Flickr adds after it ("Vladislav Bezrukov from Walldorf, Germany").
+ * - A credit that does not name the author (an agency, a collection: "Fars Media
+ *   Corporation" for Behzad Alipour) is shown with the author after it
+ *   (`credit_with_author`): CC BY asks for the creator and the party they designate. The
+ *   check knows this when Commons writes the author in Latin letters and the credit has none
+ *   of those words; for an author named only in Hebrew it cannot tell, and the flag is set by
+ *   hand (the PikiWiki "Heritage Conservation" credits).
  */
 
 /** A photo as content/photos.yaml has it (the fields the comparison reads). */
@@ -18,6 +24,7 @@ export interface PhotoEntry {
   readonly file: string;
   readonly author?: string | undefined;
   readonly credit?: string | undefined;
+  readonly credit_with_author?: boolean | undefined;
   readonly license: string;
   readonly license_url?: string | undefined;
 }
@@ -68,6 +75,27 @@ function commonsAuthor(meta: CommonsMeta): string {
   return field(meta, "Artist").replace(/(\b[a-z]{2,3}:)?User:/g, "");
 }
 
+/** Words of Commons' author lines that are not the author's name. */
+const NOT_A_NAME = new Set(
+  "and the from was original uploader user wikipedia commons wikimedia photographer photo by unknown author".split(
+    " ",
+  ),
+);
+
+/**
+ * Whether a credit names the author Commons gives: by the author's words in Latin letters
+ * (three letters or more), any of which the credit must have; undefined when the author is
+ * written in no Latin word (in Hebrew), which a comparison of letters cannot match.
+ */
+export function namesAuthor(credit: string, artist: string): boolean | undefined {
+  const words = (artist.toLowerCase().match(/[a-z\u00c0-\u024f]{3,}/g) ?? []).filter(
+    (w) => !NOT_A_NAME.has(w),
+  );
+  if (!words.length) return undefined;
+  const said = credit.toLowerCase();
+  return words.some((w) => said.includes(w));
+}
+
 /** The problems of one photo against its Commons metadata; none when it matches. */
 export function compare(photo: PhotoEntry, meta: CommonsMeta): string[] {
   const problems: string[] = [];
@@ -97,6 +125,15 @@ export function compare(photo: PhotoEntry, meta: CommonsMeta): string[] {
     problems.push(`${at}: credit "${photo.credit}", but Commons asks for none; drop it`);
   if (photo.credit !== undefined && photo.credit === photo.author)
     problems.push(`${at}: credit repeats the author; drop it`);
+  if (photo.credit_with_author && (photo.credit === undefined || !photo.author))
+    problems.push(`${at}: credit_with_author needs both a credit and an author`);
+  else if (attribution && photo.credit !== undefined) {
+    const named = namesAuthor(attribution, commonsAuthor(meta));
+    if (named === false && !photo.credit_with_author)
+      problems.push(`${at}: the credit does not name the author; set credit_with_author`);
+    if (named === true && photo.credit_with_author)
+      problems.push(`${at}: the credit names the author already; drop credit_with_author`);
+  }
 
   if (!attribution && photo.license.startsWith("CC BY")) {
     const artist = commonsAuthor(meta);

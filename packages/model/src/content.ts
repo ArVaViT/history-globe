@@ -567,6 +567,11 @@ export const PhotosFile = z.strictObject({
          * the author's place (scripts/check-photo-credits.ts compares it with Commons).
          */
         credit: z.string().min(1).optional(),
+        /**
+         * The credit does not name the author (an agency, a collection): the author is
+         * shown after it, "Fars Media Corporation (Behzad Alipour)", as CC BY asks for both.
+         */
+        credit_with_author: z.literal(true).optional(),
         license: z.string().regex(/^(Public domain|CC0( 1\.0)?|CC BY \d\.\d)$/, {
           message: "only public domain, CC0 or CC BY (no share-alike, ADR 0008)",
         }),
@@ -582,6 +587,10 @@ export const PhotosFile = z.strictObject({
       })
       // CC BY asks for a link to the licence: it is required, and it must be the licence
       // and version named, in its canonical form.
+      .refine((p) => !p.credit_with_author || (p.credit !== undefined && p.author), {
+        message: "credit_with_author needs both a credit and an author",
+        path: ["credit_with_author"],
+      })
       .refine((p) => p.license_url === photoLicenceUrl(p.license), {
         message: "license_url must be the named licence's canonical URL (none for public domain)",
         path: ["license_url"],
@@ -594,6 +603,8 @@ export interface PlacePhoto {
   readonly author?: string | undefined;
   /** The credit line the author asks for, shown in the author's place (photos.yaml). */
   readonly credit?: string | undefined;
+  /** The credit does not name the author: the author is shown after it (photos.yaml). */
+  readonly credit_with_author?: boolean | undefined;
   readonly license: string;
   readonly license_url?: string | undefined;
   /** For a disputed place: the candidate the photo shows, by language (en always). */

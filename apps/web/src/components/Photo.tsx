@@ -1,4 +1,4 @@
-import { pick, commonsPage, creditLine, licenceUrl } from "@hg/model";
+import { pick, commonsPage, creditLine, creditNamesCommons, licenceUrl } from "@hg/model";
 import type { PlacePhoto } from "@hg/model";
 import { useState } from "react";
 import { useTranslation } from "../i18n";
@@ -33,6 +33,8 @@ export function Photo({
   const licence = licenceUrl(photo);
   const credit = creditLine(photo);
   const licenceName = photo.license === "Public domain" ? t("place.photo_pd") : photo.license;
+  // "Wikimedia Commons" once: not after a credit that names it already.
+  const source = creditNamesCommons(credit) ? "" : ", Wikimedia Commons";
   return (
     <figure className={className}>
       {/* The credit sits on the photo's corner: next to the image, as CC BY asks, without a
@@ -56,14 +58,15 @@ export function Photo({
             href={page}
             target="_blank"
             rel="noopener noreferrer"
-            title={`${t("place.photo")}: ${credit ? `${credit}, ` : ""}${licenceName}, Wikimedia Commons`}
+            title={`${t("place.photo")}: ${credit ? `${credit}, ` : ""}${licenceName}${source}`}
             className="break-words"
           >
             {free || credit?.startsWith("©") ? "" : "© "}
             <bdi>{credit ?? "Wikimedia Commons"}</bdi>
             <span className="sr-only">
               {" "}
-              ({t("place.photo")}: {licenceName}, Wikimedia Commons, {t("new_tab")})
+              ({t("place.photo")}: {licenceName}
+              {source}, {t("new_tab")})
             </span>
           </a>
           {photo.license !== "Public domain" && (

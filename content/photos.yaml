@@ -4,8 +4,9 @@
 # landscape. `pnpm data` downloads them (scripts/build-photos.ts); the card credits the
 # author and the licence with a link to the file page. Where the file's Commons page asks
 # for a credit line of its own ("Uzi Paz Pikiwiki Israel"), `credit` has it word for word
-# and is shown in the author's place. `pnpm photo-credits` compares the licences and credits
-# with Commons. Chosen 2026-10-01, credits checked again 2026-11-21.
+# and is shown in the author's place; `credit_with_author` adds the author after a credit
+# that does not name them (an agency or a collection). `pnpm photo-credits` compares the
+# licences and credits with Commons. Chosen 2026-10-01, credits checked again 2026-11-21.
 photos:
   - place: a91b732 # bethsaida
     file: "Ruins of Bethsaida village in summer 2011 (7).JPG"
@@ -597,6 +598,8 @@ photos:
     file: "PikiWiki Israel 84009 the roman theater in ancient tiberias.jpg"
     author: "נחום סיון וצביקה סחייק"
     credit: "Heritage Conservation Tveria and Surrounding Pikiwiki Israel"
+    # The credit names an organisation, not the author, whom Commons names only in Hebrew.
+    credit_with_author: true
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
   - place: a5feb15 # ephesus
@@ -629,6 +632,7 @@ photos:
     file: "PikiWiki Israel 71724 tel sheva national park.jpg"
     author: "Zeev Stein"
     credit: "Heritage Conservation Outside The City Pikiwiki Israel"
+    credit_with_author: true
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
   # Added 2026-10-03: places that had none; the same checks (licence from the Commons API,
@@ -883,6 +887,7 @@ photos:
     file: "Ecbatana 13970108 03.jpg"
     author: "Behzad Alipour"
     credit: "Fars Media Corporation"
+    credit_with_author: true
     license: "CC BY 4.0"
     license_url: "https://creativecommons.org/licenses/by/4.0/"
   - place: a7e3a59 # Elam - Chogha Zanbil
@@ -911,6 +916,8 @@ photos:
     file: "PikiWiki Israel 69980 the golan heights.jpg"
     author: "רוני קניגסברג"
     credit: "Heritage Conservation Outside The City Pikiwiki Israel"
+    # The credit names an organisation, not the author, whom Commons names only in Hebrew.
+    credit_with_author: true
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
   - place: a60f092 # Goshen
@@ -1009,6 +1016,7 @@ photos:
     file: "PikiWiki Israel 70862 mount tzin.jpg"
     author: "זאב שטיין - Zeev Stein"
     credit: "Heritage Conservation Outside The City Pikiwiki Israel"
+    credit_with_author: true
     license: "CC BY 2.5"
     license_url: "https://creativecommons.org/licenses/by/2.5/"
     site: m700b87

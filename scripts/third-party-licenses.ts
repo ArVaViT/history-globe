@@ -9,7 +9,9 @@
  *   publishes for those very files, and by the map of any bundled file that has its own
  *   (geojson-vt carries kdbush);
  * - the fonts the app and the static pages serve (assets/, docs/fonts/), by their package;
- * - Tailwind CSS, whose base styles the app's stylesheet carries.
+ * - Tailwind CSS, whose base styles the app's stylesheet carries;
+ * - the bundler's own helpers, which no source map lists: Rolldown's runtime (its chunk) and
+ *   Vite's module preload code (found by what it does).
  *
  * Usage: node scripts/third-party-licenses.ts [--check]  (pnpm licenses), after `pnpm build`.
  * With --check it writes nothing and fails when the file is not what the build needs
@@ -51,13 +53,58 @@ function* filesUnder(dir: string): Generator<string> {
   }
 }
 
-/** The package a path inside node_modules belongs to: its name and folder. */
-function packageOf(path: string): { name: string; dir: string } | undefined {
-  const at = path.lastIndexOf("node_modules/");
+/**
+ * The packages a path inside node_modules runs through, outermost first, each with the part
+ * of the path that leads to it from the one before: ".../node_modules/@maplibre/
+ * maplibre-gl-style-spec/dist/node_modules/quickselect/index.mjs" is the style spec, then
+ * "dist/node_modules/quickselect" inside it.
+ */
+function packagesOf(path: string): { name: string; step: string; rest: string } | undefined {
+  // pnpm's store (node_modules/.pnpm/<name>@<version>/node_modules/<name>) is no package.
+  let at = path.indexOf("node_modules/");
+  while (at >= 0 && path.startsWith(".", at + "node_modules/".length))
+    at = path.indexOf("node_modules/", at + 1);
   if (at < 0) return undefined;
-  const parts = path.slice(at + "node_modules/".length).split("/");
+  const after = path.slice(at + "node_modules/".length);
+  const parts = after.split("/");
   const name = parts[0]?.startsWith("@") ? `${parts[0]}/${parts[1] ?? ""}` : (parts[0] ?? "");
-  return { name, dir: path.slice(0, at + "node_modules/".length + name.length) };
+  return {
+    name,
+    step: path.slice(0, at + "node_modules/".length + name.length),
+    rest: after.slice(name.length + 1),
+  };
+}
+
+/**
+ * Where the package a bundled file came from is installed, and the file itself when it is on
+ * disk. Each package on the path is looked for where the path says, else as Node would find
+ * it from the package before it (installed); so a copy that maplibre-gl-style-spec carries
+ * in its own dist/node_modules, which has no package.json, is the version the style spec
+ * itself depends on, never one picked up elsewhere.
+ */
+function locate(path: string, owner: string): { dir: string; file: string } | undefined {
+  let pkg = packagesOf(path);
+  if (!pkg) return undefined;
+  let dir = existsSync(join(pkg.step, "package.json")) ? pkg.step : installed(pkg.name, owner);
+  // The folder the path itself names, which may hold a copy with no package.json.
+  let onDisk = existsSync(pkg.step) ? pkg.step : dir;
+  for (;;) {
+    if (!dir || !onDisk) return undefined;
+    const inner = packagesOf(pkg.rest);
+    if (!inner) {
+      const copy = join(onDisk, pkg.rest);
+      return { dir, file: existsSync(copy) ? copy : join(dir, pkg.rest) };
+    }
+    const literal = join(onDisk, inner.step);
+    // A copy with no package.json is the version the package carrying it depends on; MapLibre's
+    // own when that is not installed.
+    const next = existsSync(join(literal, "package.json"))
+      ? literal
+      : (installed(inner.name, dir) ?? installed(inner.name, owner));
+    onDisk = existsSync(literal) ? literal : next;
+    dir = next;
+    pkg = inner;
+  }
 }
 
 /**
@@ -65,9 +112,19 @@ function packageOf(path: string): { name: string; dir: string } | undefined {
  * section of its README (murmurhash-js has no licence file).
  */
 function licenceText(dir: string, name: string): string {
-  const file = readdirSync(dir).find((f) => /^(licen[cs]e|copying)(\.(md|txt))?$/i.test(f));
-  if (file) return readFileSync(join(dir, file), "utf8").trim();
-  const readme = readdirSync(dir).find((f) => /^readme(\.md)?$/i.test(f));
+  const file = readdirSync(dir)
+    .sort()
+    .find((f) => /^(licen[cs]e|copying)(\.(md|txt))?$/i.test(f));
+  // Vite's file goes on with the licences of what its own build bundles, which is not shipped.
+  if (file)
+    return (
+      readFileSync(join(dir, file), "utf8")
+        .split(/^# Licenses of bundled dependencies$/m)[0]
+        ?.trim() ?? ""
+    );
+  const readme = readdirSync(dir)
+    .sort()
+    .find((f) => /^readme(\.md)?$/i.test(f));
   const section = readme
     ? /^#+ *Licen[cs]e\b.*$\n([\s\S]*?)(?=^#+ |(?![\s\S]))/im.exec(
         readFileSync(join(dir, readme), "utf8"),
@@ -110,7 +167,8 @@ function add(dir: string, where: string): void {
  * which a package's "exports" can refuse.
  */
 function installed(name: string, from: string): string | undefined {
-  for (let dir = from; dir !== dirname(dir); dir = dirname(dir)) {
+  // From the package's real folder: with pnpm, its own dependencies are installed beside it.
+  for (let dir = realpathSync(from); dir !== dirname(dir); dir = dirname(dir)) {
     const candidate = join(dir, "node_modules", name);
     if (existsSync(join(candidate, "package.json"))) return candidate;
   }
@@ -136,17 +194,15 @@ function fromMap(mapPath: string, owner: string, where: string, seen = new Set<s
   const base = resolve(dirname(mapPath), map.sourceRoot ?? "");
   for (const source of map.sources) {
     const path = resolve(base, source.replace(/\?.*$/, ""));
-    const pkg = packageOf(path);
-    if (!pkg) continue;
-    const dir = existsSync(join(pkg.dir, "package.json")) ? pkg.dir : installed(pkg.name, owner);
-    if (!dir) {
-      problems.push(`${pkg.name}: bundled by ${owner}, but not installed beside it`);
+    if (!path.includes("node_modules/")) continue;
+    const found = locate(path, owner);
+    if (!found) {
+      problems.push(`${source}: bundled by ${owner}, but its package is not installed beside it`);
       continue;
     }
     // A font a chunk imports by its address is shipped as a font, not as code.
-    add(dir, /\.(woff2?|ttf|otf)$/.test(path) ? "fonts" : where);
-    const file = join(dir, path.slice(pkg.dir.length));
-    if (existsSync(`${file}.map`)) fromMap(`${file}.map`, dir, where, seen);
+    add(found.dir, /\.(woff2?|ttf|otf)$/.test(path) ? "fonts" : where);
+    if (existsSync(`${found.file}.map`)) fromMap(`${found.file}.map`, found.dir, where, seen);
   }
 }
 
@@ -163,10 +219,12 @@ const maplibre = dirname(requireWeb.resolve("maplibre-gl/package.json"));
 const { version: maplibreVersion } = JSON.parse(
   readFileSync(join(maplibre, "package.json"), "utf8"),
 ) as { version: string };
-for (const folder of readdirSync(join(dist, "vendor"))) {
+for (const folder of readdirSync(join(dist, "vendor")).sort()) {
   if (folder !== `maplibre-gl-${maplibreVersion}`)
     problems.push(`vendor/${folder}: not the installed maplibre-gl ${maplibreVersion}`);
-  for (const name of readdirSync(join(dist, "vendor", folder)).filter((f) => f.endsWith(".mjs"))) {
+  for (const name of readdirSync(join(dist, "vendor", folder))
+    .sort()
+    .filter((f) => f.endsWith(".mjs"))) {
     const map = join(maplibre, "dist", `${name}.map`);
     if (!existsSync(map)) problems.push(`vendor/${folder}/${name}: MapLibre has no map for it`);
     else fromMap(map, maplibre, "MapLibre");
@@ -176,7 +234,9 @@ for (const folder of readdirSync(join(dist, "vendor"))) {
 
 // The fonts, by the package that has a file of that name: the build adds a hash to it.
 const fontsource = join(web, "node_modules/@fontsource-variable");
-const families = readdirSync(fontsource).map((f) => join(fontsource, f));
+const families = readdirSync(fontsource)
+  .sort()
+  .map((f) => join(fontsource, f));
 const fonts = [
   ...filesUnder(join(dist, "assets")),
   ...(existsSync(join(dist, "docs/fonts")) ? filesUnder(join(dist, "docs/fonts")) : []),
@@ -188,6 +248,18 @@ for (const font of fonts) {
   if (family) add(family, "fonts");
   else problems.push(`${font}: a font from no package of @fontsource-variable`);
 }
+
+// The bundler's helpers, in the chunks without a source of their own in any map.
+const requireVite = createRequire(requireWeb.resolve("vite/package.json"));
+const chunks = [...filesUnder(join(dist, "assets"))].filter((f) => f.endsWith(".js"));
+if (chunks.some((f) => /\/rolldown-runtime-[\w-]+\.js$/.test(f)))
+  add(dirname(requireVite.resolve("rolldown/package.json")), "app");
+if (
+  chunks.some((f) =>
+    /relList[\s\S]{0,80}supports\([`'"]modulepreload/.test(readFileSync(f, "utf8")),
+  )
+)
+  add(dirname(requireWeb.resolve("vite/package.json")), "app");
 
 // Tailwind's base styles (preflight) and generated rules, in the app's stylesheet.
 const css = [...filesUnder(join(dist, "assets"))].filter((f) => f.endsWith(".css"));

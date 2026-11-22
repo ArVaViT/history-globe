@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { creditLine, licenceUrl } from "./photos.ts";
+import { creditLine, creditNamesCommons, licenceUrl } from "./photos.ts";
 
 describe("licenceUrl", () => {
   it("links a CC licence over https", () => {
@@ -22,5 +22,19 @@ describe("creditLine", () => {
     );
     expect(creditLine({ author: "Berthold Werner" })).toBe("Berthold Werner");
     expect(creditLine({})).toBeUndefined();
+  });
+  it("adds the author when the credit does not name them", () => {
+    expect(
+      creditLine({
+        author: "Behzad Alipour",
+        credit: "Fars Media Corporation",
+        credit_with_author: true,
+      }),
+    ).toBe("Fars Media Corporation (Behzad Alipour)");
+  });
+  it("knows a credit that names Wikimedia Commons", () => {
+    expect(creditNamesCommons("Mark Landon / Wikimedia Commons")).toBe(true);
+    expect(creditNamesCommons("Mark Landon")).toBe(false);
+    expect(creditNamesCommons(undefined)).toBe(false);
   });
 });

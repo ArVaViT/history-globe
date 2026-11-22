@@ -170,7 +170,8 @@ in `data-checks.md`; this is what it cannot check.
   states them; an "unknown author" is left out rather than guessed. Where Commons gives an
   attribution (the credit the author asks for, often "<name> Pikiwiki Israel" or a
   collection's line), it goes word for word into `credit`, which the card shows in the
-  author's place. `pnpm photo-credits` compares every photo with Commons; run it after
+  author's place; where that line names an agency or a collection and not the author,
+  `credit_with_author: true` shows the author after it. `pnpm photo-credits` compares every photo with Commons; run it after
   adding or changing photos.
 - What it shows: the ancient site, its tell or ruins, or its landscape; an old photograph
   is welcome, but not an engraving, drawing or painting (the card calls it a photo), not a
