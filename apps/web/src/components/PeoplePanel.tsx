@@ -74,7 +74,7 @@ export function PeoplePanel({
 
   return (
     <Section>
-      <div className="hg-fade max-h-[min(460px,52vh)] scroll-pt-7 overflow-y-auto [scrollbar-width:thin] max-md:max-h-[calc(100dvh-var(--hg-timeline-h)-200px)] sideways:max-h-[calc(100dvh-var(--hg-timeline-h)-160px)]">
+      <div className="hg-fade max-h-[min(460px,52vh)] scroll-pt-7 overflow-y-auto overscroll-contain [scrollbar-width:thin] max-md:max-h-[calc(100dvh-var(--hg-timeline-h)-200px)] sideways:max-h-[calc(100dvh-var(--hg-timeline-h)-160px)]">
         {/* The list shows nothing until it is in; a failed load says so. */}
         {failed && <div className="px-4 py-2 text-sm text-ink-soft">{t("person.list_failed")}</div>}
         {groups.map(({ century, rows }) => (

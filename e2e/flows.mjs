@@ -206,7 +206,7 @@ await step("tour: step dot jumps, arrows step, About the place ends the tour", a
 await step("search during a tour ends it and opens the place", async () => {
   await overview();
   await page.getByRole("tab", { name: "Экскурсии" }).click();
-  await page.getByText("Путь Авраама").click({ timeout: 5000 });
+  await page.locator("#overview-panel").getByText("Путь Авраама").click({ timeout: 5000 });
   await page.getByText("Остановка 1 из 12").first().waitFor({ timeout: 3000 });
   if (await page.getByRole("button", { name: "Поиск места" }).count())
     await page.getByRole("button", { name: "Поиск места" }).click();
@@ -758,6 +758,95 @@ await step(
   },
 );
 
+// The keyboard and a screen reader: a card takes the focus from what opened it and gives it
+// back on Esc; the live region says what opened and how many results the search found.
+/** What has the focus: its tag and its name. */
+const focused = () =>
+  page.evaluate(() => {
+    const a = document.activeElement;
+    return `${a?.tagName ?? ""} ${(a?.getAttribute("aria-label") ?? a?.textContent ?? "").trim()}`;
+  });
+const said = () => page.locator("#hg-live").textContent();
+await step("keyboard: a search result opens its card on its title, Esc goes back", async () => {
+  await page.goto(BASE + "?locale=ru");
+  await mapReady(page);
+  await page.getByRole("button", { name: "Поиск места" }).click();
+  await page.getByPlaceholder("Место, человек, глава или год").fill("Капер");
+  await page.getByRole("option").first().waitFor({ timeout: 8000 });
+  await until(async () => /^\d+ результат/.test(await said()), "the results were not counted");
+  await page.keyboard.press("Enter");
+  await until(async () => (await focused()) === "H2 Капернаум", "the title did not take the focus");
+  await until(async () => (await said()) === "Открыто: Капернаум", "the card was not announced");
+  // The card's zoom is named for its place, apart from the map's own "Zoom in".
+  await page.getByRole("button", { name: "Приблизить: Капернаум" }).waitFor({ timeout: 3000 });
+  await page.keyboard.press("Escape");
+  await until(
+    async () => /^BUTTON Поиск места/.test(await focused()),
+    "the focus did not go back to the search",
+  );
+});
+await step(
+  "keyboard: a tour started from the overview opens on its stop, Esc goes back",
+  async () => {
+    await overview();
+    await page.getByRole("tab", { name: "Экскурсии" }).click();
+    await page.locator("#overview-panel button", { hasText: "Путь Авраама" }).focus();
+    await page.keyboard.press("Enter");
+    await until(
+      async () =>
+        /^H2 /.test(await focused()) &&
+        (await page.locator("section.hg-card h2:focus").count()) === 1,
+      `the stop's title did not take the focus: ${await focused()}`,
+    );
+    await until(
+      async () => /^Открыто: Путь Авраама\. Остановка 1 из \d+$/.test(await said()),
+      "the tour was not announced",
+    );
+    await page.keyboard.press("Escape");
+    await until(
+      async () => /^BUTTON Обзор/.test(await focused()),
+      "the focus did not go back to the overview's book",
+    );
+  },
+);
+await step("Back to a place leaves the focus where it is", async () => {
+  await page.goto(BASE + "?locale=ru");
+  await mapReady(page);
+  await page.getByRole("button", { name: "Поиск места" }).click();
+  await page.getByPlaceholder("Место, человек, глава или год").fill("Капер");
+  await page.getByRole("option").first().waitFor({ timeout: 8000 });
+  await page.keyboard.press("Enter");
+  await until(async () => (await focused()) === "H2 Капернаум", "the title did not take the focus");
+  await until(() => search().get("place") === "af2161c", "the place is not in the link");
+  await page.keyboard.press("Escape");
+  await until(() => !search().has("place"), "the card did not close");
+  await until(
+    async () => /^BUTTON Поиск места/.test(await focused()),
+    "the focus did not go back to the search",
+  );
+  // The browser's Back opens the card again: by the browser, not by the reader's press.
+  await page.goBack();
+  await page.getByRole("heading", { name: "Капернаум" }).waitFor({ timeout: 8000 });
+  await page.waitForTimeout(1000);
+  expect(/^BUTTON Поиск места/.test(await focused()), `the focus moved: ${await focused()}`);
+  await page.keyboard.press("Escape");
+});
+await step("keyboard: a place's names in its article are not stops for Tab", async () => {
+  // Jerusalem's article names many places: they mark the map under the pointer only.
+  await page.goto(BASE + "?locale=ru&place=a15257a");
+  await mapReady(page);
+  await page
+    .getByRole("tab", { name: /^История/ })
+    .first()
+    .click();
+  await page.locator("section.hg-card p span.underline").first().waitFor({ timeout: 8000 });
+  expect(
+    (await page.locator("section.hg-card p span[tabindex]").count()) === 0,
+    "a name in the article is focusable",
+  );
+  await page.keyboard.press("Escape");
+});
+
 // A large frame without ui=map has the site's column on the left: as tall as the map and
 // empty but for its panels. The place the host selects lands under it.
 // A first visit, in a context of its own: what the steps above remembered (the overview
@@ -836,6 +925,36 @@ await step("a large frame without ui=map: the column's panels still take clicks"
     () => window.__msgs.some((m) => m?.type === "hg:view-changed" && m.view.tour),
     null,
     { timeout: 5000 },
+  );
+});
+await step("a place the host opens in its frame leaves the focus on the host's page", async () => {
+  expect(bigFrame, "no frame from the step before");
+  const frame = bigFrame;
+  // The reader used the frame, then went on to a field of the host's own.
+  await frame.getByRole("button", { name: /^Поиск места/ }).click();
+  await frame.locator("input[role=combobox]").press("Escape");
+  await host.evaluate(() => {
+    const input = document.createElement("input");
+    input.id = "host-field";
+    document.body.prepend(input);
+  });
+  await host.locator("#host-field").click();
+  await host.locator("#host-field").pressSequentially("Иер");
+  await host.evaluate(() => {
+    document
+      .querySelector("iframe")
+      .contentWindow.postMessage({ type: "hg:set-view", v: 1, view: { place: "a15257a" } }, "*");
+  });
+  await frame.getByRole("heading", { name: "Иерусалим" }).waitFor({ timeout: 10000 });
+  // Longer than the card's title takes to be focused when the reader opens it.
+  await host.waitForTimeout(1000);
+  expect(
+    await host.evaluate(() => document.activeElement?.id === "host-field"),
+    "the host's field lost the focus",
+  );
+  expect(
+    await frame.evaluate(() => document.activeElement?.tagName !== "H2"),
+    "the frame's card took the focus",
   );
 });
 await host.context().close();
@@ -963,6 +1082,56 @@ await step("phone: the distance between two places picked on the map by tap", as
   // Closed, the tool gives back the map, not the last pick's card.
   await phone.waitForTimeout(500);
   expect((await phone.locator("section.hg-card h2").count()) === 0, "a card opened on close");
+});
+await step(
+  "phone: the rulers' band is 24 px high to a finger, a tour's dots 24 by 24",
+  async () => {
+    await phone.goto(BASE + "?locale=ru&year=30&place=a15257a");
+    const band = phone.locator("section.hg-card [role=toolbar]");
+    await band.waitFor({ timeout: 10000 });
+    const runs = band.locator("button[data-run]");
+    const heights = await runs.evaluateAll((els) =>
+      els.map((e) => e.getBoundingClientRect().height),
+    );
+    expect(heights.length > 1 && heights.every((h) => h >= 24), `heights ${heights.join(",")}`);
+    // A tap just left of the band goes to the nearest age, the first, and names it below.
+    const first = await runs.first().getAttribute("aria-label");
+    await band.evaluate((el) => {
+      const r = el.getBoundingClientRect();
+      const at = { bubbles: true, clientX: r.left + 1, clientY: r.top + 2 };
+      el.dispatchEvent(new PointerEvent("pointerdown", { ...at, pointerType: "touch" }));
+      el.dispatchEvent(new MouseEvent("click", { ...at, detail: 1 }));
+    });
+    await until(
+      async () => (await band.evaluate((el) => el.nextElementSibling?.textContent)) === first,
+      `the tap did not name ${first}`,
+    );
+    await phone.goto(BASE + "?locale=ru&tour=paul-2&stop=4");
+    const dots = phone.locator("section.hg-card ol button");
+    await dots.first().waitFor({ timeout: 10000 });
+    const dotSizes = await dots.evaluateAll((els) =>
+      els.map((e) => {
+        const r = e.getBoundingClientRect();
+        return [Math.round(r.width), Math.round(r.height)];
+      }),
+    );
+    expect(
+      dotSizes.every(([w, h]) => w >= 24 && h >= 24),
+      `dots ${dotSizes.map((d) => d.join("x")).join(",")}`,
+    );
+  },
+);
+await step("phone: the folded year names the age it shows", async () => {
+  // A card open on a phone folds the player to its year and age (WCAG 2.5.3).
+  await phone.goto(BASE + "?locale=ru&year=30&place=a15257a");
+  const pill = phone.getByRole("button", { name: /\. Показать шкалу времени$/ });
+  await pill.waitFor({ timeout: 10000 });
+  const [name, shown] = await pill.evaluate((b) => [
+    b.getAttribute("aria-label") ?? "",
+    b.innerText,
+  ]);
+  const words = shown.replace(/\s+/g, " ").trim();
+  expect(name.startsWith(words), `"${name}" does not begin with "${words}"`);
 });
 await step("phone on its side: a tour's stepping stays on screen", async () => {
   await phone.setViewportSize({ width: 844, height: 390 });

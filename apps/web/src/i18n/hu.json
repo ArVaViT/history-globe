@@ -3,6 +3,8 @@
   "search": {
     "placeholder": "Hely, személy, fejezet vagy év",
     "empty": "Nincs találat",
+    "found_one": "{{count}} találat",
+    "found_other": "{{count}} találat",
     "open": "Hely, személy vagy fejezet keresése",
     "close": "A keresés bezárása",
     "chapter_one": "{{count}} hely a térképen",
@@ -74,7 +76,7 @@
     "more": "még {{count}}",
     "coords_wikidata": "Koordináták: Wikidata",
     "close": "Bezárás",
-    "zoom": "Ráközelítés",
+    "zoom_to": "Ráközelítés: {{name}}",
     "sites_note": "Az arányok az OpenBible becslései, nem tudományos konszenzus",
     "nt_only": "Csak az Újszövetségben szerepel: eseményei előtt halványan látható",
     "also_here": "Itt is",
@@ -353,5 +355,8 @@
     "quiz_about": "„Hol történt?” a képernyőn vagy A4-en",
     "quiz_pick": "Válasszon egy túrát",
     "quiz_print": "Nyomtatás tanulóknak (A4)"
+  },
+  "a11y": {
+    "opened": "Megnyitva: {{name}}"
   }
 }

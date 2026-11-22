@@ -3,6 +3,8 @@
   "search": {
     "placeholder": "Lieu, personne, chapitre ou année",
     "empty": "Aucun résultat",
+    "found_one": "{{count}} résultat",
+    "found_other": "{{count}} résultats",
     "open": "Chercher un lieu, une personne ou un chapitre",
     "close": "Fermer la recherche",
     "chapter_one": "{{count}} lieu sur la carte",
@@ -74,7 +76,7 @@
     "more": "{{count}} de plus",
     "coords_wikidata": "Coordonnées : Wikidata",
     "close": "Fermer",
-    "zoom": "Zoomer",
+    "zoom_to": "Zoomer sur {{name}}",
     "sites_note": "Les parts sont une estimation d’OpenBible, non un consensus savant",
     "nt_only": "Seulement dans le Nouveau Testament : estompé avant ses événements",
     "also_here": "Aussi ici",
@@ -353,5 +355,8 @@
     "quiz_about": "« Où cela s’est-il passé ? » à l’écran ou en A4",
     "quiz_pick": "Choisissez un parcours",
     "quiz_print": "Imprimer pour les élèves (A4)"
+  },
+  "a11y": {
+    "opened": "Ouvert : {{name}}"
   }
 }

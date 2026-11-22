@@ -3,6 +3,7 @@
   "search": {
     "placeholder": "Địa điểm, nhân vật, chương Kinh Thánh hoặc năm",
     "empty": "Không tìm thấy gì",
+    "found_other": "{{count}} kết quả",
     "open": "Tìm một địa điểm, một nhân vật hoặc một chương",
     "close": "Đóng tìm kiếm",
     "chapter_other": "{{count}} địa điểm trên bản đồ",
@@ -70,7 +71,7 @@
     "more": "thêm {{count}}",
     "coords_wikidata": "Tọa độ: Wikidata",
     "close": "Đóng",
-    "zoom": "Phóng to",
+    "zoom_to": "Phóng to đến {{name}}",
     "sites_note": "Các tỷ lệ là ước tính của OpenBible, không phải sự đồng thuận của giới học giả",
     "nt_only": "Chỉ có trong Tân Ước: hiển thị mờ trước thời các sự kiện ấy",
     "also_here": "Cũng ở đây",
@@ -343,5 +344,8 @@
     "quiz_about": "“Việc này xảy ra ở đâu?” trên màn hình hoặc A4",
     "quiz_pick": "Chọn một hành trình",
     "quiz_print": "In cho học sinh (A4)"
+  },
+  "a11y": {
+    "opened": "Đã mở: {{name}}"
   }
 }

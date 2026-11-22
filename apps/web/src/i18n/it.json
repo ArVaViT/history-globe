@@ -3,6 +3,9 @@
   "search": {
     "placeholder": "Luogo, persona, capitolo o anno",
     "empty": "Nessun risultato",
+    "found_one": "{{count}} risultato",
+    "found_many": "{{count}} di risultati",
+    "found_other": "{{count}} risultati",
     "open": "Cerca un luogo, una persona o un capitolo",
     "close": "Chiudi la ricerca",
     "chapter_one": "{{count}} luogo sulla mappa",
@@ -78,7 +81,7 @@
     "more": "altri {{count}}",
     "coords_wikidata": "Coordinate: Wikidata",
     "close": "Chiudi",
-    "zoom": "Ingrandisci",
+    "zoom_to": "Ingrandisci su {{name}}",
     "sites_note": "Le percentuali sono una stima di OpenBible, non un consenso degli studiosi",
     "nt_only": "Solo nel Nuovo Testamento: sbiadito prima dei suoi eventi",
     "also_here": "Anche qui",
@@ -363,5 +366,8 @@
     "quiz_about": "«Dove è successo?» sullo schermo o su A4",
     "quiz_pick": "Scegli un itinerario",
     "quiz_print": "Stampa per gli alunni (A4)"
+  },
+  "a11y": {
+    "opened": "Aperto: {{name}}"
   }
 }

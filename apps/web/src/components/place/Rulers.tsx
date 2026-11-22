@@ -34,6 +34,8 @@ export function Rulers({
   const [data, setData] = useState<RulerData | null>(null);
   const [shown, setShown] = useState<number | null>(null);
   const band = useRef<HTMLDivElement>(null);
+  /** The last press was a finger or a pen: the click picks the nearest age. */
+  const touch = useRef(false);
   useEffect(() => {
     let live = true;
     void loadRulers().then((d) => {
@@ -64,17 +66,43 @@ export function Rulers({
     if (a > prev) cells.push({ k: null, span: a - prev });
     cells.push({ k, span: b - a });
   });
+  // A finger is wider than most ages on the band (one century of thirty is a pixel or two):
+  // a tap picks the age nearest to it, an empty stretch included, and names it below.
+  const nearest = (x: number): number | null => {
+    let best: { k: number; d: number } | null = null;
+    for (const el of band.current?.querySelectorAll<HTMLElement>("[data-run]") ?? []) {
+      const r = el.getBoundingClientRect();
+      const d = x < r.left ? r.left - x : x > r.right ? x - r.right : 0;
+      if (!best || d < best.d) best = { k: Number(el.dataset.run), d };
+    }
+    return best?.k ?? null;
+  };
+  const choose = (k: number) => {
+    setShown(k);
+    onYear?.(runs[k]?.[0] ?? year);
+  };
   return (
     <div className="px-5 pt-2">
       {/* One stop for the Tab key, the arrows from state to state (a toolbar's roving focus):
-          a band of thirty states is not thirty stops. */}
+          a band of thirty states is not thirty stops. The band is drawn 10 px high in a row
+          24 px high, the height a finger or a pointer may hit (WCAG 2.5.8). */}
       <div
         ref={band}
         role="toolbar"
         aria-label={t("place.rulers", { span: formatRange({ from, to }, locale) })}
-        className="flex h-2.5 w-full overflow-hidden rounded-full bg-ink/5"
+        className="relative flex h-6 w-full items-center before:absolute before:inset-x-0 before:top-1/2 before:h-2.5 before:-translate-y-1/2 before:rounded-full before:bg-ink/5"
         onMouseLeave={() => {
           setShown(null);
+        }}
+        onPointerDown={(e) => {
+          touch.current = e.pointerType !== "mouse";
+        }}
+        onClick={(e) => {
+          // A tap: the nearest age, wherever on the band it landed (a press with a mouse or
+          // a key is the button's own; e.detail is 0 for a key).
+          if (!touch.current || e.detail === 0) return;
+          const k = nearest(e.clientX);
+          if (k !== null) choose(k);
         }}
         onKeyDown={(e) => {
           const step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
@@ -96,13 +124,9 @@ export function Rulers({
               tabIndex={k === focusAt ? 0 : -1}
               aria-label={nameOfRun(k)}
               title={nameOfRun(k)}
-              style={{
-                flexGrow: span,
-                background:
-                  POLITY_COLORS[(data.states[runs[k]?.[2] ?? 0]?.c ?? 0) % POLITY_COLORS.length],
-              }}
-              className={`hg-tap-own min-w-px border-r border-paper/60 last:border-r-0 focus-visible:outline-2 ${
-                k === now ? "opacity-100" : "opacity-55 hover:opacity-100"
+              style={{ flexGrow: span }}
+              className={`hg-tap-own group relative h-full min-w-px focus-visible:outline-2 ${
+                k === now ? "" : "opacity-55 hover:opacity-100"
               }`}
               onMouseEnter={() => {
                 setShown(k);
@@ -113,10 +137,19 @@ export function Rulers({
               onBlur={() => {
                 setShown(null);
               }}
-              onClick={() => {
-                onYear?.(runs[k]?.[0] ?? year);
+              onClick={(e) => {
+                if (!touch.current || e.detail === 0) choose(k);
               }}
-            />
+            >
+              <span
+                aria-hidden
+                style={{
+                  background:
+                    POLITY_COLORS[(data.states[runs[k]?.[2] ?? 0]?.c ?? 0) % POLITY_COLORS.length],
+                }}
+                className="absolute inset-x-0 top-1/2 h-2.5 -translate-y-1/2 border-r border-paper/60 group-first:rounded-l-full group-last:rounded-r-full group-last:border-r-0"
+              />
+            </button>
           ),
         )}
       </div>

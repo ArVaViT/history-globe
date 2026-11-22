@@ -3,6 +3,8 @@
   "search": {
     "placeholder": "Plats, person, kapitel eller år",
     "empty": "Inget hittades",
+    "found_one": "{{count}} träff",
+    "found_other": "{{count}} träffar",
     "open": "Hitta en plats, en person eller ett kapitel",
     "close": "Stäng sökningen",
     "chapter_one": "{{count}} plats på kartan",
@@ -74,7 +76,7 @@
     "more": "{{count}} till",
     "coords_wikidata": "Koordinater: Wikidata",
     "close": "Stäng",
-    "zoom": "Zooma in",
+    "zoom_to": "Zooma in på {{name}}",
     "sites_note": "Andelarna är OpenBibles uppskattning, inte forskarnas samsyn",
     "nt_only": "Bara i Nya testamentet: nedtonad före dess händelser",
     "also_here": "Också här",
@@ -353,5 +355,8 @@
     "quiz_about": "”Var hände det?” på skärmen eller på A4",
     "quiz_pick": "Välj en rundtur",
     "quiz_print": "Skriv ut för elever (A4)"
+  },
+  "a11y": {
+    "opened": "Öppnat: {{name}}"
   }
 }

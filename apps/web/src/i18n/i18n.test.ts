@@ -57,7 +57,9 @@ describe("i18n dictionaries", () => {
 
   it("keys the UI relies on exist where it looks for them", () => {
     for (const key of [
-      "place.zoom",
+      "place.zoom_to",
+      "a11y.opened",
+      "search.found_many",
       "place.synodal_from",
       "place.close",
       "tours.close",
@@ -78,7 +80,7 @@ describe("i18n dictionaries", () => {
   });
 
   it("falls back to English, then to the key", () => {
-    expect(translate("de", "place.zoom")).toBe(translate("en", "place.zoom"));
+    expect(translate("de", "place.zoom_to")).toBe(translate("en", "place.zoom_to"));
     expect(translate("ru", "kind.no such kind")).toBe("kind.no such kind");
   });
 
@@ -86,7 +88,9 @@ describe("i18n dictionaries", () => {
     expect(translate("ru", "kind.no such kind", { defaultValue: "" })).toBe("");
     expect(translate("ru", "kind.no such kind", { defaultValue: "oasis" })).toBe("oasis");
     // A key that exists ignores it.
-    expect(translate("en", "place.zoom", { defaultValue: "" })).toBe(translate("en", "place.zoom"));
+    expect(translate("en", "place.zoom_to", { defaultValue: "" })).toBe(
+      translate("en", "place.zoom_to"),
+    );
   });
 });
 

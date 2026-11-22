@@ -3,6 +3,8 @@
   "search": {
     "placeholder": "Plaats, persoon, hoofdstuk of jaar",
     "empty": "Niets gevonden",
+    "found_one": "{{count}} resultaat",
+    "found_other": "{{count}} resultaten",
     "open": "Zoek een plaats, een persoon of een hoofdstuk",
     "close": "Zoeken sluiten",
     "chapter_one": "{{count}} plaats op de kaart",
@@ -74,7 +76,7 @@
     "more": "nog {{count}}",
     "coords_wikidata": "Coördinaten: Wikidata",
     "close": "Sluiten",
-    "zoom": "Inzoomen",
+    "zoom_to": "Inzoomen op {{name}}",
     "sites_note": "De percentages zijn een schatting van OpenBible, geen wetenschappelijke consensus",
     "nt_only": "Alleen in het Nieuwe Testament: vervaagd vóór de gebeurtenissen daar",
     "also_here": "Ook hier",
@@ -353,5 +355,8 @@
     "quiz_about": "‘Waar gebeurde het?’ op het scherm of op A4",
     "quiz_pick": "Kies een route",
     "quiz_print": "Afdrukken voor leerlingen (A4)"
+  },
+  "a11y": {
+    "opened": "Geopend: {{name}}"
   }
 }

@@ -257,7 +257,7 @@ export function PlaceCard({
 
   return (
     <Panel
-      className={`w-card max-h-[calc(100dvh-var(--hg-timeline-h)-48px)] overflow-auto ${tall ? "max-md:max-h-[calc(100dvh-var(--hg-timeline-h)-96px)]" : "max-md:max-h-[48dvh]"}`}
+      className={`w-card max-h-[calc(100dvh-var(--hg-timeline-h)-48px)] overflow-auto overscroll-contain ${tall ? "max-md:max-h-[calc(100dvh-var(--hg-timeline-h)-96px)]" : "max-md:max-h-[48dvh]"}`}
     >
       {/* On a phone the card takes half the screen; its handle opens it up to the header. */}
       <button
@@ -321,8 +321,9 @@ export function PlaceCard({
           )}
           <button
             onClick={onZoom}
-            aria-label={t("place.zoom")}
-            title={t("place.zoom")}
+            // Named for its place: MapLibre's own button beside the map is "Zoom in".
+            aria-label={t("place.zoom_to", { name: title })}
+            title={t("place.zoom_to", { name: title })}
             className="rounded-full p-1.5 text-accent hover:bg-paper-2"
           >
             <ZoomIn className="size-5" />

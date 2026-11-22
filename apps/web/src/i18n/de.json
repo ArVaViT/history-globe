@@ -3,6 +3,8 @@
   "search": {
     "placeholder": "Ort, Person, Kapitel oder Jahr",
     "empty": "Nichts gefunden",
+    "found_one": "{{count}} Treffer",
+    "found_other": "{{count}} Treffer",
     "open": "Ort, Person oder Kapitel suchen",
     "close": "Suche schließen",
     "chapter_one": "{{count}} Ort auf der Karte",
@@ -74,7 +76,7 @@
     "more": "{{count}} weitere",
     "coords_wikidata": "Koordinaten: Wikidata",
     "close": "Schließen",
-    "zoom": "Heranzoomen",
+    "zoom_to": "Auf {{name}} zoomen",
     "sites_note": "Die Anteile sind eine Schätzung von OpenBible, kein Konsens der Forschung",
     "nt_only": "Nur im Neuen Testament: vor seinen Ereignissen abgeblendet",
     "also_here": "Auch hier",
@@ -353,5 +355,8 @@
     "quiz_about": "„Wo geschah es?“ am Bildschirm oder auf A4",
     "quiz_pick": "Eine Tour wählen",
     "quiz_print": "Für Schüler drucken (A4)"
+  },
+  "a11y": {
+    "opened": "Geöffnet: {{name}}"
   }
 }
