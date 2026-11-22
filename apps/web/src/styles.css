@@ -110,12 +110,13 @@ body {
   background: var(--color-night);
 }
 /* The app never scrolls the page: a card pulled down past its top neither reloads it
-   (pull to refresh on Android) nor bounces the whole screen. The panels that scroll keep
+   (pull to refresh on Android) nor bounces the whole screen. Only up and down: sideways,
+   a two-finger swipe still goes Back and Forward. The panels that scroll keep
    their own overscroll (overscroll-contain). In another site's frame the pull goes on to
    the host's page. */
 html:not(.hg-embed),
 html:not(.hg-embed) body {
-  overscroll-behavior: none;
+  overscroll-behavior-y: none;
 }
 
 /* The timeline's height, measured by the app (useHeightVar); this until it is measured. */

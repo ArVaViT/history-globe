@@ -49,7 +49,9 @@ export function Overview({
     mark();
     list.addEventListener("scroll", mark, { passive: true });
     const sizes = new ResizeObserver(mark);
+    // The row, and each tab: a switch of language changes the tabs' widths, not the row's.
     sizes.observe(list);
+    for (const tab of list.children) sizes.observe(tab);
     return () => {
       list.removeEventListener("scroll", mark);
       sizes.disconnect();

@@ -249,8 +249,7 @@ export function TourStopCard({
         )}
       </div>
       {/* One dot per stop: where we are, and a jump to any stop. Each dot is drawn 10 px in
-          a button 24 px high and as wide as its share of the row, so the dots touch at their
-          hit areas and a tap goes to the nearest (WCAG 2.5.8). */}
+          a button at least 24 by 24 px (WCAG 2.5.8); a long tour wraps to a second row. */}
       <ol
         className={`mt-2.5 flex shrink-0 flex-wrap items-center ${compact ? "hidden" : ""}`}
         aria-label={t("tours.stops_list")}
@@ -264,7 +263,7 @@ export function TourStopCard({
               aria-current={i === step ? "step" : undefined}
               aria-label={`${String(i + 1)}. ${stopName(s.placeId)}`}
               title={`${String(i + 1)}. ${stopName(s.placeId)}`}
-              className="hg-tap-own group flex h-6 items-center px-0.5"
+              className="hg-tap-own group flex h-6 min-w-6 items-center justify-center px-0.5"
             >
               <span
                 aria-hidden
