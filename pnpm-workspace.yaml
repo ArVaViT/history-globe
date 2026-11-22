@@ -1,3 +1,9 @@
 packages:
   - apps/*
   - packages/*
+
+# minimatch below 11.0.1 has a denial-of-service advisory (GHSA-g3hv-75wg-m249) and no fix
+# in 10.x; @typescript-eslint/typescript-estree 8.72 still asks for 10. It only calls
+# minimatch(path, pattern, { dot: true }), which 11 keeps.
+overrides:
+  "minimatch@>=7 <11.0.1": ^11.0.8
