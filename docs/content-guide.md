@@ -167,7 +167,12 @@ in `data-checks.md`; this is what it cannot check.
 
 - One photo per place, from Wikimedia Commons, only public domain, CC0 or CC BY (no
   share-alike, ADR 0008; the build refuses other licences). Author and licence as Commons
-  states them; an "unknown author" is left out rather than guessed.
+  states them; an "unknown author" is left out rather than guessed. Where Commons gives an
+  attribution (the credit the author asks for, often "<name> Pikiwiki Israel" or a
+  collection's line), it goes word for word into `credit`, which the card shows in the
+  author's place; where that line names an agency or a collection and not the author,
+  `credit_with_author: true` shows the author after it. `pnpm photo-credits` compares every photo with Commons; run it after
+  adding or changing photos.
 - What it shows: the ancient site, its tell or ruins, or its landscape; an old photograph
   is welcome, but not an engraving, drawing or painting (the card calls it a photo), not a
   close-up of a find, mosaic or statue, and no people in the foreground. Not modern streets, signs, maps or unrelated scenes. Where the
@@ -178,4 +183,4 @@ in `data-checks.md`; this is what it cannot check.
   (P373), then a targeted search ("Tel Lachish gate"); filter by licence from Commons
   metadata, choose by eye from a contact sheet. Free-text search alone finds namesakes.
 - `pnpm data` downloads them (scripts/build-photos.ts); the site serves them itself, and
-  the card credits the author and links to the file page.
+  the card credits the author (or `credit`) and links to the file page.
