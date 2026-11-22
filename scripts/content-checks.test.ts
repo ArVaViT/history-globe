@@ -5,7 +5,10 @@ import {
   eventBattleLinks,
   fadedState,
   fallsIn,
+  givesFigure,
   kmFigures,
+  nearDistance,
+  ownDistances,
   samePassageApart,
   statesDistance,
   Water,
@@ -170,5 +173,60 @@ describe("statesDistance", () => {
     expect(statesDistance("From Dan to Beersheba is about 236 km.", dan, beersheba)).toBe(true);
     expect(statesDistance("From Dan to Beersheba is about 150 km.", dan, beersheba)).toBe(false);
     expect(statesDistance("No figure at all.", dan, beersheba)).toBe(false);
+  });
+});
+
+describe("ownDistances", () => {
+  const bethel: [number, number] = [35.24139, 31.92278];
+  const jerusalem: [number, number] = [35.23417, 31.77667];
+
+  it("reads the distances a sentence about the article's place gives", () => {
+    expect(
+      ownDistances("Bethel", "Bethel stood on the watershed road, about 16 km north of Jerusalem."),
+    ).toEqual([{ km: 16, to: "Jerusalem" }]);
+    expect(ownDistances("Ai", "It lies 2.5 km east of Mount Ebal.")).toEqual([
+      { km: 2.5, to: "Mount Ebal" },
+    ]);
+  });
+
+  it("reads a title followed by a comma or a bracket, and 'from'", () => {
+    expect(ownDistances("Bethel", "Bethel, a hill town, lies 16 km from Jerusalem.")).toEqual([
+      { km: 16, to: "Jerusalem" },
+    ]);
+    expect(ownDistances("Bethel", "Bethel (Beitin) lies 16 km north of Jerusalem.")).toEqual([
+      { km: 16, to: "Jerusalem" },
+    ]);
+    expect(ownDistances("Hukkok", "Hukkok is put 12.5 km from Tiberias.")).toEqual([
+      { km: 12.5, to: "Tiberias" },
+    ]);
+  });
+
+  it("leaves a longer title, a longer name and an area alone", () => {
+    expect(ownDistances("Beth", "Bethel lies 16 km north of Jerusalem.")).toEqual([]);
+    expect(ownDistances("Lystra", "Lystra lay 300 km east of Asia Minor's coast.")).toEqual([]);
+    expect(ownDistances("Troas", "Troas lay 200 km from Asia Minor.")).toEqual([]);
+    expect(ownDistances("Taberah", "Taberah lies within about 50 km of Hazeroth.")).toEqual([]);
+  });
+
+  it("leaves other sentences and areas alone", () => {
+    expect(ownDistances("Bethel", "Ai lies 2 km east of Bethel.")).toEqual([]);
+    expect(ownDistances("Taberah", "Taberah is drawn within some 50 km of Hazeroth.")).toEqual([]);
+  });
+
+  it("holds the figure to the points within 10% (at least 1.5 km)", () => {
+    expect(nearDistance(16, bethel, jerusalem)).toBe(true);
+    expect(nearDistance(18, bethel, jerusalem)).toBe(false);
+  });
+});
+
+describe("givesFigure", () => {
+  it("finds a whole figure with or without km, and a decimal with a point or a comma", () => {
+    expect(givesFigure("километрах в 16 к северо-западу", 16)).toBe(true);
+    expect(givesFigure("about 16 km north", 16)).toBe(true);
+    expect(givesFigure("about 160 km north", 16)).toBe(false);
+    expect(givesFigure("1.6 km", 16)).toBe(false);
+    expect(givesFigure("noin 12,5 km", 12.5)).toBe(true);
+    expect(givesFigure("about 12.5 km", 12.5)).toBe(true);
+    expect(givesFigure("about 12 km", 12.5)).toBe(false);
   });
 });

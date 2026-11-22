@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   checkTexts,
+  doubledStop,
   FoldedBible,
   foldText,
   misquoted,
@@ -142,5 +143,18 @@ describe("checkTexts", () => {
     expect(checkTexts(two, ["en"], () => "Jericho", none)).toEqual([
       "articles: jericho, jericho-herodian bear one en title «jericho»",
     ]);
+  });
+});
+
+describe("doubledStop", () => {
+  it("finds a full stop doubled after an abbreviation", () => {
+    expect(doubledStop("finished in 515 v. Chr..")).toBe(true);
+    expect(doubledStop("опубліковані 1997 р.. Для кордону")).toBe(true);
+  });
+
+  it("keeps an ellipsis and a question's two stops", () => {
+    expect(doubledStop("and so on... and so on")).toBe(false);
+    expect(doubledStop("какая нам часть в Давиде?.. по шатрам")).toBe(false);
+    expect(doubledStop("в 515 г. до н. э.")).toBe(false);
   });
 });

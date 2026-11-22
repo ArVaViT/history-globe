@@ -3,7 +3,7 @@
 # Cyrus's first year over Babylon (see the dated events). Stops the book dates carry their
 # own year: the second year after the return (536 BC, 3:8; 537 BC is also held), the second
 # year of Darius (520 BC, 4:24; the search of 6:1-12 is not dated) and the Temple finished
-# in his sixth (516 BC, 6:15; 515 BC is also held). Chapter 4:6-23 tells of later kings and
+# in his sixth (515 BC, 6:15: Adar of that year fell in March 515). Chapter 4:6-23 tells of later kings and
 # is left out.
 id: second-temple
 title:
@@ -133,7 +133,7 @@ stops:
       bg: "Във втората година на Дарий строителите започват отново, подкрепяни от пророците Агей и Захария; по запитване на управителя Дарий заповядва да се претърсят архивите, в Екбатана в Мидия е намерен свитък с указа на Кир и той нарежда работата да продължи."
   - place: a15257a # Jerusalem
     ref: Ezra.6.15-Ezra.6.22
-    year: "516 BC"
+    year: "515 BC"
     note:
       en: "The house is finished in the sixth year of Darius and dedicated with joy, and those come again out of the captivity keep the Passover."
       ru: "Дом окончен в шестой год Дария и освящён с радостью, и возвратившиеся из плена совершают пасху."

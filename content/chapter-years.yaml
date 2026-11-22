@@ -87,6 +87,8 @@ books:
       approx: true
       note: "In the days of the judges (tour: 1100 BC)"
   1Sam:
+    # Chapter 7 holds two years: the ark comes to Kiriath-jearim (7:1, c. 1070 BC) and Mizpah
+    # follows twenty years later (7:2-14, c. 1050 BC). The range keeps the year it starts with.
     - chapters: "1-7"
       year: -1069
       approx: true
@@ -330,9 +332,9 @@ books:
       approx: false
       note: "Building resumed, second year of Darius, 520 BC"
     - chapters: "6"
-      year: -515
+      year: -514
       approx: true
-      note: "Darius' decree; Temple dedicated, 516 BC"
+      note: "Darius' decree; Temple dedicated, 515 BC"
     - chapters: "7-10"
       year: -457
       approx: true
