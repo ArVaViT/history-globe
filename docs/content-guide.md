@@ -148,6 +148,16 @@ in `data-checks.md`; this is what it cannot check.
   stays as published. Lines of the site's own ("History Globe tour …") use the tour,
   question and event titles and the place names the site uses in each language; the site's
   dated events and battles are named by their titles, never by their ids.
+- The build also checks each translated line (`scripts/source-checks.ts`): no English words
+  of ours left (connecting words, "ed.", "tr.", locators such as "ch. VII" or "text 60");
+  Serbian, Ukrainian and Bulgarian in Cyrillic, units included; Danish, Norwegian, Swedish
+  and Finnish centuries as hundreds of the right century (the sixth is "500-tallet"); a
+  Scandinavian mile always Roman or English; tour and event titles exactly as the site
+  gives them. Lines that must keep English words are listed there with the reason. One
+  work, one name per language: `node scripts/source-names.ts` lists the works a language
+  names in more than one way.
+- Romanian counts Samuel and Kings as the four books of the Kingdoms (Synod's Bible of
+  1914): 1–2 Regi are Samuel, 3–4 Regi are Kings.
 - The title names the article apart from its namesakes (Вавилон, Вавилония): the list of
   articles shows it.
 - The cycle that converges: a writer, then an independent reviewer who opens the sources

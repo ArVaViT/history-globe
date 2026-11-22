@@ -52,6 +52,15 @@ import { readEdition, repair, SOURCES } from "./bible-text.ts";
 import { checkTexts, FoldedBible, type TextRecord } from "./text-checks.ts";
 import { TEXT_EXCEPTIONS } from "./text-exceptions.ts";
 import {
+  bareMile,
+  englishLeft,
+  eventIds as sourceEventIds,
+  missingAndStale,
+  notCyrillic,
+  titlesMissing,
+  wrongCenturies,
+} from "./source-checks.ts";
+import {
   type Dated,
   eventBattleLinks,
   fadedState,
@@ -1409,68 +1418,56 @@ const questionsOut = questions.map((q) => ({
 // A place's years taken over from the city it lies in carry that city's lines, checked there.
 for (const [id, l] of Object.entries(life))
   life[id] = { ...l, ...translated(`place-life: ${id}`, l.sources, !l.inherited) };
-// A translation no line uses any more is stale.
-for (const l of SOURCE_LOCALES)
-  for (const s of Object.keys(sourcesIn[l]))
-    if (!cited.has(s)) errors.push(`sources-${l}.yaml: "${s}" is no source of anything`);
-// No English left in another language's line: an English function word counts no more
-// often than in the Russian line, which keeps in English only what was published so
-// (modern titles, editors' names). Listed: lines whose other languages keep a name in
-// English that the Russian translates.
-const ENGLISH_WORDS = [
-  ...["the", "of", "and", "with", "from", "which", "where", "between", "by", "on"],
-  ...["see", "also", "after", "into", "their", "its"],
-];
-// Words that are also the language's own ("of" is Dutch for "or", "by" Danish for "town").
-const OWN_WORDS: Partial<Record<Locale, readonly string[]>> = {
-  nl: ["of"],
-  da: ["by"],
-  sv: ["by"],
-  nb: ["by"],
-  pl: ["by"],
-  fi: ["on"],
-  tl: ["on"],
-};
-const ENGLISH_KEPT = new Set([
-  // "University of Pennsylvania", the excavators of Nippur.
-  "Wikipedia, 'Calneh' (Albright's reading; the RSV rendering) and 'Nippur' (the sacred city of Enlil, never a hegemon but conferring kingship; University of Pennsylvania 1889–1900; Oriental Institute from 1948)",
-]);
+// Each language's table checked against the lines cited (scripts/source-checks.ts): nothing
+// missing (reported above, with the item) or stale, no English of ours left, Serbian,
+// Ukrainian and Bulgarian in Cyrillic, centuries and miles as the language counts them,
+// the site's own titles as the site gives them, and no event named by its id.
 {
-  const times = (s: string, w: string) =>
-    (s.match(new RegExp(`(?<![\\p{L}'’-])${w}(?![\\p{L}'’-])`, "gu")) ?? []).length;
+  const titles = Object.fromEntries(
+    SOURCE_LOCALES.map((l) => [
+      l,
+      new Map([...tours, ...events, ...battles].map((x) => [x.title.en, x.title[l] ?? x.title.en])),
+    ]),
+  );
+  const eventIds = new Set([...events.map((e) => e.id), ...battles.map((b) => b.id)]);
   for (const s of cited) {
-    if (ENGLISH_KEPT.has(s)) continue;
-    const ru = sourcesIn.ru[s] ?? "";
-    for (const l of SOURCE_LOCALES) {
-      const t = sourcesIn[l][s];
-      if (l === "ru" || t === undefined) continue;
-      const left = ENGLISH_WORDS.filter(
-        (w) => !OWN_WORDS[l]?.includes(w) && times(t, w) > times(ru, w),
-      );
-      if (left.length > 0)
-        errors.push(`sources-${l}.yaml: English left (${left.join(", ")}) in "${t}"`);
+    const ids = sourceEventIds(s, eventIds);
+    if (ids.length > 0)
+      errors.push(`source "${s}" names an event or battle by its id (${ids.join(", ")})`);
+  }
+  for (const l of SOURCE_LOCALES) {
+    const table = sourcesIn[l];
+    for (const s of missingAndStale(cited, table).stale)
+      errors.push(`sources-${l}.yaml: "${s}" is no source of anything`);
+    for (const s of cited) {
+      const t = table[s];
+      if (t === undefined) continue;
+      const at = (what: string) => `sources-${l}.yaml: ${what} in "${t}"`;
+      const left = englishLeft(s, t, l);
+      if (left.length > 0) errors.push(at(`English left (${left.join(", ")})`));
+      if (["uk", "sr", "bg"].includes(l)) {
+        const latin = notCyrillic(s, t, l);
+        if (latin.length > 0) errors.push(at(`not in Cyrillic (${latin.join(", ")})`));
+      }
+      if (["da", "nb", "sv", "fi"].includes(l)) {
+        const wrong = wrongCenturies(s, t);
+        if (wrong.length > 0) errors.push(at(`no century ${wrong.join(", ")} in the English`));
+      }
+      if (["da", "nb", "sv"].includes(l) && bareMile(t))
+        errors.push(at("a mile that is not Roman or English"));
+      const missing = titlesMissing(s, t, titles[l] ?? new Map<string, string>());
+      if (missing.length > 0) errors.push(at(`not the site's title (${missing.join("; ")})`));
     }
   }
-}
-// A bare "mil" in Danish, Norwegian and Swedish is the Scandinavian mile (about 10 km), so a
-// mile always says whose, Roman or English: in the source lines and in every other text.
-{
-  const MILE = /(?<!\b(?:romersk|romerske|romerska|engelsk|engelske|engelska) )\bmil(?:e|es)?\b/iu;
-  const NORDIC = ["da", "nb", "sv"] as const;
-  for (const s of cited)
-    for (const l of NORDIC) {
-      const t = sourcesIn[l][s];
-      if (t !== undefined && MILE.test(t))
-        errors.push(`sources-${l}.yaml: a mile that is not Roman or English in "${t}"`);
-    }
+  // A bare "mil" is the Scandinavian mile in every other Danish, Norwegian and Swedish text too.
+  const NORDIC = ["da", "nb", "sv"];
   const walk = (file: string, x: unknown, lang: string | null): void => {
     if (typeof x === "string") {
-      if (lang !== null && MILE.test(x))
+      if (lang !== null && bareMile(x))
         errors.push(`${file}: a ${lang} mile that is not Roman or English in "${x}"`);
     } else if (Array.isArray(x)) for (const y of x) walk(file, y, lang);
     else if (x !== null && typeof x === "object")
-      for (const [k, y] of Object.entries(x))
-        walk(file, y, (NORDIC as readonly string[]).includes(k) ? k : lang);
+      for (const [k, y] of Object.entries(x)) walk(file, y, NORDIC.includes(k) ? k : lang);
   };
   const texts = (dir: string): string[] =>
     readdirSync(join(root, dir), { withFileTypes: true }).flatMap((e) =>
@@ -1481,18 +1478,6 @@ const ENGLISH_KEPT = new Set([
           : [],
     );
   for (const f of texts("content")) walk(f, load(f), null);
-}
-// The site's dated events and battles are named by their titles in a source line, never by
-// their ids ("saul-king"), which a reader cannot read.
-{
-  const ids = new Set([...events.map((e) => e.id), ...battles.map((b) => b.id)]);
-  for (const s of cited)
-    for (const m of s.matchAll(/(?:dated events?|battles?) \(([^()]*)\)/g))
-      for (const w of (m[1] ?? "").matchAll(
-        /(?<![\p{L}“])[a-z][a-z0-9]*(?:-[a-z0-9]+)*(?![\p{L}”])/gu,
-      ))
-        if (ids.has(w[0]))
-          errors.push(`source "${s}" names an event or battle by its id (${w[0]}): give its title`);
 }
 
 // What ancient authors say of places (content/ancient-authors.yaml): loaded when a card
