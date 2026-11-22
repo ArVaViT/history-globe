@@ -12,6 +12,7 @@ import {
   pick,
 } from "@hg/model";
 import { useEffect, useMemo, useState, type RefObject } from "react";
+import { announce } from "../focus";
 import { useTranslation } from "../i18n";
 import { chapterFocus, type ChapterFocus } from "../chapter";
 import {
@@ -42,6 +43,9 @@ function sameWords(a: string, b: string): boolean {
     })
   );
 }
+
+/** The pause in typing after which the number of results is said. */
+const ANNOUNCE_AFTER_MS = 700;
 
 /** A dated event or a battle (events.yaml, battles.yaml), as the search offers it. */
 export interface SearchEvent {
@@ -356,6 +360,19 @@ export function SearchBox({
   };
   const open = query.trim().length >= 2;
   const nameOf = (p: PlaceProps) => placeName(p, i18n.language);
+  // How many results, said to a screen reader once the typing pauses (the list itself is
+  // not read until the arrows step into it).
+  const shownCount = open ? options.length : null;
+  useEffect(() => {
+    if (shownCount === null) return;
+    const id = setTimeout(() => {
+      announce(shownCount === 0 ? t("search.empty") : t("search.found", { count: shownCount }));
+    }, ANNOUNCE_AFTER_MS);
+    return () => {
+      clearTimeout(id);
+    };
+    // Typed on: the new results are said, even when as many.
+  }, [shownCount, query, t]);
 
   return (
     <div
@@ -408,7 +425,7 @@ export function SearchBox({
               through the glass. */}
           <ul
             id="search-results"
-            className="max-h-80 overflow-auto py-1"
+            className="max-h-80 overflow-auto overscroll-contain py-1"
             role="listbox"
             aria-label={t("search.placeholder")}
           >

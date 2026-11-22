@@ -3,6 +3,8 @@
   "search": {
     "placeholder": "Paikka, henkilö, luku tai vuosi",
     "empty": "Mitään ei löytynyt",
+    "found_one": "{{count}} tulos",
+    "found_other": "{{count}} tulosta",
     "open": "Hae paikkaa, henkilöä tai lukua",
     "close": "Sulje haku",
     "chapter_one": "{{count}} paikka kartalla",
@@ -74,7 +76,7 @@
     "more": "{{count}} lisää",
     "coords_wikidata": "Koordinaatit: Wikidata",
     "close": "Sulje",
-    "zoom": "Lähennä",
+    "zoom_to": "Lähennä: {{name}}",
     "sites_note": "Osuudet ovat OpenBiblen arvioita, eivät tutkijoiden yhteinen näkemys",
     "nt_only": "Vain Uudessa testamentissa: himmennetty ennen sen tapahtumia",
     "also_here": "Myös täällä",
@@ -353,5 +355,8 @@
     "quiz_about": "”Missä se tapahtui?” näytöllä tai A4-arkilla",
     "quiz_pick": "Valitse kierros",
     "quiz_print": "Tulosta oppilaille (A4)"
+  },
+  "a11y": {
+    "opened": "Avattu: {{name}}"
   }
 }

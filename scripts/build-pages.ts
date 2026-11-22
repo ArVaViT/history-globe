@@ -1040,7 +1040,7 @@ function indexPages(l: Lang): void {
       W.stops(t.stops.length),
       ...(km === null ? [] : [W.km(n.format(roundKm(km)))]),
     ];
-    return `<li><a class="tour-card" href="../tour/${t.id}/">${routeSvg(t)}<span class="tour-text"><span class="tour-when">${esc(year({ year: t.year, approximate: t.approximate === true }, l))}</span><span class="tour-title">${esc(t.title[l] ?? t.title.en)}</span><span class="tour-meta">${meta.map((x) => esc(x.replace(/ /g, "\u00a0"))).join(" · ")}</span></span></a></li>`;
+    return `<li><a class="tour-card" href="../tour/${t.id}/">${routeSvg(t)}<span class="tour-text"><span class="tour-when">${esc(year({ year: t.year, approximate: t.approximate === true }, l))}</span><span class="tour-title">${esc(t.title[l] ?? t.title.en)}</span><span class="tour-meta">${meta.map((x) => esc(keepNumbers(x))).join(" · ")}</span></span></a></li>`;
   };
   write(
     `${l}/tours`,
@@ -1069,6 +1069,14 @@ function indexPages(l: Lang): void {
     </main>`,
     }),
   );
+}
+
+/**
+ * A number kept on one line with the word beside it ("8 stops", "120 km", "Acts 13"), while
+ * a long title still wraps: a whole line of no-break spaces ran off a 320 px screen.
+ */
+function keepNumbers(text: string): string {
+  return text.replace(/(?<=\d) (?=\p{L})|(?<=\p{L}) (?=\d)/gu, "\u00a0");
 }
 
 /** The parts of the Bible, by the first book of each in its order. */

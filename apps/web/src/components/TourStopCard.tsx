@@ -154,7 +154,7 @@ export function TourStopCard({
       </div>
       <div
         ref={scrolls}
-        className="hg-fade-phone max-md:-mx-5 max-md:min-h-0 max-md:overflow-y-auto max-md:px-5 max-md:[scrollbar-width:thin] sideways:-mx-5 sideways:min-h-0 sideways:overflow-y-auto sideways:px-5 sideways:[scrollbar-width:thin]"
+        className="hg-fade-phone max-md:-mx-5 max-md:min-h-0 max-md:overflow-y-auto overscroll-contain max-md:px-5 max-md:[scrollbar-width:thin] sideways:-mx-5 sideways:min-h-0 sideways:overflow-y-auto sideways:px-5 sideways:[scrollbar-width:thin]"
       >
         {/* Read out when the stop changes, by the buttons, the dots or the arrow keys. */}
         {/* On a phone the stop's words come before the relief, which can wait for a scroll. */}
@@ -162,7 +162,10 @@ export function TourStopCard({
           <span className="sr-only">
             {t("tours.stop", { n: step + 1, total: tour.stops.length })}.{" "}
           </span>
-          <h2 className="mt-1 font-serif text-[26px] leading-tight font-semibold text-ink">
+          <h2
+            tabIndex={-1}
+            className="mt-1 font-serif text-[26px] leading-tight font-semibold text-ink outline-none"
+          >
             {name}
           </h2>
           {line && <p className="mt-0.5 text-[12px] text-ink-soft">{line}</p>}
@@ -245,9 +248,11 @@ export function TourStopCard({
           </button>
         )}
       </div>
-      {/* One dot per stop: where we are, and a jump to any stop. */}
+      {/* One dot per stop: where we are, and a jump to any stop. Each dot is drawn 10 px in
+          a button 24 px high and as wide as its share of the row, so the dots touch at their
+          hit areas and a tap goes to the nearest (WCAG 2.5.8). */}
       <ol
-        className={`mt-4 flex shrink-0 flex-wrap items-center gap-1 ${compact ? "hidden" : ""}`}
+        className={`mt-2.5 flex shrink-0 flex-wrap items-center ${compact ? "hidden" : ""}`}
         aria-label={t("tours.stops_list")}
       >
         {tour.stops.map((s, i) => (
@@ -259,12 +264,17 @@ export function TourStopCard({
               aria-current={i === step ? "step" : undefined}
               aria-label={`${String(i + 1)}. ${stopName(s.placeId)}`}
               title={`${String(i + 1)}. ${stopName(s.placeId)}`}
-              className={`hg-tap-own block rounded-full transition-all ${i === step ? "h-2.5 w-6 bg-accent" : i < step ? "size-2.5 bg-accent/55 hover:bg-accent" : "size-2.5 bg-paper-2 ring-1 ring-line hover:bg-accent/40"}`}
-            />
+              className="hg-tap-own group flex h-6 items-center px-0.5"
+            >
+              <span
+                aria-hidden
+                className={`block rounded-full transition-all ${i === step ? "h-2.5 w-6 bg-accent" : i < step ? "size-2.5 bg-accent/55 group-hover:bg-accent" : "size-2.5 bg-paper-2 ring-1 ring-line group-hover:bg-accent/40"}`}
+              />
+            </button>
           </li>
         ))}
       </ol>
-      <div className={`mt-3 flex shrink-0 justify-between ${compact ? "hidden" : ""}`}>
+      <div className={`mt-1.5 flex shrink-0 justify-between ${compact ? "hidden" : ""}`}>
         <button
           disabled={step === 0}
           onClick={() => {

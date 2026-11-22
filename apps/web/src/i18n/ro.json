@@ -3,6 +3,9 @@
   "search": {
     "placeholder": "Loc, persoană, capitol sau an",
     "empty": "Nu s-a găsit nimic",
+    "found_one": "{{count}} rezultat",
+    "found_few": "{{count}} rezultate",
+    "found_other": "{{count}} de rezultate",
     "open": "Caută un loc, o persoană sau un capitol",
     "close": "Închide căutarea",
     "chapter_one": "{{count}} loc pe hartă",
@@ -78,7 +81,7 @@
     "more": "încă {{count}}",
     "coords_wikidata": "Coordonate: Wikidata",
     "close": "Închide",
-    "zoom": "Apropie",
+    "zoom_to": "Apropie harta de {{name}}",
     "sites_note": "Ponderile sunt estimarea OpenBible, nu un consens științific",
     "nt_only": "Doar în Noul Testament: estompat înainte de evenimentele sale",
     "also_here": "Tot aici",
@@ -363,5 +366,8 @@
     "quiz_about": "„Unde s-a întâmplat?” pe ecran sau pe A4",
     "quiz_pick": "Alege un traseu",
     "quiz_print": "Tipărește pentru elevi (A4)"
+  },
+  "a11y": {
+    "opened": "Deschis: {{name}}"
   }
 }

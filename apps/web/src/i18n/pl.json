@@ -3,6 +3,10 @@
   "search": {
     "placeholder": "Miejsce, osoba, rozdział lub rok",
     "empty": "Nic nie znaleziono",
+    "found_one": "{{count}} wynik",
+    "found_few": "{{count}} wyniki",
+    "found_many": "{{count}} wyników",
+    "found_other": "{{count}} wyniku",
     "open": "Znajdź miejsce, osobę lub rozdział",
     "close": "Zamknij wyszukiwanie",
     "chapter_one": "{{count}} miejsce na mapie",
@@ -82,7 +86,7 @@
     "more": "jeszcze {{count}}",
     "coords_wikidata": "Współrzędne: Wikidata",
     "close": "Zamknij",
-    "zoom": "Przybliż",
+    "zoom_to": "Przybliż: {{name}}",
     "sites_note": "Udziały to szacunek OpenBible, a nie konsensus uczonych",
     "nt_only": "Tylko w Nowym Testamencie: przed jego wydarzeniami wyszarzone",
     "also_here": "Także tutaj",
@@ -373,5 +377,8 @@
     "quiz_about": "„Gdzie to się stało?” na ekranie lub w A4",
     "quiz_pick": "Wybierz trasę",
     "quiz_print": "Wydrukuj dla uczniów (A4)"
+  },
+  "a11y": {
+    "opened": "Otwarto: {{name}}"
   }
 }

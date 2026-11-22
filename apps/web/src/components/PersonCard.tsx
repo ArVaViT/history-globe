@@ -163,7 +163,7 @@ export function PersonCard({
   const lineRoot = folded ? line[0] : undefined;
 
   return (
-    <Panel className="w-card max-h-[calc(100dvh-var(--hg-timeline-h)-48px)] max-md:max-h-[48dvh] overflow-auto pb-3">
+    <Panel className="w-card max-h-[calc(100dvh-var(--hg-timeline-h)-48px)] max-md:max-h-[48dvh] overflow-auto overscroll-contain pb-3">
       {back && (
         <button
           onClick={back.onBack}

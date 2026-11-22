@@ -41,7 +41,7 @@ export function EventsPanel({
     <Section>
       <ol
         ref={list}
-        className="hg-fade max-h-[min(460px,52vh)] max-md:max-h-[calc(100dvh-var(--hg-timeline-h)-200px)] sideways:max-h-[calc(100dvh-var(--hg-timeline-h)-160px)] overflow-y-auto [scrollbar-width:thin]"
+        className="hg-fade max-h-[min(460px,52vh)] max-md:max-h-[calc(100dvh-var(--hg-timeline-h)-200px)] sideways:max-h-[calc(100dvh-var(--hg-timeline-h)-160px)] overflow-y-auto overscroll-contain [scrollbar-width:thin]"
       >
         {events.map((e) => (
           <li key={e.id}>

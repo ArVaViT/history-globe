@@ -109,6 +109,14 @@ body {
   height: 100%;
   background: var(--color-night);
 }
+/* The app never scrolls the page: a card pulled down past its top neither reloads it
+   (pull to refresh on Android) nor bounces the whole screen. The panels that scroll keep
+   their own overscroll (overscroll-contain). In another site's frame the pull goes on to
+   the host's page. */
+html:not(.hg-embed),
+html:not(.hg-embed) body {
+  overscroll-behavior: none;
+}
 
 /* The timeline's height, measured by the app (useHeightVar); this until it is measured. */
 :root {
@@ -435,6 +443,36 @@ summary {
   height: 24px;
   pointer-events: none;
   background: linear-gradient(to bottom, transparent, var(--color-paper));
+}
+
+/* A row of tabs wider than its panel scrolls sideways (Overview.tsx): a strip in the
+   panel's colour over each edge with more beyond it says so. Over the row, not a mask on
+   it, for the same reason as above. */
+.hg-edges {
+  position: relative;
+}
+.hg-edges::before,
+.hg-edges::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  z-index: 1;
+  width: 28px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 150ms;
+}
+.hg-edges::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-paper), transparent);
+}
+.hg-edges::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-paper), transparent);
+}
+.hg-edges[data-more-start]::before,
+.hg-edges[data-more-end]::after {
+  opacity: 1;
 }
 
 /* The same on a phone only (upright or on its side), and only while there is more to

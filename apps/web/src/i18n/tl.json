@@ -3,6 +3,8 @@
   "search": {
     "placeholder": "Lugar, tao, kabanata o taon",
     "empty": "Walang nahanap",
+    "found_one": "{{count}} resulta",
+    "found_other": "{{count}} resulta",
     "open": "Hanapin ang isang lugar, tao o kabanata",
     "close": "Isara ang paghahanap",
     "chapter_one": "{{count}} lugar sa mapa",
@@ -74,7 +76,7 @@
     "more": "{{count}} pa",
     "coords_wikidata": "Mga koordinato: Wikidata",
     "close": "Isara",
-    "zoom": "Ilapit",
+    "zoom_to": "Ilapit sa {{name}}",
     "sites_note": "Ang mga bahagdan ay pagtaya ng OpenBible, hindi pinagkasunduan ng mga iskolar",
     "nt_only": "Sa Bagong Tipan lamang: pinalabo bago ang mga pangyayari nito",
     "also_here": "Narito rin",
@@ -353,5 +355,8 @@
     "quiz_about": "“Saan ito nangyari?” sa screen o sa A4",
     "quiz_pick": "Pumili ng paglalakbay",
     "quiz_print": "I-print para sa mga mag-aaral (A4)"
+  },
+  "a11y": {
+    "opened": "Binuksan: {{name}}"
   }
 }

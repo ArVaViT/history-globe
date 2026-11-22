@@ -539,6 +539,7 @@ export function Timeline({
                 className={`pointer-events-none absolute w-[2px] -translate-x-1/2 rounded-full ${e.major ? "top-0 h-[10px] bg-gold" : "top-[4px] h-[6px] bg-ink/45"}`}
               />
             ))}
+          {/* The years under the track: 12 px, the smallest text a phone's first screen shows. */}
           {ticks.map((y, i) => {
             const x = pct(y);
             return (
@@ -546,7 +547,7 @@ export function Timeline({
                 key={y}
                 aria-hidden
                 style={{ left: `${String(x)}%` }}
-                className={`absolute ${life ? "top-[46px]" : "top-[38px]"} text-[11.5px] whitespace-nowrap text-ink-soft ${x < 6 ? "" : x > 94 ? "-translate-x-full" : "-translate-x-1/2"} ${ticks.length > 3 && i % 2 === 1 && y !== YEAR_MAX ? "max-[1400px]:hidden" : ""}`}
+                className={`absolute ${life ? "top-[46px]" : "top-[38px]"} text-[12px] whitespace-nowrap text-ink-soft ${x < 6 ? "" : x > 94 ? "-translate-x-full" : "-translate-x-1/2"} ${ticks.length > 3 && i % 2 === 1 && y !== YEAR_MAX ? "max-[1400px]:hidden" : ""}`}
               >
                 {formatYear(y, locale)}
               </span>

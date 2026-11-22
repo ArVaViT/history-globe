@@ -44,13 +44,16 @@ export function Player({
             // The button goes; the focus moves to the slider it opened.
             focusNextFrame(range);
           }}
-          aria-label={`${formatYear(year, locale).replace(/\.$/, "")}. ${t("time.expand")}`}
+          // The name begins with what the pill shows, the age beside the year among it (WCAG
+          // 2.5.3): a voice command reads the words on the screen.
+          aria-label={`${period ? `${formatYear(year, locale)} ${periodName(period, locale)}` : formatYear(year, locale).replace(/\.$/, "")}. ${t("time.expand")}`}
           aria-expanded={false}
           className="pointer-events-auto flex items-center gap-2.5 rounded-full border border-white/45 bg-paper/90 py-1.5 pr-3 pl-4 shadow-chip backdrop-blur-xl hover:bg-paper"
         >
           <span className="font-serif text-[17px] font-semibold text-ink tabular-nums">
             {formatYear(year, locale)}
           </span>
+          {/* A space between the two, as in the name: a flex box does not draw it. */}{" "}
           {period && (
             <span className="text-[12.5px] text-ink-soft max-[360px]:hidden">
               {periodName(period, locale)}
