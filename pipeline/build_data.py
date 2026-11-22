@@ -647,6 +647,11 @@ def lead_anchor(anchors: list[tuple[float, float, float, int]], parts: list[list
     return min(low, key=lambda i: (anchors[i][0] - cx) ** 2 + (anchors[i][1] - cy) ** 2)
 
 
+# English names of Cliopatria polities that follow Wikidata's current English label
+# (Q1483430, "Principality of Kyiv"): the city is Kyiv in English today.
+POLITY_NAMES_EN = {"Principality of Kiev": "Principality of Kyiv"}
+
+
 def build_polities() -> tuple[dict, dict, dict]:
     clio = json.loads(fetch("cliopatria").read_text(encoding="utf-8"))
     polys, labels = [], []
@@ -708,6 +713,7 @@ def build_polities() -> tuple[dict, dict, dict]:
         if not in_bbox(xs, ys):
             continue
         name = p["Name"].strip("()")
+        name = POLITY_NAMES_EN.get(name, name)
         is_relation = p.get("Type") != "POLITY"
         color = names.setdefault(name, len(names) % 10)
         # Cliopatria's years are already astronomical (ISO 8601): the data uses year 0
