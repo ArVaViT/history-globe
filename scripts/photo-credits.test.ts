@@ -30,6 +30,12 @@ describe("plain", () => {
     );
     expect(plain("D&amp;R &#169; &#xA9;")).toBe("D&R © ©");
   });
+
+  it("leaves no markup behind, even from a tag split by another or an escaped one", () => {
+    expect(plain("a<scr<b>ipt>b")).toBe("ab");
+    expect(plain("a &lt;script&gt; b")).toBe("a script> b");
+    expect(plain("x &#x110000; y")).toBe("x &#x110000; y");
+  });
 });
 
 describe("canonicalLicenceUrl", () => {

@@ -41,16 +41,30 @@ const ENTITIES: Record<string, string> = {
   nbsp: " ",
 };
 
-/** Commons' HTML as plain text: no tags or entities, one space between words. */
+/** A character reference's character, or the reference itself when it names no character. */
+function codePoint(whole: string, n: number): string {
+  return Number.isInteger(n) && n >= 0 && n <= 0x10ffff ? String.fromCodePoint(n) : whole;
+}
+
+/**
+ * Commons' HTML as plain text: no tags or entities, one space between words. Tags are taken
+ * out until none is left, so a tag split by another ("<scr<b>ipt>") goes too; and no "<" is
+ * kept at all, so the text never reads as markup.
+ */
 export function plain(html: string): string {
-  return html
-    .replace(/<[^>]*>/g, "")
+  let text = html;
+  for (let before = ""; before !== text;) {
+    before = text;
+    text = text.replace(/<[^<>]*>/g, "");
+  }
+  return text
     .replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (whole, name: string) => {
       if (name.startsWith("#x") || name.startsWith("#X"))
-        return String.fromCodePoint(parseInt(name.slice(2), 16));
-      if (name.startsWith("#")) return String.fromCodePoint(Number(name.slice(1)));
+        return codePoint(whole, parseInt(name.slice(2), 16));
+      if (name.startsWith("#")) return codePoint(whole, Number(name.slice(1)));
       return ENTITIES[name.toLowerCase()] ?? whole;
     })
+    .replace(/</g, "")
     .replace(/\s+/g, " ")
     .trim();
 }
