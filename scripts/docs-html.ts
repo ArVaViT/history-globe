@@ -20,6 +20,7 @@
  * a page that fails it.
  */
 import { SITE_ORIGIN } from "../packages/model/src/site.ts";
+import { readTag } from "./html-read.ts";
 
 const FORBIDDEN_TAGS = new Set([
   "object",
@@ -41,60 +42,6 @@ const OWN_EMBED = new RegExp(
   `^(?:(?:\\.\\./)+|${SITE_ORIGIN.replace(/[.*+?^${}()|[\]\\/]/g, "\\$&")}/)embed/v1(?:[?#]|$)`,
 );
 const RUNS = /(?:^|[\s;,])(?:javascript|vbscript|data):/;
-
-interface Tag {
-  name: string;
-  attrs: Map<string, string>;
-  problems: string[];
-  end: number;
-}
-
-const space = (c: string | undefined) =>
-  c === " " || c === "\t" || c === "\n" || c === "\f" || c === "\r";
-
-/** The tag that starts at `at` (a `<` before a letter), read as the HTML standard reads it. */
-function readTag(html: string, at: number): Tag {
-  let k = at + 1;
-  let name = "";
-  while (k < html.length && !space(html[k]) && html[k] !== "/" && html[k] !== ">")
-    name += html.charAt(k++);
-  const attrs = new Map<string, string>();
-  const problems: string[] = [];
-  for (;;) {
-    while (space(html[k]) || html[k] === "/") k++;
-    if (k >= html.length) {
-      problems.push("a tag left open at the end");
-      return { name: name.toLowerCase(), attrs, problems, end: k };
-    }
-    if (html[k] === ">") return { name: name.toLowerCase(), attrs, problems, end: k + 1 };
-    let attr = html[k++] ?? "";
-    while (k < html.length && !space(html[k]) && !"/>=".includes(html[k] ?? ""))
-      attr += html.charAt(k++);
-    let j = k;
-    while (space(html[j])) j++;
-    let value = "";
-    if (html[j] === "=") {
-      j++;
-      while (space(html[j])) j++;
-      const q = html[j];
-      if (q === '"' || q === "'") {
-        const close = html.indexOf(q, j + 1);
-        if (close < 0) {
-          problems.push(`${attr}=: a quote left open`);
-          return { name: name.toLowerCase(), attrs, problems, end: html.length };
-        }
-        value = html.slice(j + 1, close);
-        j = close + 1;
-      } else {
-        while (j < html.length && !space(html[j]) && html[j] !== ">") value += html.charAt(j++);
-      }
-      k = j;
-    }
-    attr = attr.toLowerCase();
-    if (attrs.has(attr)) problems.push(`${attr}= twice (the browser keeps the first)`);
-    else attrs.set(attr, value);
-  }
-}
 
 /** An attribute's value as the browser reads it: character references decoded. */
 function decoded(value: string): string {

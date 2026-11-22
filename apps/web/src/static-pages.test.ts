@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { LOCALES, NOTICE_COMMENT } from "@hg/model";
 import { describe, expect, it } from "vitest";
+import { htmlText } from "../../../scripts/html-read.ts";
 
 const web = join(import.meta.dirname, "..");
 const read = (file: string) => readFileSync(join(web, file), "utf8");
@@ -69,10 +70,7 @@ describe("the static pages", () => {
     const html = read("index.html");
     const shell = /<div id="hg-shell"[\s\S]*?\n {4}<\/div>\n/.exec(html)?.[0] ?? "";
     expect(shell).not.toBe("");
-    const text = shell
-      .replace(/<!--[\s\S]*?-->/g, "")
-      .replace(/<[^>]+>/g, " ")
-      .trim();
+    const text = htmlText(shell, { between: " " }).trim();
     expect(text).toBe("History Globe");
     const header = read("src/components/Header.tsx");
     expect(header).toMatch(/>\s*History Globe\s*<\/h1>/);
