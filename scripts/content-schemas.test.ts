@@ -20,8 +20,7 @@ import {
   PolityNamesFile,
   PolityOverridesFile,
   QuestionFile,
-  SourcesOwnFile,
-  SourcesRuFile,
+  SourcesFile,
   TourFile,
 } from "../packages/model/src/content.ts";
 import { ReviewFile } from "../packages/model/src/reviews.ts";
@@ -53,8 +52,9 @@ const FILES: readonly (readonly [string, Schema])[] = [
   ["battles.yaml", BattlesFile],
   ["photos.yaml", PhotosFile],
   ["chapter-years.yaml", ChapterYearsFile],
-  ["sources-ru.yaml", SourcesRuFile],
-  ["sources-own.yaml", SourcesOwnFile],
+  ...readdirSync(content)
+    .filter((f) => /^sources-[a-z]{2}\.yaml$/.test(f))
+    .map((f) => [f, SourcesFile] as const),
   ["ancient-authors.yaml", AncientAuthorsFile],
   ["ancient-sites.json", AncientSitesFile],
   ...readdirSync(content)
