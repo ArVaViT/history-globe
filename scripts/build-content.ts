@@ -58,6 +58,8 @@ import {
   eventBattleLinks,
   fadedState,
   fallsIn,
+  nearDistance,
+  ownDistances,
   samePassageApart,
   statesDistance,
   Water,
@@ -216,7 +218,6 @@ const SAME_PASSAGE_APART = new Set([
   // date the text gives).
   "tours/abraham 11 questions/where-did-abraham-offer-isaac",
   "tours/judges 6 questions/where-did-samson-live",
-  "tours/samuel 6 questions/where-was-the-ark-of-the-covenant-kept",
   // The letters tour holds one year for all the letters; Galatians and Colossians are dated
   // apart from it in the questions, within the range held for each.
   "tours/letters 3 questions/where-was-galatia",
@@ -997,6 +998,41 @@ for (const q of questions) {
       errors.push(
         `questions/${q.id}.yaml: the ${l} answer states no distance near the measured one`,
       );
+}
+
+// An article's distance from its own place to another (ownDistances) is the straight line
+// between their points, as the answers measure it, and every language gives the same figure.
+const pointsNamed = new Map<string, [number, number][]>();
+for (const f of places.features) {
+  const [lon, lat] = f.geometry.coordinates;
+  const list = pointsNamed.get(f.properties.name) ?? [];
+  if (!list.some(([x, y]) => x === lon && y === lat)) list.push([lon ?? 0, lat ?? 0]);
+  pointsNamed.set(f.properties.name, list);
+}
+for (const a of articles) {
+  const own = pointOf.get(a.place);
+  if (!own) continue;
+  a.body.en.forEach((paragraph, i) => {
+    for (const { km, to } of ownDistances(a.title.en, paragraph)) {
+      const there = pointsNamed.get(to);
+      if (there?.length !== 1 || !there[0]) continue;
+      if (!nearDistance(km, [own[0] ?? 0, own[1] ?? 0], there[0]))
+        errors.push(
+          `articles/${a.id}.yaml: ${String(km)} km to ${to}, but the points are ${distanceKm([own[0] ?? 0, own[1] ?? 0], there[0]).toFixed(1)} km apart`,
+        );
+      if (Number.isInteger(km))
+        for (const [l, ps] of Object.entries(a.body))
+          // The figure itself: "километрах в 16" says the same as "16 km".
+          if (
+            !new RegExp(`(?<![\\p{N}.,])${String(km)}(?![\\p{N}]|[.,]\\p{N})`, "u").test(
+              ps[i] ?? "",
+            )
+          )
+            errors.push(
+              `articles/${a.id}.yaml: the ${l} text does not give the ${String(km)} km to ${to}`,
+            );
+    }
+  });
 }
 
 for (const w of warnings) console.warn(`warning: ${w}`);

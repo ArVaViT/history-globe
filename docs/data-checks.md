@@ -91,6 +91,9 @@ the data first (`pnpm data`).
   in `SAME_PASSAGE_APART` with the reason.
 - **"How far" answers**: the answer in every language states the distance between the two
   places it measures, within 10% (at least 3 km) of the straight line between their points.
+- **An article's own distances**: a sentence of the English article that begins with its title
+  (or "It") and gives "N km … of" a place named once on the map gives the straight line between
+  the two points, within 10% (at least 1.5 km), and every language gives the same figure.
 - **Points in the water**: a place (other than a sea, a lake or a river), an ancient site or
   a battlefield more than 1.5 km inside the water the map draws (`water.geojson`; the depth measured to the shores of
   `coast.geojson`) stops the build, unless listed in `IN_WATER` with the reason (a submerged

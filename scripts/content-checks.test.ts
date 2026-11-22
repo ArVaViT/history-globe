@@ -6,6 +6,8 @@ import {
   fadedState,
   fallsIn,
   kmFigures,
+  nearDistance,
+  ownDistances,
   samePassageApart,
   statesDistance,
   Water,
@@ -170,5 +172,29 @@ describe("statesDistance", () => {
     expect(statesDistance("From Dan to Beersheba is about 236 km.", dan, beersheba)).toBe(true);
     expect(statesDistance("From Dan to Beersheba is about 150 km.", dan, beersheba)).toBe(false);
     expect(statesDistance("No figure at all.", dan, beersheba)).toBe(false);
+  });
+});
+
+describe("ownDistances", () => {
+  const bethel: [number, number] = [35.24139, 31.92278];
+  const jerusalem: [number, number] = [35.23417, 31.77667];
+
+  it("reads the distances a sentence about the article's place gives", () => {
+    expect(
+      ownDistances("Bethel", "Bethel stood on the watershed road, about 16 km north of Jerusalem."),
+    ).toEqual([{ km: 16, to: "Jerusalem" }]);
+    expect(ownDistances("Ai", "It lies 2.5 km east of Mount Ebal.")).toEqual([
+      { km: 2.5, to: "Mount Ebal" },
+    ]);
+  });
+
+  it("leaves other sentences and areas alone", () => {
+    expect(ownDistances("Bethel", "Ai lies 2 km east of Bethel.")).toEqual([]);
+    expect(ownDistances("Taberah", "Taberah is drawn within some 50 km of Hazeroth.")).toEqual([]);
+  });
+
+  it("holds the figure to the points within 10% (at least 1.5 km)", () => {
+    expect(nearDistance(16, bethel, jerusalem)).toBe(true);
+    expect(nearDistance(18, bethel, jerusalem)).toBe(false);
   });
 });

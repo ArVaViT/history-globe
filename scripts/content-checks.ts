@@ -236,3 +236,26 @@ export function statesDistance(text: string, a: Point, b: Point): boolean {
   const km = distanceKm(a, b);
   return kmFigures(text).some((n) => Math.abs(n - km) <= Math.max(3, 0.1 * km));
 }
+
+/**
+ * The distances an English article gives from its own place to another: in a sentence that
+ * begins with the article's title or "It", a figure "N km [up to three words] of/from
+ * <Name>", not "within N km". Other sentences may speak of another site and are not read.
+ */
+export function ownDistances(title: string, text: string): { km: number; to: string }[] {
+  const out: { km: number; to: string }[] = [];
+  for (const sentence of text.split(/(?<=\.)\s+(?=[A-Z])/u)) {
+    if (!sentence.startsWith(`${title} `) && !sentence.startsWith("It ")) continue;
+    for (const m of sentence.matchAll(
+      /(?<!within (?:about |some )?)(?<![\d.,])(\d+(?:\.\d+)?)\s?km\s(?:[a-z-]+\s){0,3}?(?:of|from)\s((?:Mount )?[A-Z][\w'-]+(?:-[a-z]+)*)/gu,
+    ))
+      out.push({ km: Number(m[1]), to: m[2] ?? "" });
+  }
+  return out;
+}
+
+/** Whether a stated figure is the straight line between two points: within 10% (at least 1.5 km). */
+export const nearDistance = (km: number, a: Point, b: Point): boolean => {
+  const real = distanceKm(a, b);
+  return Math.abs(km - real) <= Math.max(1.5, 0.1 * real);
+};

@@ -9,6 +9,9 @@ pull requests on GitHub have them.
 
 ## Unreleased
 
+- Events: the second Temple was finished in March 515 BC (Adar of Darius' sixth year), now
+  `c. 515 BC` (was `c. 516 BC`). Battles: Samuel's victory at Mizpah is `c. 1050 BC` (was
+  `c. 1070 BC`), twenty years after the ark was taken at Ebenezer (1 Sam 7:2).
 - `questions.json`: every question carries its licence, `license` (CC BY-NC-ND 4.0) and
   `license_url`, in the record itself.
 - The map's data (`/data/`, not the API): the questions answered with a place moved out of
