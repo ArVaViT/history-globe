@@ -14,7 +14,7 @@
 import { existsSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { sitemapLocs } from "./indexnow-core.ts";
-import { shortHash } from "./content-hash.ts";
+import { pageHash } from "./content-hash.ts";
 
 const pub = join(import.meta.dirname, "../apps/web/public");
 const out = join(pub, "page-hashes.json");
@@ -35,7 +35,7 @@ if (!site || !existsSync(sitemap)) {
       missing++;
       continue;
     }
-    hashes[path] = shortHash(readFileSync(file));
+    hashes[path] = pageHash(readFileSync(file, "utf8"));
   }
   if (missing > 0) throw new Error(`page hashes: ${String(missing)} sitemap pages have no file`);
   writeFileSync(out, JSON.stringify(hashes));

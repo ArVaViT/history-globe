@@ -3,6 +3,9 @@
 Corrections, reviews and code are welcome. Read `AGENTS.md` first: it is the contract for
 every change, by a person or an agent.
 
+Everyone who takes part follows the [Code of Conduct](CODE_OF_CONDUCT.md) (the Contributor
+Covenant); report a breach to historyglobe.vadym@gmail.com.
+
 ## Errors of fact
 
 An error in a place, article, question or tour is best reported, not patched: open an issue

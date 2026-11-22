@@ -5,6 +5,7 @@ import { checkRef } from "./verses.ts";
 import type { ChapterYears } from "./chapter-years.ts";
 import { ALL_LOCALES, type Locale } from "./locales.ts";
 import { parseLabel, toAstronomical } from "./time.ts";
+import { httpsUrl } from "./https-url.ts";
 
 const messageOf = (e: unknown): string => (e instanceof Error ? e.message : String(e));
 
@@ -375,7 +376,7 @@ export const EventsFile = z.strictObject({
         .strictObject({
           lon: z.number().min(-180).max(180),
           lat: z.number().min(-90).max(90),
-          source: z.url(),
+          source: httpsUrl,
         })
         .optional(),
       /** The passage that tells it, when Scripture itself narrates the event. */
@@ -498,7 +499,7 @@ export const TourFile = z.strictObject({
         source: z
           .strictObject({
             cite: localized,
-            url: z.url(),
+            url: httpsUrl,
           })
           .optional(),
         note: localized,
@@ -575,7 +576,7 @@ export const PhotosFile = z.strictObject({
         license: z.string().regex(/^(Public domain|CC0( 1\.0)?|CC BY \d\.\d)$/, {
           message: "only public domain, CC0 or CC BY (no share-alike, ADR 0008)",
         }),
-        license_url: z.url().optional(),
+        license_url: httpsUrl.optional(),
         /**
          * The candidate site the photo was taken at (its OpenBible id, m… or a…): required
          * for a disputed place, so the caption names what the picture shows.
@@ -715,7 +716,7 @@ export const AncientAuthorsFile = z.strictObject({
         work: localized,
         /** As the standard edition numbers it: book.section (Josephus by Niese: "5.136-247"). */
         passage: z.string().regex(/^[0-9][0-9a-z.,:;–\- ]*$/),
-        url: z.url({ protocol: /^https$/ }),
+        url: httpsUrl,
         note: summaryNote,
       }),
     )

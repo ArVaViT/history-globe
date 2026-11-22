@@ -22,7 +22,10 @@ description: Co History Globe przechowuje o swoich odwiedzających: bez kont, be
     <b>Wybory dotyczące interfejsu</b> — które panele i karty są otwarte, „Tylko Biblia”, wygląd
     odtwarzacza, kiedy ostatnio zapisano globus do użytku offline — oraz
     <b>lekcja, którą budujesz</b>, wraz z nadanym jej tytułem, są przechowywane w lokalnej pamięci
-    Twojej przeglądarki. Nigdy nie opuszczają Twojego urządzenia; usunięcie danych strony je kasuje.
+    Twojej przeglądarki. Usunięcie danych strony je kasuje. Nie są nigdzie wysyłane, z jednym
+    wyjątkiem: dopóki lekcja jest otwarta, jej miejsca i tytuł znajdują się w adresie strony, aby
+    można było udostępnić link do niej, a otwarty lub przeładowany adres trafia do naszego hosta jak
+    każde żądanie strony.
   </li>
   <li>
     <b>Kopia offline.</b> Gdy w ustawieniach w sekcji „Offline” wybierzesz „Zapisz” lub po prostu
@@ -37,7 +40,9 @@ description: Co History Globe przechowuje o swoich odwiedzających: bez kont, be
   zapisuje adresu IP: odwiedzający jest rozróżniany przez skrót, który jest usuwany w ciągu 24
   godzin. Widzimy wyłącznie sumy — strony, kraje i miasta, przeglądarki, stronę, z której
   odwiedzający przyszedł — nigdy konkretną osobę, i używamy ich tylko po to, by wiedzieć, które
-  miejsca i trasy są czytane.
+  miejsca i trasy są czytane. Liczona jest tylko ścieżka strony; to, co stoi w adresie po „?”, na
+  przykład tytuł lekcji, nie jest liczone nigdy, a odwiedziny globusa osadzonego na stronie innej
+  witryny nie są liczone.
 </p>
 
 <h2 id="servers">Serwery i inne strony</h2>
@@ -59,8 +64,8 @@ description: Co History Globe przechowuje o swoich odwiedzających: bez kont, be
   </li>
   <li>
     <b>Na innych stronach.</b> Osadzony globus lub skrypt oznaczający miejsca w tekście innej strony
-    jest wczytywany z naszego serwera, więc nasz host widzi adres IP czytelnika i stronę, na której
-    się znajduje; resztę reguluje polityka tamtej strony.
+    jest wczytywany z naszego serwera, więc nasz host widzi adres IP czytelnika i zwykle tylko nazwę
+    witryny, na której się znajduje, a nie samą stronę; resztę reguluje polityka tamtej strony.
   </li>
   <li>
     <b>Kopie strony.</b> Jeśli strona History Globe jest wyświetlana z innego adresu niż
@@ -88,5 +93,5 @@ description: Co History Globe przechowuje o swoich odwiedzających: bez kont, be
 </p>
 
 <p class="meta">
-  Ostatnia aktualizacja: 19 listopada 2026. Jeśli ta strona się zmieni, zmieni się też jej data.
+  Ostatnia aktualizacja: 22 listopada 2026. Jeśli ta strona się zmieni, zmieni się też jej data.
 </p>

@@ -15,6 +15,7 @@ import { dirname, join, relative, resolve } from "node:path";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig, type Plugin } from "vite";
+import { ANALYTICS_TAG } from "../../packages/model/src/analytics.ts";
 import { BEACON_TAG } from "../../packages/model/src/beacon.ts";
 
 // MapLibre 6 ships three ES modules: the library, its worker, and a module both share.
@@ -294,6 +295,22 @@ function beacon(): Plugin {
   };
 }
 
+// The visit counter (packages/model/src/analytics.ts) at the end of the app's head, the same
+// bytes as the built pages' (scripts/page-shell.ts): the app and the pages count alike.
+function analytics(): Plugin {
+  return {
+    name: "analytics",
+    transformIndexHtml: {
+      order: "post",
+      handler: (html) => {
+        if (!html.includes("\n  </head>"))
+          throw new Error("index.html: no </head> for the counter");
+        return html.replace("\n  </head>", `\n    ${ANALYTICS_TAG}\n  </head>`);
+      },
+    },
+  };
+}
+
 export default defineConfig({
   plugins: [
     react(),
@@ -306,6 +323,7 @@ export default defineConfig({
     titleFont(),
     originTrial(),
     beacon(),
+    analytics(),
   ],
   build: {
     target: "es2023",

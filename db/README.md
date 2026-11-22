@@ -30,8 +30,10 @@ in languages other than Russian. The release and the API carry them.
    check that `postgis`, `pg_trgm` and `unaccent` can be enabled (the first migration
    enables them itself).
 2. Apply the schema: SQL editor → paste each file of `migrations/` in order → Run. With the
-   Supabase CLI instead: `supabase link`, then `supabase db push` with the files under
-   `supabase/migrations/`.
+   Supabase CLI instead: it reads migrations from `supabase/migrations/`, and this repository
+   keeps them in `db/migrations/`. In a scratch folder, `supabase init`, copy
+   `db/migrations/*.sql` into its `supabase/migrations/`, then `supabase link` and
+   `supabase db push`.
 3. Build and export the release: `pnpm data && node scripts/export-db.ts`.
 4. Load: `DATABASE_URL='postgresql://postgres:<password>@<host>:5432/postgres' db/load.sh`
    (the direct connection or the session pooler, not the transaction pooler: `\copy`

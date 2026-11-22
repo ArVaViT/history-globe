@@ -110,14 +110,19 @@ email needs no account.
 
 ## For developers
 
-Requirements: Node 24.11+, pnpm through corepack (the version is pinned in `package.json`),
-Python 3.11+ with its standard library only. No account or key is needed to build, run or
-test the site.
+Requirements: Node 24.11+ (CI runs 24; 26 works too), pnpm in the version pinned in
+`package.json`, Python 3.11+ with its standard library only. No account or key is needed to
+build, run or test the site.
+
+Node 24 bundles Corepack, which provides the pinned pnpm (`corepack enable`). Node 25 and later
+no longer bundle it: install pnpm itself (`npm install --global pnpm`), and it switches to the
+pinned version on its own.
 
 ```sh
-corepack enable  # pnpm as pinned in package.json
+corepack enable  # Node 24; on Node 25+: npm install --global pnpm
 pnpm install
-pnpm data        # downloads the open datasets (some 260 MB, minutes) and builds apps/web/public/data
+pnpm data        # downloads the open datasets (some 260 MB) and builds apps/web/public/data:
+                 # about 20 minutes the first time; later runs reuse pipeline/.cache
 pnpm content     # the static pages, the open API and the documentation pages
 pnpm dev         # http://localhost:5173
 pnpm gate        # everything that must pass before a merge
@@ -136,16 +141,18 @@ Keys in the app: `[` `]` move the year by 10 (with Shift by 100), Space plays, `
 
 Nothing is read from a `.env` file; every variable is optional.
 
-| Variable                               | Read by                                                           | Without it                                        |
-| -------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------- |
-| `SITE_URL`                             | `scripts/build-pages.ts`, `build-docs.ts`, `build-page-hashes.ts` | no canonical links and no sitemap                 |
-| `HG_URL`                               | `e2e/`                                                            | the browser checks open `http://localhost:5173/`  |
-| `HG_TILES=live`                        | `e2e/browser.mjs`                                                 | the relief is one flat tile served locally        |
-| `CHROMIUM`                             | `e2e/browser.mjs`                                                 | Playwright's own Chromium                         |
-| `TEXT_PLACES_DEBUG`                    | `scripts/build-text-places.ts`                                    | the dropped name matches are not written out      |
-| `HG_CANARY_SEED`, `HG_CANARY_REGISTRY` | `scripts/canary.ts` (ADR 0017)                                    | no canary marks; for the official site only       |
-| `WEBMCP_ORIGIN_TRIAL`                  | `apps/web/vite.config.ts`                                         | no origin-trial token; for the official site only |
-| `DATABASE_URL`                         | `db/load.sh`                                                      | the optional database load cannot run             |
+| Variable                               | Read by                                                                                                       | Without it                                                                                    |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `SITE_URL`                             | `scripts/build-pages.ts`, `build-docs.ts`, `build-page-hashes.ts`, `indexnow.ts`; `pipeline/build_dataset.py` | no canonical links and no sitemap; the dataset and IndexNow name `https://historyglobe.app`   |
+| `HG_CONTACT`                           | `pipeline/net.py`                                                                                             | the data build's requests name the project, not you: set an address so a source can reach you |
+| `WAVE`, `FAME`                         | `pipeline/ancient/` (its README)                                                                              | wave 1, and 8 Wikipedia articles as a site's least fame                                       |
+| `HG_URL`                               | `e2e/`                                                                                                        | the browser checks open `http://localhost:5173/`                                              |
+| `HG_TILES=live`                        | `e2e/browser.mjs`                                                                                             | the relief is one flat tile served locally                                                    |
+| `CHROMIUM`                             | `e2e/browser.mjs`                                                                                             | Playwright's own Chromium                                                                     |
+| `TEXT_PLACES_DEBUG`                    | `scripts/build-text-places.ts`                                                                                | the dropped name matches are not written out                                                  |
+| `HG_CANARY_SEED`, `HG_CANARY_REGISTRY` | `scripts/canary.ts` (ADR 0017)                                                                                | no canary marks; for the official site only                                                   |
+| `WEBMCP_ORIGIN_TRIAL`                  | `apps/web/vite.config.ts`                                                                                     | no origin-trial token; for the official site only                                             |
+| `DATABASE_URL`                         | `db/load.sh`                                                                                                  | the optional database load cannot run                                                         |
 
 Deploying the official site, loading its database and publishing the dataset need the
 maintainers' credentials; none of it is needed to work on the code or the content.

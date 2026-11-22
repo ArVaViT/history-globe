@@ -32,6 +32,26 @@
       "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/moab-aca767b/",
       "destination": "/:lang/place/plains-of-moab/",
       "permanent": true
+    },
+    {
+      "source": "/:file((?:[^/]+/)*[^/]+\\.html)/",
+      "destination": "/:file",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)",
+      "destination": "/:lang/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/:list(places|questions|tours|reviews)",
+      "destination": "/:lang/:list/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/:kind(place|q|tour|reviews)/:slug([^/.]+)",
+      "destination": "/:lang/:kind/:slug/",
+      "permanent": true
     }
   ],
   "headers": [
@@ -85,6 +105,21 @@
         {
           "key": "Link",
           "value": "<https://creativecommons.org/licenses/by-nc-nd/4.0/>; rel=\"license\""
+        }
+      ]
+    },
+    {
+      "source": "/(pages\\.css|docs/docs\\.css)",
+      "has": [
+        {
+          "type": "query",
+          "key": "v"
+        }
+      ],
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     },
@@ -174,8 +209,16 @@
           "value": "nosniff"
         },
         {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        },
+        {
           "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
+          "value": "strict-origin"
         },
         {
           "key": "Permissions-Policy",
@@ -188,32 +231,43 @@
       ]
     },
     {
-      "source": "/((?!embed/).*)",
-      "missing": [
-        {
-          "type": "query",
-          "key": "embed"
-        }
-      ],
+      "source": "/((?!embed/).+)",
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'sha256-N9v3EnPaUyp6HvI/g75KoK11mUw7quk1fPSwEhREnaU=' 'sha256-Qord0QWkZ6Re0yv4Ypza/cELjPVajHutwe+JHhMyJhY=' 'sha256-ZE71wwM7L0Ln6UFft8E3ioGycQBLtl8su48sr7XV9kY=' 'sha256-RqZ8glMbj/NFhk9dBGIFvOhoxe9pHw+JK0MSF3t062I=' 'sha256-/I7M8/SRmrsqt/GLwBNmfgb1FwKuMOWJdsrktARf+ic=' 'sha256-x3dEI/Olp4Bxrv0A9S1p/Lvt5Gw7D2IHrnYOmRzweyk=' 'sha256-JRuXynS0C2BP9jfWW+qTBvcxD8sWpo9sQyO2tG9K2Ck='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://tiles.mapterhorn.com https://historyglobe.app; font-src 'self' data:; connect-src 'self' data: blob: https://tiles.mapterhorn.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+          "value": "default-src 'self'; script-src 'self' 'sha256-N9v3EnPaUyp6HvI/g75KoK11mUw7quk1fPSwEhREnaU=' 'sha256-Qord0QWkZ6Re0yv4Ypza/cELjPVajHutwe+JHhMyJhY=' 'sha256-ZE71wwM7L0Ln6UFft8E3ioGycQBLtl8su48sr7XV9kY=' 'sha256-RqZ8glMbj/NFhk9dBGIFvOhoxe9pHw+JK0MSF3t062I=' 'sha256-/I7M8/SRmrsqt/GLwBNmfgb1FwKuMOWJdsrktARf+ic=' 'sha256-x3dEI/Olp4Bxrv0A9S1p/Lvt5Gw7D2IHrnYOmRzweyk=' 'sha256-JRuXynS0C2BP9jfWW+qTBvcxD8sWpo9sQyO2tG9K2Ck=' 'sha256-30WQtzXnNZ45u1KlyqihPYQmw7dMysbc1vRetPFuQZA='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://tiles.mapterhorn.com https://historyglobe.app; font-src 'self' data:; connect-src 'self' data: blob: https://tiles.mapterhorn.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
         }
       ]
     },
     {
-      "source": "/(.*)",
-      "has": [
+      "source": "/",
+      "missing": [
         {
           "type": "query",
-          "key": "embed"
+          "key": "embed",
+          "value": "1"
         }
       ],
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'sha256-N9v3EnPaUyp6HvI/g75KoK11mUw7quk1fPSwEhREnaU=' 'sha256-Qord0QWkZ6Re0yv4Ypza/cELjPVajHutwe+JHhMyJhY=' 'sha256-ZE71wwM7L0Ln6UFft8E3ioGycQBLtl8su48sr7XV9kY=' 'sha256-RqZ8glMbj/NFhk9dBGIFvOhoxe9pHw+JK0MSF3t062I=' 'sha256-/I7M8/SRmrsqt/GLwBNmfgb1FwKuMOWJdsrktARf+ic=' 'sha256-x3dEI/Olp4Bxrv0A9S1p/Lvt5Gw7D2IHrnYOmRzweyk=' 'sha256-JRuXynS0C2BP9jfWW+qTBvcxD8sWpo9sQyO2tG9K2Ck='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://tiles.mapterhorn.com https://historyglobe.app; font-src 'self' data:; connect-src 'self' data: blob: https://tiles.mapterhorn.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors *"
+          "value": "default-src 'self'; script-src 'self' 'sha256-N9v3EnPaUyp6HvI/g75KoK11mUw7quk1fPSwEhREnaU=' 'sha256-Qord0QWkZ6Re0yv4Ypza/cELjPVajHutwe+JHhMyJhY=' 'sha256-ZE71wwM7L0Ln6UFft8E3ioGycQBLtl8su48sr7XV9kY=' 'sha256-RqZ8glMbj/NFhk9dBGIFvOhoxe9pHw+JK0MSF3t062I=' 'sha256-/I7M8/SRmrsqt/GLwBNmfgb1FwKuMOWJdsrktARf+ic=' 'sha256-x3dEI/Olp4Bxrv0A9S1p/Lvt5Gw7D2IHrnYOmRzweyk=' 'sha256-JRuXynS0C2BP9jfWW+qTBvcxD8sWpo9sQyO2tG9K2Ck=' 'sha256-30WQtzXnNZ45u1KlyqihPYQmw7dMysbc1vRetPFuQZA='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://tiles.mapterhorn.com https://historyglobe.app; font-src 'self' data:; connect-src 'self' data: blob: https://tiles.mapterhorn.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "embed",
+          "value": "1"
+        }
+      ],
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'sha256-N9v3EnPaUyp6HvI/g75KoK11mUw7quk1fPSwEhREnaU=' 'sha256-Qord0QWkZ6Re0yv4Ypza/cELjPVajHutwe+JHhMyJhY=' 'sha256-ZE71wwM7L0Ln6UFft8E3ioGycQBLtl8su48sr7XV9kY=' 'sha256-RqZ8glMbj/NFhk9dBGIFvOhoxe9pHw+JK0MSF3t062I=' 'sha256-/I7M8/SRmrsqt/GLwBNmfgb1FwKuMOWJdsrktARf+ic=' 'sha256-x3dEI/Olp4Bxrv0A9S1p/Lvt5Gw7D2IHrnYOmRzweyk=' 'sha256-JRuXynS0C2BP9jfWW+qTBvcxD8sWpo9sQyO2tG9K2Ck=' 'sha256-30WQtzXnNZ45u1KlyqihPYQmw7dMysbc1vRetPFuQZA='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://tiles.mapterhorn.com https://historyglobe.app; font-src 'self' data:; connect-src 'self' data: blob: https://tiles.mapterhorn.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors *"
         }
       ]
     },
@@ -222,7 +276,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'sha256-N9v3EnPaUyp6HvI/g75KoK11mUw7quk1fPSwEhREnaU=' 'sha256-Qord0QWkZ6Re0yv4Ypza/cELjPVajHutwe+JHhMyJhY=' 'sha256-ZE71wwM7L0Ln6UFft8E3ioGycQBLtl8su48sr7XV9kY=' 'sha256-RqZ8glMbj/NFhk9dBGIFvOhoxe9pHw+JK0MSF3t062I=' 'sha256-/I7M8/SRmrsqt/GLwBNmfgb1FwKuMOWJdsrktARf+ic=' 'sha256-x3dEI/Olp4Bxrv0A9S1p/Lvt5Gw7D2IHrnYOmRzweyk=' 'sha256-JRuXynS0C2BP9jfWW+qTBvcxD8sWpo9sQyO2tG9K2Ck='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://tiles.mapterhorn.com https://historyglobe.app; font-src 'self' data:; connect-src 'self' data: blob: https://tiles.mapterhorn.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors *"
+          "value": "default-src 'self'; script-src 'self' 'sha256-N9v3EnPaUyp6HvI/g75KoK11mUw7quk1fPSwEhREnaU=' 'sha256-Qord0QWkZ6Re0yv4Ypza/cELjPVajHutwe+JHhMyJhY=' 'sha256-ZE71wwM7L0Ln6UFft8E3ioGycQBLtl8su48sr7XV9kY=' 'sha256-RqZ8glMbj/NFhk9dBGIFvOhoxe9pHw+JK0MSF3t062I=' 'sha256-/I7M8/SRmrsqt/GLwBNmfgb1FwKuMOWJdsrktARf+ic=' 'sha256-x3dEI/Olp4Bxrv0A9S1p/Lvt5Gw7D2IHrnYOmRzweyk=' 'sha256-JRuXynS0C2BP9jfWW+qTBvcxD8sWpo9sQyO2tG9K2Ck=' 'sha256-30WQtzXnNZ45u1KlyqihPYQmw7dMysbc1vRetPFuQZA='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://tiles.mapterhorn.com https://historyglobe.app; font-src 'self' data:; connect-src 'self' data: blob: https://tiles.mapterhorn.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors *"
         }
       ]
     }

@@ -17,7 +17,7 @@ const vercel = JSON.parse(
   readFileSync(new URL("../apps/web/vercel.json", import.meta.url), "utf8"),
 );
 const csp = vercel.headers
-  .find((h) => h.source === "/((?!embed/).*)")
+  .find((h) => h.source === "/((?!embed/).+)")
   .headers.find((h) => h.key === "Content-Security-Policy").value;
 
 const browser = await launch();

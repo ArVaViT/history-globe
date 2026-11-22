@@ -20,8 +20,10 @@ description: What History Globe keeps about its visitors: no accounts, no cookie
   <li>
     <b>Interface choices</b> — which panels and tabs are open, “the Bible alone”, the player’s look,
     when you last saved the globe for offline use — and a <b>lesson you build</b>, with the title
-    you give it, are kept in your browser’s local storage. They never leave your device; clearing
-    the site’s data removes them.
+    you give it, are kept in your browser’s local storage. Clearing the site’s data removes them.
+    They are sent nowhere, with one exception: while a lesson is open, its places and its title are
+    in the page’s address, so that its link can be shared, and an address that is opened or reloaded
+    reaches our host as every page request does.
   </li>
   <li>
     <b>Offline copy.</b> When you choose “Save” under “Offline” in the settings, or simply browse,
@@ -35,7 +37,9 @@ description: What History Globe keeps about its visitors: no accounts, no cookie
   We count page views with Vercel Web Analytics, which sets no cookies and stores no IP address: a
   visitor is told apart by a hash that is discarded within 24 hours. We see totals only — pages,
   countries and cities, browsers, the site a visitor came from — never a person, and use them only
-  to learn which places and tours are read.
+  to learn which places and tours are read. Only the page’s path is counted; what follows the “?” in
+  its address, such as a lesson’s title, is never counted, and visits to a globe embedded in another
+  site’s page are not counted.
 </p>
 
 <h2 id="servers">Servers and other sites</h2>
@@ -57,8 +61,8 @@ description: What History Globe keeps about its visitors: no accounts, no cookie
   </li>
   <li>
     <b>On other sites.</b> An embedded globe, or the script that marks places in another site’s
-    text, is loaded from our server, so our host sees the reader’s IP address and the page it is on;
-    the other site’s policy covers the rest.
+    text, is loaded from our server, so our host sees the reader’s IP address and, usually, only the
+    name of the site it is on, not the page; the other site’s policy covers the rest.
   </li>
   <li>
     <b>Copies of the site.</b> If a page of History Globe is shown from another address than
@@ -84,4 +88,4 @@ description: What History Globe keeps about its visitors: no accounts, no cookie
   received a child’s data, write to us and we will delete it.
 </p>
 
-<p class="meta">Last updated 19 November 2026. If this page changes, its date changes with it.</p>
+<p class="meta">Last updated 22 November 2026. If this page changes, its date changes with it.</p>

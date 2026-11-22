@@ -25,6 +25,8 @@ import {
 } from "../packages/model/src/locales.ts";
 import { bodyEnd, esc, headMeta, sansPreload } from "./page-shell.ts";
 import { clientScript } from "./client-script.ts";
+import { versioned } from "./content-hash.ts";
+import { unsafeHtml } from "./docs-html.ts";
 import { TYPESET } from "./typeset.ts";
 import { REPOSITORY } from "../packages/model/src/site.ts";
 import { NOTICE_COMMENT } from "../packages/model/src/notice.ts";
@@ -50,6 +52,8 @@ const pub = join(root, "apps/web/public");
 const data = join(pub, "data");
 const src = join(root, "content/docs");
 const out = join(pub, "docs");
+/** The stylesheet's address with its version (content-hash.ts versioned). */
+const DOCS_CSS = versioned("docs.css", readFileSync(join(src, "docs.css")));
 const site = process.env.SITE_URL?.replace(/\/+$/, "") ?? "";
 
 // The documentation is written in every language the site is published in; the words of a
@@ -1228,7 +1232,7 @@ function page(o: {
     <link rel="icon" href="${up}../favicon.svg" type="image/svg+xml" />
     <title>${it.name === "index" ? `History Globe ${t.menu}` : `${esc(it.src.title)} | History Globe ${t.docs}`}</title>${meta}
     <link rel="preload" href="${up}fonts/${sansPreload(l)}" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="${up}docs.css" />
+    <link rel="stylesheet" href="${up}${DOCS_CSS}" />
     <script>document.documentElement.className = "js";</script>
     <script defer src="${up}docs.js"></script>
   </head>
@@ -1317,6 +1321,8 @@ for (const l of LANGS) {
     PAGES.map((p) => {
       const file = `content/docs/${l}/${p}.html`;
       const source = parse(join(root, file));
+      // The body goes into the page unescaped: markup only (docs-html.ts).
+      for (const m of unsafeHtml(source.body)) problems.push(`${file}: ${m}`);
       // A licence is linked by its own address in every language, as index.json gives it.
       if (/creativecommons\.org\/[^"]*deed\./.test(source.body))
         problems.push(`${file}: a Creative Commons link to a translated deed, not the licence`);
