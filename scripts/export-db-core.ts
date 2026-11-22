@@ -262,11 +262,12 @@ export function seedTables(r: Release): Record<string, Table> {
   );
   table(
     "place_photo",
-    ["place_id", "commons_file", "author", "license", "license_url", "shows"],
+    ["place_id", "commons_file", "author", "credit", "license", "license_url", "shows"],
     ours(Object.entries(content.photos ?? {})).map(([id, p]) => [
       id,
       p.file,
       p.author ?? null,
+      p.credit ?? null,
       p.license,
       p.license_url ?? null,
       p.shows ?? null,

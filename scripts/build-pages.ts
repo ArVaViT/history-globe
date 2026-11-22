@@ -36,7 +36,7 @@ import { TYPESET } from "./typeset.ts";
 import { clientScript } from "./client-script.ts";
 import { SITE_ORIGIN } from "../packages/model/src/site.ts";
 import { DOC_PAGES, docsPath } from "../packages/model/src/docs.ts";
-import { commonsPage, licenceUrl } from "../packages/model/src/photos.ts";
+import { commonsPage, creditLine, licenceUrl } from "../packages/model/src/photos.ts";
 import { LANDING, LISTS, T } from "./page-words.ts";
 import { siteCertainty } from "../packages/model/src/sites.ts";
 import { loadAllLocaleData } from "../packages/model/src/locale-data.ts";
@@ -424,11 +424,16 @@ function photoHtml(id: string, name: string, l: Lang): string {
   if (!ph || !hasPhoto(id)) return "";
   const page = commonsPage(ph.file);
   const lic = ph.license === "Public domain" ? T[l].pd : ph.license;
-  // The author's name opens the file's page, the licence its text (CC BY asks for both);
-  // the photo's licence, not the page's, so no rel="license".
+  // The credit (the line the author asks for, else the author) opens the file's page, the
+  // licence its text (CC BY asks for both); the photo's licence, not the page's, so no
+  // rel="license". A credit that names Wikimedia Commons itself is not followed by it again.
   const licence = licenceUrl(ph);
+  const credit = creditLine(ph);
+  const source = credit?.includes("Wikimedia Commons")
+    ? ""
+    : `, ${credit ? "Wikimedia Commons" : `<a href="${esc(page)}">Wikimedia Commons</a>`}`;
   const shows = ph.shows && ((ph.shows as Partial<Record<Lang, string>>)[l] ?? ph.shows.en);
-  return `<figure class="photo"><img src="../../../data/photos/${id}.jpg" alt="${esc(name)}" loading="lazy" /><figcaption class="note">${shows ? `${esc(T[l].photoShows(shows))}<br />` : ""}${T[l].photo}: ${ph.author ? `<a href="${esc(page)}">${esc(ph.author)}</a>, ` : ""}${licence ? `<a href="${esc(licence)}">${esc(lic)}</a>` : esc(lic)}, ${ph.author ? "Wikimedia Commons" : `<a href="${esc(page)}">Wikimedia Commons</a>`}</figcaption></figure>`;
+  return `<figure class="photo"><img src="../../../data/photos/${id}.jpg" alt="${esc(name)}" loading="lazy" /><figcaption class="note">${shows ? `${esc(T[l].photoShows(shows))}<br />` : ""}${T[l].photo}: ${credit ? `<a href="${esc(page)}"><bdi>${esc(credit)}</bdi></a>, ` : ""}${licence ? `<a href="${esc(licence)}">${esc(lic)}</a>` : esc(lic)}${source}</figcaption></figure>`;
 }
 
 const slugOf = placeSlugs(places.map((f) => f.properties));

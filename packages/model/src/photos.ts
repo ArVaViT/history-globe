@@ -12,3 +12,14 @@ export function licenceUrl(photo: {
 }): string | undefined {
   return photo.license_url?.replace(/^http:\/\//, "https://");
 }
+
+/**
+ * Who a photo's credit names: the credit line its author asks for (content/photos.yaml
+ * `credit`, as the file's Commons page gives it), else the author; none for an unknown author.
+ */
+export function creditLine(photo: {
+  readonly author?: string | undefined;
+  readonly credit?: string | undefined;
+}): string | undefined {
+  return photo.credit ?? photo.author;
+}

@@ -561,6 +561,12 @@ export const PhotosFile = z.strictObject({
         /** The Commons file name, without "File:". */
         file: z.string().min(1),
         author: z.string().optional(),
+        /**
+         * The credit line the author asks for, word for word as the file's Commons page gives
+         * it ("Uzi Paz Pikiwiki Israel"), when it is more than the author's name: shown in
+         * the author's place (scripts/check-photo-credits.ts compares it with Commons).
+         */
+        credit: z.string().min(1).optional(),
         license: z.string().regex(/^(Public domain|CC0( 1\.0)?|CC BY \d\.\d)$/, {
           message: "only public domain, CC0 or CC BY (no share-alike, ADR 0008)",
         }),
@@ -586,6 +592,8 @@ export const PhotosFile = z.strictObject({
 export interface PlacePhoto {
   readonly file: string;
   readonly author?: string | undefined;
+  /** The credit line the author asks for, shown in the author's place (photos.yaml). */
+  readonly credit?: string | undefined;
   readonly license: string;
   readonly license_url?: string | undefined;
   /** For a disputed place: the candidate the photo shows, by language (en always). */
