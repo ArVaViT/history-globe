@@ -31,9 +31,7 @@ import {
   type PleiadesLink,
   type PlacePhoto,
   type QuestionTitles,
-  SourcesRuFile,
-  SourcesOwnFile,
-  OWN_SOURCE,
+  SourcesFile,
   LocaleNamesFile,
   NAME_LOCALES,
 } from "../packages/model/src/content.ts";
@@ -1347,43 +1345,35 @@ const chapterYears = packChapterYears(ChapterYearsFile.parse(load("content/chapt
 ]);
 errors.push(...chapterYears.errors);
 
-// Sources in Russian (content/sources-ru.yaml): every line a reader sees, on a card or a
-// page, has its Russian; a new line without one stops the build.
-const sourcesRu = SourcesRuFile.parse(load("content/sources-ru.yaml"));
-const seenRu = new Set<string>();
-const inRussian = (where: string, list: readonly string[]): string[] =>
-  list.map((s) => {
-    seenRu.add(s);
-    const ru = sourcesRu[s];
-    if (ru === undefined)
-      errors.push(`${where}: no Russian for the source "${s}" (sources-ru.yaml)`);
-    return ru ?? s;
-  });
-// The site's own lines among the sources (content/sources-own.yaml), in every language but
-// English and Russian: a page in German reads "History-Globe-Tour „Salomo“", not the English
-// line; the bibliography beside them stays as published. An own line without all of its
-// languages stops the build, like a line without its Russian.
-const sourcesOwn = SourcesOwnFile.parse(load("content/sources-own.yaml"));
-const OWN_IN = LOCALES.filter((l) => l !== "en" && l !== "ru");
-const seenOwn = new Set<string>();
-const ownInEach = (
-  where: string,
-  list: readonly string[],
-): Partial<Record<Locale, string[]>> | undefined => {
-  if (!list.some((s) => OWN_SOURCE.test(s))) return undefined;
-  return Object.fromEntries(
-    OWN_IN.map((l) => [
+// Source lines in every language but English (content/sources-<code>.yaml): each line a
+// reader sees under an article, a question or a place's years, to the line a reader of
+// that language reads. A cited line without its translation in any language stops the
+// build, and so does a translation that nothing cites any more.
+const SOURCE_LOCALES = LOCALES.filter((l) => l !== "en");
+const sourcesIn = Object.fromEntries(
+  SOURCE_LOCALES.map((l) => [l, SourcesFile.parse(load(`content/sources-${l}.yaml`))]),
+) as Record<Exclude<Locale, "en">, Record<string, string>>;
+const cited = new Set<string>();
+// The lines in each language; a missing translation is an error once per line.
+const translated = (where: string, list: readonly string[], report = true) => {
+  const byLocale = Object.fromEntries(
+    SOURCE_LOCALES.map((l) => [
       l,
       list.map((s) => {
-        if (!OWN_SOURCE.test(s)) return s;
-        seenOwn.add(s);
-        const t = sourcesOwn[s]?.[l];
-        if (t === undefined)
-          errors.push(`${where}: no ${l} for the site's own source "${s}" (sources-own.yaml)`);
+        if (report) cited.add(s);
+        const t = sourcesIn[l][s];
+        if (t === undefined && report)
+          errors.push(`${where}: no ${l} for the source "${s}" (sources-${l}.yaml)`);
         return t ?? s;
       }),
     ]),
+  ) as Record<Exclude<Locale, "en">, string[]>;
+  const { ru, ...rest } = byLocale;
+  // Russian as before (sources_ru); the others only where they differ from the English.
+  const others = Object.fromEntries(
+    Object.entries(rest).filter(([, ls]) => ls.some((s, i) => s !== list[i])),
   );
+  return { sources_ru: ru, ...(Object.keys(others).length > 0 ? { sources_in: others } : {}) };
 };
 // The marks a copy can be told by (scripts/canary.ts): none without HG_CANARY_SEED.
 const canaries = new Canaries();
@@ -1407,45 +1397,73 @@ const reviewsOf = (kind: "article" | "question", id: string) => {
 const articlesOut = articles.map((a) => ({
   ...a,
   body: inEachLanguage((l) => `data/articles/${l}.json`, a.place, a.body),
-  sources_ru: inRussian(`articles/${a.id}`, a.sources),
-  ...((x) => (x ? { sources_in: x } : {}))(ownInEach(`articles/${a.id}`, a.sources)),
+  ...translated(`articles/${a.id}`, a.sources),
   ...reviewsOf("article", a.id),
 }));
 const questionsOut = questions.map((q) => ({
   ...q,
   answer: inEachLanguage(() => "api/v1/questions.json", q.id, q.answer),
-  sources_ru: inRussian(`questions/${q.id}`, q.sources),
-  ...((x) => (x ? { sources_in: x } : {}))(ownInEach(`questions/${q.id}`, q.sources)),
+  ...translated(`questions/${q.id}`, q.sources),
   ...reviewsOf("question", q.id),
 }));
+// A place's years taken over from the city it lies in carry that city's lines, checked there.
 for (const [id, l] of Object.entries(life))
-  if (!l.inherited) {
-    const own = ownInEach(`place-life: ${id}`, l.sources);
-    life[id] = {
-      ...l,
-      sources_ru: inRussian(`place-life: ${id}`, l.sources),
-      ...(own ? { sources_in: own } : {}),
-    };
-  }
-for (const [id, l] of Object.entries(life))
-  if (l.inherited) {
-    const ru = l.sources.map((s) => sourcesRu[s] ?? s);
-    // The site's own lines in each language too, as the entry inherited from has them.
-    const own = l.sources.some((s) => OWN_SOURCE.test(s))
-      ? Object.fromEntries(
-          OWN_IN.map((lang) => [
-            lang,
-            l.sources.map((s) => (OWN_SOURCE.test(s) ? (sourcesOwn[s]?.[lang] ?? s) : s)),
-          ]),
-        )
-      : undefined;
-    life[id] = { ...l, sources_ru: ru, ...(own ? { sources_in: own } : {}) };
-  }
+  life[id] = { ...l, ...translated(`place-life: ${id}`, l.sources, !l.inherited) };
 // A translation no line uses any more is stale.
-for (const s of Object.keys(sourcesRu))
-  if (!seenRu.has(s)) errors.push(`sources-ru.yaml: "${s}" is no source of anything`);
-for (const s of Object.keys(sourcesOwn))
-  if (!seenOwn.has(s)) errors.push(`sources-own.yaml: "${s}" is no source of anything`);
+for (const l of SOURCE_LOCALES)
+  for (const s of Object.keys(sourcesIn[l]))
+    if (!cited.has(s)) errors.push(`sources-${l}.yaml: "${s}" is no source of anything`);
+// No English left in another language's line: an English function word counts no more
+// often than in the Russian line, which keeps in English only what was published so
+// (modern titles, editors' names). Listed: lines whose other languages keep a name in
+// English that the Russian translates.
+const ENGLISH_WORDS = [
+  ...["the", "of", "and", "with", "from", "which", "where", "between", "by", "on"],
+  ...["see", "also", "after", "into", "their", "its"],
+];
+// Words that are also the language's own ("of" is Dutch for "or", "by" Danish for "town").
+const OWN_WORDS: Partial<Record<Locale, readonly string[]>> = {
+  nl: ["of"],
+  da: ["by"],
+  sv: ["by"],
+  nb: ["by"],
+  pl: ["by"],
+  fi: ["on"],
+  tl: ["on"],
+};
+const ENGLISH_KEPT = new Set([
+  // "University of Pennsylvania", the excavators of Nippur.
+  "Wikipedia, 'Calneh' (Albright's reading; the RSV rendering) and 'Nippur' (the sacred city of Enlil, never a hegemon but conferring kingship; University of Pennsylvania 1889–1900; Oriental Institute from 1948)",
+]);
+{
+  const times = (s: string, w: string) =>
+    (s.match(new RegExp(`(?<![\\p{L}'’-])${w}(?![\\p{L}'’-])`, "gu")) ?? []).length;
+  for (const s of cited) {
+    if (ENGLISH_KEPT.has(s)) continue;
+    const ru = sourcesIn.ru[s] ?? "";
+    for (const l of SOURCE_LOCALES) {
+      const t = sourcesIn[l][s];
+      if (l === "ru" || t === undefined) continue;
+      const left = ENGLISH_WORDS.filter(
+        (w) => !OWN_WORDS[l]?.includes(w) && times(t, w) > times(ru, w),
+      );
+      if (left.length > 0)
+        errors.push(`sources-${l}.yaml: English left (${left.join(", ")}) in "${t}"`);
+    }
+  }
+}
+// The site's dated events and battles are named by their titles in a source line, never by
+// their ids ("saul-king"), which a reader cannot read.
+{
+  const ids = new Set([...events.map((e) => e.id), ...battles.map((b) => b.id)]);
+  for (const s of cited)
+    for (const m of s.matchAll(/(?:dated events?|battles?) \(([^()]*)\)/g))
+      for (const w of (m[1] ?? "").matchAll(
+        /(?<![\p{L}“])[a-z][a-z0-9]*(?:-[a-z0-9]+)*(?![\p{L}”])/gu,
+      ))
+        if (ids.has(w[0]))
+          errors.push(`source "${s}" names an event or battle by its id (${w[0]}): give its title`);
+}
 
 // What ancient authors say of places (content/ancient-authors.yaml): loaded when a card
 // opens, place id → its mentions in the file's order.
@@ -1512,6 +1530,11 @@ for (const t of tours) {
 }
 for (const [place, ms] of Object.entries(ancientByPlace))
   for (const m of ms) scriptOf(`ancient-authors.yaml: ${place} ${m.author.en}`, m.note);
+for (const s of cited)
+  scriptOf(
+    `source "${s}"`,
+    Object.fromEntries(SOURCE_LOCALES.map((l) => [l, sourcesIn[l][s] ?? ""])),
+  );
 
 if (errors.length > 0) {
   console.error(errors.join("\n"));

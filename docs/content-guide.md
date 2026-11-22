@@ -141,10 +141,13 @@ in `data-checks.md`; this is what it cannot check.
   works. Open the source and check the locator; what cannot be opened is softened or cut.
   Never a locator from memory.
 - Quotations in English only from the KJV, word for word.
-- Sources are written in English. A line of the site's own ("History Globe tour …",
-  "Straight-line distance between the places' points …") is read in every language: its
-  other languages are in `content/sources-own.yaml`, with the tour and question titles and
-  the place names the site uses in each (the build stops without them).
+- Sources are written in English. Each line has its translation in every other language in
+  `content/sources-<code>.yaml` (the build stops without one, and on a translation nothing
+  cites): ancient works by the language's own titles, notes in the language, Bible
+  references in its books (Russian: the Synodal books and numbering); modern scholarship
+  stays as published. Lines of the site's own ("History Globe tour …") use the tour,
+  question and event titles and the place names the site uses in each language; the site's
+  dated events and battles are named by their titles, never by their ids.
 - The title names the article apart from its namesakes (Вавилон, Вавилония): the list of
   articles shows it.
 - The cycle that converges: a writer, then an independent reviewer who opens the sources
@@ -157,11 +160,9 @@ in `data-checks.md`; this is what it cannot check.
   in `place-names.yaml`.
 - Typography (the build checks): «» quotes, an em dash between words (the digital Synodal
   text sets hyphens: quote it with dashes), no double spaces.
-- Each source line has its Russian in `content/sources-ru.yaml` (the build stops without
-  one): ancient works by their Russian titles («Флавий, «Иудейская война»»), notes in
-  Russian, Bible references in the Synodal books and numbering; modern scholarship stays as
-  published, as Russian bibliographies cite it. The same holds for the sources of questions
-  and of `place-life.yaml`.
+- Source lines in Russian (`content/sources-ru.yaml`): ancient works by their Russian
+  titles («Флавий, «Иудейская война»»), Bible references in the Synodal books and
+  numbering; modern scholarship as Russian bibliographies cite it.
 
 ## Photos (`content/photos.yaml`)
 

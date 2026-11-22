@@ -692,29 +692,18 @@ export const QuestionFile = z.strictObject({
 export type QuestionFile = z.output<typeof QuestionFile>;
 
 /**
- * Source lines in Russian (content/sources-ru.yaml): each line of an article's, a question's
- * or a place's years' sources, as written, to the line a Russian reader reads — ancient works
- * by their Russian titles, notes in Russian, modern scholarship as it was published.
+ * Source lines in one language (content/sources-<code>.yaml, every language but English):
+ * each line of an article's, a question's or a place's years' sources, as written in
+ * English, to the line a reader of that language reads. Ancient works by the language's
+ * own titles, notes in the language, Bible references in its books; modern scholarship as
+ * it was published.
  */
-export const SourcesRuFile = z.record(z.string().min(1), z.string().min(1));
+export const SourcesFile = z.record(z.string().min(1), z.string().min(1));
 
-/**
- * The site's own lines among the sources ("History Globe tour …", "Straight-line distance
- * between the places' points …", content/sources-own.yaml), in the languages other than
- * English and Russian: each line to its translation in every one of them.
- */
-export const SourcesOwnFile = z.record(z.string().min(1), z.record(z.string(), z.string().min(1)));
-/**
- * A source line the site wrote itself, or that names its own pages or data (sources-own.yaml):
- * its own measurements too, straight-line and along the Roman roads of Itiner-e.
- */
-export const OWN_SOURCE =
-  /History Globe|^Straight-line|^Length along the Roman roads|^Road lengths along|^Land legs summed/;
-
-/** An article or a question as the build writes it: its sources in Russian beside them. */
+/** An article or a question as the build writes it: its sources in the other languages. */
 export interface WithSourcesRu {
   readonly sources_ru?: readonly string[];
-  /** In the other languages, where the list has a line of the site's own (sources-own.yaml). */
+  /** In the languages but English and Russian, where a line reads differently from the English. */
   readonly sources_in?: Readonly<Partial<Record<Locale, readonly string[]>>>;
 }
 
@@ -839,7 +828,7 @@ export interface PlaceLife {
   readonly sources: readonly string[];
   /** The sources as a Russian reader reads them (content/sources-ru.yaml). */
   readonly sources_ru?: readonly string[];
-  /** The sources in the other languages, where they have a line of the site's own. */
+  /** The sources in the other languages, where a line reads differently from the English. */
   readonly sources_in?: Readonly<Partial<Record<Locale, readonly string[]>>>;
   /** Taken over from the city it lies in: says nothing of when the place itself began. */
   readonly inherited?: true;
