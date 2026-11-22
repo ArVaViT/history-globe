@@ -89,9 +89,7 @@
     "photo": "Foto",
     "photo_pd": "pubblico dominio",
     "photo_shows": "Nella foto: {{site}}, uno dei siti proposti.",
-    "verse_synodal": "Traduzione sinodale",
-    "verse_kjv": "King James Version",
-    "verse_own": "Riveduta 1927 (pubblico dominio)",
+    "verse_own": "Riveduta 1927",
     "verse_open": "Apri su BibleGateway",
     "life_from": "Esistente dal {{year}}",
     "life_until": "fino al {{year}}",
@@ -369,5 +367,6 @@
   },
   "a11y": {
     "opened": "Aperto: {{name}}"
-  }
+  },
+  "tagline": "atlante di storia biblica"
 }

@@ -89,9 +89,7 @@
     "photo": "Фото",
     "photo_pd": "суспільне надбання",
     "photo_shows": "На знімку {{site}} — одна з версій.",
-    "verse_synodal": "Синодальний переклад",
     "verse_open": "Відкрити на BibleGateway",
-    "verse_kjv": "King James Version",
     "verse_own": "Переклад П. Куліша та І. Пулюя (1905)",
     "life_from": "Час існування: з {{year}}",
     "life_until": "до {{year}}",
@@ -369,5 +367,6 @@
   },
   "a11y": {
     "opened": "Відкрито: {{name}}"
-  }
+  },
+  "tagline": "атлас біблійної історії"
 }

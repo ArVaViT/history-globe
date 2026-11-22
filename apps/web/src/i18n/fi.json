@@ -84,9 +84,7 @@
     "photo": "Valokuva",
     "photo_pd": "tekijänoikeudeton",
     "photo_shows": "Kuvassa: {{site}}, yksi ehdotetuista sijaintipaikoista.",
-    "verse_synodal": "Synodaalikäännös",
-    "verse_kjv": "King James Version",
-    "verse_own": "Raamattu 1933/1938 (tekijänoikeudeton)",
+    "verse_own": "Raamattu 1933/1938",
     "verse_open": "Avaa BibleGatewayssa",
     "life_from": "Olemassa vuodesta {{year}}",
     "life_until": "vuoteen {{year}}",
@@ -358,5 +356,6 @@
   },
   "a11y": {
     "opened": "Avattu: {{name}}"
-  }
+  },
+  "tagline": "Raamatun historian atlas"
 }

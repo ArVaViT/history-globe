@@ -306,15 +306,17 @@ description: Puneți globul pe propriul site cu un singur rând — harta unui c
   hartă (au fost omise sau nu au niciun punct); ID-urile lor sunt ignorate.
 </p>
 
-<h2 id="example-the-map-follows-your-reader">Exemplu: harta urmează cititorul dumneavoastră</h2>
+<h2 id="example-the-map-follows-your-reader">
+  Exemplu: harta urmează aplicația dumneavoastră biblică
+</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
-// Când cititorul dumneavoastră deschide un capitol, arătați-l pe hartă.
+// Când aplicația dumneavoastră biblică deschide un capitol, arătați-l pe hartă.
 function showChapter(osis) {
   globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
 }
 
-// Când se dă clic pe un verset pe hartă, deschideți-l în cititorul dumneavoastră.
+// Când se dă clic pe un verset pe hartă, deschideți-l în aplicația dumneavoastră biblică.
 window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);

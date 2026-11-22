@@ -303,15 +303,15 @@ description: Lägg globen på din egen webbplats med en enda rad – kartan öve
   utan punkt); deras id:n ignoreras.
 </p>
 
-<h2 id="example-the-map-follows-your-reader">Exempel: kartan följer din läsare</h2>
+<h2 id="example-the-map-follows-your-reader">Exempel: kartan följer din bibelapp</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
-// Läsaren öppnar ett kapitel – visa det på kartan.
+// Bibelappen öppnar ett kapitel – visa det på kartan.
 function showChapter(osis) {
   globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
 }
 
-// En vers klickas på kartan – öppna den i din läsare.
+// En vers klickas på kartan – öppna den i din bibelapp.
 window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);

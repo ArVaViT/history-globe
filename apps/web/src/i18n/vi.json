@@ -79,9 +79,7 @@
     "photo": "Ảnh",
     "photo_pd": "phạm vi công cộng",
     "photo_shows": "Trong ảnh: {{site}}, một trong những vị trí được đề xuất.",
-    "verse_synodal": "Bản dịch Synodal",
-    "verse_kjv": "Bản King James",
-    "verse_own": "Kinh Thánh, bản dịch Cadman (1925) (phạm vi công cộng)",
+    "verse_own": "Kinh Thánh, bản dịch Cadman (1925)",
     "verse_open": "Mở trên BibleGateway",
     "life_from": "Tồn tại từ {{year}}",
     "life_until": "đến {{year}}",
@@ -347,5 +345,6 @@
   },
   "a11y": {
     "opened": "Đã mở: {{name}}"
-  }
+  },
+  "tagline": "tập bản đồ lịch sử Kinh Thánh"
 }

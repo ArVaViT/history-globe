@@ -82,10 +82,8 @@
     "also_here": "Også her",
     "google_maps": "Google Maps",
     "photo": "Foto",
-    "photo_pd": "public domain",
+    "photo_pd": "uden ophavsret",
     "photo_shows": "På billedet: {{site}}, en af de foreslåede lokaliteter.",
-    "verse_synodal": "Synodaloversættelsen",
-    "verse_kjv": "King James Version",
     "verse_own": "Bibelen 1871/1907",
     "verse_open": "Åbn på BibleGateway",
     "life_from": "Eksisterede fra {{year}}",
@@ -358,5 +356,6 @@
   },
   "a11y": {
     "opened": "Åbnet: {{name}}"
-  }
+  },
+  "tagline": "et atlas over bibelsk historie"
 }

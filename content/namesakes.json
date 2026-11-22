@@ -1,0 +1,37 @@
+{
+  "_about": "Places whose name in a language is another place's name too, and the word their page title adds in brackets to tell them apart («Ефиопия (Нубия)», «Афек (Антипатрида)»), as the English titles add where a namesake is today. The word names no other place on the map; the name itself stays the Bible's. Read by scripts/build-pages.ts, which stops when two pages search engines index still share a title.",
+  "places": {
+    "ac5a1ec": {
+      "ru": "Нубия",
+      "uk": "Нубія",
+      "es": "Nubia",
+      "it": "Nubia",
+      "vi": "Nubia"
+    },
+    "a3e66cd": {
+      "ru": "Арам"
+    },
+    "a7b2e63": {
+      "en": "Antipatris",
+      "bg": "Антипатрида",
+      "cs": "Antipatris",
+      "da": "Antipatris",
+      "de": "Antipatris",
+      "fi": "Antipatris",
+      "fr": "Antipatris",
+      "hu": "Antipatrisz",
+      "it": "Antipatride",
+      "nb": "Antipatris",
+      "nl": "Antipatris",
+      "pl": "Antypatryda",
+      "pt": "Antipátride",
+      "ro": "Antipatrida",
+      "ru": "Антипатрида",
+      "sr": "Антипатрида",
+      "sv": "Antipatris",
+      "tl": "Antipatris",
+      "uk": "Антипатрида",
+      "vi": "An-ti-ba-tri"
+    }
+  }
+}

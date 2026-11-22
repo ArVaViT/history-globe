@@ -655,9 +655,11 @@ export function App({ link }: { link: UrlView }) {
   const placeName = selected ? nameOf(selected, state.locale) : undefined;
   const tourName = tour && state.tour ? pick(tour.title, state.locale) : undefined;
   const openName = tourName && placeName ? `${tourName} · ${placeName}` : (placeName ?? tourName);
+  // Nothing open: the site's name and what it is, in the reader's language.
+  const tagline = t("tagline");
   useEffect(() => {
-    document.title = openName ? `${openName} — History Globe` : "History Globe";
-  }, [openName]);
+    document.title = openName ? `${openName} — History Globe` : `History Globe — ${tagline}`;
+  }, [openName, tagline]);
   // The card beside the map takes the focus from the control that opened it and gives it
   // back when it closes (focus.ts); the live region says what opened.
   const cardBox = useRef<HTMLElement>(null);

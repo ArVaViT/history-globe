@@ -307,15 +307,15 @@ description: Tuo maapallo omalle sivustollesi yhdellä rivillä — luvun, paika
   on jätetty pois, tai niillä ei ole pistettä lainkaan); niiden tunnisteet ohitetaan.
 </p>
 
-<h2 id="example-the-map-follows-your-reader">Esimerkki: kartta seuraa lukijaasi</h2>
+<h2 id="example-the-map-follows-your-reader">Esimerkki: kartta seuraa raamattusovellustasi</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
-// Kun lukijasi avaa luvun, näytä se kartalla.
+// Kun raamattusovelluksesi avaa luvun, näytä se kartalla.
 function showChapter(osis) {
   globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
 }
 
-// Kun kartalla napsautetaan jaetta, avaa se lukijassasi.
+// Kun kartalla napsautetaan jaetta, avaa se raamattusovelluksessasi.
 window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);

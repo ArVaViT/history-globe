@@ -84,9 +84,7 @@
     "photo": "Foto",
     "photo_pd": "gemeinfrei",
     "photo_shows": "Im Bild: {{site}}, eine der vorgeschlagenen Stätten.",
-    "verse_synodal": "Synodalübersetzung",
-    "verse_kjv": "King James Version",
-    "verse_own": "Lutherbibel 1912 (gemeinfrei)",
+    "verse_own": "Lutherbibel 1912",
     "verse_open": "Auf BibleGateway öffnen",
     "life_from": "Bestand ab {{year}}",
     "life_until": "bis {{year}}",
@@ -358,5 +356,6 @@
   },
   "a11y": {
     "opened": "Geöffnet: {{name}}"
-  }
+  },
+  "tagline": "ein Atlas der biblischen Geschichte"
 }

@@ -39,6 +39,7 @@ repository is for those who work on it (decisions, checks, how the data is built
 | -------------------------------------- | ----------------------------------------------------------------------------------- |
 | `place-names.yaml`                     | Russian names of the places, as the Synodal text spells them                        |
 | `names-<lang>.yaml`                    | names in the other languages: places, states, modern names and people               |
+| `namesakes.json`                       | the word a page title adds to tell a place from another of the same name            |
 | `modern-names.yaml`                    | Russian forms of the modern names of sites                                          |
 | `polity-names.yaml`                    | Russian names of Cliopatria's states                                                |
 | `place-points.json`                    | places whose point is chosen by hand, with the reason                               |
