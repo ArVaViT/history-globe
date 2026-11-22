@@ -88,6 +88,11 @@ the data first (`pnpm data`).
   the labels it leaves out. Each must still hold in the wave files: the site there, with those
   years and the reason in its sources, that name or kind, no name Wikidata gave where it was
   refused (only ours, `pipeline/ancient/names-cyrillic.json`), no left-out label among them.
+- **A place changes hands in the year of its event**: the map shows the state that took a
+  place from the year of the event that tells it (content/polity-overrides.yaml, header). An
+  event, a battle, a question's map or a tour stop at a place whose card names one state in
+  its year and another the year after is refused, unless listed in `TRANSFER_LAG` with the
+  reason (a battle that was not the transfer, a siege the year before the fall).
 - **Faded in their own year**: an event, a battle or a question's map at a place the map
   draws faded in that year (as for the tours) is refused, unless it is the year the place
   falls, or it is listed in `FADED_ITEMS` with the reason.

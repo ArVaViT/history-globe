@@ -422,11 +422,11 @@ export function buildPolities({
       for (const list of [polities.features, polityLabels.features])
         for (const f of list.filter(
           // Any shape of the polity standing in those years, a copy made by another
-          // correction too (an extension, the years after another clip), but not one another
-          // clip has already cut: each clip cuts only its own copies.
+          // correction too (an extension, another clip's copy of overlapping years: the
+          // Seljuk coast of 1072-1103 and Antioch in 1098), but not one this clip made.
           (g) =>
             g.properties.name === c.polity &&
-            g.properties.clipped === undefined &&
+            g.properties.clipped !== k &&
             g.properties.y0 < b &&
             a < g.properties.y1,
         )) {

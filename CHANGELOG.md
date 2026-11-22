@@ -43,6 +43,10 @@ pull requests on GitHub have them.
   in 32 BC); Odoacer's Italy (476-492) is drawn; Jerusalem is Persian from 614, Frankish in
   1229-1243 and Ayyubid until 1259; the Fatimid coast with Acre and Tyre until 1104 and 1124;
   the Hasmoneans independent from 142 BC; Babylonia under Assyria from 647 BC.
+- States: a place passes to the state that took it in the year of the event that tells it
+  (Samaria 722 BC, Jerusalem 586 BC, Babylon 539 BC, Carthage and Corinth 146 BC, Jerusalem
+  1187, Acre 1191 and 1291, Constantinople 1204 and 1261, and others); the build checks it.
+  Rome is Roman from 536 and again from 552; Syria is Mamluk from 1260, not Mongol.
 - Places: Persia stands in Fars (Wikidata's Persis), no longer on Ecbatana.
 
 ## 2026-11-04 to 2026-11-07
