@@ -129,7 +129,9 @@ the data first (`pnpm data`).
   each with a reason and sources, applied to the pipeline's states (`pipeline/.cache`) on
   every run, never to what an earlier run wrote; copies are marked `src: "override"`.
   Kinds: `overrides` (last year), `seams` (a change of shape moved from Cliopatria's round
-  year to the year it happened: Israel and Judah divided in 931 BC, not 901), `starts` (first
+  year to the year it happened: Israel and Judah divided in 931 BC, not 901; refused when it
+  draws the state over a neighbour that changes shape in the same round year, where a clip of
+  the land that changed hands is the fix), `starts` (first
   year), `clips` (cut to an area),
   `absent` (years it did not exist), `renamed` (a new name from a year, for a polity the
   data names by one era too long), `bridges` (years the data leaves it off), `annexed` (its

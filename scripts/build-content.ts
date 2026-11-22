@@ -58,6 +58,7 @@ import {
   eventBattleLinks,
   fadedState,
   fallsIn,
+  lateTransfers,
   givesFigure,
   nearDistance,
   ownDistances,
@@ -980,8 +981,6 @@ for (const where of FADED_ITEMS.keys())
   const rulers = written
     ? (JSON.parse(written[1]) as { places: Record<string, [number, number, number][]> }).places
     : {};
-  const stateAt = (place: string, year: number) =>
-    rulers[place]?.find(([a, b]) => a <= year && year < b)?.[2];
   const items: [where: string, place: string | undefined, year: number][] = [
     ...fadedItems,
     ...events.flatMap((e): [string, string, number][] =>
@@ -995,20 +994,7 @@ for (const where of FADED_ITEMS.keys())
       ]),
     ),
   ];
-  const late = new Set<string>();
-  for (const [where, place, year] of items) {
-    if (place === undefined) continue;
-    const now = stateAt(place, year);
-    const next = stateAt(place, year + 1);
-    if (now === undefined || now === next) continue;
-    late.add(where);
-    if (!TRANSFER_LAG.has(where))
-      errors.push(
-        `${where}: the map changes the state of ${place} the year after ${String(year)}: a place passes to its new state in the year of the event (TRANSFER_LAG for a real exception)`,
-      );
-  }
-  for (const where of TRANSFER_LAG.keys())
-    if (!late.has(where)) errors.push(`TRANSFER_LAG: ${where} no longer needs it; take it out`);
+  errors.push(...lateTransfers(items, rulers, TRANSFER_LAG));
 }
 
 // The same passage at the same place, dated years apart in two files: a tour stop at its

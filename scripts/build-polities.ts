@@ -57,6 +57,80 @@ export function moveSeams(
   }
 }
 
+type Shaped = {
+  geometry: unknown;
+  properties: { name: string; y0: number; y1: number; rel?: boolean };
+};
+
+/**
+ * Overrides `seams`, checked on the finished shapes: in the years a seam moved, the state
+ * must not cover a neighbour more than its shapes cover that neighbour's shape of the data's
+ * own year (Cliopatria changes the neighbours' shapes in the same round year too: the
+ * Ayyubid shape of 1188 moved to 1187 lay over the Zengids' shape of 1187). Square degrees,
+ * with `slack` for the redrawing of a shared border.
+ */
+export function seamOverlaps(
+  shapes: readonly Shaped[],
+  seams: readonly { polity: string; data_year: number; first_year: number }[],
+  slack = 0.05,
+): string[] {
+  const errors: string[] = [];
+  const polys = (f: Shaped): Ring[][] => polysOf(f.geometry as Geometry);
+  const boxes = new Map<Shaped, readonly [number, number, number, number]>();
+  const box = (f: Shaped) => {
+    let b = boxes.get(f);
+    if (!b) {
+      const xs = polys(f).flatMap((p) => (p[0] ?? []).map(([x]) => x));
+      const ys = polys(f).flatMap((p) => (p[0] ?? []).map(([, y]) => y));
+      b = [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)];
+      boxes.set(f, b);
+    }
+    return b;
+  };
+  const near = (a: Shaped, b: Shaped) => {
+    const [ax0, ay0, ax1, ay1] = box(a);
+    const [bx0, by0, bx1, by1] = box(b);
+    return !(ax1 < bx0 || bx1 < ax0 || ay1 < by0 || by1 < ay0);
+  };
+  const meet = (a: Shaped, b: Shaped): number =>
+    near(a, b)
+      ? booleanOp(polys(a).flat(), polys(b).flat(), "intersection").reduce(
+          (sum, poly) =>
+            sum + areaOf(poly[0] ?? []) - poly.slice(1).reduce((h, r) => h + areaOf(r), 0),
+          0,
+        )
+      : 0;
+  const live = (f: Shaped, a: number, b: number) =>
+    !f.properties.rel && f.properties.y0 < b && a < f.properties.y1;
+  for (const s of seams) {
+    const lo = Math.min(s.first_year, s.data_year);
+    const hi = Math.max(s.first_year, s.data_year);
+    // The year the data itself draws the moved shapes in.
+    const own = s.first_year < s.data_year ? s.data_year : s.data_year - 1;
+    for (const e of shapes) {
+      if (e.properties.name !== s.polity || !live(e, lo, hi)) continue;
+      const a = Math.max(lo, e.properties.y0);
+      const b = Math.min(hi, e.properties.y1);
+      const others = shapes.filter(
+        (g) => g.properties.name !== s.polity && !g.properties.rel && near(e, g),
+      );
+      for (const g of others) {
+        if (!live(g, a, b)) continue;
+        const name = g.properties.name;
+        const base = others
+          .filter((h) => h.properties.name === name && live(h, own, own + 1))
+          .reduce((sum, h) => sum + meet(e, h), 0);
+        const over = meet(e, g) - base;
+        if (over > slack)
+          errors.push(
+            `polity-overrides: seam "${s.polity}" draws it over ${name} (${over.toFixed(2)} square degrees more than in ${String(own)}): ${name} changes shape in that year too; clip the land that changed hands instead`,
+          );
+      }
+    }
+  }
+  return errors;
+}
+
 type Drawn = { geometry: unknown; properties: Record<string, unknown> };
 
 /**
@@ -1246,6 +1320,7 @@ export function buildPolities({
   polities.features = polities.features.filter((f) => f.properties.y1 > f.properties.y0);
   polityLabels.features = polityLabels.features.filter((f) => f.properties.y1 > f.properties.y0);
 
+  errors.push(...seamOverlaps(polities.features, overridesFile.seams ?? []));
   checkPolities({
     shapes: polities.features as ShipFeature[],
     clips: (overridesFile.clips ?? []).map((c) => ({

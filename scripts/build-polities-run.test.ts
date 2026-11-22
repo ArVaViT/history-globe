@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { mkdtempSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { buildPolities, drawnFromCut, moveSeams } from "./build-polities.ts";
+import { buildPolities, drawnFromCut, moveSeams, seamOverlaps } from "./build-polities.ts";
 import type { Ring } from "./geo.ts";
 
 const box = (x0: number, y0: number, x1: number, y1: number): Ring => [
@@ -143,6 +143,26 @@ describe("moveSeams", () => {
       errors,
     );
     expect(errors.join("\n")).toMatch(/no shape begins in -950[\s\S]*moves past a whole shape/);
+  });
+});
+
+describe("seamOverlaps", () => {
+  const shape = (name: string, y0: number, y1: number, r: Ring) => ({
+    geometry: { type: "Polygon", coordinates: [r] },
+    properties: { name, y0, y1 },
+  });
+  // A grows east over B's land in year 10, when B gives that land up: A's seam moved to 8.
+  const a = [shape("A", 0, 8, box(0, 0, 2, 2)), shape("A", 8, 20, box(0, 0, 4, 2))];
+  const seam = [{ polity: "A", data_year: 10, first_year: 8 }];
+  it("refuses a seam that draws a state over a neighbour that changes in the same year", () => {
+    const b = [shape("B", 0, 10, box(2, 0, 6, 2)), shape("B", 10, 20, box(4, 0, 6, 2))];
+    expect(seamOverlaps([...a, ...b], seam)).toEqual([
+      expect.stringMatching(/seam "A" draws it over B \(4\.00 square degrees more than in 10\)/),
+    ]);
+  });
+  it("passes one whose neighbours keep their shapes", () => {
+    const b = [shape("B", 0, 20, box(4, 0, 6, 2))];
+    expect(seamOverlaps([...a, ...b], seam)).toEqual([]);
   });
 });
 

@@ -190,6 +190,7 @@ anchors:
     at: [39.03, 36.86]
     periods:
       - { first_year: "612 BC", last_year: "611 BC", polity: Neo-Assyrian Empire }
+      - { first_year: "610 BC", last_year: "602 BC", polity: Babylonia }
     sources:
       - "Babylonian Chronicle ABC 3"
 
@@ -533,9 +534,10 @@ anchors:
     at: [21.86, 32.82]
     periods:
       - { first_year: "450 BC", last_year: "405 BC", polity: Achaemenid Empire }
+      - { first_year: "332 BC", last_year: "330 BC", polity: Cyrenaica }
     blank:
       - first_year: "404 BC"
-        last_year: "344 BC"
+        last_year: "333 BC"
         reason: >-
           Cyrene and the Greek cities of Cyrenaica were independent of Persia and of Egypt;
           no state of theirs is drawn.

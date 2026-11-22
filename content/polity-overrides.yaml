@@ -91,7 +91,7 @@ overrides:
   - polity: Neo-Assyrian Empire
     last_year: "611 BC"
     reason: >-
-      Nineveh fell to the Medes and Babylonians in 612 BC; the last king, Ashur-uballit II, held out at Harran until the Babylonians and the Medes took it in 610 BC (event harran-falls), and his attempt to retake it in 609 failed. Cliopatria draws the empire until 601 BC; the map ends it in 611 BC, and its land after that is left without a state rather than given the wrong one.
+      Nineveh fell to the Medes and Babylonians in 612 BC; the last king, Ashur-uballit II, held out at Harran until the Babylonians and the Medes took it in 610 BC (event harran-falls), and his attempt to retake it in 609 failed. Cliopatria draws the empire until 601 BC; the map ends it in 611 BC. Harran is Babylon's from 610 (extends); the heartland around Nineveh and Assur, which the Medes and the Babylonians divided in ways the sources do not draw, is left without a state until Cliopatria's shapes of 600 BC.
     sources:
       - "Babylonian Chronicle ABC 3 (Fall of Nineveh Chronicle)"
       - "Wikipedia, Ashur-uballit II; Fall of Nineveh"
@@ -288,17 +288,13 @@ overrides:
     sources:
       - "Pausanias 7.15-16"
       - "Polybius 38.9-18"
-  - polity: Sumerian City-States
-    last_year: "1764 BC"
-    reason: >-
-      Cliopatria's last shape of the Sumerian cities, Rim-Sin's kingdom of Larsa, runs to 1761 BC. Hammurabi took Larsa about 1763 BC (event larsa-conquered, middle chronology); the land is Babylon's from then (seams).
-    sources:
-      - "M. Van De Mieroop, King Hammurabi of Babylon: A Biography (2005)"
-      - "Wikipedia, Rim-Sin I (Larsa taken by Hammurabi c. 1763 BC)"
 
 # A change of shape Cliopatria puts at a round year, moved to the year it happened
 # (build-content.ts): the shapes that begin in `data_year` begin in `first_year`, and the
 # shapes before them end then.
+# Only for a change no neighbour shares: when the neighbours' shapes change in the same
+# round year, the build refuses the seam (it would draw one state over another), and a clip
+# of the land that changed hands is used instead (Hattin 1187, Acre 1191, Larsa 1763 BC).
 seams:
   - polity: Kingdom of Israel
     data_year: "901 BC"
@@ -317,44 +313,6 @@ seams:
     sources:
       - "1 Kgs 12:16-24"
       - "E. R. Thiele, The Mysterious Numbers of the Hebrew Kings, new rev. ed. (1983)"
-
-  - polity: Babylonia
-    data_year: "1761 BC"
-    first_year: "1763 BC"
-    reason: >-
-      Hammurabi's Babylonia with Larsa and the south, from his conquest of Larsa about 1763 BC (event larsa-conquered), as above.
-    sources:
-      - "M. Van De Mieroop, King Hammurabi of Babylon: A Biography (2005)"
-  - polity: Kingdom of Jerusalem
-    data_year: "AD 1188"
-    first_year: "AD 1187"
-    reason: >-
-      Cliopatria reduces the kingdom to Tyre from 1188. Saladin destroyed its army at Hattin on 4 July 1187, took Acre and the other towns that summer and Jerusalem on 2 October (events hattin, jerusalem-saladin); only Tyre held out. The map shows the change from 1187.
-    sources:
-      - "S. Runciman, A History of the Crusades, vol. 2 (1952)"
-      - "Ibn Shaddad, The Rare and Excellent History of Saladin, tr. D. S. Richards (2001)"
-  - polity: Ayyubid Sultanate
-    data_year: "AD 1188"
-    first_year: "AD 1187"
-    reason: >-
-      The Ayyubid side of the same change: Saladin's conquests of 1187.
-    sources:
-      - "S. Runciman, A History of the Crusades, vol. 2 (1952)"
-  - polity: Kingdom of Jerusalem
-    data_year: "AD 1192"
-    first_year: "AD 1191"
-    reason: >-
-      Cliopatria gives the coast back to the kingdom from 1192. The Third Crusade took Acre on 12 July 1191 (event acre-1191) and Arsuf and Jaffa in September; the map shows the restored coast from 1191.
-    sources:
-      - "S. Runciman, A History of the Crusades, vol. 3 (1954)"
-      - "Ibn Shaddad, The Rare and Excellent History of Saladin, tr. D. S. Richards (2001)"
-  - polity: Ayyubid Sultanate
-    data_year: "AD 1192"
-    first_year: "AD 1191"
-    reason: >-
-      The Ayyubid side of the same change, as above.
-    sources:
-      - "S. Runciman, A History of the Crusades, vol. 3 (1954)"
 
 starts:
   - polity: Kingdom of Israel
@@ -408,17 +366,10 @@ starts:
     sources:
       - "Anonymus Valesianus, Pars Posterior 11.53-56"
       - "J. Moorhead, Theoderic in Italy (1992), ch. 1"
-  - polity: Principality of Antioch
-    first_year: "AD 1098"
-    reason: >-
-      Cliopatria draws the principality from 1099. The crusaders took Antioch on 3 June 1098 (event antioch-crusade-1098) and Bohemond held it from then; the land is cut from the Seljuk shape of that year (clips).
-    sources:
-      - "Gesta Francorum 8.20"
-      - "S. Runciman, A History of the Crusades, vol. 1 (1951)"
   - polity: Kingdom of Cyprus
     first_year: "AD 1191"
     reason: >-
-      Cliopatria draws the Lusignan kingdom from 1192 and Cyprus as Byzantine before it. Richard I took the island from Isaac Comnenus in May 1191 (event cyprus-1191), sold it to the Templars and in 1192 to Guy of Lusignan; the map shows Cyprus under the Latins from 1191, with the kingdom's name.
+      Cliopatria draws the Lusignan kingdom from 1192 and Cyprus as Byzantine before it. Richard I took the island from Isaac Comnenus in May 1191 (event cyprus-1191) and sold it to the Templars, who held it into 1192; Guy of Lusignan bought it in 1192 and ruled it as lord until 1194, and his brother Aimery was crowned king in 1197. The map shows Cyprus as Latin from 1191; the name of the kingdom for 1191-1196 is Cliopatria's simplification, kept here.
     sources:
       - "Roger of Howden, Gesta Regis Ricardi"
       - "P. W. Edbury, The Kingdom of Cyprus and the Crusades, 1191-1374 (1991)"
@@ -1002,7 +953,7 @@ clips:
     last_year: "385 BC"
     leaves_blank: true
     reason: >-
-      Cliopatria draws Cyrenaica as Persian until 384 BC and as part of the Thirtieth Dynasty's Egypt after it. Cyrene and the Greek cities of Cyrenaica were independent of both in the 4th century BC; no state of theirs is drawn, so the land is left blank in 404-344 BC.
+      Cliopatria draws Cyrenaica as Persian until 384 BC and as part of the Thirtieth Dynasty's Egypt after it. Cyrene and the Greek cities of Cyrenaica were independent of both in the 4th century BC; no state of theirs is drawn, so the land is left blank in 404-333 BC (and below).
     sources:
       - "Diodorus Siculus 18.19-21"
       - "Wikipedia, Cyrenaica (Greek period)"
@@ -1371,31 +1322,34 @@ clips:
   - polity: Great Seljuk Empire
     # The principality of Antioch as Cliopatria draws it in 1099.
     without:
-      - [35.89, 35.26]
-      - [35.99, 35.52]
-      - [35.84, 35.58]
-      - [35.87, 35.84]
-      - [35.99, 36.22]
-      - [35.85, 36.35]
-      - [36.27, 36.61]
-      - [36.27, 36.67]
-      - [36.51, 36.74]
-      - [36.69, 36.93]
-      - [36.84, 36.93]
-      - [36.84, 36.87]
-      - [36.67, 36.8]
-      - [36.62, 36.29]
-      - [36.46, 36.22]
-      - [36.43, 35.97]
-      - [36.35, 35.97]
-      - [36.37, 35.45]
-      - [36.11, 35.19]
-      - [35.88, 35.19]
+      - [35.889, 35.258]
+      - [35.993, 35.516]
+      - [35.845, 35.58]
+      - [35.872, 35.838]
+      - [35.99, 36.224]
+      - [35.849, 36.353]
+      - [36.265, 36.61]
+      - [36.272, 36.675]
+      - [36.512, 36.739]
+      - [36.69, 36.933]
+      - [36.768, 36.933]
+      - [36.845, 36.933]
+      - [36.838, 36.868]
+      - [36.675, 36.804]
+      - [36.618, 36.288]
+      - [36.456, 36.224]
+      - [36.428, 35.966]
+      - [36.35, 35.966]
+      - [36.373, 35.451]
+      - [36.114, 35.194]
+      - [35.96, 35.194]
+      - [35.882, 35.194]
     first_year: "AD 1098"
     last_year: "AD 1098"
     to: Principality of Antioch
+    drawn_from_cut: true
     reason: >-
-      Antioch was the crusaders' from June 1098 (starts); the land of the principality is cut from the Seljuk shape of that year.
+      Cliopatria draws the principality from 1099. The crusaders took Antioch on 3 June 1098 (event antioch-crusade-1098) and Bohemond held it from then; the Seljuk land within the principality of 1099 is drawn as the principality's in 1098. Land the Seljuks did not hold that year (the Byzantine coast) is left as the data draws it.
     sources:
       - "Gesta Francorum 8.20"
       - "S. Runciman, A History of the Crusades, vol. 1 (1951)"
@@ -1546,6 +1500,82 @@ clips:
     sources:
       - "Ibn al-Qalanisi, The Damascus Chronicle of the Crusades, tr. H. A. R. Gibb (1932), AH 468"
       - "K. M. Setton (ed.), A History of the Crusades, vol. 1 (1955)"
+  - polity: Kingdom of Jerusalem
+    # All of the kingdom but Tyre and its land, as Cliopatria draws what was left of it in
+    # 1188 (the ring runs round that land).
+    without:
+      - [34.0, 29.0]
+      - [37.0, 29.0]
+      - [37.0, 34.5]
+      - [34.0, 34.5]
+      - [34.0, 33.5]
+      - [35.1, 33.5]
+      - [35.346, 33.65]
+      - [35.435, 33.779]
+      - [35.665, 33.779]
+      - [35.806, 33.65]
+      - [35.776, 33.329]
+      - [35.445, 33.072]
+      - [35.1, 33.136]
+      - [34.0, 33.136]
+    first_year: "AD 1187"
+    last_year: "AD 1187"
+    to: Ayyubid Sultanate
+    reason: >-
+      Cliopatria reduces the kingdom to Tyre from 1188. Saladin destroyed its army at Hattin on 4 July 1187, took Acre and the other towns of the kingdom that summer and Jerusalem on 2 October (events hattin, jerusalem-saladin); only Tyre held out. The kingdom's land but Tyre is drawn as Ayyubid from 1187. His northern campaign against Tripoli and Antioch (Latakia, Jabala, Sahyun, Baghras) was in 1188 and stays as the data draws it.
+    sources:
+      - "S. Runciman, A History of the Crusades, vol. 2 (1952)"
+      - "Ibn Shaddad, The Rare and Excellent History of Saladin, tr. D. S. Richards (2001)"
+  - polity: Ayyubid Sultanate
+    # The coastal plain from Acre to Jaffa.
+    without:
+      - [34.95, 33.05]
+      - [35.15, 33.05]
+      - [35.15, 32.75]
+      - [35.0, 32.5]
+      - [34.95, 32.2]
+      - [34.88, 31.95]
+      - [34.6, 31.95]
+      - [34.6, 32.2]
+      - [34.8, 32.6]
+      - [34.9, 32.95]
+    first_year: "AD 1191"
+    last_year: "AD 1191"
+    to: Kingdom of Jerusalem
+    reason: >-
+      Cliopatria gives the coast back to the kingdom from 1192. The Third Crusade took Acre on 12 July 1191 (event acre-1191), won at Arsuf on 7 September and took Jaffa after it; the coast from Acre to Jaffa is drawn as the kingdom's from 1191. The rest of the treaty of Jaffa's coast follows the data from 1192.
+    sources:
+      - "S. Runciman, A History of the Crusades, vol. 3 (1954)"
+      - "Ibn Shaddad, The Rare and Excellent History of Saladin, tr. D. S. Richards (2001)"
+  - polity: Sumerian City-States
+    # All of Rim-Sin's kingdom of Larsa.
+    without:
+      - [40.0, 25.0]
+      - [52.0, 25.0]
+      - [52.0, 38.0]
+      - [40.0, 38.0]
+    first_year: "1763 BC"
+    last_year: "1762 BC"
+    to: Babylonia
+    reason: >-
+      Cliopatria's last shape of the Sumerian cities, Rim-Sin's kingdom of Larsa, runs to 1762 BC. Hammurabi took Larsa about 1763 BC (event larsa-conquered, middle chronology); its land is drawn as Babylon's from then. Elam's and Babylon's other borders change in 1761 BC as the data draws them.
+    sources:
+      - "M. Van De Mieroop, King Hammurabi of Babylon: A Biography (2005)"
+      - "Wikipedia, Rim-Sin I (Larsa taken by Hammurabi c. 1763 BC)"
+  - polity: Achaemenid Empire
+    # Cyrenaica, west of Catabathmus.
+    without:
+      - [15.0, 15.0]
+      - [25.1, 15.0]
+      - [25.1, 34.0]
+      - [15.0, 34.0]
+    first_year: "338 BC"
+    last_year: "333 BC"
+    leaves_blank: true
+    reason: >-
+      Cliopatria draws Cyrenaica as Persian again from 338 BC. Cyrene stayed independent until it submitted to Alexander in 331 BC; the land is left blank until Cliopatria's Cyrenaica begins in 332 BC.
+    sources:
+      - "Diodorus Siculus 17.49.2-3; 18.19-21"
 # Land a polity held that Cliopatria's shape of it leaves out: the outline is joined to its
 # shapes of those years. Approximate, to the precision of the sources.
 extends:
@@ -1687,6 +1717,19 @@ extends:
       Alexander held Babylon and Susa from the autumn of 331 BC; Cliopatria's shape of his empire reaches Mesopotamia only from 327 BC, and the Achaemenid shape drawn as his in 330-328 BC (annexed) is the one cut in 331.
     sources:
       - "Arrian, Anabasis 3.16"
+  - polity: Babylonia
+    first_year: "610 BC"
+    last_year: "602 BC"
+    # Harran and the Balikh, as drawn for Ashur-uballit II in 612-611 BC (clips).
+    outline:
+      - [38.3, 36.0]
+      - [40.6, 36.0]
+      - [40.6, 37.7]
+      - [38.3, 37.7]
+    reason: >-
+      The Babylonians and the Medes took Harran in 610 BC (event harran-falls); Nabopolassar left a garrison there, which Ashur-uballit II and the Egyptians besieged in vain in 609 BC. Cliopatria draws no Babylonian shape there; Harran is drawn as Babylon's from 610 BC.
+    sources:
+      - "Babylonian Chronicle ABC 3 (Fall of Nineveh Chronicle), 58-75 (A. K. Grayson, Assyrian and Babylonian Chronicles, 1975)"
 # States Cliopatria does not draw: our approximate outline, less the land of the polities
 # in `minus` standing in the same years. Moab and Ammon are drawn from 931 BC, when the
 # divided kingdoms begin (seams), Edom from 845 BC; under David and Solomon the data's
