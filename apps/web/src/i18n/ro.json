@@ -89,9 +89,7 @@
     "photo": "Fotografie",
     "photo_pd": "domeniu public",
     "photo_shows": "În imagine: {{site}}, una dintre amplasările propuse.",
-    "verse_synodal": "Traducerea sinodală",
-    "verse_kjv": "King James Version",
-    "verse_own": "Biblia 1914 (ediția Sfântului Sinod) (public domain)",
+    "verse_own": "Biblia 1914 (ediția Sfântului Sinod)",
     "verse_open": "Deschide pe BibleGateway",
     "life_from": "Exista din {{year}}",
     "life_until": "până în {{year}}",
@@ -369,5 +367,6 @@
   },
   "a11y": {
     "opened": "Deschis: {{name}}"
-  }
+  },
+  "tagline": "un atlas al istoriei biblice"
 }

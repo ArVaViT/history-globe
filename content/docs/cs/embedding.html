@@ -298,15 +298,15 @@ description: Vložte glóbus na vlastní web jedním řádkem — mapu kapitoly,
   ignorují.
 </p>
 
-<h2 id="example-the-map-follows-your-reader">Příklad: mapa sleduje vašeho čtenáře</h2>
+<h2 id="example-the-map-follows-your-reader">Příklad: mapa sleduje vaši čtečku Bible</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
-// When your reader opens a chapter, show it on the map.
+// Když vaše čtečka Bible otevře kapitolu, ukažte ji na mapě.
 function showChapter(osis) {
   globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
 }
 
-// When a verse is clicked on the map, open it in your reader.
+// Když se na mapě klikne na verš, otevřete ho ve své čtečce Bible.
 window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);

@@ -94,9 +94,7 @@
     "photo": "Foto",
     "photo_pd": "volné dílo",
     "photo_shows": "Na snímku: {{site}}, jedna z navrhovaných lokalit.",
-    "verse_synodal": "Synodní překlad",
-    "verse_kjv": "King James Version",
-    "verse_own": "Bible kralická 1613 (volné dílo)",
+    "verse_own": "Bible kralická 1613",
     "verse_open": "Otevřít na BibleGateway",
     "life_from": "Existovalo od {{year}}",
     "life_until": "do {{year}}",
@@ -380,5 +378,6 @@
   },
   "a11y": {
     "opened": "Otevřeno: {{name}}"
-  }
+  },
+  "tagline": "atlas biblických dějin"
 }

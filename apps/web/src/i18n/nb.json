@@ -84,9 +84,7 @@
     "photo": "Foto",
     "photo_pd": "offentlig eie",
     "photo_shows": "På bildet: {{site}}, et av de foreslåtte stedene.",
-    "verse_synodal": "Synodaloversettelsen",
-    "verse_kjv": "King James Version",
-    "verse_own": "Bibelen 1930 (offentlig eie)",
+    "verse_own": "Bibelen 1930",
     "verse_open": "Åpne på BibleGateway",
     "life_from": "Fantes fra {{year}}",
     "life_until": "til {{year}}",
@@ -358,5 +356,6 @@
   },
   "a11y": {
     "opened": "Åpnet: {{name}}"
-  }
+  },
+  "tagline": "et atlas over bibelhistorien"
 }

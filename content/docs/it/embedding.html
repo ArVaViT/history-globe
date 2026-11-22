@@ -308,15 +308,15 @@ description: Metti il globo sul tuo sito con una sola riga — la mappa di un ca
   vengono ignorati.
 </p>
 
-<h2 id="example-the-map-follows-your-reader">Esempio: la mappa segue il tuo lettore</h2>
+<h2 id="example-the-map-follows-your-reader">Esempio: la mappa segue la tua app della Bibbia</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
-// Quando il lettore apre un capitolo, mostralo sulla mappa.
+// Quando la tua app della Bibbia apre un capitolo, mostralo sulla mappa.
 function showChapter(osis) {
   globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
 }
 
-// Quando sulla mappa si clicca un versetto, aprilo nel tuo lettore.
+// Quando sulla mappa si clicca un versetto, aprilo nella tua app della Bibbia.
 window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);

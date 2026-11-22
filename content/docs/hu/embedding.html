@@ -305,15 +305,15 @@ description: Tegye fel a földgömböt a saját oldalára egyetlen sorral — eg
   nincs pontjuk); az azonosítóikat figyelmen kívül hagyja.
 </p>
 
-<h2 id="example-the-map-follows-your-reader">Példa: a térkép követi az olvasót</h2>
+<h2 id="example-the-map-follows-your-reader">Példa: a térkép követi a bibliaolvasó alkalmazását</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
-// When your reader opens a chapter, show it on the map.
+// Amikor a bibliaolvasó alkalmazása megnyit egy fejezetet, mutassa meg a térképen.
 function showChapter(osis) {
   globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
 }
 
-// When a verse is clicked on the map, open it in your reader.
+// Amikor a térképen egy versre kattintanak, nyissa meg a bibliaolvasó alkalmazásában.
 window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);

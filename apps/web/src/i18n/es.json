@@ -84,8 +84,6 @@
     "photo": "Foto",
     "photo_pd": "dominio público",
     "photo_shows": "En la imagen: {{site}}, uno de los sitios propuestos.",
-    "verse_synodal": "Traducción sinodal rusa",
-    "verse_kjv": "King James Version",
     "verse_own": "Reina-Valera 1909",
     "verse_open": "Abrir en BibleGateway",
     "life_from": "Existía desde {{year}}",
@@ -358,5 +356,6 @@
   },
   "a11y": {
     "opened": "Abierto: {{name}}"
-  }
+  },
+  "tagline": "atlas de historia bíblica"
 }

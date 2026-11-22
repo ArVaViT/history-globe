@@ -84,9 +84,7 @@
     "photo": "Foto",
     "photo_pd": "publiek domein",
     "photo_shows": "Op de foto: {{site}}, een van de voorgestelde locaties.",
-    "verse_synodal": "Synodale vertaling",
-    "verse_kjv": "King James Version",
-    "verse_own": "Statenvertaling, editie 1917 (publiek domein)",
+    "verse_own": "Statenvertaling, editie 1917",
     "verse_open": "Openen op BibleGateway",
     "life_from": "Bestaat vanaf {{year}}",
     "life_until": "tot {{year}}",
@@ -358,5 +356,6 @@
   },
   "a11y": {
     "opened": "Geopend: {{name}}"
-  }
+  },
+  "tagline": "atlas van de bijbelse geschiedenis"
 }

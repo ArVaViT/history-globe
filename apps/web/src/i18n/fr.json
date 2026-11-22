@@ -84,9 +84,7 @@
     "photo": "Photo",
     "photo_pd": "domaine public",
     "photo_shows": "Sur l’image : {{site}}, l’un des sites proposés.",
-    "verse_synodal": "Traduction synodale",
-    "verse_kjv": "King James Version",
-    "verse_own": "Louis Segond 1910 (domaine public)",
+    "verse_own": "Louis Segond 1910",
     "verse_open": "Ouvrir sur BibleGateway",
     "life_from": "Existait depuis {{year}}",
     "life_until": "jusqu’en {{year}}",
@@ -358,5 +356,6 @@
   },
   "a11y": {
     "opened": "Ouvert : {{name}}"
-  }
+  },
+  "tagline": "atlas de l’histoire biblique"
 }

@@ -89,10 +89,8 @@
     "photo": "Фото",
     "photo_pd": "общественное достояние",
     "photo_shows": "На снимке {{site}} — одна из версий.",
-    "verse_synodal": "Синодальный перевод",
     "verse_open": "Открыть на BibleGateway",
-    "verse_kjv": "King James Version",
-    "verse_own": "King James Version",
+    "verse_own": "Синодальный перевод",
     "life_from": "Время существования: с {{year}}",
     "life_until": "до {{year}}",
     "circa": "ок.",
@@ -369,5 +367,6 @@
   },
   "a11y": {
     "opened": "Открыто: {{name}}"
-  }
+  },
+  "tagline": "атлас библейской истории"
 }

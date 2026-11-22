@@ -84,8 +84,6 @@
     "photo": "Photo",
     "photo_pd": "public domain",
     "photo_shows": "Pictured: {{site}}, one of the proposed sites.",
-    "verse_synodal": "Synodal translation",
-    "verse_kjv": "King James Version",
     "verse_own": "King James Version",
     "verse_open": "Open on BibleGateway",
     "life_from": "Standing from {{year}}",
@@ -358,5 +356,6 @@
   },
   "a11y": {
     "opened": "Opened: {{name}}"
-  }
+  },
+  "tagline": "an atlas of biblical history"
 }

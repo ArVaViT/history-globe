@@ -13,11 +13,11 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <title>History Globe — biblical history on a globe</title>
+    <title>History Globe — an atlas of biblical history</title>
     <link rel="canonical" href="https://historyglobe.app/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="History Globe" />
-    <meta property="og:title" content="History Globe — biblical history on a globe" />
+    <meta property="og:title" content="History Globe — an atlas of biblical history" />
     <meta
       property="og:description"
       content="The places of the Bible, the states around them and the routes, year by year, on a 3D globe, linked to their verses. Free, in 21 languages."
@@ -105,7 +105,8 @@
     <div id="root"></div>
     <!-- The first screen: the title bar, drawn by the HTML and the stylesheet alone, while the
          scripts, the data and the map load. It has no words but the name, the same in every
-         language; App.tsx removes it once its own bar is drawn in the same place. -->
+         language, as the page's heading; App.tsx removes it once its own bar, with its own
+         heading, is drawn in the same place. -->
     <div id="hg-shell" class="pointer-events-none fixed inset-0 font-sans" aria-hidden="true">
       <div
         class="absolute top-4 left-4 -m-4 flex flex-col gap-3 p-4 pr-5 max-md:inset-x-3 max-md:top-3 max-md:pr-4"
@@ -114,9 +115,9 @@
           class="relative z-10 flex w-[360px] items-center gap-0.5 rounded-[20px] border border-line bg-paper/92 px-1.5 py-1.5 shadow-panel backdrop-blur-xl backdrop-saturate-150 max-md:w-full"
         >
           <span class="size-9 shrink-0"></span>
-          <div class="flex-1 pl-1 font-serif text-[19px] font-semibold tracking-tight text-ink">
+          <h1 class="flex-1 pl-1 font-serif text-[19px] font-semibold tracking-tight text-ink">
             History Globe
-          </div>
+          </h1>
           <span class="size-9 shrink-0"></span>
           <span class="size-9 shrink-0"></span>
           <span class="size-9 shrink-0"></span>

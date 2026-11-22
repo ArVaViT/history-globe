@@ -450,7 +450,7 @@ const T = {
     open: "Öppna globen",
     prev: "Föregående",
     next: "Nästa",
-    data: "Data under CC BY 4.0",
+    data: "Data med licensen CC BY 4.0",
     search: "Sök i dokumentationen",
     noResults: "Inget hittades",
     edit: "Redigera sidan",
@@ -459,7 +459,7 @@ const T = {
     openMenu: "Meny",
     overview: "Översikt",
     bibleHead: ["Språk", "Utgåva", "Elektronisk text", "Licens"],
-    crown: "; i Storbritannien Crown copyright",
+    crown: "; i Storbritannien kronans upphovsrätt (Crown copyright)",
     versesOnly: "bara verstexter",
     none: "inga ännu",
   },
@@ -474,7 +474,7 @@ const T = {
     open: "Åbn globussen",
     prev: "Forrige",
     next: "Næste",
-    data: "Data under CC BY 4.0",
+    data: "Data med licensen CC BY 4.0",
     search: "Søg i dokumentationen",
     noResults: "Intet fundet",
     edit: "Redigér siden",
@@ -483,7 +483,7 @@ const T = {
     openMenu: "Menu",
     overview: "Oversigt",
     bibleHead: ["Sprog", "Udgave", "Elektronisk tekst", "Licens"],
-    crown: "; i Storbritannien Crown copyright",
+    crown: "; i Storbritannien kronens ophavsret (Crown copyright)",
     versesOnly: "kun verstekster",
     none: "ingen endnu",
   },
@@ -498,7 +498,7 @@ const T = {
     open: "Åpne globusen",
     prev: "Forrige",
     next: "Neste",
-    data: "Data under CC BY 4.0",
+    data: "Data med lisensen CC BY 4.0",
     search: "Søk i dokumentasjonen",
     noResults: "Ingenting funnet",
     edit: "Rediger siden",
@@ -507,7 +507,7 @@ const T = {
     openMenu: "Meny",
     overview: "Oversikt",
     bibleHead: ["Språk", "Utgave", "Elektronisk tekst", "Lisens"],
-    crown: "; i Storbritannia Crown copyright",
+    crown: "; i Storbritannia kronens opphavsrett (Crown copyright)",
     versesOnly: "bare verstekster",
     none: "ingen ennå",
   },
@@ -551,11 +551,11 @@ const T = {
     noResults: "Walang nahanap",
     edit: "I-edit ang pahinang ito",
     report: "Mag-ulat ng mali",
-    source: "Source code",
+    source: "Pinagmulang code",
     openMenu: "Menu",
     overview: "Pangkalahatang-ideya",
     bibleHead: ["Wika", "Edisyon", "Elektronikong teksto", "Lisensiya"],
-    crown: "; sa United Kingdom, Crown copyright",
+    crown: "; sa Nagkakaisang Kaharian, karapatang-ari ng Korona (Crown copyright)",
     versesOnly: "mga teksto lamang ng talata",
     none: "wala pa",
   },
@@ -603,7 +603,7 @@ const T = {
     openMenu: "Valikko",
     overview: "Yleiskatsaus",
     bibleHead: ["Kieli", "Laitos", "Sähköinen teksti", "Lisenssi"],
-    crown: "; Yhdistyneessä kuningaskunnassa Crown copyright",
+    crown: "; Yhdistyneessä kuningaskunnassa kruunun tekijänoikeus (Crown copyright)",
     versesOnly: "vain jakeiden tekstit",
     none: "ei vielä yhtään",
   },
@@ -1304,6 +1304,7 @@ const PUBLISHED = readdirSync(join(root, "content/reviews"))
   );
 const LINKS_REVIEWS: readonly Page[] = ["index", "methodology", "reviews"];
 const englishIds = new Map<Page, string>();
+const englishComments = new Map<Page, Set<string>>();
 
 for (const l of LANGS) {
   const dir = join(src, l);
@@ -1328,6 +1329,12 @@ for (const l of LANGS) {
       // links is a source's, and rel="license" would declare the page under it.
       if (/\brel="[^"]*\blicense\b/.test(body))
         throw new Error(`${file}: rel="license" on a source's licence; link it plainly`);
+      // The comments in an example's code are read in the page's language too.
+      const comments = [...source.body.matchAll(/^\s*\/\/ (.+)$/gm)].map((m) => m[1] ?? "");
+      if (l === "en") englishComments.set(p, new Set(comments));
+      else
+        for (const c of comments)
+          if (englishComments.get(p)?.has(c)) problems.push(`${file}: an English comment: ${c}`);
       const ids = toc.map((h) => h.id).join(" ");
       if (l === "en") englishIds.set(p, ids);
       else if (ids !== englishIds.get(p))

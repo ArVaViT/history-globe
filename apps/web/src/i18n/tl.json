@@ -84,9 +84,7 @@
     "photo": "Larawan",
     "photo_pd": "pampublikong dominyo",
     "photo_shows": "Sa larawan: {{site}}, isa sa mga iminumungkahing pook.",
-    "verse_synodal": "Saling Sinodal",
-    "verse_kjv": "King James Version",
-    "verse_own": "Ang Biblia 1905 (pampublikong dominyo)",
+    "verse_own": "Ang Biblia 1905",
     "verse_open": "Buksan sa BibleGateway",
     "life_from": "Nakatayo mula {{year}}",
     "life_until": "hanggang {{year}}",
@@ -358,5 +356,6 @@
   },
   "a11y": {
     "opened": "Binuksan: {{name}}"
-  }
+  },
+  "tagline": "atlas ng kasaysayan ng Biblia"
 }
