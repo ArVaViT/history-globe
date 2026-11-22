@@ -239,23 +239,28 @@ function certaintyNote(p: Props, l: Lang): string {
  */
 const plain = (s: string) => s.replace(/ {2,}/g, " ");
 /**
- * A page's title with the site's name after it, when the two fit the length a search result
- * shows (about 75 characters); a longer title (a tour's, in Tagalog) goes without the name.
+ * A page's title with the site's name after it, but for a title that alone passes the length
+ * a search result shows (about 75 characters), where the name could not be seen anyway. A
+ * front page always keeps it.
  */
-const withSiteName = (title: string) =>
-  `${title} | History Globe`.length <= 75 ? `${title} | History Globe` : title;
+const withSiteName = (title: string, home = false) =>
+  home || title.length <= 75 ? `${title} | History Globe` : title;
 /**
  * A description of at most `n` characters, the length a search result shows: cut after its
  * last whole sentence when that keeps most of it, else at a word, with an ellipsis. A
- * sentence ends at a word of four letters or more ("…Jerusalem. The"), so that "v. Chr.",
- * "a. C." or "г." never end one.
+ * question or an exclamation ends a sentence (French puts a space before its mark); a full
+ * stop does after a word of four letters or more ("…Jerusalem. The"), so that "v. Chr.",
+ * "a. C." or "г." never end one, and in Vietnamese, whose syllables are short, of two.
  */
-const clip = (text: string, n = 160) => {
+const clip = (text: string, l: Lang, n = 160) => {
   const s = plain(text);
   if (s.length <= n) return s;
-  const ends = [...s.slice(0, n + 1).matchAll(/\p{L}{4}[»“”"’)]?[.!?][»“”"’)]? (?=\P{Ll})/gu)].map(
-    (m) => m.index + m[0].length - 1,
-  );
+  const shortest = l === "vi" ? 2 : 4;
+  const ends = [
+    ...s.slice(0, n + 1).matchAll(/(\p{L}*)[»“”"’)]?[ \u00a0\u202f]?([.!?])[»“”"’)]? (?=\P{Ll})/gu),
+  ]
+    .filter((m) => m[2] !== "." || (m[1] ?? "").length >= shortest)
+    .map((m) => m.index + m[0].length - 1);
   const sentence = ends.at(-1);
   if (sentence !== undefined && sentence >= n * 0.6) return s.slice(0, sentence);
   return `${s.slice(0, s.lastIndexOf(" ", n - 1)).replace(/[,;:.\s]+$/, "")}…`;
@@ -399,7 +404,7 @@ function page(o: {
     <meta name="theme-color" content="#0c1218" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="${up}favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="${up}apple-touch-icon.png" />
-    <title>${esc(withSiteName(o.title))}</title>${o.noindex ? '\n    <meta name="robots" content="noindex, follow" />' : ""}${meta}${o.licence ? `\n    <link rel="license" href="${NC_ND}" />` : ""}${
+    <title>${esc(withSiteName(o.title, o.home))}</title>${o.noindex ? '\n    <meta name="robots" content="noindex, follow" />' : ""}${meta}${o.licence ? `\n    <link rel="license" href="${NC_ND}" />` : ""}${
       o.home
         ? `\n    <link rel="preload" href="${up}docs/fonts/${sansPreload(o.l)}" as="font" type="font/woff2" crossorigin />
     <script>
@@ -587,10 +592,12 @@ const write = (
 };
 
 /**
- * What a place's page title adds in brackets so that no two places share a title in a
- * language: the word content/namesakes.json gives it there; else, for namesakes, where it
- * is today (two Antiochs); and where titles still meet (Ephrath and Ephrathah, both
- * "Ефрафа"), the first verse that names it.
+ * What a place's page title adds in brackets, so that no two pages search engines index (a
+ * place's with an article; the others are noindex) share a title in a language. A namesake
+ * adds where it is today (two Antiochs) or the word content/namesakes.json gives it. Where
+ * titles still meet, the place named in the most verses keeps its title and each other one
+ * adds the kind of place ("Babilonia (región)"), or else the chapter that first names it
+ * ("Ефрафа (Руф 4)").
  */
 const namesakes = (
   JSON.parse(readFileSync(join(root, "content/namesakes.json"), "utf8")) as {
@@ -619,15 +626,23 @@ function titleNote(id: string, l: Lang): string | undefined {
           ((sameName.get(name) ?? 0) > 1 && where && where !== name ? where : undefined),
       );
     }
+    const indexed = shown.map((f) => f.properties).filter((p) => articles[p.id]);
     const byLabel = new Map<string, Props[]>();
-    for (const { properties: p } of shown)
-      byLabel.set(label(p), [...(byLabel.get(label(p)) ?? []), p]);
-    for (const group of byLabel.values())
-      if (group.length > 1)
-        for (const p of group)
-          if (!namesakes[p.id]?.[l] && p.osis[0]) notes.set(p.id, refOf(p.osis[0], l));
+    for (const p of indexed) byLabel.set(label(p), [...(byLabel.get(label(p)) ?? []), p]);
+    for (const group of byLabel.values()) {
+      if (group.length < 2) continue;
+      const [main, ...rest] = [...group].sort((a, b) => b.verses - a.verses);
+      for (const p of rest) {
+        if (namesakes[p.id]?.[l]) continue;
+        const kind = ui[l].kind[p.kind];
+        const kindAlone =
+          kind && p.kind !== main?.kind && rest.filter((o) => o.kind === p.kind).length === 1;
+        const [book, chapter] = (p.osis[0] ?? "").split(".");
+        notes.set(p.id, kindAlone ? kind : refOf(`${book ?? ""}.${chapter ?? ""}`, l));
+      }
+    }
     const seen = new Map<string, string>();
-    for (const { properties: p } of shown) {
+    for (const p of indexed) {
       const other = seen.get(label(p));
       if (other) sameTitle.add(`${l} "${label(p)}": ${other} and ${p.id}`);
       seen.set(label(p), p.id);
@@ -682,7 +697,7 @@ function placePages(l: Lang): void {
     const slug = slugOf.get(p.id) ?? p.id;
     const path = `${l}/place/${slug}`;
     const [lon, lat] = f.geometry.coordinates;
-    const desc = art?.body[l][0] ? clip(art.body[l][0]) : T[l].desc(name, kind, p.verses);
+    const desc = art?.body[l][0] ? clip(art.body[l][0], l) : T[l].desc(name, kind, p.verses);
     const body = `    <main id="main" class="page">
       <p class="kicker">${esc(kind)}</p>
       <h1>${esc(name)}</h1>${
@@ -840,7 +855,7 @@ function questionPages(l: Lang): void {
       page({
         l,
         title,
-        desc: clip(q.answer[l][0] ?? title),
+        desc: clip(q.answer[l][0] ?? title, l),
         path: `${path}/`,
         body,
         depth: 3,
@@ -943,7 +958,7 @@ function tourPages(l: Lang): void {
         l,
         // "Paul's first journey — map": what people search for, and what the page is.
         title: `${title} — ${T[l].tour_map}`,
-        desc: clip(`${span}. ${first}`),
+        desc: clip(`${span}. ${first}`, l),
         path: `${path}/`,
         body,
         depth: 3,
@@ -1261,7 +1276,7 @@ function reviewsIn(l: Lang): void {
       page({
         l,
         title: r.title,
-        desc: clip(r.desc),
+        desc: clip(r.desc, l),
         path: `${r.path}/`,
         body: r.body,
         depth: r.path.split("/").length,

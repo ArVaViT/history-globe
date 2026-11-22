@@ -272,7 +272,7 @@ const T_ES = {
 const LANDING_ES = {
   title: "La historia en un globo — atlas de historia bíblica",
   h1: "La historia en un globo",
-  desc: "Un atlas gratuito: los lugares de la Biblia en un globo 3D, los estados a su alrededor año tras año, rutas, artículos con fuentes y herramientas para una lección.",
+  desc: "Un atlas gratuito: los lugares de la Biblia en un globo 3D, los estados vecinos año tras año, rutas, artículos con fuentes y herramientas para una lección.",
   kicker: "Primera colección: historia bíblica",
   lede: "Mueve el año y verás cambiar los reinos, las ciudades y los nombres.",
   open: "Abrir el globo",
@@ -1873,7 +1873,7 @@ const T_DA = {
   // The language switch is an icon: «Sprog: English» names it for a pointer and a screen reader.
   language: "Sprog",
   photo: "Foto",
-  pd: "i det fri",
+  pd: "uden ophavsret",
   licArticle: "Artiklens tekst: © History Globe",
   licAnswer: "Svarets tekst: © History Globe",
 } as const;
@@ -2422,7 +2422,7 @@ const T_TL = {
 const LANDING_TL = {
   title: "Kasaysayan sa globo — atlas ng kasaysayan ng Biblia",
   h1: "Kasaysayan sa globo",
-  desc: "Libreng atlas: ang mga lugar ng Biblia sa 3D na globo, ang mga estado sa paligid nila taon-taon, mga paglalakbay, mga artikulong may sanggunian at mga kasangkapan para sa aralin.",
+  desc: "Libreng atlas: ang mga lugar ng Biblia sa 3D na globo, mga estado sa paligid taon-taon, mga paglalakbay, mga artikulong may sanggunian at kasangkapan sa aralin.",
   kicker: "Unang koleksiyon: kasaysayan ng Biblia",
   lede: "Ilipat ang taon at panoorin kung paano nagbabago ang mga kaharian, bayan at pangalan.",
   open: "Buksan ang globo",
@@ -2778,7 +2778,7 @@ const T_FI = {
 const LANDING_FI = {
   title: "Historia maapallolla — Raamatun historian atlas",
   h1: "Historia maapallolla",
-  desc: "Ilmainen atlas: Raamatun paikat 3D-maapallolla, niitä ympäröivät valtiot vuosi vuodelta, kierrokset, lähteillä varustetut artikkelit ja työkalut oppituntia varten.",
+  desc: "Ilmainen atlas: Raamatun paikat 3D-maapallolla, niitä ympäröivät valtiot vuosi vuodelta, kierrokset, lähteistetyt artikkelit ja työkalut oppituntia varten.",
   kicker: "Ensimmäinen kokoelma: Raamatun historia",
   lede: "Siirrä vuotta ja katso, miten valtakunnat, kaupungit ja nimet muuttuvat.",
   open: "Avaa maapallo",

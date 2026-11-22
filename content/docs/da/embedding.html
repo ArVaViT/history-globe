@@ -299,15 +299,15 @@ description: Sæt globussen ind på dit eget websted med én linje – kortet ov
   punkt); deres id’er ignoreres.
 </p>
 
-<h2 id="example-the-map-follows-your-reader">Eksempel: kortet følger din læser</h2>
+<h2 id="example-the-map-follows-your-reader">Eksempel: kortet følger dit bibelprogram</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
-// Når din læser åbner et kapitel, vises det på kortet.
+// Når dit bibelprogram åbner et kapitel, vises det på kortet.
 function showChapter(osis) {
   globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
 }
 
-// Når der klikkes på et vers på kortet, åbnes det i din læser.
+// Når der klikkes på et vers på kortet, åbnes det i dit bibelprogram.
 window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);

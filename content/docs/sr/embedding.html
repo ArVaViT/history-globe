@@ -300,15 +300,15 @@ description: Поставите глобус на свој сајт једном
   њихови ИД-ови се занемарују.
 </p>
 
-<h2 id="example-the-map-follows-your-reader">Пример: мапа прати вашег читаоца</h2>
+<h2 id="example-the-map-follows-your-reader">Пример: мапа прати вашу апликацију за Библију</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
-// Када ваш читалац отвори поглавље, прикажите га на мапи.
+// Када ваша апликација за Библију отвори поглавље, прикажите га на мапи.
 function showChapter(osis) {
   globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
 }
 
-// Када се на мапи кликне на стих, отворите га у свом читаоцу.
+// Када се на мапи кликне на стих, отворите га у својој апликацији за Библију.
 window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);

@@ -304,15 +304,17 @@ description: Ponha o globo no seu próprio site com uma linha — o mapa de um c
   estão no mapa (ficaram de fora ou não têm ponto nenhum); os seus IDs são ignorados.
 </p>
 
-<h2 id="example-the-map-follows-your-reader">Exemplo: o mapa acompanha o seu leitor</h2>
+<h2 id="example-the-map-follows-your-reader">
+  Exemplo: o mapa acompanha o seu aplicativo da Bíblia
+</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
-// Quando o seu leitor abrir um capítulo, mostre-o no mapa.
+// Quando o seu aplicativo da Bíblia abrir um capítulo, mostre-o no mapa.
 function showChapter(osis) {
   globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
 }
 
-// Quando um versículo for clicado no mapa, abra-o no seu leitor.
+// Quando um versículo for clicado no mapa, abra-o no seu aplicativo da Bíblia.
 window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);

@@ -53,3 +53,9 @@ describe("the Bible edition's name", () => {
     }
   });
 });
+
+describe("the front page's description", () => {
+  it("fits the length a search result shows", () => {
+    for (const l of LOCALES) expect(LANDING[l].desc.length, l).toBeLessThanOrEqual(160);
+  });
+});
