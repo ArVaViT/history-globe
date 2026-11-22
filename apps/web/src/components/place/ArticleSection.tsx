@@ -63,25 +63,20 @@ export function ArticleSection({
         {body.map((p) => (
           <p key={p.slice(0, 24)}>
             {index && onHighlight
-              ? // A name only marks its place on the map: the reader stays in the text.
+              ? // A name only marks its place on the map under the pointer: the reader stays in
+                // the text. Not a stop for the Tab key: it does nothing when pressed, and a
+                // screen reader reads the name in its sentence (the map's mark is for the eye).
                 splitPlaces(p, index, [placeId]).map((seg, i) =>
                   seg.place ? (
                     <span
                       key={i}
-                      tabIndex={0}
                       onMouseEnter={() => {
                         onHighlight(seg.place ?? null);
                       }}
                       onMouseLeave={() => {
                         onHighlight(null);
                       }}
-                      onFocus={() => {
-                        onHighlight(seg.place ?? null);
-                      }}
-                      onBlur={() => {
-                        onHighlight(null);
-                      }}
-                      className="underline decoration-accent/35 decoration-dotted underline-offset-4 hover:decoration-accent focus-visible:decoration-accent focus-visible:outline-none"
+                      className="underline decoration-accent/35 decoration-dotted underline-offset-4 hover:decoration-accent"
                     >
                       {seg.text}
                     </span>

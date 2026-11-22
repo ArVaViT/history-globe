@@ -1,4 +1,4 @@
-import { Suspense, useRef, useState, type ReactNode } from "react";
+import { Suspense, useEffect, useRef, useState, type ReactNode } from "react";
 import { useTranslation } from "../i18n";
 import { Panel } from "./Panel";
 import { readPref, writePref } from "../storage";
@@ -26,8 +26,37 @@ export function Overview({
   const pick = (next: OverviewTab, focus = false) => {
     setTab(next);
     writePref(TAB_KEY, next);
-    if (focus) tabRefs.current[next]?.focus();
+    const el = tabRefs.current[next];
+    if (focus) el?.focus();
+    el?.scrollIntoView({ block: "nearest", inline: "nearest" });
   };
+  // A row wider than the panel (Tagalog, Spanish, Finnish on a 320 px phone) scrolls: a
+  // fade at each edge with more beyond it says so, and the tab picked last is in view.
+  const row = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const list = row.current;
+    const box = list?.parentElement;
+    if (!list || !box) return;
+    const mark = () => {
+      const rest = list.scrollWidth - list.clientWidth - list.scrollLeft;
+      box.toggleAttribute("data-more-start", list.scrollLeft > 1);
+      box.toggleAttribute("data-more-end", rest > 1);
+    };
+    list.querySelector('[aria-selected="true"]')?.scrollIntoView({
+      block: "nearest",
+      inline: "nearest",
+    });
+    mark();
+    list.addEventListener("scroll", mark, { passive: true });
+    const sizes = new ResizeObserver(mark);
+    // The row, and each tab: a switch of language changes the tabs' widths, not the row's.
+    sizes.observe(list);
+    for (const tab of list.children) sizes.observe(tab);
+    return () => {
+      list.removeEventListener("scroll", mark);
+      sizes.disconnect();
+    };
+  }, []);
   return (
     <Panel className="hg-slide-left w-[360px] max-md:w-full">
       {/* No cross of its own: the book in the header opens and closes it, and four tabs
@@ -36,8 +65,9 @@ export function Overview({
         {/* The tabs share the row evenly; a language with longer words scrolls it. On a touch
             screen the row keeps room above and below for the tabs' larger hit areas, which
             its scrolling would cut off. */}
-        <div className="flex min-w-0 flex-1">
+        <div className="hg-edges flex min-w-0 flex-1">
           <div
+            ref={row}
             role="tablist"
             aria-label={t("overview.title")}
             className="flex flex-1 gap-0.5 overflow-x-auto [scrollbar-width:none] pointer-coarse:-my-[7px] pointer-coarse:py-[7px]"
@@ -71,7 +101,7 @@ export function Overview({
                 onClick={() => {
                   pick(id);
                 }}
-                className={`flex-1 shrink-0 rounded-full px-2.5 py-1.5 text-center text-[12px] whitespace-nowrap transition ${
+                className={`flex-1 shrink-0 rounded-full px-2.5 py-1.5 max-[360px]:px-2 text-center text-[12px] whitespace-nowrap transition ${
                   tab === id
                     ? "bg-paper-2 font-medium text-ink shadow-[inset_0_0_0_1px_var(--color-line)]"
                     : "text-ink-soft hover:text-ink"

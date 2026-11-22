@@ -3,6 +3,8 @@
   "search": {
     "placeholder": "Lugar, pessoa, capítulo ou ano",
     "empty": "Nada encontrado",
+    "found_one": "{{count}} resultado",
+    "found_other": "{{count}} resultados",
     "open": "Buscar um lugar, uma pessoa ou um capítulo",
     "close": "Fechar a busca",
     "chapter_one": "{{count}} lugar no mapa",
@@ -74,7 +76,7 @@
     "more": "mais {{count}}",
     "coords_wikidata": "Coordenadas: Wikidata",
     "close": "Fechar",
-    "zoom": "Aproximar",
+    "zoom_to": "Aproximar de {{name}}",
     "sites_note": "As proporções são estimativas do OpenBible, não um consenso acadêmico",
     "nt_only": "Só no Novo Testamento: esmaecido antes dos seus eventos",
     "also_here": "Também aqui",
@@ -353,5 +355,8 @@
     "quiz_about": "“Onde aconteceu?” na tela ou em A4",
     "quiz_pick": "Escolha um roteiro",
     "quiz_print": "Imprimir para os alunos (A4)"
+  },
+  "a11y": {
+    "opened": "Aberto: {{name}}"
   }
 }

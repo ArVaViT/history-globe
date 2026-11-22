@@ -87,7 +87,9 @@ export function QuizPanel({
     <Panel className="w-card px-5 py-4">
       <div className="flex items-start justify-between gap-2">
         <div>
-          <h2 className="font-serif text-[17px] font-semibold text-ink">{t("quiz.title")}</h2>
+          <h2 tabIndex={-1} className="font-serif text-[17px] font-semibold text-ink outline-none">
+            {t("quiz.title")}
+          </h2>
           <p className="text-[12px] text-ink-soft">{quiz.title}</p>
         </div>
         <button

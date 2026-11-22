@@ -228,7 +228,7 @@ function Lesson({
         </Step>
       </ol>
       {n > 0 && (
-        <ol className="flex max-h-[38vh] flex-col overflow-y-auto rounded-xl border border-line">
+        <ol className="flex max-h-[38vh] flex-col overflow-y-auto overscroll-contain rounded-xl border border-line">
           {lesson.picked.map((s, i) => (
             <li
               key={s.id}
@@ -270,7 +270,7 @@ function Quiz({
   return (
     <div className="flex flex-col gap-2">
       <p className="text-[14px] leading-snug text-ink">{t("tools.quiz_pick")}</p>
-      <ul className="flex max-h-[46vh] flex-col overflow-y-auto rounded-xl border border-line">
+      <ul className="flex max-h-[46vh] flex-col overflow-y-auto overscroll-contain rounded-xl border border-line">
         {tours.map((tour) => (
           <li
             key={tour.id}

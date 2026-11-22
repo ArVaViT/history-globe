@@ -3,6 +3,10 @@
   "search": {
     "placeholder": "Místo, osoba, kapitola nebo rok",
     "empty": "Nic nenalezeno",
+    "found_one": "{{count}} výsledek",
+    "found_few": "{{count}} výsledky",
+    "found_many": "{{count}} výsledku",
+    "found_other": "{{count}} výsledků",
     "open": "Najít místo, osobu nebo kapitolu",
     "close": "Zavřít vyhledávání",
     "chapter_one": "{{count}} místo na mapě",
@@ -82,7 +86,7 @@
     "more": "další: {{count}}",
     "coords_wikidata": "Souřadnice: Wikidata",
     "close": "Zavřít",
-    "zoom": "Přiblížit",
+    "zoom_to": "Přiblížit: {{name}}",
     "sites_note": "Podíly jsou odhadem OpenBible, nikoli shodou badatelů",
     "nt_only": "Jen v Novém zákoně: před jeho událostmi zobrazeno vybledle",
     "also_here": "Také zde",
@@ -373,5 +377,8 @@
     "quiz_about": "„Kde se to stalo?“ na obrazovce nebo na A4",
     "quiz_pick": "Vyberte trasu",
     "quiz_print": "Vytisknout pro žáky (A4)"
+  },
+  "a11y": {
+    "opened": "Otevřeno: {{name}}"
   }
 }

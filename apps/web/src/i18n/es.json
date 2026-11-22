@@ -3,6 +3,8 @@
   "search": {
     "placeholder": "Lugar, persona, capítulo o año",
     "empty": "No se encontró nada",
+    "found_one": "{{count}} resultado",
+    "found_other": "{{count}} resultados",
     "open": "Buscar un lugar, una persona o un capítulo",
     "close": "Cerrar la búsqueda",
     "chapter_one": "{{count}} lugar en el mapa",
@@ -74,7 +76,7 @@
     "more": "{{count}} más",
     "coords_wikidata": "Coordenadas: Wikidata",
     "close": "Cerrar",
-    "zoom": "Acercar",
+    "zoom_to": "Acercar a {{name}}",
     "sites_note": "Los porcentajes son una estimación de OpenBible, no un consenso académico",
     "nt_only": "Solo en el Nuevo Testamento: atenuado antes de sus hechos",
     "also_here": "También aquí",
@@ -353,5 +355,8 @@
     "quiz_about": "«¿Dónde ocurrió?» en pantalla o en A4",
     "quiz_pick": "Elige una ruta",
     "quiz_print": "Imprimir para alumnos (A4)"
+  },
+  "a11y": {
+    "opened": "Abierto: {{name}}"
   }
 }

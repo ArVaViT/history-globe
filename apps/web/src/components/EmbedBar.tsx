@@ -80,7 +80,7 @@ export function ChapterPicker({
       {open && (
         <ul
           id="embed-places"
-          className={`hg-pop hg-fade ${inline ? "mt-2 -ml-2" : "absolute top-full left-0"} mt-2 max-h-[min(320px,calc(100dvh-120px))] w-64 origin-top-left overflow-y-auto rounded-2xl border border-line bg-paper p-1.5 shadow-xl [scrollbar-width:thin]`}
+          className={`hg-pop hg-fade ${inline ? "mt-2 -ml-2" : "absolute top-full left-0"} mt-2 max-h-[min(320px,calc(100dvh-120px))] w-64 origin-top-left overflow-y-auto overscroll-contain rounded-2xl border border-line bg-paper p-1.5 shadow-xl [scrollbar-width:thin]`}
         >
           {ids.map((id) => (
             <li key={id}>

@@ -3,6 +3,8 @@
   "search": {
     "placeholder": "Sted, person, kapitel eller år",
     "empty": "Intet fundet",
+    "found_one": "{{count}} resultat",
+    "found_other": "{{count}} resultater",
     "open": "Find et sted, en person eller et kapitel",
     "close": "Luk søgningen",
     "chapter_one": "{{count}} sted på kortet",
@@ -74,7 +76,7 @@
     "more": "{{count}} flere",
     "coords_wikidata": "Koordinater: Wikidata",
     "close": "Luk",
-    "zoom": "Zoom ind",
+    "zoom_to": "Zoom ind på {{name}}",
     "sites_note": "Andelene er OpenBibles skøn, ikke en faglig konsensus",
     "nt_only": "Kun i Det Nye Testamente: vist nedtonet før Det Nye Testamentes begivenheder",
     "also_here": "Også her",
@@ -353,5 +355,8 @@
     "quiz_about": "»Hvor skete det?« på skærmen eller på A4",
     "quiz_pick": "Vælg en tur",
     "quiz_print": "Udskriv til eleverne (A4)"
+  },
+  "a11y": {
+    "opened": "Åbnet: {{name}}"
   }
 }

@@ -20,7 +20,7 @@ import { Player } from "./components/Player";
 
 import { loadData, type LoadedData } from "./data";
 import { firstPaint } from "./first-paint";
-import { focusNextFrame } from "./focus";
+import { focusNextFrame, LIVE_ID, useCardFocus } from "./focus";
 import { offerAgentTools } from "./webmcp";
 import {
   useScrollsMark,
@@ -658,6 +658,32 @@ export function App({ link }: { link: UrlView }) {
   useEffect(() => {
     document.title = openName ? `${openName} — History Globe` : "History Globe";
   }, [openName]);
+  // The card beside the map takes the focus from the control that opened it and gives it
+  // back when it closes (focus.ts); the live region says what opened.
+  const cardBox = useRef<HTMLElement>(null);
+  const shownPerson = person && !selected ? people?.people[person.index] : undefined;
+  const cardKey = !parts.card
+    ? null
+    : quiz
+      ? `quiz:${quizTourNow ?? ""}`
+      : tour && state.tour
+        ? `tour:${tour.id}`
+        : person && !selected
+          ? `person:${String(person.index)}`
+          : selected && !picking
+            ? `place:${selected.id}`
+            : null;
+  const cardSaid =
+    tour && state.tour && !quiz
+      ? `${t("a11y.opened", { name: tourName ?? "" })}. ${t("tours.stop", { n: state.tour.step + 1, total: tour.stops.length })}`
+      : t("a11y.opened", {
+          name: shownPerson ? personName(shownPerson, state.locale) : (openName ?? ""),
+        });
+  useCardFocus(cardKey, cardSaid, cardBox, (el) =>
+    // A control gone by then: the overview's (closed for a tour) gives the focus to the
+    // book that opens it, the search's to its magnifier; a card opened by a link, too.
+    el?.closest("#side-panels") ? overviewButton : searchButton,
+  );
 
   return (
     <FrameContext value={frame}>
@@ -703,6 +729,8 @@ export function App({ link }: { link: UrlView }) {
             </Panel>
           )}
         </main>
+        {/* Said to screen readers: what opened, how many results the search found. */}
+        <div id={LIVE_ID} role="status" aria-live="polite" className="sr-only" />
 
         {data && engine && (
           <>
@@ -738,7 +766,7 @@ export function App({ link }: { link: UrlView }) {
               <aside
                 ref={columnBox}
                 aria-label={t("panels.label")}
-                className={`pointer-events-none absolute top-4 bottom-[calc(var(--hg-timeline-h)+24px)] left-4 -m-4 flex flex-col gap-3 overflow-y-auto p-4 pr-5 [scrollbar-width:thin] *:pointer-events-auto *:shrink-0 data-scrolls:pointer-events-auto max-md:inset-x-3 max-md:top-3 max-md:bottom-auto max-md:z-10 max-md:max-h-[calc(100dvh-var(--hg-timeline-h)-32px)] max-md:pr-4 ${searchOpen ? "max-md:overflow-visible" : ""}`}
+                className={`pointer-events-none absolute top-4 bottom-[calc(var(--hg-timeline-h)+24px)] left-4 -m-4 flex flex-col gap-3 overflow-y-auto overscroll-contain p-4 pr-5 [scrollbar-width:thin] *:pointer-events-auto *:shrink-0 data-scrolls:pointer-events-auto max-md:inset-x-3 max-md:top-3 max-md:bottom-auto max-md:z-10 max-md:max-h-[calc(100dvh-var(--hg-timeline-h)-32px)] max-md:pr-4 ${searchOpen ? "max-md:overflow-visible" : ""}`}
               >
                 <Header
                   search={{
@@ -989,8 +1017,9 @@ export function App({ link }: { link: UrlView }) {
             {/* Map-only, the host shows its own box for the place selected. */}
             {parts.card && (
               <section
+                ref={cardBox}
                 aria-label={t("details_label")}
-                className={`hg-card absolute top-4 right-4 max-md:top-auto max-md:right-3 max-md:bottom-[calc(var(--hg-timeline-h)+20px)] max-md:left-3 ${compact ? `z-[3] md:top-14 md:right-[60px] ${shortFrame ? `max-h-[52%] overflow-y-auto rounded-[20px] ${state.selectedPlace !== null || state.tour !== null ? "hg-fade" : ""}` : ""}` : ""}`}
+                className={`hg-card absolute top-4 right-4 max-md:top-auto max-md:right-3 max-md:bottom-[calc(var(--hg-timeline-h)+20px)] max-md:left-3 ${compact ? `z-[3] md:top-14 md:right-[60px] ${shortFrame ? `max-h-[52%] overflow-y-auto overscroll-contain rounded-[20px] ${state.selectedPlace !== null || state.tour !== null ? "hg-fade" : ""}` : ""}` : ""}`}
               >
                 <Suspense fallback={null}>
                   {quiz ? (

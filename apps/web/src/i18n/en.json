@@ -3,6 +3,8 @@
   "search": {
     "placeholder": "Place, person, chapter or year",
     "empty": "Nothing found",
+    "found_one": "{{count}} result",
+    "found_other": "{{count}} results",
     "open": "Find a place, a person or a chapter",
     "close": "Close the search",
     "chapter_one": "{{count}} place on the map",
@@ -74,7 +76,7 @@
     "more": "{{count}} more",
     "coords_wikidata": "Coordinates: Wikidata",
     "close": "Close",
-    "zoom": "Zoom in",
+    "zoom_to": "Zoom to {{name}}",
     "sites_note": "Shares are OpenBible's estimate, not a scholarly consensus",
     "nt_only": "Only in the New Testament: faded before its events",
     "also_here": "Also here",
@@ -353,5 +355,8 @@
     "quiz_about": "“Where did it happen?” on screen or A4",
     "quiz_pick": "Pick a tour",
     "quiz_print": "Print for students (A4)"
+  },
+  "a11y": {
+    "opened": "Opened: {{name}}"
   }
 }

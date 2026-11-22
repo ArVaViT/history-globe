@@ -1,7 +1,8 @@
 /**
  * Accessibility: axe-core over the states of the app listed below, from the first frame to
- * an open person, the overview and settings, and over the documentation in two languages.
- * The map canvas is left out: it is an image to axe.
+ * an open person, the overview and settings, on a phone in languages with long words, and
+ * over the documentation in two languages. The map canvas is left out: it is an image to
+ * axe. Then the static pages at 320 px, the narrowest phone: none may scroll sideways.
  *
  * Usage: pnpm e2e:a11y (with the app running; see e2e/browser.mjs)
  */
@@ -9,7 +10,14 @@ import { createRequire } from "node:module";
 import { BASE, launch, mapReady, newPage, settled } from "./browser.mjs";
 
 const b = await launch();
-const p = await newPage(b);
+/** A page per screen size, made on first use. */
+const pages = new Map();
+const pageOf = async (width = 1440, height = 900) => {
+  const key = `${String(width)}x${String(height)}`;
+  if (!pages.has(key)) pages.set(key, await newPage(b, { width, height }));
+  return pages.get(key);
+};
+let p = await pageOf();
 const axe = createRequire(import.meta.url).resolve("axe-core/axe.min.js");
 const acts = {
   verse: async () => {
@@ -66,8 +74,24 @@ const acts = {
     await p.getByRole("dialog").waitFor({ timeout: 8000 });
     await settled(p);
   },
+  // The overview in any language: its book is the second button of the header.
+  book: async () => {
+    await p.locator("aside button[aria-expanded]").first().waitFor();
+    await p.evaluate(() => {
+      const book = [...document.querySelectorAll("aside button")].find(
+        (x) => x.getAttribute("aria-expanded") !== null,
+      );
+      // Opened before, it is remembered open.
+      if (book?.getAttribute("aria-expanded") === "false") book.click();
+    });
+    await p.locator("#more-panels").waitFor({ timeout: 8000 });
+    await settled(p);
+  },
 };
-for (const [url, act] of [
+/** A phone, upright: 375 px, and 320 px, the narrowest. */
+const PHONE = [375, 812];
+const NARROW = [320, 640];
+for (const [url, act, size] of [
   ["?locale=ru"],
   ["?locale=ru&place=af2161c&year=30", "verse"],
   ["?locale=ru&tour=paul-1&stop=3"],
@@ -89,7 +113,15 @@ for (const [url, act] of [
   ["docs/ru/embedding.html"],
   ["docs/ru/build.html"],
   ["export/"],
+  // On a phone a card folds the player to its year and age; Finnish and Vietnamese have the
+  // longest ages. The overview's tabs in Tagalog are wider than a 320 px phone.
+  ["?locale=fi&year=30&place=a15257a", null, PHONE],
+  ["?locale=vi&year=30&place=a15257a", null, PHONE],
+  ["?locale=tl", "book", NARROW],
+  ["?locale=de&tour=paul-2&stop=4", null, NARROW],
+  ["docs/", null, NARROW],
 ]) {
+  p = await pageOf(...(size ?? []));
   await p.goto(BASE + url);
   if (!/^(docs|export)\//.test(url)) {
     await mapReady(p);
@@ -117,4 +149,27 @@ for (const [url, act] of [
   for (const v of res)
     console.log(`  [${v.impact}] ${v.id} x${v.n}: ${v.help}\n     ${v.sample.join("\n     ")}`);
 }
+
+// At 320 px no static page scrolls sideways: a line that cannot wrap (a tour's title, the
+// documentation's bar) pushed the page past the screen.
+p = await pageOf(...NARROW);
+for (const url of [
+  "docs/",
+  "docs/fi/",
+  "docs/tl/api.html",
+  ...["en", "de", "es", "fi", "ru", "tl", "vi"].flatMap((l) => [
+    `${l}/`,
+    `${l}/tours/`,
+    `${l}/places/`,
+    `${l}/tour/paul-2/`,
+  ]),
+]) {
+  await p.goto(BASE + url);
+  const wide = await p.evaluate(() => document.documentElement.scrollWidth);
+  if (wide > 320) {
+    console.log(`== ${url} scrolls sideways at 320 px: ${String(wide)} px wide`);
+    process.exitCode = 1;
+  }
+}
+console.log("== the static pages at 320 px: checked");
 await b.close();
