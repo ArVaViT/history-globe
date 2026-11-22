@@ -35,21 +35,21 @@ repository is for those who work on it (decisions, checks, how the data is built
 
 ## Places and names
 
-| File                                   | What                                                                                |
-| -------------------------------------- | ----------------------------------------------------------------------------------- |
-| `place-names.yaml`                     | Russian names of the places, as the Synodal text spells them                        |
-| `names-<lang>.yaml`                    | names in the other languages: places, states, modern names and people               |
-| `namesakes.json`                       | the word a page title adds to tell a place from another of the same name            |
-| `modern-names.yaml`                    | Russian forms of the modern names of sites                                          |
-| `polity-names.yaml`                    | Russian names of Cliopatria's states                                                |
-| `place-points.json`                    | places whose point is chosen by hand, with the reason                               |
-| `photos.yaml`                          | the photo of each place from Wikimedia Commons, with author and licence             |
-| `wikidata.json`, `tipnr.json`          | each place's Wikidata item and STEPBible TIPNR name, as OpenBible links them        |
-| `pleiades.json`                        | each place's Pleiades record and the years it is attested                           |
-| `ancient-sites.json`, `…-wave<n>.json` | the places of the ancient world the Bible does not name (ADR 0013, ADR 0018)        |
-| `fame.json`                            | how widely a town is known (the Wikipedia articles of its item), for its rank       |
-| `drafts/`                              | Wikidata labels kept for translators; not read by the build (ADR 0013 names one)    |
-| `sources-ru.yaml`, `sources-own.yaml`  | the source lines in Russian, and the site's own source lines in the other languages |
+| File                                   | What                                                                             |
+| -------------------------------------- | -------------------------------------------------------------------------------- |
+| `place-names.yaml`                     | Russian names of the places, as the Synodal text spells them                     |
+| `names-<lang>.yaml`                    | names in the other languages: places, states, modern names and people            |
+| `namesakes.json`                       | the word a page title adds to tell a place from another of the same name         |
+| `modern-names.yaml`                    | Russian forms of the modern names of sites                                       |
+| `polity-names.yaml`                    | Russian names of Cliopatria's states                                             |
+| `place-points.json`                    | places whose point is chosen by hand, with the reason                            |
+| `photos.yaml`                          | the photo of each place from Wikimedia Commons, with author and licence          |
+| `wikidata.json`, `tipnr.json`          | each place's Wikidata item and STEPBible TIPNR name, as OpenBible links them     |
+| `pleiades.json`                        | each place's Pleiades record and the years it is attested                        |
+| `ancient-sites.json`, `…-wave<n>.json` | the places of the ancient world the Bible does not name (ADR 0013, ADR 0018)     |
+| `fame.json`                            | how widely a town is known (the Wikipedia articles of its item), for its rank    |
+| `drafts/`                              | Wikidata labels kept for translators; not read by the build (ADR 0013 names one) |
+| `sources-<code>.yaml`                  | the source lines in each language but English                                    |
 
 ## People
 

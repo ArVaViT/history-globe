@@ -31,9 +31,7 @@ import {
   type PleiadesLink,
   type PlacePhoto,
   type QuestionTitles,
-  SourcesRuFile,
-  SourcesOwnFile,
-  OWN_SOURCE,
+  SourcesFile,
   LocaleNamesFile,
   NAME_LOCALES,
 } from "../packages/model/src/content.ts";
@@ -53,6 +51,15 @@ import { loadReviews } from "./reviews.ts";
 import { readEdition, repair, SOURCES } from "./bible-text.ts";
 import { checkTexts, FoldedBible, type TextRecord } from "./text-checks.ts";
 import { TEXT_EXCEPTIONS } from "./text-exceptions.ts";
+import {
+  bareMile,
+  englishLeft,
+  eventIds as sourceEventIds,
+  missingAndStale,
+  notCyrillic,
+  titlesMissing,
+  wrongCenturies,
+} from "./source-checks.ts";
 import {
   type Dated,
   eventBattleLinks,
@@ -1347,43 +1354,35 @@ const chapterYears = packChapterYears(ChapterYearsFile.parse(load("content/chapt
 ]);
 errors.push(...chapterYears.errors);
 
-// Sources in Russian (content/sources-ru.yaml): every line a reader sees, on a card or a
-// page, has its Russian; a new line without one stops the build.
-const sourcesRu = SourcesRuFile.parse(load("content/sources-ru.yaml"));
-const seenRu = new Set<string>();
-const inRussian = (where: string, list: readonly string[]): string[] =>
-  list.map((s) => {
-    seenRu.add(s);
-    const ru = sourcesRu[s];
-    if (ru === undefined)
-      errors.push(`${where}: no Russian for the source "${s}" (sources-ru.yaml)`);
-    return ru ?? s;
-  });
-// The site's own lines among the sources (content/sources-own.yaml), in every language but
-// English and Russian: a page in German reads "History-Globe-Tour „Salomo“", not the English
-// line; the bibliography beside them stays as published. An own line without all of its
-// languages stops the build, like a line without its Russian.
-const sourcesOwn = SourcesOwnFile.parse(load("content/sources-own.yaml"));
-const OWN_IN = LOCALES.filter((l) => l !== "en" && l !== "ru");
-const seenOwn = new Set<string>();
-const ownInEach = (
-  where: string,
-  list: readonly string[],
-): Partial<Record<Locale, string[]>> | undefined => {
-  if (!list.some((s) => OWN_SOURCE.test(s))) return undefined;
-  return Object.fromEntries(
-    OWN_IN.map((l) => [
+// Source lines in every language but English (content/sources-<code>.yaml): each line a
+// reader sees under an article, a question or a place's years, to the line a reader of
+// that language reads. A cited line without its translation in any language stops the
+// build, and so does a translation that nothing cites any more.
+const SOURCE_LOCALES = LOCALES.filter((l) => l !== "en");
+const sourcesIn = Object.fromEntries(
+  SOURCE_LOCALES.map((l) => [l, SourcesFile.parse(load(`content/sources-${l}.yaml`))]),
+) as Record<Exclude<Locale, "en">, Record<string, string>>;
+const cited = new Set<string>();
+// The lines in each language; a missing translation is an error once per line.
+const translated = (where: string, list: readonly string[], report = true) => {
+  const byLocale = Object.fromEntries(
+    SOURCE_LOCALES.map((l) => [
       l,
       list.map((s) => {
-        if (!OWN_SOURCE.test(s)) return s;
-        seenOwn.add(s);
-        const t = sourcesOwn[s]?.[l];
-        if (t === undefined)
-          errors.push(`${where}: no ${l} for the site's own source "${s}" (sources-own.yaml)`);
+        if (report) cited.add(s);
+        const t = sourcesIn[l][s];
+        if (t === undefined && report)
+          errors.push(`${where}: no ${l} for the source "${s}" (sources-${l}.yaml)`);
         return t ?? s;
       }),
     ]),
+  ) as Record<Exclude<Locale, "en">, string[]>;
+  const { ru, ...rest } = byLocale;
+  // Russian as before (sources_ru); the others only where they differ from the English.
+  const others = Object.fromEntries(
+    Object.entries(rest).filter(([, ls]) => ls.some((s, i) => s !== list[i])),
   );
+  return { sources_ru: ru, ...(Object.keys(others).length > 0 ? { sources_in: others } : {}) };
 };
 // The marks a copy can be told by (scripts/canary.ts): none without HG_CANARY_SEED.
 const canaries = new Canaries();
@@ -1407,45 +1406,79 @@ const reviewsOf = (kind: "article" | "question", id: string) => {
 const articlesOut = articles.map((a) => ({
   ...a,
   body: inEachLanguage((l) => `data/articles/${l}.json`, a.place, a.body),
-  sources_ru: inRussian(`articles/${a.id}`, a.sources),
-  ...((x) => (x ? { sources_in: x } : {}))(ownInEach(`articles/${a.id}`, a.sources)),
+  ...translated(`articles/${a.id}`, a.sources),
   ...reviewsOf("article", a.id),
 }));
 const questionsOut = questions.map((q) => ({
   ...q,
   answer: inEachLanguage(() => "api/v1/questions.json", q.id, q.answer),
-  sources_ru: inRussian(`questions/${q.id}`, q.sources),
-  ...((x) => (x ? { sources_in: x } : {}))(ownInEach(`questions/${q.id}`, q.sources)),
+  ...translated(`questions/${q.id}`, q.sources),
   ...reviewsOf("question", q.id),
 }));
+// A place's years taken over from the city it lies in carry that city's lines, checked there.
 for (const [id, l] of Object.entries(life))
-  if (!l.inherited) {
-    const own = ownInEach(`place-life: ${id}`, l.sources);
-    life[id] = {
-      ...l,
-      sources_ru: inRussian(`place-life: ${id}`, l.sources),
-      ...(own ? { sources_in: own } : {}),
-    };
+  life[id] = { ...l, ...translated(`place-life: ${id}`, l.sources, !l.inherited) };
+// Each language's table checked against the lines cited (scripts/source-checks.ts): nothing
+// missing (reported above, with the item) or stale, no English of ours left, Serbian,
+// Ukrainian and Bulgarian in Cyrillic, centuries and miles as the language counts them,
+// the site's own titles as the site gives them, and no event named by its id.
+{
+  const titles = Object.fromEntries(
+    SOURCE_LOCALES.map((l) => [
+      l,
+      new Map([...tours, ...events, ...battles].map((x) => [x.title.en, x.title[l] ?? x.title.en])),
+    ]),
+  );
+  const eventIds = new Set([...events.map((e) => e.id), ...battles.map((b) => b.id)]);
+  for (const s of cited) {
+    const ids = sourceEventIds(s, eventIds);
+    if (ids.length > 0)
+      errors.push(`source "${s}" names an event or battle by its id (${ids.join(", ")})`);
   }
-for (const [id, l] of Object.entries(life))
-  if (l.inherited) {
-    const ru = l.sources.map((s) => sourcesRu[s] ?? s);
-    // The site's own lines in each language too, as the entry inherited from has them.
-    const own = l.sources.some((s) => OWN_SOURCE.test(s))
-      ? Object.fromEntries(
-          OWN_IN.map((lang) => [
-            lang,
-            l.sources.map((s) => (OWN_SOURCE.test(s) ? (sourcesOwn[s]?.[lang] ?? s) : s)),
-          ]),
-        )
-      : undefined;
-    life[id] = { ...l, sources_ru: ru, ...(own ? { sources_in: own } : {}) };
+  for (const l of SOURCE_LOCALES) {
+    const table = sourcesIn[l];
+    for (const s of missingAndStale(cited, table).stale)
+      errors.push(`sources-${l}.yaml: "${s}" is no source of anything`);
+    for (const s of cited) {
+      const t = table[s];
+      if (t === undefined) continue;
+      const at = (what: string) => `sources-${l}.yaml: ${what} in "${t}"`;
+      const left = englishLeft(s, t, l);
+      if (left.length > 0) errors.push(at(`English left (${left.join(", ")})`));
+      if (["uk", "sr", "bg"].includes(l)) {
+        const latin = notCyrillic(s, t, l);
+        if (latin.length > 0) errors.push(at(`not in Cyrillic (${latin.join(", ")})`));
+      }
+      if (["da", "nb", "sv", "fi"].includes(l)) {
+        const wrong = wrongCenturies(s, t);
+        if (wrong.length > 0) errors.push(at(`no century ${wrong.join(", ")} in the English`));
+      }
+      if (["da", "nb", "sv"].includes(l) && bareMile(t))
+        errors.push(at("a mile that is not Roman or English"));
+      const missing = titlesMissing(s, t, titles[l] ?? new Map<string, string>());
+      if (missing.length > 0) errors.push(at(`not the site's title (${missing.join("; ")})`));
+    }
   }
-// A translation no line uses any more is stale.
-for (const s of Object.keys(sourcesRu))
-  if (!seenRu.has(s)) errors.push(`sources-ru.yaml: "${s}" is no source of anything`);
-for (const s of Object.keys(sourcesOwn))
-  if (!seenOwn.has(s)) errors.push(`sources-own.yaml: "${s}" is no source of anything`);
+  // A bare "mil" is the Scandinavian mile in every other Danish, Norwegian and Swedish text too.
+  const NORDIC = ["da", "nb", "sv"];
+  const walk = (file: string, x: unknown, lang: string | null): void => {
+    if (typeof x === "string") {
+      if (lang !== null && bareMile(x))
+        errors.push(`${file}: a ${lang} mile that is not Roman or English in "${x}"`);
+    } else if (Array.isArray(x)) for (const y of x) walk(file, y, lang);
+    else if (x !== null && typeof x === "object")
+      for (const [k, y] of Object.entries(x)) walk(file, y, NORDIC.includes(k) ? k : lang);
+  };
+  const texts = (dir: string): string[] =>
+    readdirSync(join(root, dir), { withFileTypes: true }).flatMap((e) =>
+      e.isDirectory()
+        ? texts(join(dir, e.name))
+        : e.name.endsWith(".yaml") && !e.name.startsWith("sources-")
+          ? [join(dir, e.name)]
+          : [],
+    );
+  for (const f of texts("content")) walk(f, load(f), null);
+}
 
 // What ancient authors say of places (content/ancient-authors.yaml): loaded when a card
 // opens, place id → its mentions in the file's order.
@@ -1512,6 +1545,11 @@ for (const t of tours) {
 }
 for (const [place, ms] of Object.entries(ancientByPlace))
   for (const m of ms) scriptOf(`ancient-authors.yaml: ${place} ${m.author.en}`, m.note);
+for (const s of cited)
+  scriptOf(
+    `source "${s}"`,
+    Object.fromEntries(SOURCE_LOCALES.map((l) => [l, sourcesIn[l][s] ?? ""])),
+  );
 
 if (errors.length > 0) {
   console.error(errors.join("\n"));
