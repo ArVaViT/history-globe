@@ -123,7 +123,9 @@ the data first (`pnpm data`).
 - **Polity overrides** (`content/polity-overrides.yaml`): our corrections to Cliopatria,
   each with a reason and sources, applied to the pipeline's states (`pipeline/.cache`) on
   every run, never to what an earlier run wrote; copies are marked `src: "override"`.
-  Kinds: `overrides` (last year), `starts` (first year), `clips` (cut to an area),
+  Kinds: `overrides` (last year), `seams` (a change of shape moved from Cliopatria's round
+  year to the year it happened: Israel and Judah divided in 931 BC, not 901), `starts` (first
+  year), `clips` (cut to an area),
   `absent` (years it did not exist), `renamed` (a new name from a year, for a polity the
   data names by one era too long), `bridges` (years the data leaves it off), `annexed` (its
   last shape drawn as the empire that took it), `vassals` (overlord's colour and a second
@@ -132,8 +134,11 @@ the data first (`pnpm data`).
   approximate outline less the land of the polities in `minus`: Aram-Damascus, Hamath,
   Carchemish, Ammon, Moab, Edom; its names in every language like any other). A clip is
   `within` a convex polygon or, with years, `without` any polygon; the land a clip with
-  years cuts away goes `to` the state that took it, or the clip says `leaves_blank`: more
-  than half of that land left without any state otherwise stops the build. A name missing
+  years cuts away goes `to` the state that took it (drawn as that state's own shape, named at
+  its middle, when the data has none of it in those years: Syria to the Ayyubids in
+  1250-1259), or the clip says `leaves_blank`: more than half of that land left without any
+  state otherwise stops the build. A shape a clip cuts away whole (the Visigoths' raid on
+  Rome) is left out with its label. A name missing
   from the data, an overlord absent in those years, overlapping vassal years, or a drawn
   state covering more than 5% of a state it does not subtract (save as a vassal) stop the
   build. Then the colours are assigned as a map (neighbours shape by shape) and the labels
@@ -148,10 +153,11 @@ the data first (`pnpm data`).
   `scripts/polygon-ops.ts`), and no speck or sliver; a shape that still fails stops the
   build.
 - **Anchors** (`content/polity-anchors.yaml`): a capital or key town lies inside the state
-  named for each period, inside some state in the years between, or the years are listed
+  named for each period, and that state is the one its card names (the smallest of those
+  holding it, as `scripts/rulers.ts` picks it), so a raid drawn over a town fails, inside some state in the years between, or the years are listed
   as a gap with the reason (Nineveh after 612 BC). Damascus, Rabbah, Dibon, Bozrah, Hamath,
-  Carchemish, Babylon, Nineveh, Tushpa, Dan, Lachish, Beersheba, Arad, Gaza, Tyre and
-  Constantinople among them.
+  Carchemish, Babylon, Nineveh, Tushpa, Dan, Lachish, Beersheba, Arad, Gaza, Tyre,
+  Constantinople, Shechem, Memphis, Rome, Athens, Corinth, Antioch and Acre among them.
 - **The release is described** (`scripts/release-doc.ts`): every field of the states, of
   `content.json` and of the articles is named in `docs/data-release.md`, or the build stops.
 - **Each language in its own script**: no Cyrillic in the articles, answers, tours and

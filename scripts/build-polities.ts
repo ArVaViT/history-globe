@@ -257,6 +257,31 @@ export function buildPolities({
     f.geometry = { type: "MultiPolygon", coordinates: tidy(polysOf(f.geometry as Geometry)) };
   }
   const overridesFile = PolityOverridesFile.parse(load("content/polity-overrides.yaml"));
+  // A change of shape moved from Cliopatria's round year to the year it happened (overrides
+  // `seams`): the shapes and labels beginning in that year begin in the new one, those
+  // ending there end then. First, so that every later correction sees the years as moved.
+  for (const s of overridesFile.seams ?? []) {
+    const own = [...polities.features, ...polityLabels.features].filter(
+      (f) => f.properties.name === s.polity && !f.properties.rel,
+    );
+    const after = own.filter((f) => f.properties.y0 === s.data_year);
+    const before = own.filter((f) => f.properties.y1 === s.data_year);
+    if (!after.some((f) => polities.features.includes(f)) || s.first_year === s.data_year) {
+      errors.push(
+        `polity-overrides: seam "${s.polity}": no shape begins in ${String(s.data_year)}`,
+      );
+      continue;
+    }
+    if (
+      after.some((f) => f.properties.y1 <= s.first_year) ||
+      before.some((f) => f.properties.y0 >= s.first_year)
+    ) {
+      errors.push(`polity-overrides: seam "${s.polity}" moves past a whole shape`);
+      continue;
+    }
+    for (const f of after) f.properties.y0 = s.first_year;
+    for (const f of before) f.properties.y1 = s.first_year;
+  }
   for (const o of overridesFile.overrides) {
     const own = polities.features.filter(
       (f) => f.properties.name === o.polity && !f.properties.rel,
@@ -485,11 +510,15 @@ export function buildPolities({
     for (const f of polityLabels.features) {
       if (f.properties.name !== c.polity || (limited && f.properties.clipped !== k)) continue;
       const at = f.geometry as { coordinates: [number, number] };
-      const rings = (
-        (ownShape(f)?.geometry as { coordinates: Ring[][] } | undefined)?.coordinates ?? []
-      )
+      const own = ownShape(f);
+      const rings = ((own?.geometry as { coordinates: Ring[][] } | undefined)?.coordinates ?? [])
         .map((p) => p[0] ?? [])
         .filter((r) => r.length >= 4);
+      // Its shape cut away whole (a raid's land given back): it names nothing.
+      if (own && rings.length === 0) {
+        f.properties.y1 = f.properties.y0;
+        continue;
+      }
       // Inside any of its pieces, it stays.
       if (rings.length === 0 || rings.some((r) => pointInRing(at.coordinates, r))) continue;
       // One of the grid of points an empire is named at up close (tier 1, 2): off the cut
@@ -525,6 +554,9 @@ export function buildPolities({
       }
       if (best) at.coordinates = [Math.round(((best[0] + best[1]) / 2) * 1000) / 1000, mid[1]];
     }
+    // A shape cut away whole draws nothing in its years.
+    for (const f of shapes)
+      if (polysOf(f.geometry as Geometry).length === 0) f.properties.y1 = f.properties.y0;
   }
 
   // Land a polity held that its shape leaves out (overrides `extends`), and land a clip cut
@@ -538,6 +570,7 @@ export function buildPolities({
       b: x.last_year + 1, // half-open, ADR 0003
       add: [x.outline],
       what: `extends "${x.polity}"`,
+      taken: false,
     })),
     ...cutAways.flatMap((w) => {
       const c = clipsByIndex[w.k];
@@ -549,6 +582,7 @@ export function buildPolities({
               b: w.y1,
               add: w.rings,
               what: `clip "${c.polity}" to "${c.to}"`,
+              taken: true,
             },
           ]
         : [];
@@ -564,6 +598,37 @@ export function buildPolities({
         g.properties.y0 < x.b &&
         x.a < g.properties.y1,
     );
+    // Land a clip gives to a state the data does not draw in those years (Syria to the
+    // Ayyubids of Damascus, 1250-1259): the land itself is its shape, named at its middle,
+    // in the colour and names of the state's shape nearest in time.
+    const like = polities.features
+      .filter((g) => g.properties.name === x.polity && !g.properties.rel)
+      .sort(
+        (g, h) =>
+          Math.min(Math.abs(g.properties.y1 - x.a), Math.abs(g.properties.y0 - x.b)) -
+          Math.min(Math.abs(h.properties.y1 - x.a), Math.abs(h.properties.y0 - x.b)),
+      )[0];
+    if (own.length === 0 && x.taken && like) {
+      const shape = tidy(booleanOp(x.add, [], "union"));
+      if (shape.length === 0) continue;
+      const props = { ...like.properties, y0: x.a, y1: x.b, src: "override" };
+      delete props.clipped;
+      polities.features.push({
+        geometry: { type: "MultiPolygon", coordinates: shape },
+        properties: props,
+      });
+      const total = shape.reduce((sum, poly) => sum + ringArea(poly[0] ?? []), 0);
+      polityLabels.features.push({
+        geometry: { type: "Point", coordinates: middleOf(shape) },
+        properties: {
+          ...props,
+          size: Math.round((Math.log10(Math.max(total, 0.01)) + 2) * 100) / 100,
+          tier: 0,
+          lead: 1,
+        },
+      } as PolityFeature);
+      continue;
+    }
     if (own.length === 0) {
       errors.push(`polity-overrides: ${x.what}: not on the map in those years`);
       continue;
@@ -1300,9 +1365,9 @@ function runs(years: number[]): string {
  *   left blank fails;
  * - a state drawn by us covers no state it does not cut itself out of (`minus`), save as a
  *   vassal over its overlord;
- * - the anchors (content/polity-anchors.yaml): each place lies inside the state named for
- *   each of its periods, inside some state in the years between, or the years are listed
- *   as a gap with the reason.
+ * - the anchors (content/polity-anchors.yaml): the state named for each of a place's
+ *   periods is the one its card names (the smallest holding it), some state holds it in
+ *   the years between, or the years are listed as a gap with the reason.
  */
 export function checkPolities({
   shapes,
@@ -1339,6 +1404,8 @@ export function checkPolities({
         f,
         rings,
         box: [Math.min(...xs), Math.min(...ys), Math.max(...xs), Math.max(...ys)] as const,
+        // As scripts/rulers.ts measures it: the outer rings' area.
+        area: polysOf(f.geometry).reduce((a, poly) => a + ringArea(poly[0] ?? []), 0),
       };
     });
   const holding = (p: [number, number]) =>
@@ -1454,15 +1521,18 @@ export function checkPolities({
       const want = a.periods
         .filter((x) => x.first_year <= y && y <= x.last_year)
         .map((x) => x.polity);
+      // The state the place's card names in that year: of those holding it, the smallest,
+      // as scripts/rulers.ts picks it (a raid drawn over a town is caught, not passed).
       const have = mine
         .filter(({ f }) => f.properties.y0 <= y && y < f.properties.y1)
+        .sort((u, v) => u.area - v.area)
         .map(({ f }) => f.properties.name);
       const ok =
         want.length === 0 || want.includes("any")
           ? have.length > 0
-          : want.some((w) => have.includes(w));
+          : have[0] !== undefined && want.includes(have[0]);
       if (ok) continue;
-      const key = `in ${have.length > 0 ? [...new Set(have)].join(" and ") : "no state"}, not ${want.length > 0 ? want.join(" or ") : "any state"}`;
+      const key = `in ${have.length > 0 ? [...new Set(have)].join(" within ") : "no state"}, not ${want.length > 0 ? want.join(" or ") : "any state"}`;
       wrong.set(key, [...(wrong.get(key) ?? []), y]);
     }
     for (const [key, years] of wrong)
