@@ -27,6 +27,7 @@ import { bodyEnd, esc, headMeta, sansPreload } from "./page-shell.ts";
 import { clientScript } from "./client-script.ts";
 import { versioned } from "./content-hash.ts";
 import { unsafeHtml } from "./docs-html.ts";
+import { htmlText } from "./html-read.ts";
 import { TYPESET } from "./typeset.ts";
 import { REPOSITORY } from "../packages/model/src/site.ts";
 import { NOTICE_COMMENT } from "../packages/model/src/notice.ts";
@@ -964,7 +965,7 @@ function headings(body: string, file: string): { body: string; toc: Heading[] } 
     (_, level: string, id: string | undefined, text: string) => {
       if (!id) throw new Error(`${file}: a heading without its id: <h${level}>${text}`);
       if (toc.some((h) => h.id === id)) throw new Error(`${file}: two headings with id "${id}"`);
-      toc.push({ id, text: text.replace(/<[^>]+>/g, ""), level: level === "3" ? 3 : 2 });
+      toc.push({ id, text: htmlText(text), level: level === "3" ? 3 : 2 });
       return `<h${level} id="${id}">${text}<a class="anchor" href="#${id}" aria-hidden="true" tabindex="-1">#</a></h${level}>`;
     },
   );
@@ -1113,8 +1114,7 @@ function entries(body: string, title: string, url: string): Entry[] {
   const seen = new Set<string>();
   // Plain text: the results are written into the page as text, not as HTML.
   const text = (html: string) =>
-    html
-      .replace(/<[^>]+>/g, "")
+    htmlText(html)
       .replace(/&lt;/g, "<")
       .replace(/&gt;/g, ">")
       .replace(/&nbsp;/g, " ")

@@ -12,6 +12,7 @@
 import { createHash } from "node:crypto";
 import { readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
+import { inlineScripts } from "./html-read.ts";
 
 const root = join(import.meta.dirname, "..");
 const dist = join(root, "apps/web/dist");
@@ -27,13 +28,8 @@ function* html(dir: string): Generator<string> {
 // Inline scripts that run: no src, and JavaScript (not JSON-LD or another data block).
 const used = new Map<string, string>();
 for (const file of html(dist))
-  for (const m of readFileSync(file, "utf8").matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)) {
-    const attrs = m[1] ?? "";
-    const type = /type="([^"]+)"/.exec(attrs)?.[1];
-    if (/\ssrc=/.test(attrs) || (type && type !== "module" && type !== "text/javascript")) continue;
-    const hash = `'sha256-${createHash("sha256")
-      .update(m[2] ?? "")
-      .digest("base64")}'`;
+  for (const text of inlineScripts(readFileSync(file, "utf8"))) {
+    const hash = `'sha256-${createHash("sha256").update(text).digest("base64")}'`;
     if (!used.has(hash)) used.set(hash, file.slice(dist.length + 1));
   }
 

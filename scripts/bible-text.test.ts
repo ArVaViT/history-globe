@@ -8,6 +8,8 @@ import {
   alignedByLength,
   CALVIN,
   OSIS,
+  osisText,
+  plainWiki,
   readBiblia1914,
   readSword,
   readTsarigrad,
@@ -165,6 +167,42 @@ describe("readSword", () => {
   it("refuses a grid it cannot place verses in", () => {
     const zip = writeModule("vulg", KJV_SIZES, "Versification=Vulg\n");
     expect(() => swordVersification(zip)).toThrow(/Vulg/);
+  });
+});
+
+describe("osisText", () => {
+  it("keeps the words and drops the notes, the headings and the tags", () => {
+    expect(
+      osisText(
+        '<title type="psalm" canonical="true">A Psalm of David.</title>' +
+          '<w lemma="strong:H3068">The LORD</w> <transChange type="added">is</transChange> ' +
+          'my shepherd<note type="x-StudyNote">a <hi type="italic">note</hi></note>;\n I shall not want.',
+      ),
+    ).toBe("The LORD is my shepherd; I shall not want.");
+  });
+
+  it.each([
+    ["a <note>1 <note>2</note> 3</note>b", "a b"],
+    ['a <note n="x"/>b <milestone type="x-p"/>c', "a b c"],
+    ['<w gloss="a > b">word</w>', "word"],
+    ["a <NOTE>x</NOTE>b", "a b"],
+    // A tag split by another is no tag when the first is taken out.
+    ["<scr<w>ipt>x", "ipt>x"],
+    ["a <note>left open", "a"],
+  ])("%j → %j", (osis, text) => {
+    expect(osisText(osis)).toBe(text);
+  });
+});
+
+describe("plainWiki", () => {
+  it.each([
+    ["[[Facere|Facerea]] și [[pământul]]", "Facerea și pământul"],
+    ["''netocmit'' <ref>a <b>note</b></ref>", "netocmit a note"],
+    ["a <!-- [[ascuns]] --> b", "a b"],
+    ["a&nbsp;b", "a b"],
+    ["<scr<i>ipt>x", "ipt>x"],
+  ])("%j → %j", (wiki, text) => {
+    expect(plainWiki(wiki)).toBe(text);
   });
 });
 

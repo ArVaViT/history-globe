@@ -16,6 +16,7 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join, relative } from "node:path";
 import { LOCALES } from "../packages/model/src/locales.ts";
+import { htmlText } from "./html-read.ts";
 
 const root = join(import.meta.dirname, "..");
 const pub = join(root, "apps/web/public");
@@ -108,7 +109,7 @@ for (const file of files) {
       /<dt>([\s\S]*?)<\/dt><dd>([\s\S]*?)<\/dd>/g,
     )) {
       rows++;
-      if (!text.replace(/<[^>]*>/g, "").trim()) errors.push(`${at}: the verse row ${ref} is empty`);
+      if (!htmlText(text).trim()) errors.push(`${at}: the verse row ${ref} is empty`);
     }
   const title = unescape(/<title>([^<]*) \| History Globe<\/title>/.exec(html)?.[1] ?? "");
   const desc = unescape(/<meta name="description" content="([^"]*)"/.exec(html)?.[1] ?? "");

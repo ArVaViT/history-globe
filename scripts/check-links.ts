@@ -9,6 +9,7 @@
  */
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join, normalize, relative } from "node:path";
+import { withoutScriptText } from "./html-read.ts";
 
 const pub = join(import.meta.dirname, "..", "apps/web/public");
 const pages = (dir: string): string[] =>
@@ -62,7 +63,7 @@ let checked = 0;
 const broken: string[] = [];
 for (const file of files) {
   // A script builds its links from data (the index pages' search): not links of the page.
-  const html = readFileSync(file, "utf8").replace(/(<script\b[^>]*>)[\s\S]*?(<\/script>)/g, "$1$2");
+  const html = withoutScriptText(readFileSync(file, "utf8"));
   for (const [, link = "", fragment] of html.matchAll(
     /(?:href|src)="([^"#?]*)(?:\?[^"#]*)?(?:#([^"]*))?"/g,
   )) {

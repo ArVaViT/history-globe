@@ -11,6 +11,7 @@ import { join } from "node:path";
 import { inflateSync } from "node:zlib";
 import { toSynodal } from "../packages/model/src/synodal.ts";
 import { USFM_TO_OSIS } from "./bible-books.ts";
+import { htmlText } from "./html-read.ts";
 import type { Locale } from "../packages/model/src/locales.ts";
 
 /** USFM book codes → OSIS. */
@@ -29,6 +30,13 @@ function plain(text: string): string {
       .replace(/\s+/g, " ")
       .trim()
   );
+}
+
+/** Plain verse text from a SWORD module's OSIS: words kept, notes, headings and tags dropped. */
+export function osisText(osis: string): string {
+  return htmlText(osis, { drop: ["note", "title"] })
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 /** "Gen.12.6" → text, for the whole Bible in one USFM zip. */
@@ -259,11 +267,7 @@ export function readSword(
           const osis = block(bzv.readUInt32LE(index * 10))
             .subarray(at, at + size)
             .toString("utf8");
-          const text = osis
-            .replace(/<(note|title)\b[^>]*>[\s\S]*?<\/\1>/g, "")
-            .replace(/<[^>]+>/g, "")
-            .replace(/\s+/g, " ")
-            .trim();
+          const text = osisText(osis);
           if (text) verses.set(`${book}.${String(c)}.${String(v)}`, text);
         }
       }
@@ -308,11 +312,10 @@ export const SYNODAL_UNCERTAIN: ReadonlySet<string> = new Set([
 const ANCHOR_SLIPS: Readonly<Record<string, string>> = { "Ps.118.1288": "Ps.118.128" };
 
 /** Plain verse text from a line of Wikisource's wikitext: words kept, markup dropped. */
-function plainWiki(text: string): string {
-  return text
-    .replace(/\[\[[^\]|]*\|([^\]]*)\]\]/g, "$1")
-    .replace(/\[\[([^\]]*)\]\]/g, "$1")
-    .replace(/<[^>]*>/g, "")
+export function plainWiki(text: string): string {
+  return htmlText(
+    text.replace(/\[\[[^\]|]*\|([^\]]*)\]\]/g, "$1").replace(/\[\[([^\]]*)\]\]/g, "$1"),
+  )
     .replace(/'{2,}/g, "")
     .replace(/&nbsp;/g, " ")
     .replace(/\s+/g, " ")
