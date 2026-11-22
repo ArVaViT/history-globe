@@ -1452,6 +1452,17 @@ const ENGLISH_KEPT = new Set([
     }
   }
 }
+// A bare "mil" in Danish, Norwegian and Swedish is the Scandinavian mile (about 10 km), so a
+// mile in a source line always says whose: Roman or English.
+{
+  const MILE = /(?<!\b(?:romersk|romerske|romerska|engelsk|engelske|engelska) )\bmil(?:e|es)?\b/iu;
+  for (const s of cited)
+    for (const l of ["da", "nb", "sv"] as const) {
+      const t = sourcesIn[l][s];
+      if (t !== undefined && MILE.test(t))
+        errors.push(`sources-${l}.yaml: a mile that is not Roman or English in "${t}"`);
+    }
+}
 // The site's dated events and battles are named by their titles in a source line, never by
 // their ids ("saul-king"), which a reader cannot read.
 {
