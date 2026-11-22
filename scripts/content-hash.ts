@@ -9,6 +9,22 @@ export const shortHash = (data: string | Uint8Array): string =>
   createHash("sha256").update(data).digest("hex").slice(0, 12);
 
 /**
+ * A stylesheet's address with its content's hash (`pages.css?v=3f9c0a1b2c4d`): vercel.json
+ * caches such an address for good, and a deploy that changes the file changes the address.
+ */
+export const versioned = (href: string, data: string | Uint8Array): string =>
+  `${href}?v=${shortHash(data)}`;
+
+/** The version of a stylesheet's address, as `versioned` writes it. */
+const VERSION = /\.css\?v=[0-9a-f]{12}"/g;
+
+/**
+ * A built page's hash for IndexNow (build-page-hashes.ts): the stylesheet's version is left
+ * out, so that a change of style alone does not send every page again.
+ */
+export const pageHash = (html: string): string => shortHash(html.replace(VERSION, '.css"'));
+
+/**
  * The hash of what a reviewer reads of an item: its English text, its Scripture and its
  * sources (or a tour's stops). The translations are left out: a review is of the English,
  * and the pages say a translation has not been reviewed. Read from the content files as

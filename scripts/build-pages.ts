@@ -31,6 +31,7 @@ import { rebuiltIn } from "../packages/model/src/place-life-links.ts";
 import { formatYear } from "../packages/model/src/time.ts";
 import { isLocale, LOCALE_NAMES, LOCALES, type SiteLocale } from "../packages/model/src/locales.ts";
 import { bodyEnd, esc, headMeta, sansPreload } from "./page-shell.ts";
+import { versioned } from "./content-hash.ts";
 import { NOTICE_COMMENT } from "../packages/model/src/notice.ts";
 import { TYPESET } from "./typeset.ts";
 import { clientScript } from "./client-script.ts";
@@ -67,6 +68,8 @@ const testamentOf = (
 };
 const pub = join(root, "apps/web/public");
 const data = join(pub, "data");
+/** The stylesheet's address with its version (content-hash.ts versioned). */
+const PAGES_CSS = versioned("pages.css", readFileSync(join(pub, "pages.css")));
 /** The articles and questions in every language, one file each (build-content.ts). */
 const build = join(root, "apps/web/build");
 const site = process.env.SITE_URL?.replace(/\/+$/, "") ?? "";
@@ -389,7 +392,7 @@ function page(o: {
     <script defer src="${up}landing.js"></script>`
         : ""
     }
-    <link rel="stylesheet" href="${up}pages.css" />
+    <link rel="stylesheet" href="${up}${PAGES_CSS}" />
   </head>
   <body${o.home ? ' class="home"' : ""}>
     <a class="skip" href="#main">${T[o.l].skip}</a>

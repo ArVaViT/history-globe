@@ -1,10 +1,12 @@
 # Dependency updates. A weekly look, grouped so a week is one PR per ecosystem; security fixes
-# come as soon as they are published, whatever the schedule and the cooldown.
+# are proposed as soon as they are published, whatever the schedule and the cooldown.
 # Every PR passes `pnpm gate` before it is merged (AGENTS.md).
 #
 # The cooldown (ADR 0010): a version is proposed only once it has been out for some days, so
 # that a hijacked release is usually found and pulled before it reaches us. pnpm refuses
-# younger versions too (minimumReleaseAge, pnpm-workspace.yaml), for the same three days.
+# younger versions too (minimumReleaseAge, pnpm-workspace.yaml), for the same three days: a
+# security fix younger than that fails `pnpm install` in CI until it is named in
+# minimumReleaseAgeExclude there. `pnpm audit --fix` writes that entry with the fix.
 version: 2
 updates:
   - package-ecosystem: npm

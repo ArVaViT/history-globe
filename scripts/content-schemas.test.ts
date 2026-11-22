@@ -4,6 +4,9 @@ import { describe, expect, it } from "vitest";
 import { parse } from "yaml";
 import {
   AncientAuthorsFile,
+  AncientSitesFile,
+  AncientWaveCorrectionsFile,
+  AncientWaveFile,
   ArticleFile,
   BattlesFile,
   ChapterYearsFile,
@@ -13,11 +16,15 @@ import {
   PhotosFile,
   PlaceLifeFile,
   PlaceNamesFile,
+  PolityAnchorsFile,
+  PolityNamesFile,
+  PolityOverridesFile,
   QuestionFile,
   SourcesOwnFile,
   SourcesRuFile,
   TourFile,
 } from "../packages/model/src/content.ts";
+import { ReviewFile } from "../packages/model/src/reviews.ts";
 
 // The content's shape (ADR 0007), file by file, as scripts/build-content.ts reads it. These
 // need no data build, so CI runs them on every pull request; how the content holds to the
@@ -49,6 +56,15 @@ const FILES: readonly (readonly [string, Schema])[] = [
   ["sources-ru.yaml", SourcesRuFile],
   ["sources-own.yaml", SourcesOwnFile],
   ["ancient-authors.yaml", AncientAuthorsFile],
+  ["ancient-sites.json", AncientSitesFile],
+  ...readdirSync(content)
+    .filter((f) => /^ancient-sites-wave\d+\.json$/.test(f))
+    .map((f) => [f, AncientWaveFile] as const),
+  ["ancient-wave-corrections.json", AncientWaveCorrectionsFile],
+  ["polity-anchors.yaml", PolityAnchorsFile],
+  ["polity-names.yaml", PolityNamesFile],
+  ["polity-overrides.yaml", PolityOverridesFile],
+  ...folder("reviews").map((f) => [f, ReviewFile] as const),
   ...folder("tours").map((f) => [f, TourFile] as const),
   ...folder("articles").map((f) => [f, ArticleFile] as const),
   ...folder("questions").map((f) => [f, QuestionFile] as const),

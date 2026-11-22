@@ -109,20 +109,17 @@
       ]
     },
     {
-      "source": "/docs/fonts/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=2592000"
-        }
-      ]
-    },
-    {
       "source": "/(pages\\.css|docs/docs\\.css)",
+      "has": [
+        {
+          "type": "query",
+          "key": "v"
+        }
+      ],
       "headers": [
         {
           "key": "Cache-Control",
-          "value": "public, max-age=600"
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     },
@@ -221,7 +218,7 @@
         },
         {
           "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
+          "value": "strict-origin"
         },
         {
           "key": "Permissions-Policy",
@@ -247,7 +244,8 @@
       "missing": [
         {
           "type": "query",
-          "key": "embed"
+          "key": "embed",
+          "value": "1"
         }
       ],
       "headers": [
@@ -262,7 +260,8 @@
       "has": [
         {
           "type": "query",
-          "key": "embed"
+          "key": "embed",
+          "value": "1"
         }
       ],
       "headers": [

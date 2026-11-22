@@ -49,8 +49,8 @@ jobs:
       - run: pnpm typecheck
       # The unit tests include the checks that need no data: the content files' shape
       # (scripts/content-schemas.test.ts) and the documentation's HTML, which is published
-      # unescaped (scripts/docs-html.test.ts). These three read apps/web/public/data, which
-      # `pnpm data` builds: they run in the local gate.
+      # unescaped (scripts/docs-html.test.ts). The three left out below read
+      # apps/web/public/data, which `pnpm data` builds: they run in the local gate.
       - run: >-
           pnpm exec vitest run --exclude scripts/water-tiles.test.ts
           --exclude packages/core/src/selected-places.test.ts

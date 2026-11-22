@@ -58,6 +58,23 @@ describe("unsafeHtml", () => {
     '<meta http-equiv="refresh" content="0;url=https://example.org/" />',
     '<link rel="stylesheet" href="https://example.org/x.css" />',
     "<style>body{}</style>",
+    // A lone quote in an unquoted value is part of the value, not the start of a string.
+    '<script x=a"b>alert(1)</script>',
+    '<iframe src=https://evil.example/ x=a"b></iframe>',
+    '<object data=x.swf x=a"b></object>',
+    '<form x=a"b action=https://evil.example></form>',
+    '<a title=x"y onclick=alert(1)>x</a>',
+    // The browser keeps the first of two.
+    '<iframe src="https://evil.example/" src="../embed/v1"></iframe>',
+    '<script src="https://evil.example/x.js" src="../hg-places.js"></script>',
+    '<a href="javascript:alert(1)" href="https://example.org/">x</a>',
+    // An address after the start of a value.
+    '<svg><animate attributeName="href" values="https://x;javascript:alert(1)" /></svg>',
+    '<svg><animate attributeName="href" values="https://x, data:text/html,x" /></svg>',
+    '<a href="&#x110000;">x</a>',
+    '<a href="x',
+    "<p>text <b",
+    '<script src="../hg-places.js" async></script>',
   ])("refuses %s", (html) => {
     expect(unsafeHtml(html).length).toBeGreaterThan(0);
   });
