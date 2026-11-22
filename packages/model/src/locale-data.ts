@@ -54,11 +54,6 @@ export interface LocaleData {
     readonly disputed: Readonly<Record<string, string>>;
     readonly ages: Readonly<Record<string, string>>;
   };
-  /**
-   * Ancient authors and works by the language's own names, for source lines (citation.ts):
-   * the English as the sources write it, then the language's; the longer names first.
-   */
-  readonly works?: readonly (readonly [english: string, own: string])[];
   /** The templates of siteLabelIn in the language. */
   readonly site?: SiteWords;
   readonly years?: YearWords;

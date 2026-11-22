@@ -39,7 +39,7 @@ what is missing.
   paragraphs as the English; the build checks it.
 - `content/names-<code>.yaml`: the names of places, states, modern places and people
   (`scripts/build-content.ts` writes them as `name_<code>`).
-- `content/sources-own.yaml`: the site's own source lines in the language; the build stops
+- `content/sources-<code>.yaml`: every source line in the language; the build stops
   without them.
 - `content/docs/<code>/`: the documentation pages, one per page of `content/docs/en/`.
 

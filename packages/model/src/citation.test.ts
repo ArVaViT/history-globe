@@ -1,82 +1,30 @@
 import { describe, expect, it } from "vitest";
-import { localizeCitation, sourcesOf } from "./citation.ts";
-
-describe("localizeCitation", () => {
-  it("gives Bible references the Synodal books and numbering", () => {
-    expect(localizeCitation("2 Kgs 25:8-10; Jer 52:12-14", "ru")).toBe(
-      "4 Цар 25:8–10; Иер 52:12–14",
-    );
-    expect(localizeCitation("2 Kgs 18:13-19:37", "ru")).toBe("4 Цар 18:13–19:37");
-    expect(localizeCitation("1 John 2:1", "ru")).toBe("1 Ин 2:1");
-  });
-  it("names the ancient works in Russian and leaves the rest", () => {
-    expect(localizeCitation("Josephus, Jewish War 6.249-266", "ru")).toBe(
-      "Флавий, «Иудейская война» 6.249-266",
-    );
-    expect(localizeCitation("I. Shaw (ed.), The Oxford History of Ancient Egypt", "ru")).toBe(
-      "I. Shaw (ed.), The Oxford History of Ancient Egypt",
-    );
-  });
-  it("changes nothing in English", () => {
-    expect(localizeCitation("2 Kgs 25:8-10", "en")).toBe("2 Kgs 25:8-10");
-  });
-});
-
-describe("ancient works in Russian", () => {
-  it("are named in full before their authors alone", () => {
-    expect(localizeCitation("Herodotus, Histories 1.178-183", "ru")).toBe(
-      "Геродот, «История» 1.178-183",
-    );
-    expect(localizeCitation("Pliny the Elder, Natural History 5.70", "ru")).toBe(
-      "Плиний Старший, «Естественная история» 5.70",
-    );
-    expect(localizeCitation("Amarna letters EA 287-290", "ru")).toBe("Амарнские письма EA 287-290");
-  });
-});
-
-describe("ancient works in the other languages", () => {
-  it("leave no English half in a line", () => {
-    // A work cited again after a semicolon, and a longer title over its shorter one: these
-    // had read "Jüdische Altertümer 14.364; Jewish War 1.269", "Babylonische Chronik of the
-    // Diadochi".
-    for (const l of ["de", "fr", "pl", "vi"] as const) {
-      const line = localizeCitation("Josephus, Antiquities 14.364; Jewish War 1.269", l);
-      expect(line, l).not.toMatch(/Antiquities|Jewish War/);
-      expect(localizeCitation("Babylonian Chronicle of the Diadochi (BCHP 3)", l), l).not.toMatch(
-        /Chronicle|of the Diadochi/,
-      );
-      expect(localizeCitation("Josephus, Jewish Antiquities 14.235", l), l).toBe(
-        localizeCitation("Josephus, Antiquities 14.235", l),
-      );
-    }
-    expect(localizeCitation("Josephus, Antiquities 14.364; Jewish War 1.269", "de")).toBe(
-      "Josephus, Jüdische Altertümer 14.364; Der Jüdische Krieg 1.269",
-    );
-  });
-});
+import { sourcesOf } from "./citation.ts";
 
 describe("sourcesOf", () => {
   const x = {
-    sources: ["Egeria, Itinerarium 10-12 (the ascent of Mount Nebo)"],
-    sources_ru: ["Эгерия, «Паломничество» 10–12 (восхождение на гору Нево)"],
+    sources: [
+      "Egeria, Itinerarium 10-12 (the ascent of Mount Nebo)",
+      "B. Mazar, The Mountain of the Lord (1975)",
+    ],
+    sources_ru: [
+      "Эгерия, «Паломничество» 10–12 (восхождение на гору Нево)",
+      "B. Mazar, The Mountain of the Lord (1975)",
+    ],
+    sources_in: {
+      de: [
+        "Egeria, Itinerarium 10–12 (der Aufstieg auf den Berg Nebo)",
+        "B. Mazar, The Mountain of the Lord (1975)",
+      ],
+    },
   };
-  it("reads the build's Russian lines in Russian, the written ones in English", () => {
+  it("reads the build's lines in the reader's language", () => {
     expect(sourcesOf(x, "ru")).toEqual(x.sources_ru);
+    expect(sourcesOf(x, "de")).toEqual(x.sources_in.de);
+  });
+  it("reads the English where the build wrote no other lines", () => {
+    // English itself, and a language whose lines all read as in English.
     expect(sourcesOf(x, "en")).toEqual(x.sources);
-  });
-  it("falls back to the automatic pass where the build wrote no Russian", () => {
-    expect(sourcesOf({ sources: ["Livy 44.45"] }, "ru")).toEqual(["Тит Ливий 44.45"]);
-  });
-  it("reads the site's own lines in the page's language, the bibliography as written", () => {
-    const q = {
-      sources: ["History Globe tour “Solomon”", "B. Mazar, The Mountain of the Lord (1975)"],
-      sources_in: {
-        de: ["History-Globe-Tour „Salomo“", "B. Mazar, The Mountain of the Lord (1975)"],
-      },
-    };
-    expect(sourcesOf(q, "de")).toEqual(q.sources_in.de);
-    // A language without the translation (none is shipped so) and English read the English.
-    expect(sourcesOf(q, "fr")).toEqual(q.sources);
-    expect(sourcesOf(q, "en")).toEqual(q.sources);
+    expect(sourcesOf(x, "fr")).toEqual(x.sources);
   });
 });

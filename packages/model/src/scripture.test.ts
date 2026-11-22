@@ -14,6 +14,7 @@ describe("formatRef", () => {
     ["Acts.13.4", "ru", "Деян 13:4"],
     ["Acts.13.4", "en", "Acts 13:4"],
     ["1Kgs.6.1", "ru", "3 Цар 6:1"],
+    ["1Kgs.6.1", "ro", "3 Regi 6:1"],
     ["2Sam.5.6-2Sam.5.9", "ru", "2 Цар 5:6–9"],
     ["Acts.13.4-Acts.14.26", "ru", "Деян 13:4–14:26"],
     ["Luke.7", "ru", "Лк 7"],
@@ -104,6 +105,10 @@ describe("parseChapter", () => {
     expect(parseChapter("деяния 16", "ru")?.ref).toBe("Acts.16");
     expect(parseChapter("1 Цар 17", "ru")?.ref).toBe("1Sam.17");
     expect(parseChapter("3 Цар. 18", "ru")?.ref).toBe("1Kgs.18");
+    // Romanian counts the four books of the Kingdoms as the Synod's Bible of 1914 does.
+    expect(parseChapter("1 Regi 6", "ro")?.ref).toBe("1Sam.6");
+    expect(parseChapter("3 Regi 6", "ro")?.ref).toBe("1Kgs.6");
+    expect(parseChapter("4 Împărați 2", "ro")?.ref).toBe("2Kgs.2");
     expect(parseChapter("Иоанн 4", "ru")?.ref).toBe("John.4");
     expect(parseChapter("от Иоанна 3", "ru")?.ref).toBe("John.3");
     expect(parseChapter("Евангелие от Иоанна 3", "ru")?.ref).toBe("John.3");
