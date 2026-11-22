@@ -72,16 +72,16 @@ with their evidence in [`docs/crosswalk/their-errors.md`](docs/crosswalk/their-e
 | The photographs and other third-party material                           | their own                     |
 | The name "History Globe" and its logo                                    | not licensed                  |
 
-The additional terms under section 7 of the AGPL, for a modified version: it keeps the line
-"History Globe by Vadym Arnaut" with a link to https://historyglobe.app in what it shows its
-users (7(b)), which may read "Based on History Globe by Vadym Arnaut" and does not breach the
-other two terms; it is marked in reasonable ways as different from the original, as by a name
-of its own (7(c)); and the licence grants no trademark rights to the name or the logo (7(e)).
-The articles and the answers may be copied and shared unchanged, with credit and the licence
-named, and not for commercial use; changed or translated versions may not be shared. Text and
-data mining of them is reserved as far as their licence does not already permit it; the
-reservation does not narrow the open licences of the other parts. Third-party data keeps its
-own licence (`docs/ATTRIBUTIONS.md`). The map of paths to licences: `LICENSE`, and for tools
+The additional terms under section 7 of the AGPL (`LICENSE`, part 1), for a modified version: it
+keeps the line "History Globe by Vadym Arnaut" with a link to https://historyglobe.app in what
+it shows its users (7(b)), which may read "Based on History Globe by Vadym Arnaut" and does not
+breach the other two terms; it is marked in reasonable ways as different from the original, as
+by a name of its own (7(c)); and the licence grants no trademark rights to the name or the logo
+(7(e)). The articles and the answers may be copied and shared unchanged, with credit and the
+licence named, and not for commercial use; changed or translated versions may not be shared.
+Text and data mining of them is reserved as far as their licence does not already permit it; the
+reservation does not narrow the open licences of the other parts. Third-party data keeps its own
+licence (`docs/ATTRIBUTIONS.md`). The map of paths to licences: `LICENSE`, and for tools
 `REUSE.toml`; the decisions: ADR 0016 and ADR 0019.
 
 ## How to cite

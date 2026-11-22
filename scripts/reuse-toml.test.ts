@@ -44,9 +44,9 @@ describe("REUSE.toml", () => {
   });
 
   it("gives the code the AGPL text that COPYING holds", () => {
-    // COPYING is the same text after a header that points to the section 7 terms.
-    expect(read("COPYING").endsWith(read("LICENSES/AGPL-3.0-or-later.txt"))).toBe(true);
-    expect(read("COPYING")).toMatch(/^.*section 7: see LICENSE, part 1\./m);
+    // COPYING stays the GNU text byte for byte, so tools recognise it; the section 7
+    // terms are in LICENSE, part 1.
+    expect(read("COPYING")).toBe(read("LICENSES/AGPL-3.0-or-later.txt"));
     expect(annotations[0]).toMatchObject({ paths: ["**"], licence: "AGPL-3.0-or-later" });
   });
 
