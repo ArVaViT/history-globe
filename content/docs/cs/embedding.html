@@ -301,12 +301,12 @@ description: Vložte glóbus na vlastní web jedním řádkem — mapu kapitoly,
 <h2 id="example-the-map-follows-your-reader">Příklad: mapa sleduje vašeho čtenáře</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
-// When your reader opens a chapter, show it on the map.
+// Když váš čtenář otevře kapitolu, ukažte ji na mapě.
 function showChapter(osis) {
   globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
 }
 
-// When a verse is clicked on the map, open it in your reader.
+// Když se na mapě klikne na verš, otevřete ho ve svém čtenáři.
 window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);

@@ -1873,7 +1873,7 @@ const T_DA = {
   // The language switch is an icon: «Sprog: English» names it for a pointer and a screen reader.
   language: "Sprog",
   photo: "Foto",
-  pd: "public domain",
+  pd: "i det fri",
   licArticle: "Artiklens tekst: © History Globe",
   licAnswer: "Svarets tekst: © History Globe",
 } as const;
@@ -2215,7 +2215,7 @@ const T_SR = {
   checkedQ: "Одговор је проверен према изворима; историчар га још није прочитао.",
   testament: { whole: "Цела Библија", ot: "Стари завет", nt: "Нови завет", beyond: "Ван Библије" },
   stop: "Станица",
-  translation: "Превод Даничић–Караџић (1865/1868)",
+  translation: "Свето писмо, превод Даничић–Караџић (1865/1868)",
   numbered: "Није наведен: овај превод другачије нумерише поглавље.",
   circa: "око",
   title: (n: string, history = true) =>

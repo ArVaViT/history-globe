@@ -1,0 +1,15 @@
+{
+  "_about": "Places whose name in a language is another place's name too, and the word their page title adds in brackets to tell them apart (\"Ефиопия (Куш)\"), as the English titles add where a namesake is today. The name itself stays the Bible's. Read by scripts/build-pages.ts, which stops when two places still share a page title.",
+  "places": {
+    "ac5a1ec": {
+      "ru": "Куш",
+      "uk": "Куш",
+      "es": "Cus",
+      "it": "Cush",
+      "vi": "Cút"
+    },
+    "a3e66cd": {
+      "ru": "Арам"
+    }
+  }
+}

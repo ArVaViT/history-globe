@@ -298,7 +298,6 @@ export const TEXT_EXCEPTIONS: TextExceptions = {
     "vi south",
     "bg south",
     "it south-sheba",
-    "pl south-sheba",
     "vi south-sheba",
     "ru thebes",
     "uk thebes",

@@ -238,10 +238,27 @@ function certaintyNote(p: Props, l: Lang): string {
  * and which would move the cut of a description by a character.
  */
 const plain = (s: string) => s.replace(/ {2,}/g, " ");
-/** A description cut at a word under `n` characters, with an ellipsis when cut. */
-const clip = (text: string, n = 200) => {
+/**
+ * A page's title with the site's name after it, when the two fit the length a search result
+ * shows (about 75 characters); a longer title (a tour's, in Tagalog) goes without the name.
+ */
+const withSiteName = (title: string) =>
+  `${title} | History Globe`.length <= 75 ? `${title} | History Globe` : title;
+/**
+ * A description of at most `n` characters, the length a search result shows: cut after its
+ * last whole sentence when that keeps most of it, else at a word, with an ellipsis. A
+ * sentence ends at a word of four letters or more ("…Jerusalem. The"), so that "v. Chr.",
+ * "a. C." or "г." never end one.
+ */
+const clip = (text: string, n = 160) => {
   const s = plain(text);
-  return s.length <= n ? s : `${s.slice(0, s.lastIndexOf(" ", n - 1)).replace(/[,;:.\s]+$/, "")}…`;
+  if (s.length <= n) return s;
+  const ends = [...s.slice(0, n + 1).matchAll(/\p{L}{4}[»“”"’)]?[.!?][»“”"’)]? (?=\P{Ll})/gu)].map(
+    (m) => m.index + m[0].length - 1,
+  );
+  const sentence = ends.at(-1);
+  if (sentence !== undefined && sentence >= n * 0.6) return s.slice(0, sentence);
+  return `${s.slice(0, s.lastIndexOf(" ", n - 1)).replace(/[,;:.\s]+$/, "")}…`;
 };
 
 /**
@@ -382,7 +399,7 @@ function page(o: {
     <meta name="theme-color" content="#0c1218" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="${up}favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="${up}apple-touch-icon.png" />
-    <title>${esc(o.title)} | History Globe</title>${o.noindex ? '\n    <meta name="robots" content="noindex, follow" />' : ""}${meta}${o.licence ? `\n    <link rel="license" href="${NC_ND}" />` : ""}${
+    <title>${esc(withSiteName(o.title))}</title>${o.noindex ? '\n    <meta name="robots" content="noindex, follow" />' : ""}${meta}${o.licence ? `\n    <link rel="license" href="${NC_ND}" />` : ""}${
       o.home
         ? `\n    <link rel="preload" href="${up}docs/fonts/${sansPreload(o.l)}" as="font" type="font/woff2" crossorigin />
     <script>
@@ -569,13 +586,67 @@ const write = (
   if (listed && date) lastmod.set(`${path}/`, date);
 };
 
+/**
+ * What a place's page title adds in brackets so that no two places share a title in a
+ * language: the word content/namesakes.json gives it there; else, for namesakes, where it
+ * is today (two Antiochs); and where titles still meet (Ephrath and Ephrathah, both
+ * "Ефрафа"), the first verse that names it.
+ */
+const namesakes = (
+  JSON.parse(readFileSync(join(root, "content/namesakes.json"), "utf8")) as {
+    places: Record<string, Partial<Record<Lang, string>>>;
+  }
+).places;
+const titleNotes = new Map<Lang, Map<string, string | undefined>>();
+function titleNote(id: string, l: Lang): string | undefined {
+  let notes = titleNotes.get(l);
+  if (!notes) {
+    notes = new Map();
+    const sameName = new Map<string, number>();
+    for (const f of shown)
+      if (!f.properties.dup)
+        sameName.set(nameOf(f.properties, l), (sameName.get(nameOf(f.properties, l)) ?? 0) + 1);
+    const label = (p: Props) => {
+      const q = notes?.get(p.id);
+      return q ? `${nameOf(p, l)} (${q})` : nameOf(p, l);
+    };
+    for (const { properties: p } of shown) {
+      const name = nameOf(p, l);
+      const where = whereOf(p.id, p.where, l);
+      notes.set(
+        p.id,
+        namesakes[p.id]?.[l] ??
+          ((sameName.get(name) ?? 0) > 1 && where && where !== name ? where : undefined),
+      );
+    }
+    const byLabel = new Map<string, Props[]>();
+    for (const { properties: p } of shown)
+      byLabel.set(label(p), [...(byLabel.get(label(p)) ?? []), p]);
+    for (const group of byLabel.values())
+      if (group.length > 1)
+        for (const p of group)
+          if (!namesakes[p.id]?.[l] && p.osis[0]) notes.set(p.id, refOf(p.osis[0], l));
+    const seen = new Map<string, string>();
+    for (const { properties: p } of shown) {
+      const other = seen.get(label(p));
+      if (other) sameTitle.add(`${l} "${label(p)}": ${other} and ${p.id}`);
+      seen.set(label(p), p.id);
+    }
+    titleNotes.set(l, notes);
+  }
+  return notes.get(id);
+}
+/** Two places with one title in a language (the build stops on them below). */
+const sameTitle = new Set<string>();
+for (const [id, langs] of Object.entries(namesakes)) {
+  if (!byId.get(id)?.properties.verses) sameTitle.add(`namesakes.json: ${id} has no page`);
+  for (const l of Object.keys(langs))
+    if (!(LANGS as readonly string[]).includes(l))
+      sameTitle.add(`namesakes.json: ${id} has an unknown language "${l}"`);
+}
+
 /** A page for every place with verses: its card as a page, with its article and photo. */
 function placePages(l: Lang): void {
-  // Namesakes (two Antiochs) get where they are today in the page's title, as in the index.
-  const sameName = new Map<string, number>();
-  for (const f of shown)
-    if (!f.properties.dup)
-      sameName.set(nameOf(f.properties, l), (sameName.get(nameOf(f.properties, l)) ?? 0) + 1);
   for (const f of shown) {
     const p = f.properties;
     const name = nameOf(p, l);
@@ -681,10 +752,7 @@ function placePages(l: Lang): void {
       page({
         l,
         // A place with no article yet promises no history in its title.
-        title: T[l].title(
-          (sameName.get(name) ?? 0) > 1 && where && where !== name ? `${name} (${where})` : name,
-          !!art,
-        ),
+        title: T[l].title(titleNote(p.id, l) ? `${name} (${titleNote(p.id, l)})` : name, !!art),
         desc,
         path: `${path}/`,
         body,
@@ -1193,7 +1261,7 @@ function reviewsIn(l: Lang): void {
       page({
         l,
         title: r.title,
-        desc: r.desc,
+        desc: clip(r.desc),
         path: `${r.path}/`,
         body: r.body,
         depth: r.path.split("/").length,
@@ -1214,6 +1282,10 @@ for (const l of LANGS) {
   tourPages(l);
   indexPages(l);
   reviewsIn(l);
+}
+if (sameTitle.size > 0) {
+  for (const x of sameTitle) console.error(`error: two places with one page title: ${x}`);
+  process.exit(1);
 }
 if (untranslated.size > 0) {
   for (const x of untranslated) console.error(`error: no today line in ${x}`);

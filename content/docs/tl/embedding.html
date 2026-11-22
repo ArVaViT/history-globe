@@ -314,12 +314,12 @@ description: Ilagay ang globo sa sarili mong site sa isang linya — ang mapa ng
 <h2 id="example-the-map-follows-your-reader">Halimbawa: sinusundan ng mapa ang iyong mambabasa</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
-// When your reader opens a chapter, show it on the map.
+// Kapag nagbukas ng kabanata ang iyong mambabasa, ipakita ito sa mapa.
 function showChapter(osis) {
   globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
 }
 
-// When a verse is clicked on the map, open it in your reader.
+// Kapag na-click ang isang talata sa mapa, buksan ito sa iyong mambabasa.
 window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);

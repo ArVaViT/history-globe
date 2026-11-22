@@ -84,9 +84,7 @@
     "photo": "Снимка",
     "photo_pd": "обществено достояние",
     "photo_shows": "На снимката: {{site}}, едно от предлаганите места.",
-    "verse_synodal": "Синодален превод",
-    "verse_kjv": "King James Version",
-    "verse_own": "Цариградска Библия (1871) (public domain)",
+    "verse_own": "Цариградска Библия (1871)",
     "verse_open": "Отваряне в BibleGateway",
     "life_from": "Съществува от {{year}}",
     "life_until": "до {{year}}",
@@ -358,5 +356,6 @@
   },
   "a11y": {
     "opened": "Отворено: {{name}}"
-  }
+  },
+  "tagline": "атлас на библейската история"
 }

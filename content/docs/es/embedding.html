@@ -315,12 +315,12 @@ description: Pon el globo en tu propio sitio con una sola línea (el mapa de un 
 <h2 id="example-the-map-follows-your-reader">Ejemplo: el mapa sigue a tu lector</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
-// When your reader opens a chapter, show it on the map.
+// Cuando tu lector abra un capítulo, muéstralo en el mapa.
 function showChapter(osis) {
   globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
 }
 
-// When a verse is clicked on the map, open it in your reader.
+// Cuando se haga clic en un versículo del mapa, ábrelo en tu lector.
 window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);

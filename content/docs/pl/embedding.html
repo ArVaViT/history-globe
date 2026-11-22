@@ -309,12 +309,12 @@ description: Umieść globus na własnej stronie jedną linijką — mapę rozdz
 <h2 id="example-the-map-follows-your-reader">Przykład: mapa podąża za czytelnikiem</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
 
-// When your reader opens a chapter, show it on the map.
+// Gdy Twój czytnik otworzy rozdział, pokaż go na mapie.
 function showChapter(osis) {
   globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
 }
 
-// When a verse is clicked on the map, open it in your reader.
+// Gdy na mapie kliknięto werset, otwórz go w swoim czytniku.
 window.addEventListener("message", (e) =&gt; {
   if (e.source !== globe) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);

@@ -224,6 +224,11 @@ English line had stood on 19 languages' pages: «Heute in the region east of Gib
 OpenBible's free-text lines are translated whole in `content/names-<lang>.yaml` (`labels`) and
 `content/modern-names.yaml`, and `scripts/build-content.ts` stops on one with no words in a
 language or a translation nothing uses (today lines and candidate sites alike).
+It also stops when two places' pages bear one title in a language (both Apheks were
+«Афек (Тель-Афек)»): a namesake's title adds where it is today, the word
+`content/namesakes.json` gives it («Ефиопия (Куш)»), or the first verse that names it
+(«Ефрафа (Быт 35:16)», «Ефрафа (Руф 4:11)»). `scripts/build-docs.ts` stops on a comment in a
+translated page's example code that is still the English one.
 `scripts/check-pages.ts` reads the built pages: every verse row has the verse or the note that
 the translation numbers it otherwise, with its link (an empty row had stood under 3,108
 references); a page's description is neither its title nor opens with it; `pages.css` has the

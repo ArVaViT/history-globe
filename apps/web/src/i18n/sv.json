@@ -84,8 +84,6 @@
     "photo": "Foto",
     "photo_pd": "upphovsrättsfri",
     "photo_shows": "På bilden: {{site}}, en av de föreslagna platserna.",
-    "verse_synodal": "Synodalöversättningen",
-    "verse_kjv": "King James Version",
     "verse_own": "Bibeln 1917",
     "verse_open": "Öppna på BibleGateway",
     "life_from": "Fanns från {{year}}",
@@ -358,5 +356,6 @@
   },
   "a11y": {
     "opened": "Öppnat: {{name}}"
-  }
+  },
+  "tagline": "en atlas över Bibelns historia"
 }

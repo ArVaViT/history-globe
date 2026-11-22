@@ -100,14 +100,7 @@ export function VerseText({
       )}
       <figcaption className="mt-1 flex flex-wrap items-baseline gap-x-2 text-[12px] text-ink-soft">
         <span>
-          {formatRefOr(osis, locale)} ·{" "}
-          {t(
-            locale === "ru"
-              ? "place.verse_synodal"
-              : locale === "en"
-                ? "place.verse_kjv"
-                : "place.verse_own",
-          )}
+          {formatRefOr(osis, locale)} · {t("place.verse_own")}
         </span>
         <a
           href={verseUrl(osis, locale)}

@@ -84,9 +84,7 @@
     "photo": "Fénykép",
     "photo_pd": "közkincs",
     "photo_shows": "A képen: {{site}}, a javasolt helyszínek egyike.",
-    "verse_synodal": "Szinodális fordítás",
-    "verse_kjv": "King James-fordítás",
-    "verse_own": "Károli Biblia (revideált, 1908) (közkincs)",
+    "verse_own": "Károli Biblia (revideált, 1908)",
     "verse_open": "Megnyitás a BibleGateway oldalán",
     "life_from": "Fennállás kezdete: {{year}}",
     "life_until": "vége: {{year}}",
@@ -358,5 +356,6 @@
   },
   "a11y": {
     "opened": "Megnyitva: {{name}}"
-  }
+  },
+  "tagline": "a bibliai történelem atlasza"
 }

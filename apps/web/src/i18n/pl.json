@@ -94,9 +94,7 @@
     "photo": "Zdjęcie",
     "photo_pd": "domena publiczna",
     "photo_shows": "Na zdjęciu: {{site}}, jedna z proponowanych lokalizacji.",
-    "verse_synodal": "Przekład synodalny",
-    "verse_kjv": "King James Version",
-    "verse_own": "Biblia Gdańska 1881 (domena publiczna)",
+    "verse_own": "Biblia Gdańska 1881",
     "verse_open": "Otwórz w BibleGateway",
     "life_from": "Istnieje od {{year}}",
     "life_until": "do {{year}}",
@@ -380,5 +378,6 @@
   },
   "a11y": {
     "opened": "Otwarto: {{name}}"
-  }
+  },
+  "tagline": "atlas historii biblijnej"
 }

@@ -84,9 +84,7 @@
     "photo": "Foto",
     "photo_pd": "domínio público",
     "photo_shows": "Na imagem: {{site}}, um dos locais propostos.",
-    "verse_synodal": "Tradução sinodal",
-    "verse_kjv": "King James Version",
-    "verse_own": "Bíblia Portuguesa Mundial (domínio público)",
+    "verse_own": "Bíblia Portuguesa Mundial",
     "verse_open": "Abrir no BibleGateway",
     "life_from": "Existente desde {{year}}",
     "life_until": "até {{year}}",
@@ -358,5 +356,6 @@
   },
   "a11y": {
     "opened": "Aberto: {{name}}"
-  }
+  },
+  "tagline": "atlas de história bíblica"
 }
