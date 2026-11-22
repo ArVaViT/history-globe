@@ -239,19 +239,36 @@ export function statesDistance(text: string, a: Point, b: Point): boolean {
 
 /**
  * The distances an English article gives from its own place to another: in a sentence that
- * begins with the article's title or "It", a figure "N km [up to three words] of/from
- * <Name>", not "within N km". Other sentences may speak of another site and are not read.
+ * begins with the article's title (then a space, a comma or a bracket) or with "It", a figure
+ * "N km [up to three words] of/from <Name>", not "within N km". A name followed by another
+ * capitalised word ("Asia Minor") is a longer name and is not read. Other sentences may speak
+ * of another site and are not read either.
  */
 export function ownDistances(title: string, text: string): { km: number; to: string }[] {
   const out: { km: number; to: string }[] = [];
   for (const sentence of text.split(/(?<=\.)\s+(?=[A-Z])/u)) {
-    if (!sentence.startsWith(`${title} `) && !sentence.startsWith("It ")) continue;
+    const head = sentence.slice(title.length, title.length + 1);
+    if (
+      !(sentence.startsWith(title) && [" ", ",", "("].includes(head)) &&
+      !sentence.startsWith("It ")
+    )
+      continue;
     for (const m of sentence.matchAll(
-      /(?<!within (?:about |some )?)(?<![\d.,])(\d+(?:\.\d+)?)\s?km\s(?:[a-z-]+\s){0,3}?(?:of|from)\s((?:Mount )?[A-Z][\w'-]+(?:-[a-z]+)*)/gu,
+      /(?<!within (?:about |some )?)(?<![\d.,])(\d+(?:\.\d+)?)\s?km\s(?:[a-z-]+\s){0,3}?(?:of|from)\s((?:Mount )?[A-Z][\w'-]+(?:-[a-z]+)*)(?![\w'-]| [A-Z])/gu,
     ))
       out.push({ km: Number(m[1]), to: m[2] ?? "" });
   }
   return out;
+}
+
+/**
+ * Whether a text gives a figure, whole or decimal: "16" also as "километрах в 16", "12.5" also
+ * as "12,5" (a decimal comma).
+ */
+export function givesFigure(text: string, km: number): boolean {
+  const [whole, part] = String(km).split(".");
+  const figure = part === undefined ? (whole ?? "") : `${whole ?? ""}[.,]${part}`;
+  return new RegExp(`(?<![\\p{N}.,])${figure}(?![\\p{N}]|[.,]\\p{N})`, "u").test(text);
 }
 
 /** Whether a stated figure is the straight line between two points: within 10% (at least 1.5 km). */

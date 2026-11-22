@@ -216,6 +216,9 @@ export interface TextExceptions {
  * fails, so the lists only shrink. Without `bibles` (no pipeline/.cache) the quotations are
  * not checked and their exceptions not judged.
  */
+/** Whether a text has two full stops in a row that are neither an ellipsis nor after "?" or "!". */
+export const doubledStop = (text: string): boolean => /(?<![.?!…])\.\.(?!\.)/u.test(text);
+
 export function checkTexts(
   records: readonly TextRecord[],
   locales: readonly Locale[],
@@ -237,6 +240,9 @@ export function checkTexts(
         if (!(exceptions.otherBible[r.key] ?? "").split(" ").includes(l))
           errors.push(`${r.key}: the ${l} text ${why}`);
       }
+      // A full stop doubled after an abbreviation ("515 BC.." in a language that writes
+      // "v. Chr."), the mark a cut sentence leaves; an ellipsis and "?.." are kept.
+      if (texts.some(doubledStop)) errors.push(`${r.key}: a doubled full stop in the ${l} text`);
       // The title and the map.
       if (r.place !== undefined) {
         const [title = ""] = texts;

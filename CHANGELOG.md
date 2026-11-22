@@ -11,7 +11,11 @@ pull requests on GitHub have them.
 
 - Events: the second Temple was finished in March 515 BC (Adar of Darius' sixth year), now
   `c. 515 BC` (was `c. 516 BC`). Battles: Samuel's victory at Mizpah is `c. 1050 BC` (was
-  `c. 1070 BC`), twenty years after the ark was taken at Ebenezer (1 Sam 7:2).
+  `c. 1070 BC`): the twenty years of 1 Sam 7:2 run from the ark's coming to Kiriath-jearim,
+  seven months after Ebenezer (6:1).
+- `questions.json`, the years of the questions' maps: when-was-the-second-temple-built
+  `c. 515 BC` (was `c. 516 BC`); where-was-the-ark-of-the-covenant-kept and
+  who-were-the-philistines `c. 1070 BC` (was `c. 1050 BC`).
 - `questions.json`: every question carries its licence, `license` (CC BY-NC-ND 4.0) and
   `license_url`, in the record itself.
 - The map's data (`/data/`, not the API): the questions answered with a place moved out of

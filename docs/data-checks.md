@@ -92,8 +92,14 @@ the data first (`pnpm data`).
 - **"How far" answers**: the answer in every language states the distance between the two
   places it measures, within 10% (at least 3 km) of the straight line between their points.
 - **An article's own distances**: a sentence of the English article that begins with its title
-  (or "It") and gives "N km … of" a place named once on the map gives the straight line between
-  the two points, within 10% (at least 1.5 km), and every language gives the same figure.
+  (then a space, a comma or a bracket) or with "It", and gives "N km … of/from" a place named
+  once on the map (not "within N km", not the first word of a longer name such as "Asia
+  Minor"), gives the straight line between the two points, within 10% (at least 1.5 km); every
+  language gives the same figure in that paragraph, a decimal with a point or a comma. A figure
+  measured to another point on purpose (a region's edge) is listed in `OWN_DISTANCE_APART`
+  with the reason.
+- **No doubled full stop**: no article, answer or tour note has two full stops in a row, the
+  mark a sentence cut after an abbreviation leaves ("v. Chr.."); an ellipsis and "?.." are kept.
 - **Points in the water**: a place (other than a sea, a lake or a river), an ancient site or
   a battlefield more than 1.5 km inside the water the map draws (`water.geojson`; the depth measured to the shores of
   `coast.geojson`) stops the build, unless listed in `IN_WATER` with the reason (a submerged
