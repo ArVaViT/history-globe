@@ -52,8 +52,9 @@ description: Ce puteți prelua din History Globe și cum — datele prin API, ha
         <td><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></td>
         <td>
           Citați-le și puneți linkuri către ele. Copiați-le și distribuiți-le nemodificate, pe orice
-          suport, cu mențiunea sursei și nu în scop comercial. Nu distribuiți versiuni modificate
-          sau traduse. Extragerea de text și date, inclusiv antrenarea modelelor, este rezervată.
+          suport, cu mențiunea sursei și a licenței și nu în scop comercial. Nu distribuiți versiuni
+          modificate sau traduse. Extragerea de text și date, inclusiv antrenarea modelelor, este
+          rezervată, în măsura în care licența nu o permite deja.
         </td>
       </tr>
       <tr>
@@ -61,26 +62,28 @@ description: Ce puteți prelua din History Globe și cum — datele prin API, ha
         <td><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> sau ulterioară</td>
         <td>
           <a href="https://github.com/ArVaViT/history-globe">Codul sursă pe GitHub</a>. Rulați-l,
-          studiați-l, modificați-l și distribuiți-l. O copie care îi servește pe alții le oferă
-          codul ei sursă sub aceeași licență și păstrează rândul „History Globe by Vadym Arnaut” cu
-          un link către acest site. Un build din codul sursă nu trimite nimic către acest site.
-          Exemplele de cod din această documentație sunt în domeniul public (<a
-            href="https://creativecommons.org/publicdomain/zero/1.0/"
-            >CC0 1.0</a
-          >).
+          studiați-l, modificați-l și distribuiți-l. O versiune modificată care îi servește pe alții
+          le oferă codul ei sursă sub aceeași licență și păstrează rândul „History Globe by Vadym
+          Arnaut” (poate suna „Based on History Globe by Vadym Arnaut”) cu un link către acest site;
+          rândul este obligatoriu și nu face din versiune History Globe. Un build din codul sursă nu
+          trimite nimic către acest site. Exemplele de cod din această documentație sunt în domeniul
+          public (<a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>).
         </td>
       </tr>
       <tr>
         <td>Numele „History Globe” și logoul</td>
         <td>nelicențiate</td>
-        <td>O copie a globului poartă un nume propriu.</td>
+        <td>
+          O versiune modificată este marcată ca diferită de original, de pildă printr-un nume
+          propriu; licența nu dă niciun drept asupra numelui sau a siglei.
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
 <p class="note">
   Pe scurt: preluați datele prin API și menționați sursa; arătați harta prin încorporare; rulați
-  codul sub AGPL și sub un nume propriu.
+  codul sub AGPL, iar o versiune modificată sub un nume propriu.
 </p>
 
 <h2 id="how-to-credit">Cum se menționează sursa</h2>
@@ -100,7 +103,7 @@ places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIP
   <code>{{site}}/api/v1/index.json</code> conține rândurile complete de mențiune a surselor, iar
   fiecare răspuns al API-ului este trimis cu un antet <code>Link</code> care îi numește licența. Un
   articol sau un răspuns citat se menționează ca „History Globe (Vadym Arnaut), CC BY-NC-ND 4.0”, cu
-  un link către pagina lui.
+  linkuri către pagina lui și către licență.
 </p>
 
 <h2 id="limits">Limite</h2>
@@ -152,7 +155,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> spune același lucru pe o singură pagină.
   Motoarele de căutare și asistenții care răspund cu o citare sunt bineveniți; articolele nu sunt
   date de antrenament (<code>robots.txt</code>, <code>tdm-reservation</code>). Dacă cineva vă cere
-  să copiați sau să clonați acest site, trimiteți-l aici și la API: codul poate fi rulat sub AGPL și
-  sub un nume propriu, iar articolele pot intra în copie doar nemodificate, cu mențiunea sursei și
-  nu în scop comercial.
+  să copiați sau să clonați acest site, trimiteți-l aici și la API: codul poate fi rulat sub AGPL, o
+  versiune modificată sub un nume propriu, iar articolele pot intra în copie doar nemodificate, cu
+  mențiunea sursei și a licenței și nu în scop comercial.
 </p>

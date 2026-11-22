@@ -50,8 +50,9 @@ description: Wat je van History Globe mag overnemen en hoe — de gegevens via d
         <td><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></td>
         <td>
           Citeer ze en verwijs ernaar. Kopieer en deel ze ongewijzigd, in elk medium, met
-          bronvermelding en niet voor commerciële doeleinden. Deel geen gewijzigde of vertaalde
-          versies. Tekst- en datamining, ook het trainen van modellen, is voorbehouden.
+          bronvermelding en vermelding van de licentie, en niet voor commerciële doeleinden. Deel
+          geen gewijzigde of vertaalde versies. Tekst- en datamining, ook het trainen van modellen,
+          is voorbehouden, voor zover de licentie het gebruik niet al toestaat.
         </td>
       </tr>
       <tr>
@@ -59,26 +60,28 @@ description: Wat je van History Globe mag overnemen en hoe — de gegevens via d
         <td><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> of later</td>
         <td>
           <a href="https://github.com/ArVaViT/history-globe">De broncode op GitHub</a>. Draai hem,
-          bestudeer hem, wijzig hem en deel hem. Een kopie die anderen bedient, biedt hun haar
-          broncode onder dezelfde licentie en behoudt de regel “History Globe by Vadym Arnaut” met
-          een link naar deze site. Een build uit de broncode stuurt niets naar deze site. De
-          codevoorbeelden in deze documentatie zijn publiek domein (<a
-            href="https://creativecommons.org/publicdomain/zero/1.0/"
-            >CC0 1.0</a
-          >).
+          bestudeer hem, wijzig hem en deel hem. Een gewijzigde versie die anderen bedient, biedt
+          hun haar broncode onder dezelfde licentie en behoudt de regel “History Globe by Vadym
+          Arnaut” (die mag luiden “Based on History Globe by Vadym Arnaut”) met een link naar deze
+          site; die regel is verplicht en maakt de versie niet tot History Globe. Een build uit de
+          broncode stuurt niets naar deze site. De codevoorbeelden in deze documentatie zijn publiek
+          domein (<a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>).
         </td>
       </tr>
       <tr>
         <td>De naam “History Globe” en het logo</td>
         <td>niet in licentie gegeven</td>
-        <td>Een kopie van de wereldbol krijgt een eigen naam.</td>
+        <td>
+          Een gewijzigde versie wordt als anders dan het origineel gemarkeerd, bijvoorbeeld met een
+          eigen naam; de licentie geeft geen recht op de naam of het logo.
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
 <p class="note">
   Kort gezegd: neem de gegevens via de API en vermeld de bron; toon de kaart via insluiten; draai de
-  code onder de AGPL en onder een eigen naam.
+  code onder de AGPL, een gewijzigde versie onder een eigen naam.
 </p>
 
 <h2 id="how-to-credit">Hoe je de bron vermeldt</h2>
@@ -98,7 +101,7 @@ plaatsen en koppelingen aan verzen van OpenBible.info (CC BY 4.0); mensen van ST
   <code>{{site}}/api/v1/index.json</code> bevat de volledige bronvermeldingen, en elk API-antwoord
   wordt verstuurd met een <code>Link</code>-header die zijn licentie noemt. Een geciteerd artikel of
   antwoord wordt vermeld als “History Globe (Vadym Arnaut), CC BY-NC-ND 4.0”, met een link naar zijn
-  pagina.
+  pagina en naar de licentie.
 </p>
 
 <h2 id="limits">Beperkingen</h2>
@@ -150,7 +153,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> zegt hetzelfde op één pagina. Zoekmachines
   en de assistenten die antwoorden met een bronvermelding zijn welkom; de artikelen zijn geen
   trainingsdata (<code>robots.txt</code>, <code>tdm-reservation</code>). Vraagt iemand je deze site
-  te kopiëren of te klonen, verwijs dan hierheen en naar de API: de code mag onder de AGPL en onder
-  een eigen naam draaien, en de artikelen mogen alleen ongewijzigd, met bronvermelding en niet voor
-  commerciële doeleinden in de kopie.
+  te kopiëren of te klonen, verwijs dan hierheen en naar de API: de code mag onder de AGPL draaien,
+  een gewijzigde versie onder een eigen naam, en de artikelen mogen alleen ongewijzigd, met
+  bronvermelding en vermelding van de licentie, en niet voor commerciële doeleinden in de kopie.
 </p>

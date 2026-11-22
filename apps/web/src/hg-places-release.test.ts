@@ -23,6 +23,13 @@ describe("hg-places releases", () => {
       expect(sri(join(pub, `hg-places-${version}.js`)), version).toBe(hash);
   });
 
+  // MIT asks that the notice travel with the file: the first line names it.
+  it("names its version and the MIT licence in its first line", () => {
+    expect(readFileSync(join(pub, "hg-places.js"), "utf8").split("\n")[0]).toBe(
+      `/*! hg-places ${releases.latest} | (c) 2026 Vadym Arnaut | MIT | SPDX-License-Identifier: MIT */`,
+    );
+  });
+
   it("has the current script as its newest version", () => {
     expect(releases.versions[releases.latest]).toBeDefined();
     expect(readFileSync(join(pub, `hg-places-${releases.latest}.js`), "utf8")).toBe(

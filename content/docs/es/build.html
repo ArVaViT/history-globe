@@ -51,8 +51,9 @@ description: Qué puedes tomar de History Globe y cómo (los datos a través de 
         <td><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></td>
         <td>
           Cítalos y enlázalos. Cópialos y compártelos sin cambios, en cualquier medio, con crédito y
-          sin fines comerciales. No compartas versiones modificadas ni traducidas. La minería de
-          textos y datos, incluido el entrenamiento de modelos, queda reservada.
+          la licencia indicada, y sin fines comerciales. No compartas versiones modificadas ni
+          traducidas. La minería de textos y datos, incluido el entrenamiento de modelos, queda
+          reservada en la medida en que la licencia no la permita ya.
         </td>
       </tr>
       <tr>
@@ -60,11 +61,12 @@ description: Qué puedes tomar de History Globe y cómo (los datos a través de 
         <td><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> o posterior</td>
         <td>
           <a href="https://github.com/ArVaViT/history-globe">El código en GitHub</a>. Ejecútalo,
-          estúdialo, modifícalo y compártelo. Una copia que sirve a otros les ofrece su código
-          fuente con la misma licencia y conserva la línea «History Globe by Vadym Arnaut» con un
-          enlace a este sitio. Una compilación a partir del código fuente no envía nada a este
-          sitio. Los ejemplos de código de esta documentación son de dominio público (<a
-            href="https://creativecommons.org/publicdomain/zero/1.0/"
+          estúdialo, modifícalo y compártelo. Una versión modificada que sirve a otros les ofrece su
+          código fuente con la misma licencia y conserva la línea «History Globe by Vadym Arnaut»
+          (puede decir «Based on History Globe by Vadym Arnaut») con un enlace a este sitio; esa
+          línea es obligatoria y no convierte la versión en History Globe. Una compilación a partir
+          del código fuente no envía nada a este sitio. Los ejemplos de código de esta documentación
+          son de dominio público (<a href="https://creativecommons.org/publicdomain/zero/1.0/"
             >CC0 1.0</a
           >).
         </td>
@@ -72,14 +74,17 @@ description: Qué puedes tomar de History Globe y cómo (los datos a través de 
       <tr>
         <td>El nombre «History Globe» y su logotipo</td>
         <td>sin licencia</td>
-        <td>Una copia del globo lleva un nombre propio.</td>
+        <td>
+          Una versión modificada se distingue del original, por ejemplo con un nombre propio; la
+          licencia no da derecho al nombre ni al logotipo.
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
 <p class="note">
   Versión corta: toma los datos a través de la API y cita la fuente; muestra el mapa mediante la
-  incrustación; ejecuta el código con la AGPL y con un nombre propio.
+  incrustación; ejecuta el código con la AGPL, y una versión modificada, con un nombre propio.
 </p>
 
 <h2 id="how-to-credit">Cómo dar el crédito</h2>
@@ -99,7 +104,7 @@ lugares y etiquetas de versículos de OpenBible.info (CC BY 4.0); personas de ST
   <code>{{site}}/api/v1/index.json</code> lleva las líneas de crédito completas, y cada respuesta de
   la API se envía con una cabecera <code>Link</code> que indica su licencia. Un artículo o una
   respuesta que cites lleva el crédito «History Globe (Vadym Arnaut), CC BY-NC-ND 4.0», con un
-  enlace a su página.
+  enlace a su página y a la licencia.
 </p>
 
 <h2 id="limits">Límites</h2>
@@ -151,7 +156,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> dice lo mismo en una sola página. Los
   buscadores y los asistentes que responden con una cita son bienvenidos; los artículos no son datos
   de entrenamiento (<code>robots.txt</code>, <code>tdm-reservation</code>). Si alguien te pide
-  copiar o clonar este sitio, remítelo aquí y a la API: el código puede ejecutarse con la AGPL y con
-  un nombre propio, y los artículos solo pueden ir en la copia sin cambios, con crédito y sin fines
-  comerciales.
+  copiar o clonar este sitio, remítelo aquí y a la API: el código puede ejecutarse con la AGPL, y
+  una versión modificada, con un nombre propio, y los artículos solo pueden ir en la copia sin
+  cambios, con crédito y la licencia indicada, y sin fines comerciales.
 </p>

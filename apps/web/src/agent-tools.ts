@@ -52,7 +52,7 @@ const LICENSE =
   'CC BY 4.0: credit "History Globe by Vadym Arnaut" (https://historyglobe.app) and OpenBible.info';
 /** The article is the site's own text, not open data (ADR 0016). */
 const ARTICLE_LICENSE =
-  "CC BY-NC-ND 4.0: copy and share unchanged, with credit to History Globe (https://historyglobe.app) and not for commercial use; do not share changed or translated versions";
+  "CC BY-NC-ND 4.0: copy and share unchanged, with credit to History Globe (https://historyglobe.app) and the licence named, not for commercial use; do not share changed or translated versions";
 
 const langSchema = {
   type: "string",
@@ -189,7 +189,7 @@ export function agentTools(ctx: AgentContext): AgentTool[] {
       name: "get_place",
       title: "Get a Bible place",
       description:
-        "One place on History Globe: its names, kind, where it is today, coordinates, whether its location is disputed, the verses that name it (OSIS and as the language cites them), its article where there is one, its page and a link that opens the globe on it. The data is open under CC BY 4.0; the article is CC BY-NC-ND 4.0 (share it only unchanged, with credit and not for commercial use; no changed or translated versions).",
+        "One place on History Globe: its names, kind, where it is today, coordinates, whether its location is disputed, the verses that name it (OSIS and as the language cites them), its article where there is one, its page and a link that opens the globe on it. The data is open under CC BY 4.0; the article is CC BY-NC-ND 4.0 (share it only unchanged, with credit and the licence named, not for commercial use; no changed or translated versions).",
       inputSchema: {
         type: "object",
         properties: {

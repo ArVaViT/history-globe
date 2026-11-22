@@ -25,7 +25,9 @@ only with `--theographic <path>` to a copy of Theographic's `json/places.json` k
 repository (its coordinates are CC BY-SA and never enter it).
 
 The two CSV files are open data under CC BY 4.0, like the API (credit: History Globe by
-Vadym Arnaut, with the sources below). Theographic Bible Metadata is CC BY-SA 4.0: this crosswalk carries only its record ids and a
-few quoted values as evidence, none of its data (ADR 0008). The rest is CC BY 4.0 (OpenBible,
+Vadym Arnaut, with the sources below). Theographic Bible Metadata is CC BY-SA 4.0: this crosswalk carries only its record ids, lookup
+names and the records it takes for the same place, as evidence, and none of its coordinates
+or other data (ADR 0008); as far as these columns are protected, CC BY-SA 4.0 applies to them
+(`LICENSE`, part 3). The rest is CC BY 4.0 (OpenBible,
 TIPNR), CC BY 3.0 (Pleiades) or CC0 (Wikidata), as `docs/ATTRIBUTIONS.md` lists. Low
 `confidence` rows are guesses kept for review, not links to rely on.

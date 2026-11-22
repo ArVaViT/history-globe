@@ -20,7 +20,7 @@ reaches readers through the site and through the assistants that cite it.
   articles and the questions with their answers, in every language, and what the build
   makes of them (`data/articles/`, the article text on the place pages, the question
   pages, `api/v1/questions.json`). Readers may quote and link them, and copy and share
-  them unchanged, with credit and not for commercial use, on another site or in a
+  them unchanged, with credit and the licence named, not for commercial use, on another site or in a
   collection too (section 2(a)(1)(A) of the licence); nobody may share a changed or
   translated version.
 - **The rest of the data stays CC BY 4.0** (part 3): names in every language, tours,
@@ -31,10 +31,13 @@ reaches readers through the site and through the assistants that cite it.
   superseded by ADR 0019: the code is AGPL-3.0-or-later).
 - **Text and data mining is reserved** (Article 4(3) of Directive (EU) 2019/790) for the
   articles and the questions (since ADR 0019 for them alone; the AGPL allows no such
-  restriction on the code). Its machine-readable form: `robots.txt` disallows the crawlers
-  that gather training text and carries `Content-Signal: search=yes, ai-input=yes, ai-train=no`; every
-  page is sent with `tdm-reservation: 1` (`vercel.json`). Search engines and the
-  assistants that answer with a citation stay allowed.
+  restriction on the code), and only as far as their licence does not already permit the
+  use. Its machine-readable form: `robots.txt` disallows the crawlers that gather training
+  text and carries `Content-Signal: search=yes, ai-input=yes, ai-train=no`; every page is sent
+  with `tdm-reservation: 1` (`vercel.json`). Both are sent for the whole site, but the
+  reservation covers the articles and the questions only: the open licences of the other
+  parts govern them and are not narrowed by it. Search engines and the assistants that
+  answer with a citation stay allowed.
   Every crawler is kept out of `/data/`, the files the map loads, but for `/data/photos/`
   (the only files of it the indexed pages read) and `/data/text-places.*` (what
   `hg-places.js` reads on the sites that use it); the open data is `/api/v1/`.

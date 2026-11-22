@@ -72,14 +72,17 @@ with their evidence in [`docs/crosswalk/their-errors.md`](docs/crosswalk/their-e
 | The photographs and other third-party material                           | their own                     |
 | The name "History Globe" and its logo                                    | not licensed                  |
 
-The additional terms under section 7 of the AGPL: a modified version keeps the attribution
+The additional terms under section 7 of the AGPL, for a modified version: it keeps the line
 "History Globe by Vadym Arnaut" with a link to https://historyglobe.app in what it shows its
-users (7(b)); it is marked as different from the original (7(c)); and the licence gives no
-right to the name or the logo (7(e)), so a modified version goes under a name of its own.
-The articles and the answers may be copied and shared unchanged, with credit and not for
-commercial use; changed or translated versions may not be shared, and text and data mining
-of them is reserved. Third-party data keeps its own licence (`docs/ATTRIBUTIONS.md`). The
-map of paths to licences: `LICENSE`; the decisions: ADR 0016 and ADR 0019.
+users (7(b)), which may read "Based on History Globe by Vadym Arnaut" and does not breach the
+other two terms; it is marked in reasonable ways as different from the original, as by a name
+of its own (7(c)); and the licence grants no trademark rights to the name or the logo (7(e)).
+The articles and the answers may be copied and shared unchanged, with credit and the licence
+named, and not for commercial use; changed or translated versions may not be shared. Text and
+data mining of them is reserved as far as their licence does not already permit it; the
+reservation does not narrow the open licences of the other parts. Third-party data keeps its
+own licence (`docs/ATTRIBUTIONS.md`). The map of paths to licences: `LICENSE`, and for tools
+`REUSE.toml`; the decisions: ADR 0016 and ADR 0019.
 
 ## How to cite
 
@@ -150,11 +153,12 @@ browser checks: `e2e/README.md`. How to contribute: `CONTRIBUTING.md`.
 
 ### Running your own copy
 
-The code is yours to run under the AGPL. A copy that serves others must offer them its
-source, keep the attribution above and take a name of its own. The build needs no secret:
+The code is yours to run under the AGPL. A modified version that serves others over a
+network must offer them its source (section 13), keep the attribution line above and be marked
+as different from the original, as by a name of its own. The build needs no secret:
 `pnpm data && pnpm content && pnpm build` makes a complete site from the open data. Without
 `content/articles/` and `content/questions/` it builds without them; a copy may carry them
-only unchanged, credited and not for commercial use (CC BY-NC-ND). The origin beacon (ADR 0017) is written only into a build for
+only unchanged, with credit and the licence named, and not for commercial use (CC BY-NC-ND). The origin beacon (ADR 0017) is written only into a build for
 `SITE_URL=https://historyglobe.app`, so a copy built from the source sends nothing to it.
 
 Keys in the app: `[` `]` move the year by 10 (with Shift by 100), Space plays, `/` searches,

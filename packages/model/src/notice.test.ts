@@ -80,7 +80,10 @@ describe("the notice", () => {
   // translated versions. The reservation of text and data mining is stated apart from it.
   it("states what CC BY-NC-ND allows and forbids, and the mining reservation apart", () => {
     expect(NOTICE).toContain("copy and share them unchanged");
-    expect(NOTICE).toMatch(/Text and data mining of them.*reserved apart from that licence/);
+    expect(NOTICE).toMatch(
+      /Text and data mining of them.*reserved as far as that licence does not/,
+    );
+    expect(NOTICE).toContain("a modified version keeps the attribution");
   });
 
   it.each([

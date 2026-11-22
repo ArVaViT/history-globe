@@ -111,7 +111,7 @@ const CREDIT = [
   "People and the verses that name them: STEPBible TIPNR by Tyndale House Cambridge (www.STEPBible.org), CC BY 4.0, modified",
   "Pleiades ids: Roger Bagnall et al. (eds.), Pleiades: A Gazetteer of Past Places (https://pleiades.stoa.org), CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/us/); Wikidata ids: Wikidata (CC0), from OpenBible's links, checked against Wikidata: wrong ones left out, merged items followed",
   "TIPNR ids of the places: STEPBible TIPNR (CC BY 4.0), as OpenBible links them, brought to the current TIPNR names",
-  "Except questions.json: the answers are History Globe's own texts, CC BY-NC-ND 4.0 (https://creativecommons.org/licenses/by-nc-nd/4.0/): copy and share them unchanged, with credit and not for commercial use; do not share changed or translated versions. Text and data mining of them is reserved apart from that licence",
+  "Except questions.json: the answers are History Globe's own texts, CC BY-NC-ND 4.0 (https://creativecommons.org/licenses/by-nc-nd/4.0/): copy and share them unchanged, with credit and the licence named, not for commercial use; do not share changed or translated versions. Text and data mining of them is reserved as far as that licence does not already permit it",
 ];
 
 // Fresh each build: a book or file that is gone must not linger.

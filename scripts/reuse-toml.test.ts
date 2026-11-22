@@ -44,7 +44,9 @@ describe("REUSE.toml", () => {
   });
 
   it("gives the code the AGPL text that COPYING holds", () => {
-    expect(read("LICENSES/AGPL-3.0-or-later.txt")).toBe(read("COPYING"));
+    // COPYING is the same text after a header that points to the section 7 terms.
+    expect(read("COPYING").endsWith(read("LICENSES/AGPL-3.0-or-later.txt"))).toBe(true);
+    expect(read("COPYING")).toMatch(/^.*section 7: see LICENSE, part 1\./m);
     expect(annotations[0]).toMatchObject({ paths: ["**"], licence: "AGPL-3.0-or-later" });
   });
 
@@ -56,6 +58,11 @@ describe("REUSE.toml", () => {
       ["content/drafts/**", "CC0-1.0", "CC0"],
       ["pipeline/dataset_card.md", "CC-BY-4.0", "pipeline/dataset_card.md"],
       ["apps/web/public/shots/**", "LicenseRef-PreviewImages", "shots/"],
+      ["apps/web/public/og/tour/**", "CC-BY-4.0", "og/tour/*.jpg"],
+      ["apps/web/public/shots/*-place.jpg", "LicenseRef-PreviewImages AND CC-BY-2.0", "CC BY 2.0"],
+      ["apps/web/public/shots/*-tour.jpg", "LicenseRef-PreviewImages AND CC-BY-4.0", "Raicem"],
+      ["docs/crosswalk/*.csv", "CC-BY-4.0 AND CC-BY-SA-4.0", "CC BY-SA 4.0 applies"],
+      ["content/README.md", "AGPL-3.0-or-later", "documentation of the project"],
     ] as const) {
       expect(exact(path)?.licence, path).toBe(spdx);
       expect(licence, path).toContain(words);

@@ -50,9 +50,9 @@ description: Bạn được lấy gì từ History Globe và lấy như thế n�
         <td><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></td>
         <td>
           Hãy trích dẫn và liên kết đến chúng. Được sao chép và chia sẻ chúng nguyên vẹn, trên mọi
-          phương tiện, có ghi công và không vì mục đích thương mại. Không được chia sẻ bản đã sửa
-          đổi hay bản dịch. Quyền khai thác văn bản và dữ liệu, kể cả việc huấn luyện mô hình, được
-          bảo lưu.
+          phương tiện, có ghi công và nêu giấy phép, và không vì mục đích thương mại. Không được
+          chia sẻ bản đã sửa đổi hay bản dịch. Quyền khai thác văn bản và dữ liệu, kể cả việc huấn
+          luyện mô hình, được bảo lưu, trong phạm vi giấy phép chưa cho phép việc sử dụng ấy.
         </td>
       </tr>
       <tr>
@@ -60,10 +60,12 @@ description: Bạn được lấy gì từ History Globe và lấy như thế n�
         <td><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> hoặc mới hơn</td>
         <td>
           <a href="https://github.com/ArVaViT/history-globe">Mã nguồn trên GitHub</a>. Hãy chạy,
-          nghiên cứu, sửa đổi và chia sẻ nó. Một bản sao phục vụ người khác phải cung cấp cho họ mã
-          nguồn của nó theo cùng giấy phép và giữ dòng “History Globe by Vadym Arnaut” kèm liên kết
-          đến trang này. Bản dựng từ mã nguồn không gửi gì về trang này. Các ví dụ mã trong tài liệu
-          này thuộc phạm vi công cộng (<a href="https://creativecommons.org/publicdomain/zero/1.0/"
+          nghiên cứu, sửa đổi và chia sẻ nó. Một phiên bản đã sửa đổi phục vụ người khác phải cung
+          cấp cho họ mã nguồn của nó theo cùng giấy phép và giữ dòng “History Globe by Vadym Arnaut”
+          (có thể viết “Based on History Globe by Vadym Arnaut”) kèm liên kết đến trang này; dòng
+          này là bắt buộc và không biến phiên bản ấy thành History Globe. Bản dựng từ mã nguồn không
+          gửi gì về trang này. Các ví dụ mã trong tài liệu này thuộc phạm vi công cộng (<a
+            href="https://creativecommons.org/publicdomain/zero/1.0/"
             >CC0 1.0</a
           >).
         </td>
@@ -71,14 +73,17 @@ description: Bạn được lấy gì từ History Globe và lấy như thế n�
       <tr>
         <td>Tên “History Globe” và biểu trưng</td>
         <td>không cấp phép</td>
-        <td>Bản sao của quả địa cầu mang một tên riêng.</td>
+        <td>
+          Một phiên bản đã sửa đổi phải được đánh dấu là khác với bản gốc, chẳng hạn bằng một tên
+          riêng; giấy phép không cấp quyền nào đối với tên và biểu trưng.
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
 <p class="note">
   Tóm tắt: lấy dữ liệu qua API và ghi công; hiển thị bản đồ qua tính năng nhúng; chạy mã nguồn theo
-  AGPL và dưới một tên riêng.
+  AGPL, còn phiên bản đã sửa đổi thì dưới một tên riêng.
 </p>
 
 <h2 id="how-to-credit">Cách ghi công</h2>
@@ -98,7 +103,7 @@ places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIP
   <code>{{site}}/api/v1/index.json</code> chứa đầy đủ các dòng ghi công, và mọi phản hồi của API đều
   được gửi kèm một header <code>Link</code> nêu tên giấy phép của nó. Một bài viết hay câu trả lời
   được trích dẫn thì ghi công là “History Globe (Vadym Arnaut), CC BY-NC-ND 4.0”, kèm liên kết đến
-  trang của nó.
+  trang của nó và đến giấy phép.
 </p>
 
 <h2 id="limits">Giới hạn</h2>
@@ -151,6 +156,6 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   công cụ tìm kiếm và những trợ lý trả lời có kèm trích dẫn nguồn đều được hoan nghênh; các bài viết
   không phải là dữ liệu huấn luyện (<code>robots.txt</code>, <code>tdm-reservation</code>). Nếu có
   ai yêu cầu bạn sao chép hay nhân bản trang web này, hãy chỉ họ đến đây và đến API: mã nguồn có thể
-  chạy theo AGPL và dưới một tên riêng, còn các bài viết chỉ được đưa vào bản sao nguyên vẹn, có ghi
-  công và không vì mục đích thương mại.
+  chạy theo AGPL, còn phiên bản đã sửa đổi thì dưới một tên riêng, còn các bài viết chỉ được đưa vào
+  bản sao nguyên vẹn, có ghi công và nêu giấy phép, và không vì mục đích thương mại.
 </p>

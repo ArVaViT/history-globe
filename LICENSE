@@ -8,8 +8,8 @@ name them by path; a path that no part names is code (part 1).
 
    apps/, packages/, scripts/, pipeline/, e2e/, db/, .github/, the configuration files at
    the root, and the documentation of the project (README.md, CONTRIBUTING.md, AGENTS.md,
-   CLAUDE.md, SECURITY.md, CITATION.cff, docs/ and the site's documentation pages in
-   content/docs/), except the files parts 2 to 6 name.
+   CLAUDE.md, SECURITY.md, CITATION.cff, content/README.md, docs/ and the site's
+   documentation pages in content/docs/), except the files parts 2 to 6 name.
 
    This program is free software: you can redistribute it and/or modify it under the
    terms of the GNU Affero General Public License as published by the Free Software
@@ -18,17 +18,21 @@ name them by path; a path that no part names is code (part 1).
    even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. The
    full text of the licence is in COPYING.
 
-   Additional terms, as section 7 of the licence permits them ((b), (c) and (e)):
+   Additional terms, as section 7 of the licence permits them ((b), (c) and (e)). They
+   apply to a modified version; an unmodified copy keeps the notices as it received
+   them.
 
    (b) A modified version must keep the attribution "History Globe by Vadym Arnaut",
        with a link to https://historyglobe.app, in the notice or "about" information it
-       shows its users (in the original: the Author and Build pages of the Help).
-   (c) A modified version must be marked as different from the original: it may not
-       present itself as History Globe, or as made or endorsed by its author.
+       shows its users (in the original: the Author and Build pages of the Help). It may
+       word it as "Based on History Globe by Vadym Arnaut". This line is required, and
+       keeping it does not breach (c) or (e).
+   (c) A modified version must be marked in reasonable ways as different from the
+       original: it may not present itself as History Globe, or as made or endorsed by
+       its author. Going under a name of its own, with the line of (b), is such a
+       marking.
    (e) The licence grants no right under trademark law to use the name "History Globe"
-       or its logo (part 6).
-   Under (c) and (e) together, a modified version that users interact with goes under a
-   name of its own.
+       or its logo (part 6); the line of (b) names the original, as attribution.
 
    Two exceptions, so that the parts meant to run inside other sites can be used there
    freely:
@@ -50,31 +54,36 @@ name them by path; a path that no part names is code (part 1).
    https://creativecommons.org/licenses/by-nc-nd/4.0/
 
    In short (the licence's own text governs): you may copy and share them unchanged,
-   in any medium or format, with credit and not for commercial purposes, on another
-   site or in a collection too. You may not share a changed or translated version of
-   them. Short quotations with credit, as the law allows them, and links need no
-   licence. Credit: "History Globe (Vadym Arnaut), CC BY-NC-ND 4.0", with a link to
-   the page.
+   in any medium or format, on another site or in a collection too, with credit and
+   the licence named, and not for commercial purposes. You may not share a changed or
+   translated version of them. Credit: "History Globe (Vadym Arnaut), CC BY-NC-ND
+   4.0", with a link to the page and to the licence. Short quotations with credit, as
+   the law allows them, and links need no licence.
 
    Until 2026-10-17 these texts were offered under CC BY 4.0. Copies made under that
    licence keep it (a Creative Commons licence cannot be revoked); what is published
    from that date on is under this one.
 
-   Text and data mining. The copyright holder expressly reserves the right to reproduce
-   and extract these texts for text and data mining, within the meaning of Article 4(3)
-   of Directive (EU) 2019/790, including for the training, fine-tuning or evaluation of
-   machine-learning models. The reservation covers this part only. Its machine-readable
-   form is the robots.txt of historyglobe.app (the Disallow lines for training crawlers
-   and the Content-Signal line, "ai-train=no") and the "tdm-reservation: 1" header the
-   site sends with every page.
+   Text and data mining. For these texts, the copyright holder reserves the right to
+   reproduce and extract them for text and data mining, within the meaning of Article
+   4(3) of Directive (EU) 2019/790, including for the training, fine-tuning or
+   evaluation of machine-learning models, as far as the licence above does not already
+   permit the use. The site states the reservation in its robots.txt (the Disallow lines
+   for training crawlers and the Content-Signal line, "ai-train=no") and in the
+   "tdm-reservation: 1" header. Both are sent for the whole site, but the reservation
+   covers this part only: every other part is under its own licence (the data CC BY
+   4.0, the code AGPL-3.0-or-later, the script MIT, the examples CC0), which governs
+   and which the reservation does not narrow.
 
 3. The data: CC BY 4.0
 
-   - The curated content in content/ other than articles/, questions/, docs/, reviews/
-     and drafts/: place names in every language, tours, events, battles, when towns stood,
+   - The curated content in content/ other than articles/, questions/, docs/, reviews/,
+     drafts/ and README.md: place names in every language, tours, events, battles, when towns stood,
      ancient-author notes, photo records and the rest;
    - the data the build makes from it: apps/web/public/data/ except articles/, photos/
-     and verses/, and the open API in apps/web/public/api/ except questions.json;
+     and verses/, the open API in apps/web/public/api/ except questions.json, and the
+     route maps of the tours, apps/web/public/og/tour/*.jpg (the routes on Natural
+     Earth, which is in the public domain);
    - the data files kept beside the code: pipeline/rivers/rivers.geojson (derived from
      RiverATLAS, CC BY 4.0), pipeline/rivers/targets.json,
      pipeline/ancient/names-cyrillic.json, pipeline/dataset_card.md, and the crosswalk
@@ -86,9 +95,11 @@ name them by path; a path that no part names is code (part 1).
    Credit: "History Globe (Vadym Arnaut), CC BY 4.0", with a link to the source where
    the medium allows.
 
-   The theographic_* columns of docs/crosswalk/places.csv hold the record ids of
-   Theographic Bible Metadata (CC BY-SA 4.0) and a few values quoted as evidence; they
-   are cited, not licensed here. content/drafts/ holds Wikidata labels (CC0) and stays
+   The theographic_* columns of docs/crosswalk/places.csv and docs/crosswalk/people.csv
+   hold the record ids and lookup names of Theographic Bible Metadata (CC BY-SA 4.0),
+   and in places.csv also the records Theographic itself takes for the same place
+   (theographic_canonical, theographic_same_place_records). They are Theographic's, not
+   licensed here: as far as they are protected, its CC BY-SA 4.0 applies to them. content/drafts/ holds Wikidata labels (CC0) and stays
    under CC0.
 
    Not licensed here: apps/web/public/data/photos/ holds Wikimedia Commons photographs,
@@ -116,11 +127,14 @@ name them by path; a path that no part names is code (part 1).
    The name "History Globe" and its logo (apps/web/public/favicon.*, icon-*.png,
    apple-touch-icon.png) are not licensed under any of the above. All rights reserved.
 
-   The preview images (apps/web/public/og.jpg, og/, shots/) are pictures of the site.
-   The project's own part of them, its interface with the name and the logo, is not
-   licensed either. What they show of the data and the texts keeps the licence of its
-   part above, and what they show from third parties keeps its own licence (part 5):
-   the borders from Cliopatria (CC BY 4.0), the relief from Copernicus WorldDEM-30 and
-   the other elevation models, Natural Earth, and the photographs in the place card,
-   each under the licence printed on it (in shots/*-place.jpg, Jerusalem by Kok Leng
-   Yeo, CC BY 2.0).
+   The preview images (apps/web/public/og.jpg, og/<language>.jpg, shots/) are pictures
+   of the site. The project's own part of them, its interface with the name and the
+   logo, is not licensed either. What they show of the data and the texts keeps the
+   licence of its part above, and what they show from third parties keeps its own
+   licence (part 5): the borders from Cliopatria (CC BY 4.0), the relief from
+   Copernicus WorldDEM-30 and the other elevation models, Natural Earth, and the
+   photographs in the cards, each under the licence printed on it. In
+   shots/*-place.jpg that is "Jerusalem Old City from the Mount of Olives" by Kok Leng
+   Yeo, CC BY 2.0 (https://creativecommons.org/licenses/by/2.0/); in shots/*-tour.jpg,
+   "Herodes Atticus Bath near Alexandria Troas" by Raicem, CC BY 4.0
+   (https://creativecommons.org/licenses/by/4.0/).

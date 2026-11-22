@@ -156,8 +156,9 @@ Articles, answers and events
 Crosswalk (docs/crosswalk/places.csv, not shipped with the site)
   The theographic_* columns cite Theographic Bible Metadata
   (https://github.com/robertrouse/theographic-bible-metadata, CC BY-SA 4.0) by its
-  record ids, with a few values quoted as evidence. None of its data, coordinates
-  included, is imported (ADR 0008).
+  record ids and lookup names, with the records it takes for the same place, as
+  evidence; as far as these are protected, CC BY-SA 4.0 applies to them. None of its
+  coordinates or other data is imported (ADR 0008).
 
 Software
   MapLibre GL JS — Copyright (c) 2023, MapLibre contributors, BSD-3-Clause;

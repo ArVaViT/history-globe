@@ -50,9 +50,9 @@ description: Mitä History Globesta saa ottaa ja miten — datan API:n kautta, k
         <td><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></td>
         <td>
           Lainaa niitä ja linkitä niihin. Kopioi ja jaa niitä muuttamattomina missä tahansa
-          välineessä, lähde mainiten ja muuhun kuin kaupalliseen käyttöön. Älä jaa muutettuja tai
-          käännettyjä versioita. Oikeus teksti- ja tiedonlouhintaan, mallien koulutus mukaan lukien,
-          on pidätetty.
+          välineessä, lähde ja lisenssi mainiten ja muuhun kuin kaupalliseen käyttöön. Älä jaa
+          muutettuja tai käännettyjä versioita. Oikeus teksti- ja tiedonlouhintaan, mallien koulutus
+          mukaan lukien, on pidätetty siltä osin kuin lisenssi ei jo salli käyttöä.
         </td>
       </tr>
       <tr>
@@ -60,10 +60,11 @@ description: Mitä History Globesta saa ottaa ja miten — datan API:n kautta, k
         <td><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> tai myöhempi</td>
         <td>
           <a href="https://github.com/ArVaViT/history-globe">Lähdekoodi GitHubissa</a>. Aja, tutki,
-          muuta ja jaa sitä. Muita palveleva kopio tarjoaa heille lähdekoodinsa samalla lisenssillä
-          ja säilyttää rivin ”History Globe by Vadym Arnaut” ja linkin tälle sivustolle.
-          Lähdekoodista koostettu versio ei lähetä tälle sivustolle mitään. Tämän dokumentaation
-          koodiesimerkit ovat tekijänoikeudettomia (<a
+          muuta ja jaa sitä. Muita palveleva muutettu versio tarjoaa heille lähdekoodinsa samalla
+          lisenssillä ja säilyttää rivin ”History Globe by Vadym Arnaut” (se saa kuulua ”Based on
+          History Globe by Vadym Arnaut”) ja linkin tälle sivustolle; rivi on pakollinen eikä tee
+          versiosta History Globea. Lähdekoodista koostettu versio ei lähetä tälle sivustolle
+          mitään. Tämän dokumentaation koodiesimerkit ovat tekijänoikeudettomia (<a
             href="https://creativecommons.org/publicdomain/zero/1.0/"
             >CC0 1.0</a
           >).
@@ -72,14 +73,17 @@ description: Mitä History Globesta saa ottaa ja miten — datan API:n kautta, k
       <tr>
         <td>Nimi ”History Globe” ja sen logo</td>
         <td>ei lisensoitu</td>
-        <td>Maapallon kopio kulkee omalla nimellään.</td>
+        <td>
+          Muutettu versio merkitään alkuperäisestä eroavaksi, esimerkiksi omalla nimellä; lisenssi
+          ei anna oikeutta nimeen eikä logoon.
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
 <p class="note">
   Lyhyesti: ota data API:n kautta ja mainitse lähde; näytä kartta upottamalla; aja koodia
-  AGPL-lisenssillä ja omalla nimellä.
+  AGPL-lisenssillä, muutettua versiota omalla nimellään.
 </p>
 
 <h2 id="how-to-credit">Näin mainitset lähteen</h2>
@@ -98,8 +102,8 @@ places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIP
 <p>
   <code>{{site}}/api/v1/index.json</code> sisältää täydelliset lähdetiedot, ja jokainen API:n
   vastaus lähetetään <code>Link</code>-otsakkeen kanssa, joka nimeää sen lisenssin. Lainatun
-  artikkelin tai vastauksen lähteeksi merkitään ”History Globe (Vadym Arnaut), CC BY-NC-ND 4.0” ja
-  linkki sen sivulle.
+  artikkelin tai vastauksen lähteeksi merkitään ”History Globe (Vadym Arnaut), CC BY-NC-ND 4.0” sekä
+  linkit sen sivulle ja lisenssiin.
 </p>
 
 <h2 id="limits">Rajoitukset</h2>
@@ -152,6 +156,6 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   avustajat, jotka vastaavat lähdeviitteen kera, ovat tervetulleita; artikkelit eivät ole
   koulutusdataa (<code>robots.txt</code>, <code>tdm-reservation</code>). Jos joku pyytää sinua
   kopioimaan tai kloonaamaan tämän sivuston, ohjaa hänet tälle sivulle ja API:n pariin: koodia saa
-  ajaa AGPL-lisenssillä ja omalla nimellä, ja artikkelit saavat olla kopiossa vain muuttamattomina,
-  lähde mainiten ja muuhun kuin kaupalliseen käyttöön.
+  ajaa AGPL-lisenssillä, muutettua versiota omalla nimellään, ja artikkelit saavat olla kopiossa
+  vain muuttamattomina, lähde ja lisenssi mainiten ja muuhun kuin kaupalliseen käyttöön.
 </p>

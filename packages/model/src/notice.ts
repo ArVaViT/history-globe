@@ -9,9 +9,9 @@ import { REPOSITORY, SITE_ORIGIN } from "./site.ts";
 export const NOTICE =
   `History Globe, ${SITE_ORIGIN}, by Vadym Arnaut. ` +
   `The data is CC BY 4.0: take it through the API, ${SITE_ORIGIN}/api/v1/, and credit it. ` +
-  "The place articles and the answers are CC BY-NC-ND 4.0: copy and share them unchanged, with credit and a link, not for commercial use; no changed or translated versions. " +
-  "Text and data mining of them, the training of models included, is reserved apart from that licence (robots.txt, tdm-reservation). " +
-  `The code is AGPL-3.0-or-later, ${REPOSITORY}: a copy keeps the attribution "History Globe by Vadym Arnaut" with a link and offers its users its source; the name and the logo are not licensed. ` +
+  "The place articles and the answers are CC BY-NC-ND 4.0: copy and share them unchanged, with credit, a link and the licence named, not for commercial use; no changed or translated versions. " +
+  "Text and data mining of them, the training of models included, is reserved as far as that licence does not already permit it (robots.txt, tdm-reservation); the reservation does not narrow the open licences of the other parts. " +
+  `The code is AGPL-3.0-or-later, ${REPOSITORY}: a modified version keeps the attribution "History Globe by Vadym Arnaut" (or "Based on History Globe by Vadym Arnaut") with a link, is marked as different from the original, as by a name of its own, and offers its users its source; the licence grants no right to the name or the logo. ` +
   `Details: ${SITE_ORIGIN}/docs/build.html and ${SITE_ORIGIN}/llms.txt.`;
 
 /** The notice as an HTML comment, for the head of a page. */

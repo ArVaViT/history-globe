@@ -21,13 +21,14 @@ licence can change without anyone else's consent.
   of the project. Version 3 or, at the user's option, any later version the Free Software
   Foundation publishes, so that the code can follow the licence as it is revised without
   asking every contributor again.
-- **Three additional terms, as section 7 permits them.** (b) A modified version keeps the
-  attribution "History Globe by Vadym Arnaut", with a link to https://historyglobe.app, in
-  the notice or "about" information it shows its users. (c) A modified version is marked as
-  different from the original and may not present itself as History Globe or as made or
-  endorsed by its author. (e) The licence grants no right under trademark law to the name
-  "History Globe" or its logo. Under (c) and (e) together, a modified version goes under a
-  name of its own; (e) alone only declines the trademark rights.
+- **Three additional terms, as section 7 permits them, for a modified version.** (b) It
+  keeps the attribution "History Globe by Vadym Arnaut", with a link to
+  https://historyglobe.app, in the notice or "about" information it shows its users; the line
+  may read "Based on History Globe by Vadym Arnaut", and keeping it is required and breaches
+  neither of the other terms. (c) It is marked in reasonable ways as different from the
+  original and may not present itself as History Globe or as made or endorsed by its author;
+  a name of its own is such a marking. (e) The licence grants no right under trademark law
+  to the name "History Globe" or its logo.
 - **The source is offered to every user** (section 13): the Settings panel, the footer of
   every built page and of the documentation link to the repository, and the notice in the
   head of every page names the licence and the repository.
@@ -36,9 +37,10 @@ licence can change without anyone else's consent.
   uses them takes on no obligation of the AGPL. The embed (`/embed/v1`) needs no exception:
   it is served by the site and only framed by the host page.
 - **The rest stays as decided.** The articles and the answers stay CC BY-NC-ND 4.0, with
-  text and data mining reserved for them alone (ADR 0016); the data stays CC BY 4.0
-  (ADR 0014); the reviews belong to their authors; the name, the logo and the project's
-  own part of the preview images stay reserved. The reservation of text and data mining no
+  text and data mining reserved for them alone, as far as their licence does not already
+  permit it (ADR 0016); the data stays CC BY 4.0 (ADR 0014); the reviews belong to their
+  authors; the name, the logo and the project's own part of the preview images stay
+  reserved. The reservation of text and data mining no
   longer covers the code: the AGPL forbids further restrictions (sections 7 and 10).
 - **The beacon is the production build's alone** (ADR 0017): a build from the source for
   any other address carries no script that reports to historyglobe.app.
@@ -63,8 +65,8 @@ licence can change without anyone else's consent.
   rejecting the AGPL are withdrawn. Code published before this decision, read under "all
   rights reserved", is under the AGPL as well, history included.
 - A copy of the site built from the source is lawful under the AGPL, but it carries none of
-  the articles unless it keeps their licence, and it goes under its own name. The notice in
-  every page, `llms.txt` and the Build page in every language say so.
+  the articles unless it keeps their licence, and a modified one is marked by a name of its
+  own. The notice in every page, `llms.txt` and the Build page in every language say so.
 - A contribution comes in under the licence of the part it lands in (`CONTRIBUTING.md`,
   Developer Certificate of Origin); no copyright assignment is asked. Licensing the code
   under other terms later would need every contributor's consent.

@@ -55,9 +55,10 @@ description: Ce que vous pouvez prendre de History Globe et comment — les donn
         <td><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></td>
         <td>
           Citez-les et liez-les. Copiez-les et partagez-les sans modification, sur tout support,
-          avec la mention de la source et sans usage commercial. Ne partagez pas de versions
-          modifiées ou traduites. La fouille de textes et de données, y compris l’entraînement de
-          modèles, est réservée.
+          avec la mention de la source et de la licence, et sans usage commercial. Ne partagez pas
+          de versions modifiées ou traduites. La fouille de textes et de données, y compris
+          l’entraînement de modèles, est réservée, dans la mesure où la licence ne la permet pas
+          déjà.
         </td>
       </tr>
       <tr>
@@ -65,10 +66,12 @@ description: Ce que vous pouvez prendre de History Globe et comment — les donn
         <td><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> ou ultérieure</td>
         <td>
           <a href="https://github.com/ArVaViT/history-globe">Le code sur GitHub</a>. Exécutez-le,
-          étudiez-le, modifiez-le, partagez-le. Une copie qui sert d’autres personnes leur offre son
-          code source sous la même licence et garde la ligne « History Globe by Vadym Arnaut » avec
-          un lien vers ce site. Une compilation à partir du code source n’envoie rien à ce site. Les
-          exemples de code de cette documentation sont dans le domaine public (<a
+          étudiez-le, modifiez-le, partagez-le. Une version modifiée qui sert d’autres personnes
+          leur offre son code source sous la même licence et garde la ligne « History Globe by Vadym
+          Arnaut » (elle peut dire « Based on History Globe by Vadym Arnaut ») avec un lien vers ce
+          site ; cette ligne est obligatoire et ne fait pas de la version History Globe. Une
+          compilation à partir du code source n’envoie rien à ce site. Les exemples de code de cette
+          documentation sont dans le domaine public (<a
             href="https://creativecommons.org/publicdomain/zero/1.0/"
             >CC0 1.0</a
           >).
@@ -77,14 +80,17 @@ description: Ce que vous pouvez prendre de History Globe et comment — les donn
       <tr>
         <td>Le nom « History Globe » et son logo</td>
         <td>non concédés</td>
-        <td>Une copie du globe porte un nom qui lui est propre.</td>
+        <td>
+          Une version modifiée est marquée comme différente de l’original, par exemple par un nom
+          qui lui est propre ; la licence ne donne aucun droit sur le nom ni sur le logo.
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
 <p class="note">
   En bref : prenez les données par l’API et créditez-les ; affichez la carte par l’intégration ;
-  faites tourner le code sous l’AGPL et sous un nom à vous.
+  faites tourner le code sous l’AGPL, et une version modifiée sous un nom à elle.
 </p>
 
 <h2 id="how-to-credit">Comment créditer</h2>
@@ -104,7 +110,7 @@ lieux et étiquettes de versets d’OpenBible.info (CC BY 4.0) ; personnes de S
   <code>{{site}}/api/v1/index.json</code> porte les lignes de crédit complètes, et chaque réponse de
   l’API est envoyée avec un en-tête <code>Link</code> qui nomme sa licence. Un article ou une
   réponse cités sont crédités « History Globe (Vadym Arnaut), CC BY-NC-ND 4.0 », avec un lien vers
-  leur page.
+  leur page et vers la licence.
 </p>
 
 <h2 id="limits">Limites</h2>
@@ -159,7 +165,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   de recherche et les assistants qui répondent avec une citation de la source sont les bienvenus ;
   les articles ne sont pas des données d’entraînement (<code>robots.txt</code>,
   <code>tdm-reservation</code>). Si quelqu’un vous demande de copier ou de cloner ce site,
-  renvoyez-le ici et vers l’API : le code peut tourner sous l’AGPL et sous un nom propre, et les
-  articles ne peuvent y figurer que sans modification, avec la mention de la source et sans usage
-  commercial.
+  renvoyez-le ici et vers l’API : le code peut tourner sous l’AGPL, une version modifiée sous un nom
+  propre, et les articles ne peuvent y figurer que sans modification, avec la mention de la source
+  et de la licence, et sans usage commercial.
 </p>

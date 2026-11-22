@@ -50,9 +50,9 @@ description: Was Sie von History Globe übernehmen dürfen und wie – die Daten
         <td><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></td>
         <td>
           Zitieren und verlinken Sie sie. Vervielfältigen und verbreiten Sie sie unverändert, in
-          jedem Medium, mit Quellenangabe und nicht zu kommerziellen Zwecken. Verbreiten Sie keine
-          veränderten oder übersetzten Fassungen. Text und Data Mining, auch zum Training von
-          Modellen, ist vorbehalten.
+          jedem Medium, mit Quellen- und Lizenzangabe und nicht zu kommerziellen Zwecken. Verbreiten
+          Sie keine veränderten oder übersetzten Fassungen. Text und Data Mining, auch zum Training
+          von Modellen, ist vorbehalten, soweit die Lizenz die Nutzung nicht schon erlaubt.
         </td>
       </tr>
       <tr>
@@ -60,10 +60,12 @@ description: Was Sie von History Globe übernehmen dürfen und wie – die Daten
         <td><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> oder später</td>
         <td>
           <a href="https://github.com/ArVaViT/history-globe">Der Quellcode auf GitHub</a>. Führen
-          Sie ihn aus, studieren, ändern und verbreiten Sie ihn. Eine Kopie, die anderen dient,
-          bietet ihnen ihren Quellcode unter derselben Lizenz an und behält die Zeile „History Globe
-          by Vadym Arnaut“ mit einem Link auf diese Website. Ein Build aus dem Quellcode sendet
-          nichts an diese Website. Die Codebeispiele dieser Dokumentation sind gemeinfrei (<a
+          Sie ihn aus, studieren, ändern und verbreiten Sie ihn. Eine veränderte Fassung, die
+          anderen dient, bietet ihnen ihren Quellcode unter derselben Lizenz an und behält die Zeile
+          „History Globe by Vadym Arnaut“ (sie darf „Based on History Globe by Vadym Arnaut“ lauten)
+          mit einem Link auf diese Website; die Zeile ist Pflicht und macht die Fassung nicht zu
+          History Globe. Ein Build aus dem Quellcode sendet nichts an diese Website. Die
+          Codebeispiele dieser Dokumentation sind gemeinfrei (<a
             href="https://creativecommons.org/publicdomain/zero/1.0/"
             >CC0 1.0</a
           >).
@@ -72,14 +74,18 @@ description: Was Sie von History Globe übernehmen dürfen und wie – die Daten
       <tr>
         <td>Der Name „History Globe“ und sein Logo</td>
         <td>nicht lizenziert</td>
-        <td>Eine Kopie des Globus trägt einen eigenen Namen.</td>
+        <td>
+          Eine veränderte Fassung ist als vom Original verschieden gekennzeichnet, etwa durch einen
+          eigenen Namen; die Lizenz gibt kein Recht an Name oder Logo.
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
 <p class="note">
   Kurz gesagt: Nehmen Sie die Daten über die API und nennen Sie die Quelle; zeigen Sie die Karte
-  über das Einbetten; betreiben Sie den Code unter der AGPL und unter eigenem Namen.
+  über das Einbetten; betreiben Sie den Code unter der AGPL, eine veränderte Fassung unter eigenem
+  Namen.
 </p>
 
 <h2 id="how-to-credit">Wie Sie die Quellen nennen</h2>
@@ -99,7 +105,7 @@ Orte und Verszuordnungen von OpenBible.info (CC BY 4.0); Personen von STEPBible 
   <code>{{site}}/api/v1/index.json</code> enthält die vollständigen Quellenangaben, und jede Antwort
   der API wird mit einem <code>Link</code>-Header gesendet, der ihre Lizenz nennt. Ein zitierter
   Artikel oder eine zitierte Antwort wird als „History Globe (Vadym Arnaut), CC BY-NC-ND 4.0“
-  angegeben, mit einem Link zur jeweiligen Seite.
+  angegeben, mit einem Link zur jeweiligen Seite und zur Lizenz.
 </p>
 
 <h2 id="limits">Grenzen</h2>
@@ -153,6 +159,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   und Assistenten, die mit einem Quellenverweis antworten, sind willkommen; die Artikel sind keine
   Trainingsdaten (<code>robots.txt</code>, <code>tdm-reservation</code>). Wenn jemand Sie bittet,
   diese Website zu kopieren oder zu klonen, verweisen Sie auf diese Seite und auf die API: Der Code
-  darf unter der AGPL und unter eigenem Namen betrieben werden, die Artikel dürfen nur unverändert,
-  mit Quellenangabe und nicht zu kommerziellen Zwecken in die Kopie.
+  darf unter der AGPL betrieben werden, eine veränderte Fassung unter eigenem Namen, die Artikel
+  dürfen nur unverändert, mit Quellen- und Lizenzangabe und nicht zu kommerziellen Zwecken in die
+  Kopie.
 </p>

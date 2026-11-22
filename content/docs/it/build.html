@@ -51,8 +51,9 @@ description: Che cosa puoi prendere da History Globe e come — i dati tramite l
         <td><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></td>
         <td>
           Citali e collegali. Copiali e condividili senza modifiche, con qualsiasi mezzo, con i
-          crediti e non a fini commerciali. Non condividere versioni modificate o tradotte.
-          L’estrazione di testo e di dati, compreso l’addestramento di modelli, è riservata.
+          crediti e l’indicazione della licenza, e non a fini commerciali. Non condividere versioni
+          modificate o tradotte. L’estrazione di testo e di dati, compreso l’addestramento di
+          modelli, è riservata, nella misura in cui la licenza non la consente già.
         </td>
       </tr>
       <tr>
@@ -60,26 +61,29 @@ description: Che cosa puoi prendere da History Globe e come — i dati tramite l
         <td><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> o successiva</td>
         <td>
           <a href="https://github.com/ArVaViT/history-globe">Il codice su GitHub</a>. Eseguilo,
-          studialo, modificalo e condividilo. Una copia che serve altri offre loro il suo codice
-          sorgente con la stessa licenza e mantiene la riga «History Globe by Vadym Arnaut» con un
-          link a questo sito. Una build dal codice sorgente non invia nulla a questo sito. Gli
-          esempi di codice di questa documentazione sono di pubblico dominio (<a
-            href="https://creativecommons.org/publicdomain/zero/1.0/"
-            >CC0 1.0</a
+          studialo, modificalo e condividilo. Una versione modificata che serve altri offre loro il
+          suo codice sorgente con la stessa licenza e mantiene la riga «History Globe by Vadym
+          Arnaut» (può dire «Based on History Globe by Vadym Arnaut») con un link a questo sito; la
+          riga è obbligatoria e non fa della versione History Globe. Una build dal codice sorgente
+          non invia nulla a questo sito. Gli esempi di codice di questa documentazione sono di
+          pubblico dominio (<a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a
           >).
         </td>
       </tr>
       <tr>
         <td>Il nome «History Globe» e il suo logo</td>
         <td>non concessi in licenza</td>
-        <td>Una copia del globo porta un nome suo.</td>
+        <td>
+          Una versione modificata è segnalata come diversa dall’originale, per esempio con un nome
+          suo; la licenza non dà alcun diritto sul nome né sul logo.
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
 <p class="note">
   In breve: prendi i dati tramite l’API e cita la fonte; mostra la mappa tramite l’incorporamento;
-  esegui il codice con la AGPL e con un nome tuo.
+  esegui il codice con la AGPL, e una versione modificata con un nome suo.
 </p>
 
 <h2 id="how-to-credit">Come citare la fonte</h2>
@@ -99,7 +103,7 @@ luoghi ed etichette dei versetti da OpenBible.info (CC BY 4.0); persone da STEPB
   <code>{{site}}/api/v1/index.json</code> contiene le righe complete dei crediti, e ogni risposta
   dell’API è inviata con un header <code>Link</code> che ne indica la licenza. Un articolo o una
   risposta citati vanno accreditati come «History Globe (Vadym Arnaut), CC BY-NC-ND 4.0», con un
-  link alla loro pagina.
+  link alla loro pagina e alla licenza.
 </p>
 
 <h2 id="limits">Limiti</h2>
@@ -152,6 +156,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
   di ricerca e gli assistenti che rispondono con una citazione sono i benvenuti; gli articoli non
   sono dati di addestramento (<code>robots.txt</code>, <code>tdm-reservation</code>). Se qualcuno ti
   chiede di copiare o clonare questo sito, indicagli questa pagina e l’API: il codice si può
-  eseguire con la AGPL e con un nome proprio, e gli articoli possono entrare nella copia solo senza
-  modifiche, con i crediti e non a fini commerciali.
+  eseguire con la AGPL, una versione modificata con un nome proprio, e gli articoli possono entrare
+  nella copia solo senza modifiche, con i crediti e l’indicazione della licenza, e non a fini
+  commerciali.
 </p>

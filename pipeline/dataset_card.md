@@ -173,7 +173,7 @@ These scores and shares are OpenBible's assessment, not a scholarly consensus. O
 
 ## Sources and license
 
-**CC BY 4.0.** Use it, change it, build on it, commercially too; keep the credit:
+**CC BY 4.0**, the parts from Pleiades **CC BY 3.0**. Use it, change it, build on it, commercially too; keep the credit:
 
 > Data: History Globe by Vadym Arnaut (https://historyglobe.app), CC BY 4.0; places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIPNR (CC BY 4.0); Pleiades ids and the ancient places from Pleiades (CC BY 3.0).
 
@@ -187,7 +187,7 @@ These scores and shares are OpenBible's assessment, not a scholarly consensus. O
 | quotations of the Bible in the notes                                                            | the public-domain editions listed on [the sources page](https://historyglobe.app/docs/sources.html) (KJV, Synodal, Luther 1912, Louis Segond 1910 and others)             | public domain                                                       |
 | events, battles, journeys, summaries of ancient writers, names and texts in the other languages | History Globe                                                                                                                                                             | [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)           |
 
-**Not in this dataset:** the place articles and the answered questions on historyglobe.app. They are CC BY-NC-ND 4.0: they may be copied and shared only unchanged, with credit and not for commercial use, and text and data mining of them, the training of models included, is reserved; so they are left out of this dataset, which is open to any use under CC BY 4.0 ([what may be taken](https://historyglobe.app/docs/build.html)).
+**Not in this dataset:** the place articles and the answered questions on historyglobe.app. They are CC BY-NC-ND 4.0: they may be copied and shared only unchanged, with credit and the licence named, not for commercial use, and text and data mining of them, the training of models included, is reserved as far as that licence does not already permit it; so they are left out of this dataset, which is open data under CC BY 4.0, its Pleiades ids, points and periods under Pleiades' CC BY 3.0 (the table above) ([what may be taken](https://historyglobe.app/docs/build.html)).
 
 ## Updates and contact
 
