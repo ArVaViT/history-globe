@@ -401,13 +401,6 @@ starts:
       - "Diodorus Siculus 14.35; 15.42-43"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 13 (A. B. Lloyd, The Late Period)"
       - "Wikipedia, Twenty-eighth Dynasty of Egypt; Twenty-ninth Dynasty of Egypt"
-  - polity: Judea
-    first_year: "142 BC"
-    reason: >-
-      Cliopatria draws Hasmonean Judea from 145 BC. Until 142 BC the Hasmoneans ruled under the Seleucid kings, who named Jonathan high priest and governor and kept a garrison in the Akra of Jerusalem; in 142 BC Demetrius II freed Judea of tribute and "the yoke of the heathen was taken away from Israel" (1 Macc 13:41), the date of the event hasmonean-independence. Judea is drawn from 142 BC; the years before are Seleucid (extends).
-    sources:
-      - "1 Macc 10:18-21; 11:57-59; 13:36-42"
-      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973), §§ 6-7"
   - polity: Ostrogothic Kingdom
     first_year: "AD 493"
     reason: >-
@@ -999,14 +992,44 @@ clips:
       - "P. E. Zimansky, Ecology and Empire: The Structure of the Urartian State (1985)"
       - "Wikipedia, Urartu (capital Tushpa; the end of the kingdom)"
   - polity: Achaemenid Empire
-    # Egypt and Cyrenaica: west of a line from the sea off Gaza through Raphia to Aila.
+    # Cyrenaica, west of Catabathmus.
     without:
       - [15.0, 15.0]
+      - [25.1, 15.0]
+      - [25.1, 34.0]
+      - [15.0, 34.0]
+    first_year: "404 BC"
+    last_year: "385 BC"
+    leaves_blank: true
+    reason: >-
+      Cliopatria draws Cyrenaica as Persian until 384 BC and as part of the Thirtieth Dynasty's Egypt after it. Cyrene and the Greek cities of Cyrenaica were independent of both in the 4th century BC; no state of theirs is drawn, so the land is left blank in 404-344 BC.
+    sources:
+      - "Diodorus Siculus 18.19-21"
+      - "Wikipedia, Cyrenaica (Greek period)"
+  - polity: Thirtieth Dynasty of Egypt
+    # Cyrenaica, west of Catabathmus.
+    without:
+      - [15.0, 15.0]
+      - [25.1, 15.0]
+      - [25.1, 34.0]
+      - [15.0, 34.0]
+    first_year: "404 BC"
+    last_year: "344 BC"
+    leaves_blank: true
+    reason: >-
+      As above: Cyrenaica was not Egypt's in 404-344 BC.
+    sources:
+      - "Diodorus Siculus 18.19-21"
+  - polity: Achaemenid Empire
+    # Egypt: from Catabathmus (25.1 degrees E) to a line from the sea off Gaza through Raphia
+    # to Aila.
+    without:
+      - [25.1, 15.0]
       - [40.0, 15.0]
       - [35.0, 29.4]
       - [34.25, 31.25]
       - [34.0, 32.0]
-      - [15.0, 34.0]
+      - [25.1, 33.0]
     first_year: "404 BC"
     last_year: "385 BC"
     to: Thirtieth Dynasty of Egypt
@@ -1167,10 +1190,10 @@ clips:
       - [35.0, 29.4]
       - [34.25, 31.25]
     first_year: "AD 614"
-    last_year: "AD 616"
+    last_year: "AD 622"
     to: Sasanian Empire
     reason: >-
-      Cliopatria keeps Palestine Roman until 616. The Persians took Caesarea and, after a siege of about three weeks in May 614, Jerusalem, carrying off the patriarch Zacharias and the True Cross; Palestine stayed Persian until 629. Drawn as Persian from 614, the year of the event jerusalem-persians-614.
+      Cliopatria keeps Palestine Roman until 616, and the Negev, Gaza and Aila until 622. The Persians took Caesarea and, after a siege of about three weeks in May 614, Jerusalem, carrying off the patriarch Zacharias and the True Cross; Palestine stayed Persian until 629. Drawn as Persian from 614 to 622, after which Cliopatria's Persian shape holds it, the year of the event jerusalem-persians-614.
     sources:
       - "Antiochus Strategos, The Capture of Jerusalem by the Persians in 614"
       - "Chronicon Paschale, AD 614"
@@ -1193,9 +1216,10 @@ clips:
     last_year: "AD 1103"
     to: Fatimid Caliphate
     reason: >-
-      Cliopatria draws the Seljuks over the coast of Palestine and Lebanon from 1072. The Turkmen under Atsiz took Jerusalem and Damascus, but the ports stayed Fatimid: Badr al-Jamali held Acre, Caesarea and Sidon, and the Fatimid garrison of Tyre protected Acre against Atsiz; Tyre was ruled by its qadis until the Fatimids took it back in 1089. Acre stayed Fatimid until Baldwin I took it in 1104, Tyre and Sidon after it.
+      Cliopatria draws the Seljuks over the coast of Palestine and Lebanon from 1072. The Turkmen under Atsiz took Jerusalem and Damascus, but not the ports: Badr al-Jamali held Acre, Caesarea and Sidon at the start of the 1070s; Turkmen chiefs held Acre for a time after he left for Egypt; Tyre was ruled by its qadis, the Banu Abi Aqil, from 1070; and Badr's campaign of 1089 brought Acre and Tyre back to the Fatimids, who kept Acre until Baldwin I took it in 1104 and Tyre and Sidon after it. The map draws the coast as Fatimid throughout, a simplification of the years of the Turkmen and the qadis.
     sources:
       - "Ibn al-Qalanisi, The Damascus Chronicle of the Crusades, tr. H. A. R. Gibb (1932), AH 467-497"
+      - "K. M. Setton (ed.), A History of the Crusades, vol. 1 (1955)"
       - "Wikipedia, Badr al-Jamali (Acre, Ascalon, Sidon and Caesarea in the early 1070s)"
       - "S. Runciman, A History of the Crusades, vol. 2 (1952), pp. 87-89"
   - polity: Great Seljuk Empire
@@ -1278,6 +1302,7 @@ clips:
     first_year: "AD 1250"
     last_year: "AD 1259"
     to: Ayyubid Sultanate
+    drawn_from_cut: true
     reason: >-
       Cliopatria draws the Mamluks over Syria and Palestine from 1250. The Mamluks took power in Egypt only; an-Nasir Yusuf, the Ayyubid of Aleppo, took Damascus in 1250 and held Syria, with Jerusalem, until the Mongols came in 1260, and Kerak stayed with another Ayyubid. The accord of 1253 gave Egypt Gaza, Jerusalem and Nablus for a short time, which a new agreement undid; the map leaves those lands with the Ayyubids. Jerusalem passed to the Mamluks after Ain Jalut in 1260.
     sources:
@@ -1402,6 +1427,7 @@ clips:
     first_year: "AD 1204"
     last_year: "AD 1205"
     to: Latin Empire
+    drawn_from_cut: true
     reason: >-
       Cliopatria draws the Latin Empire from 1206. The Fourth Crusade took Constantinople on 13 April 1204 (event constantinople-1204) and crowned Baldwin of Flanders emperor in May; Constantinople and eastern Thrace are drawn as the Latin Empire's from 1204. Its other lands of 1204-1205 are left to the data.
     sources:
@@ -1462,6 +1488,64 @@ clips:
       - "R. Amitai-Preiss, Mongols and Mamluks: The Mamluk-Ilkhanid War, 1260-1281 (1995)"
       - "P. M. Holt, The Age of the Crusades (1986)"
 
+  - polity: Judea
+    # All of Cliopatria's Judea of these years.
+    without:
+      - [33.0, 29.0]
+      - [37.5, 29.0]
+      - [37.5, 34.0]
+      - [33.0, 34.0]
+    first_year: "145 BC"
+    last_year: "143 BC"
+    to: Seleucid Empire
+    reason: >-
+      Cliopatria draws Hasmonean Judea from 145 BC. Until 142 BC the Hasmoneans ruled under the Seleucid kings, who named Jonathan high priest and governor and kept a garrison in the Akra of Jerusalem; in 142 BC Demetrius II freed Judea of tribute and "the yoke of the heathen was taken away from Israel" (1 Macc 13:41), the date of the event hasmonean-independence. Judea's land is drawn as Seleucid in 145-143 BC and as Judea from 142.
+    sources:
+      - "1 Macc 10:18-21; 11:57-59; 13:36-42"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Vandal Kingdom
+    # Sicily east of Lilybaeum.
+    without:
+      - [12.6, 37.0]
+      - [16.0, 36.3]
+      - [16.0, 38.5]
+      - [12.6, 38.4]
+    first_year: "AD 477"
+    last_year: "AD 489"
+    reason: >-
+      Gaiseric ceded Sicily to Odoacer for a yearly tribute, keeping only a small part of it (Lilybaeum, the western tip); Cliopatria draws the island as Vandal until 489. It is drawn as Odoacer's (drawn) from 477.
+    sources:
+      - "Victor of Vita, History of the Vandal Persecution 1.14"
+      - "A. Merrills and R. Miles, The Vandals (2010)"
+  - polity: Ostrogoths
+    # Ravenna and the coast of Romagna.
+    without:
+      - [11.8, 44.1]
+      - [12.6, 44.1]
+      - [12.6, 44.75]
+      - [11.8, 44.75]
+    first_year: "AD 490"
+    last_year: "AD 492"
+    reason: >-
+      Cliopatria draws Theoderic's Ostrogoths over Ravenna from 490. Odoacer held Ravenna, his capital, through a siege of almost three years until he gave it up in March 493; it is drawn as his (drawn) in 490-492.
+    sources:
+      - "Anonymus Valesianus, Pars Posterior 11.53-56"
+      - "J. Moorhead, Theoderic in Italy (1992)"
+  - polity: Great Seljuk Empire
+    # Damascus and its oasis, with the Hauran.
+    without:
+      - [35.9, 32.6]
+      - [36.9, 32.6]
+      - [37.0, 33.6]
+      - [36.0, 33.9]
+    first_year: "AD 1072"
+    last_year: "AD 1075"
+    to: Fatimid Caliphate
+    reason: >-
+      Cliopatria draws Damascus as Seljuk from 1072. Atsiz took it only in 1076, after years of blockade; it is drawn as Fatimid until 1075.
+    sources:
+      - "Ibn al-Qalanisi, The Damascus Chronicle of the Crusades, tr. H. A. R. Gibb (1932), AH 468"
+      - "K. M. Setton (ed.), A History of the Crusades, vol. 1 (1955)"
 # Land a polity held that Cliopatria's shape of it leaves out: the outline is joined to its
 # shapes of those years. Approximate, to the precision of the sources.
 extends:
@@ -1573,7 +1657,7 @@ extends:
       - "S. Runciman, A History of the Crusades, vol. 2 (1952)"
   - polity: Seleucid Empire
     first_year: "165 BC"
-    last_year: "143 BC"
+    last_year: "146 BC"
     # The hill country of Judea, from Beth-zur to the Jordan and north to Gophna.
     outline:
       - [34.85, 32.13]
@@ -1582,7 +1666,7 @@ extends:
       - [35.42, 31.55]
       - [34.85, 31.55]
     reason: >-
-      Cliopatria leaves Judea without a state from 165 to 146 BC and draws Hasmonean Judea from 145. Judas Maccabaeus rededicated the Temple in 164 BC, but Judea stayed in the Seleucid kingdom, with a garrison in the Akra of Jerusalem; his brothers Jonathan and Simon ruled it as the Seleucid kings' high priests and governors until Demetrius II freed it of tribute in 142 BC (starts). Drawn as Seleucid until 143 BC.
+      Cliopatria leaves Judea without a state from 165 to 146 BC. Judas Maccabaeus rededicated the Temple in 164 BC, but Judea stayed in the Seleucid kingdom, with a garrison in the Akra of Jerusalem; his brothers Jonathan and Simon ruled it as the Seleucid kings' high priests and governors until Demetrius II freed it of tribute in 142 BC (clips). Drawn as Seleucid.
     sources:
       - "1 Macc 4:36-59; 10:18-21; 11:57-59; 13:36-42"
       - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
@@ -1827,7 +1911,16 @@ drawn:
       - [9.6, 44.0]
       - [8.0, 43.85]
     label: [14.8, 41.3]
-    minus: [Vandal Kingdom, Ostrogoths, Kingdom of Soissons, Rugiland, Eastern Roman Empire]
+    minus:
+      [
+        Vandal Kingdom,
+        Ostrogoths,
+        Kingdom of Soissons,
+        Rugiland,
+        Eastern Roman Empire,
+        Burgundian Kingdom,
+        Visigothic Kingdom,
+      ]
     reason: >-
       Odoacer deposed Romulus Augustulus in 476 and ruled Italy as king until Theoderic took Ravenna in 493; the Vandals ceded him most of Sicily. Cliopatria draws no state over Italy in these years. The outline is Italy and Sicily; Dalmatia, which he took in 481, and the land north of the Alps are left out. From 490 Theoderic's Ostrogoths hold the north (the data's shape).
     sources:
@@ -2329,18 +2422,18 @@ annexed:
   - polity: Twenty-sixth Dynasty of Egypt
     by: Achaemenid Empire
     first_year: "525 BC"
-    last_year: "501 BC"
+    last_year: "502 BC"
     reason: >-
-      Egypt and Cyprus were Persian from Cambyses' conquest in 525 BC (event cambyses-egypt); Cliopatria's Achaemenid shape reaches them only from 500 BC.
+      Egypt and Cyprus were Persian from Cambyses' conquest in 525 BC (event cambyses-egypt); Cliopatria's Achaemenid shape reaches them only from 501 BC.
     sources:
       - "Herodotus 3.10-16; 3.19; 3.91"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 13 (A. B. Lloyd, The Late Period)"
   - polity: Thirtieth Dynasty of Egypt
     by: Achaemenid Empire
     first_year: "343 BC"
-    last_year: "338 BC"
+    last_year: "339 BC"
     reason: >-
-      Artaxerxes III reconquered Egypt in 343 BC (event artaxerxes-iii-egypt); Cliopatria's Achaemenid shape reaches it only from 337 BC.
+      Artaxerxes III reconquered Egypt in 343 BC (event artaxerxes-iii-egypt); Cliopatria's Achaemenid shape reaches it only from 338 BC.
     sources:
       - "Diodorus Siculus 16.46-51"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 13 (A. B. Lloyd, The Late Period)"

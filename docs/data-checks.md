@@ -157,12 +157,14 @@ the data first (`pnpm data`).
   no ring crossing itself or another part (split at the crossings and joined again,
   `scripts/polygon-ops.ts`), and no speck or sliver; a shape that still fails stops the
   build.
-- **Anchors** (`content/polity-anchors.yaml`): a capital or key town lies inside the state
-  named for each period, and that state is the one its card names (the smallest of those
-  holding it, as `scripts/rulers.ts` picks it), so a raid drawn over a town fails, inside some state in the years between, or the years are listed
-  as a gap with the reason (Nineveh after 612 BC). Damascus, Rabbah, Dibon, Bozrah, Hamath,
-  Carchemish, Babylon, Nineveh, Tushpa, Dan, Lachish, Beersheba, Arad, Gaza, Tyre,
-  Constantinople, Shechem, Memphis, Rome, Athens, Corinth, Antioch and Acre among them.
+- **Anchors** (`content/polity-anchors.yaml`): for each period a capital or key town lies
+  in the state named, and that state is the one its card names (the smallest of those
+  holding it, as `scripts/rulers.ts` picks it), so a raid drawn over a town fails. In the
+  years between the periods some state holds it, or the years are listed as a gap with the
+  reason (Nineveh after 612 BC). Damascus, Rabbah, Dibon, Bozrah, Hamath, Carchemish,
+  Babylon, Nineveh, Tushpa, Dan, Lachish, Beersheba, Arad, Gaza, Tyre, Constantinople,
+  Shechem, Memphis, Rome, Ravenna, Athens, Corinth, Antioch, Acre, Carthage and Cyprus are
+  among them.
 - **The release is described** (`scripts/release-doc.ts`): every field of the states, of
   `content.json` and of the articles is named in `docs/data-release.md`, or the build stops.
 - **Each language in its own script**: no Cyrillic in the articles, answers, tours and

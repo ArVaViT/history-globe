@@ -47,6 +47,10 @@ pull requests on GitHub have them.
   (Samaria 722 BC, Jerusalem 586 BC, Babylon 539 BC, Carthage and Corinth 146 BC, Jerusalem
   1187, Acre 1191 and 1291, Constantinople 1204 and 1261, and others); the build checks it.
   Rome is Roman from 536 and again from 552; Syria is Mamluk from 1260, not Mongol.
+- States: Odoacer holds Sicily from 477 and Ravenna until 493; Samaria and the hill country
+  are Seleucid until Judea is free in 142 BC; Palestine is Persian 614-629 without a break;
+  Cyrene is not drawn as Egypt's in 404-344 BC; Damascus is Fatimid until 1076. Persia's
+  photo is Persepolis.
 - Places: Persia stands in Fars (Wikidata's Persis), no longer on Ecbatana.
 
 ## 2026-11-04 to 2026-11-07

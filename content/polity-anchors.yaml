@@ -398,7 +398,8 @@ anchors:
   - name: Damascus, Fatimid
     place: a69c1d4
     periods:
-      - { first_year: "AD 1028", last_year: "AD 1071", polity: Fatimid Caliphate }
+      - { first_year: "AD 1028", last_year: "AD 1075", polity: Fatimid Caliphate }
+      - { first_year: "AD 1076", last_year: "AD 1100", polity: Great Seljuk Empire }
     sources:
       - "Ibn al-Qalanisi, The Damascus Chronicle of the Crusades, tr. H. A. R. Gibb (1932)"
 
@@ -512,3 +513,31 @@ anchors:
       - { first_year: "1763 BC", last_year: "1750 BC", polity: Babylonia }
     sources:
       - "M. Van De Mieroop, King Hammurabi of Babylon: A Biography (2005)"
+
+  - name: Ravenna
+    place: "393480"
+    periods:
+      - { first_year: "AD 476", last_year: "AD 492", polity: Kingdom of Odoacer }
+      - { first_year: "AD 493", last_year: "AD 539", polity: Ostrogothic Kingdom }
+    sources:
+      - "Anonymus Valesianus, Pars Posterior 11.53-56"
+
+  - name: Syracuse under Odoacer
+    at: [15.29, 37.07]
+    periods:
+      - { first_year: "AD 477", last_year: "AD 492", polity: Kingdom of Odoacer }
+    sources:
+      - "Victor of Vita, History of the Vandal Persecution 1.14"
+
+  - name: Cyrene
+    at: [21.86, 32.82]
+    periods:
+      - { first_year: "450 BC", last_year: "405 BC", polity: Achaemenid Empire }
+    blank:
+      - first_year: "404 BC"
+        last_year: "344 BC"
+        reason: >-
+          Cyrene and the Greek cities of Cyrenaica were independent of Persia and of Egypt;
+          no state of theirs is drawn.
+    sources:
+      - "Diodorus Siculus 18.19-21"
