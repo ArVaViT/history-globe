@@ -20,8 +20,10 @@ description: Vad History Globe sparar om sina besökare: inga konton, inga kakor
   <li>
     <b>Gränssnittsval</b> – vilka paneler och flikar som är öppna, ”bara Bibeln”, spelarens
     utseende, när du senast sparade globen för offlineanvändning – och en
-    <b>lektion som du bygger</b>, med den titel du ger den, sparas i webbläsarens lokala lagring. De
-    lämnar aldrig din enhet; om du rensar webbplatsens data tas de bort.
+    <b>lektion som du bygger</b>, med den titel du ger den, sparas i webbläsarens lokala lagring. Om
+    du rensar webbplatsens data tas de bort. De skickas ingenstans, med ett undantag: medan en
+    lektion är öppen står dess platser och titel i sidans adress, så att länken kan delas, och en
+    adress som öppnas eller laddas om når vår värd som varje sidförfrågan.
   </li>
   <li>
     <b>Offlinekopia.</b> När du väljer ”Spara” under ”Offline” i inställningarna, eller helt enkelt
@@ -35,7 +37,9 @@ description: Vad History Globe sparar om sina besökare: inga konton, inga kakor
   Vi räknar sidvisningar med Vercel Web Analytics, som inte sätter några kakor och inte lagrar någon
   IP-adress: en besökare skiljs från andra med en hash som kasseras inom 24 timmar. Vi ser bara
   totalsiffror – sidor, länder och städer, webbläsare, webbplatsen besökaren kom från – aldrig en
-  person, och använder dem bara för att ta reda på vilka platser och rundturer som läses.
+  person, och använder dem bara för att ta reda på vilka platser och rundturer som läses. Bara
+  sidans sökväg räknas, aldrig det som står efter ”?” i adressen, till exempel en lektions titel;
+  och en glob som är inbäddad i en annan webbplats sida räknar ingenting.
 </p>
 
 <h2 id="servers">Servrar och andra webbplatser</h2>
@@ -57,8 +61,9 @@ description: Vad History Globe sparar om sina besökare: inga konton, inga kakor
   </li>
   <li>
     <b>På andra webbplatser.</b> En inbäddad glob, eller skriptet som markerar platser i en annan
-    webbplats text, läses in från vår server, så vår värd ser läsarens IP-adress och sidan den
-    befinner sig på; den andra webbplatsens policy täcker resten.
+    webbplats text, läses in från vår server, så vår värd ser läsarens IP-adress och oftast bara
+    namnet på webbplatsen den befinner sig på, inte själva sidan; den andra webbplatsens policy
+    täcker resten.
   </li>
   <li>
     <b>Kopior av webbplatsen.</b> Om en sida på History Globe visas från en annan adress än
@@ -85,5 +90,5 @@ description: Vad History Globe sparar om sina besökare: inga konton, inga kakor
 </p>
 
 <p class="meta">
-  Senast uppdaterad 19 november 2026. Om den här sidan ändras ändras dess datum med den.
+  Senast uppdaterad 21 november 2026. Om den här sidan ändras ändras dess datum med den.
 </p>

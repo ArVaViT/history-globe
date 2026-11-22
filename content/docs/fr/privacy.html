@@ -22,8 +22,10 @@ description: Ce que History Globe conserve sur ses visiteurs : pas de compte, p
     <b>Les choix d’interface</b> — quels panneaux et quels onglets sont ouverts, « la Bible seule »,
     l’aspect du lecteur, la date de votre dernier enregistrement du globe pour un usage hors ligne —
     ainsi que <b>la leçon que vous composez</b>, avec le titre que vous lui donnez, sont conservés
-    dans le stockage local de votre navigateur. Ils ne quittent jamais votre appareil ; effacer les
-    données du site les supprime.
+    dans le stockage local de votre navigateur. Effacer les données du site les supprime. Ils ne
+    sont envoyés nulle part, à une exception près : tant qu’une leçon est ouverte, ses lieux et son
+    titre figurent dans l’adresse de la page, pour que son lien puisse être partagé, et une adresse
+    ouverte ou rechargée parvient à notre hébergeur comme toute demande de page.
   </li>
   <li>
     <b>Copie hors ligne.</b> Lorsque vous choisissez « Enregistrer » dans la section « Hors ligne »
@@ -39,6 +41,8 @@ description: Ce que History Globe conserve sur ses visiteurs : pas de compte, p
   aucune adresse IP : un visiteur est distingué par un hachage supprimé dans les 24 heures. Nous ne
   voyons que des totaux — pages, pays et villes, navigateurs, site d’origine du visiteur —, jamais
   une personne, et nous ne les utilisons que pour savoir quels lieux et quels parcours sont lus.
+  Seul le chemin de la page est compté, jamais ce qui suit le « ? » dans son adresse, comme le titre
+  d’une leçon ; et un globe intégré à la page d’un autre site ne compte rien.
 </p>
 
 <h2 id="servers">Serveurs et autres sites</h2>
@@ -61,7 +65,8 @@ description: Ce que History Globe conserve sur ses visiteurs : pas de compte, p
   <li>
     <b>Sur d’autres sites.</b> Un globe intégré, ou le script qui repère les lieux dans le texte
     d’un autre site, est chargé depuis notre serveur ; notre hébergeur voit donc l’adresse IP du
-    lecteur et la page où il se trouve ; la politique de l’autre site couvre le reste.
+    lecteur et, le plus souvent, seulement le nom du site où il se trouve, non la page elle-même ;
+    la politique de l’autre site couvre le reste.
   </li>
   <li>
     <b>Copies du site.</b> Si une page de History Globe est affichée depuis une autre adresse que
@@ -90,5 +95,5 @@ description: Ce que History Globe conserve sur ses visiteurs : pas de compte, p
 </p>
 
 <p class="meta">
-  Dernière mise à jour : 19 novembre 2026. Si cette page change, sa date change avec elle.
+  Dernière mise à jour : 21 novembre 2026. Si cette page change, sa date change avec elle.
 </p>

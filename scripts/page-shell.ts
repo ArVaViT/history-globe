@@ -4,6 +4,7 @@
  * (hreflang, with English as the default), the preview for shared links, the structured
  * data and the visit counter. One place, so the two sets of pages cannot drift apart.
  */
+import { ANALYTICS_TAG } from "../packages/model/src/analytics.ts";
 import { BEACON_TAG } from "../packages/model/src/beacon.ts";
 import { honeypotLink } from "../packages/model/src/honeypot.ts";
 import { LOCALES, type SiteLocale } from "../packages/model/src/locales.ts";
@@ -46,7 +47,7 @@ export function headMeta(o: {
     <meta property="og:url" content="${abs(o.paths[o.l] ?? o.paths.en)}" />
     <meta property="og:image" content="${abs(o.image ?? `og/${o.l}.jpg`)}" />
     <meta name="twitter:card" content="summary_large_image" />${ld}
-    <script defer src="/_vercel/insights/script.js"></script>`;
+    ${ANALYTICS_TAG}`;
 }
 
 /**

@@ -25,6 +25,7 @@ import {
 } from "../packages/model/src/locales.ts";
 import { bodyEnd, esc, headMeta, sansPreload } from "./page-shell.ts";
 import { clientScript } from "./client-script.ts";
+import { unsafeHtml } from "./docs-html.ts";
 import { TYPESET } from "./typeset.ts";
 import { REPOSITORY } from "../packages/model/src/site.ts";
 import { NOTICE_COMMENT } from "../packages/model/src/notice.ts";
@@ -1316,6 +1317,8 @@ for (const l of LANGS) {
     PAGES.map((p) => {
       const file = `content/docs/${l}/${p}.html`;
       const source = parse(join(root, file));
+      // The body goes into the page unescaped: markup only (docs-html.ts).
+      for (const m of unsafeHtml(source.body)) problems.push(`${file}: ${m}`);
       // A licence is linked by its own address in every language, as index.json gives it.
       if (/creativecommons\.org\/[^"]*deed\./.test(source.body))
         problems.push(`${file}: a Creative Commons link to a translated deed, not the licence`);

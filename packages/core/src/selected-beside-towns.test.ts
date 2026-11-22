@@ -6,7 +6,7 @@
  *
  * Every place is checked, as a host page (STEPBible) may select any of them.
  */
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import type { FeatureCollection, Point } from "geojson";
 import { describe, expect, it } from "vitest";
 import { selectedZoom, type PlaceInfo } from "./engine.ts";
@@ -22,10 +22,14 @@ import {
   pxApart,
 } from "./majors.ts";
 
-const read = (name: string): unknown =>
-  JSON.parse(
-    readFileSync(new URL(`../../../apps/web/public/data/${name}`, import.meta.url), "utf8"),
-  );
+function read(name: string): unknown {
+  const file = new URL(`../../../apps/web/public/data/${name}`, import.meta.url);
+  if (!existsSync(file))
+    throw new Error(
+      `apps/web/public/data/${name} is not there: this test reads the data release; run \`pnpm data\` first (README.md, For developers). CI leaves it out.`,
+    );
+  return JSON.parse(readFileSync(file, "utf8"));
+}
 const places = read("places.geojson") as FeatureCollection<Point, Record<string, unknown>>;
 
 interface Year {

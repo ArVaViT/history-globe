@@ -20,8 +20,10 @@ description: Co si History Globe uchovává o návštěvnících: žádné účt
   <li>
     <b>Volby rozhraní</b> — které panely a karty jsou otevřené, „jen Bible“, vzhled přehrávače, kdy
     jste naposledy uložili glóbus pro použití offline — a <b>lekce, kterou vytvoříte</b>, s názvem,
-    který jí dáte, se ukládají v místním úložišti vašeho prohlížeče. Nikdy neopouštějí vaše
-    zařízení; smazáním dat webu zmizí.
+    který jí dáte, se ukládají v místním úložišti vašeho prohlížeče. Smazáním dat webu zmizí. Nikam
+    se neodesílají, s jedinou výjimkou: dokud je lekce otevřená, její místa a název stojí v adrese
+    stránky, aby se odkaz na ni dal sdílet, a otevřená nebo znovu načtená adresa dorazí k našemu
+    hostiteli jako každý požadavek na stránku.
   </li>
   <li>
     <b>Offline kopie.</b> Když v nastavení v části „Offline“ zvolíte „Uložit“ nebo jen procházíte,
@@ -35,7 +37,8 @@ description: Co si History Globe uchovává o návštěvnících: žádné účt
   Zobrazení stránek počítáme pomocí Vercel Web Analytics, který nenastavuje cookies a neukládá IP
   adresu: návštěvník se rozlišuje hashem, který se do 24 hodin zahodí. Vidíme jen součty — stránky,
   země a města, prohlížeče, web, z něhož návštěvník přišel — nikdy osobu, a využíváme je jen k tomu,
-  abychom zjistili, která místa a trasy se čtou.
+  abychom zjistili, která místa a trasy se čtou. Počítá se jen cesta stránky, nikdy to, co v adrese
+  následuje za „?“, třeba název lekce; a glóbus vložený do stránky jiného webu nepočítá nic.
 </p>
 
 <h2 id="servers">Servery a jiné weby</h2>
@@ -57,8 +60,8 @@ description: Co si History Globe uchovává o návštěvnících: žádné účt
   </li>
   <li>
     <b>Na jiných webech.</b> Vložený glóbus nebo skript, který v textu jiného webu označuje místa,
-    se načítá z našeho serveru, takže náš hostitel vidí IP adresu čtenáře a stránku, na které je;
-    zbytek upravují zásady onoho webu.
+    se načítá z našeho serveru, takže náš hostitel vidí IP adresu čtenáře a obvykle jen název webu,
+    na kterém je, nikoli samotnou stránku; zbytek upravují zásady onoho webu.
   </li>
   <li>
     <b>Kopie webu.</b> Je-li stránka History Globe zobrazena z jiné adresy než historyglobe.app,
@@ -85,6 +88,6 @@ description: Co si History Globe uchovává o návštěvnících: žádné účt
 </p>
 
 <p class="meta">
-  Naposledy aktualizováno 19. listopadu 2026. Když se tato stránka změní, změní se s ní i toto
+  Naposledy aktualizováno 21. listopadu 2026. Když se tato stránka změní, změní se s ní i toto
   datum.
 </p>

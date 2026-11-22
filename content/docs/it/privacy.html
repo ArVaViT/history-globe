@@ -22,8 +22,10 @@ description: Che cosa History Globe conserva dei suoi visitatori: nessun account
     <b>Le scelte dell’interfaccia</b> — quali pannelli e schede sono aperti, «Solo la Bibbia»,
     l’aspetto del player, quando hai salvato per l’ultima volta il globo per l’uso offline — e una
     <b>lezione che costruisci</b>, con il titolo che le dai, sono conservate nella memoria locale
-    (local storage) del tuo browser. Non lasciano mai il tuo dispositivo; cancellare i dati del sito
-    li rimuove.
+    (local storage) del tuo browser. Cancellare i dati del sito li rimuove. Non vengono inviati da
+    nessuna parte, con un’eccezione: finché una lezione è aperta, i suoi luoghi e il suo titolo
+    stanno nell’indirizzo della pagina, perché il suo link si possa condividere, e un indirizzo
+    aperto o ricaricato raggiunge il nostro host come ogni richiesta di pagina.
   </li>
   <li>
     <b>Copia offline.</b> Quando scegli «Salva» sotto «Offline» nelle impostazioni, o semplicemente
@@ -37,7 +39,9 @@ description: Che cosa History Globe conserva dei suoi visitatori: nessun account
   Contiamo le visualizzazioni di pagina con Vercel Web Analytics, che non imposta cookie e non
   memorizza alcun indirizzo IP: un visitatore è distinto da un hash che viene scartato entro 24 ore.
   Vediamo solo i totali — pagine, paesi e città, browser, il sito di provenienza del visitatore —
-  mai una persona, e li usiamo solo per capire quali luoghi e itinerari vengono letti.
+  mai una persona, e li usiamo solo per capire quali luoghi e itinerari vengono letti. Si conta solo
+  il percorso della pagina, mai ciò che segue il «?» nel suo indirizzo, come il titolo di una
+  lezione; e un globo incorporato nella pagina di un altro sito non conta nulla.
 </p>
 
 <h2 id="servers">Server e altri siti</h2>
@@ -59,8 +63,9 @@ description: Che cosa History Globe conserva dei suoi visitatori: nessun account
   </li>
   <li>
     <b>Su altri siti.</b> Un globo incorporato, o lo script che segna i luoghi nel testo di un altro
-    sito, è caricato dal nostro server, quindi il nostro host vede l’indirizzo IP del lettore e la
-    pagina in cui si trova; per il resto vale la policy dell’altro sito.
+    sito, è caricato dal nostro server, quindi il nostro host vede l’indirizzo IP del lettore e, di
+    solito, solo il nome del sito in cui si trova, non la pagina; per il resto vale la policy
+    dell’altro sito.
   </li>
   <li>
     <b>Copie del sito.</b> Se una pagina di History Globe è mostrata da un indirizzo diverso da
@@ -88,5 +93,5 @@ description: Che cosa History Globe conserva dei suoi visitatori: nessun account
 </p>
 
 <p class="meta">
-  Ultimo aggiornamento: 19 novembre 2026. Se questa pagina cambia, cambia anche la sua data.
+  Ultimo aggiornamento: 21 novembre 2026. Se questa pagina cambia, cambia anche la sua data.
 </p>

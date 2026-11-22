@@ -21,7 +21,10 @@ description: Ce păstrează History Globe despre vizitatorii săi: fără contur
     <b>Alegerile din interfață</b> — ce panouri și file sunt deschise, „Doar Biblia”, aspectul
     playerului, când ați salvat ultima dată globul pentru folosire fără internet — și o
     <b>lecție pe care o construiți</b>, cu titlul pe care i-l dați, sunt păstrate în stocarea locală
-    a browserului. Nu vă părăsesc niciodată dispozitivul; ștergerea datelor site-ului le elimină.
+    a browserului. Ștergerea datelor site-ului le elimină. Nu sunt trimise nicăieri, cu o singură
+    excepție: cât timp o lecție este deschisă, locurile și titlul ei stau în adresa paginii, ca
+    linkul să poată fi distribuit, iar o adresă deschisă sau reîncărcată ajunge la furnizorul nostru
+    de găzduire ca orice cerere de pagină.
   </li>
   <li>
     <b>Copia pentru folosire fără internet.</b> Când alegeți „Salvează” la „Fără internet” în setări
@@ -36,7 +39,8 @@ description: Ce păstrează History Globe despre vizitatorii săi: fără contur
   stochează nicio adresă IP: un vizitator este deosebit printr-un hash care este eliminat în cel
   mult 24 de ore. Vedem doar totaluri — pagini, țări și orașe, browsere, site-ul de pe care a venit
   un vizitator —, niciodată o persoană, și le folosim doar ca să aflăm ce locuri și trasee sunt
-  citite.
+  citite. Se numără doar calea paginii, niciodată ce urmează după „?” în adresa ei, de pildă titlul
+  unei lecții; iar un glob încorporat în pagina altui site nu numără nimic.
 </p>
 
 <h2 id="servers">Servere și alte site-uri</h2>
@@ -59,8 +63,8 @@ description: Ce păstrează History Globe despre vizitatorii săi: fără contur
   <li>
     <b>Pe alte site-uri.</b> Un glob încorporat sau scriptul care marchează locurile în textul unui
     alt site este încărcat de pe serverul nostru, așa că furnizorul nostru de găzduire vede adresa
-    IP a cititorului și pagina pe care se află acesta; restul este acoperit de politica celuilalt
-    site.
+    IP a cititorului și, de obicei, doar numele site-ului pe care se află acesta, nu pagina însăși;
+    restul este acoperit de politica celuilalt site.
   </li>
   <li>
     <b>Copii ale site-ului.</b> Dacă o pagină a History Globe este afișată de la o altă adresă decât
@@ -88,6 +92,6 @@ description: Ce păstrează History Globe despre vizitatorii săi: fără contur
 </p>
 
 <p class="meta">
-  Ultima actualizare: 19 noiembrie 2026. Dacă această pagină se schimbă, data ei se schimbă odată cu
+  Ultima actualizare: 21 noiembrie 2026. Dacă această pagină se schimbă, data ei se schimbă odată cu
   ea.
 </p>

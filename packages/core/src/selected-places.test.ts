@@ -6,7 +6,7 @@
  *
  * The great towns round a selected place stay on the map: packages/core/src/majors.test.ts.
  */
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { expression, featureFilter } from "@maplibre/maplibre-gl-style-spec";
 import type { FeatureCollection } from "geojson";
 import { describe, expect, it } from "vitest";
@@ -14,10 +14,14 @@ import { zoomForKind } from "./kinds.ts";
 import { buildStyle } from "./style.ts";
 
 type Props = Record<string, unknown>;
-const read = (name: string) =>
-  JSON.parse(
-    readFileSync(new URL(`../../../apps/web/public/data/${name}`, import.meta.url), "utf8"),
-  ) as FeatureCollection;
+function read(name: string): FeatureCollection {
+  const file = new URL(`../../../apps/web/public/data/${name}`, import.meta.url);
+  if (!existsSync(file))
+    throw new Error(
+      `apps/web/public/data/${name} is not there: this test reads the data release; run \`pnpm data\` first (README.md, For developers). CI leaves it out.`,
+    );
+  return JSON.parse(readFileSync(file, "utf8")) as FeatureCollection;
+}
 const places = read("places.geojson");
 // The ancient world's sites, as apps/web/src/data.ts ancientPlaces makes them places: towns,
 // one rank down, standing from `from` to `to`.
