@@ -1,6 +1,7 @@
 # Samuel and the ark, 1 Samuel 1-11 and 25, in the order of the text. The tour's year
 # (1070 BC) is a conventional point for the map before Saul's kingship (c. 1050 BC);
-# the chronology of the judges' last years is uncertain.
+# the chronology of the judges' last years is uncertain. Mizpah, twenty years after the ark
+# came to Kiriath-jearim (7:2), shows 1050 BC.
 id: samuel
 title:
   en: "Samuel and the ark"
@@ -174,6 +175,7 @@ stops:
       bg: "Жителите на Кириат-Ярим внасят ковчега в дома на Авинадав; минават двадесет години и целият Израил въздиша по Господа."
   - place: a736f6c # Mizpah
     ref: 1Sam.7.5-1Sam.7.12
+    year: "1050 BC"
     note:
       en: 'At Mizpah Samuel prays and Israel prevails; between Mizpah and Shen Samuel sets up a stone: "Hitherto hath the LORD helped us."'
       ru: "В Массифе Самуил молится, и Израиль побеждает; между Массифою и Сеном Самуил ставит камень: «до сего места помог нам Господь»."

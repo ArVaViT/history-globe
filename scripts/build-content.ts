@@ -58,6 +58,9 @@ import {
   eventBattleLinks,
   fadedState,
   fallsIn,
+  givesFigure,
+  nearDistance,
+  ownDistances,
   samePassageApart,
   statesDistance,
   Water,
@@ -216,7 +219,6 @@ const SAME_PASSAGE_APART = new Set([
   // date the text gives).
   "tours/abraham 11 questions/where-did-abraham-offer-isaac",
   "tours/judges 6 questions/where-did-samson-live",
-  "tours/samuel 6 questions/where-was-the-ark-of-the-covenant-kept",
   // The letters tour holds one year for all the letters; Galatians and Colossians are dated
   // apart from it in the questions, within the range held for each.
   "tours/letters 3 questions/where-was-galatia",
@@ -998,6 +1000,50 @@ for (const q of questions) {
         `questions/${q.id}.yaml: the ${l} answer states no distance near the measured one`,
       );
 }
+
+// An article's distance from its own place to another (ownDistances) is the straight line
+// between their points, as the answers measure it, and every language gives the same figure.
+// OWN_DISTANCE_APART lists "article place" pairs whose figure is measured to another point on
+// purpose, with the reason; an entry that no longer differs fails too.
+const OWN_DISTANCE_APART = new Map<string, string>([
+  // A lava field of some 900 km²: the figure is to its near edge, the point at its middle.
+  ["trachonitis Damascus", "a region measured to its edge"],
+]);
+const pointsNamed = new Map<string, [number, number][]>();
+for (const f of places.features) {
+  const [lon, lat] = f.geometry.coordinates;
+  const list = pointsNamed.get(f.properties.name) ?? [];
+  if (!list.some(([x, y]) => x === lon && y === lat)) list.push([lon ?? 0, lat ?? 0]);
+  pointsNamed.set(f.properties.name, list);
+}
+const ownApart = new Set<string>();
+for (const a of articles) {
+  const own = pointOf.get(a.place);
+  if (!own) continue;
+  const from: [number, number] = [own[0] ?? 0, own[1] ?? 0];
+  a.body.en.forEach((paragraph, i) => {
+    for (const { km, to } of ownDistances(a.title.en, paragraph)) {
+      const there = pointsNamed.get(to);
+      if (there?.length !== 1 || !there[0]) continue;
+      const pair = `${a.id} ${to}`;
+      if (!nearDistance(km, from, there[0])) {
+        ownApart.add(pair);
+        if (!OWN_DISTANCE_APART.has(pair))
+          errors.push(
+            `articles/${a.id}.yaml: ${String(km)} km to ${to}, but the points are ${distanceKm(from, there[0]).toFixed(1)} km apart`,
+          );
+      }
+      for (const [l, ps] of Object.entries(a.body))
+        if (!givesFigure(ps[i] ?? "", km))
+          errors.push(
+            `articles/${a.id}.yaml: the ${l} text does not give the ${String(km)} km to ${to}`,
+          );
+    }
+  });
+}
+for (const pair of OWN_DISTANCE_APART.keys())
+  if (!ownApart.has(pair))
+    errors.push(`OWN_DISTANCE_APART: ${pair} no longer differs; take it out`);
 
 for (const w of warnings) console.warn(`warning: ${w}`);
 // Photos of places (content/photos.yaml): licence and place checked here, the files
