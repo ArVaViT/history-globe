@@ -36,6 +36,22 @@ pull requests on GitHub have them.
   "deed.en").
 - Tours: the Russian notes of the Augustine tour (Thagaste, Carthage, Milan) tell in our
   own words what they quoted from M. E. Sergeenko's translation, which is in copyright.
+- States (`polities*.geojson`, `rulers.json`): the map agrees with the atlas's own events.
+  Israel and Judah divide in 931 BC, not 901; Egypt is Persian from 525 BC and independent
+  in 404-344 BC under the Twenty-eighth, Twenty-ninth and Thirtieth Dynasties (two new state
+  names); raids are no longer drawn as rule (Rome, Athens, Corinth, Antioch, Antony's East
+  in 32 BC); Odoacer's Italy (476-492) is drawn; Jerusalem is Persian from 614, Frankish in
+  1229-1243 and Ayyubid until 1259; the Fatimid coast with Acre and Tyre until 1104 and 1124;
+  the Hasmoneans independent from 142 BC; Babylonia under Assyria from 647 BC.
+- States: a place passes to the state that took it in the year of the event that tells it
+  (Samaria 722 BC, Jerusalem 586 BC, Babylon 539 BC, Carthage and Corinth 146 BC, Jerusalem
+  1187, Acre 1191 and 1291, Constantinople 1204 and 1261, and others); the build checks it.
+  Rome is Roman from 536 and again from 552; Syria is Mamluk from 1260, not Mongol.
+- States: Odoacer holds Sicily from 477 and Ravenna until 493; Samaria and the hill country
+  are Seleucid until Judea is free in 142 BC; Palestine is Persian 614-629 without a break;
+  Cyrene is not drawn as Egypt's or Persia's in 404-333 BC; Harran is Babylon's from 610 BC;
+  Damascus is Fatimid until 1076. Persia's photo is Persepolis.
+- Places: Persia stands in Fars (Wikidata's Persis), no longer on Ecbatana.
 
 ## 2026-11-04 to 2026-11-07
 

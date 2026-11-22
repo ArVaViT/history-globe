@@ -58,6 +58,7 @@ import {
   eventBattleLinks,
   fadedState,
   fallsIn,
+  lateTransfers,
   givesFigure,
   nearDistance,
   ownDistances,
@@ -203,6 +204,26 @@ const FADED_ITEMS = new Map([
   ["events pergamum-bequeathed", "awaits a way to mark a city standing through the period"],
   // Adasa is named in 1 Maccabees only, in no verse of the canon: faded by the same rule.
   ["battles adasa", "awaits a way to mark a city standing through the period"],
+]);
+
+/**
+ * Events, battles, question maps and tour stops at a place whose state changes the year
+ * after theirs on purpose: the event is not the transfer, or the transfer came later. By
+ * kind and id (a tour stop by its number).
+ */
+const TRANSFER_LAG = new Map<string, string>([
+  // The fall of Jerusalem is dated 587 or 586 BC. The tours of the exile and of Jeremiah and
+  // the Mizpah question show the siege and the days after it at 587 BC, with the city still
+  // standing (place-life.yaml); the map passes Judah to Babylon in 586 BC, the year of the
+  // event jerusalem-falls and of the burning (2 Kgs 25:8).
+  ["questions where-was-mizpah", "the siege year, before the fall of 586 BC"],
+  ["tours exile 1", "the siege year, before the fall of 586 BC"],
+  ["tours exile 2", "the siege year, before the fall of 586 BC"],
+  ["tours exile 6", "the siege year, before the fall of 586 BC"],
+  ["tours exile 7", "the siege year, before the fall of 586 BC"],
+  ["tours jeremiah 5", "the siege year, before the fall of 586 BC"],
+  ["tours jeremiah 6", "the siege year, before the fall of 586 BC"],
+  ["tours jeremiah 7", "the siege year, before the fall of 586 BC"],
 ]);
 
 /**
@@ -950,6 +971,31 @@ for (const [where, place, year] of fadedItems) {
 for (const where of FADED_ITEMS.keys())
   if (!fadedItems.some(([w, place, year]) => w === where && place && fadedAt(place, year)))
     errors.push(`FADED_ITEMS: ${where} is no longer drawn faded; take it out`);
+
+// A place passes to the state that took it in the year of the event that tells it
+// (content/polity-overrides.yaml, header). An event, a battle, a question's map or a tour
+// stop at a place whose card names one state in its year and another the year after is a
+// transfer drawn a year late: refused, unless listed in TRANSFER_LAG with the reason.
+{
+  const written = writes.find(([path]) => path.endsWith("rulers.json"));
+  const rulers = written
+    ? (JSON.parse(written[1]) as { places: Record<string, [number, number, number][]> }).places
+    : {};
+  const items: [where: string, place: string | undefined, year: number][] = [
+    ...fadedItems,
+    ...events.flatMap((e): [string, string, number][] =>
+      e.site ? [[`events ${e.id}`, e.site.id, e.year]] : [],
+    ),
+    ...tours.flatMap((t) =>
+      t.stops.map((s, i): [string, string, number] => [
+        `tours ${t.id} ${String(i + 1)}`,
+        s.place,
+        s.year ?? t.year,
+      ]),
+    ),
+  ];
+  errors.push(...lateTransfers(items, rulers, TRANSFER_LAG));
+}
 
 // The same passage at the same place, dated years apart in two files: a tour stop at its
 // tour's year where the text dates the story elsewhere. Warned, with SAME_PASSAGE_APART.
