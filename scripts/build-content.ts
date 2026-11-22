@@ -1453,15 +1453,34 @@ const ENGLISH_KEPT = new Set([
   }
 }
 // A bare "mil" in Danish, Norwegian and Swedish is the Scandinavian mile (about 10 km), so a
-// mile in a source line always says whose: Roman or English.
+// mile always says whose, Roman or English: in the source lines and in every other text.
 {
   const MILE = /(?<!\b(?:romersk|romerske|romerska|engelsk|engelske|engelska) )\bmil(?:e|es)?\b/iu;
+  const NORDIC = ["da", "nb", "sv"] as const;
   for (const s of cited)
-    for (const l of ["da", "nb", "sv"] as const) {
+    for (const l of NORDIC) {
       const t = sourcesIn[l][s];
       if (t !== undefined && MILE.test(t))
         errors.push(`sources-${l}.yaml: a mile that is not Roman or English in "${t}"`);
     }
+  const walk = (file: string, x: unknown, lang: string | null): void => {
+    if (typeof x === "string") {
+      if (lang !== null && MILE.test(x))
+        errors.push(`${file}: a ${lang} mile that is not Roman or English in "${x}"`);
+    } else if (Array.isArray(x)) for (const y of x) walk(file, y, lang);
+    else if (x !== null && typeof x === "object")
+      for (const [k, y] of Object.entries(x))
+        walk(file, y, (NORDIC as readonly string[]).includes(k) ? k : lang);
+  };
+  const texts = (dir: string): string[] =>
+    readdirSync(join(root, dir), { withFileTypes: true }).flatMap((e) =>
+      e.isDirectory()
+        ? texts(join(dir, e.name))
+        : e.name.endsWith(".yaml") && !e.name.startsWith("sources-")
+          ? [join(dir, e.name)]
+          : [],
+    );
+  for (const f of texts("content")) walk(f, load(f), null);
 }
 // The site's dated events and battles are named by their titles in a source line, never by
 // their ids ("saul-king"), which a reader cannot read.
