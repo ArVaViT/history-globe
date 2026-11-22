@@ -2,6 +2,12 @@ packages:
   - apps/*
   - packages/*
 
+# A version is installed only once it has been on the registry for three days (in minutes),
+# so that a hijacked release is usually found and pulled first (ADR 0010; the Dependabot
+# cooldown in .github/dependabot.yml is the same). A security fix that cannot wait is named in
+# minimumReleaseAgeExclude, with the advisory beside it (`pnpm audit --fix` adds the entry).
+minimumReleaseAge: 4320
+
 # minimatch below 11.0.1 has a denial-of-service advisory (GHSA-g3hv-75wg-m249) and no fix
 # in 10.x; @typescript-eslint/typescript-estree 8.72 still asks for 10. It only calls
 # minimatch(path, pattern, { dot: true }), which 11 keeps.

@@ -21,8 +21,10 @@ description: Hva History Globe lagrer om besøkende: ingen kontoer, ingen inform
   <li>
     <b>Valg i grensesnittet</b> — hvilke paneler og faner som er åpne, «Bare Bibelen», utseendet på
     avspilleren, når du sist lagret globusen for bruk uten nett — og en <b>leksjon du lager</b>, med
-    tittelen du gir den, lagres i nettleserens lokale lagring. De forlater aldri enheten din; når du
-    sletter nettstedets data, fjernes de.
+    tittelen du gir den, lagres i nettleserens lokale lagring. Når du sletter nettstedets data,
+    fjernes de. De sendes ingen steder, med ett unntak: mens en leksjon er åpen, står stedene og
+    tittelen i sidens adresse, slik at lenken kan deles, og en adresse som åpnes eller lastes inn på
+    nytt, når verten vår som enhver forespørsel om en side.
   </li>
   <li>
     <b>Kopi for bruk uten nett.</b> Når du velger «Lagre» under «Frakoblet» i innstillingene, eller
@@ -36,7 +38,9 @@ description: Hva History Globe lagrer om besøkende: ingen kontoer, ingen inform
   Vi teller sidevisninger med Vercel Web Analytics, som ikke setter informasjonskapsler og ikke
   lagrer IP-adresser: en besøkende skilles fra andre med en hash som forkastes innen 24 timer. Vi
   ser bare totaler — sider, land og byer, nettlesere, nettstedet en besøkende kom fra — aldri en
-  person, og bruker dem bare til å finne ut hvilke steder og ruter som leses.
+  person, og bruker dem bare til å finne ut hvilke steder og ruter som leses. Bare sidens sti
+  telles; det som står etter «?» i adressen, for eksempel tittelen på en leksjon, telles aldri, og
+  besøk på en globus som er innebygd på et annet nettsteds side, telles ikke.
 </p>
 
 <h2 id="servers">Servere og andre nettsteder</h2>
@@ -58,8 +62,9 @@ description: Hva History Globe lagrer om besøkende: ingen kontoer, ingen inform
   </li>
   <li>
     <b>På andre nettsteder.</b> En innebygd globus, eller skriptet som markerer steder i teksten på
-    et annet nettsted, lastes fra serveren vår, så verten vår ser leserens IP-adresse og siden
-    vedkommende er på; det andre nettstedets retningslinjer dekker resten.
+    et annet nettsted, lastes fra serveren vår, så verten vår ser leserens IP-adresse og som regel
+    bare navnet på nettstedet vedkommende er på, ikke selve siden; det andre nettstedets
+    retningslinjer dekker resten.
   </li>
   <li>
     <b>Kopier av nettstedet.</b> Hvis en side fra History Globe vises fra en annen adresse enn
@@ -87,5 +92,5 @@ description: Hva History Globe lagrer om besøkende: ingen kontoer, ingen inform
 </p>
 
 <p class="meta">
-  Sist oppdatert 19. november 2026. Hvis denne siden endres, endres datoen med den.
+  Sist oppdatert 22. november 2026. Hvis denne siden endres, endres datoen med den.
 </p>

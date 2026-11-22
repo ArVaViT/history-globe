@@ -36,7 +36,7 @@ describe("the beacon", () => {
     "history-globe.vercel.app",
     "history-globe-i3d5uoxab-vadyms-projects-dfb6f76f.vercel.app",
     "history-globe-git-auto-protection-1019-vadyms-projects-dfb6f76f.vercel.app",
-    "vadyms-macbook.local",
+    "example-host.local",
     "10.0.0.7",
     "172.16.0.1",
     "172.31.255.254",

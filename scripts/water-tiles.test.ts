@@ -6,7 +6,7 @@
  * away and drew a straight band across Arabia at the zooms of a whole-region view
  * (pipeline/build_data.py, join_holes).
  */
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { GeoJSONVT } from "@maplibre/geojson-vt";
 import earcut from "earcut";
 import type { FeatureCollection } from "geojson";
@@ -14,6 +14,14 @@ import { describe, expect, it } from "vitest";
 import { buildStyle } from "../packages/core/src/style.ts";
 
 const FILE = new URL("../apps/web/public/data/water.geojson", import.meta.url);
+/** The sea of the data release, or a clear error before `pnpm data` has built it. */
+function water(): FeatureCollection {
+  if (!existsSync(FILE))
+    throw new Error(
+      "apps/web/public/data/water.geojson is not there: this test reads the data release; run `pnpm data` first (README.md, For developers). CI leaves it out.",
+    );
+  return JSON.parse(readFileSync(FILE, "utf8")) as FeatureCollection;
+}
 // MapLibre 6 for a GeoJSON source: 512 px tiles of 8192 units, a 128 px buffer, and the
 // style's tolerance (0.375 px when it gives none).
 const EXTENT = 8192;
@@ -149,8 +157,8 @@ export function seaOverLand(
 describe("the sea in map tiles", () => {
   it("is not simplified, so the cuts that join islands to the sea stay closed", () => {
     expect(TOLERANCE).toBe(0);
-    const water = JSON.parse(readFileSync(FILE, "utf8")) as FeatureCollection;
-    for (const f of water.features) {
+    const sea = water();
+    for (const f of sea.features) {
       const g = f.geometry;
       const polygons =
         g.type === "MultiPolygon" ? g.coordinates : g.type === "Polygon" ? [g.coordinates] : [];
@@ -193,7 +201,7 @@ describe("the sea in map tiles", () => {
 
   it("has no sea over land in water.geojson at any zoom up to 6", () => {
     // Built by `pnpm data` (pipeline/build_data.py), like the rest of the gate's data.
-    const water = JSON.parse(readFileSync(FILE, "utf8")) as FeatureCollection;
-    expect(seaOverLand(water)).toEqual([]);
+    const sea = water();
+    expect(seaOverLand(sea)).toEqual([]);
   }, 60_000);
 });

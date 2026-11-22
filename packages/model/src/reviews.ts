@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { LOCALES, type SiteLocale } from "./locales.ts";
+import { httpsUrl } from "./https-url.ts";
 
 /**
  * Reviews by scholars (content/reviews/*.yaml, docs/reviews/README.md): one file a review,
@@ -106,7 +107,7 @@ export const ReviewFile = z
        * (two posts): shown on the review's page instead; the short line keeps `institution`.
        */
       affiliation: z.string().min(1).optional(),
-      url: z.url({ protocol: /^https$/ }).optional(),
+      url: httpsUrl.optional(),
       orcid: z.string().refine(isOrcid, { message: "not a valid ORCID iD" }).optional(),
     }),
     /** The date of the reviewer's report. */
