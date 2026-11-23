@@ -63,6 +63,18 @@ describe("the honeypot", () => {
     expect(everyone && allowed(everyone, "/data/photos/x.jpg")).toBe(true);
   });
 
+  // The API's data is CC BY 4.0 and open to every crawler, the training crawlers too; the
+  // answers (questions.json, CC BY-NC-ND 4.0) and the site itself stay closed to those.
+  it("leaves the open API to every crawler, but the answers to no training crawler", () => {
+    const training = robots.find((g) => g.agents.includes("GPTBot"));
+    expect(training && allowed(training, "/en/place/jerusalem/")).toBe(false);
+    for (const g of robots) {
+      expect(allowed(g, "/api/v1/places.json"), g.agents.join(", ")).toBe(true);
+      expect(allowed(g, "/api/v1/index.json"), g.agents.join(", ")).toBe(true);
+    }
+    expect(training && allowed(training, "/api/v1/questions.json")).toBe(false);
+  });
+
   it("is a page that asks not to be indexed and links nowhere", () => {
     const page = read(`public${HONEYPOT_PATH}index.html`);
     expect(page).toContain('<meta name="robots" content="noindex, nofollow" />');

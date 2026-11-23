@@ -4,6 +4,7 @@ import { formatRef, type Locale, placeName } from "@hg/model";
 import { chapterLabel, chapterOf, firstVerseIn, readingOrder } from "../chapter";
 import type { LoadedData } from "../data";
 import { useTranslation } from "../i18n";
+import { REPOSITORY } from "../site";
 import { globeLinkSearch } from "../url";
 import { ChevronDown } from "./icons";
 
@@ -109,7 +110,8 @@ export function ChapterPicker({
 
 /**
  * The top of an embedded map: the chapter it shows, which opens the list of its places in
- * the order the text names them, and the way out to the whole globe at the same view.
+ * the order the text names them, the way out to the whole globe at the same view, and the
+ * link to the source code.
  */
 export function EmbedBar({
   focus,
@@ -148,18 +150,30 @@ export function EmbedBar({
           className={`${chip} flex items-center gap-2 py-1.5 pr-2.5 pl-4 hover:bg-paper`}
         />
       )}
-      <a
-        href={import.meta.env.BASE_URL}
-        // The view of the moment the link is used: the URL follows the map 300 ms late.
-        onClick={(e) => {
-          e.currentTarget.href = `${import.meta.env.BASE_URL}?${globeLinkSearch(window.location.search)}`;
-        }}
-        target="_blank"
-        rel="noopener"
-        className={`${chip} pointer-events-auto ml-auto px-3 py-1.5 font-serif text-[14px] text-ink hover:text-accent`}
-      >
-        History Globe ↗<span className="sr-only"> ({t("new_tab")})</span>
-      </a>
+      <span className={`${chip} pointer-events-auto ml-auto flex items-baseline gap-2 px-3 py-1.5`}>
+        <a
+          href={import.meta.env.BASE_URL}
+          // The view of the moment the link is used: the URL follows the map 300 ms late.
+          onClick={(e) => {
+            e.currentTarget.href = `${import.meta.env.BASE_URL}?${globeLinkSearch(window.location.search)}`;
+          }}
+          target="_blank"
+          rel="noopener"
+          className="font-serif text-[14px] text-ink hover:text-accent"
+        >
+          History Globe ↗<span className="sr-only"> ({t("new_tab")})</span>
+        </a>
+        {/* The AGPL's section 13: a frame offers its users the source too (ADR 0019). */}
+        <a
+          href={REPOSITORY}
+          target="_blank"
+          rel="noopener"
+          className="text-[12.5px] text-ink-soft hover:text-accent"
+        >
+          {t("settings.source")}
+          <span className="sr-only"> · AGPL-3.0-or-later ({t("new_tab")})</span>
+        </a>
+      </span>
     </nav>
   );
 }
