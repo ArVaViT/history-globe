@@ -2422,7 +2422,7 @@ const T_TL = {
   about: "Tungkol sa proyekto",
   privacy: "Pagkapribado",
   report: "May nakita kang mali?",
-  code: "Source code",
+  code: "Pinagmulang code",
   allSources: "lahat ng sanggunian",
   data: "Datos",
   // The language switch is an icon: «Wika: English» names it for a pointer and a screen reader.

@@ -116,6 +116,13 @@ precedence = "override"
 SPDX-FileCopyrightText = ["2026 Juan Manuel Tebes", "2026 Vadym Arnaut"]
 SPDX-License-Identifier = "CC-BY-4.0"
 
+# Part 5: the code of conduct is the Contributor Covenant 2.1, under CC BY 4.0.
+[[annotations]]
+path = "CODE_OF_CONDUCT.md"
+precedence = "override"
+SPDX-FileCopyrightText = ["Coraline Ada Ehmke and the Contributor Covenant contributors", "2026 Vadym Arnaut"]
+SPDX-License-Identifier = "CC-BY-4.0"
+
 # Part 5: the icons copied from Lucide, some of them from Feather.
 [[annotations]]
 path = "apps/web/src/components/icons.tsx"
@@ -134,11 +141,12 @@ SPDX-FileCopyrightText = ["2026 Lucide Icons and Contributors", "2013-present Co
 SPDX-License-Identifier = "ISC AND MIT"
 
 # Part 5: the licence texts of the software the site ships, written by
-# scripts/third-party-licenses.ts; the copyright lines are those in the file.
+# scripts/third-party-licenses.ts; the copyright lines are those in the file, and
+# reuse-toml.test.ts checks the licences against the ones the file lists.
 [[annotations]]
 path = "apps/web/public/licenses/third-party.txt"
 precedence = "aggregate"
-SPDX-License-Identifier = "MIT AND OFL-1.1"
+SPDX-License-Identifier = "MIT AND ISC AND BSD-2-Clause AND BSD-3-Clause AND (MIT OR Apache-2.0) AND OFL-1.1"
 
 # Part 6: the name and the logo, and the preview images.
 [[annotations]]

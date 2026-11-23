@@ -63,10 +63,22 @@ describe("REUSE.toml", () => {
       ["apps/web/public/shots/*-tour.jpg", "LicenseRef-PreviewImages AND CC-BY-4.0", "Raicem"],
       ["docs/crosswalk/*.csv", "CC-BY-4.0 AND CC-BY-SA-4.0", "CC BY-SA 4.0 applies"],
       ["content/README.md", "AGPL-3.0-or-later", "documentation of the project"],
+      ["CODE_OF_CONDUCT.md", "CC-BY-4.0", "Contributor Covenant"],
     ] as const) {
       expect(exact(path)?.licence, path).toBe(spdx);
       expect(licence, path).toContain(words);
     }
+  });
+
+  // The notices file is written from the build; its annotation names every licence it lists.
+  it("names every licence the third-party notices list", () => {
+    const listed = new Set(
+      [...read("apps/web/public/licenses/third-party.txt").matchAll(/^ {2}\S+ \S+ \(([^)]+)\)$/gm)]
+        .map((m) => m[1] ?? "")
+        .flatMap(ids),
+    );
+    const annotated = ids(exact("apps/web/public/licenses/third-party.txt")?.licence ?? "");
+    expect([...new Set(annotated)].sort()).toEqual([...listed].sort());
   });
 
   // A review is its author's; the licence is the one the reviewer gave (LICENSE, part 4).
