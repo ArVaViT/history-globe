@@ -1448,6 +1448,8 @@ ol.stops p {
   position: absolute;
   inset: -14% 4% 24%;
   z-index: -1;
+  /* Only a glow: it rises over the buttons above the picture, and a press goes through it. */
+  pointer-events: none;
   background:
     radial-gradient(closest-side at 35% 50%, var(--accent-soft), transparent),
     radial-gradient(closest-side at 70% 45%, rgb(46 98 130 / 0.1), transparent);

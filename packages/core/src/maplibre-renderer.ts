@@ -159,6 +159,8 @@ export class MapLibreRenderer implements Renderer {
   private readonly viewPadding: (() => Padding) | undefined;
   private pulse: { frame: number; markers: maplibregl.Marker[] } | null = null;
   private ring: maplibregl.Marker | null = null;
+  /** The last highlight asked for: a ring waiting for the map to stand still yields to it. */
+  private ringToken = 0;
   private readonly dataUrl: string;
   private lateStates: Promise<boolean> | null = null;
   private readonly roads: Record<"major" | "minor", "no" | "loading" | "yes"> = {
@@ -792,6 +794,7 @@ export class MapLibreRenderer implements Renderer {
       // A marker over the map, not a feature state: the place may have no dot at this zoom
       // (Jerusalem under a selected Kidron), and the ring is seen all the same.
       if (!at) {
+        this.ringToken++;
         this.ring?.remove();
         this.ring = null;
         return;
@@ -806,7 +809,15 @@ export class MapLibreRenderer implements Renderer {
         el.append(ring);
         this.ring = new maplibregl.Marker({ element: el });
       }
-      this.ring.setLngLat([at[0], at[1]]).addTo(this.map);
+      const ring = this.ring;
+      const token = ++this.ringToken;
+      // Set down when the map is still: a marker added while the camera flies to the place
+      // breaks MapLibre's easing frame ("_onEaseFrame is not a function").
+      const place = () => {
+        if (token === this.ringToken) ring.setLngLat([at[0], at[1]]).addTo(this.map);
+      };
+      if (this.map.isMoving()) this.map.once("moveend", place);
+      else place();
     });
   }
 
