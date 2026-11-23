@@ -139,7 +139,8 @@ export function TourStopCard({
     // screen tall, so the stop and its route stay on the map above it: the stop's text
     // scrolls between the tour's name and its verse and stepping, which stay put. On a
     // screen too short for that (a phone on its side, a page zoomed to 200 %) the whole card
-    // scrolls instead (hg-stop-card, styles.css), so the text is never a slit.
+    // scrolls instead, the stepping kept at its foot (hg-stop-card, styles.css), so the
+    // text is never a slit.
     <Panel className="hg-stop-card w-card px-5 pt-4 pb-4 max-md:flex max-md:max-h-[48dvh] max-md:flex-col sideways:flex sideways:max-h-[calc(100dvh-var(--hg-timeline-h)-44px)] sideways:flex-col">
       <div className="flex shrink-0 items-center justify-between">
         <div className="text-[12px] text-ink-soft">
@@ -275,7 +276,9 @@ export function TourStopCard({
           </li>
         ))}
       </ol>
-      <div className={`mt-1.5 flex shrink-0 justify-between ${compact ? "hidden" : ""}`}>
+      <div
+        className={`hg-stop-steps mt-1.5 flex shrink-0 justify-between ${compact ? "hidden" : ""}`}
+      >
         <button
           disabled={step === 0}
           onClick={() => {
