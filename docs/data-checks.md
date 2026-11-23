@@ -63,7 +63,7 @@ the data first (`pnpm data`).
   brackets, slashes or markers. Evidence, when given, must be a verse that OpenBible tags
   for that very place, and its excerpt must contain the name (the first letters of the
   last word, at the start of a word). Names of places left out for licence reasons are
-  parked with a warning.
+  parked: kept, listed in one line of the build's output, and not a warning.
 - **Articles** (`content/articles`): the id matches the file name, the place is in the data
   build, not a duplicate record and named in verses, and has no other article. English and
   Russian run to 450 words at most; every language has no double space and between half and

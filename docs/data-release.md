@@ -68,4 +68,4 @@ from there first. `pnpm sources save <dir>` copies that cache to `<dir>/sources-
 with each file's size and SHA-256 (`SOURCES.json`), the credits and the release manifest.
 `pnpm sources verify <copy>` checks a copy, and `pnpm sources restore <copy>` puts it back
 so that `pnpm data && pnpm content` rebuild the same data without the network. Keep a copy
-off this machine too; the licences above travel with it.
+off the machine that built it; the licences above travel with it.

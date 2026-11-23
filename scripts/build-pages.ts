@@ -33,6 +33,7 @@ import { isLocale, LOCALE_NAMES, LOCALES, type SiteLocale } from "../packages/mo
 import { bodyEnd, esc, headMeta, sansPreload } from "./page-shell.ts";
 import { versioned } from "./content-hash.ts";
 import { NOTICE_COMMENT } from "../packages/model/src/notice.ts";
+import { jpegSize } from "./jpeg-size.ts";
 import { TYPESET } from "./typeset.ts";
 import { clientScript } from "./client-script.ts";
 import { SITE_ORIGIN } from "../packages/model/src/site.ts";
@@ -463,7 +464,10 @@ function photoHtml(id: string, name: string, l: Lang): string {
     ? ""
     : `, ${credit ? "Wikimedia Commons" : `<a href="${esc(page)}">Wikimedia Commons</a>`}`;
   const shows = ph.shows && ((ph.shows as Partial<Record<Lang, string>>)[l] ?? ph.shows.en);
-  return `<figure class="photo"><img src="../../../data/photos/${id}.jpg" alt="${esc(name)}" loading="lazy" /><figcaption class="note">${shows ? `${esc(T[l].photoShows(shows))}<br />` : ""}${T[l].photo}: ${credit ? `<a href="${esc(page)}"><bdi>${esc(credit)}</bdi></a>, ` : ""}${licence ? `<a href="${esc(licence)}">${esc(lic)}</a>` : esc(lic)}${source}</figcaption></figure>`;
+  // The photo is the first screen's largest picture: fetched at once, not lazily, and its
+  // size given so the page does not move when it arrives.
+  const size = jpegSize(readFileSync(join(data, "photos", `${id}.jpg`)));
+  return `<figure class="photo"><img src="../../../data/photos/${id}.jpg" alt="${esc(name)}"${size ? ` width="${String(size.width)}" height="${String(size.height)}"` : ""} fetchpriority="high" /><figcaption class="note">${shows ? `${esc(T[l].photoShows(shows))}<br />` : ""}${T[l].photo}: ${credit ? `<a href="${esc(page)}"><bdi>${esc(credit)}</bdi></a>, ` : ""}${licence ? `<a href="${esc(licence)}">${esc(lic)}</a>` : esc(lic)}${source}</figcaption></figure>`;
 }
 
 const slugOf = placeSlugs(places.map((f) => f.properties));

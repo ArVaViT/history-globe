@@ -111,8 +111,9 @@ email needs no account.
 ## For developers
 
 Requirements: Node 24.11+ (CI runs 24; 26 works too), pnpm in the version pinned in
-`package.json`, Python 3.11+ with its standard library only. No account or key is needed to
-build, run or test the site.
+`package.json`, Python 3.11+ with its standard library only, and `git`, `curl` and `unzip` on
+the path (the data build downloads with curl and reads zipped Bibles with unzip; the sitemap
+takes its dates from git). No account or key is needed to build, run or test the site.
 
 Node 24 bundles Corepack, which provides the pinned pnpm (`corepack enable`). Node 25 and later
 no longer bundle it: install pnpm itself (`npm install --global pnpm`), and it switches to the
@@ -121,11 +122,13 @@ pinned version on its own.
 ```sh
 corepack enable  # Node 24; on Node 25+: npm install --global pnpm
 pnpm install
-pnpm data        # downloads the open datasets (some 260 MB) and builds apps/web/public/data:
+pnpm data        # downloads the open datasets (about 400 MB) and builds apps/web/public/data:
                  # about 20 minutes the first time; later runs reuse pipeline/.cache
-pnpm content     # the static pages, the open API and the documentation pages
+pnpm content     # the static pages, the open API and the documentation pages:
+                 # several minutes
 pnpm dev         # http://localhost:5173
-pnpm gate        # everything that must pass before a merge
+pnpm gate        # everything that must pass before a merge: several minutes (it runs
+                 # pnpm content again)
 ```
 
 `pnpm gate` runs format, lint, types, unit and pipeline tests, the content checks, links, the

@@ -314,25 +314,27 @@ description: Đặt quả địa cầu lên trang web của bạn chỉ bằng m
 
 <h2 id="example-the-map-follows-your-reader">Ví dụ: bản đồ đi theo trình đọc của bạn</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
+const globeOrigin = "{{site}}";
 
 // Khi trình đọc của bạn mở một chương, hiện chương ấy trên bản đồ.
 function showChapter(osis) {
-  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, globeOrigin);
 }
 
 // Khi một câu Kinh Thánh được nhấp trên bản đồ, mở câu ấy trong trình đọc của bạn.
 window.addEventListener("message", (e) =&gt; {
-  if (e.source !== globe) return;
+  if (e.source !== globe || e.origin !== globeOrigin) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
 
 <h2 id="map-only">Ví dụ: bản đồ cạnh ô địa điểm của riêng bạn</h2>
 <pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
+const globeOrigin = "{{site}}";
 let ready = false;
 
 window.addEventListener("message", (e) =&gt; {
-  if (e.source !== globe) return;
+  if (e.source !== globe || e.origin !== globeOrigin) return;
   const m = e.data;
   if (m?.type === "hg:ready") ready = true;
   // Khung nhìn hiện tại: có địa điểm được chọn hoặc không. Thông báo đến thường xuyên: showPlace
@@ -347,12 +349,12 @@ window.addEventListener("message", (e) =&gt; {
 
 // Tìm kiếm của bạn đã chọn một địa điểm: chọn nó và bay tới đó (một lần nữa, nếu nó đã được chọn).
 function pickPlace(id) {
-  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, globeOrigin);
 }
 
 // Ô của bạn đã đóng: bỏ chọn trên bản đồ.
 function closeBox() {
-  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, globeOrigin);
 }</code></pre>
 <ul>
   <li>

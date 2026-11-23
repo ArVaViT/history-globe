@@ -301,25 +301,27 @@ description: Sæt globussen ind på dit eget websted med én linje – kortet ov
 
 <h2 id="example-the-map-follows-your-reader">Eksempel: kortet følger dit bibelprogram</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
+const globeOrigin = "{{site}}";
 
 // Når dit bibelprogram åbner et kapitel, vises det på kortet.
 function showChapter(osis) {
-  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, globeOrigin);
 }
 
 // Når der klikkes på et vers på kortet, åbnes det i dit bibelprogram.
 window.addEventListener("message", (e) =&gt; {
-  if (e.source !== globe) return;
+  if (e.source !== globe || e.origin !== globeOrigin) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
 
 <h2 id="map-only">Eksempel: kortet ved siden af din egen stedboks</h2>
 <pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
+const globeOrigin = "{{site}}";
 let ready = false;
 
 window.addEventListener("message", (e) =&gt; {
-  if (e.source !== globe) return;
+  if (e.source !== globe || e.origin !== globeOrigin) return;
   const m = e.data;
   if (m?.type === "hg:ready") ready = true;
   // Visningen, som den er nu: et sted valgt, eller intet. Kommer ofte: showPlace skal ikke
@@ -334,12 +336,12 @@ window.addEventListener("message", (e) =&gt; {
 
 // Din søgning valgte et sted: vælg det og flyv hen til det (igen, hvis det allerede er valgt).
 function pickPlace(id) {
-  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, globeOrigin);
 }
 
 // Din boks blev lukket: fjern valget på kortet.
 function closeBox() {
-  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, globeOrigin);
 }</code></pre>
 <ul>
   <li>

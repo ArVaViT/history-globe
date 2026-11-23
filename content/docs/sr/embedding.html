@@ -302,25 +302,27 @@ description: Поставите глобус на свој сајт једном
 
 <h2 id="example-the-map-follows-your-reader">Пример: мапа прати вашу апликацију за Библију</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
+const globeOrigin = "{{site}}";
 
 // Када ваша апликација за Библију отвори поглавље, прикажите га на мапи.
 function showChapter(osis) {
-  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, globeOrigin);
 }
 
 // Када се на мапи кликне на стих, отворите га у својој апликацији за Библију.
 window.addEventListener("message", (e) =&gt; {
-  if (e.source !== globe) return;
+  if (e.source !== globe || e.origin !== globeOrigin) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
 
 <h2 id="map-only">Пример: мапа поред ваше сопствене кутије за место</h2>
 <pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
+const globeOrigin = "{{site}}";
 let ready = false;
 
 window.addEventListener("message", (e) =&gt; {
-  if (e.source !== globe) return;
+  if (e.source !== globe || e.origin !== globeOrigin) return;
   const m = e.data;
   if (m?.type === "hg:ready") ready = true;
   // Приказ какав је сада: место је изабрано или не. Стиже често: showPlace не треба ништа
@@ -335,12 +337,12 @@ window.addEventListener("message", (e) =&gt; {
 
 // Ваша претрага је изабрала место: изаберите га и летите до њега (поново, ако је већ изабрано).
 function pickPlace(id) {
-  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, globeOrigin);
 }
 
 // Ваша кутија је затворена: поништите избор на мапи.
 function closeBox() {
-  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, globeOrigin);
 }</code></pre>
 <ul>
   <li>

@@ -87,6 +87,19 @@ describe("vercel.json", () => {
     expect(r?.permanent).toBe(true);
   });
 
+  // English documentation has no folder of its own (/docs/api.html); /docs/en/… is a guess
+  // a reader makes from the other languages' addresses (/docs/ru/api.html).
+  it("sends /docs/en/ and every page under it to the English documentation", () => {
+    const to = (source: string) => {
+      const r = vercel.redirects.find((x) => x.source === source);
+      expect(r?.permanent, source).toBe(true);
+      return r?.destination;
+    };
+    expect(to("/docs/en")).toBe("/docs/");
+    expect(to("/docs/en/")).toBe("/docs/");
+    expect(to("/docs/en/:path+")).toBe("/docs/:path+");
+  });
+
   it("caches a stylesheet for good only at an address with its version", () => {
     for (const path of ["/pages.css", "/docs/docs.css"]) {
       expect(headersFor(path, false, { v: "3f9c0a1b2c4d" }).get("cache-control")).toContain(

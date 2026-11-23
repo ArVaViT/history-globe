@@ -336,11 +336,12 @@ const SYNODAL_ONLY = new Set([
 const names: Record<string, { ru: string; osis?: string } & Partial<Record<Locale, string>>> = {};
 const nameEntries = PlaceNamesFile.parse(load("content/place-names.yaml")).places;
 const seenIds = new Set<string>();
+// Names kept for places left out for licence reasons: expected, so told once, not warned.
+const parkedNames: string[] = [];
 for (const p of nameEntries) {
   if (seenIds.has(p.id)) errors.push(`place-names: ${p.id} (${p.en}) is listed twice`);
   seenIds.add(p.id);
-  if (parked.has(p.id))
-    warnings.push(`place-names: ${p.id} (${p.en}) is parked: no licensed point`);
+  if (parked.has(p.id)) parkedNames.push(`${p.id} (${p.en})`);
   else if (!known.has(p.id)) errors.push(`place-names: ${p.id} (${p.en}) is not in the data build`);
   // A map label, not a note: no glosses in brackets, no markers.
   if (/[()*[\]/]/.test(p.ru)) errors.push(`place-names: ${p.id} "${p.ru}" is not a plain name`);
@@ -1099,6 +1100,10 @@ for (const pair of OWN_DISTANCE_APART.keys())
     errors.push(`OWN_DISTANCE_APART: ${pair} no longer differs; take it out`);
 
 for (const w of warnings) console.warn(`warning: ${w}`);
+if (parkedNames.length > 0)
+  console.log(
+    `content: ${String(parkedNames.length)} names parked, their places have no licensed point (ADR 0008): ${parkedNames.join(", ")}`,
+  );
 // Photos of places (content/photos.yaml): licence and place checked here, the files
 // downloaded by scripts/build-photos.ts.
 const photos: Record<string, PlacePhoto> = {};

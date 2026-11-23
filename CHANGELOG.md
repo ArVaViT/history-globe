@@ -7,7 +7,7 @@ and fields only grow: a field that is added is listed here and in `index.json`
 (`fields_added`). Changes to the site alone (its pages, its look) are not listed; the
 pull requests on GitHub have them.
 
-## Unreleased
+## 2026-11-08 to 2026-11-23
 
 - Events: the second Temple was finished in March 515 BC (Adar of Darius' sixth year), now
   `c. 515 BC` (was `c. 516 BC`). Battles: Samuel's victory at Mizpah is `c. 1050 BC` (was

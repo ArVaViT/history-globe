@@ -14,6 +14,21 @@
       "permanent": true
     },
     {
+      "source": "/docs/en",
+      "destination": "/docs/",
+      "permanent": true
+    },
+    {
+      "source": "/docs/en/",
+      "destination": "/docs/",
+      "permanent": true
+    },
+    {
+      "source": "/docs/en/:path+",
+      "destination": "/docs/:path+",
+      "permanent": true
+    },
+    {
       "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/moab-aa0b1d6",
       "destination": "/:lang/place/moab/",
       "permanent": true
