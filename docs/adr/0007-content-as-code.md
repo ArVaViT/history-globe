@@ -54,7 +54,7 @@ second-pass loop converges (95 of 95 evidence snippets confirmed in their source
 
 - The repository is public, so all committed content is public too, including articles,
   review notes and prompts; each part is protected by its licence, not by secrecy
-  (`LICENSE`: code AGPL-3.0-or-later, articles CC BY-NC-ND 4.0, data CC BY 4.0; ADR 0019).
+  (`LICENSING.md`: code AGPL-3.0-or-later, articles CC BY-NC-ND 4.0, data CC BY 4.0; ADR 0019).
 - Git on GitHub is the primary copy of the content; a periodic mirror goes to an offline
   disk.
 - Full copies of sources are stored only when they are public domain or openly

@@ -16,9 +16,9 @@ licence can change without anyone else's consent.
 
 ## Decision
 
-- **The code is AGPL-3.0-or-later** (`LICENSE`, part 1; the text in `COPYING`): the apps,
-  the packages, the scripts, the pipeline, the tests, the configuration and the documentation
-  of the project. Version 3 or, at the user's option, any later version the Free Software
+- **The code is AGPL-3.0-or-later** (`LICENSING.md`, part 1; the text of the licence in
+  `LICENSE`): the apps, the packages, the scripts, the pipeline, the tests, the configuration
+  and the documentation of the project. Version 3 or, at the user's option, any later version the Free Software
   Foundation publishes, so that the code can follow the licence as it is revised without
   asking every contributor again.
 - **Three additional terms, as section 7 permits them, for a modified version.** (b) It
@@ -67,8 +67,11 @@ licence can change without anyone else's consent.
 - A copy of the site built from the source is lawful under the AGPL, but it carries none of
   the articles unless it keeps their licence, and a modified one is marked by a name of its
   own. The notice in every page, `llms.txt` and the Build page in every language say so.
-- A contribution comes in under the licence of the part it lands in (`CONTRIBUTING.md`,
-  Developer Certificate of Origin); no copyright assignment is asked. Licensing the code
-  under other terms later would need every contributor's consent.
+- A contribution of code comes in under AGPL-3.0-or-later, as the code; articles, answers,
+  data and other texts come in under CC BY 4.0, so that the maintainer can translate them and
+  publish them under the licence of their part (`LICENSING.md`, part 8; `CONTRIBUTING.md`,
+  Developer Certificate of Origin). No copyright assignment and no contributor licence
+  agreement are asked. Licensing the code under other terms later would need every
+  contributor's consent.
 - A new dependency must be under a licence compatible with the AGPL; those in use are
   (MIT, ISC, BSD, Apache-2.0, MPL-2.0 at build time, OFL for the fonts).

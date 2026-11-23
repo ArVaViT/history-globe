@@ -2,7 +2,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 
-// REUSE.toml states the licence of every file for tools; LICENSE states it in words. These
+// REUSE.toml states the licence of every file for tools; LICENSING.md states it in words. These
 // checks keep the two, the licence texts in LICENSES/ and the reviews in step. The full
 // check of the format is `uvx reuse lint`, which needs a tool outside the gate.
 const root = join(import.meta.dirname, "..");
@@ -43,15 +43,15 @@ describe("REUSE.toml", () => {
     expect([...used].sort()).toEqual(texts.sort());
   });
 
-  it("gives the code the AGPL text that COPYING holds", () => {
-    // COPYING stays the GNU text byte for byte, so tools recognise it; the section 7
-    // terms are in LICENSE, part 1.
-    expect(read("COPYING")).toBe(read("LICENSES/AGPL-3.0-or-later.txt"));
+  it("gives the code the AGPL text that LICENSE holds", () => {
+    // LICENSE stays the GNU text byte for byte, so tools recognise it; the section 7
+    // terms are in LICENSING.md, part 1.
+    expect(read("LICENSE")).toBe(read("LICENSES/AGPL-3.0-or-later.txt"));
     expect(annotations[0]).toMatchObject({ paths: ["**"], licence: "AGPL-3.0-or-later" });
   });
 
-  it("gives each part the licence LICENSE gives it", () => {
-    const licence = read("LICENSE");
+  it("gives each part the licence LICENSING.md gives it", () => {
+    const licence = read("LICENSING.md");
     for (const [path, spdx, words] of [
       ["apps/web/public/hg-places.js", "MIT", "MIT licence"],
       ["content/articles/**", "CC-BY-NC-ND-4.0", "CC BY-NC-ND 4.0"],
@@ -61,7 +61,8 @@ describe("REUSE.toml", () => {
       ["apps/web/public/og/tour/**", "CC-BY-4.0", "og/tour/*.jpg"],
       ["apps/web/public/shots/*-place.jpg", "LicenseRef-PreviewImages AND CC-BY-2.0", "CC BY 2.0"],
       ["apps/web/public/shots/*-tour.jpg", "LicenseRef-PreviewImages AND CC-BY-4.0", "Raicem"],
-      ["docs/crosswalk/*.csv", "CC-BY-4.0 AND CC-BY-SA-4.0", "CC BY-SA 4.0 applies"],
+      ["docs/crosswalk/places.csv", "CC-BY-SA-4.0", "licensed as a whole under the"],
+      ["docs/crosswalk/people.csv", "CC-BY-SA-4.0", "docs/crosswalk/people.csv"],
       ["content/README.md", "AGPL-3.0-or-later", "documentation of the project"],
       ["CODE_OF_CONDUCT.md", "CC-BY-4.0", "Contributor Covenant"],
     ] as const) {
@@ -81,7 +82,7 @@ describe("REUSE.toml", () => {
     expect([...new Set(annotated)].sort()).toEqual([...listed].sort());
   });
 
-  // A review is its author's; the licence is the one the reviewer gave (LICENSE, part 4).
+  // A review is its author's; the licence is the one the reviewer gave (LICENSING.md, part 5).
   it.each(readdirSync(join(root, "content/reviews")).filter((f) => f.endsWith(".yaml")))(
     "states the reviewer's licence of %s",
     (file) => {

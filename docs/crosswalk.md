@@ -24,10 +24,13 @@ Refresh: `node scripts/crosswalk-places.ts` after `pnpm content` rewrites our co
 only with `--theographic <path>` to a copy of Theographic's `json/places.json` kept outside the
 repository (its coordinates are CC BY-SA and never enter it).
 
-The two CSV files are open data under CC BY 4.0, like the API (credit: History Globe by
-Vadym Arnaut, with the sources below). Theographic Bible Metadata is CC BY-SA 4.0: this crosswalk carries only its record ids, lookup
-names and the records it takes for the same place, as evidence, and none of its coordinates
-or other data (ADR 0008); as far as these columns are protected, CC BY-SA 4.0 applies to them
-(`LICENSE`, part 3). The rest is CC BY 4.0 (OpenBible,
-TIPNR), CC BY 3.0 (Pleiades) or CC0 (Wikidata), as `docs/ATTRIBUTIONS.md` lists. Low
-`confidence` rows are guesses kept for review, not links to rely on.
+The two CSV files are open data under CC BY-SA 4.0
+(<https://creativecommons.org/licenses/by-sa/4.0/>), each licensed as a whole
+(`LICENSING.md`, part 4). Their `theographic_*` columns carry Theographic Bible Metadata's
+record ids and lookup names, and in `places.csv` the records it takes for the same place, as
+evidence; Theographic is under CC BY-SA 4.0, so the tables are too. None of its coordinates or
+other data is taken (ADR 0008), and the tables are not part of the site, the API or the
+dataset, which stay CC BY 4.0. Credit: History Globe (Vadym Arnaut), with Theographic Bible
+Metadata (Robert Rouse), CC BY-SA 4.0. The other columns come from sources under CC BY 4.0
+(OpenBible, TIPNR), CC BY 3.0 (Pleiades) or CC0 (Wikidata), as `docs/ATTRIBUTIONS.md` lists,
+and keep their credit. Low `confidence` rows are guesses kept for review, not links to rely on.

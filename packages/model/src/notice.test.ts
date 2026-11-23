@@ -9,10 +9,10 @@ const root = join(import.meta.dirname, "../../..");
 const read = (file: string) => readFileSync(join(root, file), "utf8");
 const AGPL = "https://www.gnu.org/licenses/agpl-3.0.html";
 
-// The notice repeats what LICENSE grants; the two must not say different things.
+// The notice repeats what LICENSING.md grants; the two must not say different things.
 describe("the notice", () => {
-  it("gives each part the licence LICENSE gives it", () => {
-    const licence = read("LICENSE");
+  it("gives each part the licence LICENSING.md gives it", () => {
+    const licence = read("LICENSING.md");
     for (const [part, spdx] of [
       ["The data is CC BY 4.0", "CC BY 4.0"],
       ["are CC BY-NC-ND 4.0", "CC BY-NC-ND 4.0"],
@@ -24,7 +24,19 @@ describe("the notice", () => {
     expect(licence).toContain("or (at your option) any later version");
     expect(NOTICE).toContain('"History Globe by Vadym Arnaut"');
     expect(licence).toContain('"History Globe by Vadym Arnaut"');
-    expect(read("COPYING")).toContain("GNU AFFERO GENERAL PUBLIC LICENSE");
+    expect(read("LICENSE")).toContain("GNU AFFERO GENERAL PUBLIC LICENSE");
+  });
+
+  // LICENSE is the GNU text as published, so that tools (GitHub's among them) recognise it;
+  // the section 7 terms stand in LICENSING.md, and nothing may say they are in LICENSE.
+  it("keeps LICENSE the AGPL as published, and the section 7 terms in LICENSING.md", () => {
+    expect(read("LICENSE")).toBe(read("LICENSES/AGPL-3.0-or-later.txt"));
+    const licensing = read("LICENSING.md");
+    expect(licensing).toContain("### Additional terms under section 7");
+    for (const term of ["**(b) Attribution.**", "**(c) Marking", "**(e) No trademark rights.**"])
+      expect(licensing).toContain(term);
+    for (const file of ["README.md", "CONTRIBUTING.md", "REUSE.toml", "CITATION.cff"])
+      expect(read(file), file).not.toMatch(/`?LICENSE`?,? part \d/);
   });
 
   it("offers the source and points to the details", () => {
@@ -41,7 +53,7 @@ describe("the notice", () => {
   // The code was once "all rights reserved"; no public text may still say so of it.
   // The code is version 3 or any later version (ADR 0019); no text may narrow it to 3 alone.
   it.each([
-    "LICENSE",
+    "LICENSING.md",
     "README.md",
     "CONTRIBUTING.md",
     "CITATION.cff",
@@ -87,7 +99,7 @@ describe("the notice", () => {
   });
 
   it.each([
-    "LICENSE",
+    "LICENSING.md",
     "README.md",
     "apps/web/src/agent-tools.ts",
     "scripts/build-api.ts",

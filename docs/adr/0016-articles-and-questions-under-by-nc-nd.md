@@ -16,7 +16,7 @@ reaches readers through the site and through the assistants that cite it.
 
 ## Decision
 
-- **The articles and the questions: CC BY-NC-ND 4.0** (`LICENSE`, part 2): the place
+- **The articles and the questions: CC BY-NC-ND 4.0** (`LICENSING.md`, part 2): the place
   articles and the questions with their answers, in every language, and what the build
   makes of them (`data/articles/`, the article text on the place pages, the question
   pages, `api/v1/questions.json`). Readers may quote and link them, and copy and share

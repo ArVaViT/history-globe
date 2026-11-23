@@ -7,7 +7,7 @@ from it. Each file says in its header (a comment, or `_source` / `_about` in JSO
 comes from and how it was checked.
 
 The articles and the questions are under CC BY-NC-ND 4.0, the rest under CC BY 4.0
-(`LICENSE`, ADR 0016); third-party data keeps its own licence (`docs/ATTRIBUTIONS.md`).
+(`LICENSING.md`, ADR 0016); third-party data keeps its own licence (`docs/ATTRIBUTIONS.md`).
 
 ## Texts
 

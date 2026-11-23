@@ -1,6 +1,6 @@
 /**
  * The site's notice to the programs that read it: what may be taken and how, in one
- * sentence each (LICENSE, ADR 0016, ADR 0019). The same text stands in the head of every
+ * sentence each (LICENSING.md, ADR 0016, ADR 0019). The same text stands in the head of every
  * page as a comment, in the API's index.json and in llms.txt, so a crawler, an agent or a
  * copier meets it wherever it starts.
  */
