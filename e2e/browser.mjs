@@ -53,7 +53,13 @@ export async function settled(page, timeout = 15_000) {
       const m = window.__hgMap;
       return (
         (!m || (m.loaded() && !m.isMoving())) &&
-        document.getAnimations().every((a) => a.playState !== "running")
+        document
+          .getAnimations()
+          // A loop that never ends (the ring on the place picked) is the page at rest.
+          .every(
+            (a) =>
+              a.playState !== "running" || a.effect?.getComputedTiming().iterations === Infinity,
+          )
       );
     },
     null,

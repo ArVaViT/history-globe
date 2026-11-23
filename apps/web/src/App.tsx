@@ -1,4 +1,4 @@
-import { YEAR_MAX, YEAR_MIN, type Engine, type Renderer } from "@hg/core";
+import { YEAR_MAX, YEAR_MIN, type Engine, type LonLat, type Renderer } from "@hg/core";
 import { formatYear, pick, placeName as nameOf } from "@hg/model";
 import { X } from "./components/icons";
 import type { Tool } from "./components/ToolsPanel";
@@ -253,12 +253,14 @@ export function App({ link }: { link: UrlView }) {
     },
     [engine, data, setLayout],
   );
+  // A place named in an article, under the reader's pointer: the ring goes to it for as long.
   // Stable: the card's article re-runs its effect when this changes, and clears the mark.
+  const [pointedAt, setPointedAt] = useState<LonLat | null>(null);
   const highlightPlace = useCallback(
     (id: string | null) => {
-      engine?.highlight(id ? (data?.byId.get(id)?.info.at ?? null) : null);
+      setPointedAt(id ? (data?.byId.get(id)?.info.at ?? null) : null);
     },
-    [engine, data],
+    [data],
   );
   const closePerson = useCallback(() => {
     setPerson(null);
@@ -481,17 +483,17 @@ export function App({ link }: { link: UrlView }) {
     globe?.renderer.setBibleOnly(bibleOnly);
   }, [globe, bibleOnly]);
   const selected = state.selectedPlace ? data?.byId.get(state.selectedPlace)?.props : undefined;
-  // Map-only, the place picked wears the ring that breathes out from it (still for a reader
-  // who asked for less motion): the host's box stands apart on its page, and the eye finds
-  // the place without a mark that covers its neighbours.
-  // With the places layer off, no ring stands where no place is drawn.
+  // The place picked wears the ring that breathes out from it (still for a reader who asked
+  // for less motion), on the site as in the map-only frame: the eye finds the place without a
+  // mark that covers its neighbours. A place named in an article, under the pointer, takes the
+  // ring for as long. With the places layer off, no ring stands where no place is drawn.
   const ringAt =
-    mapOnly && state.layers.places && state.selectedPlace
+    state.layers.places && state.selectedPlace
       ? data?.byId.get(state.selectedPlace)?.info.at
       : undefined;
   useEffect(() => {
-    if (mapOnly) engine?.highlight(ringAt ?? null);
-  }, [engine, ringAt, mapOnly]);
+    engine?.highlight(pointedAt ?? ringAt ?? null);
+  }, [engine, pointedAt, ringAt]);
   // Its own years, for the line under the slider; a gate's years are its city's: none.
   const selectedLife = selected ? data?.life[selected.id] : undefined;
   const ownLife = selectedLife && !selectedLife.inherited ? selectedLife : undefined;

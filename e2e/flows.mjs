@@ -667,6 +667,11 @@ await step(
       null,
       { timeout: 10000 },
     );
+    // The ring is set down when the flight to the place ends.
+    await frame
+      .locator(".hg-ring")
+      .waitFor({ timeout: 10000 })
+      .catch(() => {});
     expect((await frame.locator(".hg-ring").count()) === 1, "no ring on the selected place");
     expect((await frame.locator("section.hg-card").count()) === 0, "a card opened");
     // The map's flight ends before a point on it is read: during it the place moves away.

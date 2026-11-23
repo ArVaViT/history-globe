@@ -172,4 +172,24 @@ for (const url of [
   }
 }
 console.log("== the static pages at 320 px: checked");
+
+// The landing's own buttons take a press at their middle: the glow behind its picture once
+// rose over them, and a tap there did nothing (axe does not see it).
+for (const size of [NARROW, [1440, 900]]) {
+  p = await pageOf(...size);
+  await p.goto(BASE + "en/");
+  await settled(p);
+  const covered = await p.evaluate(() =>
+    [...document.querySelectorAll("section.hero .actions-row a")].flatMap((a) => {
+      const r = a.getBoundingClientRect();
+      const top = document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2);
+      return top && (top === a || a.contains(top)) ? [] : [a.textContent.trim()];
+    }),
+  );
+  if (covered.length > 0) {
+    console.log(`== the landing at ${String(size[0])} px covers ${covered.join(", ")}`);
+    process.exitCode = 1;
+  }
+}
+console.log("== the landing's buttons take a press: checked");
 await b.close();
