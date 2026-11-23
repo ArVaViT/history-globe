@@ -307,25 +307,27 @@ description: Tegye fel a földgömböt a saját oldalára egyetlen sorral — eg
 
 <h2 id="example-the-map-follows-your-reader">Példa: a térkép követi a bibliaolvasó alkalmazását</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
+const globeOrigin = "{{site}}";
 
 // Amikor a bibliaolvasó alkalmazása megnyit egy fejezetet, mutassa meg a térképen.
 function showChapter(osis) {
-  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, globeOrigin);
 }
 
 // Amikor a térképen egy versre kattintanak, nyissa meg a bibliaolvasó alkalmazásában.
 window.addEventListener("message", (e) =&gt; {
-  if (e.source !== globe) return;
+  if (e.source !== globe || e.origin !== globeOrigin) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
 
 <h2 id="map-only">Példa: a térkép az Ön saját helymezője mellett</h2>
 <pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
+const globeOrigin = "{{site}}";
 let ready = false;
 
 window.addEventListener("message", (e) =&gt; {
-  if (e.source !== globe) return;
+  if (e.source !== globe || e.origin !== globeOrigin) return;
   const m = e.data;
   if (m?.type === "hg:ready") ready = true;
   // A nézet, ahogy most van: egy hely kijelölve, vagy egy sem. Gyakran jön: a showPlace ne
@@ -340,12 +342,12 @@ window.addEventListener("message", (e) =&gt; {
 
 // A keresése kiválasztott egy helyet: jelölje ki, és repüljön hozzá (újra, ha már ki van jelölve).
 function pickPlace(id) {
-  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, globeOrigin);
 }
 
 // A helymezője bezárult: törölje a kijelölést a térképen.
 function closeBox() {
-  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, globeOrigin);
 }</code></pre>
 <ul>
   <li>

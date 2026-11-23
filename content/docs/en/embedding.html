@@ -301,25 +301,27 @@ description: Put the globe on your own site with one line — the map of a chapt
 
 <h2 id="example-the-map-follows-your-reader">Example: the map follows your reader</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
+const globeOrigin = "{{site}}";
 
 // When your reader opens a chapter, show it on the map.
 function showChapter(osis) {
-  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, globeOrigin);
 }
 
 // When a verse is clicked on the map, open it in your reader.
 window.addEventListener("message", (e) =&gt; {
-  if (e.source !== globe) return;
+  if (e.source !== globe || e.origin !== globeOrigin) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
 
 <h2 id="map-only">Example: the map beside your own place box</h2>
 <pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
+const globeOrigin = "{{site}}";
 let ready = false;
 
 window.addEventListener("message", (e) =&gt; {
-  if (e.source !== globe) return;
+  if (e.source !== globe || e.origin !== globeOrigin) return;
   const m = e.data;
   if (m?.type === "hg:ready") ready = true;
   // The view as it is now: a place selected, or none. Comes often: showPlace should do
@@ -334,12 +336,12 @@ window.addEventListener("message", (e) =&gt; {
 
 // Your search picked a place: select it and fly to it (again, if it is selected already).
 function pickPlace(id) {
-  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, globeOrigin);
 }
 
 // Your box was closed: clear the selection on the map.
 function closeBox() {
-  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, globeOrigin);
 }</code></pre>
 <ul>
   <li>

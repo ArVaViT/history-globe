@@ -31,7 +31,9 @@ A change is done only when **all** of these hold:
   places-in-any-text widget (`hg-places.js`) follow the reader's light or dark scheme, so
   show both for them.
 - Content changes pass the content checks (ADR 0007) and carry citations.
-- No new warnings. Warnings are errors.
+- No new warnings. Warnings are errors. A line that is expected on every build is not a
+  warning: the names parked for places with no licensed point (ADR 0008) are listed in one
+  `content:` line of `build-content`'s output.
 
 ## Never
 
@@ -45,7 +47,7 @@ A change is done only when **all** of these hold:
 - **Never commit secrets**, nor put one on a command line. The maintainers keep them in
   1Password and pass them with `op run -- <command>`. `.env` files are ignored and must
   stay so.
-- **Never use JavaScript `Date` for historical years.** Use `packages/model/time`
+- **Never use JavaScript `Date` for historical years.** Use `packages/model/src/time.ts`
   (ADR 0003): astronomical years, 1 BC = 0.
 - **Never machine-translate Scripture.** Verse text comes from licensed translations.
 - Never add a tool listed as deferred in an ADR without meeting its trigger and writing

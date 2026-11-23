@@ -107,9 +107,30 @@ function typesetLatin(l: SiteLocale): (html: string) => string {
         x = x
           .replace(/ ([:;!?»])/g, `${NNB}$1`)
           .replace(/« /g, `«${NNB}`)
-          .replace(/(\S)([;!?])(?=\s|$)/g, `$1${NNB}$2`);
+          // The semicolon that closes a character reference (&amp; &#39;) is not punctuation.
+          .replace(/(&(?:#x?[\da-f]+|[a-z][a-z\d]*);)|(\S)([;!?])(?=\s|$)/gi, (m, ref, c, p) =>
+            ref ? m : `${c}${NNB}${p}`,
+          );
       return x;
     });
+}
+
+/** An element marked in another language than the page's (lang="en"), whole. */
+const FOREIGN = (l: SiteLocale) =>
+  new RegExp(`(<([a-z][a-z\\d]*)\\b[^>]*\\slang="(?!${l}\\b)[^"]*"[^>]*>[\\s\\S]*?<\\/\\2>)`, "i");
+
+/**
+ * French: as the other Latin-script languages, but an element marked in another language
+ * (an English title, lang="en") keeps that language's punctuation, with no French spaces.
+ */
+function typesetFrench(): (html: string) => string {
+  const latin = typesetLatin("fr");
+  const neutral = typesetLatin("en");
+  return (html) =>
+    html
+      .split(FOREIGN("fr"))
+      .map((part, i) => (i % 3 === 0 ? latin(part) : i % 3 === 1 ? neutral(part) : ""))
+      .join("");
 }
 
 /** Each language's typography. */
@@ -120,7 +141,7 @@ export const TYPESET: Readonly<Record<SiteLocale, (html: string) => string>> = {
   es: typesetLatin("es"),
   pt: typesetLatin("pt"),
   de: typesetLatin("de"),
-  fr: typesetLatin("fr"),
+  fr: typesetFrench(),
   it: typesetLatin("it"),
   nl: typesetLatin("nl"),
   pl: typesetLatin("pl"),

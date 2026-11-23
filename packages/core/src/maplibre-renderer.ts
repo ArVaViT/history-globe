@@ -2,6 +2,7 @@ import { POLITY_SPLIT_YEAR, type Locale } from "@hg/model";
 import type { Feature, FeatureCollection } from "geojson";
 import * as maplibregl from "maplibre-gl";
 import type { GeoJSONSource, Map as MLMap, MapMouseEvent } from "maplibre-gl";
+import { afterMoveEnd } from "./after-move.ts";
 import { edgeStateLabels } from "./edge-labels.ts";
 import { elevationReader } from "./elevation.ts";
 import { Emitter } from "./emitter.ts";
@@ -278,19 +279,20 @@ export class MapLibreRenderer implements Renderer {
   private installPadding(pad: () => Padding): void {
     this.map.setPadding(pad());
     let waiting = false;
-    this.map.on("resize", () => {
+    const apply = () => {
       if (this.printing) return;
       // setPadding stops a flight: during one, wait for it to end.
       if (!this.map.isMoving()) {
         this.map.setPadding(pad());
       } else if (!waiting) {
         waiting = true;
-        this.map.once("moveend", () => {
+        afterMoveEnd(this.map, () => {
           waiting = false;
-          this.map.setPadding(pad());
+          apply();
         });
       }
-    });
+    };
+    this.map.on("resize", apply);
   }
 
   /**
@@ -606,7 +608,7 @@ export class MapLibreRenderer implements Renderer {
     if (this.map.isMoving()) {
       if (this.paddingQueued) return;
       this.paddingQueued = true;
-      this.map.once("moveend", () => {
+      afterMoveEnd(this.map, () => {
         this.paddingQueued = false;
         this.syncPadding(duration);
       });
@@ -811,13 +813,13 @@ export class MapLibreRenderer implements Renderer {
       }
       const ring = this.ring;
       const token = ++this.ringToken;
-      // Set down when the map is still: a marker added while the camera flies to the place
-      // breaks MapLibre's easing frame ("_onEaseFrame is not a function").
+      // Set down when the map is still, after a flight to the place.
       const place = () => {
-        if (token === this.ringToken) ring.setLngLat([at[0], at[1]]).addTo(this.map);
+        if (token !== this.ringToken) return;
+        if (this.map.isMoving()) afterMoveEnd(this.map, place);
+        else ring.setLngLat([at[0], at[1]]).addTo(this.map);
       };
-      if (this.map.isMoving()) this.map.once("moveend", place);
-      else place();
+      place();
     });
   }
 
@@ -929,8 +931,8 @@ export class MapLibreRenderer implements Renderer {
       this.correctFit(points, margin);
       return;
     }
-    this.map.once("moveend", () => {
-      if (id === this.fitId) this.correctFit(points, margin);
+    afterMoveEnd(this.map, () => {
+      if (id === this.fitId && !this.map.isMoving()) this.correctFit(points, margin);
     });
   }
 

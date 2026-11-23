@@ -310,25 +310,27 @@ description: Puneți globul pe propriul site cu un singur rând — harta unui c
   Exemplu: harta urmează aplicația dumneavoastră biblică
 </h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
+const globeOrigin = "{{site}}";
 
 // Când aplicația dumneavoastră biblică deschide un capitol, arătați-l pe hartă.
 function showChapter(osis) {
-  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, globeOrigin);
 }
 
 // Când se dă clic pe un verset pe hartă, deschideți-l în aplicația dumneavoastră biblică.
 window.addEventListener("message", (e) =&gt; {
-  if (e.source !== globe) return;
+  if (e.source !== globe || e.origin !== globeOrigin) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
 
 <h2 id="map-only">Exemplu: harta lângă propria dumneavoastră casetă de loc</h2>
 <pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
+const globeOrigin = "{{site}}";
 let ready = false;
 
 window.addEventListener("message", (e) =&gt; {
-  if (e.source !== globe) return;
+  if (e.source !== globe || e.origin !== globeOrigin) return;
   const m = e.data;
   if (m?.type === "hg:ready") ready = true;
   // Vederea așa cum este acum: un loc selectat sau niciunul. Vine des: showPlace nu trebuie să
@@ -343,12 +345,12 @@ window.addEventListener("message", (e) =&gt; {
 
 // Căutarea dumneavoastră a ales un loc: selectați-l și zburați la el (din nou, dacă este deja selectat).
 function pickPlace(id) {
-  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, globeOrigin);
 }
 
 // Caseta dumneavoastră a fost închisă: ștergeți selecția de pe hartă.
 function closeBox() {
-  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, globeOrigin);
 }</code></pre>
 <ul>
   <li>

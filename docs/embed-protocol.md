@@ -12,7 +12,8 @@ box: no place card, no chapter bar, the year folded to its pill at any frame siz
 kept (credit is required). The selected place wears a pulsing ring (a still one for a reader
 who asks for less motion; none with the places layer off).
 
-Not yet: `theme`, and an origin allowlist (needed once a host sends anything sensitive).
+Not yet: `theme`, and an origin allowlist on the globe's side (needed once a host sends anything
+sensitive; a host checks the globe's origin already, below).
 
 ## URL
 
@@ -53,7 +54,10 @@ ids are ignored.
 All messages are plain objects with `type` and `v: 1`. Outgoing messages carry only the view
 (or a place or a verse), nothing about the reader, and are posted to the parent with target
 `"*"`, so any host may listen. Incoming messages are taken only from the frame's parent
-(`e.source === window.parent`) and only with `v: 1`; there is no origin allowlist yet.
+(`e.source === window.parent`) and only with `v: 1`; there is no origin allowlist yet. A host
+checks both ends from its side: it takes a message only from the frame and from the globe's
+origin (`e.source === frame.contentWindow && e.origin === "https://<globe-host>"`) and posts to
+that origin, not to `"*"`, as the examples on the embedding page do.
 
 Globe → host:
 

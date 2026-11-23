@@ -14,7 +14,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "test": "vitest run",
-    "data": "python3 -m pipeline.build_data && pnpm people && pnpm roads && node scripts/build-content.ts && node scripts/build-verses.ts && node scripts/build-photos.ts",
+    "data": "python3 -m pipeline.build_data && pnpm people && pnpm roads && node scripts/build-verses.ts && node scripts/build-content.ts && node scripts/build-photos.ts",
     "gate": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm test:pipeline && pnpm content && node scripts/check-links.ts && node scripts/check-pages.ts && pnpm build && node scripts/third-party-licenses.ts --check && node scripts/check-csp.ts && node scripts/check-budget.ts",
     "gate:full": "pnpm data && pnpm gate",
     "roads": "python3 -m pipeline.roads.fetch && python3 -m pipeline.roads.build_roads pipeline/.cache/itinere_roads.geojson --outdir apps/web/public/data",

@@ -309,25 +309,27 @@ description: Tuo maapallo omalle sivustollesi yhdellä rivillä — luvun, paika
 
 <h2 id="example-the-map-follows-your-reader">Esimerkki: kartta seuraa raamattusovellustasi</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
+const globeOrigin = "{{site}}";
 
 // Kun raamattusovelluksesi avaa luvun, näytä se kartalla.
 function showChapter(osis) {
-  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, globeOrigin);
 }
 
 // Kun kartalla napsautetaan jaetta, avaa se raamattusovelluksessasi.
 window.addEventListener("message", (e) =&gt; {
-  if (e.source !== globe) return;
+  if (e.source !== globe || e.origin !== globeOrigin) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
 
 <h2 id="map-only">Esimerkki: kartta oman paikkaruutusi vieressä</h2>
 <pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
+const globeOrigin = "{{site}}";
 let ready = false;
 
 window.addEventListener("message", (e) =&gt; {
-  if (e.source !== globe) return;
+  if (e.source !== globe || e.origin !== globeOrigin) return;
   const m = e.data;
   if (m?.type === "hg:ready") ready = true;
   // Näkymä sellaisena kuin se on nyt: paikka valittuna tai ei. Tulee usein: showPlace ei saa
@@ -342,12 +344,12 @@ window.addEventListener("message", (e) =&gt; {
 
 // Hakusi valitsi paikan: valitse se ja lennä sinne (uudelleen, jos se on jo valittu).
 function pickPlace(id) {
-  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, globeOrigin);
 }
 
 // Laatikkosi suljettiin: poista valinta kartalta.
 function closeBox() {
-  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, globeOrigin);
 }</code></pre>
 <ul>
   <li>

@@ -308,25 +308,27 @@ description: Umieść globus na własnej stronie jedną linijką — mapę rozdz
 
 <h2 id="example-the-map-follows-your-reader">Przykład: mapa podąża za Twoją aplikacją biblijną</h2>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
+const globeOrigin = "{{site}}";
 
 // Gdy Twoja aplikacja biblijna otworzy rozdział, pokaż go na mapie.
 function showChapter(osis) {
-  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, "*");
+  globe.postMessage({ type: "hg:set-view", v: 1, view: { ref: osis } }, globeOrigin);
 }
 
 // Gdy na mapie kliknięto werset, otwórz go w swojej aplikacji biblijnej.
 window.addEventListener("message", (e) =&gt; {
-  if (e.source !== globe) return;
+  if (e.source !== globe || e.origin !== globeOrigin) return;
   if (e.data?.type === "hg:verse-clicked") openVerse(e.data.osis);
 });</code></pre>
 
 <h2 id="map-only">Przykład: mapa obok Twojego własnego pola miejsca</h2>
 <pre><code>&lt;iframe src="{{site}}/embed/v1?ui=map&amp;place=af2161c&amp;locale=en" title="Map"&gt;&lt;/iframe&gt;</code></pre>
 <pre><code>const globe = document.querySelector("iframe").contentWindow;
+const globeOrigin = "{{site}}";
 let ready = false;
 
 window.addEventListener("message", (e) =&gt; {
-  if (e.source !== globe) return;
+  if (e.source !== globe || e.origin !== globeOrigin) return;
   const m = e.data;
   if (m?.type === "hg:ready") ready = true;
   // Widok taki, jaki jest teraz: miejsce wybrane albo żadne. Przychodzi często: showPlace nie
@@ -341,12 +343,12 @@ window.addEventListener("message", (e) =&gt; {
 
 // Twoja wyszukiwarka wybrała miejsce: wybierz je i leć do niego (ponownie, jeśli jest już wybrane).
 function pickPlace(id) {
-  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, "*");
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: id } }, globeOrigin);
 }
 
 // Twoje pole zostało zamknięte: usuń zaznaczenie na mapie.
 function closeBox() {
-  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, "*");
+  if (ready) globe.postMessage({ type: "hg:set-view", v: 1, view: { place: null } }, globeOrigin);
 }</code></pre>
 <ul>
   <li>
@@ -378,16 +380,14 @@ function closeBox() {
   prowadzi do globusa.
 </p>
 <figure class="sample">
-  <div class="hgp-demo" lang="en">
+  <div class="hgp-demo">
     <p>
-      Paul sailed from Caesarea to Cyprus, preached in Ephesus and Corinth, and wrote to Rome. Long
-      before, Abraham had come to Shechem and Hebron; Jesus was born in Bethlehem and grew up in
-      Nazareth, and John saw his visions on Patmos.
+      Paweł odpłynął z Cezarei na Cypr, głosił w Efezie i Koryncie i pisał do Rzymu. Dawno przedtem
+      Abraham przyszedł do Sychem i do Hebronu; Jezus urodził się w Betlejem i dorastał w Nazarecie,
+      a Jan miał swoje widzenia na wyspie Patmos.
     </p>
   </div>
-  <figcaption>
-    Przykład na żywo, po angielsku: te nazwy zostały powiązane skryptem z tej strony.
-  </figcaption>
+  <figcaption>Przykład na żywo: te nazwy zostały powiązane skryptem z tej strony.</figcaption>
 </figure>
 <pre><code>&lt;script src="{{hgPlacesSrc}}" integrity="{{hgPlacesIntegrity}}" crossorigin="anonymous" data-scope="article" charset="utf-8" defer&gt;&lt;/script&gt;</code></pre>
 <p>
