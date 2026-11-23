@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { Canaries, RATES } from "./canary.ts";
+import { Canaries, endsSentence, RATES } from "./canary.ts";
 
 const paragraphs = [
   "Jericho lies in the Jordan Valley. The spring made it an oasis. People settled there c. 9000 BC.",
@@ -52,6 +52,38 @@ describe("canaries", () => {
     const mark = c.marks.find((m) => m.kind === "text");
     expect(mark?.kind === "text" && mark.context.includes(".  ")).toBe(true);
     expect(mark?.kind === "text" && changed[0]?.includes(mark.context)).toBe(true);
+  });
+
+  it("tell a sentence's end from an abbreviation or an ordinal", () => {
+    const at = (text: string, before: string) => text.indexOf(before) + before.length;
+    expect(endsSentence("It burned. The city", at("It burned", "burned"))).toBe(true);
+    expect(endsSentence("Đó là tử đạo. Sau", at("Đó là tử đạo", "đạo"))).toBe(true);
+    for (const [text, before] of [
+      ["etwa 1050 v. Chr. gegründet", "v"],
+      ["siglo XII a. C. en", "a"],
+      ["um 30 n.Chr. Danach", "n.Chr"],
+      ["im 1. Mose steht", "1"],
+      ["im 16. Jahrhundert", "16"],
+      ["die Kirche St. Peter", "St"],
+      ["kostel sv. Petra", "sv"],
+      ["kościół św. Piotra", "św"],
+      ["храм св. Петра", "св"],
+      ["(vgl. Josephus)", "vgl"],
+    ] as const)
+      expect(endsSentence(text, at(text, before)), text).toBe(false);
+  });
+
+  it("never mark inside an abbreviation, whatever the seed", () => {
+    const text = [
+      "Die Stadt wurde etwa 1050 v. Chr. gegründet. Sie lag im Süden. Später, um 30 n. Chr. Danach kam St. Peter.",
+    ];
+    for (const seed of ["one", "two", "three", "four", "five"]) {
+      const c = new Canaries(seed);
+      for (const id of ids) {
+        const out = c.text("f", id, "de", text)[0] ?? "";
+        expect(out).not.toMatch(/\b(v|n|St)\. {2}/u);
+      }
+    }
   });
 
   it("leave a text without a sentence's end alone", () => {

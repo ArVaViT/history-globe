@@ -7,7 +7,8 @@
  * Where the marks went is written to the file HG_CANARY_REGISTRY names, outside the
  * repository: the registry, not this code, is what a copy is checked against.
  *
- * The marks: one space more after a sentence's end in a paragraph of a text (HTML folds it,
+ * The marks: one space more after a sentence's end (never inside an abbreviation such as
+ * "v. Chr." or after an ordinal such as "1. Mose") in a paragraph of a text (HTML folds it,
  * JSON keeps it); two neighbouring records swapped in a list that promises no order; the
  * keys of a record in another order; the ids of a list in another order. Each is a fair
  * way to write the same thing; a copy repeats the choices, an independent work does not.
@@ -33,9 +34,66 @@ export type Mark =
 /** Rates: how many of the records of each kind carry a mark. */
 export const RATES = { text: 1 / 40, swap: 1 / 50, keys: 1 / 30, ids: 1 / 30 } as const;
 
-/** A sentence's end followed by a capital: where one space more is a fair way to write it. */
+/** A full stop followed by a capital: where a sentence may end. */
 const SENTENCE_END = /\. (?=\p{Lu})/gu;
 const CONTEXT = 24;
+
+/**
+ * Words written with a full stop before a capital that end no sentence, in the site's
+ * languages ("St. Peter", "sv. Petr", "św. Piotr", "св. Петр", "v. Chr." in "500 v. Chr.").
+ * Compared without case.
+ */
+const ABBREVIATIONS = new Set([
+  "chr",
+  "hr",
+  "st",
+  "ste",
+  "sta",
+  "sto",
+  "sv",
+  "sw",
+  "św",
+  "szt",
+  "hl",
+  "dr",
+  "mr",
+  "mrs",
+  "ms",
+  "mt",
+  "nr",
+  "bd",
+  "ca",
+  "vgl",
+  "bzw",
+  "jh",
+  "jhd",
+  "ev",
+  "kr",
+  "cf",
+  "ed",
+  "eds",
+  "vol",
+  "ibid",
+  "св",
+  "ок",
+  "гл",
+  "им",
+  "ср",
+  "напр",
+]);
+
+/**
+ * Whether the full stop before `at` ends a sentence rather than an abbreviation or a number:
+ * the word before it has two letters or more, no full stop of its own ("n.Chr."), no digit
+ * at its end ("1. Mose", "16. století") and is no known abbreviation. One space more inside
+ * an abbreviation would part it from what it belongs to ("v.  Chr.").
+ */
+export function endsSentence(text: string, at: number): boolean {
+  const word = /[^\s([{«„“"']*$/u.exec(text.slice(0, at))?.[0] ?? "";
+  if (word.includes(".") || /\p{N}$/u.test(word)) return false;
+  const letters = word.replace(/[^\p{L}]/gu, "");
+  return letters.length >= 2 && !ABBREVIATIONS.has(letters.toLowerCase());
+}
 
 /** The registry's shape: the file HG_CANARY_REGISTRY names. */
 export interface Registry {
@@ -75,7 +133,8 @@ export class Canaries {
     if (!this.picked(label, RATES.text)) return [...paragraphs];
     const ends: [number, number][] = [];
     paragraphs.forEach((p, i) => {
-      for (const m of p.matchAll(SENTENCE_END)) ends.push([i, m.index]);
+      for (const m of p.matchAll(SENTENCE_END))
+        if (endsSentence(p, m.index)) ends.push([i, m.index]);
     });
     if (ends.length === 0) return [...paragraphs];
     const [paragraph, at] = ends[Math.floor(this.unit(`${label}:at`) * ends.length)] ?? [0, 0];
