@@ -39,13 +39,12 @@ describe("the site's address", () => {
 
   it("is the one the notice, the beacon and the files that write it out name", () => {
     expect(SITE_ORIGIN).toBe(`https://${SITE_HOST}`);
-    // The files that spell the address out must name the one SITE_ORIGIN gives.
-    const written = [...WRITTEN_OUT].filter((f) =>
-      readFileSync(join(root, f), "utf8").includes("https://historyglobe.app"),
+    // The files that spell the address out name the one SITE_ORIGIN gives, and no other.
+    const spelled = [...WRITTEN_OUT].flatMap(
+      (f) => readFileSync(join(root, f), "utf8").match(/https:\/\/historyglobe\.[a-z]+/g) ?? [],
     );
-    expect(written.length).toBeGreaterThan(0);
-    for (const file of written)
-      expect(readFileSync(join(root, file), "utf8"), file).toContain(SITE_ORIGIN);
+    expect(spelled.length).toBeGreaterThan(0);
+    expect(new Set(spelled)).toEqual(new Set([SITE_ORIGIN]));
     expect(NOTICE).toContain(`${SITE_ORIGIN}/api/v1/`);
     expect(BEACON_SCRIPT).toContain(`"${SITE_ORIGIN}/"`);
   });
