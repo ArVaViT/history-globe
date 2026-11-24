@@ -289,6 +289,15 @@ overrides:
       - "Pausanias 7.15-16"
       - "Polybius 38.9-18"
 
+  - polity: Philistia
+    last_year: "605 BC"
+    reason: >-
+      Cliopatria ends Philistia in 702 BC and draws its cities as Assyria's own land from 701. They stayed kingdoms: in 701 BC Sennacherib gave Judah's lost towns to his vassal kings of Ashdod, Ekron and Gaza; Esarhaddon and Ashurbanipal list kings of Gaza, Ashkelon, Ekron and Ashdod among their vassals, and Padi's successor Ikausu dedicated a temple at Ekron. Philistia is drawn on, under Assyria to 630 BC (vassals), until Nebuchadnezzar took and destroyed Ashkelon in 604 BC (event ashkelon-destroyed) and the plain passed to Babylon (annexed).
+    sources:
+      - "RINAP 3, Sennacherib 22, iii 27b-37a"
+      - "RINAP 4, Esarhaddon 1, v 54-vi 1"
+      - "S. Gitin, T. Dothan and J. Naveh, A Royal Dedicatory Inscription from Ekron, Israel Exploration Journal 47 (1997)"
+      - "Babylonian Chronicle ABC 5, obv. 18-20 (A. K. Grayson, Assyrian and Babylonian Chronicles, 1975)"
 # A change of shape Cliopatria puts at a round year, moved to the year it happened
 # (build-content.ts): the shapes that begin in `data_year` begin in `first_year`, and the
 # shapes before them end then.
@@ -377,17 +386,19 @@ clips:
   - polity: Philistia
     # The coastal plain from Nahal Besor to the Yarkon, east to the edge of the Shephelah:
     # Gaza, Ashkelon, Ashdod, Ekron and Gath, the five cities of Josh 13:3. The eastern
-    # line runs between Gath (Tell es-Safi) and Lachish, 1 km west of Lachish.
+    # line runs between Gath (Tell es-Safi) and Lachish, 1 km west of Lachish, and north of
+    # Timnah between Ekron and Gezer.
     within:
       - [34.2, 31.2]
       - [34.6, 31.15]
-      - [35.0, 31.85]
-      - [34.85, 32.15]
+      - [34.93, 31.8]
+      - [34.8, 32.15]
       - [34.7, 32.15]
     reason: >-
-      Cliopatria draws Philistia to the Jordan and into Galilee until 1000 BC, and over Samaria after it, so the map put David's Bethlehem and Saul's Gibeah in Philistia. The Philistines held the coastal plain and pressed into the hills (1 Sam 13); the land of their five cities is the plain. Lachish, 15 km south of Gath, was a town of Judah, fortified by Rehoboam, and is not Philistine in any period; the line passes between the two.
+      Cliopatria draws Philistia to the Jordan and into Galilee until 1000 BC, and over Samaria after it, so the map put David's Bethlehem and Saul's Gibeah in Philistia. The Philistines held the coastal plain and pressed into the hills (1 Sam 13); the land of their five cities is the plain. Lachish, 15 km south of Gath, was a town of Judah, fortified by Rehoboam, and is not Philistine in any period; the line passes between the two. Gezer, 7 km north-east of Ekron, was a Canaanite city until Pharaoh gave it to Solomon, and is left out too (extends).
     sources:
       - "Josh 13:2-3; 1 Sam 6:17"
+      - "Josh 16:10; 1 Kgs 9:15-17"
       - "2 Chr 11:5-9"
       - "D. Ussishkin, The Renewed Archaeological Excavations at Lachish (1973-1994) (2004)"
       - "A. M. Maeir (ed.), Tell es-Safi/Gath I: The 1996-2005 Seasons (2012)"
@@ -704,11 +715,11 @@ clips:
       - [70.0, 10.0]
       - [70.0, 50.0]
       - [31.0, 50.0]
-    first_year: "167 BC"
+    first_year: "168 BC"
     last_year: "166 BC"
-    leaves_blank: true
+    to: Ptolemaic Kingdom
     reason: >-
-      Cliopatria draws Antiochus IV's Egypt, Alexandria included, until 166 BC. He besieged Alexandria but never took it, and in 168 BC the Roman envoy Popillius Laenas met him at Eleusis, four miles from the city, and made him end the war and lead his army back to Syria. The Ptolemaic shape of these years does not reach Egypt, so it is left blank in 167-166 BC.
+      Cliopatria draws Antiochus IV's Egypt, Alexandria included, until 166 BC. He besieged Alexandria but never took it, and in 168 BC the Roman envoy Popillius Laenas met him at Eleusis, four miles from the city, and made him end the war and lead his army back to Syria (event eleusis-168). Egypt is drawn as the Ptolemies' again from 168 BC; Alexandria never left them (below).
     sources:
       - "Polybius 29.27 (LacusCurtius)"
       - "Livy 45.12 (Eleusis, four miles from Alexandria) (Perseus)"
@@ -900,7 +911,7 @@ clips:
     last_year: "1011 BC"
     leaves_blank: true
     reason: >-
-      Israel is drawn from Saul's reign (above, starts), with Cliopatria's shape of David and Solomon. Saul's kingdom was the hill country of Benjamin, Ephraim and Manasseh, with Gilead across the Jordan and the hills of Judah, where he pursued David; the coastal plain was Philistine, and Galilee, the Negev and the lands east of Gilead were not his. Drawn approximately; Jebus (Jerusalem), not yet Israelite, cannot be cut out at this scale.
+      Israel is drawn from Saul's reign (above, starts), with Cliopatria's shape of David and Solomon. Saul's kingdom was the hill country of Benjamin, Ephraim and Manasseh, with Gilead across the Jordan and the hills of Judah, where he pursued David; the coastal plain was Philistine, and Galilee, the Negev and the lands east of Gilead were not his. Drawn approximately; Jebus (Jerusalem), not yet Israelite, is cut out of it until David took it in 1003 BC (below).
     sources:
       - "1 Sam 11:1-11; 13-14; 23:14-28; 31:1-13; 2 Sam 2:8-9"
       - "Y. Aharoni, The Land of the Bible: A Historical Geography, rev. ed. (1979)"
@@ -915,10 +926,10 @@ clips:
       - [35.82, 33.34]
       - [35.77, 33.26]
     first_year: "801 BC"
-    last_year: "733 BC"
+    last_year: "734 BC"
     to: Kingdom of Israel
     reason: >-
-      Cliopatria draws Dan and the upper Jordan as Phoenician from 801 BC. Dan was a royal sanctuary of Israel from Jeroboam I; Jeroboam II restored Israel's border to Lebo-hamath, and Ijon, Abel-beth-maacah and the land of Naphtali were Israel's until Tiglath-pileser III took them in 732 BC. The valley is drawn as Israel's in these years.
+      Cliopatria draws Dan and the upper Jordan as Phoenician from 801 BC. Dan was a royal sanctuary of Israel from Jeroboam I; Jeroboam II restored Israel's border to Lebo-hamath, and Ijon, Abel-beth-maacah and the land of Naphtali were Israel's until Tiglath-pileser III took them in his campaign of 733-732 BC (event galilee-deported, 733 BC). The valley is drawn as Israel's in these years and as Assyria's from 733 BC (below).
     sources:
       - "1 Kgs 12:28-30; 2 Kgs 10:29; 14:25; 15:29"
       - "Y. Aharoni, The Land of the Bible: A Historical Geography, rev. ed. (1979)"
@@ -1576,6 +1587,1036 @@ clips:
       Cliopatria draws Cyrenaica as Persian again from 338 BC. Cyrene stayed independent until it submitted to Alexander in 331 BC; the land is left blank until Cliopatria's Cyrenaica begins in 332 BC.
     sources:
       - "Diodorus Siculus 17.49.2-3; 18.19-21"
+  - polity: Kingdom of Israel
+    # The hill country of Ephraim and Manasseh, from Bethel to the edge of the Jezreel Valley:
+    # what Tiglath-pileser III left to Hoshea.
+    within:
+      - [34.95, 31.7]
+      - [35.57, 31.7]
+      - [35.58, 32.35]
+      - [35.3, 32.47]
+      - [35.05, 32.4]
+    first_year: "733 BC"
+    last_year: "723 BC"
+    reason: >-
+      In his campaign of 733-732 BC Tiglath-pileser III took "Ijon, and Abel-beth-maachah, and Janoah, and Kedesh, and Hazor, and Gilead, and Galilee, all the land of Naphtali" and carried the people to Assyria; he made Megiddo, Dor and Gilead provinces of his own and left Hoshea the hill country around Samaria. Israel is cut to that hill country from 733 BC, the year of the event galilee-deported; the rest is drawn as Assyria's from then (annexed).
+    sources:
+      - "2 Kgs 15:29; 17:1-6"
+      - "RINAP 1, Tiglath-pileser III 21, lines 1'-11'; 22, lines 1'-7' (oracc.museum.upenn.edu/rinap/rinap1)"
+      - "Y. Aharoni, The Land of the Bible: A Historical Geography, rev. ed. (1979)"
+      - "A. Curtis (ed.), Oxford Bible Atlas, 4th ed. (2007)"
+  - polity: Phoenicia
+    # The upper Jordan valley: Dan, Abel-beth-maacah and Ijon, as above.
+    without:
+      - [35.45, 33.08]
+      - [35.5, 33.25]
+      - [35.56, 33.4]
+      - [35.7, 33.42]
+      - [35.82, 33.34]
+      - [35.77, 33.26]
+    first_year: "733 BC"
+    last_year: "677 BC"
+    to: Neo-Assyrian Empire
+    reason: >-
+      Cliopatria draws Dan and the upper Jordan as Phoenician again after Israel lost them. Ijon and Abel-beth-maacah are the first towns 2 Kings names in Tiglath-pileser III's conquest of 733-732 BC; the valley became part of the Assyrian provinces, not of Tyre or Sidon. Drawn as Assyria's from 733 BC, the year of the event galilee-deported.
+    sources:
+      - "2 Kgs 15:29"
+      - "RINAP 1, Tiglath-pileser III 21-22"
+      - "Y. Aharoni, The Land of the Bible: A Historical Geography, rev. ed. (1979)"
+  - polity: Phoenicia
+    # The upper Jordan valley, as above.
+    without:
+      - [35.45, 33.08]
+      - [35.5, 33.25]
+      - [35.56, 33.4]
+      - [35.7, 33.42]
+      - [35.82, 33.34]
+      - [35.77, 33.26]
+    first_year: "616 BC"
+    last_year: "532 BC"
+    leaves_blank: true
+    reason: >-
+      Cliopatria draws Dan and the upper Jordan as Phoenician again in 616-532 BC. They were not Tyre's or Sidon's; the valley follows Galilee: blank in 614-602 BC, when no empire is drawn over the land, and Babylon's, then Persia's, under their shapes.
+    sources:
+      - "2 Kgs 15:29"
+      - "Y. Aharoni, The Land of the Bible: A Historical Geography, rev. ed. (1979)"
+  - polity: Phoenicia
+    # Sidon and its land, north of Sarepta.
+    without:
+      - [35.25, 33.42]
+      - [35.55, 33.42]
+      - [35.65, 33.8]
+      - [35.35, 33.8]
+    first_year: "677 BC"
+    last_year: "677 BC"
+    to: Neo-Assyrian Empire
+    reason: >-
+      Esarhaddon took Sidon in 677 BC, destroyed it, and made its land an Assyrian province; its king Abdi-Milkutti was caught and beheaded the next year. Cliopatria's Phoenicia stands to 677 BC; Sidon is drawn as Assyria's from 677, the year of its fall.
+    sources:
+      - "Babylonian Chronicle ABC 1, iv 3-4 (A. K. Grayson, Assyrian and Babylonian Chronicles, 1975)"
+      - "RINAP 4, Esarhaddon 1, ii 65-82 (oracc.museum.upenn.edu/rinap/rinap4)"
+  - polity: Neo-Assyrian Empire
+    # Tyre, its island and the shore facing it.
+    without:
+      - [35.1, 33.12]
+      - [35.3, 33.12]
+      - [35.33, 33.4]
+      - [35.15, 33.4]
+    first_year: "676 BC"
+    last_year: "617 BC"
+    to: Phoenicia
+    reason: >-
+      Cliopatria draws Tyre as Assyria's own land from 676 BC and keeps only the northern Phoenician coast as Phoenicia. Only Sidon was made a province, in 677 BC (above). Tyre was not taken: Esarhaddon made a treaty with Baal, its king, besieged the city in 671 BC without taking the island, and Ashurbanipal took its submission and tribute about 662 BC; Esarhaddon's list of western kings names the king of Tyre among his vassals. Tyre is drawn as Phoenician through these years, as Cliopatria draws it again from 616 BC.
+    sources:
+      - "SAA 2, no. 5 (Esarhaddon's treaty with Baal of Tyre) (S. Parpola and K. Watanabe, Neo-Assyrian Treaties and Loyalty Oaths, 1988)"
+      - "RINAP 4, Esarhaddon 1, v 54-vi 1"
+      - "RINAP 5, Ashurbanipal 11, ii 49-62"
+      - "H. J. Katzenstein, The History of Tyre, 2nd ed. (1997)"
+  - polity: Neo-Assyrian Empire
+    # The coastal plain of the Philistine kingdoms (as Philistia's clip above).
+    without:
+      - [34.2, 31.2]
+      - [34.6, 31.15]
+      - [34.93, 31.8]
+      - [34.8, 32.15]
+      - [34.7, 32.15]
+    first_year: "701 BC"
+    last_year: "630 BC"
+    reason: >-
+      The Philistine cities were not annexed in 701 BC: Sennacherib gave Judah's lost towns to the kings of Ashdod, Ekron and Gaza, and Esarhaddon's and Ashurbanipal's lists of western kings name Sil-Bel of Gaza, Mitinti of Ashkelon, Ikausu of Ekron and Ahimilki of Ashdod. Their plain is drawn as Philistia under Assyria (overrides, vassals), not as the empire's own land.
+    sources:
+      - "RINAP 3, Sennacherib 22, iii 27b-37a"
+      - "RINAP 4, Esarhaddon 1, v 54-vi 1"
+      - "S. Gitin, T. Dothan and J. Naveh, A Royal Dedicatory Inscription from Ekron, Israel Exploration Journal 47 (1997)"
+  - polity: Kingdom of Israel
+    # Jebus, the Jebusite city on the ridge south of the Temple Mount.
+    without:
+      - [35.2, 31.755]
+      - [35.26, 31.755]
+      - [35.26, 31.795]
+      - [35.2, 31.795]
+    first_year: "1050 BC"
+    last_year: "1004 BC"
+    leaves_blank: true
+    reason: >-
+      Jerusalem stayed a Jebusite city through Saul's reign and David's seven and a half years at Hebron: "the Jebusites dwell with the children of Judah at Jerusalem unto this day". David took the stronghold of Zion about 1003 BC (the question when-did-david-capture-jerusalem and the David tour). The city is cut out of Israel until then and left without a state.
+    sources:
+      - "Josh 15:63; Judg 1:21; 2 Sam 5:4-9"
+      - "E. R. Thiele, The Mysterious Numbers of the Hebrew Kings, new rev. ed. (1983)"
+  - polity: Philistia
+    # Ziklag (Tel Sera').
+    without:
+      - [34.62, 31.34]
+      - [34.74, 31.34]
+      - [34.74, 31.44]
+      - [34.62, 31.44]
+    first_year: "1010 BC"
+    last_year: "932 BC"
+    to: Kingdom of Israel
+    reason: >-
+      Achish of Gath gave Ziklag to David, "wherefore Ziklag pertaineth unto the kings of Judah unto this day". From David's reign it is drawn as Israel's, and from the division of the kingdom as Judah's (below).
+    sources:
+      - "1 Sam 27:6; 30:1-26"
+      - "1 Chr 4:30"
+  - polity: Philistia
+    # Ziklag, as above.
+    without:
+      - [34.62, 31.34]
+      - [34.74, 31.34]
+      - [34.74, 31.44]
+      - [34.62, 31.44]
+    first_year: "931 BC"
+    last_year: "902 BC"
+    to: Kingdom of Judah
+    reason: >-
+      Ziklag belonged to the kings of Judah from David on, and Simeon's towns, Ziklag among them, lay in Judah's south. Drawn as Judah's from the division of the kingdom.
+    sources:
+      - "1 Sam 27:6"
+      - "Josh 19:5; 1 Chr 4:30-31"
+  - polity: Seleucid Empire
+    # Egypt's capital and the land around it, on the western edge of the Delta.
+    without:
+      - [29.7, 31.0]
+      - [30.2, 31.0]
+      - [30.2, 31.4]
+      - [29.7, 31.4]
+    first_year: "171 BC"
+    last_year: "169 BC"
+    to: Ptolemaic Kingdom
+    reason: >-
+      Cliopatria draws Antiochus IV's Egypt, Alexandria included, from 171 BC. Antiochus took Pelusium and Memphis but never Alexandria: he besieged it in 169 and again in 168 BC, when Popillius Laenas turned him back at Eleusis, four miles from the city. Alexandria is drawn as the Ptolemies' throughout.
+    sources:
+      - "Polybius 28.19-20; 29.27 (LacusCurtius)"
+      - "Livy 44.19; 45.12 (Perseus)"
+  - polity: Seleucid Empire
+    # Lower and Upper Galilee, from the Jezreel Valley to the hills above Kedesh, west of the
+    # Jordan and the Sea of Galilee.
+    without:
+      - [35.1, 32.75]
+      - [35.3, 32.66]
+      - [35.45, 32.6]
+      - [35.56, 32.66]
+      - [35.6, 32.8]
+      - [35.625, 32.89]
+      - [35.62, 33.08]
+      - [35.18, 33.08]
+      - [35.15, 32.9]
+    first_year: "104 BC"
+    last_year: "65 BC"
+    reason: >-
+      Galilee is drawn as Hasmonean Judea from about 104 BC (extends): Aristobulus I made war on the Ituraeans and joined their land, with Galilee, to Judea, and Galilee was Jewish land from then on. The Seleucid shapes of these years are cut back from it.
+    sources:
+      - "Josephus, Antiquities 13.318-319"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Kingdom of Armenia
+    # Galilee, as above.
+    without:
+      - [35.1, 32.75]
+      - [35.3, 32.66]
+      - [35.45, 32.6]
+      - [35.56, 32.66]
+      - [35.6, 32.8]
+      - [35.625, 32.89]
+      - [35.62, 33.08]
+      - [35.18, 33.08]
+      - [35.15, 32.9]
+    first_year: "78 BC"
+    last_year: "68 BC"
+    reason: >-
+      Galilee was Hasmonean Judea's in these years (extends); Tigranes's Syria did not include it.
+    sources:
+      - "Josephus, Antiquities 13.419-421"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Roman Republic
+    # Galilee, as above.
+    without:
+      - [35.1, 32.75]
+      - [35.3, 32.66]
+      - [35.45, 32.6]
+      - [35.56, 32.66]
+      - [35.6, 32.8]
+      - [35.625, 32.89]
+      - [35.62, 33.08]
+      - [35.18, 33.08]
+      - [35.15, 32.9]
+    first_year: "64 BC"
+    last_year: "33 BC"
+    reason: >-
+      Pompey left Galilee to Hyrcanus II, and Herod governed it for his father Antipater from 47 BC; it was part of Judea, Rome's client (extends, vassals), not of the province of Syria.
+    sources:
+      - "Josephus, Antiquities 14.158-160; Jewish War 1.203-205"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Parthian Empire
+    # Galilee, as above.
+    without:
+      - [35.1, 32.75]
+      - [35.3, 32.66]
+      - [35.45, 32.6]
+      - [35.56, 32.66]
+      - [35.6, 32.8]
+      - [35.625, 32.89]
+      - [35.62, 33.08]
+      - [35.18, 33.08]
+      - [35.15, 32.9]
+    first_year: "41 BC"
+    last_year: "38 BC"
+    reason: >-
+      In 40-38 BC Galilee was part of Antigonus's Judea, which the map draws under Parthia (vassals); the Parthian shape is cut back from it.
+    sources:
+      - "Josephus, Antiquities 14.330-364; 14.413-433"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Roman Empire
+    # Galilee, as above.
+    without:
+      - [35.1, 32.75]
+      - [35.3, 32.66]
+      - [35.45, 32.6]
+      - [35.56, 32.66]
+      - [35.6, 32.8]
+      - [35.625, 32.89]
+      - [35.62, 33.08]
+      - [35.18, 33.08]
+      - [35.15, 32.9]
+    first_year: "32 BC"
+    last_year: "5 BC"
+    reason: >-
+      Galilee was Herod's until his death in 4 BC (extends); the Roman shape is cut back from it.
+    sources:
+      - "Josephus, Antiquities 15.343-364; 17.188-189"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Judea
+    # Galilee, as above.
+    without:
+      - [35.1, 32.75]
+      - [35.3, 32.66]
+      - [35.45, 32.6]
+      - [35.56, 32.66]
+      - [35.6, 32.8]
+      - [35.625, 32.89]
+      - [35.62, 33.08]
+      - [35.18, 33.08]
+      - [35.15, 32.9]
+    first_year: "4 BC"
+    last_year: "AD 5"
+    reason: >-
+      On Herod's death in 4 BC Augustus divided his kingdom: Archelaus received Judea, Samaria and Idumea, Herod Antipas Galilee and Perea, Philip the lands north-east of the Sea of Galilee. Galilee is drawn as Antipas's tetrarchy (drawn) from 4 BC.
+    sources:
+      - "Josephus, Antiquities 17.318-320; Jewish War 2.93-98; Luke 3:1"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Judea
+    # Perea, east of the Jordan from Pella to Machaerus.
+    without:
+      - [35.53, 31.55]
+      - [35.7, 31.5]
+      - [35.78, 31.8]
+      - [35.76, 32.1]
+      - [35.68, 32.4]
+      - [35.57, 32.4]
+      - [35.55, 32.0]
+    first_year: "4 BC"
+    last_year: "AD 5"
+    reason: >-
+      Perea went to Herod Antipas with Galilee in 4 BC; drawn as his tetrarchy (drawn).
+    sources:
+      - "Josephus, Antiquities 17.318-320; Jewish War 2.93-98; Luke 3:1"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Judea
+    # Gaulanitis, Batanea, Trachonitis, Auranitis and Paneas, with Bethsaida.
+    without:
+      - [35.625, 32.89]
+      - [35.65, 32.83]
+      - [35.8, 32.8]
+      - [36.0, 32.65]
+      - [36.6, 32.65]
+      - [36.8, 32.85]
+      - [36.7, 33.2]
+      - [36.1, 33.35]
+      - [35.75, 33.35]
+      - [35.63, 33.3]
+      - [35.62, 33.08]
+    first_year: "4 BC"
+    last_year: "AD 5"
+    reason: >-
+      Philip received Batanea, Trachonitis, Auranitis, Gaulanitis and Paneas in 4 BC; he rebuilt Paneas as Caesarea and Bethsaida as Julias. Drawn as his tetrarchy (drawn).
+    sources:
+      - "Josephus, Antiquities 17.318-320; Jewish War 2.93-98; Luke 3:1"
+      - "Josephus, Antiquities 18.28"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Judea
+    # Gaza and its land.
+    without:
+      - [34.35, 31.4]
+      - [34.58, 31.4]
+      - [34.58, 31.6]
+      - [34.35, 31.6]
+    first_year: "4 BC"
+    last_year: "AD 5"
+    to: Roman Empire
+    reason: >-
+      After Herod's death Gaza, Gadara and Hippos were cut off from the kingdom and joined to the province of Syria as Greek cities (the Gaza article).
+    sources:
+      - "Josephus, Antiquities 17.320; Jewish War 2.97"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Gadara and Hippos, the Decapolis cities south-east of the Sea of Galilee.
+    without:
+      - [35.6, 32.6]
+      - [35.76, 32.6]
+      - [35.78, 32.7]
+      - [35.7, 32.8]
+      - [35.63, 32.77]
+    first_year: "4 BC"
+    last_year: "AD 5"
+    to: Roman Empire
+    reason: >-
+      Gadara and Hippos, Herod's from 30 BC, were joined to the province of Syria after his death in 4 BC.
+    sources:
+      - "Josephus, Antiquities 17.320; Jewish War 2.97"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Roman Empire
+    # Galilee, as above.
+    without:
+      - [35.1, 32.75]
+      - [35.3, 32.66]
+      - [35.45, 32.6]
+      - [35.56, 32.66]
+      - [35.6, 32.8]
+      - [35.625, 32.89]
+      - [35.62, 33.08]
+      - [35.18, 33.08]
+      - [35.15, 32.9]
+    first_year: "AD 6"
+    last_year: "AD 44"
+    reason: >-
+      Galilee was never part of the province of Judea made in AD 6: Herod Antipas ruled it until Caligula banished him in AD 39 and gave his tetrarchy to Agrippa I, who held it until his death in AD 44 (drawn). The Roman shape is cut back from it.
+    sources:
+      - "Josephus, Antiquities 18.240-256; 19.343-352"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Roman Empire
+    # Perea, as above.
+    without:
+      - [35.53, 31.55]
+      - [35.7, 31.5]
+      - [35.78, 31.8]
+      - [35.76, 32.1]
+      - [35.68, 32.4]
+      - [35.57, 32.4]
+      - [35.55, 32.0]
+    first_year: "AD 6"
+    last_year: "AD 44"
+    reason: >-
+      Perea was Antipas's with Galilee, and then Agrippa I's, until AD 44 (drawn).
+    sources:
+      - "Josephus, Antiquities 18.240-256"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Roman Empire
+    # Philip's tetrarchy, as above.
+    without:
+      - [35.625, 32.89]
+      - [35.65, 32.83]
+      - [35.8, 32.8]
+      - [36.0, 32.65]
+      - [36.6, 32.65]
+      - [36.8, 32.85]
+      - [36.7, 33.2]
+      - [36.1, 33.35]
+      - [35.75, 33.35]
+      - [35.63, 33.3]
+      - [35.62, 33.08]
+    first_year: "AD 6"
+    last_year: "AD 33"
+    reason: >-
+      Philip ruled his tetrarchy until his death in the twentieth year of Tiberius, AD 34, when it was joined to the province of Syria (drawn).
+    sources:
+      - "Josephus, Antiquities 18.106-108"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Roman Empire
+    # Philip's tetrarchy, as above.
+    without:
+      - [35.625, 32.89]
+      - [35.65, 32.83]
+      - [35.8, 32.8]
+      - [36.0, 32.65]
+      - [36.6, 32.65]
+      - [36.8, 32.85]
+      - [36.7, 33.2]
+      - [36.1, 33.35]
+      - [35.75, 33.35]
+      - [35.63, 33.3]
+      - [35.62, 33.08]
+    first_year: "AD 37"
+    last_year: "AD 44"
+    reason: >-
+      Caligula gave Philip's tetrarchy to Agrippa I with the title of king in AD 37 (drawn).
+    sources:
+      - "Josephus, Antiquities 18.237; Jewish War 2.181"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Roman Empire
+    # Agrippa I's whole kingdom: Galilee, Philip's tetrarchy, Perea, Samaria, Judea and Idumea
+    # with Caesarea, less the Greek cities of the coast and the Decapolis.
+    without:
+      - [35.1, 32.75]
+      - [35.15, 32.9]
+      - [35.18, 33.08]
+      - [35.62, 33.08]
+      - [35.63, 33.3]
+      - [35.75, 33.35]
+      - [36.1, 33.35]
+      - [36.7, 33.2]
+      - [36.8, 32.85]
+      - [36.6, 32.65]
+      - [36.0, 32.65]
+      - [35.8, 32.8]
+      - [35.65, 32.83]
+      - [35.625, 32.89]
+      - [35.6, 32.8]
+      - [35.56, 32.66]
+      - [35.46, 32.55]
+      - [35.45, 32.45]
+      - [35.57, 32.4]
+      - [35.68, 32.4]
+      - [35.76, 32.1]
+      - [35.78, 31.8]
+      - [35.7, 31.5]
+      - [35.53, 31.55]
+      - [35.45, 31.4]
+      - [35.4, 31.1]
+      - [35.1, 31.0]
+      - [34.8, 31.15]
+      - [34.75, 31.55]
+      - [34.7, 31.85]
+      - [34.7, 32.1]
+      - [34.8, 32.4]
+      - [34.87, 32.56]
+      - [35.05, 32.62]
+    first_year: "AD 41"
+    last_year: "AD 44"
+    reason: >-
+      Claudius added Judea and Samaria to Agrippa I's kingdom in AD 41, so that he ruled all his grandfather Herod had held; he "stretched forth his hands to vex certain of the church" and died at Caesarea in AD 44, after which the whole country became a province again (drawn).
+    sources:
+      - "Acts 12:1-23"
+      - "Josephus, Antiquities 19.274-275; 19.343-352; Jewish War 2.214-219"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Judea
+    # Samaria (Sebaste) and its land.
+    without:
+      - [35.13, 32.22]
+      - [35.26, 32.22]
+      - [35.26, 32.33]
+      - [35.13, 32.33]
+    first_year: "142 BC"
+    last_year: "109 BC"
+    to: Seleucid Empire
+    reason: >-
+      Cliopatria draws Samaria in Hasmonean Judea from 142 BC. The city, a Macedonian colony, held out under the Seleucids until John Hyrcanus took it after a long siege and razed it, about 108 BC (the Samaria article).
+    sources:
+      - "Josephus, Antiquities 13.275-281; Jewish War 1.64-65"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Judea
+    # Samaria (Sebaste) and its land.
+    without:
+      - [35.13, 32.22]
+      - [35.26, 32.22]
+      - [35.26, 32.33]
+      - [35.13, 32.33]
+    first_year: "63 BC"
+    last_year: "42 BC"
+    to: Roman Republic
+    reason: >-
+      Pompey gave Samaria back to its people in 63 BC and Gabinius rebuilt it (the Samaria article); it was a city of the province of Syria until Augustus gave it to Herod in 30 BC. Drawn as Rome's in these years.
+    sources:
+      - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
+      - "Josephus, Antiquities 15.217; Jewish War 1.396"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Samaria, as above.
+    without:
+      - [35.13, 32.22]
+      - [35.26, 32.22]
+      - [35.26, 32.33]
+      - [35.13, 32.33]
+    first_year: "41 BC"
+    last_year: "38 BC"
+    to: Parthian Empire
+    reason: >-
+      In 41-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
+    sources:
+      - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
+      - "Josephus, Antiquities 15.217; Jewish War 1.396"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Samaria, as above.
+    without:
+      - [35.13, 32.22]
+      - [35.26, 32.22]
+      - [35.26, 32.33]
+      - [35.13, 32.33]
+    first_year: "37 BC"
+    last_year: "33 BC"
+    to: Roman Republic
+    reason: >-
+      Drawn as Rome's in these years.
+    sources:
+      - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
+      - "Josephus, Antiquities 15.217; Jewish War 1.396"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Samaria, as above.
+    without:
+      - [35.13, 32.22]
+      - [35.26, 32.22]
+      - [35.26, 32.33]
+      - [35.13, 32.33]
+    first_year: "32 BC"
+    last_year: "31 BC"
+    to: Roman Empire
+    reason: >-
+      Drawn as Rome's in these years.
+    sources:
+      - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
+      - "Josephus, Antiquities 15.217; Jewish War 1.396"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Gaza and its land.
+    without:
+      - [34.35, 31.4]
+      - [34.58, 31.4]
+      - [34.58, 31.6]
+      - [34.35, 31.6]
+    first_year: "63 BC"
+    last_year: "42 BC"
+    to: Roman Republic
+    reason: >-
+      Pompey freed Gaza from Jewish rule in 63 BC and Gabinius had it rebuilt (the Gaza article); it was a city of the province of Syria until Augustus gave it to Herod in 30 BC. Drawn as Rome's in these years.
+    sources:
+      - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
+      - "Josephus, Antiquities 15.217; Jewish War 1.396"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Gaza, as above.
+    without:
+      - [34.35, 31.4]
+      - [34.58, 31.4]
+      - [34.58, 31.6]
+      - [34.35, 31.6]
+    first_year: "41 BC"
+    last_year: "38 BC"
+    to: Parthian Empire
+    reason: >-
+      In 41-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
+    sources:
+      - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
+      - "Josephus, Antiquities 15.217; Jewish War 1.396"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Gaza, as above.
+    without:
+      - [34.35, 31.4]
+      - [34.58, 31.4]
+      - [34.58, 31.6]
+      - [34.35, 31.6]
+    first_year: "37 BC"
+    last_year: "33 BC"
+    to: Roman Republic
+    reason: >-
+      Drawn as Rome's in these years.
+    sources:
+      - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
+      - "Josephus, Antiquities 15.217; Jewish War 1.396"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Gaza, as above.
+    without:
+      - [34.35, 31.4]
+      - [34.58, 31.4]
+      - [34.58, 31.6]
+      - [34.35, 31.6]
+    first_year: "32 BC"
+    last_year: "31 BC"
+    to: Roman Empire
+    reason: >-
+      Drawn as Rome's in these years.
+    sources:
+      - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
+      - "Josephus, Antiquities 15.217; Jewish War 1.396"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Gadara and Hippos.
+    without:
+      - [35.6, 32.6]
+      - [35.76, 32.6]
+      - [35.78, 32.7]
+      - [35.7, 32.8]
+      - [35.63, 32.77]
+    first_year: "63 BC"
+    last_year: "42 BC"
+    to: Roman Republic
+    reason: >-
+      After the Roman conquest of 63 BC Pompey freed Gadara and Hippos from Jewish rule and joined them to the province of Syria; Augustus gave them to Herod in 30 BC (the Gadara article). Drawn as Rome's in these years.
+    sources:
+      - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
+      - "Josephus, Antiquities 15.217; Jewish War 1.396"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Gadara, as above.
+    without:
+      - [35.6, 32.6]
+      - [35.76, 32.6]
+      - [35.78, 32.7]
+      - [35.7, 32.8]
+      - [35.63, 32.77]
+    first_year: "41 BC"
+    last_year: "38 BC"
+    to: Parthian Empire
+    reason: >-
+      In 41-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
+    sources:
+      - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
+      - "Josephus, Antiquities 15.217; Jewish War 1.396"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Gadara, as above.
+    without:
+      - [35.6, 32.6]
+      - [35.76, 32.6]
+      - [35.78, 32.7]
+      - [35.7, 32.8]
+      - [35.63, 32.77]
+    first_year: "37 BC"
+    last_year: "33 BC"
+    to: Roman Republic
+    reason: >-
+      Drawn as Rome's in these years.
+    sources:
+      - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
+      - "Josephus, Antiquities 15.217; Jewish War 1.396"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Gadara, as above.
+    without:
+      - [35.6, 32.6]
+      - [35.76, 32.6]
+      - [35.78, 32.7]
+      - [35.7, 32.8]
+      - [35.63, 32.77]
+    first_year: "32 BC"
+    last_year: "31 BC"
+    to: Roman Empire
+    reason: >-
+      Drawn as Rome's in these years.
+    sources:
+      - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
+      - "Josephus, Antiquities 15.217; Jewish War 1.396"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Gerasa and its land.
+    without:
+      - [35.8, 32.18]
+      - [35.98, 32.18]
+      - [35.98, 32.36]
+      - [35.8, 32.36]
+    first_year: "63 BC"
+    last_year: "42 BC"
+    to: Roman Republic
+    reason: >-
+      Pompey freed Gerasa from Jewish rule in 63 BC; it was one of the Decapolis cities of the province of Syria and never Herod's (the Gerasa article). Drawn as Rome's in these years.
+    sources:
+      - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Gerasa, as above.
+    without:
+      - [35.8, 32.18]
+      - [35.98, 32.18]
+      - [35.98, 32.36]
+      - [35.8, 32.36]
+    first_year: "41 BC"
+    last_year: "38 BC"
+    to: Parthian Empire
+    reason: >-
+      In 41-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
+    sources:
+      - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Gerasa, as above.
+    without:
+      - [35.8, 32.18]
+      - [35.98, 32.18]
+      - [35.98, 32.36]
+      - [35.8, 32.36]
+    first_year: "37 BC"
+    last_year: "33 BC"
+    to: Roman Republic
+    reason: >-
+      Drawn as Rome's in these years.
+    sources:
+      - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Gerasa, as above.
+    without:
+      - [35.8, 32.18]
+      - [35.98, 32.18]
+      - [35.98, 32.36]
+      - [35.8, 32.36]
+    first_year: "32 BC"
+    last_year: "AD 5"
+    to: Roman Empire
+    reason: >-
+      Drawn as Rome's in these years.
+    sources:
+      - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Ashkelon and its land.
+    without:
+      - [34.48, 31.6]
+      - [34.62, 31.6]
+      - [34.62, 31.73]
+      - [34.48, 31.73]
+    first_year: "92 BC"
+    last_year: "64 BC"
+    leaves_blank: true
+    reason: >-
+      Ashkelon was a free Greek city, with its own era from 104 BC, "independent of the Hasmoneans and of Herod" (the Ashkelon article); Cliopatria draws it in Judea. Before Pompey the free city is left without a state, as in 127-93 BC.
+    sources:
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+      - "Josephus, Jewish War 1.422"
+  - polity: Judea
+    # Ashkelon and its land.
+    without:
+      - [34.48, 31.6]
+      - [34.62, 31.6]
+      - [34.62, 31.73]
+      - [34.48, 31.73]
+    first_year: "63 BC"
+    last_year: "42 BC"
+    to: Roman Republic
+    reason: >-
+      Ashkelon was a free Greek city, with its own era from 104 BC, "independent of the Hasmoneans and of Herod" (the Ashkelon article); Cliopatria draws it in Judea. Drawn as Rome's in these years.
+    sources:
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+      - "Josephus, Jewish War 1.422"
+  - polity: Judea
+    # Ashkelon, as above.
+    without:
+      - [34.48, 31.6]
+      - [34.62, 31.6]
+      - [34.62, 31.73]
+      - [34.48, 31.73]
+    first_year: "41 BC"
+    last_year: "38 BC"
+    to: Parthian Empire
+    reason: >-
+      In 41-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
+    sources:
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+      - "Josephus, Jewish War 1.422"
+  - polity: Judea
+    # Ashkelon, as above.
+    without:
+      - [34.48, 31.6]
+      - [34.62, 31.6]
+      - [34.62, 31.73]
+      - [34.48, 31.73]
+    first_year: "37 BC"
+    last_year: "33 BC"
+    to: Roman Republic
+    reason: >-
+      Drawn as Rome's in these years.
+    sources:
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+      - "Josephus, Jewish War 1.422"
+  - polity: Judea
+    # Ashkelon, as above.
+    without:
+      - [34.48, 31.6]
+      - [34.62, 31.6]
+      - [34.62, 31.73]
+      - [34.48, 31.73]
+    first_year: "32 BC"
+    last_year: "AD 5"
+    to: Roman Empire
+    reason: >-
+      Drawn as Rome's in these years.
+    sources:
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+      - "Josephus, Jewish War 1.422"
+  - polity: Judea
+    # Paneas and the Huleh basin: the land of Zenodorus.
+    without:
+      - [35.6, 33.15]
+      - [35.8, 33.15]
+      - [35.8, 33.35]
+      - [35.6, 33.35]
+    first_year: "92 BC"
+    last_year: "65 BC"
+    leaves_blank: true
+    reason: >-
+      Paneas and the Huleh basin were not Hasmonean: they belonged to the Ituraean principality of Ptolemy son of Mennaeus and then to Lysanias and Zenodorus, Rome's clients, until Augustus gave Zenodorus's land to Herod in 20 BC (the Caesarea Philippi article). The data draws no Ituraean state; the land is left blank until Pompey's settlement.
+    sources:
+      - "Josephus, Antiquities 14.39; 15.344-360; Jewish War 1.398-400"
+      - "Strabo 16.2.10; 16.2.20"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Judea
+    # Paneas and the Huleh basin: the land of Zenodorus.
+    without:
+      - [35.6, 33.15]
+      - [35.8, 33.15]
+      - [35.8, 33.35]
+      - [35.6, 33.35]
+    first_year: "64 BC"
+    last_year: "42 BC"
+    to: Roman Republic
+    reason: >-
+      Paneas and the Huleh basin were not Hasmonean: they belonged to the Ituraean principality of Ptolemy son of Mennaeus and then to Lysanias and Zenodorus, Rome's clients, until Augustus gave Zenodorus's land to Herod in 20 BC (the Caesarea Philippi article). Drawn as Rome's in these years.
+    sources:
+      - "Josephus, Antiquities 14.39; 15.344-360; Jewish War 1.398-400"
+      - "Strabo 16.2.10; 16.2.20"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Judea
+    # Paneas, as above.
+    without:
+      - [35.6, 33.15]
+      - [35.8, 33.15]
+      - [35.8, 33.35]
+      - [35.6, 33.35]
+    first_year: "41 BC"
+    last_year: "38 BC"
+    to: Parthian Empire
+    reason: >-
+      In 41-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
+    sources:
+      - "Josephus, Antiquities 14.39; 15.344-360; Jewish War 1.398-400"
+      - "Strabo 16.2.10; 16.2.20"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Judea
+    # Paneas, as above.
+    without:
+      - [35.6, 33.15]
+      - [35.8, 33.15]
+      - [35.8, 33.35]
+      - [35.6, 33.35]
+    first_year: "37 BC"
+    last_year: "33 BC"
+    to: Roman Republic
+    reason: >-
+      Drawn as Rome's in these years.
+    sources:
+      - "Josephus, Antiquities 14.39; 15.344-360; Jewish War 1.398-400"
+      - "Strabo 16.2.10; 16.2.20"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Judea
+    # Paneas, as above.
+    without:
+      - [35.6, 33.15]
+      - [35.8, 33.15]
+      - [35.8, 33.35]
+      - [35.6, 33.35]
+    first_year: "32 BC"
+    last_year: "21 BC"
+    to: Roman Empire
+    reason: >-
+      Drawn as Rome's in these years.
+    sources:
+      - "Josephus, Antiquities 14.39; 15.344-360; Jewish War 1.398-400"
+      - "Strabo 16.2.10; 16.2.20"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Judea
+    # Gaza and its land, as above.
+    without:
+      - [34.35, 31.4]
+      - [34.58, 31.4]
+      - [34.58, 31.6]
+      - [34.35, 31.6]
+    first_year: "127 BC"
+    last_year: "97 BC"
+    to: Seleucid Empire
+    reason: >-
+      Cliopatria draws Gaza in Hasmonean Judea from 127 BC. Alexander Jannaeus took it after a year's siege about 96 BC (the Gaza article); before that it was a Greek city of the Seleucid realm.
+    sources:
+      - "Josephus, Antiquities 13.358-364"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Roman Empire
+    # Strato's Tower (Caesarea) and its land.
+    without:
+      - [34.85, 32.44]
+      - [34.96, 32.44]
+      - [34.96, 32.56]
+      - [34.85, 32.56]
+    first_year: "30 BC"
+    last_year: "AD 5"
+    to: Judea
+    reason: >-
+      Cliopatria draws Strato's Tower as Roman through Herod's reign. In 30 BC Augustus gave it to Herod, who built Caesarea there from 22 BC (the Caesarea article); it passed to Archelaus with Judea and Samaria in 4 BC and became the seat of the Roman governors in AD 6.
+    sources:
+      - "Josephus, Antiquities 15.217; Jewish War 1.396"
+      - "Josephus, Antiquities 15.331-341; 17.320"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # The Edomite plateau around Bozrah (Busayra), east of the Arabah.
+    without:
+      - [35.45, 30.45]
+      - [35.8, 30.45]
+      - [35.8, 31.0]
+      - [35.45, 31.0]
+    first_year: "92 BC"
+    last_year: "27 BC"
+    to: Nabataeans
+    reason: >-
+      Cliopatria draws the land of Bozrah in Hasmonean and Herodian Judea. Edom east of the Arabah was Nabataean land; the Hasmoneans' Idumea lay west of the Arabah, around Hebron and Marisa. Drawn as Nabataean until Trajan made the kingdom the province of Arabia in AD 106 (below).
+    sources:
+      - "Josephus, Antiquities 13.257-258"
+      - "G. W. Bowersock, Roman Arabia (1983)"
+  - polity: Judea
+    # Bozrah, as above.
+    without:
+      - [35.45, 30.45]
+      - [35.8, 30.45]
+      - [35.8, 31.0]
+      - [35.45, 31.0]
+    first_year: "26 BC"
+    last_year: "21 BC"
+    leaves_blank: true
+    reason: >-
+      As above; in 26-21 BC the Nabataean kingdom is drawn on with its shape of 27 BC (bridges), which holds this land.
+    sources:
+      - "G. W. Bowersock, Roman Arabia (1983)"
+  - polity: Judea
+    # Bozrah, as above.
+    without:
+      - [35.45, 30.45]
+      - [35.8, 30.45]
+      - [35.8, 31.0]
+      - [35.45, 31.0]
+    first_year: "20 BC"
+    last_year: "AD 5"
+    to: Nabataeans
+    reason: >-
+      As above.
+    sources:
+      - "G. W. Bowersock, Roman Arabia (1983)"
+  - polity: Roman Empire
+    # Bozrah, as above.
+    without:
+      - [35.45, 30.45]
+      - [35.8, 30.45]
+      - [35.8, 31.0]
+      - [35.45, 31.0]
+    first_year: "AD 6"
+    last_year: "AD 105"
+    to: Nabataeans
+    reason: >-
+      Bozrah's plateau stayed in the Nabataean kingdom, a Roman client, until Trajan annexed it as the province of Arabia in AD 106 (event arabia-province).
+    sources:
+      - "Cassius Dio 68.14.5"
+      - "G. W. Bowersock, Roman Arabia (1983)"
+  - polity: Seleucid Empire
+    # Damascus and its oasis, the Ghouta.
+    without:
+      - [36.1, 33.35]
+      - [36.55, 33.35]
+      - [36.55, 33.7]
+      - [36.1, 33.7]
+    first_year: "85 BC"
+    last_year: "79 BC"
+    to: Nabataeans
+    reason: >-
+      After Antiochus XII fell fighting the Nabataeans, the people of Damascus called in Aretas III, about 85 BC, and he held the city until Tigranes of Armenia took Syria's south about 72 BC (the Damascus article).
+    sources:
+      - "Josephus, Antiquities 13.387-392; Jewish War 1.99-103"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Kingdom of Armenia
+    # Damascus, as above.
+    without:
+      - [36.1, 33.35]
+      - [36.55, 33.35]
+      - [36.55, 33.7]
+      - [36.1, 33.7]
+    first_year: "78 BC"
+    last_year: "73 BC"
+    to: Nabataeans
+    reason: >-
+      Cliopatria draws Damascus as Armenian from 78 BC; Aretas III held it until Tigranes took it, about 72 BC.
+    sources:
+      - "Josephus, Antiquities 13.392; 13.419-421"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Seleucid Empire
+    # Tyre, its island and the shore facing it.
+    without:
+      - [35.1, 33.12]
+      - [35.3, 33.12]
+      - [35.33, 33.4]
+      - [35.15, 33.4]
+    first_year: "126 BC"
+    last_year: "79 BC"
+    leaves_blank: true
+    reason: >-
+      Tyre won its independence from the Seleucids in 126 BC and counted its years from it (the Tyre article). The free city is left without a state until the data's next shapes over it.
+    sources:
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+      - "H. J. Katzenstein, The History of Tyre, 2nd ed. (1997)"
 # Land a polity held that Cliopatria's shape of it leaves out: the outline is joined to its
 # shapes of those years. Approximate, to the precision of the sources.
 extends:
@@ -1730,6 +2771,84 @@ extends:
       The Babylonians and the Medes took Harran in 610 BC (event harran-falls); Nabopolassar left a garrison there, which Ashur-uballit II and the Egyptians besieged in vain in 609 BC. Cliopatria draws no Babylonian shape there; Harran is drawn as Babylon's from 610 BC.
     sources:
       - "Babylonian Chronicle ABC 3 (Fall of Nineveh Chronicle), 58-75 (A. K. Grayson, Assyrian and Babylonian Chronicles, 1975)"
+  - polity: Judea
+    # Galilee, as cut from the other states of these years (clips).
+    first_year: "104 BC"
+    last_year: "5 BC"
+    outline:
+      - [35.1, 32.75]
+      - [35.3, 32.66]
+      - [35.45, 32.6]
+      - [35.56, 32.66]
+      - [35.6, 32.8]
+      - [35.625, 32.89]
+      - [35.62, 33.08]
+      - [35.18, 33.08]
+      - [35.15, 32.9]
+    reason: >-
+      Cliopatria draws Hasmonean Judea over Capernaum and the Sea of Galilee only from 92 BC and never over Lower Galilee, so Nazareth, 30 km from Capernaum, showed as Seleucid and then Roman. Aristobulus I joined Galilee to Judea about 104 BC; it stayed Jewish land under the Hasmoneans, under Herod, and in 4 BC passed to Herod Antipas (drawn).
+    sources:
+      - "Josephus, Antiquities 13.318-319; 14.158; 17.318"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Kingdom of Israel
+    # The Jezreel Valley, Beth-shean and the coast of Dor below Carmel.
+    first_year: "1010 BC"
+    last_year: "932 BC"
+    outline:
+      - [34.85, 32.45]
+      - [35.55, 32.45]
+      - [35.55, 32.62]
+      - [35.35, 32.68]
+      - [35.1, 32.75]
+      - [34.92, 32.8]
+    reason: >-
+      Cliopatria's shape of the kingdom of David and Solomon leaves out the Jezreel Valley and the coast of Dor, so Megiddo, Taanach and Dor showed without a state until 931 BC. They were Solomon's: Baana's district held "Taanach and Megiddo, and all Beth-shean", Ben-abinadab's "all the region of Dor", and Solomon built Megiddo's wall. Drawn as Israel's from David's reign.
+    sources:
+      - "1 Kgs 4:11-12; 9:15"
+      - "Y. Aharoni, The Land of the Bible: A Historical Geography, rev. ed. (1979)"
+  - polity: Kingdom of Israel
+    # Gezer.
+    first_year: "970 BC"
+    last_year: "734 BC"
+    outline:
+      - [34.912, 31.84]
+      - [34.97, 31.84]
+      - [34.97, 31.9]
+      - [34.9, 31.9]
+    reason: >-
+      Gezer was a Canaanite city, not Philistine (clips): Pharaoh took it, burnt it and gave it to his daughter, Solomon's wife, and Solomon rebuilt it. Drawn as Israel's from Solomon's accession, about 970 BC, until Tiglath-pileser III took it in his campaign of 733-732 BC (below); its gate and walls of the tenth century and the Israelite town of the ninth and eighth are excavated.
+    sources:
+      - "Josh 16:10; 1 Kgs 9:15-17"
+      - "W. G. Dever, Gezer, in E. Stern (ed.), The New Encyclopedia of Archaeological Excavations in the Holy Land, vol. 2 (1993)"
+      - "I. Finkelstein, The Forgotten Kingdom (2013)"
+  - polity: Neo-Assyrian Empire
+    # Gezer, as above.
+    first_year: "733 BC"
+    last_year: "702 BC"
+    outline:
+      - [34.912, 31.84]
+      - [34.97, 31.84]
+      - [34.97, 31.9]
+      - [34.9, 31.9]
+    reason: >-
+      A relief of Tiglath-pileser III from Nimrud shows the siege of Gazru, Gezer, in his campaign of 733-732 BC; the town is drawn as Assyria's from then, as the land around it.
+    sources:
+      - "British Museum, relief of Tiglath-pileser III (BM 118908): the siege of Gazru"
+      - "W. G. Dever, Gezer, in E. Stern (ed.), The New Encyclopedia of Archaeological Excavations in the Holy Land, vol. 2 (1993)"
+  - polity: Kingdom of Judah
+    # Ziklag, as cut from Philistia (clips).
+    first_year: "901 BC"
+    last_year: "802 BC"
+    outline:
+      - [34.62, 31.34]
+      - [34.74, 31.34]
+      - [34.74, 31.44]
+      - [34.62, 31.44]
+    reason: >-
+      Ziklag belonged to the kings of Judah from David on (clips); Cliopatria's Judah of 901-802 BC leaves it out, so it showed without a state.
+    sources:
+      - "1 Sam 27:6"
+      - "Josh 19:5; 1 Chr 4:30-31"
 # States Cliopatria does not draw: our approximate outline, less the land of the polities
 # in `minus` standing in the same years. Moab and Ammon are drawn from 931 BC, when the
 # divided kingdoms begin (seams), Edom from 845 BC; under David and Solomon the data's
@@ -1970,6 +3089,184 @@ drawn:
       - "Anonymus Valesianus, Pars Posterior 8.38-11.56"
       - "Victor of Vita, History of the Vandal Persecution 1.14"
       - "Wikipedia, Odoacer; Kingdom of Italy (476-493)"
+  - polity: Tetrarchy of Herod Antipas
+    # Galilee, as in the clips.
+    first_year: "4 BC"
+    last_year: "AD 38"
+    outline:
+      - [35.1, 32.75]
+      - [35.3, 32.66]
+      - [35.45, 32.6]
+      - [35.56, 32.66]
+      - [35.6, 32.8]
+      - [35.625, 32.89]
+      - [35.62, 33.08]
+      - [35.18, 33.08]
+      - [35.15, 32.9]
+    label: [35.33, 32.86]
+    reason: >-
+      Herod Antipas, "tetrarch of Galilee" in Luke, received Galilee and Perea on his father's death in 4 BC and ruled them until Caligula banished him in AD 39; he built Sepphoris anew and founded Tiberias. Cliopatria draws Galilee as Herod's Judea to AD 5 and then as the Roman province. Drawn approximately: Galilee from the Jezreel Valley to the hills below Tyre's land, west of the Jordan.
+    sources:
+      - "Josephus, Antiquities 17.318-320; Jewish War 2.93-98; Luke 3:1"
+      - "Josephus, Antiquities 18.27, 36-38, 240-256"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Tetrarchy of Herod Antipas
+    # Perea.
+    first_year: "4 BC"
+    last_year: "AD 38"
+    outline:
+      - [35.53, 31.55]
+      - [35.7, 31.5]
+      - [35.78, 31.8]
+      - [35.76, 32.1]
+      - [35.68, 32.4]
+      - [35.57, 32.4]
+      - [35.55, 32.0]
+    label: [35.66, 31.95]
+    reason: >-
+      Perea, the land beyond the Jordan from Pella to Machaerus, was Antipas's with Galilee; John the Baptist was put to death at Machaerus. Drawn approximately, without the Decapolis cities.
+    sources:
+      - "Josephus, Antiquities 17.318-320; Jewish War 2.93-98; Luke 3:1"
+      - "Josephus, Jewish War 3.44-47; Antiquities 18.116-119"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Tetrarchy of Philip
+    # Gaulanitis, Batanea, Trachonitis, Auranitis and Paneas, with Bethsaida.
+    first_year: "4 BC"
+    last_year: "AD 33"
+    outline:
+      - [35.625, 32.89]
+      - [35.65, 32.83]
+      - [35.8, 32.8]
+      - [36.0, 32.65]
+      - [36.6, 32.65]
+      - [36.8, 32.85]
+      - [36.7, 33.2]
+      - [36.1, 33.35]
+      - [35.75, 33.35]
+      - [35.63, 33.3]
+      - [35.62, 33.08]
+    label: [36.3, 32.98]
+    reason: >-
+      Philip, "tetrarch of Ituraea and of the region of Trachonitis" in Luke, received the lands north-east of the Sea of Galilee in 4 BC; he made Paneas his capital as Caesarea and raised Bethsaida to a city as Julias. On his death in AD 34 the tetrarchy was joined to the province of Syria. Drawn approximately.
+    sources:
+      - "Josephus, Antiquities 17.318-320; Jewish War 2.93-98; Luke 3:1"
+      - "Josephus, Antiquities 18.28, 106-108"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Kingdom of Agrippa I
+    # Philip's tetrarchy, as above.
+    first_year: "AD 37"
+    last_year: "AD 38"
+    outline:
+      - [35.625, 32.89]
+      - [35.65, 32.83]
+      - [35.8, 32.8]
+      - [36.0, 32.65]
+      - [36.6, 32.65]
+      - [36.8, 32.85]
+      - [36.7, 33.2]
+      - [36.1, 33.35]
+      - [35.75, 33.35]
+      - [35.63, 33.3]
+      - [35.62, 33.08]
+    label: [36.3, 32.98]
+    reason: >-
+      Caligula gave Philip's tetrarchy to Agrippa I, Herod's grandson, with the title of king in AD 37. Drawn as Philip's was.
+    sources:
+      - "Josephus, Antiquities 18.237; Jewish War 2.181"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Kingdom of Agrippa I
+    # Philip's tetrarchy and Galilee.
+    first_year: "AD 39"
+    last_year: "AD 40"
+    outline:
+      - [35.1, 32.75]
+      - [35.3, 32.66]
+      - [35.45, 32.6]
+      - [35.56, 32.66]
+      - [35.6, 32.8]
+      - [35.625, 32.89]
+      - [35.65, 32.83]
+      - [35.8, 32.8]
+      - [36.0, 32.65]
+      - [36.6, 32.65]
+      - [36.8, 32.85]
+      - [36.7, 33.2]
+      - [36.1, 33.35]
+      - [35.75, 33.35]
+      - [35.63, 33.3]
+      - [35.62, 33.08]
+      - [35.18, 33.08]
+      - [35.15, 32.9]
+    label: [35.9, 32.95]
+    reason: >-
+      When Caligula banished Herod Antipas in AD 39 he gave his tetrarchy, Galilee and Perea, to Agrippa I.
+    sources:
+      - "Josephus, Antiquities 18.240-256; Jewish War 2.181-183"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Kingdom of Agrippa I
+    # Perea.
+    first_year: "AD 39"
+    last_year: "AD 40"
+    outline:
+      - [35.53, 31.55]
+      - [35.7, 31.5]
+      - [35.78, 31.8]
+      - [35.76, 32.1]
+      - [35.68, 32.4]
+      - [35.57, 32.4]
+      - [35.55, 32.0]
+    label: [35.66, 31.95]
+    reason: >-
+      Perea passed to Agrippa I with Galilee in AD 39.
+    sources:
+      - "Josephus, Antiquities 18.252"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Kingdom of Agrippa I
+    # The whole kingdom, as cut from the Roman shape (clips).
+    first_year: "AD 41"
+    last_year: "AD 44"
+    outline:
+      - [35.1, 32.75]
+      - [35.15, 32.9]
+      - [35.18, 33.08]
+      - [35.62, 33.08]
+      - [35.63, 33.3]
+      - [35.75, 33.35]
+      - [36.1, 33.35]
+      - [36.7, 33.2]
+      - [36.8, 32.85]
+      - [36.6, 32.65]
+      - [36.0, 32.65]
+      - [35.8, 32.8]
+      - [35.65, 32.83]
+      - [35.625, 32.89]
+      - [35.6, 32.8]
+      - [35.56, 32.66]
+      - [35.46, 32.55]
+      - [35.45, 32.45]
+      - [35.57, 32.4]
+      - [35.68, 32.4]
+      - [35.76, 32.1]
+      - [35.78, 31.8]
+      - [35.7, 31.5]
+      - [35.53, 31.55]
+      - [35.45, 31.4]
+      - [35.4, 31.1]
+      - [35.1, 31.0]
+      - [34.8, 31.15]
+      - [34.75, 31.55]
+      - [34.7, 31.85]
+      - [34.7, 32.1]
+      - [34.8, 32.4]
+      - [34.87, 32.56]
+      - [35.05, 32.62]
+    label: [35.25, 32.05]
+    reason: >-
+      Claudius added Judea and Samaria to Agrippa I's kingdom in AD 41, so that he ruled all his grandfather Herod had held, Caesarea among it, but not the Greek cities of the coast and the Decapolis. Acts 12 tells of his persecution of the church and of his death at Caesarea in AD 44; then the whole country became a province again. Drawn approximately.
+    sources:
+      - "Acts 12:1-23"
+      - "Josephus, Antiquities 19.274-275, 343-352; Jewish War 2.214-219"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
 # A polity the data names by one era for longer than it lasted (build-content.ts): a new
 # name from the year given.
 renamed:
@@ -2260,10 +3557,10 @@ bridges:
 annexed:
   - polity: Kingdom of Israel
     by: Neo-Assyrian Empire
-    first_year: "722 BC"
+    first_year: "733 BC"
     last_year: "702 BC"
     reason: >-
-      After Samaria fell in 722 BC the northern kingdom became Samerina, a province of the Neo-Assyrian Empire; Sargon II, who put down a revolt in which Samaria took part in 720 BC, organised it under a governor, deported part of its people and settled others in its towns. Cliopatria's Assyrian shape reaches the land only from 701 BC, so without this the land of Israel was left without a state for twenty years.
+      In 733-732 BC Tiglath-pileser III took Galilee, Gilead, the Jezreel Valley and the coast and made them provinces (Magiddu, Du'ru, Gal'aza), leaving Hoshea the hill country around Samaria, which is drawn over this shape until 723 BC (clips). After Samaria fell in 722 BC the northern kingdom became Samerina, a province of the Neo-Assyrian Empire; Sargon II, who put down a revolt in which Samaria took part in 720 BC, organised it under a governor, deported part of its people and settled others in its towns. Cliopatria's Assyrian shape reaches the land only from 701 BC, so without this the land of Israel was left without a state for twenty years. The shape is Israel's last before 733 BC.
     sources:
       - "2 Kgs 17:6, 24"
       - "Wikipedia, Samerina (province established after the conquest of Samaria, c. 722 BC); Sargon II"
@@ -2505,6 +3802,15 @@ annexed:
     sources:
       - "D. M. Nicol, The Last Centuries of Byzantium, 1261-1453, 2nd ed. (1993)"
 
+  - polity: Philistia
+    by: Babylonia
+    first_year: "604 BC"
+    last_year: "602 BC"
+    reason: >-
+      Nebuchadnezzar took Ashkelon in Kislev 604 BC, carried off its king and turned it into a mound and heaps of ruins (event ashkelon-destroyed); Ekron was destroyed in the same campaign. Cliopatria's Babylonian shape reaches the plain only from 601 BC; until then the map names Nabopolassar's and Nebuchadnezzar's kingdom Babylonia.
+    sources:
+      - "Babylonian Chronicle ABC 5, obv. 18-20 (A. K. Grayson, Assyrian and Babylonian Chronicles, 1975)"
+      - "L. E. Stager, Ashkelon and the Archaeology of Destruction: Kislev 604 BCE, Eretz-Israel 25 (1996)"
 # Years a polity was a vassal or client (build-content.ts): drawn in the overlord's colour,
 # lighter, with the label as a second line. Checked against the sources in two passes
 # (draft and review, 2026-10-02).
@@ -2746,7 +4052,7 @@ vassals:
   - polity: Philistia
     of: Neo-Assyrian Empire
     first_year: "734 BC"
-    last_year: "701 BC"
+    last_year: "630 BC"
     label:
       en: "under Assyria"
       ru: "под Ассирией"
@@ -2770,7 +4076,7 @@ vassals:
       ro: "sub Asiria"
       bg: "под властта на Асирия"
     reason: >-
-      Tiglath-pileser III's 734 BC campaign took Gaza and put the Philistine cities under tribute; Hanunu of Gaza and Mitinti of Ashkelon appear in his tribute lists. Single cities revolted (Gaza 720, Ashdod c. 713, Ashkelon and Ekron 705-701 BC) but each revolt was put down, and in 701 BC Sennacherib gave Judah's lost towns to his vassal kings of Ashdod, Ekron and Gaza.
+      Tiglath-pileser III's 734 BC campaign took Gaza and put the Philistine cities under tribute; Hanunu of Gaza and Mitinti of Ashkelon appear in his tribute lists. Single cities revolted (Gaza 720, Ashdod c. 713, Ashkelon and Ekron 705-701 BC) but each revolt was put down, and in 701 BC Sennacherib gave Judah's lost towns to his vassal kings of Ashdod, Ekron and Gaza. Esarhaddon and Ashurbanipal still list the kings of Gaza, Ashkelon, Ekron and Ashdod among their vassals; drawn under Assyria until 630 BC, when the Assyrian shapes of the coast are cut back (clips).
     sources:
       - "RINAP 1, Tiglath-pileser III 48, lines 14'-17' (Gaza) (oracc.museum.upenn.edu/rinap/rinap1/Q003461)"
       - "RINAP 1, Tiglath-pileser III 47, rev. 10'-12' (Mitinti of Ashkelon, Hanunu of Gaza)"
@@ -4039,3 +5345,96 @@ vassals:
     sources:
       - "J. Oates, The Fall of Assyria (635-609 B.C.), in The Cambridge Ancient History, 2nd ed., vol. III/2 (1991), ch. 25"
       - "G. Frame, Babylonia 689-627 B.C.: A Political History (1992)"
+  - polity: Tetrarchy of Herod Antipas
+    of: Roman Empire
+    first_year: "4 BC"
+    last_year: "AD 38"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+      uk: "під Римом"
+      es: "bajo Roma"
+      pt: "sob Roma"
+      de: "unter Rom"
+      fr: "sous Rome"
+      pl: "pod władzą Rzymu"
+      it: "sotto Roma"
+      nl: "onder Rome"
+      cs: "pod Římem"
+      sv: "under Rom"
+      nb: "under Roma"
+      tl: "sa ilalim ng Roma"
+      da: "under Rom"
+      sr: "под Римом"
+      hu: "Róma alatt"
+      fi: "Rooman alaisuudessa"
+      vi: "thuộc Rô-ma"
+      ro: "sub Roma"
+      bg: "под властта на Рим"
+    reason: >-
+      Augustus confirmed Herod's will and made Antipas tetrarch; Caligula, on Agrippa's charges, banished him to Gaul in AD 39 and gave his land to Agrippa.
+    sources:
+      - "Josephus, Antiquities 17.318-320; Jewish War 2.93-98; Luke 3:1"
+      - "Josephus, Antiquities 18.240-256"
+  - polity: Tetrarchy of Philip
+    of: Roman Empire
+    first_year: "4 BC"
+    last_year: "AD 33"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+      uk: "під Римом"
+      es: "bajo Roma"
+      pt: "sob Roma"
+      de: "unter Rom"
+      fr: "sous Rome"
+      pl: "pod władzą Rzymu"
+      it: "sotto Roma"
+      nl: "onder Rome"
+      cs: "pod Římem"
+      sv: "under Rom"
+      nb: "under Roma"
+      tl: "sa ilalim ng Roma"
+      da: "under Rom"
+      sr: "под Римом"
+      hu: "Róma alatt"
+      fi: "Rooman alaisuudessa"
+      vi: "thuộc Rô-ma"
+      ro: "sub Roma"
+      bg: "под властта на Рим"
+    reason: >-
+      Philip held his tetrarchy by Augustus's grant; at his death the land was joined to the province of Syria.
+    sources:
+      - "Josephus, Antiquities 17.318-320; Jewish War 2.93-98; Luke 3:1"
+      - "Josephus, Antiquities 18.106-108"
+  - polity: Kingdom of Agrippa I
+    of: Roman Empire
+    first_year: "AD 37"
+    last_year: "AD 44"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+      uk: "під Римом"
+      es: "bajo Roma"
+      pt: "sob Roma"
+      de: "unter Rom"
+      fr: "sous Rome"
+      pl: "pod władzą Rzymu"
+      it: "sotto Roma"
+      nl: "onder Rome"
+      cs: "pod Římem"
+      sv: "under Rom"
+      nb: "under Roma"
+      tl: "sa ilalim ng Roma"
+      da: "under Rom"
+      sr: "под Римом"
+      hu: "Róma alatt"
+      fi: "Rooman alaisuudessa"
+      vi: "thuộc Rô-ma"
+      ro: "sub Roma"
+      bg: "под властта на Рим"
+    reason: >-
+      Agrippa I was made king by Caligula in AD 37 and given Judea and Samaria by Claudius in AD 41; a client king of Rome until his death in AD 44.
+    sources:
+      - "Josephus, Antiquities 18.237; 19.274-275"
+      - "Acts 12:1-23"

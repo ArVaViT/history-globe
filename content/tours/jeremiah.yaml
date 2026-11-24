@@ -1,8 +1,10 @@
 # Jeremiah, in the order of the book. The tour's year (627 BC) is the thirteenth year of
 # Josiah, when the word of the Lord first came to him (Jer 1:2; 626 BC is also held). Stops
 # the book dates carry their own year: the beginning of Jehoiakim's reign (609 BC, 26:1), the
-# tenth year of Zedekiah (588 BC, 32:1) and the taking of Jerusalem, 587 BC as in the tour of
-# its fall (586 BC is also held), which the later stops follow.
+# tenth year of Zedekiah (588 BC, 32:1), the siege, 587 BC as in the tour of its fall, and
+# the taking of Jerusalem, 586 BC (587 BC is also held), the year of the event
+# jerusalem-falls, which the later stops follow: after the fall the map shows the land as
+# Babylon's.
 id: jeremiah
 title:
   en: "Jeremiah the prophet"
@@ -155,7 +157,7 @@ stops:
       bg: "Хвърлен в ров в двора на тъмницата, той затъва в тинята; етиопецът Авдемелех го изтегля с въжета и той остава в двора на тъмницата до деня, в който Йерусалим е превзет."
   - place: a6d57ed # Ramah
     ref: Jer.40.1-Jer.40.5
-    year: "587 BC"
+    year: "586 BC"
     note:
       en: "At Ramah, among the captives in chains bound for Babylon, Nebuzar-adan sets him free to go where he will."
       ru: "В Раме, среди скованных пленников, которых ведут в Вавилон, Навузардан освобождает его и отпускает, куда он захочет."
@@ -180,7 +182,7 @@ stops:
       bg: "В Рама, сред оковените пленници, водени към Вавилон, Навузардан го освобождава да иде, където иска."
   - place: a736f6c # Mizpah
     ref: Jer.40.6
-    year: "587 BC"
+    year: "586 BC"
     note:
       en: "He stays with Gedaliah at Mizpah, among the people left in the land."
       ru: "Он остаётся с Годолией в Массифе, среди народа, оставшегося в стране."
@@ -205,7 +207,7 @@ stops:
       bg: "Той остава при Годолия в Мицпа, сред народа, оставен в земята."
   - place: adb008c # Tahpanhes
     ref: Jer.43.5-Jer.43.13
-    year: "587 BC"
+    year: "586 BC"
     note:
       en: "Taken down to Egypt against his word, at Tahpanhes he is told to hide great stones at the entry of Pharaoh's house: Nebuchadnezzar will set his throne upon them."
       ru: "Уведённый в Египет вопреки его слову, в Тафнисе ему велено скрыть большие камни при входе в дом фараона: на них Навуходоносор поставит свой престол."

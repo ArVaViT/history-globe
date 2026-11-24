@@ -15,7 +15,7 @@ anchors:
   - name: Jerusalem
     place: a15257a
     periods:
-      - { first_year: "1010 BC", last_year: "932 BC", polity: Kingdom of Israel }
+      - { first_year: "1003 BC", last_year: "932 BC", polity: Kingdom of Israel }
       - { first_year: "931 BC", last_year: "587 BC", polity: Kingdom of Judah }
       - { first_year: "586 BC", last_year: "540 BC", polity: Neo-Babylonian Empire }
       - { first_year: "539 BC", last_year: "333 BC", polity: Achaemenid Empire }
@@ -33,7 +33,8 @@ anchors:
   - name: Dan
     place: a513646
     periods:
-      - { first_year: "1010 BC", last_year: "733 BC", polity: Kingdom of Israel }
+      - { first_year: "1010 BC", last_year: "734 BC", polity: Kingdom of Israel }
+      - { first_year: "733 BC", last_year: "617 BC", polity: Neo-Assyrian Empire }
     sources:
       - "1 Kgs 4:25; 12:29; 2 Kgs 10:29; 15:29"
 
@@ -232,7 +233,9 @@ anchors:
   - name: Gaza
     place: aa8edd2
     periods:
-      - { first_year: "600 BC", last_year: "540 BC", polity: Neo-Babylonian Empire }
+      - { first_year: "1150 BC", last_year: "605 BC", polity: Philistia }
+      - { first_year: "604 BC", last_year: "602 BC", polity: Babylonia }
+      - { first_year: "601 BC", last_year: "540 BC", polity: Neo-Babylonian Empire }
       - { first_year: "539 BC", last_year: "333 BC", polity: Achaemenid Empire }
     sources:
       - "Herodotus 3.5"
@@ -241,6 +244,12 @@ anchors:
     place: a160272
     periods:
       - { first_year: "1150 BC", last_year: "AD 600", polity: any }
+    blank:
+      - first_year: "126 BC"
+        last_year: "79 BC"
+        reason: >-
+          Tyre was a free city, independent of the Seleucids from 126 BC; no state of its own
+          is drawn.
     sources:
       - "Ezek 26-28"
 
@@ -543,3 +552,268 @@ anchors:
           no state of theirs is drawn.
     sources:
       - "Diodorus Siculus 18.19-21"
+
+  # The audit of the map's states against the articles (2026-11-23): Galilee in 733 BC,
+  # Solomon's towns, the Philistine kingdoms under Assyria, the Hellenistic and Herodian
+  # Levant.
+
+  - name: Hazor
+    place: a6f33c5
+    periods:
+      - { first_year: "1010 BC", last_year: "734 BC", polity: Kingdom of Israel }
+      - { first_year: "733 BC", last_year: "617 BC", polity: Neo-Assyrian Empire }
+    sources:
+      - "2 Kgs 15:29"
+
+  - name: Kedesh of Naphtali
+    place: a321cb8
+    periods:
+      - { first_year: "1010 BC", last_year: "734 BC", polity: Kingdom of Israel }
+      - { first_year: "733 BC", last_year: "617 BC", polity: Neo-Assyrian Empire }
+    sources:
+      - "2 Kgs 15:29"
+
+  - name: Megiddo
+    place: a8554e3
+    periods:
+      - { first_year: "1010 BC", last_year: "734 BC", polity: Kingdom of Israel }
+      - { first_year: "733 BC", last_year: "617 BC", polity: Neo-Assyrian Empire }
+    sources:
+      - "1 Kgs 4:12; 9:15; 2 Kgs 15:29"
+
+  - name: Dor
+    place: a70c56b
+    periods:
+      - { first_year: "1010 BC", last_year: "734 BC", polity: Kingdom of Israel }
+      - { first_year: "733 BC", last_year: "617 BC", polity: Neo-Assyrian Empire }
+    sources:
+      - "1 Kgs 4:11; 2 Kgs 15:29"
+
+  - name: Taanach
+    place: a6f05f6
+    periods:
+      - { first_year: "1010 BC", last_year: "932 BC", polity: Kingdom of Israel }
+      - { first_year: "931 BC", last_year: "734 BC", polity: Kingdom of Israel }
+    sources:
+      - "1 Kgs 4:12"
+
+  - name: Ijon
+    place: a062b95
+    periods:
+      - { first_year: "801 BC", last_year: "734 BC", polity: Kingdom of Israel }
+      - { first_year: "733 BC", last_year: "617 BC", polity: Neo-Assyrian Empire }
+    sources:
+      - "2 Kgs 15:29"
+
+  - name: Gezer
+    place: aed6538
+    periods:
+      - { first_year: "970 BC", last_year: "734 BC", polity: Kingdom of Israel }
+      - { first_year: "733 BC", last_year: "630 BC", polity: Neo-Assyrian Empire }
+    sources:
+      - "1 Kgs 9:15-17"
+
+  - name: Ziklag
+    place: a0ed7ff
+    periods:
+      - { first_year: "1010 BC", last_year: "932 BC", polity: Kingdom of Israel }
+      - { first_year: "931 BC", last_year: "702 BC", polity: Kingdom of Judah }
+    sources:
+      - "1 Sam 27:6"
+
+  - name: Ashdod
+    place: a30c937
+    periods:
+      - { first_year: "1150 BC", last_year: "605 BC", polity: Philistia }
+      - { first_year: "604 BC", last_year: "602 BC", polity: Babylonia }
+      - { first_year: "601 BC", last_year: "540 BC", polity: Neo-Babylonian Empire }
+    sources:
+      - "RINAP 4, Esarhaddon 1, v 54-vi 1"
+
+  - name: Ekron
+    place: a3fc47a
+    periods:
+      - { first_year: "1150 BC", last_year: "605 BC", polity: Philistia }
+    sources:
+      - "S. Gitin, T. Dothan and J. Naveh, A Royal Dedicatory Inscription from Ekron, Israel Exploration Journal 47 (1997)"
+
+  - name: Ashkelon
+    place: ac87d4c
+    periods:
+      - { first_year: "1150 BC", last_year: "605 BC", polity: Philistia }
+      - { first_year: "604 BC", last_year: "602 BC", polity: Babylonia }
+      - { first_year: "601 BC", last_year: "540 BC", polity: Neo-Babylonian Empire }
+    sources:
+      - "Babylonian Chronicle ABC 5, obv. 18-20"
+
+  - name: Sidon
+    place: a98e4d7
+    periods:
+      - { first_year: "1150 BC", last_year: "678 BC", polity: Phoenicia }
+      - { first_year: "677 BC", last_year: "617 BC", polity: Neo-Assyrian Empire }
+    sources:
+      - "Babylonian Chronicle ABC 1, iv 3-4"
+
+  - name: Tyre, Phoenician
+    place: a160272
+    periods:
+      - { first_year: "1150 BC", last_year: "532 BC", polity: Phoenicia }
+    sources:
+      - "SAA 2, no. 5; Ezek 26-28"
+
+  - name: Damascus, Nabataean
+    place: a69c1d4
+    periods:
+      - { first_year: "85 BC", last_year: "73 BC", polity: Nabataeans }
+      - { first_year: "72 BC", last_year: "68 BC", polity: Kingdom of Armenia }
+    sources:
+      - "Josephus, Antiquities 13.392; 13.419-421"
+
+  - name: Alexandria, Ptolemaic
+    place: aee7248
+    periods:
+      - { first_year: "300 BC", last_year: "31 BC", polity: Ptolemaic Kingdom }
+    sources:
+      - "Polybius 29.27"
+
+  - name: Jerusalem under Agrippa I
+    place: a15257a
+    periods:
+      - { first_year: "AD 6", last_year: "AD 40", polity: Roman Empire }
+      - { first_year: "AD 41", last_year: "AD 44", polity: Kingdom of Agrippa I }
+      - { first_year: "AD 45", last_year: "AD 66", polity: Roman Empire }
+    sources:
+      - "Acts 12:1-23; Josephus, Antiquities 19.274-275"
+
+  - name: Capernaum
+    place: af2161c
+    periods:
+      - { first_year: "104 BC", last_year: "5 BC", polity: Judea }
+      - { first_year: "4 BC", last_year: "AD 38", polity: Tetrarchy of Herod Antipas }
+      - { first_year: "AD 39", last_year: "AD 44", polity: Kingdom of Agrippa I }
+      - { first_year: "AD 45", last_year: "AD 66", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 13.318-319; 17.318; 18.252; Luke 3:1"
+
+  - name: Nazareth
+    place: af5884f
+    periods:
+      - { first_year: "104 BC", last_year: "5 BC", polity: Judea }
+      - { first_year: "4 BC", last_year: "AD 38", polity: Tetrarchy of Herod Antipas }
+      - { first_year: "AD 39", last_year: "AD 44", polity: Kingdom of Agrippa I }
+      - { first_year: "AD 45", last_year: "AD 66", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 13.318-319; 17.318; 18.252; Luke 3:1"
+
+  - name: Bethsaida
+    place: a91b732
+    periods:
+      - { first_year: "4 BC", last_year: "AD 33", polity: Tetrarchy of Philip }
+      - { first_year: "AD 34", last_year: "AD 36", polity: Roman Empire }
+      - { first_year: "AD 37", last_year: "AD 44", polity: Kingdom of Agrippa I }
+    sources:
+      - "Josephus, Antiquities 18.28, 106-108, 237"
+
+  - name: Caesarea Philippi
+    place: ab7bf48
+    periods:
+      - { first_year: "64 BC", last_year: "42 BC", polity: Roman Republic }
+      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
+      - { first_year: "32 BC", last_year: "21 BC", polity: Roman Empire }
+      - { first_year: "20 BC", last_year: "5 BC", polity: Judea }
+      - { first_year: "4 BC", last_year: "AD 33", polity: Tetrarchy of Philip }
+      - { first_year: "AD 34", last_year: "AD 36", polity: Roman Empire }
+      - { first_year: "AD 37", last_year: "AD 44", polity: Kingdom of Agrippa I }
+    blank:
+      - first_year: "92 BC"
+        last_year: "65 BC"
+        reason: >-
+          The Ituraean principality, which no state of the data draws.
+    sources:
+      - "Josephus, Antiquities 15.354-360; 17.319; 18.106-108, 237"
+
+  - name: Samaria, Hellenistic and Roman
+    place: a041bb3
+    periods:
+      - { first_year: "142 BC", last_year: "109 BC", polity: Seleucid Empire }
+      - { first_year: "108 BC", last_year: "64 BC", polity: Judea }
+      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
+      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
+      - { first_year: "32 BC", last_year: "31 BC", polity: Roman Empire }
+      - { first_year: "30 BC", last_year: "AD 5", polity: Judea }
+      - { first_year: "AD 6", last_year: "AD 40", polity: Roman Empire }
+      - { first_year: "AD 41", last_year: "AD 44", polity: Kingdom of Agrippa I }
+    sources:
+      - "Josephus, Antiquities 13.275-281; 14.75; 15.217"
+
+  - name: Caesarea
+    place: a58735e
+    periods:
+      - { first_year: "32 BC", last_year: "31 BC", polity: Roman Empire }
+      - { first_year: "30 BC", last_year: "AD 5", polity: Judea }
+      - { first_year: "AD 6", last_year: "AD 40", polity: Roman Empire }
+      - { first_year: "AD 41", last_year: "AD 44", polity: Kingdom of Agrippa I }
+      - { first_year: "AD 45", last_year: "AD 66", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 15.217; 19.343-352; Acts 12:19-23"
+
+  - name: Gaza, Hellenistic and Roman
+    place: aa8edd2
+    periods:
+      - { first_year: "127 BC", last_year: "97 BC", polity: Seleucid Empire }
+      - { first_year: "96 BC", last_year: "64 BC", polity: Judea }
+      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
+      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
+      - { first_year: "32 BC", last_year: "31 BC", polity: Roman Empire }
+      - { first_year: "30 BC", last_year: "5 BC", polity: Judea }
+      - { first_year: "4 BC", last_year: "AD 66", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 13.358-364; 14.76; 15.217; 17.320"
+
+  - name: Ashkelon, a free city
+    place: ac87d4c
+    periods:
+      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
+      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
+      - { first_year: "32 BC", last_year: "AD 66", polity: Roman Empire }
+    blank:
+      - first_year: "92 BC"
+        last_year: "64 BC"
+        reason: >-
+          A free Greek city, independent of the Hasmoneans; no state of its own is drawn.
+    sources:
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed., vol. 2 (1979), section 23"
+
+  - name: Gadara
+    place: afed46a
+    periods:
+      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
+      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
+      - { first_year: "32 BC", last_year: "31 BC", polity: Roman Empire }
+      - { first_year: "30 BC", last_year: "5 BC", polity: Judea }
+      - { first_year: "4 BC", last_year: "AD 66", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 14.75; 15.217; 17.320"
+
+  - name: Gerasa
+    place: ada6b64
+    periods:
+      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
+      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
+      - { first_year: "32 BC", last_year: "AD 66", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 14.75"
+
+  - name: Bozrah, Nabataean
+    place: a871210
+    periods:
+      - { first_year: "92 BC", last_year: "AD 105", polity: Nabataeans }
+      - { first_year: "AD 106", last_year: "AD 150", polity: Roman Empire }
+    sources:
+      - "Cassius Dio 68.14.5; G. W. Bowersock, Roman Arabia (1983)"
