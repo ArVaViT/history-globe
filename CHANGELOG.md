@@ -7,6 +7,23 @@ and fields only grow: a field that is added is listed here and in `index.json`
 (`fields_added`). Changes to the site alone (its pages, its look) are not listed; the
 pull requests on GitHub have them.
 
+## Unreleased
+
+- States (`polities*.geojson`, `rulers.json`): the borders audit of 2026-11-23 brought the
+  map's state for each place in line with the articles, a place passing to the new state in
+  the year of the event. Galilee, Dor, Megiddo, Gilead and the upper Jordan are Assyria's
+  from 733 BC; Jebus is Jerusalem's own until 1003 BC; Megiddo, Taanach and Dor are
+  Solomon's; Gezer and Ziklag are no longer Philistine; the Philistine kingdoms stay
+  kingdoms under Assyria after 701 BC, to 605 BC; Sidon is Assyria's from 677 BC and Tyre
+  keeps its island; Tyre and Ashkelon are free cities; Damascus is Aretas III's from
+  85 BC; Alexandria never Antiochus IV's; Galilee and Nazareth Hasmonean from 104 BC;
+  Samaria, Gaza, Gadara, Gerasa, Caesarea, Paneas and Bozrah follow Pompey's, Augustus's
+  and Herod's grants. Three states are new: the Tetrarchy of Herod Antipas (4 BC-AD 38),
+  the Tetrarchy of Philip (4 BC-AD 33) and the Kingdom of Agrippa I (AD 37-44).
+- Tours: the stops after the fall of Jerusalem in the exile and Jeremiah tours are dated
+  586 BC (were 587 BC); Peter's prison in Jerusalem (Acts 11:2-12:17) is dated AD 44 (was the
+  tour's AD 40). `questions.json`: where-was-mizpah `c. 586 BC` (was `c. 587 BC`).
+
 ## 2026-11-08 to 2026-11-23
 
 - Events: the second Temple was finished in March 515 BC (Adar of Darius' sixth year), now

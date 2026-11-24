@@ -92,14 +92,25 @@ export function seamOverlaps(
     const [bx0, by0, bx1, by1] = box(b);
     return !(ax1 < bx0 || bx1 < ax0 || ay1 < by0 || by1 < ay0);
   };
-  const meet = (a: Shaped, b: Shaped): number =>
-    near(a, b)
-      ? booleanOp(polys(a).flat(), polys(b).flat(), "intersection").reduce(
-          (sum, poly) =>
-            sum + areaOf(poly[0] ?? []) - poly.slice(1).reduce((h, r) => h + areaOf(r), 0),
-          0,
-        )
-      : 0;
+  // Each pair's overlap once: the seams ask for the same pairs again and again, and a
+  // boolean operation on two states' outlines is the slow part of the build.
+  const met = new Map<Shaped, Map<Shaped, number>>();
+  const meet = (a: Shaped, b: Shaped): number => {
+    let row = met.get(a);
+    if (!row) met.set(a, (row = new Map<Shaped, number>()));
+    let area = row.get(b);
+    if (area === undefined) {
+      area = near(a, b)
+        ? booleanOp(polys(a).flat(), polys(b).flat(), "intersection").reduce(
+            (sum, poly) =>
+              sum + areaOf(poly[0] ?? []) - poly.slice(1).reduce((h, r) => h + areaOf(r), 0),
+            0,
+          )
+        : 0;
+      row.set(b, area);
+    }
+    return area;
+  };
   const live = (f: Shaped, a: number, b: number) =>
     !f.properties.rel && f.properties.y0 < b && a < f.properties.y1;
   for (const s of seams) {
@@ -114,12 +125,17 @@ export function seamOverlaps(
       const others = shapes.filter(
         (g) => g.properties.name !== s.polity && !g.properties.rel && near(e, g),
       );
+      const bases = new Map<string, number>();
       for (const g of others) {
         if (!live(g, a, b)) continue;
         const name = g.properties.name;
-        const base = others
-          .filter((h) => h.properties.name === name && live(h, own, own + 1))
-          .reduce((sum, h) => sum + meet(e, h), 0);
+        let base = bases.get(name);
+        if (base === undefined) {
+          base = others
+            .filter((h) => h.properties.name === name && live(h, own, own + 1))
+            .reduce((sum, h) => sum + meet(e, h), 0);
+          bases.set(name, base);
+        }
         const over = meet(e, g) - base;
         if (over > slack)
           errors.push(

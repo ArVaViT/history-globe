@@ -1,8 +1,10 @@
 # The fall of Jerusalem and the exile, 2 Kings 25 and Jeremiah 39-43, in the order of
-# the text. Year: 587 or 586 BC (disputed), marked approximate. The map shows 587 BC,
-# the year before the ruins begin in place-life.yaml, so Jerusalem still stands at the
-# siege. The burning (2 Kgs 25:8-10, the nineteenth year of Nebuchadnezzar) shows 586 BC,
-# the first year of the ruins.
+# the text. Year: 587 or 586 BC (disputed), marked approximate. The siege shows 587 BC,
+# the year before the ruins begin in place-life.yaml, so Jerusalem still stands. The fall
+# itself and everything after it show 586 BC, the year of the event jerusalem-falls, in
+# which the map passes Judah to Babylon: Zedekiah's flight and capture in the eleventh
+# year of his reign (2 Kgs 25:2-7), the burning in the nineteenth year of Nebuchadnezzar
+# (2 Kgs 25:8-10), the exile, Jeremiah at Ramah and Mizpah, and the flight to Tahpanhes.
 id: exile
 title:
   en: "The fall of Jerusalem and the exile"
@@ -55,6 +57,7 @@ stops:
       bg: "Навуходоносор обсажда Йерусалим, докато гладът в града надделява."
   - place: a231f80 # Jericho
     ref: 2Kgs.25.4-2Kgs.25.5
+    year: "586 BC"
     note:
       en: "King Zedekiah flees and is caught on the plains of Jericho."
       ru: "Царь Седекия бежит и схвачен на равнинах Иерихонских."
@@ -79,6 +82,7 @@ stops:
       bg: "Цар Седекия бяга и е заловен в Йерихонските полета."
   - place: ab2bde8 # Riblah
     ref: 2Kgs.25.6-2Kgs.25.7
+    year: "586 BC"
     note:
       en: "Judgement at Riblah: Zedekiah's sons are killed and he is blinded."
       ru: "Суд в Ривле: сыновья Седекии убиты, сам он ослеплён."
@@ -128,6 +132,7 @@ stops:
       bg: "Навузардан изгаря храма, двореца и града, а халдейската войска събаря стените."
   - place: a217d18 # Babylon
     ref: 2Kgs.25.11
+    year: "586 BC"
     note:
       en: "The rest of the people left in the city are carried into exile to Babylon."
       ru: "Народ, остававшийся в городе, уведён в плен в Вавилон."
@@ -152,6 +157,7 @@ stops:
       bg: "Останалият в града народ е отведен в изгнание във Вавилон."
   - place: a6d57ed # Ramah
     ref: Jer.40.1
+    year: "586 BC"
     by: untold
     note:
       en: "At Ramah Jeremiah is set free from among the captives."
@@ -177,6 +183,7 @@ stops:
       bg: "В Рама Йеремия е освободен измежду пленниците."
   - place: a736f6c # Mizpah
     ref: Jer.40.6
+    year: "586 BC"
     note:
       en: "He stays with Gedaliah, the governor, at Mizpah."
       ru: "Он остаётся у правителя Годолии в Массифе."
@@ -201,6 +208,7 @@ stops:
       bg: "Той остава при управителя Годолия в Мицпа."
   - place: adb008c # Tahpanhes
     ref: Jer.43.7
+    year: "586 BC"
     note:
       en: "After Gedaliah's murder the remnant flees to Egypt, to Tahpanhes."
       ru: "После убийства Годолии остаток народа бежит в Египет, в Тафнис."

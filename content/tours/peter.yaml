@@ -1,6 +1,8 @@
 # The apostle Peter in Acts 2-12, from Pentecost to the death of Herod Agrippa I, in the
 # order of the text. The tour's year (AD 40) is a point for the map between Pentecost
-# (c. AD 30) and Herod's death in AD 44 (Josephus, Antiquities 19.343-350).
+# (c. AD 30) and Herod's death in AD 44 (Josephus, Antiquities 19.343-350). Peter's prison in
+# Jerusalem (Acts 12:1-17) and Herod's death at Caesarea carry AD 44, when the map shows
+# Agrippa I's kingdom (AD 41-44).
 id: peter
 title:
   en: "The apostle Peter"
@@ -151,6 +153,7 @@ stops:
       bg: "В Кесария, докато Петър говори в дома на стотника Корнилий, Светият Дух слиза върху всички, които слушат словото."
   - place: a15257a # Jerusalem
     ref: Acts.11.2-Acts.12.17
+    year: "AD 44"
     note:
       en: "Back in Jerusalem he tells the church about Cornelius; imprisoned by Herod, he is led out by an angel."
       ru: "Вернувшись в Иерусалим, он рассказывает церкви о Корнилии; заключённого Иродом, его выводит из темницы Ангел."
