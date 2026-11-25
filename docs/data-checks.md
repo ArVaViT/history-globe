@@ -18,7 +18,8 @@ the data first (`pnpm data`).
 - **Polities:** duplicate shapes and composites drawn over their own parts are dropped;
   small parts of a large polity get no label of their own.
 - **Candidate sites:** shares are normalised over the candidates shown; a place is
-  `disputed` when the runner-up has at least `DISPUTED_MIN_SHARE` %. OpenBible's English
+  `disputed` when the candidates more than `DISPUTED_MIN_KM` from the leading one hold at
+  least `DISPUTED_MIN_SHARE` % together, or none is rated (`is_disputed`, tested). OpenBible's English
   templates ("another name for X", "within 5 km of X") are kept with the referenced id.
 - **Points chosen by hand** (`content/place-points.json`): `same_as` puts a place on another
   record's point (a chain is followed to its end; a circle stops the build); `site` shows one
@@ -27,6 +28,11 @@ the data first (`pnpm data`).
   on On) on its Wikidata item's point (CC0). A record or location not in the build, or a
   point the licence filter would drop, stops the build. The reasons are in the file and in
   `docs/crosswalk/their-errors.md`.
+- **Records merged into a place** (`content/place-aliases.json`, ADR 0022): a retired record
+  must exist and its place must not be retired itself; the place takes its verses, each
+  once. Content naming a retired id stops the build as any unknown id does, and
+  `build-pages.ts` stops when the old page of a retired record has no redirect to the
+  place's page in `apps/web/vercel.json`.
 - **Water**: Natural Earth's ocean and lakes at 1:10m inside the map's region, 1:50m around
   it, without reservoirs (by type, and by id where a reservoir is tagged a lake).
 - **Water has no holes.** Islands are joined to the sea's outline by zero-width cuts

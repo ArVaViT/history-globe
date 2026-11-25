@@ -148,6 +148,15 @@ description: Các địa điểm, những câu Kinh Thánh nhắc đến chúng,
     <code>"approximate": true</code>.
   </li>
   <li>
+    Mỗi địa danh có <code>certainty</code> (<code>settled</code>, <code>most likely</code>,
+    <code>tentative</code>, <code>disputed</code>) và <code>confidence</code>, điểm của
+    OpenBible.info cho việc xác định vị trí, từ 0 đến 1000, khi OpenBible có đưa ra; địa danh có hơn
+    một vị trí được đề xuất liệt kê chúng trong <code>sites</code>, mỗi vị trí kèm tỷ lệ của nó
+    trong đánh giá của OpenBible, là ước tính chứ không phải sự đồng thuận của giới học giả. Bản ghi
+    mà OpenBible lưu hai lần cho cùng một địa danh đã được gộp vào đó: id của nó nằm trong
+    <code>aliases</code>, và các liên kết dùng id ấy vẫn hoạt động.
+  </li>
+  <li>
     Các tệp được build lại với mỗi lần phát hành dữ liệu; <code>index.json</code> ghi ngày của lần
     phát hành ấy.
   </li>

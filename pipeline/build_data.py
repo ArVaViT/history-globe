@@ -19,7 +19,8 @@ import re
 import urllib.parse
 import zipfile
 
-from pipeline.geo import BBOX, simplify
+from pipeline.bible_books import OSIS_ORDER
+from pipeline.geo import BBOX, great_circle_km, simplify
 from pipeline.net import get, wikidata_get
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -354,6 +355,56 @@ def pick_site(record: dict, sites: dict[str, str] | None) -> dict | None:
         if ident.get("id_source") == "modern" and ident.get("id") == want and first_point(ident):
             return ident
     raise SystemExit(f"place-points: {record['id']} has no identification with the modern location {want}")
+
+
+def load_aliases(path: pathlib.Path) -> dict[str, str]:
+    """content/place-aliases.json: a retired record → the place it is merged into (ADR 0022)."""
+    aliases = {pid: o["into"] for pid, o in json.loads(path.read_text(encoding="utf-8"))["places"].items()}
+    for pid, into in aliases.items():
+        if into in aliases:
+            raise SystemExit(f"place-aliases: {pid} is merged into {into}, which is merged itself")
+        if pid == into:
+            raise SystemExit(f"place-aliases: {pid} is merged into itself")
+    return aliases
+
+
+def osis_key(osis: str) -> tuple[int, int, int]:
+    """A verse's place in the Bible, for a merged list of verses."""
+    book, chapter, verse = (osis.split(".") + ["0", "0"])[:3]
+    rank = OSIS_ORDER.index(book) if book in OSIS_ORDER else len(OSIS_ORDER)
+    return rank, int(chapter or 0), int(verse or 0)
+
+
+def merge_aliases(records: list[dict], aliases: dict[str, str]) -> tuple[list[dict], dict[str, list[str]]]:
+    """One place for each pair OpenBible keeps twice (content/place-aliases.json, ADR 0022).
+
+    The retired record leaves the build; its verses join the place's, each once, in the
+    order of the Bible, so no verse is dropped. The place keeps its own identifications:
+    the retired record's are OpenBible's alternative for those few verses, outvoted by
+    "another name for" the place itself. Returns the records and, per place, its aliases.
+    """
+    by_id = {r["id"]: r for r in records}
+    missing = sorted(k for pair in aliases.items() for k in pair if k not in by_id)
+    if missing:
+        raise SystemExit(f"place-aliases: not in OpenBible's records: {', '.join(missing)}")
+    merged: dict[str, list[str]] = {}
+    for pid, into in sorted(aliases.items()):
+        target = by_id[into]
+        seen = {v["osis"] for v in target.get("verses", [])}
+        extra = [v for v in by_id[pid].get("verses", []) if v["osis"] not in seen]
+        target["verses"] = sorted([*target.get("verses", []), *extra], key=lambda v: osis_key(v["osis"]))
+        merged.setdefault(into, []).append(pid)
+    return [r for r in records if r["id"] not in aliases], merged
+
+
+def retarget_refs(collections: list[dict], aliases: dict[str, str]) -> None:
+    """A label that names a retired record ("same place as Ai") names the place it is now."""
+    for fc in collections:
+        for f in fc["features"]:
+            props = f["properties"]
+            for key in ("ref", "where_ref"):
+                if props.get(key) in aliases:
+                    props[key] = aliases[props[key]]
 
 
 POINT_KEYS = ("same_as", "site", "wikidata")
@@ -1058,10 +1109,28 @@ def build_rivers() -> tuple[dict, dict, dict]:
 
 
 MAX_SITES = 6
-# A place is disputed when the runner-up candidate has at least this share of OpenBible's
-# assessment (or nothing is rated). Capernaum, Tell Hum 100 % against Khirbet Minyeh 0 %,
-# is not: its card says "generally agreed" and still lists the minority proposal.
-DISPUTED_MIN_SHARE = 10
+# A place is disputed when the candidates more than DISPUTED_MIN_KM from the leading one (the
+# largest share) together hold at least DISPUTED_MIN_SHARE % of OpenBible's assessment of the
+# candidates shown, or when none is rated. Capernaum, Tell Hum 100 % against Khirbet Minyeh
+# 0 %, is not; nor is a place whose rivals are the same ruin a few hundred metres off, or
+# several minor proposals that are not one rival together (decided by the owner, 2026-11-25:
+# the runner-up at 10 % had made 478 places disputed, now about 280).
+DISPUTED_MIN_SHARE = 20
+DISPUTED_MIN_KM = 5
+
+
+def is_disputed(cands: list[dict]) -> bool:
+    """`cands`: the shown candidates, each with `lon`, `lat` and its `score` (time_total)."""
+    total = sum(max(c["score"], 0) for c in cands)
+    if total <= 0:
+        return True
+    lead = max(cands, key=lambda c: c["score"])
+    far = sum(
+        max(c["score"], 0)
+        for c in cands
+        if great_circle_km((c["lon"], c["lat"]), (lead["lon"], lead["lat"])) > DISPUTED_MIN_KM
+    )
+    return 100 * far / total >= DISPUTED_MIN_SHARE
 
 _REF = r'<(?P<kind>ancient|modern) id="(?P<ref>[^"]+)">(?P<text>[^<]*)</(?P=kind)>'
 # OpenBible writes a candidate site as a modern name or one of a few English templates.
@@ -1144,8 +1213,7 @@ def build_sites(records: list[dict], modern: dict[str, dict]) -> tuple[dict, dic
         if len(cands) < 2:
             continue
         total = sum(max(c["score"], 0) for c in cands)
-        shares = sorted((100 * max(c["score"], 0) / total for c in cands), reverse=True) if total > 0 else []
-        disputed = not shares or round(shares[1]) >= DISPUTED_MIN_SHARE
+        disputed = is_disputed(cands)
         per_place[r["id"]] = (len(cands), disputed)
         for c in cands:
             feats.append({
@@ -1167,11 +1235,16 @@ def main() -> None:
     check_licences(SOURCES, OTHER_SOURCES)
     OUT.mkdir(parents=True, exist_ok=True)
     records = [json.loads(line) for line in fetch("openbible").open(encoding="utf-8")]
+    aliases = load_aliases(ROOT / "content" / "place-aliases.json")
+    records, aliases_of = merge_aliases(records, aliases)
     modern = load_modern()
     sites, sites_per_place, site_stats = build_sites(records, modern)
     rivers, river_labels, river_stats = build_rivers()
     river_places = {f["properties"]["place"] for f in rivers["features"] if "place" in f["properties"]}
     same_as, chosen_sites, region_items = load_place_points(ROOT / "content" / "place-points.json")
+    chosen = {*same_as, *same_as.values(), *chosen_sites, *region_items}
+    if chosen & aliases.keys():
+        raise SystemExit(f"place-points: names a retired record: {', '.join(sorted(chosen & aliases.keys()))}")
     items = json.loads((ROOT / "content" / "wikidata.json").read_text(encoding="utf-8"))["places"]
     fame = json.loads(FAME_FILE.read_text(encoding="utf-8"))["items"]
     coords = wikidata_coords(sorted(set(region_items.values())))
@@ -1182,6 +1255,12 @@ def main() -> None:
     places, place_stats, excluded_places = build_places(
         records, modern, sites_per_place, river_places, same_as, chosen_sites, items, fame, region_points
     )
+    # The ids of the records merged into a place (ADR 0022): a link that names one still opens it.
+    for f in places["features"]:
+        if f["properties"]["id"] in aliases_of:
+            f["properties"]["aliases"] = sorted(aliases_of[f["properties"]["id"]])
+    retarget_refs([places, sites], aliases)
+    place_stats["records_merged_into_another"] = len(aliases)
     # Candidates of a place left out (licence) would be sites of nothing.
     shipped = {f["properties"]["id"] for f in places["features"]}
     sites["features"] = [f for f in sites["features"] if f["properties"]["place"] in shipped]

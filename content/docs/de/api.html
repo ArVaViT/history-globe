@@ -144,6 +144,15 @@ description: Die Orte, die Verse, die sie nennen, die Ereignisse und die Touren 
     <code>"approximate": true</code>.
   </li>
   <li>
+    Ein Ort trägt <code>certainty</code> (<code>settled</code>, <code>most likely</code>,
+    <code>tentative</code>, <code>disputed</code>) und <code>confidence</code>, die Bewertung seiner
+    Identifizierung durch OpenBible.info von 0 bis 1000, wo OpenBible eine gibt; ein Ort mit mehr
+    als einer vorgeschlagenen Stätte führt sie in <code>sites</code> auf, jede mit ihrem Anteil an
+    der Bewertung von OpenBible, einer Schätzung und keinem Konsens der Forschung. Ein Datensatz,
+    den OpenBible für einen Ort doppelt führte, ist mit ihm zusammengelegt: seine id steht in
+    <code>aliases</code>, und Links, die sie verwenden, funktionieren weiter.
+  </li>
+  <li>
     Die Dateien werden mit jeder Veröffentlichung der Daten neu erzeugt; <code>index.json</code>
     nennt deren Datum.
   </li>

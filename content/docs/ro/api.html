@@ -150,6 +150,15 @@ description: Locurile, versetele care le numesc, evenimentele și traseele, ca f
     <code>"approximate": true</code>.
   </li>
   <li>
+    Un loc are <code>certainty</code> (<code>settled</code>, <code>most likely</code>,
+    <code>tentative</code>, <code>disputed</code>) și <code>confidence</code>, punctajul
+    OpenBible.info pentru identificarea lui, de la 0 la 1000, acolo unde OpenBible îl dă; un loc cu
+    mai multe amplasări propuse le enumeră în <code>sites</code>, fiecare cu ponderea ei în
+    evaluarea OpenBible, o estimare și nu un consens științific. O înregistrare pe care OpenBible o
+    ținea de două ori pentru același loc a fost contopită cu el: id-ul ei apare în
+    <code>aliases</code>, iar legăturile care îl folosesc funcționează în continuare.
+  </li>
+  <li>
     Fișierele sunt reconstruite la fiecare lansare a datelor; <code>index.json</code> îi dă data.
   </li>
   <li>

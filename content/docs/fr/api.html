@@ -148,6 +148,15 @@ description: Les lieux, les versets qui les nomment, les événements et les par
     <code>"approximate": true</code>.
   </li>
   <li>
+    Un lieu porte <code>certainty</code> (<code>settled</code>, <code>most likely</code>,
+    <code>tentative</code>, <code>disputed</code>) et <code>confidence</code>, la note
+    d’OpenBible.info pour son identification, de 0 à 1000, quand OpenBible en donne une ; un lieu
+    qui a plus d’un site proposé les énumère dans <code>sites</code>, chacun avec sa part de
+    l’évaluation d’OpenBible, une estimation et non un consensus savant. Une fiche qu’OpenBible
+    tenait deux fois pour un même lieu lui est fusionnée : son id figure dans <code>aliases</code>,
+    et les liens qui l’emploient fonctionnent toujours.
+  </li>
+  <li>
     Les fichiers sont reconstruits à chaque publication des données ; <code>index.json</code> en
     donne la date.
   </li>

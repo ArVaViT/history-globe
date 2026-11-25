@@ -169,6 +169,17 @@ if (!existsSync(openbible)) {
     const r = JSON.parse(line) as { id: string; verses?: { osis: string }[] };
     versesOf.set(r.id, new Set((r.verses ?? []).map((v) => v.osis)));
   }
+  // A record merged into a place (ADR 0022) tags its verses for the place.
+  const merged = (
+    JSON.parse(readFileSync(join(root, "content/place-aliases.json"), "utf8")) as {
+      places: Record<string, { into: string }>;
+    }
+  ).places;
+  for (const [alias, { into }] of Object.entries(merged)) {
+    const own = versesOf.get(into);
+    for (const osis of versesOf.get(alias) ?? []) own?.add(osis);
+    versesOf.delete(alias);
+  }
 }
 /** Tour stops whose passage leaves the place to the preceding chapters. */
 const NAMED_BY_CONTEXT = new Set([

@@ -144,6 +144,15 @@ description: Os lugares, os versículos que os nomeiam, os acontecimentos e os r
     evento, batalha ou roteiro de ano aproximado, <code>"approximate": true</code>.
   </li>
   <li>
+    Um lugar traz <code>certainty</code> (<code>settled</code>, <code>most likely</code>,
+    <code>tentative</code>, <code>disputed</code>) e <code>confidence</code>, a pontuação do
+    OpenBible.info para a sua identificação, de 0 a 1000, quando o OpenBible a dá; um lugar com mais
+    de um local proposto lista-os em <code>sites</code>, cada um com a sua parte na avaliação do
+    OpenBible, uma estimativa e não um consenso acadêmico. Um registro que o OpenBible mantinha duas
+    vezes para o mesmo lugar foi fundido nele: o seu id consta de <code>aliases</code>, e os links
+    que o usam continuam a funcionar.
+  </li>
+  <li>
     Os arquivos são reconstruídos a cada versão dos dados; <code>index.json</code> informa a sua
     data.
   </li>

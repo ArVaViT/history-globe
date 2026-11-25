@@ -146,6 +146,15 @@ description: A helyek, az őket megnevező versek, az események és a túrák J
     hozzávetőleges, <code>"approximate": true</code> jelzést.
   </li>
   <li>
+    Egy helynek van <code>certainty</code> (<code>settled</code>, <code>most likely</code>,
+    <code>tentative</code>, <code>disputed</code>) és <code>confidence</code> mezője, az azonosítás
+    OpenBible.info szerinti pontszáma 0-tól 1000-ig, ahol az OpenBible ad ilyet; ha egy helynek több
+    javasolt helyszíne van, a <code>sites</code> sorolja fel őket, mindegyiket az OpenBible
+    értékelésében kapott részarányával, amely becslés, nem tudományos konszenzus. Az a rekord,
+    amelyet az OpenBible ugyanarra a helyre kétszer vezetett, egyesült vele: az azonosítója az
+    <code>aliases</code> mezőben szerepel, és a rá mutató hivatkozások továbbra is működnek.
+  </li>
+  <li>
     A fájlok az adatok minden kiadásával újraépülnek; az <code>index.json</code> megadja a dátumát.
   </li>
   <li>

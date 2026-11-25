@@ -105,10 +105,13 @@ export function clampYear(year: number): number {
 export function createEngine(options: {
   readonly renderer: Renderer;
   readonly places: ReadonlyMap<string, PlaceInfo>;
+  /** A retired place id → the place it was merged into: an old link still opens the place. */
+  readonly aliases?: ReadonlyMap<string, string>;
   readonly tours?: readonly Tour[];
   readonly initial?: Partial<GlobeState>;
 }): Engine {
   const { renderer, places } = options;
+  const canonical = (id: string) => options.aliases?.get(id) ?? id;
   const greatTowns: GreatTown[] = [];
   for (const p of places.values())
     if (p.great) greatTowns.push({ id: p.id, at: p.at, life: p.great });
@@ -124,8 +127,8 @@ export function createEngine(options: {
     ...initial,
     year: clampYear(initial.year),
     selectedPlace:
-      initial.selectedPlace !== null && places.has(initial.selectedPlace)
-        ? initial.selectedPlace
+      initial.selectedPlace !== null && places.has(canonical(initial.selectedPlace))
+        ? canonical(initial.selectedPlace)
         : null,
   });
 
@@ -161,7 +164,8 @@ export function createEngine(options: {
   sync(store.get(), null);
   const unsubscribe = store.subscribe(sync);
 
-  const selectPlace: Engine["selectPlace"] = (placeId, opts) => {
+  const selectPlace: Engine["selectPlace"] = (asked, opts) => {
+    const placeId = asked === null ? null : canonical(asked);
     if (placeId !== null && !places.has(placeId)) return;
     // Picking another place (map, search, list) during a tour leaves the tour: its card
     // would otherwise stay over the place's and the pick would show nothing.

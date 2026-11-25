@@ -49,6 +49,126 @@
       "permanent": true
     },
     {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/ai-a63c70b",
+      "destination": "/:lang/place/ai/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/ai-a63c70b/",
+      "destination": "/:lang/place/ai/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/arad-a4cea2a",
+      "destination": "/:lang/place/arad/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/arad-a4cea2a/",
+      "destination": "/:lang/place/arad/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/beersheba-a075d61",
+      "destination": "/:lang/place/beersheba/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/beersheba-a075d61/",
+      "destination": "/:lang/place/beersheba/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/bethsaida-a9fc13a",
+      "destination": "/:lang/place/bethsaida/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/bethsaida-a9fc13a/",
+      "destination": "/:lang/place/bethsaida/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/gath-a0ac467",
+      "destination": "/:lang/place/gath-a18873f/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/gath-a0ac467/",
+      "destination": "/:lang/place/gath-a18873f/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/geba-a33cfcc",
+      "destination": "/:lang/place/geba-a264254/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/geba-a33cfcc/",
+      "destination": "/:lang/place/geba-a264254/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/geba-ae14b1d",
+      "destination": "/:lang/place/geba-a264254/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/geba-ae14b1d/",
+      "destination": "/:lang/place/geba-a264254/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/gederah-a0a5b78",
+      "destination": "/:lang/place/gederah-a12012d/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/gederah-a0a5b78/",
+      "destination": "/:lang/place/gederah-a12012d/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/hamath-aa9c505",
+      "destination": "/:lang/place/hamath/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/hamath-aa9c505/",
+      "destination": "/:lang/place/hamath/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/havilah-a1d9047",
+      "destination": "/:lang/place/havilah-ac5e5c4/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/havilah-a1d9047/",
+      "destination": "/:lang/place/havilah-ac5e5c4/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/kedesh-a662eed",
+      "destination": "/:lang/place/kedesh-a321cb8/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/kedesh-a662eed/",
+      "destination": "/:lang/place/kedesh-a321cb8/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/ramah-a75be6f",
+      "destination": "/:lang/place/ramah-a6d57ed/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/ramah-a75be6f/",
+      "destination": "/:lang/place/ramah-a6d57ed/",
+      "permanent": true
+    },
+    {
       "source": "/:file((?:[^/]+/)*[^/]+\\.html)/",
       "destination": "/:file",
       "permanent": true

@@ -138,6 +138,15 @@ description: The places, the verses that name them, the events and the tours as 
     is approximate, <code>"approximate": true</code>.
   </li>
   <li>
+    A place carries <code>certainty</code> (<code>settled</code>, <code>most likely</code>,
+    <code>tentative</code>, <code>disputed</code>) and <code>confidence</code>, OpenBible.info’s
+    score of its identification from 0 to 1000, where OpenBible gives one; a place with more than
+    one proposed site lists them in <code>sites</code>, each with its share of OpenBible’s
+    assessment, an estimate and not a scholarly consensus. A record OpenBible kept twice for one
+    place is merged into it: its id is listed in <code>aliases</code>, and links that use it still
+    work.
+  </li>
+  <li>
     The files are rebuilt with every release of the data; <code>index.json</code> gives its date.
   </li>
   <li>

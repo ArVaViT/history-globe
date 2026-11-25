@@ -374,12 +374,6 @@ places:
     evidence:
       osis: Matt.21.1
       excerpt: "к Иерусалиму и пришли в Виффагию к горе Елеонской, тогда"
-  - id: a9fc13a
-    en: "Bethsaida 2"
-    ru: "Вифсаида"
-    evidence:
-      osis: Mark.6.45
-      excerpt: "вперед на другую сторону к Вифсаиде, пока Он отпустит народ."
   - id: a581f0c
     en: "Canaan"
     ru: "Ханаан"
@@ -1823,24 +1817,12 @@ places:
     evidence:
       osis: Acts.27.8
       excerpt: "к одному месту, называемому Хорошие Пристани, близ которого был город"
-  - id: a33cfcc
-    en: "Geba"
-    ru: "Гева"
-    evidence:
-      osis: 2Kgs.23.8
-      excerpt: "совершали курения жрецы, от Гевы до Вирсавии, и разрушил высоты"
   - id: a2f0f05
     en: "Gibeah"
     ru: "Гива"
     evidence:
       osis: Josh.15.57
       excerpt: "Каин, Гива и Фимна: десять городов с их селами."
-  - id: aa9c505
-    en: "Hamath"
-    ru: "Емаф"
-    evidence:
-      osis: 2Kgs.17.24
-      excerpt: "из Аввы, и из Емафа, и из Сепарваима, и поселил"
   - id: aeb09c0
     en: "Helam"
     ru: "Елам"
@@ -1979,12 +1961,6 @@ places:
     evidence:
       osis: Josh.19.30
       excerpt: "далее: Умма, Афек и Рехов: двадцать два города с селами"
-  - id: a4cea2a
-    en: "Arad"
-    ru: "Арад"
-    evidence:
-      osis: Judg.1.16
-      excerpt: "которая на юг от Арада, и пришли и поселились среди"
   - id: a0e21ff
     en: "Athach"
     ru: "Атах"
@@ -2099,12 +2075,6 @@ places:
     evidence:
       osis: Josh.19.7
       excerpt: "Аин, Риммон, Ефер и Ашан: четыре города с селами их,"
-  - id: ae14b1d
-    en: "Geba"
-    ru: "Гева"
-    evidence:
-      osis: Josh.18.24
-      excerpt: "Кефар-Аммонай, Афни и Гева: двенадцать городов с их селами."
   - id: ac36af4
     en: "Gederothaim"
     ru: "Гедерофаим"
@@ -3724,12 +3694,6 @@ places:
     evidence:
       osis: Josh.19.25
       excerpt: "пределом их были: Хелкаф, Хали, Ветен и Ахсаф,"
-  - id: a662eed
-    en: "Kedesh"
-    ru: "Кедес"
-    evidence:
-      osis: Josh.19.37
-      excerpt: "Кедес, Едрея и Ен-Гацор,"
   - id: a8661e2
     en: "Madmannah"
     ru: "Мадмана"
@@ -4325,12 +4289,6 @@ places:
     evidence:
       osis: Josh.11.1
       excerpt: "Услышав сие, Иавин, царь Асорский, послал к Иоваву, царю Мадонскому,"
-  - id: a075d61
-    en: "Beersheba"
-    ru: "Вирсавия"
-    evidence:
-      osis: Gen.21.31
-      excerpt: "назвал он сие место: Вирсавия, ибо тут оба они клялись"
   - id: af82614
     en: "Adullam"
     ru: "Одоллам"
@@ -5030,12 +4988,6 @@ places:
     evidence:
       osis: Jer.19.2
       excerpt: "сыновей Енномовых, которая у ворот Харшиф, и провозгласи там слова,"
-  - id: a75be6f
-    en: "Ramah"
-    ru: "Рама"
-    evidence:
-      osis: Neh.11.33
-      excerpt: "Гацоре, Раме, Гиффаиме,"
   - id: ada2a0b
     en: "Ramoth"
     ru: "Рамоф"
@@ -6112,12 +6064,6 @@ places:
   - id: ac6b210
     en: "Naamah"
     ru: "Наема"
-  - id: a63c70b
-    en: "Ai"
-    ru: "Гай"
-    evidence:
-      osis: Ezra.2.28
-      excerpt: "жителей Вефиля и Гая двести двадцать три"
   - id: a4e39f6
     en: "Galilee"
     ru: "Галилея"
@@ -6726,12 +6672,6 @@ places:
     evidence:
       osis: Gen.25.18
       excerpt: "Они жили от Хавилы до Сура"
-  - id: a1d9047
-    en: "Havilah 3"
-    ru: "Хавила"
-    evidence:
-      osis: 1Sam.15.7
-      excerpt: "поразил Саул Амалика от Хавилы"
   - id: a8a8e54
     en: "Helbon"
     ru: "Хелбон"
@@ -7437,16 +7377,7 @@ places:
     en: "Gamad"
     ru: "Гамад"
   # synodal: Выведено из «Гефянин»; форма «Геф» — 1 Цар 27:4 и др.
-  - id: a0ac467
-    en: "Gath"
-    ru: "Геф"
-    evidence:
-      osis: 2Sam.6.10
-      excerpt: "в город Давидов, а обратил его в дом Аведдара Гефянина."
   # dictionary: Синодальный переводит: «в огородах». Форма «Гедера» — Нав 15:36 (как у a12012d).
-  - id: a0a5b78
-    en: "Gederah"
-    ru: "Гедера"
   # synodal: В стихе места (1 Пар 4:39) синодальный читает «до Герары» (по LXX); форма «Гедор» — Нав 15:58.
   - id: a2fc530
     en: "Gedor"

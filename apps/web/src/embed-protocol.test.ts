@@ -54,6 +54,7 @@ function engine(more: Record<string, unknown> = {}) {
 const data = {
   tours: [{ id: "paul-1" }],
   byId: new Map([["a15257a", {}]]),
+  aliases: new Map<string, string>(),
 } as unknown as LoadedData;
 
 describe("the embed protocol, as a host's untrusted messages reach it", () => {

@@ -1,0 +1,53 @@
+{
+  "_source": "Records OpenBible.info keeps twice for one place under one name, merged into one (ADR 0022; pipeline/build_data.py, merge_aliases). The key is the retired record, `into` the place it is merged into: its verses join that place's, its id stays an alias of it (places.json `aliases`, ?place=, the old page redirects in apps/web/vercel.json). Merged only where all of these hold: the two stand on one point under one English name and one kind; STEPBible's TIPNR has them as one record; and the retired record's leading identification on OpenBible, held by more than half of its votes (OpenBible's vote_count), is 'another name for' the other. The other same-name pairs on one point, and why they stay apart, are listed in docs/crosswalk/their-errors.md (item 17). Checked 2026-11-25.",
+  "places": {
+    "a63c70b": {
+      "into": "a7e13e1",
+      "why": "Ai 3 (Ezra.2.28, Neh.7.32) is Ai 1: OpenBible's leading identification of it, 'another name for Ai 1', has 10 of its 14 votes (others: Khirbet Haiyan 4); one record in STEPBible TIPNR (Ai@Gen.12.8-Isa); one point, one kind."
+    },
+    "a4cea2a": {
+      "into": "abc358b",
+      "why": "Arad 2 (Judg.1.16) is Arad 1: OpenBible's leading identification of it, 'another name for Arad 1', has 11 of its 19 votes (others: Tel Arad 8); one record in STEPBible TIPNR (Arad@Num.21.1-Jdg); one point, one kind."
+    },
+    "a075d61": {
+      "into": "ad2f6c2",
+      "why": "Beersheba 2 (Gen.21.14, Gen.21.31, Gen.21.32, Gen.21.33, Gen.22.19, Gen.26.23, Gen.26.33, Gen.28.10, Gen.46.1, Gen.46.5) is Beersheba 1: OpenBible's leading identification of it, 'another name for Beersheba 1', has 21 of its 33 votes (others: Bir es Seba 12); one record in STEPBible TIPNR (Beersheba@Gen.21.14-Amo); one point, one kind."
+    },
+    "a9fc13a": {
+      "into": "a91b732",
+      "why": "Bethsaida 2 (Mark.6.45, Mark.8.22, Luke.9.10) is Bethsaida 1: OpenBible's leading identification of it, 'another name for Bethsaida 1', has 18 of its 25 votes (others: At Tell 6; El Mess’adiyye 1); one record in STEPBible TIPNR (Bethsaida@Mat.11.21-Jhn); one point, one kind."
+    },
+    "a0ac467": {
+      "into": "a18873f",
+      "why": "Gath 3 (2Sam.6.10, 1Chr.13.13) is Gath 1: OpenBible's leading identification of it, 'another name for Gath 1', has 12 of its 20 votes (others: another name for Gath-rimmon 1 6; another name for Gath-hepher 1; another name for Gittaim 1); one record in STEPBible TIPNR (Gath@Jos.11.22-Mic); one point, one kind."
+    },
+    "a33cfcc": {
+      "into": "a264254",
+      "why": "Geba 3 (2Kgs.23.8, Zech.14.10) is Geba 1: OpenBible's leading identification of it, 'another name for Geba 1', has 14 of its 20 votes (others: Khirbet et Tell 6); one record in STEPBible TIPNR (Geba@Jos.18.24-Zec); one point, one kind."
+    },
+    "ae14b1d": {
+      "into": "a264254",
+      "why": "Geba 4 (Josh.18.24) is Geba 1: OpenBible's leading identification of it, 'another name for Geba 1', has 11 of its 17 votes (others: Burj el Bardawil 1; Khirbet et Tell 3; Jaba 2); one record in STEPBible TIPNR (Geba@Jos.18.24-Zec); one point, one kind."
+    },
+    "a0a5b78": {
+      "into": "a12012d",
+      "why": "Gederah 3 (1Chr.4.23) is Gederah 1: OpenBible's leading identification of it, 'another name for Gederah 1', has 13 of its 14 votes (others: Tel Goded 1); one record in STEPBible TIPNR (Gederah@Jos.15.36-1Ch); one point, one kind."
+    },
+    "aa9c505": {
+      "into": "ac62cbc",
+      "why": "Hamath 2 (2Kgs.17.24, 2Kgs.17.30) is Hamath 1: OpenBible's leading identification of it, 'another name for Hamath 1', has 17 of its 18 votes (others: another name for Amate 1); one record in STEPBible TIPNR (Hamath@Num.13.21-Zec); one point, one kind."
+    },
+    "a1d9047": {
+      "into": "ac5e5c4",
+      "why": "Havilah 3 (1Sam.15.7) is Havilah 2: OpenBible's leading identification of it, 'another name for Havilah 2', has 15 of its 18 votes (others: another name for Hachilah 3); one record in STEPBible TIPNR (Havilah@Gen.25.18-1Sa); one point, one kind."
+    },
+    "a662eed": {
+      "into": "a321cb8",
+      "why": "Kedesh 5 (Josh.19.37, Josh.20.7) is Kedesh 1: OpenBible's leading identification of it, 'another name for Kedesh 1', has 17 of its 20 votes (others: Tel Kedesh 2; another name for Kedesh-naphtali 1); one record in STEPBible TIPNR (Kedesh@Jos.12.22-1Ch); one point, one kind."
+    },
+    "a75be6f": {
+      "into": "a6d57ed",
+      "why": "Ramah 7 (Neh.11.33) is Ramah 1: OpenBible's leading identification of it, 'another name for Ramah 1', has 12 of its 15 votes (others: Rameh 2; another name for Ramah 4 1); one record in STEPBible TIPNR (Ramah@Jos.18.25-Mat); one point, one kind."
+    }
+  }
+}

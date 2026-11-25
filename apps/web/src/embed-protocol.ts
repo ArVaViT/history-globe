@@ -110,12 +110,14 @@ export function attachEmbed(
     // flown to again (the reader may have moved away) unless the view names a camera too: a
     // host that sends back the view it was told keeps the camera the reader left.
     if (v.place === null) clear();
+    // A merged record's old id names its place (ADR 0022).
+    const place = typeof v.place === "string" ? (data.aliases.get(v.place) ?? v.place) : null;
     if (
-      typeof v.place === "string" &&
-      data.byId.has(v.place) &&
-      (v.place !== s.selectedPlace || v.camera === undefined)
+      place !== null &&
+      data.byId.has(place) &&
+      (place !== s.selectedPlace || v.camera === undefined)
     )
-      engine.selectPlace(v.place);
+      engine.selectPlace(place);
     if (v.layers)
       for (const k of LAYERS) {
         const on = v.layers[k];
