@@ -118,6 +118,28 @@ export function openApi(version: string): object {
           description: "Names in the languages other than English, where there is one",
           additionalProperties: { type: "string" },
         },
+        CandidateSite: {
+          type: "object",
+          description: "A candidate site of a place",
+          properties: {
+            name: {
+              type: "string",
+              description:
+                'The site in English, as OpenBible words it: a modern name ("Tell el Kheleifeh") or a relation ("same place as Elath")',
+            },
+            names: ref("Names"),
+            lon: { type: "number" },
+            lat: { type: "number" },
+            share: {
+              type: "integer",
+              minimum: 0,
+              maximum: 100,
+              description:
+                "Its share, in per cent, of OpenBible.info's assessment of the sites listed; absent where OpenBible assesses none of them",
+            },
+          },
+          required: ["name", "lon", "lat"],
+        },
         Pages: {
           type: "object",
           description: "The page on historyglobe.app in each language (paths from the site root)",
@@ -179,10 +201,35 @@ export function openApi(version: string): object {
               const: true,
               description: "Several candidate sites are serious",
             },
+            certainty: {
+              type: "string",
+              enum: ["settled", "most likely", "tentative", "disputed"],
+              description:
+                "How sure the identification is: disputed when a second candidate site has at least 10 % of OpenBible's assessment, otherwise by OpenBible's score of the site shown (settled from 800, most likely from 600, tentative below). Absent where OpenBible gives no score",
+            },
+            confidence: {
+              type: "integer",
+              minimum: 0,
+              maximum: 1000,
+              description:
+                "OpenBible.info's time-weighted score of the identification shown, 0 to 1000: its estimate, not a scholarly consensus",
+            },
+            sites: {
+              type: "array",
+              description:
+                "The candidate sites, where OpenBible gives more than one, in its order (at most six): the map's point is one of them",
+              items: ref("CandidateSite"),
+            },
             duplicate: {
               type: "boolean",
               const: true,
               description: "Another record of the same place under a repeated name",
+            },
+            aliases: {
+              type: "array",
+              items: { type: "string" },
+              description:
+                "Ids of OpenBible records merged into this place (the same place under the same name, kept twice by the source): they no longer appear on their own, and the map and the pages still answer to them",
             },
             verses: { type: "integer", description: "How many verses name it" },
             wikidata: {

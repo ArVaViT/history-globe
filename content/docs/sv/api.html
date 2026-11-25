@@ -139,6 +139,15 @@ description: Platserna, de verser som nämner dem, händelserna och rundturerna 
     plats vars läge är omstritt har <code>"disputed": true</code>; en händelse, ett slag eller en
     rundtur med ungefärligt år har <code>"approximate": true</code>.
   </li>
+  <li>
+    En plats har <code>certainty</code> (<code>settled</code>, <code>most likely</code>,
+    <code>tentative</code>, <code>disputed</code>) och <code>confidence</code>, OpenBible.info:s
+    poäng för identifieringen från 0 till 1000, där OpenBible ger en; en plats med mer än ett
+    föreslaget läge listar dem i <code>sites</code>, vart och ett med sin andel av OpenBibles
+    bedömning, en uppskattning och inte forskarnas samsyn. En post som OpenBible hade två gånger för
+    samma plats har slagits ihop med den: dess id står i <code>aliases</code>, och länkar som
+    använder det fungerar fortfarande.
+  </li>
   <li>Filerna byggs om med varje utgåva av datan; <code>index.json</code> anger dess datum.</li>
   <li>
     Version 1 växer bara: fält och filer läggs till, aldrig byter namn eller tas bort. Ignorera ett

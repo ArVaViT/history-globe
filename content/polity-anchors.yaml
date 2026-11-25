@@ -835,22 +835,6 @@ anchors:
     sources:
       - "Josephus, Jewish War 2.459; 4.104-105"
 
-  - name: Kedesh, a village of Tyre (second record)
-    place: a662eed
-    periods:
-      - { first_year: "198 BC", last_year: "127 BC", polity: Seleucid Empire }
-      - { first_year: "78 BC", last_year: "68 BC", polity: Kingdom of Armenia }
-      - { first_year: "67 BC", last_year: "65 BC", polity: Seleucid Empire }
-      - { first_year: "64 BC", last_year: "33 BC", polity: Roman Republic }
-      - { first_year: "32 BC", last_year: "AD 66", polity: Roman Empire }
-    blank:
-      - first_year: "126 BC"
-        last_year: "79 BC"
-        reason: >-
-          With free Tyre, which no state of the data draws.
-    sources:
-      - "Josephus, Jewish War 2.459; 4.104-105"
-
   - name: Caesarea Philippi under Agrippa II
     place: ab7bf48
     periods:
@@ -871,15 +855,6 @@ anchors:
 
   - name: Bethsaida under Agrippa II
     place: a91b732
-    periods:
-      - { first_year: "AD 45", last_year: "AD 52", polity: Roman Empire }
-      - { first_year: "AD 53", last_year: "AD 92", polity: Kingdom of Agrippa II }
-      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
-    sources:
-      - "Josephus, Antiquities 20.138; Jewish War 2.247"
-
-  - name: Bethsaida under Agrippa II (second record)
-    place: a9fc13a
     periods:
       - { first_year: "AD 45", last_year: "AD 52", polity: Roman Empire }
       - { first_year: "AD 53", last_year: "AD 92", polity: Kingdom of Agrippa II }

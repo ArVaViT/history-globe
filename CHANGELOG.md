@@ -9,6 +9,24 @@ pull requests on GitHub have them.
 
 ## Unreleased
 
+- Places (`places.json`, `places.geojson`, the dataset): fourteen records OpenBible kept twice
+  for one place under one name on one point are merged into the other (ADR 0022): Ai,
+  Arad, Bealoth, Beersheba, Bethsaida, Galilee, Gath, Geba (two), Gederah, Hamath, Havilah,
+  Kedesh, Ramah. The place takes every verse of the retired record, so
+  `verses/<Book>.json` now names the place for them. The retired ids are listed in the
+  place's new field `aliases` (also a column of the dataset's `places`); `?place=` and the
+  old pages (`/en/place/ai-a63c70b/`) still lead to the place. The other 36 pairs on one
+  point stay apart, with the reason (docs/crosswalk/their-errors.md, item 17).
+- Places (`places.json`): new fields `certainty` (`settled`, `most likely`, `tentative` or
+  `disputed`, as the dataset's column), `confidence` (OpenBible.info's score of the
+  identification, 0–1000) and `sites` (the candidate sites with their names, points and
+  shares of OpenBible's assessment), where OpenBible gives them. The place pages of a
+  disputed place now list the candidate sites with their shares, as the map's card does.
+- Ezion-geber is on Tell el-Kheleifeh, which most reference works, OpenBible's count of
+  sources (28 to 15) and Wikidata hold, instead of Jezirat Faraun, which leads only by
+  OpenBible's recent-trend weighting; it stays disputed, Jezirat Faraun and Elath its other
+  candidates (docs/crosswalk/their-errors.md, item 16).
+
 - Tours (`constantine`): Helena's church on the Mount of Olives, the Eleona, has its own stop
   after Bethlehem, over the cave where Jesus was remembered as teaching his disciples; the
   Bethlehem stop keeps the Nativity cave alone, and neither says the church marked the

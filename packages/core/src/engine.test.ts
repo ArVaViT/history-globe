@@ -125,6 +125,20 @@ describe("engine", () => {
     expect(engine.store.get().selectedPlace).toBeNull();
   });
 
+  it("opens a merged record's place by the record's old id", () => {
+    const aliases = new Map([["capernaum-2", "capernaum"]]);
+    const engine = createEngine({
+      renderer: new FakeRenderer(),
+      places,
+      aliases,
+      initial: { selectedPlace: "capernaum-2" },
+    });
+    expect(engine.store.get().selectedPlace).toBe("capernaum");
+    engine.selectPlace(null);
+    engine.selectPlace("capernaum-2");
+    expect(engine.store.get().selectedPlace).toBe("capernaum");
+  });
+
   it("selects without flying when the user clicks the map", () => {
     const { renderer } = setup();
     const flights = renderer.calls.filter((c) => c.op === "flyTo").length;

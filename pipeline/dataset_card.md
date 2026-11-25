@@ -116,6 +116,7 @@ Always join on ids, not names: names repeat (two Jerichos are two places). `same
 | `candidate_sites`     | how many proposed sites `place_sites` lists for the place (0 when one)                                                |
 | `verse_count`         | how many verses name the place                                                                                        |
 | `duplicate`           | `true` for a second record OpenBible keeps for the same place under a repeated name                                   |
+| `aliases`             | ids of OpenBible records merged into this place (one place kept twice under one name), separated by spaces            |
 | `wikidata`            | the Wikidata item (`Q…`)                                                                                              |
 | `pleiades`            | the place in Pleiades, as a link                                                                                      |
 | `tipnr`               | STEPBible's TIPNR name for the place, in STEPBible's abbreviations (`Abana@2Ki.5.12`)                                 |

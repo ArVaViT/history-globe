@@ -121,10 +121,13 @@ export function searchResult(ctx: AgentContext, input: Record<string, unknown>) 
 /** A place by its id ("a15257a"), its page's slug ("jerusalem") or its exact name. */
 export function findPlace(data: LoadedData, key: string): PlaceProps | undefined {
   const k = key.trim();
-  const byId = data.byId.get(k)?.props;
+  const byId = data.byId.get(data.aliases.get(k) ?? k)?.props;
   if (byId) return byId;
   const slug = k.toLowerCase().replace(/\/+$/, "").split("/").pop() ?? "";
   for (const [id, s] of slugs(data)) if (s === slug) return data.byId.get(id)?.props;
+  // A merged record's old page ("ai-a63c70b", ADR 0022) ends in its id.
+  const retired = data.aliases.get(/-(a[0-9a-f]+)$/.exec(slug)?.[1] ?? "");
+  if (retired) return data.byId.get(retired)?.props;
   const folded = foldName(k);
   return searchPlaces(data, k, 1).find(
     ({ props: p }) =>

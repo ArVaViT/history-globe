@@ -140,6 +140,15 @@ description: Stedene, versene som nevner dem, hendelsene og rutene som JSON-file
     <code>"approximate": true</code>.
   </li>
   <li>
+    Et sted har <code>certainty</code> (<code>settled</code>, <code>most likely</code>,
+    <code>tentative</code>, <code>disputed</code>) og <code>confidence</code>, OpenBible.infos
+    poengsum for identifiseringen fra 0 til 1000, der OpenBible gir en; et sted med mer enn ett
+    foreslått sted lister dem i <code>sites</code>, hvert med sin andel av OpenBibles vurdering, et
+    anslag og ikke en faglig konsensus. En post som OpenBible hadde to ganger for samme sted, er
+    slått sammen med det: id-en står i <code>aliases</code>, og lenker som bruker den, virker
+    fortsatt.
+  </li>
+  <li>
     Filene bygges på nytt ved hver utgivelse av dataene; <code>index.json</code> oppgir datoen.
   </li>
   <li>

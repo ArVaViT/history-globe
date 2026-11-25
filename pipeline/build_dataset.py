@@ -144,6 +144,7 @@ def build(api: pathlib.Path, data: pathlib.Path) -> tuple[dict[str, tuple[list[s
                 "candidate_sites": g.get("sites", 0),
                 "verse_count": p["verses"],
                 "duplicate": bool(p.get("duplicate")),
+                "aliases": " ".join(p.get("aliases") or []),
                 "wikidata": p.get("wikidata", ""),
                 "pleiades": f"https://pleiades.stoa.org/places/{p['pleiades']}" if p.get("pleiades") else "",
                 "tipnr": p.get("tipnr", ""),

@@ -37,6 +37,8 @@ export interface PlaceProps {
   readonly confidence?: number;
   /** A second record of the same name on the same point: dot only, not listed twice. */
   readonly dup?: boolean;
+  /** Ids of OpenBible records merged into this place (ADR 0022): a link naming one opens it. */
+  readonly aliases?: readonly string[];
   /** The same in Russian: another record on this point has the same Russian name. */
   readonly dup_ru?: boolean;
   /** First year the place stood, astronomical (content/place-life.yaml). */
@@ -131,6 +133,8 @@ export function standingYear(
 export interface LoadedData {
   readonly places: FeatureCollection<Point, PlaceProps>;
   readonly byId: ReadonlyMap<string, { readonly props: PlaceProps; readonly info: PlaceInfo }>;
+  /** A retired record's id → the place it was merged into (ADR 0022). */
+  readonly aliases: ReadonlyMap<string, string>;
   readonly tours: readonly (Tour & {
     readonly title: Readonly<Record<string, string>>;
     /** The year is a conventional point (debated chronology). */
@@ -490,6 +494,9 @@ export async function loadData(): Promise<LoadedData> {
   return {
     places,
     byId,
+    aliases: new Map(
+      places.features.flatMap((f) => (f.properties.aliases ?? []).map((a) => [a, f.properties.id])),
+    ),
     tours,
     sites,
     alsoHere: here,

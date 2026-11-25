@@ -11,7 +11,10 @@ from pipeline.build_data import (
     banned_lonlats,
     build_coast,
     build_places,
+    load_aliases,
     load_place_points,
+    merge_aliases,
+    retarget_refs,
     pick_site,
     clip_ring,
     join_holes,
@@ -253,6 +256,52 @@ class LoadPlacePoints(unittest.TestCase):
                 self.assertNotIn(target, seen, f"same_as of {pid} runs in a circle")
                 seen.add(target)
                 target = same_as[target]
+
+
+class MergeAliases(unittest.TestCase):
+    """One place kept twice by OpenBible becomes one (content/place-aliases.json, ADR 0022)."""
+
+    def verse(self, osis: str) -> dict:
+        return {"osis": osis}
+
+    def test_the_place_takes_every_verse_once_in_the_order_of_the_bible(self) -> None:
+        ai = {"id": "ai1", "verses": [self.verse("Josh.7.2"), self.verse("Gen.12.8")]}
+        ai3 = {"id": "ai3", "verses": [self.verse("Neh.7.32"), self.verse("Josh.7.2"), self.verse("Ezra.2.28")]}
+        other = {"id": "x", "verses": [self.verse("Gen.1.1")]}
+        records, merged = merge_aliases([ai, ai3, other], {"ai3": "ai1"})
+        self.assertEqual([r["id"] for r in records], ["ai1", "x"])
+        self.assertEqual([v["osis"] for v in records[0]["verses"]], ["Gen.12.8", "Josh.7.2", "Ezra.2.28", "Neh.7.32"])
+        self.assertEqual(merged, {"ai1": ["ai3"]})
+
+    def test_an_unknown_record_stops_the_build(self) -> None:
+        with self.assertRaises(SystemExit):
+            merge_aliases([{"id": "a", "verses": []}], {"b": "a"})
+
+    def test_a_label_naming_a_retired_record_names_the_place(self) -> None:
+        fc = {"features": [{"properties": {"ref": "ai3", "where_ref": "ai3"}}, {"properties": {"ref": "x"}}]}
+        retarget_refs([fc], {"ai3": "ai1"})
+        self.assertEqual(fc["features"][0]["properties"], {"ref": "ai1", "where_ref": "ai1"})
+        self.assertEqual(fc["features"][1]["properties"], {"ref": "x"})
+
+    def test_a_chain_or_a_loop_is_refused(self) -> None:
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as d:
+            path = pathlib.Path(d) / "place-aliases.json"
+            path.write_text(json.dumps({"places": {"a": {"into": "b"}, "b": {"into": "c"}}}))
+            with self.assertRaises(SystemExit):
+                load_aliases(path)
+            path.write_text(json.dumps({"places": {"a": {"into": "a"}}}))
+            with self.assertRaises(SystemExit):
+                load_aliases(path)
+
+    def test_the_real_file_loads_and_every_merge_says_why(self) -> None:
+        path = pathlib.Path(__file__).resolve().parent.parent / "content" / "place-aliases.json"
+        aliases = load_aliases(path)
+        places = json.loads(path.read_text(encoding="utf-8"))["places"]
+        self.assertEqual(len(aliases), len(places))
+        for pid, o in places.items():
+            self.assertTrue(o.get("why", "").strip(), f"{pid} has no why")
 
 
 class Rank(unittest.TestCase):
