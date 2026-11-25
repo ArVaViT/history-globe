@@ -20,7 +20,7 @@ import urllib.parse
 import zipfile
 
 from pipeline.bible_books import OSIS_ORDER
-from pipeline.geo import BBOX, simplify
+from pipeline.geo import BBOX, great_circle_km, simplify
 from pipeline.net import get, wikidata_get
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -1109,10 +1109,28 @@ def build_rivers() -> tuple[dict, dict, dict]:
 
 
 MAX_SITES = 6
-# A place is disputed when the runner-up candidate has at least this share of OpenBible's
-# assessment (or nothing is rated). Capernaum, Tell Hum 100 % against Khirbet Minyeh 0 %,
-# is not: its card says "generally agreed" and still lists the minority proposal.
-DISPUTED_MIN_SHARE = 10
+# A place is disputed when the candidates more than DISPUTED_MIN_KM from the leading one (the
+# largest share) together hold at least DISPUTED_MIN_SHARE % of OpenBible's assessment of the
+# candidates shown, or when none is rated. Capernaum, Tell Hum 100 % against Khirbet Minyeh
+# 0 %, is not; nor is a place whose rivals are the same ruin a few hundred metres off, or
+# several minor proposals that are not one rival together (decided by the owner, 2026-11-25:
+# the runner-up at 10 % had made 478 places disputed, now about 280).
+DISPUTED_MIN_SHARE = 20
+DISPUTED_MIN_KM = 5
+
+
+def is_disputed(cands: list[dict]) -> bool:
+    """`cands`: the shown candidates, each with `lon`, `lat` and its `score` (time_total)."""
+    total = sum(max(c["score"], 0) for c in cands)
+    if total <= 0:
+        return True
+    lead = max(cands, key=lambda c: c["score"])
+    far = sum(
+        max(c["score"], 0)
+        for c in cands
+        if great_circle_km((c["lon"], c["lat"]), (lead["lon"], lead["lat"])) > DISPUTED_MIN_KM
+    )
+    return 100 * far / total >= DISPUTED_MIN_SHARE
 
 _REF = r'<(?P<kind>ancient|modern) id="(?P<ref>[^"]+)">(?P<text>[^<]*)</(?P=kind)>'
 # OpenBible writes a candidate site as a modern name or one of a few English templates.
@@ -1195,8 +1213,7 @@ def build_sites(records: list[dict], modern: dict[str, dict]) -> tuple[dict, dic
         if len(cands) < 2:
             continue
         total = sum(max(c["score"], 0) for c in cands)
-        shares = sorted((100 * max(c["score"], 0) / total for c in cands), reverse=True) if total > 0 else []
-        disputed = not shares or round(shares[1]) >= DISPUTED_MIN_SHARE
+        disputed = is_disputed(cands)
         per_place[r["id"]] = (len(cands), disputed)
         for c in cands:
             feats.append({

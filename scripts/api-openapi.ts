@@ -205,7 +205,7 @@ export function openApi(version: string): object {
               type: "string",
               enum: ["settled", "most likely", "tentative", "disputed"],
               description:
-                "How sure the identification is: disputed when a second candidate site has at least 10 % of OpenBible's assessment, otherwise by OpenBible's score of the site shown (settled from 800, most likely from 600, tentative below). Absent where OpenBible gives no score",
+                "How sure the identification is: disputed when the candidate sites more than 5 km from the leading one together hold at least 20 % of OpenBible's assessment of the sites shown (or none is assessed), otherwise by OpenBible's score of the site shown (settled from 800, most likely from 600, tentative below). Absent where OpenBible gives no score",
             },
             confidence: {
               type: "integer",

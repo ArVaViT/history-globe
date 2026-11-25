@@ -22,7 +22,7 @@ pages (`/en/place/ai-a63c70b/`), tours and links people keep.
   its own identifications. The place carries `aliases`, the retired ids.
 - A pair is merged only when all of these hold: one point, one English name, one kind; one
   record in STEPBible's TIPNR; and the retired record's leading identification on
-  OpenBible, held by more than half of its sources, is "another name for" the other. Any
+  OpenBible, held by more than half of its votes, is "another name for" the other. Any
   other pair stays as it is (docs/crosswalk/their-errors.md, item 17, lists them and why).
 - An old id keeps working: the map's `?place=`, `measure=`, the embed's `place` and the
   WebMCP tools open the place (`createEngine`'s `aliases`); the old page redirects to the
@@ -43,12 +43,19 @@ pages (`/en/place/ai-a63c70b/`), tours and links people keep.
 - `verses/<Book>.json` names the place for the retired record's verses, not the retired id.
   A reader that kept a retired id finds it under `aliases`.
 - The retired record's own minority identification is no longer a candidate of its own; the
-  article may say it. Gath 3 (Obed-edom the Gittite) loses Gath-rimmon (6 of OpenBible's 20
-  sources); Galilee 2 (Josh 12:23, "the king of the nations of Gilgal", which TIPNR files
-  under Galilee: "spelled Gilgal|Galilee") loses Jiljuliyeh (7 of 19).
-- The rule is necessary, not sufficient: each pair is read against its verses. Bealoth 2
-  (1 Kgs 4:16) passes it and stays apart: Baanah's district "in Asher and in Aloth" is in
-  the north, not the Negeb town of Josh 15:24; on OpenBible "not a proper name" has 50 votes
-  against 12 for Bealoth 1, and TIPNR marks the verse as the same form with another meaning.
+  article may say it. Gath 3 (Obed-edom the Gittite) loses Gath-rimmon (6 of its 20 votes
+  on OpenBible; votes are OpenBible's `vote_count`, not distinct sources).
+- The rule is necessary, not sufficient: each pair is read against its verses, and two that
+  pass it stay apart. Bealoth 2 (1 Kgs 4:16): Baanah's district "in Asher and in Aloth" is in
+  the north, not the Negeb town of Josh 15:24; on OpenBible "not a proper name" has a vote
+  weight (`vote_total`) of 50 against 12 for Bealoth 1, and TIPNR marks the verse as the same
+  form with another meaning. Galilee 2 (Josh 12:23): the record is split by a reading, not by
+  a verse: 8 of 10 translations read "Gilgal" there, OpenBible notes that some have
+  "Gilgal", and it is the only record of that word with a real candidate of its own,
+  Jiljuliyeh (7 of 19 votes).
+- Decided with it (2026-11-25), since the merged places are counted by it: a place is
+  disputed when the candidates more than 5 km from the leading one together hold at least
+  20 % of OpenBible's assessment of the sites shown, or none is assessed
+  (`pipeline/build_data.py`, `is_disputed`), no longer when the runner-up alone holds 10 %.
 - Merging is by hand, record by record: a rebuild of OpenBible's data does not merge or split
   anything by itself.

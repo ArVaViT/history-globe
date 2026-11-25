@@ -89,16 +89,6 @@
       "permanent": true
     },
     {
-      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/galilee-a4e39f6",
-      "destination": "/:lang/place/galilee/",
-      "permanent": true
-    },
-    {
-      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/galilee-a4e39f6/",
-      "destination": "/:lang/place/galilee/",
-      "permanent": true
-    },
-    {
       "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/gath-a0ac467",
       "destination": "/:lang/place/gath-a18873f/",
       "permanent": true

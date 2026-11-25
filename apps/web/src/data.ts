@@ -31,7 +31,7 @@ export interface PlaceProps {
   readonly name_ru_osis?: string;
   readonly kind: string;
   readonly sites: number;
-  /** The runner-up candidate site has at least 10 % of OpenBible's assessment. */
+  /** Candidates more than 5 km from the leading one hold 20 % or more of OpenBible's assessment. */
   readonly disputed: boolean;
   /** OpenBible's score of the shown identification, 0–1000. */
   readonly confidence?: number;

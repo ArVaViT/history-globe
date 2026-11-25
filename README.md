@@ -20,7 +20,7 @@ article with its sources. The site has no accounts, no ads and no fees. It is ma
   Dutch, Polish, Czech, Swedish, Norwegian Bokmål, Danish, Tagalog, Serbian, Hungarian, Finnish,
   Vietnamese, Romanian and Bulgarian. No language
   comes first (ADR 0015).
-- 1,218 places named in the Bible, each with its verses and a page of its own (1,275 place
+- 1,219 places named in the Bible, each with its verses and a page of its own (1,276 place
   records in all); 746 place articles and 200 answered questions.
 - 62 tours, 329 dated events and 60 battles.
 - 2,994 people (STEPBible TIPNR) in the open data; 2,153 of them with their families on the

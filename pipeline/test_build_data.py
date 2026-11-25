@@ -7,6 +7,7 @@ import unittest
 
 from pipeline.build_data import (
     identification_confidence,
+    is_disputed,
     COAST_BBOX,
     banned_lonlats,
     build_coast,
@@ -302,6 +303,29 @@ class MergeAliases(unittest.TestCase):
         self.assertEqual(len(aliases), len(places))
         for pid, o in places.items():
             self.assertTrue(o.get("why", "").strip(), f"{pid} has no why")
+
+
+class Disputed(unittest.TestCase):
+    """Disputed: rivals more than 5 km from the leading candidate hold 20 % or more."""
+
+    def cand(self, lon: float, score: float) -> dict:
+        return {"lon": lon, "lat": 31.0, "score": score}
+
+    def test_a_far_rival_with_a_fifth_disputes_the_site(self) -> None:
+        # 0.1 degree of longitude at 31° N is about 9.5 km.
+        self.assertTrue(is_disputed([self.cand(35.0, 80), self.cand(35.1, 20)]))
+        self.assertFalse(is_disputed([self.cand(35.0, 81), self.cand(35.1, 19)]))
+
+    def test_a_rival_next_door_does_not(self) -> None:
+        # 0.03 degree is under 3 km: the same ruin's neighbourhood.
+        self.assertFalse(is_disputed([self.cand(35.0, 50), self.cand(35.03, 50)]))
+
+    def test_minor_far_rivals_count_together(self) -> None:
+        cands = [self.cand(35.0, 76), self.cand(35.2, 8), self.cand(35.4, 8), self.cand(35.6, 8)]
+        self.assertTrue(is_disputed(cands))
+
+    def test_nothing_rated_stays_disputed(self) -> None:
+        self.assertTrue(is_disputed([self.cand(35.0, 0), self.cand(35.1, -5)]))
 
 
 class Rank(unittest.TestCase):

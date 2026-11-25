@@ -18,7 +18,8 @@ the data first (`pnpm data`).
 - **Polities:** duplicate shapes and composites drawn over their own parts are dropped;
   small parts of a large polity get no label of their own.
 - **Candidate sites:** shares are normalised over the candidates shown; a place is
-  `disputed` when the runner-up has at least `DISPUTED_MIN_SHARE` %. OpenBible's English
+  `disputed` when the candidates more than `DISPUTED_MIN_KM` from the leading one hold at
+  least `DISPUTED_MIN_SHARE` % together, or none is rated (`is_disputed`, tested). OpenBible's English
   templates ("another name for X", "within 5 km of X") are kept with the referenced id.
 - **Points chosen by hand** (`content/place-points.json`): `same_as` puts a place on another
   record's point (a chain is followed to its end; a circle stops the build); `site` shows one
