@@ -9,6 +9,11 @@ pull requests on GitHub have them.
 
 ## Unreleased
 
+- Tours (`constantine`): Helena's church on the Mount of Olives, the Eleona, has its own stop
+  after Bethlehem, over the cave where Jesus was remembered as teaching his disciples; the
+  Bethlehem stop keeps the Nativity cave alone, and neither says the church marked the
+  ascension. The Eusebius note on the Mount of Olives reads the same way. Thanks to a
+  reader's correction.
 - States (`polities*.geojson`, `rulers.json`): the borders audit of 2026-11-23 brought the
   map's state for each place in line with the articles, a place passing to the new state in
   the year of the event. Galilee, Dor, Megiddo, Gilead and the upper Jordan are Assyria's
