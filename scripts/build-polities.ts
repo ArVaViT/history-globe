@@ -1062,8 +1062,16 @@ export function buildPolities({
   for (const x of overridesFile.annexed ?? []) {
     const a = x.first_year;
     const b = x.last_year + 1; // half-open, ADR 0003
+    // A shape a correction left with no years (a copy's original, cut back to nothing) is
+    // not the last one drawn, as for the bridges above.
     const last = polities.features
-      .filter((f) => f.properties.name === x.polity && !f.properties.rel && f.properties.y1 <= a)
+      .filter(
+        (f) =>
+          f.properties.name === x.polity &&
+          !f.properties.rel &&
+          f.properties.y1 <= a &&
+          f.properties.y1 > f.properties.y0,
+      )
       .sort((f1, f2) => f2.properties.y1 - f1.properties.y1)[0];
     const by = polities.features.find(
       (f) =>
@@ -1263,6 +1271,7 @@ export function buildPolities({
         const [w, s, e, n] = boxes[k] ?? [0, 0, 0, 0];
         return c[0] >= w && c[0] <= e && c[1] >= s && c[1] <= n && pointInRing(c, r);
       });
+    const pinned = new Map<string, [number, number] | null>();
     for (const f of polityLabels.features as {
       geometry: { coordinates: [number, number] };
       properties: PolityFeature["properties"] & { tier?: number; size?: number };
@@ -1307,26 +1316,32 @@ export function buildPolities({
       const { ring } = part;
       const home = HEARTLAND[p.name];
       const mid = home?.at ?? part.mid;
-      const xs = ring.map(([x]) => x);
-      const ys = ring.map(([, y]) => y);
       const RADIUS = home?.radius ?? 0.5;
-      let best: [number, number] | null = null;
-      let score = -1;
-      for (let x = Math.min(...xs); x <= Math.max(...xs); x += 0.04)
-        for (let y = Math.min(...ys); y <= Math.max(...ys); y += 0.04) {
-          const c: [number, number] = [Math.round(x * 1000) / 1000, Math.round(y * 1000) / 1000];
-          if (Math.hypot((c[0] - mid[0]) * cos, c[1] - mid[1]) > RADIUS) continue;
-          if (!pointInRing(c, ring) || toEdge(c, ring) < 0.12) continue;
-          const d = near(c);
-          // The water test is the costly one: only for a point that would win.
-          if (d > score + 1e-9 && !onWater(c)) {
-            score = d;
-            best = c;
+      // The corrections copy a shape for many years: the same part, the same search.
+      const key = `${String(RADIUS)}|${String(mid[0])},${String(mid[1])}|${JSON.stringify(ring)}`;
+      let best = pinned.get(key);
+      if (best === undefined) {
+        best = null;
+        const xs = ring.map(([x]) => x);
+        const ys = ring.map(([, y]) => y);
+        let score = -1;
+        for (let x = Math.min(...xs); x <= Math.max(...xs); x += 0.04)
+          for (let y = Math.min(...ys); y <= Math.max(...ys); y += 0.04) {
+            const c: [number, number] = [Math.round(x * 1000) / 1000, Math.round(y * 1000) / 1000];
+            if (Math.hypot((c[0] - mid[0]) * cos, c[1] - mid[1]) > RADIUS) continue;
+            if (!pointInRing(c, ring) || toEdge(c, ring) < 0.12) continue;
+            const d = near(c);
+            // The water test is the costly one: only for a point that would win.
+            if (d > score + 1e-9 && !onWater(c)) {
+              score = d;
+              best = c;
+            }
           }
-        }
+        pinned.set(key, best);
+      }
       // No room inside (a sliver of a shape): the label stays where the pipeline put it.
       if (!best) continue;
-      f.geometry.coordinates = best;
+      f.geometry.coordinates = [best[0], best[1]];
       (p as { pin?: boolean }).pin = true;
     }
   }
@@ -1542,9 +1557,12 @@ export function checkPolities({
         area: shapeOf(f.geometry).area,
       };
     });
-  const holding = (p: [number, number]) =>
+  // The shapes holding a point, in one year only when given: the years are tested before
+  // the rings, which are the slow part of the checks (the empires' shapes are large).
+  const holding = (p: [number, number], year?: number) =>
     shown.filter(
-      ({ rings, box }) =>
+      ({ f, rings, box }) =>
+        (year === undefined || (f.properties.y0 <= year && year < f.properties.y1)) &&
         p[0] >= box[0] &&
         p[0] <= box[2] &&
         p[1] >= box[1] &&
@@ -1584,7 +1602,15 @@ export function checkPolities({
   for (const [key, years] of bad) errors.push(`polities: ${key} (${years.join("; ")})`);
 
   // Clips that leave land blank.
+  // A clip cuts the same land from each of a state's shapes in its years: sampled once.
+  const sampled = new Map<string, [number, number][]>();
   const sample = (rings: Ring[]): [number, number][] => {
+    const key = JSON.stringify(rings);
+    let out = sampled.get(key);
+    if (!out) sampled.set(key, (out = sampleOnce(rings)));
+    return out;
+  };
+  const sampleOnce = (rings: Ring[]): [number, number][] => {
     const xs = rings.flatMap((r) => r.map(([x]) => x));
     const ys = rings.flatMap((r) => r.map(([, y]) => y));
     if (xs.length === 0) return [];
@@ -1606,7 +1632,7 @@ export function checkPolities({
     const t = tally.get(w.k) ?? { blank: 0, all: 0, years: [] };
     for (const p of sample(w.rings)) {
       t.all++;
-      if (!holding(p).some(({ f }) => f.properties.y0 <= year && year < f.properties.y1)) t.blank++;
+      if (holding(p, year).length === 0) t.blank++;
     }
     t.years.push(year);
     tally.set(w.k, t);
@@ -1624,12 +1650,8 @@ export function checkPolities({
     const pts = sample(rings);
     const over = new Map<string, number>();
     for (const p of pts)
-      for (const { f: g } of holding(p))
-        if (
-          g.properties.name !== f.properties.name &&
-          g.properties.y0 <= year &&
-          year < g.properties.y1
-        )
+      for (const { f: g } of holding(p, year))
+        if (g.properties.name !== f.properties.name)
           over.set(g.properties.name, (over.get(g.properties.name) ?? 0) + 1);
     for (const [name, n] of over)
       if (n / pts.length > 0.05)

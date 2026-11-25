@@ -96,10 +96,11 @@ anchors:
   - name: Rabbah
     place: ae067b5
     periods:
-      - { first_year: "1010 BC", last_year: "932 BC", polity: Kingdom of Israel }
+      - { first_year: "1010 BC", last_year: "991 BC", polity: Ammon }
+      - { first_year: "990 BC", last_year: "932 BC", polity: Kingdom of Israel }
       - { first_year: "931 BC", last_year: "582 BC", polity: Ammon }
     sources:
-      - "2 Sam 12:26-31; Jer 49:2"
+      - "2 Sam 10:1-4; 12:26-31; Jer 49:2"
 
   - name: Dibon
     place: a0d784a
@@ -817,3 +818,1265 @@ anchors:
       - { first_year: "AD 106", last_year: "AD 150", polity: Roman Empire }
     sources:
       - "Cassius Dio 68.14.5; G. W. Bowersock, Roman Arabia (1983)"
+
+  - name: Kedesh, a village of Tyre
+    place: a321cb8
+    periods:
+      - { first_year: "198 BC", last_year: "127 BC", polity: Seleucid Empire }
+      - { first_year: "78 BC", last_year: "68 BC", polity: Kingdom of Armenia }
+      - { first_year: "67 BC", last_year: "65 BC", polity: Seleucid Empire }
+      - { first_year: "64 BC", last_year: "33 BC", polity: Roman Republic }
+      - { first_year: "32 BC", last_year: "AD 66", polity: Roman Empire }
+    blank:
+      - first_year: "126 BC"
+        last_year: "79 BC"
+        reason: >-
+          With free Tyre, which no state of the data draws.
+    sources:
+      - "Josephus, Jewish War 2.459; 4.104-105"
+
+  - name: Kedesh, a village of Tyre (second record)
+    place: a662eed
+    periods:
+      - { first_year: "198 BC", last_year: "127 BC", polity: Seleucid Empire }
+      - { first_year: "78 BC", last_year: "68 BC", polity: Kingdom of Armenia }
+      - { first_year: "67 BC", last_year: "65 BC", polity: Seleucid Empire }
+      - { first_year: "64 BC", last_year: "33 BC", polity: Roman Republic }
+      - { first_year: "32 BC", last_year: "AD 66", polity: Roman Empire }
+    blank:
+      - first_year: "126 BC"
+        last_year: "79 BC"
+        reason: >-
+          With free Tyre, which no state of the data draws.
+    sources:
+      - "Josephus, Jewish War 2.459; 4.104-105"
+
+  - name: Caesarea Philippi under Agrippa II
+    place: ab7bf48
+    periods:
+      - { first_year: "AD 45", last_year: "AD 52", polity: Roman Empire }
+      - { first_year: "AD 53", last_year: "AD 92", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 20.138; Jewish War 2.247"
+
+  - name: Dan under Agrippa II
+    place: a513646
+    periods:
+      - { first_year: "AD 45", last_year: "AD 52", polity: Roman Empire }
+      - { first_year: "AD 53", last_year: "AD 92", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 20.138; Jewish War 2.247"
+
+  - name: Bethsaida under Agrippa II
+    place: a91b732
+    periods:
+      - { first_year: "AD 45", last_year: "AD 52", polity: Roman Empire }
+      - { first_year: "AD 53", last_year: "AD 92", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 20.138; Jewish War 2.247"
+
+  - name: Bethsaida under Agrippa II (second record)
+    place: a9fc13a
+    periods:
+      - { first_year: "AD 45", last_year: "AD 52", polity: Roman Empire }
+      - { first_year: "AD 53", last_year: "AD 92", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 20.138; Jewish War 2.247"
+
+  - name: Golan under Agrippa II
+    place: abb5c1e
+    periods:
+      - { first_year: "AD 45", last_year: "AD 52", polity: Roman Empire }
+      - { first_year: "AD 53", last_year: "AD 92", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 20.138; Jewish War 2.247"
+
+  - name: Bashan under Agrippa II
+    place: aa7a40a
+    periods:
+      - { first_year: "AD 45", last_year: "AD 52", polity: Roman Empire }
+      - { first_year: "AD 53", last_year: "AD 92", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 20.138; Jewish War 2.247"
+
+  - name: Batanea
+    place: a249453
+    periods:
+      - { first_year: "32 BC", last_year: "24 BC", polity: Roman Empire }
+      - { first_year: "23 BC", last_year: "5 BC", polity: Judea }
+      - { first_year: "4 BC", last_year: "AD 33", polity: Tetrarchy of Philip }
+      - { first_year: "AD 34", last_year: "AD 36", polity: Roman Empire }
+      - { first_year: "AD 37", last_year: "AD 44", polity: Kingdom of Agrippa I }
+      - { first_year: "AD 45", last_year: "AD 52", polity: Roman Empire }
+      - { first_year: "AD 53", last_year: "AD 92", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 15.343-348; 17.319; 20.138"
+
+  - name: Argob
+    place: a42a5b2
+    periods:
+      - { first_year: "32 BC", last_year: "24 BC", polity: Roman Empire }
+      - { first_year: "23 BC", last_year: "5 BC", polity: Judea }
+      - { first_year: "4 BC", last_year: "AD 33", polity: Tetrarchy of Philip }
+      - { first_year: "AD 34", last_year: "AD 36", polity: Roman Empire }
+      - { first_year: "AD 37", last_year: "AD 44", polity: Kingdom of Agrippa I }
+      - { first_year: "AD 45", last_year: "AD 52", polity: Roman Empire }
+      - { first_year: "AD 53", last_year: "AD 92", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 15.343-348; 17.319; 20.138"
+
+  - name: Kenath, Herodian
+    place: a4f650b
+    periods:
+      - { first_year: "32 BC", last_year: "24 BC", polity: Roman Empire }
+      - { first_year: "23 BC", last_year: "5 BC", polity: Judea }
+      - { first_year: "4 BC", last_year: "AD 33", polity: Tetrarchy of Philip }
+      - { first_year: "AD 34", last_year: "AD 36", polity: Roman Empire }
+      - { first_year: "AD 37", last_year: "AD 44", polity: Kingdom of Agrippa I }
+      - { first_year: "AD 45", last_year: "AD 52", polity: Roman Empire }
+      - { first_year: "AD 53", last_year: "AD 92", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 15.343-348; 17.319; 20.138"
+
+  - name: Trachonitis
+    place: a85a60a
+    periods:
+      - { first_year: "32 BC", last_year: "24 BC", polity: Roman Empire }
+      - { first_year: "23 BC", last_year: "5 BC", polity: Judea }
+      - { first_year: "4 BC", last_year: "AD 33", polity: Tetrarchy of Philip }
+      - { first_year: "AD 34", last_year: "AD 36", polity: Roman Empire }
+      - { first_year: "AD 37", last_year: "AD 44", polity: Kingdom of Agrippa I }
+      - { first_year: "AD 45", last_year: "AD 52", polity: Roman Empire }
+      - { first_year: "AD 53", last_year: "AD 92", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 15.343-348; 17.319; 20.138"
+
+  - name: Hauran, Herodian
+    place: a0e8903
+    periods:
+      - { first_year: "32 BC", last_year: "24 BC", polity: Roman Empire }
+      - { first_year: "23 BC", last_year: "5 BC", polity: Judea }
+      - { first_year: "4 BC", last_year: "AD 33", polity: Tetrarchy of Philip }
+      - { first_year: "AD 34", last_year: "AD 36", polity: Roman Empire }
+      - { first_year: "AD 37", last_year: "AD 44", polity: Kingdom of Agrippa I }
+      - { first_year: "AD 45", last_year: "AD 52", polity: Roman Empire }
+      - { first_year: "AD 53", last_year: "AD 92", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 15.343-348; 17.319; 20.138"
+
+  - name: Ashtaroth, Herodian
+    place: a6fea11
+    periods:
+      - { first_year: "32 BC", last_year: "24 BC", polity: Roman Empire }
+      - { first_year: "23 BC", last_year: "5 BC", polity: Judea }
+      - { first_year: "4 BC", last_year: "AD 33", polity: Tetrarchy of Philip }
+      - { first_year: "AD 34", last_year: "AD 36", polity: Roman Empire }
+      - { first_year: "AD 37", last_year: "AD 44", polity: Kingdom of Agrippa I }
+      - { first_year: "AD 45", last_year: "AD 52", polity: Roman Empire }
+      - { first_year: "AD 53", last_year: "AD 92", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 15.343-348; 17.319; 20.138"
+
+  - name: Ashteroth-karnaim, Herodian
+    place: afe4be0
+    periods:
+      - { first_year: "32 BC", last_year: "24 BC", polity: Roman Empire }
+      - { first_year: "23 BC", last_year: "5 BC", polity: Judea }
+      - { first_year: "4 BC", last_year: "AD 33", polity: Tetrarchy of Philip }
+      - { first_year: "AD 34", last_year: "AD 36", polity: Roman Empire }
+      - { first_year: "AD 37", last_year: "AD 44", polity: Kingdom of Agrippa I }
+      - { first_year: "AD 45", last_year: "AD 52", polity: Roman Empire }
+      - { first_year: "AD 53", last_year: "AD 92", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 15.343-348; 17.319; 20.138"
+
+  - name: Hauran, Assyrian
+    place: a0e8903
+    periods:
+      - { first_year: "732 BC", last_year: "615 BC", polity: Neo-Assyrian Empire }
+    sources:
+      - "2 Kgs 16:9; E. Forrer, Die Provinzeinteilung des assyrischen Reiches (1920)"
+
+  - name: Ashtaroth, Assyrian
+    place: a6fea11
+    periods:
+      - { first_year: "732 BC", last_year: "615 BC", polity: Neo-Assyrian Empire }
+    sources:
+      - "2 Kgs 16:9; E. Forrer, Die Provinzeinteilung des assyrischen Reiches (1920)"
+
+  - name: Ashteroth-karnaim, Assyrian
+    place: afe4be0
+    periods:
+      - { first_year: "732 BC", last_year: "615 BC", polity: Neo-Assyrian Empire }
+    sources:
+      - "2 Kgs 16:9; E. Forrer, Die Provinzeinteilung des assyrischen Reiches (1920)"
+
+  - name: Kenath, Assyrian
+    place: a4f650b
+    periods:
+      - { first_year: "732 BC", last_year: "615 BC", polity: Neo-Assyrian Empire }
+    sources:
+      - "2 Kgs 16:9; E. Forrer, Die Provinzeinteilung des assyrischen Reiches (1920)"
+
+  - name: Tiberias under Agrippa II
+    place: ac9adc9
+    periods:
+      - { first_year: "AD 45", last_year: "AD 53", polity: Roman Empire }
+      - { first_year: "AD 54", last_year: "AD 92", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 20.159; Jewish War 2.252"
+
+  - name: Magdala under Agrippa II
+    place: af75e9e
+    periods:
+      - { first_year: "AD 45", last_year: "AD 53", polity: Roman Empire }
+      - { first_year: "AD 54", last_year: "AD 92", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 20.159; Jewish War 2.252"
+
+  - name: Magadan under Agrippa II
+    place: ad14067
+    periods:
+      - { first_year: "AD 45", last_year: "AD 53", polity: Roman Empire }
+      - { first_year: "AD 54", last_year: "AD 92", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 20.159; Jewish War 2.252"
+
+  - name: Beth-haram (Julias) under Agrippa II
+    place: a4590cd
+    periods:
+      - { first_year: "AD 45", last_year: "AD 53", polity: Roman Empire }
+      - { first_year: "AD 54", last_year: "AD 92", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 20.159; Jewish War 2.252"
+
+  - name: Shittim (Abila) under Agrippa II
+    place: af64fb3
+    periods:
+      - { first_year: "AD 45", last_year: "AD 53", polity: Roman Empire }
+      - { first_year: "AD 54", last_year: "AD 92", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 20.159; Jewish War 2.252"
+
+  - name: Abel-shittim under Agrippa II
+    place: a51d1fa
+    periods:
+      - { first_year: "AD 45", last_year: "AD 53", polity: Roman Empire }
+      - { first_year: "AD 54", last_year: "AD 92", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 20.159; Jewish War 2.252"
+
+  - name: Chalcis
+    place: a527d04
+    periods:
+      - { first_year: "AD 20", last_year: "AD 40", polity: Roman Empire }
+      - { first_year: "AD 41", last_year: "AD 47", polity: Kingdom of Chalcis }
+      - { first_year: "AD 48", last_year: "AD 52", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 53", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 19.277; 20.104, 138"
+
+  - name: Abilene
+    place: a498faa
+    periods:
+      - { first_year: "AD 20", last_year: "AD 36", polity: Roman Empire }
+      - { first_year: "AD 37", last_year: "AD 44", polity: Kingdom of Agrippa I }
+      - { first_year: "AD 45", last_year: "AD 52", polity: Roman Empire }
+      - { first_year: "AD 53", last_year: "AD 92", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 18.237; 19.275; 20.138"
+
+  - name: Abila of Lysanias
+    place: a276d01
+    periods:
+      - { first_year: "AD 20", last_year: "AD 36", polity: Roman Empire }
+      - { first_year: "AD 37", last_year: "AD 44", polity: Kingdom of Agrippa I }
+      - { first_year: "AD 45", last_year: "AD 52", polity: Roman Empire }
+      - { first_year: "AD 53", last_year: "AD 92", polity: Kingdom of Agrippa II }
+      - { first_year: "AD 93", last_year: "AD 120", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 18.237; 19.275; 20.138"
+
+  - name: Bezer
+    place: a0cd098
+    periods:
+      - { first_year: "852 BC", last_year: "582 BC", polity: Moab }
+      - { first_year: "581 BC", last_year: "540 BC", polity: Neo-Babylonian Empire }
+    sources:
+      - "Mesha Stele (KAI 181), 27; Jer 48:24"
+
+  - name: Bozrah of Moab
+    place: a8adc43
+    periods:
+      - { first_year: "852 BC", last_year: "582 BC", polity: Moab }
+      - { first_year: "581 BC", last_year: "540 BC", polity: Neo-Babylonian Empire }
+    sources:
+      - "Mesha Stele (KAI 181), 27; Jer 48:24"
+
+  - name: Beth-shan, Hellenistic and Roman
+    place: a2a8df0
+    periods:
+      - { first_year: "150 BC", last_year: "108 BC", polity: Seleucid Empire }
+      - { first_year: "107 BC", last_year: "64 BC", polity: Judea }
+      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
+      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
+      - { first_year: "32 BC", last_year: "AD 66", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 13.280; 14.75-76"
+
+  - name: Decapolis
+    place: ae733a2
+    periods:
+      - { first_year: "109 BC", last_year: "64 BC", polity: Judea }
+      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
+      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
+      - { first_year: "32 BC", last_year: "AD 66", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 14.74-76"
+
+  - name: Rabbah (Philadelphia)
+    place: ae067b5
+    periods:
+      - { first_year: "64 BC", last_year: "42 BC", polity: Roman Republic }
+      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
+      - { first_year: "32 BC", last_year: "AD 66", polity: Roman Empire }
+    blank:
+      - first_year: "78 BC"
+        last_year: "65 BC"
+        reason: >-
+          The free city under its tyrants, which no state of the data draws.
+    sources:
+      - "Pliny, Natural History 5.74; Josephus, Jewish War 3.46-47"
+
+  - name: Ammon, Hellenistic and Roman
+    place: a6046fa
+    periods:
+      - { first_year: "64 BC", last_year: "42 BC", polity: Roman Republic }
+      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
+      - { first_year: "32 BC", last_year: "AD 66", polity: Roman Empire }
+    blank:
+      - first_year: "78 BC"
+        last_year: "65 BC"
+        reason: >-
+          The free city under its tyrants, which no state of the data draws.
+    sources:
+      - "Pliny, Natural History 5.74; Josephus, Jewish War 3.46-47"
+
+  - name: Kiriathaim
+    place: ad54201
+    periods:
+      - { first_year: "931 BC", last_year: "853 BC", polity: Kingdom of Israel }
+      - { first_year: "852 BC", last_year: "582 BC", polity: Moab }
+      - { first_year: "581 BC", last_year: "540 BC", polity: Neo-Babylonian Empire }
+    sources:
+      - "Mesha Stele (KAI 181), 10, 14-18"
+
+  - name: Nebo
+    place: ab5bd29
+    periods:
+      - { first_year: "931 BC", last_year: "853 BC", polity: Kingdom of Israel }
+      - { first_year: "852 BC", last_year: "582 BC", polity: Moab }
+      - { first_year: "581 BC", last_year: "540 BC", polity: Neo-Babylonian Empire }
+    sources:
+      - "Mesha Stele (KAI 181), 10, 14-18"
+
+  - name: Ataroth
+    place: abc9a1d
+    periods:
+      - { first_year: "931 BC", last_year: "853 BC", polity: Kingdom of Israel }
+      - { first_year: "852 BC", last_year: "582 BC", polity: Moab }
+    sources:
+      - "Mesha Stele (KAI 181), 10-13"
+
+  - name: Medeba
+    place: af4f21c
+    periods:
+      - { first_year: "885 BC", last_year: "853 BC", polity: Kingdom of Israel }
+      - { first_year: "852 BC", last_year: "582 BC", polity: Moab }
+    sources:
+      - "Mesha Stele (KAI 181), 7-9, 18-21, 30"
+
+  - name: Jahaz
+    place: ad9b1cd
+    periods:
+      - { first_year: "885 BC", last_year: "853 BC", polity: Kingdom of Israel }
+      - { first_year: "852 BC", last_year: "582 BC", polity: Moab }
+    sources:
+      - "Mesha Stele (KAI 181), 7-9, 18-21, 30"
+
+  - name: Baal-meon
+    place: a76f7b7
+    periods:
+      - { first_year: "885 BC", last_year: "853 BC", polity: Kingdom of Israel }
+      - { first_year: "852 BC", last_year: "582 BC", polity: Moab }
+    sources:
+      - "Mesha Stele (KAI 181), 7-9, 18-21, 30"
+
+  - name: Beth-meon
+    place: a78580c
+    periods:
+      - { first_year: "885 BC", last_year: "853 BC", polity: Kingdom of Israel }
+      - { first_year: "852 BC", last_year: "582 BC", polity: Moab }
+    sources:
+      - "Mesha Stele (KAI 181), 7-9, 18-21, 30"
+
+  - name: Beth-diblathaim
+    place: ac99af3
+    periods:
+      - { first_year: "885 BC", last_year: "853 BC", polity: Kingdom of Israel }
+      - { first_year: "852 BC", last_year: "582 BC", polity: Moab }
+    sources:
+      - "Mesha Stele (KAI 181), 7-9, 18-21, 30"
+
+  - name: Heshbon
+    place: abf2fc1
+    periods:
+      - { first_year: "931 BC", last_year: "831 BC", polity: Kingdom of Israel }
+      - { first_year: "830 BC", last_year: "786 BC", polity: Aram-Damascus }
+      - { first_year: "785 BC", last_year: "734 BC", polity: Kingdom of Israel }
+      - { first_year: "733 BC", last_year: "582 BC", polity: Moab }
+      - { first_year: "581 BC", last_year: "540 BC", polity: Neo-Babylonian Empire }
+    sources:
+      - "2 Kgs 10:33; Isa 15:4; 16:8-9; Jer 48:34"
+
+  - name: Elealeh
+    place: a5ccd34
+    periods:
+      - { first_year: "931 BC", last_year: "831 BC", polity: Kingdom of Israel }
+      - { first_year: "830 BC", last_year: "786 BC", polity: Aram-Damascus }
+      - { first_year: "785 BC", last_year: "734 BC", polity: Kingdom of Israel }
+      - { first_year: "733 BC", last_year: "582 BC", polity: Moab }
+      - { first_year: "581 BC", last_year: "540 BC", polity: Neo-Babylonian Empire }
+    sources:
+      - "2 Kgs 10:33; Isa 15:4; 16:8-9; Jer 48:34"
+
+  - name: Sibmah
+    place: aa10f27
+    periods:
+      - { first_year: "931 BC", last_year: "831 BC", polity: Kingdom of Israel }
+      - { first_year: "830 BC", last_year: "786 BC", polity: Aram-Damascus }
+      - { first_year: "785 BC", last_year: "734 BC", polity: Kingdom of Israel }
+      - { first_year: "733 BC", last_year: "582 BC", polity: Moab }
+      - { first_year: "581 BC", last_year: "540 BC", polity: Neo-Babylonian Empire }
+    sources:
+      - "2 Kgs 10:33; Isa 15:4; 16:8-9; Jer 48:34"
+
+  - name: Jazer, Hellenistic
+    place: a095b6e
+    periods:
+      - { first_year: "165 BC", last_year: "93 BC", polity: Seleucid Empire }
+      - { first_year: "92 BC", last_year: "AD 5", polity: Judea }
+    sources:
+      - "1 Macc 5:8; Josephus, Antiquities 13.374-375"
+
+  - name: Gilead, Hellenistic
+    place: ae73b90
+    periods:
+      - { first_year: "165 BC", last_year: "101 BC", polity: Seleucid Empire }
+      - { first_year: "100 BC", last_year: "5 BC", polity: Judea }
+    sources:
+      - "1 Macc 5:9-45; Josephus, Antiquities 13.356, 374-375"
+
+  - name: Gilead, Hellenistic (second record)
+    place: a19ec8c
+    periods:
+      - { first_year: "165 BC", last_year: "101 BC", polity: Seleucid Empire }
+      - { first_year: "100 BC", last_year: "5 BC", polity: Judea }
+    sources:
+      - "1 Macc 5:9-45; Josephus, Antiquities 13.356, 374-375"
+
+  - name: Acco, Phoenician
+    place: a5f4dfc
+    periods:
+      - { first_year: "931 BC", last_year: "678 BC", polity: Phoenicia }
+      - { first_year: "677 BC", last_year: "615 BC", polity: Neo-Assyrian Empire }
+    sources:
+      - "Judg 1:31; RINAP 3/1, Sennacherib 4, 32-33"
+
+  - name: Ptolemais, Phoenician
+    place: abc2af0
+    periods:
+      - { first_year: "931 BC", last_year: "678 BC", polity: Phoenicia }
+      - { first_year: "677 BC", last_year: "615 BC", polity: Neo-Assyrian Empire }
+    sources:
+      - "Judg 1:31; RINAP 3/1, Sennacherib 4, 32-33"
+
+  - name: Achzib
+    place: ad0d82f
+    periods:
+      - { first_year: "931 BC", last_year: "678 BC", polity: Phoenicia }
+      - { first_year: "677 BC", last_year: "615 BC", polity: Neo-Assyrian Empire }
+    sources:
+      - "Judg 1:31; RINAP 3/1, Sennacherib 4, 32-33"
+
+  - name: Zobah
+    place: a4aa78a
+    periods:
+      - { first_year: "842 BC", last_year: "733 BC", polity: Aram-Damascus }
+      - { first_year: "732 BC", last_year: "615 BC", polity: Neo-Assyrian Empire }
+    blank:
+      - first_year: "1151 BC"
+        last_year: "843 BC"
+        reason: >-
+          Hadadezer's Aramaean kingdom, which no state of the data draws; not Phoenician.
+    sources:
+      - "2 Sam 8:3-8; E. Lipiński, The Aramaeans (2000)"
+
+  - name: Ramoth-gilead
+    place: a2fe63c
+    periods:
+      - { first_year: "931 BC", last_year: "856 BC", polity: Kingdom of Israel }
+      - { first_year: "855 BC", last_year: "843 BC", polity: Aram-Damascus }
+      - { first_year: "842 BC", last_year: "831 BC", polity: Kingdom of Israel }
+      - { first_year: "830 BC", last_year: "786 BC", polity: Aram-Damascus }
+      - { first_year: "785 BC", last_year: "734 BC", polity: Kingdom of Israel }
+    sources:
+      - "1 Kgs 22:3; 2 Kgs 9:14; 10:32-33"
+
+  - name: Gilead under Hazael
+    place: ae73b90
+    periods:
+      - { first_year: "931 BC", last_year: "831 BC", polity: Kingdom of Israel }
+      - { first_year: "830 BC", last_year: "786 BC", polity: Aram-Damascus }
+      - { first_year: "785 BC", last_year: "734 BC", polity: Kingdom of Israel }
+    sources:
+      - "2 Kgs 10:32-33; 13:25; Amos 6:13"
+
+  - name: Bashan under Hazael
+    place: aa7a40a
+    periods:
+      - { first_year: "931 BC", last_year: "831 BC", polity: Kingdom of Israel }
+      - { first_year: "830 BC", last_year: "786 BC", polity: Aram-Damascus }
+      - { first_year: "785 BC", last_year: "734 BC", polity: Kingdom of Israel }
+    sources:
+      - "2 Kgs 10:32-33; 13:25; Amos 6:13"
+
+  - name: Golan under Hazael
+    place: abb5c1e
+    periods:
+      - { first_year: "931 BC", last_year: "831 BC", polity: Kingdom of Israel }
+      - { first_year: "830 BC", last_year: "786 BC", polity: Aram-Damascus }
+      - { first_year: "785 BC", last_year: "734 BC", polity: Kingdom of Israel }
+    sources:
+      - "2 Kgs 10:32-33; 13:25; Amos 6:13"
+
+  - name: Edrei under Hazael
+    place: aaa6f7a
+    periods:
+      - { first_year: "931 BC", last_year: "831 BC", polity: Kingdom of Israel }
+      - { first_year: "830 BC", last_year: "786 BC", polity: Aram-Damascus }
+      - { first_year: "785 BC", last_year: "734 BC", polity: Kingdom of Israel }
+    sources:
+      - "2 Kgs 10:32-33; 13:25; Amos 6:13"
+
+  - name: Joppa, the Hasmoneans' port
+    place: ae023a9
+    periods:
+      - { first_year: "198 BC", last_year: "143 BC", polity: Seleucid Empire }
+      - { first_year: "142 BC", last_year: "64 BC", polity: Judea }
+      - { first_year: "63 BC", last_year: "48 BC", polity: Roman Republic }
+      - { first_year: "47 BC", last_year: "AD 5", polity: Judea }
+    sources:
+      - "1 Macc 13:11; 14:5"
+      - "Josephus, Antiquities 14.76; 14.202-205"
+
+  - name: Azotus (Ashdod), freed by Pompey
+    place: a30c937
+    periods:
+      - { first_year: "127 BC", last_year: "64 BC", polity: Judea }
+      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
+      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
+      - { first_year: "32 BC", last_year: "31 BC", polity: Roman Empire }
+      - { first_year: "30 BC", last_year: "AD 5", polity: Judea }
+    sources:
+      - "Josephus, Antiquities 14.75-76, 88; 15.217; 17.189"
+
+  - name: Jamnia, freed by Pompey
+    place: a7adb01
+    periods:
+      - { first_year: "127 BC", last_year: "64 BC", polity: Judea }
+      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
+      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
+      - { first_year: "32 BC", last_year: "31 BC", polity: Roman Empire }
+      - { first_year: "30 BC", last_year: "AD 5", polity: Judea }
+    sources:
+      - "Josephus, Antiquities 14.75-76, 88; 15.217; 17.189"
+
+  - name: Dor under the Hasmoneans
+    place: a70c56b
+    periods:
+      - { first_year: "198 BC", last_year: "101 BC", polity: Seleucid Empire }
+      - { first_year: "100 BC", last_year: "64 BC", polity: Judea }
+      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
+      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
+      - { first_year: "32 BC", last_year: "AD 66", polity: Roman Empire }
+    sources:
+      - "Josephus, Antiquities 13.324-335, 395; 14.76"
+
+  - name: Strato's Tower under the Hasmoneans
+    place: a58735e
+    periods:
+      - { first_year: "198 BC", last_year: "101 BC", polity: Seleucid Empire }
+      - { first_year: "100 BC", last_year: "64 BC", polity: Judea }
+      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
+      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
+    sources:
+      - "Josephus, Antiquities 13.324-335, 395; 14.76"
+
+  - name: Caesarea Philippi at Panium
+    place: ab7bf48
+    periods:
+      - { first_year: "217 BC", last_year: "201 BC", polity: Ptolemaic Kingdom }
+      - { first_year: "200 BC", last_year: "93 BC", polity: Seleucid Empire }
+    sources:
+      - "Polybius 16.18-19; Josephus, Antiquities 12.132-136"
+
+  - name: Dan at Panium
+    place: a513646
+    periods:
+      - { first_year: "217 BC", last_year: "201 BC", polity: Ptolemaic Kingdom }
+      - { first_year: "200 BC", last_year: "93 BC", polity: Seleucid Empire }
+    sources:
+      - "Polybius 16.18-19; Josephus, Antiquities 12.132-136"
+
+  - name: Ptolemais after Panium
+    place: abc2af0
+    periods:
+      - { first_year: "217 BC", last_year: "201 BC", polity: Ptolemaic Kingdom }
+      - { first_year: "200 BC", last_year: "79 BC", polity: Seleucid Empire }
+    sources:
+      - "Polybius 16.18-19; Josephus, Antiquities 12.132-136"
+
+  - name: Libnah
+    place: a97b595
+    periods:
+      - { first_year: "931 BC", last_year: "846 BC", polity: Kingdom of Judah }
+      - { first_year: "801 BC", last_year: "587 BC", polity: Kingdom of Judah }
+    blank:
+      - first_year: "845 BC"
+        last_year: "802 BC"
+        reason: >-
+          Libnah revolted from Judah with Edom under Jehoram; its state after it is not known until the data's Judah of 801 BC holds it.
+    sources:
+      - "Josh 15:42; 2 Kgs 8:22; 2 Chr 21:10"
+
+  - name: Jericho
+    place: a231f80
+    periods:
+      - { first_year: "931 BC", last_year: "723 BC", polity: Kingdom of Israel }
+      - { first_year: "722 BC", last_year: "630 BC", polity: Neo-Assyrian Empire }
+      - { first_year: "629 BC", last_year: "587 BC", polity: Kingdom of Judah }
+    sources:
+      - "1 Kgs 16:34; 2 Kgs 2:4-22; 17:5-6; 2 Chr 28:15"
+
+  - name: Jericho (second record)
+    place: aaf03fa
+    periods:
+      - { first_year: "931 BC", last_year: "723 BC", polity: Kingdom of Israel }
+      - { first_year: "722 BC", last_year: "630 BC", polity: Neo-Assyrian Empire }
+      - { first_year: "629 BC", last_year: "587 BC", polity: Kingdom of Judah }
+    sources:
+      - "1 Kgs 16:34; 2 Kgs 2:4-22; 17:5-6; 2 Chr 28:15"
+
+  - name: Elath
+    place: af0ac29
+    periods:
+      - { first_year: "767 BC", last_year: "735 BC", polity: Kingdom of Judah }
+      - { first_year: "701 BC", last_year: "657 BC", polity: Neo-Assyrian Empire }
+    blank:
+      - first_year: "734 BC"
+        last_year: "702 BC"
+        reason: >-
+          Lost to Judah under Ahaz; the Edomites settled it (2 Kgs 16:6, qere), but the map's Edom is drawn on the plateau only.
+    sources:
+      - "2 Kgs 14:22; 16:6"
+
+  - name: Ezion-geber
+    place: a8e53d5
+    periods:
+      - { first_year: "970 BC", last_year: "932 BC", polity: Kingdom of Israel }
+      - { first_year: "870 BC", last_year: "846 BC", polity: Kingdom of Judah }
+      - { first_year: "676 BC", last_year: "657 BC", polity: Neo-Assyrian Empire }
+    blank:
+      - first_year: "931 BC"
+        last_year: "871 BC"
+        reason: >-
+          The port is not mentioned between Solomon and Jehoshaphat.
+      - first_year: "845 BC"
+        last_year: "677 BC"
+        reason: >-
+          Edom revolted from Judah under Jehoram; the map's Edom is drawn on the plateau only.
+    sources:
+      - "1 Kgs 9:26; 22:48"
+
+  - name: Smyrna under Lydia
+    place: a2e65fb
+    periods:
+      - { first_year: "650 BC", last_year: "601 BC", polity: Greek City-States }
+      - { first_year: "600 BC", last_year: "542 BC", polity: Lydia }
+      - { first_year: "541 BC", last_year: "335 BC", polity: Achaemenid Empire }
+    sources:
+      - "Herodotus 1.16; Strabo, Geography 14.1.37"
+
+  - name: Babylon, 1201-1002 BC
+    place: a217d18
+    periods:
+      - { first_year: "1201 BC", last_year: "1002 BC", polity: Babylonia }
+    sources:
+      - "J. A. Brinkman, A Political History of Post-Kassite Babylonia (1968)"
+
+  - name: Erech, 1201-1002 BC
+    place: a5db1a6
+    periods:
+      - { first_year: "1201 BC", last_year: "1002 BC", polity: Babylonia }
+    sources:
+      - "J. A. Brinkman, A Political History of Post-Kassite Babylonia (1968)"
+
+  - name: Babylon under the Seleucids
+    place: a217d18
+    periods:
+      - { first_year: "316 BC", last_year: "313 BC", polity: Macedonian Empire }
+      - { first_year: "312 BC", last_year: "142 BC", polity: Seleucid Empire }
+      - { first_year: "141 BC", last_year: "100 BC", polity: Parthian Empire }
+    sources:
+      - "Diodorus Siculus 19.90-92; Sachs and Hunger, Astronomical Diaries, vol. 3, no. -140"
+
+  - name: Erech under the Seleucids
+    place: a5db1a6
+    periods:
+      - { first_year: "316 BC", last_year: "313 BC", polity: Macedonian Empire }
+      - { first_year: "312 BC", last_year: "142 BC", polity: Seleucid Empire }
+      - { first_year: "141 BC", last_year: "100 BC", polity: Parthian Empire }
+    sources:
+      - "Diodorus Siculus 19.90-92; Sachs and Hunger, Astronomical Diaries, vol. 3, no. -140"
+
+  - name: Til Barsip (Kar-Shalmaneser)
+    place: a7409b9
+    periods:
+      - { first_year: "856 BC", last_year: "613 BC", polity: Neo-Assyrian Empire }
+    blank:
+      - first_year: "1000 BC"
+        last_year: "857 BC"
+        reason: >-
+          Bit-Adini, an Aramean kingdom that the data does not draw; not Carchemish's.
+    sources:
+      - "Kurkh Monolith of Shalmaneser III, ii 30-35"
+
+  - name: Carchemish under the Hittites
+    place: af6c730
+    periods:
+      - { first_year: "1400 BC", last_year: "1328 BC", polity: Mitanni }
+      - { first_year: "1327 BC", last_year: "1222 BC", polity: Hittites }
+    sources:
+      - "H. G. Güterbock, The Deeds of Suppiluliuma, JCS 10 (1956)"
+
+  - name: Memphis, 712-657 BC
+    place: a8ec269
+    periods:
+      - { first_year: "712 BC", last_year: "672 BC", polity: Kingdom of Kush }
+      - { first_year: "671 BC", last_year: "657 BC", polity: Neo-Assyrian Empire }
+    sources:
+      - "Babylonian Chronicle ABC 1, col. iv"
+
+  - name: Thebes
+    place: a9674fc
+    periods:
+      - { first_year: "750 BC", last_year: "664 BC", polity: Kingdom of Kush }
+      - { first_year: "663 BC", last_year: "657 BC", polity: Neo-Assyrian Empire }
+      - { first_year: "656 BC", last_year: "600 BC", polity: Twenty-sixth Dynasty of Egypt }
+    sources:
+      - "Ashurbanipal, Prism A ii 28-48"
+
+  - name: Syene
+    place: a8a6a5b
+    periods:
+      - { first_year: "750 BC", last_year: "664 BC", polity: Kingdom of Kush }
+      - { first_year: "663 BC", last_year: "657 BC", polity: Neo-Assyrian Empire }
+      - { first_year: "656 BC", last_year: "600 BC", polity: Twenty-sixth Dynasty of Egypt }
+    sources:
+      - "K. A. Kitchen, The Third Intermediate Period in Egypt (1100-650 BC), 2nd ed. (1986), part IV"
+      - "Ashurbanipal, Prism A ii 28-48"
+
+  - name: Pathros
+    place: aab30ec
+    periods:
+      - { first_year: "750 BC", last_year: "664 BC", polity: Kingdom of Kush }
+      - { first_year: "663 BC", last_year: "657 BC", polity: Neo-Assyrian Empire }
+      - { first_year: "656 BC", last_year: "600 BC", polity: Twenty-sixth Dynasty of Egypt }
+    sources:
+      - "K. A. Kitchen, The Third Intermediate Period in Egypt (1100-650 BC), 2nd ed. (1986), part IV"
+      - "Ashurbanipal, Prism A ii 28-48"
+
+  - name: Rome, kingdom and Republic
+    place: afc8e7a
+    periods:
+      - { first_year: "551 BC", last_year: "510 BC", polity: Roman Kingdom }
+      - { first_year: "509 BC", last_year: "33 BC", polity: Roman Republic }
+    sources:
+      - "Livy 1.57-60; 2.1"
+
+  - name: Puteoli
+    place: a4488e9
+    periods:
+      - { first_year: "338 BC", last_year: "33 BC", polity: Roman Republic }
+    sources:
+      - "Livy 24.7.10; 24.13"
+
+  - name: Malta
+    place: a57835d
+    periods:
+      - { first_year: "500 BC", last_year: "219 BC", polity: Carthage }
+      - { first_year: "218 BC", last_year: "33 BC", polity: Roman Republic }
+    sources:
+      - "Livy 21.51.1-2"
+
+  - name: Syracuse
+    place: a1e3697
+    periods:
+      - { first_year: "224 BC", last_year: "213 BC", polity: Greek City-States }
+      - { first_year: "212 BC", last_year: "33 BC", polity: Roman Republic }
+    sources:
+      - "Livy 25.23-31"
+
+  - name: Thessalonica
+    place: afa9d8e
+    periods:
+      - { first_year: "168 BC", last_year: "147 BC", polity: Greek City-States }
+      - { first_year: "146 BC", last_year: "33 BC", polity: Roman Republic }
+    sources:
+      - "Livy 45.29-30; Periochae 50-52"
+
+  - name: Berea
+    place: a62fe31
+    periods:
+      - { first_year: "198 BC", last_year: "169 BC", polity: Antigonid Macedonia }
+      - { first_year: "168 BC", last_year: "147 BC", polity: Greek City-States }
+      - { first_year: "146 BC", last_year: "33 BC", polity: Roman Republic }
+    sources:
+      - "Livy 45.29-30; Periochae 50-52"
+
+  - name: Achaia
+    place: aef4242
+    periods:
+      - { first_year: "200 BC", last_year: "147 BC", polity: Greek City-States }
+      - { first_year: "146 BC", last_year: "33 BC", polity: Roman Republic }
+    sources:
+      - "Pausanias 7.16.9-10"
+
+  # Map sweep, fourth batch (2026-11-24): Macedonia, Asia Minor, Cyprus, Syria,
+  # Mesopotamia and Dalmatia.
+  - name: Amphipolis, Persian, free and Macedonian
+    place: a4bdea7
+    periods:
+      - { first_year: "481 BC", last_year: "477 BC", polity: Achaemenid Empire }
+      - { first_year: "405 BC", last_year: "358 BC", polity: Greek City-States }
+      - { first_year: "357 BC", last_year: "330 BC", polity: Macedonian Empire }
+    blank:
+      - first_year: "476 BC"
+        last_year: "406 BC"
+        reason: >-
+          Eion fell to Cimon in 476/475 BC; no state of the Delian League's or of Athens' is
+          drawn in these years.
+    sources:
+      - "Thucydides 1.98; 4.102-108"
+      - "Diodorus Siculus 16.8.2"
+
+  - name: Amphipolis, the Antigonids' to Pydna
+    place: a4bdea7
+    periods:
+      - { first_year: "198 BC", last_year: "169 BC", polity: Antigonid Macedonia }
+      - { first_year: "168 BC", last_year: "147 BC", polity: Greek City-States }
+      - { first_year: "146 BC", last_year: "33 BC", polity: Roman Republic }
+    sources:
+      - "Livy 33.30; 44.43-45; 45.29"
+
+  - name: Philippi, Crenides
+    place: a49e1d0
+    periods:
+      - { first_year: "404 BC", last_year: "357 BC", polity: Greek City-States }
+      - { first_year: "356 BC", last_year: "330 BC", polity: Macedonian Empire }
+    sources:
+      - "Diodorus Siculus 16.3.7; 16.8.6"
+
+  - name: Philippi, the Antigonids' to Pydna
+    place: a49e1d0
+    periods:
+      - { first_year: "198 BC", last_year: "169 BC", polity: Antigonid Macedonia }
+      - { first_year: "168 BC", last_year: "147 BC", polity: Greek City-States }
+      - { first_year: "146 BC", last_year: "33 BC", polity: Roman Republic }
+    sources:
+      - "Livy 33.30; 45.29"
+
+  - name: Neapolis, Persian, free and Macedonian
+    place: a6a7150
+    periods:
+      - { first_year: "481 BC", last_year: "477 BC", polity: Achaemenid Empire }
+      - { first_year: "405 BC", last_year: "368 BC", polity: Greek City-States }
+    blank:
+      - first_year: "476 BC"
+        last_year: "406 BC"
+        reason: >-
+          Free of Persia after Eion fell in 476/475 BC, in the Delian League; no state of the
+          League's or of Athens' is drawn in these years.
+    sources:
+      - "Thucydides 1.98"
+
+  - name: Neapolis, the Antigonids' to Pydna
+    place: a6a7150
+    periods:
+      - { first_year: "198 BC", last_year: "169 BC", polity: Antigonid Macedonia }
+      - { first_year: "168 BC", last_year: "147 BC", polity: Greek City-States }
+      - { first_year: "146 BC", last_year: "33 BC", polity: Roman Republic }
+    sources:
+      - "Livy 33.30; 45.29"
+
+  - name: Galatia
+    place: a0f440a
+    periods:
+      - { first_year: "40 BC", last_year: "26 BC", polity: Galatia }
+      - { first_year: "25 BC", last_year: "AD 50", polity: Roman Empire }
+    sources:
+      - "Cassius Dio 53.26.3"
+
+  - name: Derbe
+    place: aa401a9
+    periods:
+      - { first_year: "40 BC", last_year: "26 BC", polity: Kingdom of Cappadocia }
+      - { first_year: "25 BC", last_year: "AD 50", polity: Roman Empire }
+    sources:
+      - "Strabo, Geography 12.1.4; 12.6.3"
+
+  - name: Iconium
+    place: ae425aa
+    periods:
+      - { first_year: "84 BC", last_year: "37 BC", polity: Roman Republic }
+      - { first_year: "36 BC", last_year: "26 BC", polity: Galatia }
+      - { first_year: "25 BC", last_year: "AD 50", polity: Roman Empire }
+    sources:
+      - "Cicero, Letters to Friends 15.4.2"
+      - "Cassius Dio 49.32.3; 53.26.3"
+
+  - name: Lystra
+    place: af0719d
+    periods:
+      - { first_year: "84 BC", last_year: "37 BC", polity: Roman Republic }
+      - { first_year: "36 BC", last_year: "26 BC", polity: Galatia }
+      - { first_year: "25 BC", last_year: "AD 50", polity: Roman Empire }
+    sources:
+      - "Cassius Dio 49.32.3; 53.26.3"
+
+  - name: Cappadocia
+    place: a33fbde
+    periods:
+      - { first_year: "AD 1", last_year: "AD 16", polity: Kingdom of Cappadocia }
+      - { first_year: "AD 17", last_year: "AD 50", polity: Roman Empire }
+    sources:
+      - "Tacitus, Annals 2.42"
+
+  - name: Bithynia
+    place: a5c0cb0
+    periods:
+      - { first_year: "84 BC", last_year: "75 BC", polity: Kingdom of Bithynia }
+      - { first_year: "74 BC", last_year: "33 BC", polity: Roman Republic }
+    sources:
+      - "Appian, Mithridatic Wars 71"
+
+  - name: Cyrene under the Ptolemies
+    place: a81cdb5
+    periods:
+      - { first_year: "332 BC", last_year: "323 BC", polity: Cyrenaica }
+      - { first_year: "322 BC", last_year: "309 BC", polity: Macedonian Empire }
+      - { first_year: "308 BC", last_year: "274 BC", polity: Ptolemaic Kingdom }
+    sources:
+      - "Diodorus Siculus 18.21.6-9"
+
+  - name: Cyrene, Apion's will
+    place: a81cdb5
+    periods:
+      - { first_year: "110 BC", last_year: "97 BC", polity: Cyrenaica }
+      - { first_year: "96 BC", last_year: "33 BC", polity: Roman Republic }
+    sources:
+      - "Livy, Periochae 70.5"
+
+  - name: Cyprus under Evagoras
+    place: a2e7601
+    periods:
+      - { first_year: "420 BC", last_year: "392 BC", polity: Achaemenid Empire }
+      - { first_year: "391 BC", last_year: "381 BC", polity: Greek City-States }
+      - { first_year: "380 BC", last_year: "340 BC", polity: Achaemenid Empire }
+    sources:
+      - "Diodorus Siculus 14.98; 15.9"
+
+  - name: Cyprus under Demetrius
+    place: a2e7601
+    periods:
+      - { first_year: "308 BC", last_year: "307 BC", polity: Ptolemaic Kingdom }
+      - { first_year: "306 BC", last_year: "295 BC", polity: Macedonian Empire }
+      - { first_year: "294 BC", last_year: "200 BC", polity: Ptolemaic Kingdom }
+    sources:
+      - "Diodorus Siculus 20.47-53"
+      - "Plutarch, Demetrius 35"
+
+  - name: Cyprus, Rome and the last Ptolemies
+    place: a2e7601
+    periods:
+      - { first_year: "80 BC", last_year: "59 BC", polity: Ptolemaic Kingdom }
+      - { first_year: "58 BC", last_year: "48 BC", polity: Roman Republic }
+      - { first_year: "47 BC", last_year: "32 BC", polity: Ptolemaic Kingdom }
+      - { first_year: "31 BC", last_year: "1 BC", polity: Roman Empire }
+    sources:
+      - "Cassius Dio 39.22; 42.35.5"
+
+  - name: Paphos
+    place: a314765
+    periods:
+      - { first_year: "420 BC", last_year: "392 BC", polity: Achaemenid Empire }
+      - { first_year: "391 BC", last_year: "381 BC", polity: Greek City-States }
+      - { first_year: "380 BC", last_year: "340 BC", polity: Achaemenid Empire }
+      - { first_year: "308 BC", last_year: "307 BC", polity: Ptolemaic Kingdom }
+      - { first_year: "306 BC", last_year: "295 BC", polity: Macedonian Empire }
+      - { first_year: "294 BC", last_year: "59 BC", polity: Ptolemaic Kingdom }
+      - { first_year: "58 BC", last_year: "48 BC", polity: Roman Republic }
+      - { first_year: "47 BC", last_year: "32 BC", polity: Ptolemaic Kingdom }
+      - { first_year: "31 BC", last_year: "1 BC", polity: Roman Empire }
+    sources:
+      - "Diodorus Siculus 14.98; 15.9; 20.47-53"
+      - "Plutarch, Demetrius 35"
+      - "Cassius Dio 39.22; 42.35.5"
+
+  - name: Salamis, a Greek kingdom
+    place: afa863b
+    periods:
+      - { first_year: "801 BC", last_year: "702 BC", polity: Greek City-States }
+      - { first_year: "701 BC", last_year: "652 BC", polity: Neo-Assyrian Empire }
+      - { first_year: "651 BC", last_year: "552 BC", polity: Greek City-States }
+      - { first_year: "551 BC", last_year: "526 BC", polity: Twenty-sixth Dynasty of Egypt }
+      - { first_year: "525 BC", last_year: "392 BC", polity: Achaemenid Empire }
+    sources:
+      - "Esarhaddon, Prism Nineveh A v 63-72 (RINAP 4, Esarhaddon 1)"
+      - "Herodotus 2.182; 5.104"
+
+  - name: Seleucia in Pieria
+    place: a6d306d
+    periods:
+      - { first_year: "260 BC", last_year: "247 BC", polity: Seleucid Empire }
+      - { first_year: "246 BC", last_year: "220 BC", polity: Ptolemaic Kingdom }
+      - { first_year: "219 BC", last_year: "150 BC", polity: Seleucid Empire }
+    sources:
+      - "Polybius 5.58-61"
+
+  - name: Antioch, the Seleucid capital
+    place: ae41ab4
+    periods:
+      - { first_year: "300 BC", last_year: "100 BC", polity: Seleucid Empire }
+    sources:
+      - "Polybius 5.58-60"
+
+  - name: Antioch under Zenobia
+    place: ae41ab4
+    periods:
+      - { first_year: "AD 263", last_year: "AD 271", polity: Palmyrene Empire }
+      - { first_year: "AD 272", last_year: "AD 300", polity: Roman Empire }
+    sources:
+      - "Zosimus, New History 1.50-52"
+
+  - name: Palmyra
+    place: ad797fe
+    periods:
+      - { first_year: "AD 261", last_year: "AD 271", polity: Palmyrene Empire }
+      - { first_year: "AD 272", last_year: "AD 300", polity: Roman Empire }
+    sources:
+      - "Zosimus, New History 1.50-61"
+
+  - name: Calneh (Kullania)
+    place: a7be664
+    periods:
+      - { first_year: "760 BC", last_year: "739 BC", polity: Neo-Hittite states }
+      - { first_year: "738 BC", last_year: "700 BC", polity: Neo-Assyrian Empire }
+    sources:
+      - "Eponym Chronicle, 738 BC"
+
+  - name: Hadrach
+    place: a3e8d63
+    periods:
+      - { first_year: "738 BC", last_year: "700 BC", polity: Neo-Assyrian Empire }
+    sources:
+      - "H. Tadmor, The Inscriptions of Tiglath-pileser III (1994), Ann. 19-21"
+
+  - name: Sardis under Achaeus and Antiochus III
+    place: aab4a5f
+    periods:
+      - { first_year: "222 BC", last_year: "191 BC", polity: Seleucid Empire }
+      - { first_year: "190 BC", last_year: "134 BC", polity: Kingdom of Pergamon }
+    sources:
+      - "Polybius 7.15-18"
+      - "Livy 37.44"
+
+  - name: Philadelphia
+    place: a1c7cc1
+    periods:
+      - { first_year: "222 BC", last_year: "191 BC", polity: Seleucid Empire }
+      - { first_year: "190 BC", last_year: "134 BC", polity: Kingdom of Pergamon }
+    sources:
+      - "Polybius 7.15-18"
+      - "Livy 37.44"
+
+  - name: Thyatira
+    place: a94b661
+    periods:
+      - { first_year: "226 BC", last_year: "223 BC", polity: Kingdom of Pergamon }
+      - { first_year: "222 BC", last_year: "191 BC", polity: Seleucid Empire }
+      - { first_year: "190 BC", last_year: "134 BC", polity: Kingdom of Pergamon }
+    sources:
+      - "Polybius 4.48"
+      - "Livy 37.44"
+
+  - name: Harran under Rome and Osroene
+    place: a43f60f
+    periods:
+      - { first_year: "AD 114", last_year: "AD 116", polity: Roman Empire }
+      - { first_year: "AD 117", last_year: "AD 160", polity: Kingdom of Osroene }
+      - { first_year: "AD 161", last_year: "AD 164", polity: Parthian Empire }
+      - { first_year: "AD 165", last_year: "AD 194", polity: Kingdom of Osroene }
+      - { first_year: "AD 195", last_year: "AD 259", polity: Roman Empire }
+    sources:
+      - "Historia Augusta, Hadrian 5.1-4"
+      - "Cassius Dio 75.1-3"
+
+  - name: Athens and Sulla
+    place: a1fe6e7
+    periods:
+      - { first_year: "120 BC", last_year: "89 BC", polity: Greek City-States }
+      - { first_year: "88 BC", last_year: "87 BC", polity: Kingdom of Pontus }
+      - { first_year: "86 BC", last_year: "41 BC", polity: Roman Republic }
+    sources:
+      - "Plutarch, Sulla 14"
+
+  - name: Ur, Akkad and the Third Dynasty
+    place: a6cf75c
+    periods:
+      - { first_year: "2200 BC", last_year: "2155 BC", polity: Akkadian Empire }
+      - { first_year: "2154 BC", last_year: "2113 BC", polity: Sumerian City-States }
+      - { first_year: "2112 BC", last_year: "2005 BC", polity: Third Dynasty of Ur }
+      - { first_year: "2004 BC", last_year: "1800 BC", polity: Sumerian City-States }
+    sources:
+      - "M. Van De Mieroop, A History of the Ancient Near East, ca. 3000-323 BC, 3rd ed. (2016), ch. 4-5"
+
+  - name: Ecbatana, Media and Persia
+    place: a212ef7
+    periods:
+      - { first_year: "600 BC", last_year: "551 BC", polity: Median Kingdom }
+      - { first_year: "550 BC", last_year: "331 BC", polity: Achaemenid Empire }
+    sources:
+      - "Nabonidus Chronicle (ABC 7) ii 1-4"
+
+  - name: Miletus
+    place: a55027d
+    periods:
+      - { first_year: "540 BC", last_year: "500 BC", polity: Achaemenid Empire }
+      - { first_year: "499 BC", last_year: "495 BC", polity: Greek City-States }
+      - { first_year: "494 BC", last_year: "480 BC", polity: Achaemenid Empire }
+      - { first_year: "405 BC", last_year: "385 BC", polity: Greek City-States }
+    blank:
+      - first_year: "479 BC"
+        last_year: "406 BC"
+        reason: >-
+          Free of Persia after Mycale, in the Delian League; no state of the League's is
+          drawn in these years.
+    sources:
+      - "Herodotus 6.18-21; 9.104"
+
+  - name: Lycia
+    place: a19fd03
+    periods:
+      - { first_year: "189 BC", last_year: "168 BC", polity: Rhodes }
+      - { first_year: "167 BC", last_year: "AD 42", polity: Lycian League }
+      - { first_year: "AD 43", last_year: "AD 100", polity: Roman Empire }
+    sources:
+      - "Polybius 30.5"
+      - "Cassius Dio 60.17.3"
+
+  - name: Myra
+    place: aa4b3e2
+    periods:
+      - { first_year: "189 BC", last_year: "168 BC", polity: Rhodes }
+      - { first_year: "167 BC", last_year: "AD 42", polity: Lycian League }
+      - { first_year: "AD 43", last_year: "AD 100", polity: Roman Empire }
+    sources:
+      - "Polybius 30.5"
+      - "Cassius Dio 60.17.3"
+
+  - name: Rhodes
+    place: a4218ee
+    periods:
+      - { first_year: "189 BC", last_year: "AD 43", polity: Rhodes }
+      - { first_year: "AD 44", last_year: "AD 52", polity: Roman Empire }
+      - { first_year: "AD 53", last_year: "AD 72", polity: Rhodes }
+      - { first_year: "AD 73", last_year: "AD 200", polity: Roman Empire }
+    sources:
+      - "Polybius 30.31"
+      - "Cassius Dio 60.24.4"
+      - "Tacitus, Annals 12.58"
+      - "Suetonius, Vespasian 8.4"
+
+  - name: Dalmatia, the Delmatae
+    place: ae86cd7
+    periods:
+      - { first_year: "33 BC", last_year: "33 BC", polity: Roman Republic }
+      - { first_year: "32 BC", last_year: "AD 100", polity: Roman Empire }
+    blank:
+      - first_year: "165 BC"
+        last_year: "34 BC"
+        reason: >-
+          The Delmatae were independent of Rome until Octavian subdued them in 34-33 BC; no
+          state of theirs is drawn.
+    sources:
+      - "Appian, Illyrian Wars 11; 25-28"
+
+  - name: Salona
+    place: a49cd82
+    periods:
+      - { first_year: "76 BC", last_year: "33 BC", polity: Roman Republic }
+    blank:
+      - first_year: "165 BC"
+        last_year: "77 BC"
+        reason: >-
+          The port of the Delmatae until C. Cosconius took it in 76 BC; no state of theirs is
+          drawn.
+    sources:
+      - "Eutropius 6.4"
+
+  - name: Asshur, Shamshi-Adad I
+    place: a874951
+    periods:
+      - { first_year: "1808 BC", last_year: "1760 BC", polity: Assyria }
+    sources:
+      - "Assyrian King List"
