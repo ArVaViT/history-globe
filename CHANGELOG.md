@@ -20,6 +20,30 @@ pull requests on GitHub have them.
   Samaria, Gaza, Gadara, Gerasa, Caesarea, Paneas and Bozrah follow Pompey's, Augustus's
   and Herod's grants. Three states are new: the Tetrarchy of Herod Antipas (4 BC-AD 38),
   the Tetrarchy of Philip (4 BC-AD 33) and the Kingdom of Agrippa I (AD 37-44).
+- States (`polities*.geojson`, `rulers.json`): a second sweep of the borders, each place again
+  passing in the year of the event.
+  - Northern Levant: Kedesh is a village of Tyre, not Judea's; Moab under Mesha holds
+    Medeba, Ataroth, Nebo and Kiriathaim from 852 BC and Heshbon from 733 BC; Hazael's
+    Aram holds Gilead and Bashan in 830-786 BC; Acco is Phoenician until Esarhaddon, Assyria's
+    from 677 BC; the Hauran is Assyria's from 732 BC; Beth-shan, Rabbah and the Decapolis
+    follow Pompey.
+  - Southern Levant: Joppa is the Hasmoneans' from 142 BC, Dor and Strato's Tower from
+    100 BC; Ashdod and Jamnia follow Pompey and Herod; Panium is Seleucid from 200 BC;
+    Rabbah is Ammon's until David; Jericho is Israel's until 723 BC; Libnah, Elath and
+    Ezion-geber are drawn with Judah or Solomon.
+  - Mesopotamia and Egypt: Babylon is never Elam's, Seleucid from 312 BC and Parthian from
+    141 BC; Til Barsip is Bit-Adini's until Shalmaneser III; Memphis is Assyria's from
+    671 BC and Thebes from 663 BC; Ur III (2112-2005 BC) and Asshur from 1808 BC.
+  - Asia Minor and Syria: Galatia, Cappadocia, Bithynia, Lycia, Rhodes, Iconium, Lystra and
+    Derbe pass to Rome in the year of annexation; Lydia is Seleucid 222-191 BC; Miletus
+    rises in 499 BC and is freed in 479 BC; Media falls in 550 BC; Palmyra holds Zenobia's
+    realm to AD 271, Roman again from AD 272; Osroene is restored after Trajan.
+  - Mediterranean: Rome is Roman from 551 BC; Puteoli, Malta and Syracuse stay Roman in the
+    Second Punic War; Macedonia and Greece are Roman from 146 BC, Philippi and Amphipolis
+    Philip II's; Cyprus is Roman 58-48 BC and Demetrius' 306-295 BC; Salamis is a Greek
+    city; Cyrene follows Egypt and is Roman from 96 BC; Athens is Roman from 86 BC.
+  - Three states are new: the Kingdom of Agrippa II (AD 48-92), the Kingdom of Chalcis
+    (AD 41-47) and the Lycian League (167 BC-AD 42).
 - Tours: the stops after the fall of Jerusalem in the exile and Jeremiah tours are dated
   586 BC (were 587 BC); Peter's prison in Jerusalem (Acts 11:2-12:17) is dated AD 44 (was the
   tour's AD 40). `questions.json`: where-was-mizpah `c. 586 BC` (was `c. 587 BC`).
