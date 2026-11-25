@@ -1776,21 +1776,23 @@ anchors:
     place: aa401a9
     periods:
       - { first_year: "133 BC", last_year: "128 BC", polity: Roman Republic }
-      - { first_year: "84 BC", last_year: "79 BC", polity: Roman Republic }
+      - { first_year: "84 BC", last_year: "64 BC", polity: Roman Republic }
       - { first_year: "25 BC", last_year: "AD 50", polity: Roman Empire }
     blank:
       - first_year: "127 BC"
         last_year: "85 BC"
         reason: >-
-          Not Cappadocian, nor Pontic in 88-85 BC; no state of Derbe's own is drawn.
-      - first_year: "78 BC"
+          Cappadocian or Roman Lycaonia, which the sources do not settle; neither is drawn.
+      - first_year: "63 BC"
         last_year: "26 BC"
         reason: >-
-          The seat of Antipater of Derbe until Amyntas of Galatia killed him, at a date no
-          source gives; Antipater has no state on the map, and Derbe was not Cappadocian.
+          Antipater's principality, Pompey's grant of about 63 BC, until Amyntas of Galatia
+          killed him at a date no source gives; neither has a state on the map.
     sources:
       - "Strabo, Geography 12.1.4; 12.6.3"
+      - "Justin, Epitome 37.1.2"
       - "Cicero, Letters to Friends 13.73"
+      - "R. Syme, Roman Papers, vol. 1 (1979), 128-131"
 
   - name: Iconium
     place: ae425aa

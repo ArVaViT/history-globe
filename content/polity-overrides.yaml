@@ -3817,11 +3817,14 @@ clips:
     last_year: "26 BC"
     leaves_blank: true
     reason: >-
-      Cliopatria draws Derbe in the kingdom of Cappadocia from 127 BC. The Derbe article gives the town in the first century BC to its own ruler, Antipater of Derbe, Cicero's guest-friend, who also held Laranda; Strabo says Amyntas of Galatia attacked and killed him and took Derbe, and the town passed to the province of Galatia on Amyntas' death in 25 BC. No source puts Derbe in the Cappadocian kingdom: Strabo has Archelaus' strategia reach only as far as Derbe, "the royal seat of the tyrant Antipater". The year Amyntas took the town is not known: Strabo gives none, and Syme puts it at some time after Antony gave Amyntas Lycaonia in 36 BC, probably after Actium, which no other source narrows; a Galatian span would need a first year no source gives, and Antipater has no state of his own on the map. Derbe is left without a state until 26 BC, as the Derbe article leaves it to its own ruler, and is Rome's from 25 BC (above). In 84-79 BC it is Rome's with the rest of the old Attalid kingdom after Sulla's settlement (annexed), as Iconium and Lystra are.
+      Cliopatria draws Derbe in the kingdom of Cappadocia from 127 BC. Whether Derbe was ever Cappadocian is disputed: Justin gives Lycaonia to the kings of Cappadocia after Aristonicus' revolt (129 BC), but Lycaonia soon appears as a district under the governor of Asia, and by the 50s BC under the governor of Cilicia; A. H. M. Jones put Derbe in the Cappadocian "eleventh strategia", while Ballance and Dmitriev, reading Strabo's "up to Derbe", leave it out, and Strabo names Derbe only as "the royal seat of the tyrant Antipater". The Derbe article gives the town in the first century BC to Antipater, Cicero's guest-friend, who also held Laranda, a principality Syme and Magie take to be Pompey's grant of about 63 BC; Strabo says Amyntas of Galatia attacked and killed him and took Derbe, and the town passed to the province of Galatia on Amyntas' death in 25 BC. The year Amyntas took the town is not known: Strabo gives none, and Syme puts it at some time after Antony gave Amyntas Lycaonia in 36 BC, probably after Actium; a Galatian span would need a first year no source gives, and Antipater has no state of his own on the map. Derbe is therefore drawn with Lycaonia's other towns, Iconium and Lystra, as Rome's in 84-64 BC (Sulla's settlement of the old Attalid lands, annexed, and extends), without a state in 63-26 BC, the years of Antipater and Amyntas, and as Rome's from 25 BC (above). Before 84 BC, when the sources do not settle whether it was Cappadocian or Roman, it is left without a state.
     sources:
       - "Strabo, Geography 12.1.4; 12.6.3"
-      - "Cicero, Letters to Friends 13.73"
-      - "R. Syme, Roman Papers, vol. 1 (1979), 129-131"
+      - "Justin, Epitome 37.1.2"
+      - "Cicero, Letters to Friends 13.73; 15.2; 15.4"
+      - "R. Syme, Roman Papers, vol. 1 (1979), 128-131"
+      - "D. Magie, Roman Rule in Asia Minor (1950), vol. 1, 375"
+      - "S. Dmitriev, Observations on the Historical Geography of Roman Lycaonia, Greek, Roman, and Byzantine Studies 41 (2000) 349-375 (https://grbs.library.duke.edu/index.php/grbs/article/download/2041/3231/12181)"
       - "Wikipedia, Antipater of Derbe (killed by Amyntas some time after 36 BC, probably after Actium)"
   - polity: Kingdom of Pontus
     # Derbe, as above.
@@ -4606,6 +4609,21 @@ extends:
       Alexander held Babylon and Susa from the autumn of 331 BC; Cliopatria's shape of his empire reaches Mesopotamia only from 327 BC, and the Achaemenid shape drawn as his in 330-328 BC (annexed) is the one cut in 331.
     sources:
       - "Arrian, Anabasis 3.16"
+  - polity: Roman Republic
+    first_year: "78 BC"
+    last_year: "64 BC"
+    # Derbe, as cut from Cappadocia (clips).
+    outline:
+      - [32.9, 37.25]
+      - [33.55, 37.25]
+      - [33.55, 37.5]
+      - [32.9, 37.5]
+    reason: >-
+      Derbe is drawn with Lycaonia, Iconium and Lystra, as Rome's from Sulla's settlement until Pompey's grant of the town to Antipater about 63 BC (clips). In 84-79 BC the old Attalid lands drawn as Rome's already hold it (annexed); Cliopatria's Roman shape of 78-64 BC does not reach it.
+    sources:
+      - "Justin, Epitome 37.1.2"
+      - "R. Syme, Roman Papers, vol. 1 (1979), 128-131"
+      - "S. Dmitriev, Observations on the Historical Geography of Roman Lycaonia, Greek, Roman, and Byzantine Studies 41 (2000) 349-375"
   - polity: Neo-Babylonian Empire
     first_year: "551 BC"
     last_year: "551 BC"

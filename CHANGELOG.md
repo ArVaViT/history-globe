@@ -49,15 +49,19 @@ pull requests on GitHub have them.
   - Egypt is the Ptolemaic Kingdom from 323 BC, when Ptolemy took it as satrap (was the
     Macedonian Empire to 309 BC), and Cyrene with it from 322 BC, as the Cyrene article has
     it.
-  - Derbe is no longer Cappadocian (127-26 BC) or Pontic (88-85 BC): it is left without a
-    state, Antipater's town until Amyntas took it at a date no source gives, Rome's in
-    84-79 BC with the old Attalid lands and from 25 BC.
+  - Derbe is no longer Cappadocian (127-26 BC) or Pontic (88-85 BC), its place in the
+    Cappadocian kingdom being disputed: it is Rome's with Iconium and Lystra in 84-64 BC,
+    without a state in 63-26 BC (Antipater's principality, then Amyntas, at a date no
+    source gives) and before 84 BC, and Rome's from 25 BC.
   - The Parthians hold Syria, Phoenicia and the Decapolis from 40 BC, the year of their
     invasion and of Antigonus in Jerusalem (was 41 BC).
   - Rome is the Roman Republic until 28 BC and the Roman Empire from 27 BC, when Octavian
     was named Augustus (the Empire began in 32 BC), Egypt with it from 30 BC.
   - Haran and the Balikh are Babylon's under Nabonidus to 540 BC and Persian from 539 BC
     (were Persian from 550 BC, and without a state in 551 BC).
+- Articles (`articles/<language>.json`): south (the "king of the south" of Daniel 11) dates
+  the Ptolemies' rule of Egypt from Alexander's death in 323 BC, as kings from 305 BC (was
+  "from 305 to 30 BC"), in all 21 languages, as the map now draws it.
 - Tours: the stops after the fall of Jerusalem in the exile and Jeremiah tours are dated
   586 BC (were 587 BC); Peter's prison in Jerusalem (Acts 11:2-12:17) is dated AD 44 (was the
   tour's AD 40). `questions.json`: where-was-mizpah `c. 586 BC` (was `c. 587 BC`).
