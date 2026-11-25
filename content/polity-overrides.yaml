@@ -351,6 +351,37 @@ seams:
     sources:
       - "1 Kgs 12:16-24"
       - "E. R. Thiele, The Mysterious Numbers of the Hebrew Kings, new rev. ed. (1983)"
+  # The Parthian invasion of Syria, Phoenicia and Judea (Map leftovers, 2026-11-24).
+  - polity: Parthian Empire
+    data_year: "41 BC"
+    first_year: "40 BC"
+    reason: >-
+      Cliopatria draws Syria, Phoenicia and the Decapolis as Parthian from 41 BC. Pacorus and Barzapharnes, with Quintus Labienus, crossed the Euphrates in the spring of 40 BC, in the consulship of Calvinus and Pollio, took Syria and Phoenicia but Tyre, and in the same year took Jerusalem and made Antigonus king (event parthians-jerusalem); the Senate made Herod king against him that winter (event herod-made-king), and the map's vassal years of Judea under Parthia already run from 40 BC. The Parthian shape of 41-37 BC is drawn from 40 BC, the year of the events, and the land is Rome's, as in 42 BC, until then.
+    sources:
+      - "Cassius Dio 48.24.3-26.5"
+      - "Josephus, Antiquities 14.330-369; Jewish War 1.248-273"
+      - "Plutarch, Antony 30.1; 33.1"
+  - polity: Roman Republic
+    data_year: "41 BC"
+    first_year: "40 BC"
+    reason: >-
+      As above: Rome's shape of 42 BC, with Syria, is drawn through 41 BC and its shape without Syria from 40 BC, the year the Parthians invaded.
+    sources:
+      - "Cassius Dio 48.24.3-26.5"
+  - polity: Judea
+    data_year: "41 BC"
+    first_year: "40 BC"
+    reason: >-
+      As above: Judea's shape of 41-37 BC, cut back where Cliopatria gives the land east of the Jordan to the Parthians, is drawn from 40 BC.
+    sources:
+      - "Josephus, Antiquities 14.330-369"
+  - polity: Kingdom of Osroene
+    data_year: "41 BC"
+    first_year: "40 BC"
+    reason: >-
+      As above: Osroene's shape of 41-37 BC, drawn back from the land the Parthian shape of those years takes west of it, is drawn from 40 BC.
+    sources:
+      - "Cassius Dio 48.24.3-26.5"
 
 starts:
   - polity: Kingdom of Israel
@@ -1165,7 +1196,7 @@ clips:
     last_year: "32 BC"
     to: Roman Empire
     reason: >-
-      Cliopatria's Ptolemaic shape of 32 BC is the whole of Mark Antony's East, from Greece to Syria, so Athens, Corinth, Tyre and Damascus showed as Cleopatra's. Antony held those lands as a Roman triumvir. Cleopatra's own kingdom was Egypt and Cyprus; the lands he gave her and her children in 37-34 BC (parts of Coele-Syria and Crete, Cyrenaica) are not drawn, their extent being uncertain. The rest is drawn as Rome's, under the name Cliopatria gives it from 32 BC.
+      Cliopatria's Ptolemaic shape of 32 BC is the whole of Mark Antony's East, from Greece to Syria, so Athens, Corinth, Tyre and Damascus showed as Cleopatra's. Antony held those lands as a Roman triumvir. Cleopatra's own kingdom was Egypt and Cyprus; the lands he gave her and her children in 37-34 BC (parts of Coele-Syria and Crete, Cyrenaica) are not drawn, their extent being uncertain. The rest is drawn as Rome's: as the Roman Republic, as Rome is drawn until 28 BC (renamed).
     sources:
       - "Plutarch, Antony 36; 54; 56-61"
       - "Cassius Dio 49.32.4-5; 49.41.1-3"
@@ -1864,7 +1895,7 @@ clips:
       - [35.62, 33.08]
       - [35.18, 33.08]
       - [35.15, 32.9]
-    first_year: "41 BC"
+    first_year: "40 BC"
     last_year: "38 BC"
     reason: >-
       In 40-38 BC Galilee was part of Antigonus's Judea, which the map draws under Parthia (vassals); the Parthian shape is cut back from it.
@@ -2126,7 +2157,7 @@ clips:
       - [35.26, 32.33]
       - [35.13, 32.33]
     first_year: "63 BC"
-    last_year: "42 BC"
+    last_year: "41 BC"
     to: Roman Republic
     reason: >-
       Pompey gave Samaria back to its people in 63 BC and Gabinius rebuilt it (the Samaria article); it was a city of the province of Syria until Augustus gave it to Herod in 30 BC. Drawn as Rome's in these years.
@@ -2141,11 +2172,11 @@ clips:
       - [35.26, 32.22]
       - [35.26, 32.33]
       - [35.13, 32.33]
-    first_year: "41 BC"
+    first_year: "40 BC"
     last_year: "38 BC"
     to: Parthian Empire
     reason: >-
-      In 41-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
+      In 40-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
     sources:
       - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
       - "Josephus, Antiquities 15.217; Jewish War 1.396"
@@ -2190,7 +2221,7 @@ clips:
       - [34.58, 31.6]
       - [34.35, 31.6]
     first_year: "63 BC"
-    last_year: "42 BC"
+    last_year: "41 BC"
     to: Roman Republic
     reason: >-
       Pompey freed Gaza from Jewish rule in 63 BC and Gabinius had it rebuilt (the Gaza article); it was a city of the province of Syria until Augustus gave it to Herod in 30 BC. Drawn as Rome's in these years.
@@ -2205,11 +2236,11 @@ clips:
       - [34.58, 31.4]
       - [34.58, 31.6]
       - [34.35, 31.6]
-    first_year: "41 BC"
+    first_year: "40 BC"
     last_year: "38 BC"
     to: Parthian Empire
     reason: >-
-      In 41-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
+      In 40-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
     sources:
       - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
       - "Josephus, Antiquities 15.217; Jewish War 1.396"
@@ -2255,7 +2286,7 @@ clips:
       - [35.7, 32.8]
       - [35.63, 32.77]
     first_year: "63 BC"
-    last_year: "42 BC"
+    last_year: "41 BC"
     to: Roman Republic
     reason: >-
       After the Roman conquest of 63 BC Pompey freed Gadara and Hippos from Jewish rule and joined them to the province of Syria; Augustus gave them to Herod in 30 BC (the Gadara article). Drawn as Rome's in these years.
@@ -2271,11 +2302,11 @@ clips:
       - [35.78, 32.7]
       - [35.7, 32.8]
       - [35.63, 32.77]
-    first_year: "41 BC"
+    first_year: "40 BC"
     last_year: "38 BC"
     to: Parthian Empire
     reason: >-
-      In 41-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
+      In 40-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
     sources:
       - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
       - "Josephus, Antiquities 15.217; Jewish War 1.396"
@@ -2322,7 +2353,7 @@ clips:
       - [35.98, 32.36]
       - [35.8, 32.36]
     first_year: "63 BC"
-    last_year: "42 BC"
+    last_year: "41 BC"
     to: Roman Republic
     reason: >-
       Pompey freed Gerasa from Jewish rule in 63 BC; it was one of the Decapolis cities of the province of Syria and never Herod's (the Gerasa article). Drawn as Rome's in these years.
@@ -2336,11 +2367,11 @@ clips:
       - [35.98, 32.18]
       - [35.98, 32.36]
       - [35.8, 32.36]
-    first_year: "41 BC"
+    first_year: "40 BC"
     last_year: "38 BC"
     to: Parthian Empire
     reason: >-
-      In 41-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
+      In 40-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
     sources:
       - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
       - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
@@ -2397,7 +2428,7 @@ clips:
       - [34.62, 31.73]
       - [34.48, 31.73]
     first_year: "63 BC"
-    last_year: "42 BC"
+    last_year: "41 BC"
     to: Roman Republic
     reason: >-
       Ashkelon was a free Greek city, with its own era from 104 BC, "independent of the Hasmoneans and of Herod" (the Ashkelon article); Cliopatria draws it in Judea. Drawn as Rome's in these years.
@@ -2411,11 +2442,11 @@ clips:
       - [34.62, 31.6]
       - [34.62, 31.73]
       - [34.48, 31.73]
-    first_year: "41 BC"
+    first_year: "40 BC"
     last_year: "38 BC"
     to: Parthian Empire
     reason: >-
-      In 41-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
+      In 40-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
     sources:
       - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
       - "Josephus, Jewish War 1.422"
@@ -2473,7 +2504,7 @@ clips:
       - [35.8, 33.35]
       - [35.6, 33.35]
     first_year: "64 BC"
-    last_year: "42 BC"
+    last_year: "41 BC"
     to: Roman Republic
     reason: >-
       Paneas and the Huleh basin were not Hasmonean: they belonged to the Ituraean principality of Ptolemy son of Mennaeus and then to Lysanias and Zenodorus, Rome's clients, until Augustus gave Zenodorus's land to Herod in 20 BC (the Caesarea Philippi article). Drawn as Rome's in these years.
@@ -2488,11 +2519,11 @@ clips:
       - [35.8, 33.15]
       - [35.8, 33.35]
       - [35.6, 33.35]
-    first_year: "41 BC"
+    first_year: "40 BC"
     last_year: "38 BC"
     to: Parthian Empire
     reason: >-
-      In 41-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
+      In 40-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
     sources:
       - "Josephus, Antiquities 14.39; 15.344-360; Jewish War 1.398-400"
       - "Strabo 16.2.10; 16.2.20"
@@ -2777,7 +2808,7 @@ clips:
       - [35.56, 32.55]
       - [35.45, 32.55]
     first_year: "63 BC"
-    last_year: "42 BC"
+    last_year: "41 BC"
     to: Roman Republic
     reason: >-
       Pompey freed Scythopolis from Jewish rule in 63 BC and Gabinius rebuilt it (the Beth-shan article); it was the largest city of the Decapolis, in the province of Syria, and never Herod's. Drawn as Rome's in these years.
@@ -2791,11 +2822,11 @@ clips:
       - [35.56, 32.46]
       - [35.56, 32.55]
       - [35.45, 32.55]
-    first_year: "41 BC"
+    first_year: "40 BC"
     last_year: "38 BC"
     to: Parthian Empire
     reason: >-
-      In 41-38 BC, when the Parthians overran Syria, it is drawn as theirs, as Gadara and Gerasa are.
+      In 40-38 BC, when the Parthians overran Syria, it is drawn as theirs, as Gadara and Gerasa are.
     sources:
       - "Josephus, Antiquities 13.280; 13.396; 14.75-76; Jewish War 1.156"
       - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
@@ -2838,7 +2869,7 @@ clips:
       - [35.92, 32.75]
       - [35.78, 32.75]
     first_year: "63 BC"
-    last_year: "42 BC"
+    last_year: "41 BC"
     to: Roman Republic
     reason: >-
       Cliopatria draws the land between Gadara and Abila in Judea to AD 5. Pompey freed the Decapolis cities from Jewish rule in 63 BC (the Decapolis article); Abila was never Herod's. Drawn as Rome's in these years, as Gerasa.
@@ -2853,11 +2884,11 @@ clips:
       - [35.92, 32.66]
       - [35.92, 32.75]
       - [35.78, 32.75]
-    first_year: "41 BC"
+    first_year: "40 BC"
     last_year: "38 BC"
     to: Parthian Empire
     reason: >-
-      In 41-38 BC, when the Parthians overran Syria, it is drawn as theirs, as Gadara and Gerasa are.
+      In 40-38 BC, when the Parthians overran Syria, it is drawn as theirs, as Gadara and Gerasa are.
     sources:
       - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
       - "Pliny, Natural History 5.74"
@@ -2919,7 +2950,7 @@ clips:
       - [36.0, 32.0]
       - [35.88, 32.0]
     first_year: "63 BC"
-    last_year: "42 BC"
+    last_year: "41 BC"
     to: Roman Republic
     reason: >-
       Philadelphia counted its years from Pompey's settlement of 63 BC and is one of Pliny's Decapolis cities (the Rabbah article). Drawn as Rome's in these years.
@@ -2938,7 +2969,7 @@ clips:
     last_year: "33 BC"
     to: Roman Republic
     reason: >-
-      Drawn as Rome's in these years; in 41-38 BC the data's Parthian shape holds the city.
+      Drawn as Rome's in these years; in 40-38 BC the data's Parthian shape holds the city.
     sources:
       - "Josephus, Antiquities 13.235; 13.393-397; Jewish War 3.46-47"
       - "Pliny, Natural History 5.74"
@@ -3288,7 +3319,7 @@ clips:
   # Gabinius. They were Herod's later and he left them to his sister Salome; when he got them
   # is not recorded, and the map gives them to him with Strato's Tower and Joppa in 30 BC.
   # Until then they take the state of the coast of these years: Rome's, the Parthians' in
-  # 41-38 BC, then Rome's again.
+  # 40-38 BC, then Rome's again.
   - polity: Judea
     without:
       - [34.6, 31.72]
@@ -3299,7 +3330,7 @@ clips:
       - [34.7, 31.9]
       - [34.6, 31.79]
     first_year: "63 BC"
-    last_year: "42 BC"
+    last_year: "41 BC"
     to: Roman Republic
     reason: >-
       Josephus names Azotus and Jamnia among the cities Pompey took from the Jews in 63 BC and among those Gabinius rebuilt (the Ashdod article). Cliopatria draws them in Judea without a break.
@@ -3316,11 +3347,11 @@ clips:
       - [34.755, 31.9]
       - [34.7, 31.9]
       - [34.6, 31.79]
-    first_year: "41 BC"
+    first_year: "40 BC"
     last_year: "38 BC"
     to: Parthian Empire
     reason: >-
-      As above; in 41-38 BC the coast north of them is drawn as Parthian, Pacorus' invasion of Syria and Palestine (the Dor band), and these two cities with it.
+      As above; in 40-38 BC the coast north of them is drawn as Parthian, Pacorus' invasion of Syria and Palestine (the Dor band), and these two cities with it.
     sources:
       - "Josephus, Antiquities 14.330-332; Jewish War 1.248-249"
   - polity: Judea
@@ -3775,6 +3806,38 @@ clips:
     sources:
       - "Strabo, Geography 12.1.4; 12.6.3"
       - "S. Mitchell, Anatolia: Land, Men, and Gods in Asia Minor, vol. 2 (1993)"
+  - polity: Kingdom of Cappadocia
+    # Derbe, as above.
+    without:
+      - [32.9, 37.25]
+      - [33.55, 37.25]
+      - [33.55, 37.5]
+      - [32.9, 37.5]
+    first_year: "127 BC"
+    last_year: "26 BC"
+    leaves_blank: true
+    reason: >-
+      Cliopatria draws Derbe in the kingdom of Cappadocia from 127 BC. The Derbe article gives the town in the first century BC to its own ruler, Antipater of Derbe, Cicero's guest-friend, who also held Laranda; Strabo says Amyntas of Galatia attacked and killed him and took Derbe, and the town passed to the province of Galatia on Amyntas' death in 25 BC. No source puts Derbe in the Cappadocian kingdom: Strabo has Archelaus' strategia reach only as far as Derbe, "the royal seat of the tyrant Antipater". The year Amyntas took the town is not known: Strabo gives none, and Syme puts it at some time after Antony gave Amyntas Lycaonia in 36 BC, probably after Actium, which no other source narrows; a Galatian span would need a first year no source gives, and Antipater has no state of his own on the map. Derbe is left without a state until 26 BC, as the Derbe article leaves it to its own ruler, and is Rome's from 25 BC (above). In 84-79 BC it is Rome's with the rest of the old Attalid kingdom after Sulla's settlement (annexed), as Iconium and Lystra are.
+    sources:
+      - "Strabo, Geography 12.1.4; 12.6.3"
+      - "Cicero, Letters to Friends 13.73"
+      - "R. Syme, Roman Papers, vol. 1 (1979), 129-131"
+      - "Wikipedia, Antipater of Derbe (killed by Amyntas some time after 36 BC, probably after Actium)"
+  - polity: Kingdom of Pontus
+    # Derbe, as above.
+    without:
+      - [32.9, 37.25]
+      - [33.55, 37.25]
+      - [33.55, 37.5]
+      - [32.9, 37.5]
+    first_year: "88 BC"
+    last_year: "85 BC"
+    leaves_blank: true
+    reason: >-
+      Cliopatria draws Derbe in the kingdom of Pontus in 88-85 BC, as the Cappadocian land Mithridates VI overran in the First Mithridatic War; Derbe was not Cappadocian (above), and no source puts it under Mithridates. Left without a state, as in the years before and after.
+    sources:
+      - "Strabo, Geography 12.6.3"
+      - "Appian, Mithridatic Wars 17-21"
   - polity: Galatia
     # Lycaonia: Iconium, Lystra and the plain east of them; Pisidian Antioch out.
     without:
@@ -4059,6 +4122,26 @@ clips:
       As above: from the peace of 380 BC Evagoras and the other kings of Cyprus were tributaries of Persia; Cliopatria makes the island Persian again only from 367 BC.
     sources:
       - "Diodorus Siculus 15.9"
+  - polity: Macedonian Empire
+    # Egypt: from Catabathmus (25.1 degrees E) to a line from the sea off Gaza through Raphia
+    # to Aila.
+    without:
+      - [25.1, 15.0]
+      - [40.0, 15.0]
+      - [35.0, 29.4]
+      - [34.25, 31.25]
+      - [34.0, 32.0]
+      - [25.1, 33.0]
+    first_year: "323 BC"
+    last_year: "309 BC"
+    to: Ptolemaic Kingdom
+    drawn_from_cut: true
+    reason: >-
+      Cliopatria draws Egypt inside the Macedonian Empire until 309 BC and the Ptolemaic shapes only from 308 BC. At the settlement in Babylon after Alexander's death in 323 BC (event alexander-dies) Ptolemy was given Egypt as satrap, went there at once and ruled it as his own, putting Cleomenes to death and fighting off Perdiccas' invasion in 321/320 BC; he took the title of king only in 305 BC. The site counts the Ptolemies' rule from then: the Cyrene article has Cyrene the Ptolemies' from 322 BC, and no article, event or tour dates the kingdom from 305 BC. Egypt is drawn as the Ptolemaic Kingdom from 323 BC; the lands Ptolemy held for a time outside it in these years, Coele-Syria (320/319-315 BC) and Cyprus (from 313/312 BC), are left as the data draws them.
+    sources:
+      - "Diodorus Siculus 18.3.1; 18.14.1; 18.33-36; 18.43; 19.79; 20.53.2-4"
+      - "Arrian, Events after Alexander (FGrH 156 F 1.5)"
+      - "G. Hölbl, A History of the Ptolemaic Empire (2001), ch. 1"
   - polity: Cyrenaica
     # Cyrenaica, west of Catabathmus.
     without:
@@ -4068,9 +4151,9 @@ clips:
       - [15.0, 34.0]
     first_year: "322 BC"
     last_year: "309 BC"
-    to: Macedonian Empire
+    to: Ptolemaic Kingdom
     reason: >-
-      Cliopatria draws Cyrenaica as independent in 332-293 BC. Ophellas took Cyrene for Ptolemy in 322 BC and the Ptolemies held it from then (the Cyrene article), save for short breaks that are not drawn: the revolt of 313-312 BC, Ophellas' own rule until his death in 308 BC and the city's breakaway that Magas put down. Drawn as Egypt's: under the empire's name until 309 BC, as Egypt itself is, and as the Ptolemies' from 308 BC (below).
+      Cliopatria draws Cyrenaica as independent in 332-293 BC. Ophellas took Cyrene for Ptolemy in 322 BC and the Ptolemies held it from then (the Cyrene article), save for short breaks that are not drawn: the revolt of 313-312 BC, Ophellas' own rule until his death in 308 BC and the city's breakaway that Magas put down. Drawn as the Ptolemies' from 322 BC, joined to their Egypt of these years (above) and to their own shapes from 308 BC (below).
     sources:
       - "Diodorus Siculus 18.21.6-9; 19.79; 20.40-42"
       - "Pausanias 1.6.8"
@@ -4090,6 +4173,21 @@ clips:
       - "Diodorus Siculus 18.21.6-9; 19.79; 20.40-42"
       - "Pausanias 1.6.8"
   # Syria, Mesopotamia and Iran.
+  - polity: Achaemenid Empire
+    # Harran and the Balikh, as drawn for Ashur-uballit II in 612-611 BC (clips).
+    without:
+      - [38.3, 36.0]
+      - [40.6, 36.0]
+      - [40.6, 37.7]
+      - [38.3, 37.7]
+    first_year: "550 BC"
+    last_year: "540 BC"
+    to: Neo-Babylonian Empire
+    reason: >-
+      Cliopatria draws Harran as Persian from 550 BC, the year Cyrus took Ecbatana. Harran stayed Babylon's until Cyrus took Babylon in 539 BC: Nabonidus, the last king of Babylon, rebuilt Ehulhul, the temple of Sin at Harran (the Haran article), after the Medes who had held the land around it withdrew on Cyrus' rising against Astyages. Drawn as Babylon's until 540 BC and as Persian from 539 BC, as Babylon itself is.
+    sources:
+      - "Nabonidus Cylinder from Sippar, col. i-ii (the rebuilding of Ehulhul)"
+      - "P.-A. Beaulieu, The Reign of Nabonidus, King of Babylon 556-539 B.C. (1989)"
   - polity: Seleucid Empire
     # Seleucia in Pieria and its harbour, at the mouth of the Orontes.
     without:
@@ -4508,6 +4606,20 @@ extends:
       Alexander held Babylon and Susa from the autumn of 331 BC; Cliopatria's shape of his empire reaches Mesopotamia only from 327 BC, and the Achaemenid shape drawn as his in 330-328 BC (annexed) is the one cut in 331.
     sources:
       - "Arrian, Anabasis 3.16"
+  - polity: Neo-Babylonian Empire
+    first_year: "551 BC"
+    last_year: "551 BC"
+    # Harran and the Balikh, as for Babylonia in 610-602 BC (below).
+    outline:
+      - [38.3, 36.0]
+      - [40.6, 36.0]
+      - [40.6, 37.7]
+      - [38.3, 37.7]
+    reason: >-
+      Harran was Babylon's in 551 BC, between Nabonidus' rebuilding of Ehulhul and the fall of Babylon (clips); neither Cliopatria's Babylonian shape of these years nor its Median one, drawn to 551 BC, reaches it, and the Persian shape that holds it begins in 550 BC (starts), so the city showed no state.
+    sources:
+      - "Nabonidus Cylinder from Sippar, col. i-ii"
+      - "P.-A. Beaulieu, The Reign of Nabonidus, King of Babylon 556-539 B.C. (1989)"
   - polity: Babylonia
     first_year: "610 BC"
     last_year: "602 BC"
@@ -5621,7 +5733,7 @@ renamed:
     first_year: "323 BC"
     name: Ptolemaic Kingdom
     reason: >-
-      Step 2 of 3: the shapes from 308 BC on are the Ptolemies' own.
+      Step 2 of 3: the shapes from 323 BC on are the Ptolemies' own (Egypt as cut from the Macedonian Empire in 323-309 BC, clips; Cliopatria's own from 308 BC).
     sources:
       - "Wikipedia, Ptolemaic Kingdom"
   - polity: Ptolemaic Kingdom (rename step)
@@ -5632,6 +5744,34 @@ renamed:
     sources:
       - "Wikipedia, Ptolemaic Kingdom (satrap 323, king 305 BC)"
       - "Wikipedia, Ptolemy I Soter"
+  # Cliopatria names Rome "Roman Empire" from 32 BC, the year before Actium. The site dates
+  # the Empire from 27 BC: the Senate named Octavian Augustus that year (event
+  # augustus-named) and the Rome article has him "the first emperor in 27 BC". Renamed in
+  # three steps through a name used for nothing else, so that Rome is the Roman Republic
+  # in 32-28 BC and the Roman Empire from 27 BC.
+  - polity: Roman Empire
+    first_year: "32 BC"
+    name: Roman Empire (rename step)
+    reason: >-
+      Step 1 of 3 (see the comment above).
+    sources:
+      - "Cassius Dio 53.16.6-8 (the name Augustus, January 27 BC)"
+  - polity: Roman Empire (rename step)
+    first_year: "27 BC"
+    name: Roman Empire
+    reason: >-
+      Step 2 of 3: from 27 BC, when the Senate named Octavian Augustus (event augustus-named; the Rome article: "Augustus became the first emperor in 27 BC"), Rome is the Roman Empire.
+    sources:
+      - "Cassius Dio 53.16.6-8"
+      - "Res Gestae Divi Augusti 34"
+  - polity: Roman Empire (rename step)
+    first_year: "32 BC"
+    name: Roman Republic
+    reason: >-
+      Step 3 of 3: in 32-28 BC, the years of the war with Antony and Cleopatra, Actium (31 BC, event actium) and the taking of Egypt (30 BC, event egypt-roman), Rome is drawn as the Roman Republic, as the site's events and the Rome article have it until 27 BC.
+    sources:
+      - "Cassius Dio 50.1-53.16"
+      - "Res Gestae Divi Augusti 34"
   - polity: Kingdom of Armenia
     first_year: "AD 638"
     name: Principality of Armenia
@@ -5990,11 +6130,11 @@ annexed:
       - "Livy, Periochae 70.5"
       - "Wikipedia, Ptolemy Apion"
   - polity: Ptolemaic Kingdom
-    by: Roman Empire
+    by: Roman Republic
     first_year: "30 BC"
     last_year: "29 BC"
     reason: >-
-      Egypt was a Roman province from 30 BC; Cliopatria's Roman shape reaches it only from 28 BC.
+      Egypt was a Roman province from 30 BC; Cliopatria's Roman shape reaches it only from 28 BC. Drawn under the Roman Republic, as Rome is drawn until Octavian was named Augustus in 27 BC (renamed).
     sources:
       - "Cassius Dio 51.17.1"
       - "Wikipedia, Egypt (Roman province) (province from 30 BC)"
@@ -6390,7 +6530,7 @@ vassals:
   - polity: Nabataeans
     of: Roman Republic
     first_year: "62 BC"
-    last_year: "33 BC"
+    last_year: "28 BC"
     label:
       en: "under Rome"
       ru: "под Римом"
@@ -6421,7 +6561,7 @@ vassals:
 
   - polity: Nabataeans
     of: Roman Empire
-    first_year: "32 BC"
+    first_year: "27 BC"
     last_year: "AD 106"
     label:
       en: "under Rome"
@@ -6546,7 +6686,7 @@ vassals:
   - polity: Judea
     of: Roman Republic
     first_year: "37 BC"
-    last_year: "33 BC"
+    last_year: "28 BC"
     label:
       en: "under Rome"
       ru: "под Римом"
@@ -6570,13 +6710,13 @@ vassals:
       ro: "sub Roma"
       bg: "под властта на Рим"
     reason: >-
-      Herod the Great ruled from 37 BC as a client king of Rome, having been made king of Judea by the Senate in 40 BC. The data draws the Roman Republic to 33 BC and the Empire from 32 BC.
+      Herod the Great ruled from 37 BC as a client king of Rome, having been made king of Judea by the Senate in 40 BC. The map draws the Roman Republic to 28 BC and the Empire from 27 BC, when Octavian was named Augustus (renamed).
     sources:
       - "Josephus, Antiquities 14.14-16"
       - "Wikipedia, Herodian kingdom (client state of Rome, 37-4 BC)"
   - polity: Judea
     of: Roman Empire
-    first_year: "32 BC"
+    first_year: "27 BC"
     last_year: "AD 5"
     label:
       en: "under Rome"
@@ -6608,7 +6748,7 @@ vassals:
   - polity: Kingdom of Pontus
     of: Roman Republic
     first_year: "37 BC"
-    last_year: "33 BC"
+    last_year: "28 BC"
     label:
       en: "under Rome"
       ru: "под Римом"
@@ -6632,12 +6772,12 @@ vassals:
       ro: "sub Roma"
       bg: "под властта на Рим"
     reason: >-
-      Mark Antony set up client kings in Anatolia on condition that they paid tribute, Darius son of Pharnaces II in Pontus among them (37 BC, according to Appian); Polemon I followed him. The data draws the Roman Republic to 33 BC and the Empire from 32 BC.
+      Mark Antony set up client kings in Anatolia on condition that they paid tribute, Darius son of Pharnaces II in Pontus among them (37 BC, according to Appian); Polemon I followed him. The map draws the Roman Republic to 28 BC and the Empire from 27 BC, when Octavian was named Augustus (renamed).
     sources:
       - "Wikipedia, Darius of Pontus; Polemon I of Pontus"
   - polity: Kingdom of Pontus
     of: Roman Empire
-    first_year: "32 BC"
+    first_year: "27 BC"
     last_year: "AD 62"
     label:
       en: "under Rome"
@@ -6670,7 +6810,7 @@ vassals:
   - polity: Kingdom of Cappadocia
     of: Roman Republic
     first_year: "63 BC"
-    last_year: "33 BC"
+    last_year: "28 BC"
     label:
       en: "under Rome"
       ru: "под Римом"
@@ -6700,7 +6840,7 @@ vassals:
       - "Wikipedia, Ariobarzanes I of Cappadocia; Archelaus of Cappadocia"
   - polity: Kingdom of Cappadocia
     of: Roman Empire
-    first_year: "32 BC"
+    first_year: "27 BC"
     last_year: "AD 16"
     label:
       en: "under Rome"
@@ -6732,7 +6872,7 @@ vassals:
   - polity: Galatia
     of: Roman Republic
     first_year: "c. 63 BC"
-    last_year: "33 BC"
+    last_year: "28 BC"
     label:
       en: "under Rome"
       ru: "под Римом"
@@ -6762,7 +6902,7 @@ vassals:
       - "Wikipedia, Amyntas of Galatia (king 36-25 BC, client ruler of Antony)"
   - polity: Galatia
     of: Roman Empire
-    first_year: "32 BC"
+    first_year: "27 BC"
     last_year: "26 BC"
     label:
       en: "under Rome"
@@ -7808,7 +7948,7 @@ vassals:
   - polity: Rhodes
     of: Roman Republic
     first_year: "164 BC"
-    last_year: "32 BC"
+    last_year: "28 BC"
     label:
       en: "under Rome"
       ru: "под Римом"
@@ -7838,7 +7978,7 @@ vassals:
       - "R. M. Berthold, Rhodes in the Hellenistic Age (1984)"
   - polity: Rhodes
     of: Roman Empire
-    first_year: "31 BC"
+    first_year: "27 BC"
     last_year: "AD 43"
     label:
       en: "under Rome"
@@ -7900,7 +8040,7 @@ vassals:
   - polity: Lycian League
     of: Roman Republic
     first_year: "167 BC"
-    last_year: "32 BC"
+    last_year: "28 BC"
     label:
       en: "under Rome"
       ru: "под Римом"
@@ -7931,7 +8071,7 @@ vassals:
       - "S. Mitchell, The Treaty between Rome and Lycia of 46 BC (MS 2070), in R. Pintaudi (ed.), Papyri Graecae Schøyen I (2005)"
   - polity: Lycian League
     of: Roman Empire
-    first_year: "31 BC"
+    first_year: "27 BC"
     last_year: "AD 42"
     label:
       en: "under Rome"
