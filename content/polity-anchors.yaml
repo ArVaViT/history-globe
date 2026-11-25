@@ -281,9 +281,10 @@ anchors:
       - { first_year: "399 BC", last_year: "381 BC", polity: Twenty-ninth Dynasty of Egypt }
       - { first_year: "380 BC", last_year: "344 BC", polity: Thirtieth Dynasty of Egypt }
       - { first_year: "343 BC", last_year: "333 BC", polity: Achaemenid Empire }
-      - { first_year: "332 BC", last_year: "325 BC", polity: Macedonian Empire }
+      - { first_year: "332 BC", last_year: "324 BC", polity: Macedonian Empire }
+      - { first_year: "323 BC", last_year: "305 BC", polity: Ptolemaic Kingdom }
     sources:
-      - "Herodotus 3.10-16; Diodorus Siculus 14.35; 16.46-51"
+      - "Herodotus 3.10-16; Diodorus Siculus 14.35; 16.46-51; 18.3.1; 18.14.1"
       - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 13"
 
   - name: Jerusalem, Seleucid and Hasmonean
@@ -297,8 +298,8 @@ anchors:
   - name: Athens under Antony
     place: a1fe6e7
     periods:
-      - { first_year: "40 BC", last_year: "33 BC", polity: Roman Republic }
-      - { first_year: "32 BC", last_year: "25 BC", polity: Roman Empire }
+      - { first_year: "40 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "25 BC", polity: Roman Empire }
     sources:
       - "Plutarch, Antony 57"
 
@@ -312,8 +313,8 @@ anchors:
   - name: Corinth under Antony
     place: a6f437a
     periods:
-      - { first_year: "40 BC", last_year: "33 BC", polity: Roman Republic }
-      - { first_year: "32 BC", last_year: "25 BC", polity: Roman Empire }
+      - { first_year: "40 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "25 BC", polity: Roman Empire }
     sources:
       - "Plutarch, Antony 67"
 
@@ -327,16 +328,16 @@ anchors:
   - name: Tyre under Antony
     place: a160272
     periods:
-      - { first_year: "40 BC", last_year: "33 BC", polity: Roman Republic }
-      - { first_year: "32 BC", last_year: "25 BC", polity: Roman Empire }
+      - { first_year: "40 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "25 BC", polity: Roman Empire }
     sources:
       - "Plutarch, Antony 36"
 
   - name: Damascus under Antony
     place: a69c1d4
     periods:
-      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
-      - { first_year: "32 BC", last_year: "25 BC", polity: Roman Empire }
+      - { first_year: "37 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "25 BC", polity: Roman Empire }
     sources:
       - "Plutarch, Antony 36"
 
@@ -465,7 +466,8 @@ anchors:
     place: aee7248
     periods:
       - { first_year: "100 BC", last_year: "31 BC", polity: Ptolemaic Kingdom }
-      - { first_year: "30 BC", last_year: "1 BC", polity: Roman Empire }
+      - { first_year: "30 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "1 BC", polity: Roman Empire }
     sources:
       - "Cassius Dio 51.17.1"
 
@@ -718,10 +720,10 @@ anchors:
   - name: Caesarea Philippi
     place: ab7bf48
     periods:
-      - { first_year: "64 BC", last_year: "42 BC", polity: Roman Republic }
-      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
-      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
-      - { first_year: "32 BC", last_year: "21 BC", polity: Roman Empire }
+      - { first_year: "64 BC", last_year: "41 BC", polity: Roman Republic }
+      - { first_year: "40 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "21 BC", polity: Roman Empire }
       - { first_year: "20 BC", last_year: "5 BC", polity: Judea }
       - { first_year: "4 BC", last_year: "AD 33", polity: Tetrarchy of Philip }
       - { first_year: "AD 34", last_year: "AD 36", polity: Roman Empire }
@@ -739,10 +741,9 @@ anchors:
     periods:
       - { first_year: "142 BC", last_year: "109 BC", polity: Seleucid Empire }
       - { first_year: "108 BC", last_year: "64 BC", polity: Judea }
-      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
-      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
-      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
-      - { first_year: "32 BC", last_year: "31 BC", polity: Roman Empire }
+      - { first_year: "63 BC", last_year: "41 BC", polity: Roman Republic }
+      - { first_year: "40 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "31 BC", polity: Roman Republic }
       - { first_year: "30 BC", last_year: "AD 5", polity: Judea }
       - { first_year: "AD 6", last_year: "AD 40", polity: Roman Empire }
       - { first_year: "AD 41", last_year: "AD 44", polity: Kingdom of Agrippa I }
@@ -752,7 +753,7 @@ anchors:
   - name: Caesarea
     place: a58735e
     periods:
-      - { first_year: "32 BC", last_year: "31 BC", polity: Roman Empire }
+      - { first_year: "32 BC", last_year: "31 BC", polity: Roman Republic }
       - { first_year: "30 BC", last_year: "AD 5", polity: Judea }
       - { first_year: "AD 6", last_year: "AD 40", polity: Roman Empire }
       - { first_year: "AD 41", last_year: "AD 44", polity: Kingdom of Agrippa I }
@@ -765,10 +766,9 @@ anchors:
     periods:
       - { first_year: "127 BC", last_year: "97 BC", polity: Seleucid Empire }
       - { first_year: "96 BC", last_year: "64 BC", polity: Judea }
-      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
-      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
-      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
-      - { first_year: "32 BC", last_year: "31 BC", polity: Roman Empire }
+      - { first_year: "63 BC", last_year: "41 BC", polity: Roman Republic }
+      - { first_year: "40 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "31 BC", polity: Roman Republic }
       - { first_year: "30 BC", last_year: "5 BC", polity: Judea }
       - { first_year: "4 BC", last_year: "AD 66", polity: Roman Empire }
     sources:
@@ -777,10 +777,10 @@ anchors:
   - name: Ashkelon, a free city
     place: ac87d4c
     periods:
-      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
-      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
-      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
-      - { first_year: "32 BC", last_year: "AD 66", polity: Roman Empire }
+      - { first_year: "63 BC", last_year: "41 BC", polity: Roman Republic }
+      - { first_year: "40 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "AD 66", polity: Roman Empire }
     blank:
       - first_year: "92 BC"
         last_year: "64 BC"
@@ -792,10 +792,9 @@ anchors:
   - name: Gadara
     place: afed46a
     periods:
-      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
-      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
-      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
-      - { first_year: "32 BC", last_year: "31 BC", polity: Roman Empire }
+      - { first_year: "63 BC", last_year: "41 BC", polity: Roman Republic }
+      - { first_year: "40 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "31 BC", polity: Roman Republic }
       - { first_year: "30 BC", last_year: "5 BC", polity: Judea }
       - { first_year: "4 BC", last_year: "AD 66", polity: Roman Empire }
     sources:
@@ -804,10 +803,10 @@ anchors:
   - name: Gerasa
     place: ada6b64
     periods:
-      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
-      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
-      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
-      - { first_year: "32 BC", last_year: "AD 66", polity: Roman Empire }
+      - { first_year: "63 BC", last_year: "41 BC", polity: Roman Republic }
+      - { first_year: "40 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "AD 66", polity: Roman Empire }
     sources:
       - "Josephus, Antiquities 14.75"
 
@@ -825,8 +824,8 @@ anchors:
       - { first_year: "198 BC", last_year: "127 BC", polity: Seleucid Empire }
       - { first_year: "78 BC", last_year: "68 BC", polity: Kingdom of Armenia }
       - { first_year: "67 BC", last_year: "65 BC", polity: Seleucid Empire }
-      - { first_year: "64 BC", last_year: "33 BC", polity: Roman Republic }
-      - { first_year: "32 BC", last_year: "AD 66", polity: Roman Empire }
+      - { first_year: "64 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "AD 66", polity: Roman Empire }
     blank:
       - first_year: "126 BC"
         last_year: "79 BC"
@@ -883,7 +882,8 @@ anchors:
   - name: Batanea
     place: a249453
     periods:
-      - { first_year: "32 BC", last_year: "24 BC", polity: Roman Empire }
+      - { first_year: "32 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "24 BC", polity: Roman Empire }
       - { first_year: "23 BC", last_year: "5 BC", polity: Judea }
       - { first_year: "4 BC", last_year: "AD 33", polity: Tetrarchy of Philip }
       - { first_year: "AD 34", last_year: "AD 36", polity: Roman Empire }
@@ -897,7 +897,8 @@ anchors:
   - name: Argob
     place: a42a5b2
     periods:
-      - { first_year: "32 BC", last_year: "24 BC", polity: Roman Empire }
+      - { first_year: "32 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "24 BC", polity: Roman Empire }
       - { first_year: "23 BC", last_year: "5 BC", polity: Judea }
       - { first_year: "4 BC", last_year: "AD 33", polity: Tetrarchy of Philip }
       - { first_year: "AD 34", last_year: "AD 36", polity: Roman Empire }
@@ -911,7 +912,8 @@ anchors:
   - name: Kenath, Herodian
     place: a4f650b
     periods:
-      - { first_year: "32 BC", last_year: "24 BC", polity: Roman Empire }
+      - { first_year: "32 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "24 BC", polity: Roman Empire }
       - { first_year: "23 BC", last_year: "5 BC", polity: Judea }
       - { first_year: "4 BC", last_year: "AD 33", polity: Tetrarchy of Philip }
       - { first_year: "AD 34", last_year: "AD 36", polity: Roman Empire }
@@ -925,7 +927,8 @@ anchors:
   - name: Trachonitis
     place: a85a60a
     periods:
-      - { first_year: "32 BC", last_year: "24 BC", polity: Roman Empire }
+      - { first_year: "32 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "24 BC", polity: Roman Empire }
       - { first_year: "23 BC", last_year: "5 BC", polity: Judea }
       - { first_year: "4 BC", last_year: "AD 33", polity: Tetrarchy of Philip }
       - { first_year: "AD 34", last_year: "AD 36", polity: Roman Empire }
@@ -939,7 +942,8 @@ anchors:
   - name: Hauran, Herodian
     place: a0e8903
     periods:
-      - { first_year: "32 BC", last_year: "24 BC", polity: Roman Empire }
+      - { first_year: "32 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "24 BC", polity: Roman Empire }
       - { first_year: "23 BC", last_year: "5 BC", polity: Judea }
       - { first_year: "4 BC", last_year: "AD 33", polity: Tetrarchy of Philip }
       - { first_year: "AD 34", last_year: "AD 36", polity: Roman Empire }
@@ -953,7 +957,8 @@ anchors:
   - name: Ashtaroth, Herodian
     place: a6fea11
     periods:
-      - { first_year: "32 BC", last_year: "24 BC", polity: Roman Empire }
+      - { first_year: "32 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "24 BC", polity: Roman Empire }
       - { first_year: "23 BC", last_year: "5 BC", polity: Judea }
       - { first_year: "4 BC", last_year: "AD 33", polity: Tetrarchy of Philip }
       - { first_year: "AD 34", last_year: "AD 36", polity: Roman Empire }
@@ -967,7 +972,8 @@ anchors:
   - name: Ashteroth-karnaim, Herodian
     place: afe4be0
     periods:
-      - { first_year: "32 BC", last_year: "24 BC", polity: Roman Empire }
+      - { first_year: "32 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "24 BC", polity: Roman Empire }
       - { first_year: "23 BC", last_year: "5 BC", polity: Judea }
       - { first_year: "4 BC", last_year: "AD 33", polity: Tetrarchy of Philip }
       - { first_year: "AD 34", last_year: "AD 36", polity: Roman Empire }
@@ -1113,10 +1119,10 @@ anchors:
     periods:
       - { first_year: "150 BC", last_year: "108 BC", polity: Seleucid Empire }
       - { first_year: "107 BC", last_year: "64 BC", polity: Judea }
-      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
-      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
-      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
-      - { first_year: "32 BC", last_year: "AD 66", polity: Roman Empire }
+      - { first_year: "63 BC", last_year: "41 BC", polity: Roman Republic }
+      - { first_year: "40 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "AD 66", polity: Roman Empire }
     sources:
       - "Josephus, Antiquities 13.280; 14.75-76"
 
@@ -1124,20 +1130,20 @@ anchors:
     place: ae733a2
     periods:
       - { first_year: "109 BC", last_year: "64 BC", polity: Judea }
-      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
-      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
-      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
-      - { first_year: "32 BC", last_year: "AD 66", polity: Roman Empire }
+      - { first_year: "63 BC", last_year: "41 BC", polity: Roman Republic }
+      - { first_year: "40 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "AD 66", polity: Roman Empire }
     sources:
       - "Josephus, Antiquities 14.74-76"
 
   - name: Rabbah (Philadelphia)
     place: ae067b5
     periods:
-      - { first_year: "64 BC", last_year: "42 BC", polity: Roman Republic }
-      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
-      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
-      - { first_year: "32 BC", last_year: "AD 66", polity: Roman Empire }
+      - { first_year: "64 BC", last_year: "41 BC", polity: Roman Republic }
+      - { first_year: "40 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "AD 66", polity: Roman Empire }
     blank:
       - first_year: "78 BC"
         last_year: "65 BC"
@@ -1149,10 +1155,10 @@ anchors:
   - name: Ammon, Hellenistic and Roman
     place: a6046fa
     periods:
-      - { first_year: "64 BC", last_year: "42 BC", polity: Roman Republic }
-      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
-      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
-      - { first_year: "32 BC", last_year: "AD 66", polity: Roman Empire }
+      - { first_year: "64 BC", last_year: "41 BC", polity: Roman Republic }
+      - { first_year: "40 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "AD 66", polity: Roman Empire }
     blank:
       - first_year: "78 BC"
         last_year: "65 BC"
@@ -1383,10 +1389,9 @@ anchors:
     place: a30c937
     periods:
       - { first_year: "127 BC", last_year: "64 BC", polity: Judea }
-      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
-      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
-      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
-      - { first_year: "32 BC", last_year: "31 BC", polity: Roman Empire }
+      - { first_year: "63 BC", last_year: "41 BC", polity: Roman Republic }
+      - { first_year: "40 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "31 BC", polity: Roman Republic }
       - { first_year: "30 BC", last_year: "AD 5", polity: Judea }
     sources:
       - "Josephus, Antiquities 14.75-76, 88; 15.217; 17.189"
@@ -1395,10 +1400,9 @@ anchors:
     place: a7adb01
     periods:
       - { first_year: "127 BC", last_year: "64 BC", polity: Judea }
-      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
-      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
-      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
-      - { first_year: "32 BC", last_year: "31 BC", polity: Roman Empire }
+      - { first_year: "63 BC", last_year: "41 BC", polity: Roman Republic }
+      - { first_year: "40 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "31 BC", polity: Roman Republic }
       - { first_year: "30 BC", last_year: "AD 5", polity: Judea }
     sources:
       - "Josephus, Antiquities 14.75-76, 88; 15.217; 17.189"
@@ -1408,10 +1412,10 @@ anchors:
     periods:
       - { first_year: "198 BC", last_year: "101 BC", polity: Seleucid Empire }
       - { first_year: "100 BC", last_year: "64 BC", polity: Judea }
-      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
-      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
-      - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
-      - { first_year: "32 BC", last_year: "AD 66", polity: Roman Empire }
+      - { first_year: "63 BC", last_year: "41 BC", polity: Roman Republic }
+      - { first_year: "40 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "37 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "AD 66", polity: Roman Empire }
     sources:
       - "Josephus, Antiquities 13.324-335, 395; 14.76"
 
@@ -1420,8 +1424,8 @@ anchors:
     periods:
       - { first_year: "198 BC", last_year: "101 BC", polity: Seleucid Empire }
       - { first_year: "100 BC", last_year: "64 BC", polity: Judea }
-      - { first_year: "63 BC", last_year: "42 BC", polity: Roman Republic }
-      - { first_year: "41 BC", last_year: "38 BC", polity: Parthian Empire }
+      - { first_year: "63 BC", last_year: "41 BC", polity: Roman Republic }
+      - { first_year: "40 BC", last_year: "38 BC", polity: Parthian Empire }
       - { first_year: "37 BC", last_year: "33 BC", polity: Roman Republic }
     sources:
       - "Josephus, Antiquities 13.324-335, 395; 14.76"
@@ -1614,9 +1618,11 @@ anchors:
     place: afc8e7a
     periods:
       - { first_year: "551 BC", last_year: "510 BC", polity: Roman Kingdom }
-      - { first_year: "509 BC", last_year: "33 BC", polity: Roman Republic }
+      - { first_year: "509 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "AD 14", polity: Roman Empire }
     sources:
       - "Livy 1.57-60; 2.1"
+      - "Cassius Dio 53.16.6-8"
 
   - name: Puteoli
     place: a4488e9
@@ -1744,10 +1750,24 @@ anchors:
   - name: Derbe
     place: aa401a9
     periods:
-      - { first_year: "40 BC", last_year: "26 BC", polity: Kingdom of Cappadocia }
+      - { first_year: "133 BC", last_year: "128 BC", polity: Roman Republic }
+      - { first_year: "84 BC", last_year: "64 BC", polity: Roman Republic }
       - { first_year: "25 BC", last_year: "AD 50", polity: Roman Empire }
+    blank:
+      - first_year: "127 BC"
+        last_year: "85 BC"
+        reason: >-
+          Cappadocian or Roman Lycaonia, which the sources do not settle; neither is drawn.
+      - first_year: "63 BC"
+        last_year: "26 BC"
+        reason: >-
+          Antipater's principality, Pompey's grant of about 63 BC, until Amyntas of Galatia
+          killed him at a date no source gives; neither has a state on the map.
     sources:
       - "Strabo, Geography 12.1.4; 12.6.3"
+      - "Justin, Epitome 37.1.2"
+      - "Cicero, Letters to Friends 13.73"
+      - "R. Syme, Roman Papers, vol. 1 (1979), 128-131"
 
   - name: Iconium
     place: ae425aa
@@ -1788,8 +1808,7 @@ anchors:
     place: a81cdb5
     periods:
       - { first_year: "332 BC", last_year: "323 BC", polity: Cyrenaica }
-      - { first_year: "322 BC", last_year: "309 BC", polity: Macedonian Empire }
-      - { first_year: "308 BC", last_year: "274 BC", polity: Ptolemaic Kingdom }
+      - { first_year: "322 BC", last_year: "274 BC", polity: Ptolemaic Kingdom }
     sources:
       - "Diodorus Siculus 18.21.6-9"
 
@@ -1826,7 +1845,8 @@ anchors:
       - { first_year: "80 BC", last_year: "59 BC", polity: Ptolemaic Kingdom }
       - { first_year: "58 BC", last_year: "48 BC", polity: Roman Republic }
       - { first_year: "47 BC", last_year: "32 BC", polity: Ptolemaic Kingdom }
-      - { first_year: "31 BC", last_year: "1 BC", polity: Roman Empire }
+      - { first_year: "31 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "1 BC", polity: Roman Empire }
     sources:
       - "Cassius Dio 39.22; 42.35.5"
 
@@ -1841,7 +1861,8 @@ anchors:
       - { first_year: "294 BC", last_year: "59 BC", polity: Ptolemaic Kingdom }
       - { first_year: "58 BC", last_year: "48 BC", polity: Roman Republic }
       - { first_year: "47 BC", last_year: "32 BC", polity: Ptolemaic Kingdom }
-      - { first_year: "31 BC", last_year: "1 BC", polity: Roman Empire }
+      - { first_year: "31 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "1 BC", polity: Roman Empire }
     sources:
       - "Diodorus Siculus 14.98; 15.9; 20.47-53"
       - "Plutarch, Demetrius 35"
@@ -2025,8 +2046,8 @@ anchors:
   - name: Dalmatia, the Delmatae
     place: ae86cd7
     periods:
-      - { first_year: "33 BC", last_year: "33 BC", polity: Roman Republic }
-      - { first_year: "32 BC", last_year: "AD 100", polity: Roman Empire }
+      - { first_year: "33 BC", last_year: "28 BC", polity: Roman Republic }
+      - { first_year: "27 BC", last_year: "AD 100", polity: Roman Empire }
     blank:
       - first_year: "165 BC"
         last_year: "34 BC"
@@ -2055,3 +2076,31 @@ anchors:
       - { first_year: "1808 BC", last_year: "1760 BC", polity: Assyria }
     sources:
       - "Assyrian King List"
+
+  - name: Alexandria under Ptolemy the satrap
+    place: aee7248
+    periods:
+      - { first_year: "331 BC", last_year: "324 BC", polity: Macedonian Empire }
+      - { first_year: "323 BC", last_year: "305 BC", polity: Ptolemaic Kingdom }
+    sources:
+      - "Diodorus Siculus 18.3.1; 18.14.1"
+      - "Arrian, Events after Alexander (FGrH 156 F 1.5)"
+
+  - name: Haran under Nabonidus
+    place: a6d9af3
+    periods:
+      - { first_year: "610 BC", last_year: "602 BC", polity: Babylonia }
+      - { first_year: "601 BC", last_year: "540 BC", polity: Neo-Babylonian Empire }
+      - { first_year: "539 BC", last_year: "500 BC", polity: Achaemenid Empire }
+    sources:
+      - "Fall of Nineveh Chronicle (ABC 3)"
+      - "Nabonidus Cylinder from Sippar, col. i-ii"
+
+  - name: Damascus and the Parthian invasion
+    place: a69c1d4
+    periods:
+      - { first_year: "64 BC", last_year: "41 BC", polity: Roman Republic }
+      - { first_year: "40 BC", last_year: "38 BC", polity: Parthian Empire }
+    sources:
+      - "Cassius Dio 48.24.3-26.5"
+      - "Josephus, Antiquities 14.330-369"
