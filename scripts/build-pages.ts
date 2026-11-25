@@ -708,8 +708,11 @@ function candidates(p: Props, l: Lang): string {
   const note = ui[l].place.sites_note;
   if (!note) throw new Error(`i18n ${l}: place.sites_note is missing`);
   const items = versions.map((s) => {
-    const label = (l === "en" ? undefined : s[`label_${l}`]) ?? s.label;
-    return `<li>${esc(label)}${s.share === undefined ? "" : ` <span>${String(s.share)}%</span>`}</li>`;
+    // A site with no words in the page's language stands in English, as on the card: marked
+    // so, for a reader's voice and a translator.
+    const own = l === "en" ? undefined : s[`label_${l}`];
+    const english = own === undefined && l !== "en" ? ' lang="en"' : "";
+    return `<li${english}>${esc(own ?? s.label)}${s.share === undefined ? "" : ` <span>${String(s.share)}%</span>`}</li>`;
   });
   return `
       <ul class="facts">${items.join("")}</ul>

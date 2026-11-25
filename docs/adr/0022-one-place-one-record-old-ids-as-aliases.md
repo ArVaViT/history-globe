@@ -42,7 +42,13 @@ pages (`/en/place/ai-a63c70b/`), tours and links people keep.
 
 - `verses/<Book>.json` names the place for the retired record's verses, not the retired id.
   A reader that kept a retired id finds it under `aliases`.
-- The retired record's own minority identification (Gath of Obed-edom as Gath-rimmon, six of
-  twenty sources) is no longer a candidate of its own; the article may say it.
+- The retired record's own minority identification is no longer a candidate of its own; the
+  article may say it. Gath 3 (Obed-edom the Gittite) loses Gath-rimmon (6 of OpenBible's 20
+  sources); Galilee 2 (Josh 12:23, "the king of the nations of Gilgal", which TIPNR files
+  under Galilee: "spelled Gilgal|Galilee") loses Jiljuliyeh (7 of 19).
+- The rule is necessary, not sufficient: each pair is read against its verses. Bealoth 2
+  (1 Kgs 4:16) passes it and stays apart: Baanah's district "in Asher and in Aloth" is in
+  the north, not the Negeb town of Josh 15:24; on OpenBible "not a proper name" has 50 votes
+  against 12 for Bealoth 1, and TIPNR marks the verse as the same form with another meaning.
 - Merging is by hand, record by record: a rebuild of OpenBible's data does not merge or split
   anything by itself.

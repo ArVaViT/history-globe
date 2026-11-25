@@ -69,16 +69,6 @@
       "permanent": true
     },
     {
-      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/bealoth-a800159",
-      "destination": "/:lang/place/bealoth/",
-      "permanent": true
-    },
-    {
-      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/bealoth-a800159/",
-      "destination": "/:lang/place/bealoth/",
-      "permanent": true
-    },
-    {
       "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/beersheba-a075d61",
       "destination": "/:lang/place/beersheba/",
       "permanent": true

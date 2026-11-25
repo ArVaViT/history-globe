@@ -9,13 +9,13 @@ pull requests on GitHub have them.
 
 ## Unreleased
 
-- Places (`places.json`, `places.geojson`, the dataset): fourteen records OpenBible kept twice
+- Places (`places.json`, `places.geojson`, the dataset): thirteen records OpenBible kept twice
   for one place under one name on one point are merged into the other (ADR 0022): Ai,
-  Arad, Bealoth, Beersheba, Bethsaida, Galilee, Gath, Geba (two), Gederah, Hamath, Havilah,
+  Arad, Beersheba, Bethsaida, Galilee, Gath, Geba (two), Gederah, Hamath, Havilah,
   Kedesh, Ramah. The place takes every verse of the retired record, so
   `verses/<Book>.json` now names the place for them. The retired ids are listed in the
   place's new field `aliases` (also a column of the dataset's `places`); `?place=` and the
-  old pages (`/en/place/ai-a63c70b/`) still lead to the place. The other 36 pairs on one
+  old pages (`/en/place/ai-a63c70b/`) still lead to the place. The other 37 pairs on one
   point stay apart, with the reason (docs/crosswalk/their-errors.md, item 17).
 - Places (`places.json`): new fields `certainty` (`settled`, `most likely`, `tentative` or
   `disputed`, as the dataset's column), `confidence` (OpenBible.info's score of the
