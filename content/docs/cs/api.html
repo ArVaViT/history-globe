@@ -137,6 +137,15 @@ description: Místa, verše, které je jmenují, události a trasy jako soubory 
     událost, bitva nebo trasa s přibližným rokem <code>"approximate": true</code>.
   </li>
   <li>
+    Místo nese <code>certainty</code> (<code>settled</code>, <code>most likely</code>,
+    <code>tentative</code>, <code>disputed</code>) a <code>confidence</code>, hodnocení jeho
+    identifikace podle OpenBible.info od 0 do 1000, pokud je OpenBible uvádí; místo s více než
+    jednou navrženou lokalitou je vypisuje v <code>sites</code>, každou s jejím podílem na hodnocení
+    OpenBible, které je odhadem, ne shodou badatelů. Záznam, který OpenBible vedl pro jedno místo
+    dvakrát, je s ním sloučen: jeho id je uvedeno v <code>aliases</code> a odkazy, které ho
+    používají, dál fungují.
+  </li>
+  <li>
     Soubory se znovu sestavují s každým vydáním dat; <code>index.json</code> uvádí jeho datum.
   </li>
   <li>

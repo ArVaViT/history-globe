@@ -7,11 +7,16 @@ import unittest
 
 from pipeline.build_data import (
     identification_confidence,
+    is_disputed,
     COAST_BBOX,
     banned_lonlats,
     build_coast,
     build_places,
+    build_sites,
+    load_aliases,
     load_place_points,
+    merge_aliases,
+    retarget_refs,
     pick_site,
     clip_ring,
     join_holes,
@@ -187,6 +192,13 @@ class BuildPlacesWithChosenSite(unittest.TestCase):
         self.assertEqual(p["properties"]["confidence"], 142)
         self.assertEqual((p["properties"]["where"], p["properties"]["where_ref"]), ("m_yaquq", "m_yaquq"))
 
+    def test_of_two_records_on_one_point_the_one_with_an_article_keeps_the_label(self) -> None:
+        more = dict(HUKKOK, id="h2", friendly_id="Hukkok 2", verses=[{"osis": "Josh.19.34"}, {"osis": "Josh.19.35"}])
+        places, _, _ = build_places([HUKKOK, more], MODERN, {}, set())
+        self.assertEqual({f["properties"]["id"] for f in places["features"] if f["properties"].get("dup")}, {"hukkok"})
+        places, _, _ = build_places([HUKKOK, more], MODERN, {}, set(), articles={"hukkok"})
+        self.assertEqual({f["properties"]["id"] for f in places["features"] if f["properties"].get("dup")}, {"h2"})
+
     def test_without_a_choice_the_first_identification_is_shown(self) -> None:
         places, _, _ = build_places([HUKKOK], MODERN, {}, set())
         p = places["features"][0]
@@ -217,6 +229,45 @@ class BuildPlacesWithChosenSite(unittest.TestCase):
         record = dict(HUKKOK, identifications=[ident("m_jem", "35.26,32.86", 283), ident("m_osm", "35.1,31.1", 1)])
         with self.assertRaises(SystemExit):
             build_places([record], MODERN, {}, set(), None, {"hukkok": "m_osm"})
+
+
+class BuildSitesOnTheMapsPoints(unittest.TestCase):
+    @staticmethod
+    def ident(description: str, lonlat: str, score: int) -> dict:
+        return {"description": description, "resolutions": [res("m_wd", lonlat)], "score": {"time_total": score}}
+
+    def sites(self, record: dict, points: dict) -> list[list[float]]:
+        fc, _, _ = build_sites([record], MODERN, points, {"old": "ezion"})
+        return [f["geometry"]["coordinates"] for f in fc["features"]]
+
+    def test_same_place_as_x_stands_on_the_maps_x(self) -> None:
+        # Elath: OpenBible resolves Ezion-geber to the island; the map has it on the tell.
+        elath = {
+            "id": "elath",
+            "friendly_id": "Elath",
+            "identifications": [
+                self.ident('<modern id="m_wd">Aqaba</modern>', "35.3,31.3", 700),
+                self.ident('another name for <ancient id="ezion">Ezion-geber</ancient>', "35.01,31.01", 100),
+                self.ident('within 5 km of <ancient id="old">Ezion-geber</ancient>', "35.02,31.02", 50),
+            ],
+        }
+        points = {"elath": (35.3, 31.3), "ezion": (35.4, 31.4)}
+        self.assertEqual(self.sites(elath, points), [[35.3, 31.3], [35.4, 31.4], [35.4, 31.4]])
+        # Without the map's points (the first pass) OpenBible's own are kept.
+        self.assertEqual(self.sites(elath, {}), [[35.3, 31.3], [35.01, 31.01], [35.02, 31.02]])
+
+    def test_the_shown_candidate_stays_on_the_places_own_point(self) -> None:
+        # Cabbon and Machbenah: each "another name" for the other, on two points.
+        cabbon = {
+            "id": "cabbon",
+            "friendly_id": "Cabbon",
+            "identifications": [
+                self.ident('another name for <ancient id="machbenah">Machbenah</ancient>', "35.1,31.1", 600),
+                self.ident('<modern id="m_wd">Khirbet</modern>', "35.6,31.6", 300),
+            ],
+        }
+        points = {"cabbon": (35.11, 31.11), "machbenah": (35.5, 31.5)}
+        self.assertEqual(self.sites(cabbon, points), [[35.11, 31.11], [35.6, 31.6]])
 
 
 class LoadPlacePoints(unittest.TestCase):
@@ -253,6 +304,75 @@ class LoadPlacePoints(unittest.TestCase):
                 self.assertNotIn(target, seen, f"same_as of {pid} runs in a circle")
                 seen.add(target)
                 target = same_as[target]
+
+
+class MergeAliases(unittest.TestCase):
+    """One place kept twice by OpenBible becomes one (content/place-aliases.json, ADR 0022)."""
+
+    def verse(self, osis: str) -> dict:
+        return {"osis": osis}
+
+    def test_the_place_takes_every_verse_once_in_the_order_of_the_bible(self) -> None:
+        ai = {"id": "ai1", "verses": [self.verse("Josh.7.2"), self.verse("Gen.12.8")]}
+        ai3 = {"id": "ai3", "verses": [self.verse("Neh.7.32"), self.verse("Josh.7.2"), self.verse("Ezra.2.28")]}
+        other = {"id": "x", "verses": [self.verse("Gen.1.1")]}
+        records, merged = merge_aliases([ai, ai3, other], {"ai3": "ai1"})
+        self.assertEqual([r["id"] for r in records], ["ai1", "x"])
+        self.assertEqual([v["osis"] for v in records[0]["verses"]], ["Gen.12.8", "Josh.7.2", "Ezra.2.28", "Neh.7.32"])
+        self.assertEqual(merged, {"ai1": ["ai3"]})
+
+    def test_an_unknown_record_stops_the_build(self) -> None:
+        with self.assertRaises(SystemExit):
+            merge_aliases([{"id": "a", "verses": []}], {"b": "a"})
+
+    def test_a_label_naming_a_retired_record_names_the_place(self) -> None:
+        fc = {"features": [{"properties": {"ref": "ai3", "where_ref": "ai3"}}, {"properties": {"ref": "x"}}]}
+        retarget_refs([fc], {"ai3": "ai1"})
+        self.assertEqual(fc["features"][0]["properties"], {"ref": "ai1", "where_ref": "ai1"})
+        self.assertEqual(fc["features"][1]["properties"], {"ref": "x"})
+
+    def test_a_chain_or_a_loop_is_refused(self) -> None:
+        import tempfile
+
+        with tempfile.TemporaryDirectory() as d:
+            path = pathlib.Path(d) / "place-aliases.json"
+            path.write_text(json.dumps({"places": {"a": {"into": "b"}, "b": {"into": "c"}}}))
+            with self.assertRaises(SystemExit):
+                load_aliases(path)
+            path.write_text(json.dumps({"places": {"a": {"into": "a"}}}))
+            with self.assertRaises(SystemExit):
+                load_aliases(path)
+
+    def test_the_real_file_loads_and_every_merge_says_why(self) -> None:
+        path = pathlib.Path(__file__).resolve().parent.parent / "content" / "place-aliases.json"
+        aliases = load_aliases(path)
+        places = json.loads(path.read_text(encoding="utf-8"))["places"]
+        self.assertEqual(len(aliases), len(places))
+        for pid, o in places.items():
+            self.assertTrue(o.get("why", "").strip(), f"{pid} has no why")
+
+
+class Disputed(unittest.TestCase):
+    """Disputed: rivals more than 5 km from the leading candidate hold 20 % or more."""
+
+    def cand(self, lon: float, score: float) -> dict:
+        return {"lon": lon, "lat": 31.0, "score": score}
+
+    def test_a_far_rival_with_a_fifth_disputes_the_site(self) -> None:
+        # 0.1 degree of longitude at 31° N is about 9.5 km.
+        self.assertTrue(is_disputed([self.cand(35.0, 80), self.cand(35.1, 20)]))
+        self.assertFalse(is_disputed([self.cand(35.0, 81), self.cand(35.1, 19)]))
+
+    def test_a_rival_next_door_does_not(self) -> None:
+        # 0.03 degree is under 3 km: a rival site nearby, inside the 5 km.
+        self.assertFalse(is_disputed([self.cand(35.0, 50), self.cand(35.03, 50)]))
+
+    def test_minor_far_rivals_count_together(self) -> None:
+        cands = [self.cand(35.0, 76), self.cand(35.2, 8), self.cand(35.4, 8), self.cand(35.6, 8)]
+        self.assertTrue(is_disputed(cands))
+
+    def test_nothing_rated_stays_disputed(self) -> None:
+        self.assertTrue(is_disputed([self.cand(35.0, 0), self.cand(35.1, -5)]))
 
 
 class Rank(unittest.TestCase):

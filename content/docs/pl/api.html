@@ -144,6 +144,15 @@ description: Miejsca, wymieniające je wersety, wydarzenia i trasy jako pliki JS
     wydarzenie, bitwa lub trasa o przybliżonym roku ma <code>"approximate": true</code>.
   </li>
   <li>
+    Miejsce ma <code>certainty</code> (<code>settled</code>, <code>most likely</code>,
+    <code>tentative</code>, <code>disputed</code>) i <code>confidence</code>, ocenę jego
+    identyfikacji według OpenBible.info od 0 do 1000, jeśli OpenBible ją podaje; miejsce z więcej
+    niż jedną proponowaną lokalizacją wymienia je w <code>sites</code>, każdą z jej udziałem w
+    ocenie OpenBible, szacunkiem, a nie konsensusem uczonych. Rekord, który OpenBible prowadził dla
+    jednego miejsca dwa razy, został z nim scalony: jego id jest w <code>aliases</code>, a linki,
+    które go używają, nadal działają.
+  </li>
+  <li>
     Pliki są odbudowywane przy każdym wydaniu danych; <code>index.json</code> podaje jego datę.
   </li>
   <li>

@@ -25,7 +25,10 @@ const label = (name: string, y0: number, y1: number, at: [number, number]) => ({
 type Out = { features: { properties: { name: string; y0: number; y1: number } }[] };
 
 /** Runs the whole build on a few states and the corrections given. */
-function run(clips: unknown[]): { shapes: Out; labels: Out; errors: string[] } {
+function run(
+  clips: unknown[],
+  more: Record<string, unknown> = {},
+): { shapes: Out; labels: Out; errors: string[] } {
   const dir = mkdtempSync(join(tmpdir(), "polities-"));
   const fc = (features: unknown[]) => JSON.stringify({ type: "FeatureCollection", features });
   writeFileSync(
@@ -62,6 +65,7 @@ function run(clips: unknown[]): { shapes: Out; labels: Out; errors: string[] } {
         },
       ],
       clips,
+      ...more,
     },
     "content/polity-anchors.yaml": { anchors: [] },
     "content/polity-names.yaml": {
@@ -198,5 +202,28 @@ describe("buildPolities", () => {
   });
   it("refuses land given to a state absent in those years without drawn_from_cut", () => {
     expect(run([cut(false)]).errors.join()).toMatch(/clip "Empire" to "Heirs": not on the map/);
+  });
+  it("annexes the last shape drawn, not one a correction left with no years", () => {
+    // Israel ends in 951 BC: its shape of 931-801 BC is left with no years, after the
+    // shape of 1000-951 BC. Annexed from AD 1, the land is that last drawn shape's.
+    const { shapes, errors } = run([], {
+      overrides: [{ polity: "Israel", last_year: "951 BC", reason: "r", sources: ["s"] }],
+      annexed: [
+        {
+          polity: "Israel",
+          by: "Empire",
+          first_year: "AD 1",
+          last_year: "AD 9",
+          reason: "r",
+          sources: ["s"],
+        },
+      ],
+    });
+    expect(errors).toEqual([]);
+    const annexed = shapes.features.find(
+      (f) => f.properties.name === "Empire" && f.properties.y0 === 1,
+    ) as { geometry: { coordinates: Ring[][] } } | undefined;
+    const xs = (annexed?.geometry.coordinates ?? []).flat(2).map(([x]) => x);
+    expect([Math.min(...xs), Math.max(...xs)]).toEqual([0, 4]);
   });
 });

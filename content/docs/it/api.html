@@ -145,6 +145,15 @@ description: I luoghi, i versetti che li nominano, gli eventi e gli itinerari co
     <code>"approximate": true</code>.
   </li>
   <li>
+    Un luogo reca <code>certainty</code> (<code>settled</code>, <code>most likely</code>,
+    <code>tentative</code>, <code>disputed</code>) e <code>confidence</code>, il punteggio di
+    OpenBible.info per la sua identificazione, da 0 a 1000, dove OpenBible lo dà; un luogo con più
+    di un sito proposto li elenca in <code>sites</code>, ciascuno con la sua quota nella valutazione
+    di OpenBible, una stima e non un consenso degli studiosi. Un record che OpenBible teneva due
+    volte per lo stesso luogo è stato unito a esso: il suo id è in <code>aliases</code>, e i link
+    che lo usano funzionano ancora.
+  </li>
+  <li>
     I file vengono ricostruiti a ogni rilascio dei dati; <code>index.json</code> ne indica la data.
   </li>
   <li>

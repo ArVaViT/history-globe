@@ -31,12 +31,14 @@ export interface PlaceProps {
   readonly name_ru_osis?: string;
   readonly kind: string;
   readonly sites: number;
-  /** The runner-up candidate site has at least 10 % of OpenBible's assessment. */
+  /** Candidates more than 5 km from the leading one hold 20 % or more of OpenBible's assessment. */
   readonly disputed: boolean;
   /** OpenBible's score of the shown identification, 0–1000. */
   readonly confidence?: number;
   /** A second record of the same name on the same point: dot only, not listed twice. */
   readonly dup?: boolean;
+  /** Ids of OpenBible records merged into this place (ADR 0022): a link naming one opens it. */
+  readonly aliases?: readonly string[];
   /** The same in Russian: another record on this point has the same Russian name. */
   readonly dup_ru?: boolean;
   /** First year the place stood, astronomical (content/place-life.yaml). */
@@ -85,6 +87,8 @@ export interface Site {
   readonly labels?: Readonly<Record<string, string>>;
   /** null when OpenBible has rated none of the candidates. */
   readonly share: number | null;
+  /** The share to one decimal, near the disputed rule's 20 % (`shareText`). */
+  readonly share_fine?: number;
   readonly at: readonly [number, number];
 }
 
@@ -131,6 +135,8 @@ export function standingYear(
 export interface LoadedData {
   readonly places: FeatureCollection<Point, PlaceProps>;
   readonly byId: ReadonlyMap<string, { readonly props: PlaceProps; readonly info: PlaceInfo }>;
+  /** A retired record's id → the place it was merged into (ADR 0022). */
+  readonly aliases: ReadonlyMap<string, string>;
   readonly tours: readonly (Tour & {
     readonly title: Readonly<Record<string, string>>;
     /** The year is a conventional point (debated chronology). */
@@ -161,9 +167,24 @@ export interface LoadedData {
 // Under the app's base path, so it also works when served from a sub-path.
 export const DATA_URL = `${import.meta.env.BASE_URL}data`;
 
-type SiteProps = { place: string; label: string; label_ru?: string; share?: number } & Readonly<
-  Record<`label_${string}`, unknown>
->;
+type SiteProps = {
+  place: string;
+  label: string;
+  label_ru?: string;
+  share?: number;
+  share_fine?: number;
+} & Readonly<Record<`label_${string}`, unknown>>;
+
+/** Each retired id of a merged record (ADR 0022) → the place it is merged into. */
+export function aliasesOf(
+  features: readonly { readonly properties: Pick<PlaceProps, "id" | "aliases"> }[],
+): Map<string, string> {
+  return new Map(
+    features.flatMap((f) =>
+      (f.properties.aliases ?? []).map((a): [string, string] => [a, f.properties.id]),
+    ),
+  );
+}
 
 export function groupSites(fc: FeatureCollection<Point, SiteProps>): Map<string, Site[]> {
   const sites = new Map<string, Site[]>();
@@ -180,6 +201,7 @@ export function groupSites(fc: FeatureCollection<Point, SiteProps>): Map<string,
       ...(labelRu ? { labelRu } : {}),
       labels,
       share: f.properties.share ?? null,
+      ...(f.properties.share_fine !== undefined ? { share_fine: f.properties.share_fine } : {}),
       at: [lon, lat],
     });
     sites.set(f.properties.place, list);
@@ -466,7 +488,12 @@ export async function loadData(): Promise<LoadedData> {
   // A lesson in the address (lesson.ts): its code loads only then.
   if (typeof window !== "undefined" && /[?&]lesson=/.test(window.location.search)) {
     const { lessonTour } = await import("./lesson-tour");
-    const lesson = lessonTour(window.location.search, byId, content.chapter_years ?? {});
+    const lesson = lessonTour(
+      window.location.search,
+      byId,
+      content.chapter_years ?? {},
+      aliasesOf(places.features),
+    );
     if (lesson) tours.unshift(lesson);
   }
   const marked = new Set(
@@ -490,6 +517,7 @@ export async function loadData(): Promise<LoadedData> {
   return {
     places,
     byId,
+    aliases: aliasesOf(places.features),
     tours,
     sites,
     alsoHere: here,

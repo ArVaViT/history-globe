@@ -64,7 +64,6 @@ places:
   a94b661: Tyatira
   a815d89: Areopag
   abff59d: Betfage
-  a9fc13a: Betsaida
   a581f0c: Kanaán
   ae733a2: Dekapolis
   ae7274b: Emauzy
@@ -183,7 +182,6 @@ places:
   acf2fac: Kesíl
   a0ff819: Kitlíš
   a398e5d: Kós
-  ae8badb: Dímon
   ab9580e: Dračí pramen
   acd9b19: Ebec
   aacbcf0: Eglajim
@@ -304,9 +302,7 @@ places:
   ab635e4: Dótan
   a8eae19: Én-ganním
   aae626a: Dobré přístavy
-  a33cfcc: Geba
   a2f0f05: Gibea
-  aa9c505: Chamat
   aeb09c0: Chelam
   a878481: Indie
   a765bd8: Kajin
@@ -330,7 +326,6 @@ places:
   ada3369: Almon
   a4bdea7: Amfipolis
   ac4f712: Afek
-  a4cea2a: Arad
   a0e21ff: Atak
   a6d7a41: Avim
   a304bb7: Báal-chamon
@@ -350,7 +345,6 @@ places:
   ab28e2e: Én-rimmon
   a1230e5: Efrón
   a16596e: Eter
-  ae14b1d: Geba
   ac36af4: Gederotajim
   aed8df9: Gilgal
   a80bf37: Gomer
@@ -482,7 +476,6 @@ places:
   a721f7f: Věž pecí
   a2109c3: Údolí Chamon-gogu
   ae11a0d: Maónská poušť
-  a190097: Cin
   a112fe3: Ainón
   adbc931: Ajin
   a2f1fa1: Amad
@@ -620,7 +613,6 @@ places:
   a728f1b: Gederót
   ab98f8c: Gitajim
   a1d1918: Chelkat
-  a662eed: Kedeš
   a8661e2: Madmana
   a2f0a70: Michmetat
   a38ad9f: Móre
@@ -720,7 +712,6 @@ places:
   ae46f2e: Aroer
   a4cc324: Arnon
   a6f33c5: Chacor
-  a075d61: Beer-šeba
   af82614: Adulam
   a505743: Meriba
   a2a8df0: Bét-šan
@@ -837,7 +828,6 @@ places:
   a51e3b0: Stará nádrž
   a8f60f3: Patmos
   a70e895: Střepová brána
-  a75be6f: Ráma
   ada2a0b: Rámot
   a1b5486: Rekem
   a655b28: Rimmono
@@ -922,9 +912,7 @@ places:
   ae4d198: Imer
   ab86a69: Judsko
   a057d59: Královská cesta
-  a359997: Lud
   a57e0a0: Masreka
-  a15973c: Migdol
   aefaa2d: Hora Nebo
   ac1fef1: Neftoach
   ae67841: Perec-uza
@@ -1018,7 +1006,6 @@ places:
   a32a4f8: Chaldea
   a3e66cd: Aram
   ac6b210: Naama
-  a63c70b: Aj
   a4e39f6: Galilea
   a2d3ca1: Geba
   ad0520f: Put
@@ -1121,7 +1108,6 @@ places:
   a71d79b: Gichón
   a763368: Gur-báal
   ac5e5c4: Chavíla
-  a1d9047: Chavíla
   a8a8e54: Chelbon
   a11bbbe: Hierapolis
   aedf531: Jábes
@@ -1150,7 +1136,6 @@ places:
   a897bdb: Skála rozdělení
   a702ab6: Egyptské moře
   ad259d1: Jazerské moře
-  a6343cc: Sela
   a5b01f4: Šachacima
   a7b3f5d: Šafír
   ab56451: Sila
@@ -1254,8 +1239,6 @@ places:
   a8e6824: Élon-bét-chanan
   a9a6f72: Efrón
   a764256: Gamad
-  a0ac467: Gat
-  a0a5b78: Gedera
   a2fc530: Gedor
   a607415: Kefirim
   a1d5a28: Chalach
@@ -1533,6 +1516,7 @@ polities:
   Kingdom of Adiabene: Adiabéné
   Kingdom of Africa: Africké království
   Kingdom of Agrippa I: Království Agrippy I.
+  Kingdom of Agrippa II: Království Agrippy II.
   Kingdom of Alamannia: Alamanské království
   Kingdom of Aragon: Aragonské království
   Kingdom of Arles: Arelatské království
@@ -1544,6 +1528,7 @@ polities:
   Kingdom of Brittany: Bretaňské království
   Kingdom of Cappadocia: Kappadocké království
   Kingdom of Castile: Kastilské království
+  Kingdom of Chalcis: Království Chalkis
   Kingdom of Commagene: Kommagéna
   Kingdom of Croatia: Chorvatské království
   Kingdom of Cyprus: Kyperské království
@@ -1600,6 +1585,7 @@ polities:
   Lombards: Langobardi
   Lower Burgundy: Dolní Burgundsko
   Lower Egypt: Dolní Egypt
+  Lycian League: Lýkijský spolek
   Lydia: Lýdie
   Macedonian Empire: Makedonská říše
   Magadha - Shaishunaga dynasty: Magadha za Šišunágů
@@ -2863,7 +2849,6 @@ modern:
   m919c2c: Tell Miska
   m9c2d3a: Atlit
   ma66725: Wádí al-Džoz
-  m1e3a5b: Tripolis
   m7e4070: Madínat ar-Rás
   m95f21e: Minie
   m7470bc: Chirbet Madin

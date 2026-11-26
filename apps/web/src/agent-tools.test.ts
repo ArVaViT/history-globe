@@ -47,6 +47,7 @@ const data = {
     })),
   },
   byId: new Map(list.map((p, i) => [p.id, { props: p, info: { id: p.id, at: [35 + i, 31] } }])),
+  aliases: new Map([["a9", "a2"]]),
 } as unknown as LoadedData;
 
 const article = {
@@ -97,6 +98,11 @@ describe("agent tools", () => {
     expect(findPlace(data, "https://historyglobe.app/en/place/aphek-a4/")?.id).toBe("a4");
     expect(findPlace(data, "Филиппы")?.id).toBe("a2");
     expect(findPlace(data, "Phil")).toBeUndefined();
+  });
+
+  it("finds a merged record's place by its old id and its old page (ADR 0022)", () => {
+    expect(findPlace(data, "a9")?.id).toBe("a2");
+    expect(findPlace(data, "https://historyglobe.app/en/place/philippi-a9/")?.id).toBe("a2");
   });
 
   it("gives a place with its verses and article, no page where no verse names it", async () => {

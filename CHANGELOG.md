@@ -9,6 +9,68 @@ pull requests on GitHub have them.
 
 ## Unreleased
 
+- Places (`places.json`, `places.geojson`, the dataset): five more records OpenBible kept
+  twice for one place are merged (ADR 0022): Dibon 3 (Isa 15:9, "Dimon" in the Hebrew,
+  "Dibon" in the Isaiah scroll and the Vulgate) into Dibon 1, Lud 2 into Lud 1, Zin 2 into
+  Zin 1, Migdol 3 (Ezekiel's) into Migdol 2 (Jeremiah's) and Sela 3 into Sela 2. Their ids
+  are in `aliases` and their old pages redirect. Of records on one point under one name, one
+  with an article now keeps the label before one with more verses, so the Migdol of the
+  Exodus and Sela 1 keep `/place/migdol/` and `/place/sela/`. Bethel 3 (Jer 48:13, Zech 7:2)
+  stays apart until its reading is decided (item 17).
+- Places (`places.json` `sites`, `sites.geojson`): a candidate "same place as X", or a circle
+  or region around X, stands on the map's point for X, not where OpenBible puts X: Elath's
+  "same place as Ezion-geber" on Tell el-Kheleifeh, not Pharaoh's Island, and Dimonah's
+  "same place as Dibon" on the Dibon of Judah, not on Dhiban in Moab. The map's point of a
+  place is now always one of its candidates, as the API says (it was not for Bealoth,
+  Bethul, Canneh, Hukok, Ir-moab and the Sea of Jazer), and the build checks it. 41 places'
+  candidates move; Baalath-beer, Baal-hermon, the Bethel of the Negeb, Dimonah and Libnah
+  are no longer disputed.
+- `sites.geojson`: new field `share_fine`, a candidate's share to one decimal where it is
+  within half a point of the 20 % of the disputed rule. The map's card and the place pages
+  print it, so Nimrim's Wadi Nimrin reads 19.7 % (not disputed) and Debir's Umm ed Debar
+  20.2 % (disputed), not both 20 %.
+- Articles (`articles/<language>.json`), in all 21 languages: south says the Ptolemies ruled
+  Egypt from 323 BC "most of that time from Alexandria" (Memphis was the seat until about
+  313 BC); lud-lydia keeps Jeremiah's and Ezekiel's Lud, with its African reading, on the
+  one Lud; migdol-exodus says Jeremiah's and Ezekiel's Migdol are one place. The Eusebius
+  note on the Mount of Olives (`ancient.json`) says, as Life of Constantine 3.41-43 does,
+  that Helena's church was built in memory of the Ascension, over the cave where Jesus
+  taught his disciples, and that the Imbomon on the summit came later.
+
+- Places (`places.json`, `places.geojson`, the dataset): twelve records OpenBible kept twice
+  for one place under one name on one point are merged into the other (ADR 0022): Ai,
+  Arad, Beersheba, Bethsaida, Gath, Geba (two), Gederah, Hamath, Havilah,
+  Kedesh, Ramah. The place takes every verse of the retired record, so
+  `verses/<Book>.json` now names the place for them. The retired ids are listed in the
+  place's new field `aliases` (also a column of the dataset's `places`); `?place=` and the
+  old pages (`/en/place/ai-a63c70b/`) still lead to the place. Five more follow (below); the
+  other 38 records on the point of a record of the same name stay apart, each with its
+  reason (docs/crosswalk/their-errors.md, item 17).
+- Places (`places.json`): new fields `certainty` (`settled`, `most likely`, `tentative` or
+  `disputed`, as the dataset's column), `confidence` (OpenBible.info's score of the
+  identification, 0–1000) and `sites` (the candidate sites with their names, points and
+  shares of OpenBible's assessment), where OpenBible gives them. The place pages of a
+  disputed place now list the candidate sites with their shares, as the map's card does.
+- Places (`places.geojson`, `places.json`, the dataset): a place is `disputed` when the
+  candidate sites more than 5 km from the leading one together hold at least 20 % of
+  OpenBible.info's assessment of the sites shown (or none is assessed); before, when the
+  runner-up alone held 10 %. Rival sites within 5 km of each other and scattered minor
+  proposals no longer make a place disputed: 267 places are, against 478 before.
+  `certainty` follows.
+- Tours (`constantine`): the Mount of Olives stop calls Helena's church "later known as the
+  Eleona" (Eusebius does not name it; the name is first in Egeria, in the 380s) and cites
+  Eusebius, Life of Constantine 3.41-43.
+- Ezion-geber is on Tell el-Kheleifeh, which most reference works, OpenBible's votes
+  (28 to 15) and Wikidata hold, instead of Jezirat Faraun, which leads only by
+  OpenBible's recent-trend weighting; it stays disputed, Jezirat Faraun and Elath its other
+  candidates (docs/crosswalk/their-errors.md, item 16).
+
+- Tours (`constantine`): Helena's church on the Mount of Olives, the Eleona, has its own stop
+  after Bethlehem, over the cave where Jesus was remembered as teaching his disciples; the
+  Bethlehem stop keeps the Nativity cave alone. Eusebius says Helena built it in memory of
+  the Ascension, over that cave; the Eusebius note on the Mount of Olives says so, and that
+  the separate Ascension shrine on the summit, the Imbomon, came later in the fourth
+  century. Thanks to a reader's correction.
 - States (`polities*.geojson`, `rulers.json`): the borders audit of 2026-11-23 brought the
   map's state for each place in line with the articles, a place passing to the new state in
   the year of the event. Galilee, Dor, Megiddo, Gilead and the upper Jordan are Assyria's
@@ -20,6 +82,48 @@ pull requests on GitHub have them.
   Samaria, Gaza, Gadara, Gerasa, Caesarea, Paneas and Bozrah follow Pompey's, Augustus's
   and Herod's grants. Three states are new: the Tetrarchy of Herod Antipas (4 BC-AD 38),
   the Tetrarchy of Philip (4 BC-AD 33) and the Kingdom of Agrippa I (AD 37-44).
+- States (`polities*.geojson`, `rulers.json`): a second sweep of the borders, each place again
+  passing in the year of the event.
+  - Northern Levant: Kedesh is a village of Tyre, not Judea's; Moab under Mesha holds
+    Medeba, Ataroth, Nebo and Kiriathaim from 852 BC and Heshbon from 733 BC; Hazael's
+    Aram holds Gilead and Bashan in 830-786 BC; Acco is Phoenician until Esarhaddon, Assyria's
+    from 677 BC; the Hauran is Assyria's from 732 BC; Beth-shan, Rabbah and the Decapolis
+    follow Pompey.
+  - Southern Levant: Joppa is the Hasmoneans' from 142 BC, Dor and Strato's Tower from
+    100 BC; Ashdod and Jamnia follow Pompey and Herod; Panium is Seleucid from 200 BC;
+    Rabbah is Ammon's until David; Jericho is Israel's until 723 BC; Libnah, Elath and
+    Ezion-geber are drawn with Judah or Solomon.
+  - Mesopotamia and Egypt: Babylon is never Elam's, Seleucid from 312 BC and Parthian from
+    141 BC; Til Barsip is Bit-Adini's until Shalmaneser III; Memphis is Assyria's from
+    671 BC and Thebes from 663 BC; Ur III (2112-2005 BC) and Asshur from 1808 BC.
+  - Asia Minor and Syria: Galatia, Cappadocia, Bithynia, Lycia, Rhodes, Iconium, Lystra and
+    Derbe pass to Rome in the year of annexation; Lydia is Seleucid 222-191 BC; Miletus
+    rises in 499 BC and is freed in 479 BC; Media falls in 550 BC; Palmyra holds Zenobia's
+    realm to AD 271, Roman again from AD 272; Osroene is restored after Trajan.
+  - Mediterranean: Rome is Roman from 551 BC; Puteoli, Malta and Syracuse stay Roman in the
+    Second Punic War; Macedonia and Greece are Roman from 146 BC, Philippi and Amphipolis
+    Philip II's; Cyprus is Roman 58-48 BC and Demetrius' 306-295 BC; Salamis is a Greek
+    city; Cyrene follows Egypt and is Roman from 96 BC; Athens is Roman from 86 BC.
+  - Three states are new: the Kingdom of Agrippa II (AD 48-92), the Kingdom of Chalcis
+    (AD 41-47) and the Lycian League (167 BC-AD 42).
+- States (`polities*.geojson`, `rulers.json`): three leftovers of the sweep, each place
+  again passing in the year of the event.
+  - Egypt is the Ptolemaic Kingdom from 323 BC, when Ptolemy took it as satrap (was the
+    Macedonian Empire to 309 BC), and Cyrene with it from 322 BC, as the Cyrene article has
+    it.
+  - Derbe is no longer Cappadocian (127-26 BC) or Pontic (88-85 BC), its place in the
+    Cappadocian kingdom being disputed: it is Rome's with Iconium and Lystra in 84-64 BC,
+    without a state in 63-26 BC (Antipater's principality, then Amyntas, at a date no
+    source gives) and before 84 BC, and Rome's from 25 BC.
+  - The Parthians hold Syria, Phoenicia and the Decapolis from 40 BC, the year of their
+    invasion and of Antigonus in Jerusalem (was 41 BC).
+  - Rome is the Roman Republic until 28 BC and the Roman Empire from 27 BC, when Octavian
+    was named Augustus (the Empire began in 32 BC), Egypt with it from 30 BC.
+  - Haran and the Balikh are Babylon's under Nabonidus to 540 BC and Persian from 539 BC
+    (were Persian from 550 BC, and without a state in 551 BC).
+- Articles (`articles/<language>.json`): south (the "king of the south" of Daniel 11) dates
+  the Ptolemies' rule of Egypt from Alexander's death in 323 BC, as kings from 305 BC (was
+  "from 305 to 30 BC"), in all 21 languages, as the map now draws it.
 - Tours: the stops after the fall of Jerusalem in the exile and Jeremiah tours are dated
   586 BC (were 587 BC); Peter's prison in Jerusalem (Acts 11:2-12:17) is dated AD 44 (was the
   tour's AD 40). `questions.json`: where-was-mizpah `c. 586 BC` (was `c. 587 BC`).

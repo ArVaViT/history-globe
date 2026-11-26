@@ -145,6 +145,15 @@ description: Местата, стиховете, които ги назовав�
     приблизителна година — <code>"approximate": true</code>.
   </li>
   <li>
+    Мястото има <code>certainty</code> (<code>settled</code>, <code>most likely</code>,
+    <code>tentative</code>, <code>disputed</code>) и <code>confidence</code> — оценката на
+    OpenBible.info за неговата идентификация от 0 до 1000, където OpenBible я дава; място с повече
+    от едно предложено местоположение ги изброява в <code>sites</code>, всяко с дела си в оценката
+    на OpenBible, която е оценка, а не научен консенсус. Запис, който OpenBible водеше два пъти за
+    едно място, е слят с него: неговият id е посочен в <code>aliases</code> и връзките, които го
+    използват, продължават да работят.
+  </li>
+  <li>
     Файловете се изграждат наново при всяко издание на данните; <code>index.json</code> дава датата
     му.
   </li>

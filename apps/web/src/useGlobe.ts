@@ -161,6 +161,7 @@ function createGlobe(
   const engine = createEngine({
     renderer,
     places: new Map([...data.byId].map(([id, p]) => [id, p.info])),
+    aliases: data.aliases,
     tours: data.tours,
     initial: {
       ...(init.year === undefined ? {} : { year: init.year }),

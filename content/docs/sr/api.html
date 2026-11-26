@@ -138,6 +138,14 @@ description: Места, стихови који их помињу, догађа
     <code>"approximate": true</code>.
   </li>
   <li>
+    Место има <code>certainty</code> (<code>settled</code>, <code>most likely</code>,
+    <code>tentative</code>, <code>disputed</code>) и <code>confidence</code>, оцену његове
+    идентификације према OpenBible.info од 0 до 1000, где је OpenBible даје; место са више од једне
+    предложене локације наводи их у <code>sites</code>, сваку са њеним уделом у процени OpenBible,
+    која је процена, а не научни консензус. Запис који је OpenBible за једно место водио двапут
+    спојен је с њим: његов id је наведен у <code>aliases</code>, а везе које га користе и даље раде.
+  </li>
+  <li>
     Датотеке се изграђују изнова са сваким издањем података; <code>index.json</code> даје његов
     датум.
   </li>

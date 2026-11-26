@@ -143,6 +143,15 @@ description: De plaatsen, de verzen die ze noemen, de gebeurtenissen en de route
     <code>"approximate": true</code>.
   </li>
   <li>
+    Een plaats heeft <code>certainty</code> (<code>settled</code>, <code>most likely</code>,
+    <code>tentative</code>, <code>disputed</code>) en <code>confidence</code>, de score van
+    OpenBible.info voor de identificatie, van 0 tot 1000, waar OpenBible er een geeft; een plaats
+    met meer dan één voorgestelde locatie noemt ze in <code>sites</code>, elk met zijn aandeel in de
+    beoordeling van OpenBible, een schatting en geen wetenschappelijke consensus. Een record dat
+    OpenBible voor één plaats twee keer bijhield, is ermee samengevoegd: het id staat in
+    <code>aliases</code>, en links die het gebruiken werken nog.
+  </li>
+  <li>
     De bestanden worden bij elke release van de gegevens opnieuw gebouwd; <code>index.json</code>
     geeft de datum.
   </li>

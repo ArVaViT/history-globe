@@ -147,6 +147,15 @@ description: Paikat, niitä mainitsevat jakeet, tapahtumat ja kierrokset JSON-ti
     taistelulla tai kierroksella, jonka vuosi on likimääräinen, <code>"approximate": true</code>.
   </li>
   <li>
+    Paikalla on <code>certainty</code> (<code>settled</code>, <code>most likely</code>,
+    <code>tentative</code>, <code>disputed</code>) ja <code>confidence</code>, OpenBible.infon
+    pistemäärä sen tunnistukselle 0–1000, kun OpenBible sellaisen antaa; paikka, jolle on ehdotettu
+    useampaa kuin yhtä sijaintia, luettelee ne kentässä <code>sites</code>, kunkin osuutena
+    OpenBiblen arviosta, joka on arvio eikä tutkijoiden yhteinen näkemys. Tietue, jonka OpenBible
+    piti samasta paikasta kahdesti, on yhdistetty siihen: sen id on kentässä <code>aliases</code>,
+    ja sitä käyttävät linkit toimivat yhä.
+  </li>
+  <li>
     Tiedostot kootaan uudelleen jokaisen datajulkaisun yhteydessä; <code>index.json</code> kertoo
     päivämäärän.
   </li>

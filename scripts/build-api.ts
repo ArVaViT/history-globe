@@ -24,6 +24,7 @@ import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node
 import { join } from "node:path";
 import { BOOKS } from "../packages/model/src/scripture.ts";
 import { placeSlugs } from "../packages/model/src/slugs.ts";
+import { siteCertainty } from "../packages/model/src/sites.ts";
 import { LOCALES } from "../packages/model/src/locales.ts";
 import { openApi, violations } from "./api-openapi.ts";
 import { NOTICE } from "../packages/model/src/notice.ts";
@@ -50,6 +51,10 @@ interface Place {
     osis: string[];
     dup?: boolean;
     disputed?: boolean;
+    /** OpenBible's score of the identification shown, 0–1000. */
+    confidence?: number;
+    /** Ids of OpenBible records merged into this place (ADR 0022). */
+    aliases?: string[];
   };
 }
 const places = (
@@ -159,6 +164,46 @@ const write = (file: string, value: unknown) => {
 };
 
 const slugs = placeSlugs(places.map((f) => f.properties));
+// How sure the identification is, in the words of the dataset's `certainty` column
+// (pipeline/build_dataset.py) and the levels of the place card (siteCertainty): nothing where
+// OpenBible gives no score, rather than a guess.
+const CERTAINTY = {
+  agreed: "settled",
+  likely: "most likely",
+  tentative: "tentative",
+  disputed: "disputed",
+} as const;
+const certaintyOf = (p: Place["properties"]) => {
+  const c = siteCertainty({ disputed: p.disputed ?? false, confidence: p.confidence });
+  return c === "unknown" ? undefined : CERTAINTY[c];
+};
+// The candidate sites of a place with more than one (sites.geojson), in OpenBible's order,
+// with their share of OpenBible's assessment where it gives one.
+interface SiteFeature {
+  geometry: { coordinates: [number, number] };
+  properties: { place: string; label: string; share?: number } & Record<string, unknown>;
+}
+const sitesByPlace = new Map<string, SiteFeature[]>();
+for (const f of (
+  JSON.parse(readFileSync(join(data, "sites.geojson"), "utf8")) as { features: SiteFeature[] }
+).features)
+  sitesByPlace.set(f.properties.place, [...(sitesByPlace.get(f.properties.place) ?? []), f]);
+const sitesOf = (id: string) =>
+  (sitesByPlace.get(id) ?? []).map(({ properties: s, geometry: g }) => {
+    const names = Object.fromEntries(
+      LOCALES.flatMap((l) => {
+        const v = s[`label_${l}`];
+        return l !== "en" && typeof v === "string" ? [[l, v]] : [];
+      }),
+    );
+    return {
+      name: s.label,
+      ...(Object.keys(names).length ? { names } : {}),
+      lon: g.coordinates[0],
+      lat: g.coordinates[1],
+      ...(s.share !== undefined ? { share: s.share } : {}),
+    };
+  });
 // The ancient world's sites the map draws (ADR 0018): a tour stop, a battle or an event may
 // stand at one, by its Pleiades number; that id is in no file of the API, so the site's name
 // and point go with it.
@@ -218,8 +263,15 @@ write(
         lon: g.coordinates[0],
         lat: g.coordinates[1],
         ...(p.disputed ? { disputed: true } : {}),
+        // How sure the identification is, OpenBible's score of it, and the candidate sites
+        // (added 2026-11-25: readers ignore a new field).
+        ...(certaintyOf(p) ? { certainty: certaintyOf(p) } : {}),
+        ...(p.confidence !== undefined ? { confidence: p.confidence } : {}),
+        ...(sitesByPlace.has(p.id) ? { sites: sitesOf(p.id) } : {}),
         // Another record of the same place under a repeated name (OpenBible keeps both).
         ...(p.dup ? { duplicate: true } : {}),
+        // The ids of records merged into this one (ADR 0022): an id a reader kept still finds it.
+        ...(p.aliases?.length ? { aliases: p.aliases } : {}),
         verses: p.verses,
         // The same place in the gazetteers (added in version 1: readers ignore a new field).
         ...(wikidata[p.id] ? { wikidata: wikidata[p.id] } : {}),
@@ -516,7 +568,7 @@ write("index.json", {
   },
   fields_added: {
     "places.json":
-      "wikidata (Wikidata item, from OpenBible's links, checked against Wikidata) and pleiades (Pleiades id), 2026-10; tipnr (STEPBible TIPNR unique name, the id people.json uses), 2026-10-19",
+      "wikidata (Wikidata item, from OpenBible's links, checked against Wikidata) and pleiades (Pleiades id), 2026-10; tipnr (STEPBible TIPNR unique name, the id people.json uses), 2026-10-19; certainty, confidence and sites (how sure the identification is, OpenBible's score of it, the candidate sites with their shares) and aliases (ids of records merged into the place, which no longer appear on their own), 2026-11-25",
     "index.json": "notice (what may be taken and how), 2026-10",
     "questions.json": "license and license_url (the answers' licence) on each question, 2026-11",
     "tours.json":

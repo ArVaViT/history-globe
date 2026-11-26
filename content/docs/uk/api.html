@@ -139,6 +139,14 @@ description: Місця, вірші, що їх називають, події т
     <code>"duplicate": true</code>; місце зі спірною локалізацією — <code>"disputed": true</code>;
     подія, битва чи екскурсія з приблизним роком — <code>"approximate": true</code>.
   </li>
+  <li>
+    Місце має <code>certainty</code> (<code>settled</code>, <code>most likely</code>,
+    <code>tentative</code>, <code>disputed</code>) і <code>confidence</code> — оцінку його
+    локалізації за OpenBible.info від 0 до 1000, якщо OpenBible її дає; якщо запропоновано більше
+    одного місця, їх перелічено в <code>sites</code>, кожне з часткою в оцінці OpenBible: це оцінка,
+    а не консенсус науковців. Запис, який OpenBible завів для одного місця двічі, злито з ним: його
+    id наведено в <code>aliases</code>, і посилання з ним і далі працюють.
+  </li>
   <li>Файли перебудовуються з кожним випуском даних; <code>index.json</code> подає його дату.</li>
   <li>
     Перша версія лише росте: поля й файли додаються, але не перейменовуються й не зникають.

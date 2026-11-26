@@ -109,6 +109,16 @@ function follow(link: string): string | null {
   return fits.length === 1 ? (fits[0] ?? null) : null;
 }
 
+// Records merged into another place (ADR 0022) are no places of the build: no link of their own.
+const retired = new Set(
+  Object.keys(
+    (
+      JSON.parse(readFileSync(join(root, "content/place-aliases.json"), "utf8")) as {
+        places: Record<string, unknown>;
+      }
+    ).places,
+  ),
+);
 const places: Record<string, string> = {};
 const changed: Record<string, string> = {};
 const leftOut: Record<string, string> = {};
@@ -117,6 +127,7 @@ for (const line of readFileSync(join(root, "pipeline/.cache/openbible-ancient.js
   .split("\n")
   .filter(Boolean)) {
   const r = JSON.parse(line) as AncientRecord;
+  if (retired.has(r.id)) continue;
   const link = r.linked_data?.[TIPNR]?.id;
   if (!link) continue;
   const id = BY_HAND[r.id] ?? follow(link);

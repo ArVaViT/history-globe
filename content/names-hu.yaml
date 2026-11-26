@@ -64,7 +64,6 @@ places:
   a94b661: Thiatira
   a815d89: Areopágusz
   abff59d: Betfagé
-  a9fc13a: Betszaida
   a581f0c: Kánaán
   ae733a2: Dekapolisz
   ae7274b: Emmaus
@@ -183,7 +182,6 @@ places:
   acf2fac: Kesil
   a0ff819: Kitlis
   a398e5d: Kósz
-  ae8badb: Dibon
   ab9580e: Sárkány-forrás
   acd9b19: Ébec
   aacbcf0: Eglajim
@@ -304,9 +302,7 @@ places:
   ab635e4: Dótán
   a8eae19: Én-Gannim
   aae626a: Szép Kikötők
-  a33cfcc: Géba
   a2f0f05: Gibea
-  aa9c505: Hamát
   aeb09c0: Hélám
   a878481: India
   a765bd8: Káin
@@ -330,7 +326,6 @@ places:
   ada3369: Almon
   a4bdea7: Amphipolisz
   ac4f712: Áfek
-  a4cea2a: Arád
   a0e21ff: Átak
   a6d7a41: Avvim
   a304bb7: Baál-Hámon
@@ -350,7 +345,6 @@ places:
   ab28e2e: Én-Rimmón
   a1230e5: Efrón
   a16596e: Éter
-  ae14b1d: Géba
   ac36af4: Gederótajim
   aed8df9: Gilgál
   a80bf37: Gómer
@@ -482,7 +476,6 @@ places:
   a721f7f: Kemencék tornya
   a2109c3: Hámon-Góg-völgy
   ae11a0d: Maón pusztája
-  a190097: Cin
   a112fe3: Ainón
   adbc931: Ájin
   a2f1fa1: Amád
@@ -620,7 +613,6 @@ places:
   a728f1b: Gederót
   ab98f8c: Gittajim
   a1d1918: Helkát
-  a662eed: Kedes
   a8661e2: Madmanna
   a2f0a70: Mikmetát
   a38ad9f: Móré
@@ -720,7 +712,6 @@ places:
   ae46f2e: Aróer
   a4cc324: Arnon
   a6f33c5: Hácór
-  a075d61: Beérseba
   af82614: Adullám
   a505743: Meriba
   a2a8df0: Bét-Seán
@@ -837,7 +828,6 @@ places:
   a51e3b0: Régi-tó
   a8f60f3: Pátmosz
   a70e895: Cserépkapu
-  a75be6f: Ráma
   ada2a0b: Rámót
   a1b5486: Rekem
   a655b28: Rimmóno
@@ -922,9 +912,7 @@ places:
   ae4d198: Immer
   ab86a69: Júdea
   a057d59: Királyi út
-  a359997: Lúd
   a57e0a0: Maszréka
-  a15973c: Migdol
   aefaa2d: Nébó-hegy
   ac1fef1: Neftóah
   ae67841: Pérec-Uzza
@@ -1018,7 +1006,6 @@ places:
   a32a4f8: Káldea
   a3e66cd: Arám
   ac6b210: Naama
-  a63c70b: Aj
   a4e39f6: Galilea
   a2d3ca1: Géba
   ad0520f: Pút
@@ -1121,7 +1108,6 @@ places:
   a71d79b: Gihon
   a763368: Gúr-Baál
   ac5e5c4: Havila
-  a1d9047: Havila
   a8a8e54: Helbón
   a11bbbe: Hierapolisz
   aedf531: Jábes
@@ -1150,7 +1136,6 @@ places:
   a897bdb: Menekülés sziklája
   a702ab6: Egyiptomi-tenger
   ad259d1: Jázér-tenger
-  a6343cc: Szela
   a5b01f4: Sahaccima
   a7b3f5d: Sáfir
   ab56451: Szilla
@@ -1254,8 +1239,6 @@ places:
   a8e6824: Elón-Bét-Hanán
   a9a6f72: Efrón
   a764256: Gamád
-  a0ac467: Gát
-  a0a5b78: Gedera
   a2fc530: Gedór
   a607415: Hakkefirim
   a1d5a28: Halahha
@@ -1533,6 +1516,7 @@ polities:
   Kingdom of Adiabene: Adiabéné Királyság
   Kingdom of Africa: Afrikai Királyság
   Kingdom of Agrippa I: I. Agrippa királysága
+  Kingdom of Agrippa II: II. Agrippa királysága
   Kingdom of Alamannia: Alemann Királyság
   Kingdom of Aragon: Aragóniai Királyság
   Kingdom of Arles: Arles-i Királyság
@@ -1544,6 +1528,7 @@ polities:
   Kingdom of Brittany: Bretagne-i Királyság
   Kingdom of Cappadocia: Kappadókiai Királyság
   Kingdom of Castile: Kasztíliai Királyság
+  Kingdom of Chalcis: Khalkiszi Királyság
   Kingdom of Commagene: Kommagéné Királyság
   Kingdom of Croatia: Horvát Királyság
   Kingdom of Cyprus: Ciprusi Királyság
@@ -1600,6 +1585,7 @@ polities:
   Lombards: Longobárdok
   Lower Burgundy: Alsó-Burgundia
   Lower Egypt: Alsó-Egyiptom
+  Lycian League: Lükiai Szövetség
   Lydia: Lüdia
   Macedonian Empire: Makedón Birodalom
   Magadha - Shaishunaga dynasty: Magadha Sisunága-dinasztia
@@ -2863,7 +2849,6 @@ modern:
   m919c2c: Tell Miszka
   m9c2d3a: Atlit
   ma66725: Vádi el-Dzsoz
-  m1e3a5b: Tripoli
   m7e4070: Medinet er-Rasz
   m95f21e: Minie
   m7470bc: Hirbet Madin

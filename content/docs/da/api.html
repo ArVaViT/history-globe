@@ -140,6 +140,14 @@ description: Stederne, de vers der nævner dem, begivenhederne og turene som JSO
     eller en tur med et omtrentligt år har <code>"approximate": true</code>.
   </li>
   <li>
+    Et sted har <code>certainty</code> (<code>settled</code>, <code>most likely</code>,
+    <code>tentative</code>, <code>disputed</code>) og <code>confidence</code>, OpenBible.infos score
+    for identifikationen fra 0 til 1000, hvor OpenBible giver en; et sted med mere end én foreslået
+    lokalitet oplister dem i <code>sites</code>, hver med sin andel af OpenBibles vurdering, et skøn
+    og ikke en faglig konsensus. En post, som OpenBible havde to gange for samme sted, er lagt
+    sammen med det: dens id står i <code>aliases</code>, og links, der bruger den, virker stadig.
+  </li>
+  <li>
     Filerne bygges forfra ved hver udgivelse af dataene; <code>index.json</code> angiver dens dato.
   </li>
   <li>

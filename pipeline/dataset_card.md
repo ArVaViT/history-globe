@@ -111,11 +111,12 @@ Always join on ids, not names: names repeat (two Jerichos are two places). `same
 | `identified_as`       | the modern site or description the point stands for: "Tell Abu Sus", "within 1 km of Bethel", "same place as Shittim" |
 | `same_as`             | when `identified_as` says "same place as …", the id of that place                                                     |
 | `certainty`           | how sure the location is, as the globe says it: `settled`, `most likely`, `tentative` or `disputed` (see below)       |
-| `disputed`            | `true` when a second proposed site holds at least 10% of OpenBible.info's score (see below)                           |
+| `disputed`            | `true` when sites more than 5 km from the leading one hold 20% of OpenBible.info's score (see below)                  |
 | `confidence`          | OpenBible.info's score for the identification, 0–1000, weighted towards recent scholarship                            |
 | `candidate_sites`     | how many proposed sites `place_sites` lists for the place (0 when one)                                                |
 | `verse_count`         | how many verses name the place                                                                                        |
 | `duplicate`           | `true` for a second record OpenBible keeps for the same place under a repeated name                                   |
+| `aliases`             | ids of OpenBible records merged into this place (one place kept twice under one name), separated by spaces            |
 | `wikidata`            | the Wikidata item (`Q…`)                                                                                              |
 | `pleiades`            | the place in Pleiades, as a link                                                                                      |
 | `tipnr`               | STEPBible's TIPNR name for the place, in STEPBible's abbreviations (`Abana@2Ki.5.12`)                                 |
@@ -166,7 +167,7 @@ Its stops, in the order travelled: `tour_id`, `stop`, `place_id`, `ref`, `note_*
 ### How sure is a location?
 
 - `certainty` is what the globe tells a reader. `disputed` when scholars propose rival sites; otherwise OpenBible.info's `confidence` decides: 800 or above `settled`, 600 or above `most likely`, below that `tentative`.
-- `disputed` is `true` when, of the proposed sites listed in `place_sites`, the second holds at least 10% of the positive score, or none is scored.
+- `disputed` is `true` when, of the proposed sites listed in `place_sites`, those more than 5 km from the one with the largest share together hold at least 20% of the positive score, or none is scored.
 - `identified_as` names the site the point stands for; `place_sites` lists the rivals with their shares.
 
 These scores and shares are OpenBible's assessment, not a scholarly consensus. On a place's page, History Globe says which identification it follows and why.

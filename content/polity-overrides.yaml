@@ -102,10 +102,12 @@ overrides:
     sources:
       - "Wikipedia, Polemon II of Pontus; Kingdom of Pontus"
   - polity: Kingdom of Cappadocia
-    last_year: "AD 17"
+    last_year: "AD 16"
     reason: >-
-      Cliopatria draws the kingdom of Cappadocia until AD 22. Archelaus died in Rome in AD 17 and Tiberius made Cappadocia a province.
+      Cliopatria draws the kingdom of Cappadocia until AD 22. Archelaus died in Rome in AD 17 and Tiberius made Cappadocia a province (the Cappadocia article): the kingdom is drawn to AD 16 and its land as Rome's from AD 17, the year of the event (annexed).
     sources:
+      - "Tacitus, Annals 2.42"
+      - "Cassius Dio 57.17.3-7"
       - "Wikipedia, Cappadocia (Roman province); Archelaus of Cappadocia"
   - polity: Mauretania
     last_year: "AD 40"
@@ -144,10 +146,12 @@ overrides:
       - "Wikipedia, Darius III (reigned 336 BC to his death in 330 BC)"
       - "Wikipedia, Battle of Gaugamela (1 October 331 BC)"
   - polity: Kingdom of Bithynia
-    last_year: "74 BC"
+    last_year: "75 BC"
     reason: >-
-      Cliopatria draws Bithynia until 68 BC. Nicomedes IV bequeathed the kingdom to Rome in 74 BC, one of his last acts as king, and it became a Roman province.
+      Cliopatria draws Bithynia until 68 BC. Nicomedes IV bequeathed the kingdom to Rome in 74 BC, one of his last acts as king, and it became a Roman province (the Bithynia article): the kingdom is drawn to 75 BC and its land as Rome's from 74 BC, the year of the bequest (annexed).
     sources:
+      - "Appian, Mithridatic Wars 71 (livius.org)"
+      - "Livy, Periochae 93 (livius.org)"
       - "Wikipedia, Nicomedes IV of Bithynia (bequeathed the kingdom to Rome in 74 BC)"
       - "Wikipedia, Bithynia (bequeathed to the Roman Republic in 74 BC)"
   - polity: Parthian Empire
@@ -174,9 +178,9 @@ overrides:
       - "Wikipedia, Battle of Pydna (168 BC; the kingdom dissolved and replaced with four republics)"
       - "Wikipedia, Macedonia (Roman province) (four client republics, merides; province from 148/146 BC)"
   - polity: Cyrenaica
-    last_year: "96 BC"
+    last_year: "97 BC"
     reason: >-
-      Cliopatria draws the kingdom of Ptolemy Apion until 93 BC. Apion died in 96 BC and left Cyrenaica to the Roman people; the Senate declared its cities free and made it a province only in 74 BC, but the kingdom ended in 96.
+      Cliopatria draws the kingdom of Ptolemy Apion until 93 BC. Apion died in 96 BC and left Cyrenaica to the Roman people (the Cyrene article); the Senate declared its cities free and made it a province only in 74 BC, but the kingdom ended in 96. Drawn to 97 BC and as Rome's from 96 BC, the year of the will (annexed).
     sources:
       - "Livy, Periochae 70.5 (Ptolemy Apion of Cyrene makes the Roman people his heir; the Senate frees the towns) (livius.org)"
       - "Wikipedia, Ptolemy Apion (died 96 BC); Crete and Cyrenaica (Cyrenaica annexed as a province in 74 BC)"
@@ -298,6 +302,31 @@ overrides:
       - "RINAP 4, Esarhaddon 1, v 54-vi 1"
       - "S. Gitin, T. Dothan and J. Naveh, A Royal Dedicatory Inscription from Ekron, Israel Exploration Journal 47 (1997)"
       - "Babylonian Chronicle ABC 5, obv. 18-20 (A. K. Grayson, Assyrian and Babylonian Chronicles, 1975)"
+
+  # Map sweep, fourth batch (2026-11-24): Macedonia, Asia Minor, Cyprus, Syria and
+  # Mesopotamia.
+  - polity: Galatia
+    last_year: "26 BC"
+    reason: >-
+      Cliopatria ends the kingdom of Galatia in 27 BC. Amyntas was killed in 25 BC and Augustus made his kingdom a province (the Galatia, Antioch of Pisidia and Iconium articles; the question where-was-galatia): the kingdom is drawn with its last shape to 26 BC, under Rome (vassals), and the province from 25 BC.
+    sources:
+      - "Cassius Dio 53.26.3"
+      - "S. Mitchell, Anatolia: Land, Men, and Gods in Asia Minor, vol. 1 (1993), 61-63"
+  - polity: Median Kingdom
+    last_year: "551 BC"
+    reason: >-
+      Cliopatria ends the Median kingdom in 552 BC. The Nabonidus Chronicle puts Cyrus' victory over Astyages and the plunder of Ecbatana in the sixth year of Nabonidus, 550/549 BC (event astyages-defeated; the Ecbatana article): Media is drawn to 551 BC and as Persian from 550 BC (starts).
+    sources:
+      - "Nabonidus Chronicle (ABC 7) ii 1-4 (livius.org)"
+      - "P. Briant, From Cyrus to Alexander: A History of the Persian Empire (2002), 31-33"
+  - polity: Rhodes
+    last_year: "AD 43"
+    reason: >-
+      Cliopatria draws Rhodes as a state only in 189-166 BC, with Lycia and Caria, and the island as Roman from 165 BC. Rome freed Lycia and Caria from Rhodes in 167 BC, but the island stayed a free city, Rome's ally by the treaty of 164 BC (the Rhodes article calls it a friend of Rome), until Claudius took its freedom away in AD 44. Drawn on as the island alone (clips), under Rome (vassals); it was free again in AD 53-72 (bridges).
+    sources:
+      - "Polybius 30.5; 30.31"
+      - "Cassius Dio 60.24.4"
+      - "R. M. Berthold, Rhodes in the Hellenistic Age (1984)"
 # A change of shape Cliopatria puts at a round year, moved to the year it happened
 # (build-content.ts): the shapes that begin in `data_year` begin in `first_year`, and the
 # shapes before them end then.
@@ -322,6 +351,37 @@ seams:
     sources:
       - "1 Kgs 12:16-24"
       - "E. R. Thiele, The Mysterious Numbers of the Hebrew Kings, new rev. ed. (1983)"
+  # The Parthian invasion of Syria, Phoenicia and Judea (Map leftovers, 2026-11-24).
+  - polity: Parthian Empire
+    data_year: "41 BC"
+    first_year: "40 BC"
+    reason: >-
+      Cliopatria draws Syria, Phoenicia and the Decapolis as Parthian from 41 BC. Pacorus and Barzapharnes, with Quintus Labienus, crossed the Euphrates in the spring of 40 BC, in the consulship of Calvinus and Pollio, took Syria and Phoenicia but Tyre, and in the same year took Jerusalem and made Antigonus king (event parthians-jerusalem); the Senate made Herod king against him that winter (event herod-made-king), and the map's vassal years of Judea under Parthia already run from 40 BC. The Parthian shape of 41-37 BC is drawn from 40 BC, the year of the events, and the land is Rome's, as in 42 BC, until then.
+    sources:
+      - "Cassius Dio 48.24.3-26.5"
+      - "Josephus, Antiquities 14.330-369; Jewish War 1.248-273"
+      - "Plutarch, Antony 30.1; 33.1"
+  - polity: Roman Republic
+    data_year: "41 BC"
+    first_year: "40 BC"
+    reason: >-
+      As above: Rome's shape of 42 BC, with Syria, is drawn through 41 BC and its shape without Syria from 40 BC, the year the Parthians invaded.
+    sources:
+      - "Cassius Dio 48.24.3-26.5"
+  - polity: Judea
+    data_year: "41 BC"
+    first_year: "40 BC"
+    reason: >-
+      As above: Judea's shape of 41-37 BC, cut back where Cliopatria gives the land east of the Jordan to the Parthians, is drawn from 40 BC.
+    sources:
+      - "Josephus, Antiquities 14.330-369"
+  - polity: Kingdom of Osroene
+    data_year: "41 BC"
+    first_year: "40 BC"
+    reason: >-
+      As above: Osroene's shape of 41-37 BC, drawn back from the land the Parthian shape of those years takes west of it, is drawn from 40 BC.
+    sources:
+      - "Cassius Dio 48.24.3-26.5"
 
 starts:
   - polity: Kingdom of Israel
@@ -382,6 +442,21 @@ starts:
     sources:
       - "Roger of Howden, Gesta Regis Ricardi"
       - "P. W. Edbury, The Kingdom of Cyprus and the Crusades, 1191-1374 (1991)"
+  # Map sweep, fourth batch (2026-11-24).
+  - polity: Achaemenid Empire
+    first_year: "550 BC"
+    reason: >-
+      Cliopatria begins the Achaemenid Empire in 551 BC. Cyrus defeated Astyages and took Ecbatana in the sixth year of Nabonidus, 550/549 BC (event astyages-defeated; the Ecbatana article); Media is drawn until then (overrides) and the empire from 550 BC.
+    sources:
+      - "Nabonidus Chronicle (ABC 7) ii 1-4 (livius.org)"
+      - "P. Briant, From Cyrus to Alexander: A History of the Persian Empire (2002), 31-33"
+  - polity: Assyria
+    first_year: "1808 BC"
+    reason: >-
+      Cliopatria begins Shamshi-Adad I's kingdom of Upper Mesopotamia in 1801 BC and draws no state over Assur before it. By the Assyrian King List he took Assur from Erishum II and reigned 33 years, 1808-1776 BC in the middle chronology (event shamshi-adad; the Asshur article); his kingdom is drawn from 1808 BC with its first shape. Assur's earlier years as a city-state are left without a state, as before.
+    sources:
+      - "Assyrian King List (J. B. Pritchard, ed., Ancient Near Eastern Texts, 3rd ed., 1969, 564)"
+      - "M. Van De Mieroop, A History of the Ancient Near East, ca. 3000-323 BC, 3rd ed. (2016), ch. 6"
 clips:
   - polity: Philistia
     # The coastal plain from Nahal Besor to the Yarkon, east to the edge of the Shephelah:
@@ -669,7 +744,7 @@ clips:
     first_year: "84 BC"
     last_year: "79 BC"
     reason: >-
-      Cliopatria draws Mithridates VI's conquests of 88 BC, from Attica and the islands to Asia, Bithynia, Cappadocia and Galatia, until 79 BC. Sulla took Athens in 86 BC, and under the Treaty of Dardanus in 85 BC Mithridates gave up Asia and Paphlagonia, restored Bithynia and Cappadocia and went back to his ancestral kingdom of Pontus. From 84 BC Pontus is drawn with Cliopatria's shape of 78 BC, which keeps inland Paphlagonia; the restored kings are drawn again (bridges) and Asia as Roman (annexed). Attica, Lesbos and Caria are left blank in 84-79 BC: no shape of these years reaches them.
+      Cliopatria draws Mithridates VI's conquests of 88 BC, from Attica and the islands to Asia, Bithynia, Cappadocia and Galatia, until 79 BC. Sulla took Athens in 86 BC, and under the Treaty of Dardanus in 85 BC Mithridates gave up Asia and Paphlagonia, restored Bithynia and Cappadocia and went back to his ancestral kingdom of Pontus. From 84 BC Pontus is drawn with Cliopatria's shape of 78 BC, which keeps inland Paphlagonia; the restored kings are drawn again (bridges), Asia and Attica as Roman (annexed, extends) and Lycia as the Lycian League (drawn). Lesbos and Caria are left blank in 84-79 BC: no shape of these years reaches them.
     sources:
       - "Plutarch, Sulla 14 (Athens taken on the Calends of March); 22-24 (terms of Dardanus) (LacusCurtius)"
       - "Appian, Mithridatic Wars 55; 58 (he went back to his paternal kingdom of Pontus as his sole possession) (livius.org)"
@@ -696,13 +771,15 @@ clips:
       - [40.0, 15.0]
       - [40.0, 33.0]
       - [15.0, 33.0]
-    first_year: "57 BC"
+    first_year: "58 BC"
     last_year: "48 BC"
-    leaves_blank: true
+    to: Roman Republic
     reason: >-
-      Cliopatria keeps Cyprus Ptolemaic until 52 BC and Roman as well from 51. Rome annexed Cyprus in 58 BC under a law of Clodius; its king Ptolemy took poison and Cato governed the island. Caesar granted it back to Arsinoe and the younger Ptolemy at Alexandria only at the end of 48 BC. In 57-52 BC the island is left blank: Rome's shape of those years does not reach it.
+      Cliopatria keeps Cyprus Ptolemaic until 52 BC and Roman as well from 51. Rome annexed Cyprus in 58 BC under a law of Clodius (the Cyprus and Paphos articles); its king Ptolemy took poison and Cato took over the island, and Cicero governed it with Cilicia in 51-50 BC. Caesar granted it back to Arsinoe and the younger Ptolemy at Alexandria only at the end of 48 BC. Drawn as Rome's from 58 BC.
     sources:
-      - "Cassius Dio 39.22 (Ptolemy of Cyprus takes poison; the Cypriots receive Cato); 42.35.5 (Caesar grants Cyprus to Arsinoe and Ptolemy the Younger) (LacusCurtius)"
+      - "Cassius Dio 38.30; 39.22 (Ptolemy of Cyprus takes poison; the Cypriots receive Cato); 42.35.5 (Caesar grants Cyprus to Arsinoe and Ptolemy the Younger) (LacusCurtius)"
+      - "Plutarch, Cato the Younger 34-38"
+      - "Cicero, Letters to Atticus 5.21"
       - "Wikipedia, Roman Cyprus (annexed 58 BC; restored to the Ptolemies; Roman again after Actium)"
   - polity: Seleucid Empire
     # East of a line from the sea off western Cyprus to Raphia and down the Arabah: Egypt
@@ -1119,7 +1196,7 @@ clips:
     last_year: "32 BC"
     to: Roman Empire
     reason: >-
-      Cliopatria's Ptolemaic shape of 32 BC is the whole of Mark Antony's East, from Greece to Syria, so Athens, Corinth, Tyre and Damascus showed as Cleopatra's. Antony held those lands as a Roman triumvir. Cleopatra's own kingdom was Egypt and Cyprus; the lands he gave her and her children in 37-34 BC (parts of Coele-Syria and Crete, Cyrenaica) are not drawn, their extent being uncertain. The rest is drawn as Rome's, under the name Cliopatria gives it from 32 BC.
+      Cliopatria's Ptolemaic shape of 32 BC is the whole of Mark Antony's East, from Greece to Syria, so Athens, Corinth, Tyre and Damascus showed as Cleopatra's. Antony held those lands as a Roman triumvir. Cleopatra's own kingdom was Egypt and Cyprus; the lands he gave her and her children in 37-34 BC (parts of Coele-Syria and Crete, Cyrenaica) are not drawn, their extent being uncertain. The rest is drawn as Rome's: as the Roman Republic, as Rome is drawn until 28 BC (renamed).
     sources:
       - "Plutarch, Antony 36; 54; 56-61"
       - "Cassius Dio 49.32.4-5; 49.41.1-3"
@@ -1818,7 +1895,7 @@ clips:
       - [35.62, 33.08]
       - [35.18, 33.08]
       - [35.15, 32.9]
-    first_year: "41 BC"
+    first_year: "40 BC"
     last_year: "38 BC"
     reason: >-
       In 40-38 BC Galilee was part of Antigonus's Judea, which the map draws under Parthia (vassals); the Parthian shape is cut back from it.
@@ -2080,7 +2157,7 @@ clips:
       - [35.26, 32.33]
       - [35.13, 32.33]
     first_year: "63 BC"
-    last_year: "42 BC"
+    last_year: "41 BC"
     to: Roman Republic
     reason: >-
       Pompey gave Samaria back to its people in 63 BC and Gabinius rebuilt it (the Samaria article); it was a city of the province of Syria until Augustus gave it to Herod in 30 BC. Drawn as Rome's in these years.
@@ -2095,11 +2172,11 @@ clips:
       - [35.26, 32.22]
       - [35.26, 32.33]
       - [35.13, 32.33]
-    first_year: "41 BC"
+    first_year: "40 BC"
     last_year: "38 BC"
     to: Parthian Empire
     reason: >-
-      In 41-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
+      In 40-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
     sources:
       - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
       - "Josephus, Antiquities 15.217; Jewish War 1.396"
@@ -2144,7 +2221,7 @@ clips:
       - [34.58, 31.6]
       - [34.35, 31.6]
     first_year: "63 BC"
-    last_year: "42 BC"
+    last_year: "41 BC"
     to: Roman Republic
     reason: >-
       Pompey freed Gaza from Jewish rule in 63 BC and Gabinius had it rebuilt (the Gaza article); it was a city of the province of Syria until Augustus gave it to Herod in 30 BC. Drawn as Rome's in these years.
@@ -2159,11 +2236,11 @@ clips:
       - [34.58, 31.4]
       - [34.58, 31.6]
       - [34.35, 31.6]
-    first_year: "41 BC"
+    first_year: "40 BC"
     last_year: "38 BC"
     to: Parthian Empire
     reason: >-
-      In 41-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
+      In 40-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
     sources:
       - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
       - "Josephus, Antiquities 15.217; Jewish War 1.396"
@@ -2209,7 +2286,7 @@ clips:
       - [35.7, 32.8]
       - [35.63, 32.77]
     first_year: "63 BC"
-    last_year: "42 BC"
+    last_year: "41 BC"
     to: Roman Republic
     reason: >-
       After the Roman conquest of 63 BC Pompey freed Gadara and Hippos from Jewish rule and joined them to the province of Syria; Augustus gave them to Herod in 30 BC (the Gadara article). Drawn as Rome's in these years.
@@ -2225,11 +2302,11 @@ clips:
       - [35.78, 32.7]
       - [35.7, 32.8]
       - [35.63, 32.77]
-    first_year: "41 BC"
+    first_year: "40 BC"
     last_year: "38 BC"
     to: Parthian Empire
     reason: >-
-      In 41-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
+      In 40-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
     sources:
       - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
       - "Josephus, Antiquities 15.217; Jewish War 1.396"
@@ -2276,7 +2353,7 @@ clips:
       - [35.98, 32.36]
       - [35.8, 32.36]
     first_year: "63 BC"
-    last_year: "42 BC"
+    last_year: "41 BC"
     to: Roman Republic
     reason: >-
       Pompey freed Gerasa from Jewish rule in 63 BC; it was one of the Decapolis cities of the province of Syria and never Herod's (the Gerasa article). Drawn as Rome's in these years.
@@ -2290,11 +2367,11 @@ clips:
       - [35.98, 32.18]
       - [35.98, 32.36]
       - [35.8, 32.36]
-    first_year: "41 BC"
+    first_year: "40 BC"
     last_year: "38 BC"
     to: Parthian Empire
     reason: >-
-      In 41-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
+      In 40-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
     sources:
       - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
       - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
@@ -2351,7 +2428,7 @@ clips:
       - [34.62, 31.73]
       - [34.48, 31.73]
     first_year: "63 BC"
-    last_year: "42 BC"
+    last_year: "41 BC"
     to: Roman Republic
     reason: >-
       Ashkelon was a free Greek city, with its own era from 104 BC, "independent of the Hasmoneans and of Herod" (the Ashkelon article); Cliopatria draws it in Judea. Drawn as Rome's in these years.
@@ -2365,11 +2442,11 @@ clips:
       - [34.62, 31.6]
       - [34.62, 31.73]
       - [34.48, 31.73]
-    first_year: "41 BC"
+    first_year: "40 BC"
     last_year: "38 BC"
     to: Parthian Empire
     reason: >-
-      In 41-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
+      In 40-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
     sources:
       - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
       - "Josephus, Jewish War 1.422"
@@ -2427,7 +2504,7 @@ clips:
       - [35.8, 33.35]
       - [35.6, 33.35]
     first_year: "64 BC"
-    last_year: "42 BC"
+    last_year: "41 BC"
     to: Roman Republic
     reason: >-
       Paneas and the Huleh basin were not Hasmonean: they belonged to the Ituraean principality of Ptolemy son of Mennaeus and then to Lysanias and Zenodorus, Rome's clients, until Augustus gave Zenodorus's land to Herod in 20 BC (the Caesarea Philippi article). Drawn as Rome's in these years.
@@ -2442,11 +2519,11 @@ clips:
       - [35.8, 33.15]
       - [35.8, 33.35]
       - [35.6, 33.35]
-    first_year: "41 BC"
+    first_year: "40 BC"
     last_year: "38 BC"
     to: Parthian Empire
     reason: >-
-      In 41-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
+      In 40-38 BC, when the Parthians overran Syria, it is drawn as theirs, as the coast around it.
     sources:
       - "Josephus, Antiquities 14.39; 15.344-360; Jewish War 1.398-400"
       - "Strabo 16.2.10; 16.2.20"
@@ -2617,6 +2694,1780 @@ clips:
     sources:
       - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
       - "H. J. Katzenstein, The History of Tyre, 2nd ed. (1997)"
+  - polity: Seleucid Empire
+    # Kedesh (Cydasa) and its valley, Tyre's inland village above the Huleh basin.
+    without:
+      - [35.5, 33.09]
+      - [35.58, 33.09]
+      - [35.58, 33.15]
+      - [35.5, 33.15]
+    first_year: "126 BC"
+    last_year: "92 BC"
+    leaves_blank: true
+    reason: >-
+      Kedesh belonged to Tyre's land: Josephus knew Cydasa as "a strong inland village of the Tyrians, always at feud and strife with the Galileans", where Titus camped in AD 67 (the Kedesh article). Tyre won its freedom from the Seleucids in 126 BC, and the village is left without a state with the free city (clips above, the Tyre box), not drawn as Seleucid.
+    sources:
+      - "Josephus, Jewish War 2.459; 4.104-105; Antiquities 13.154"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+      - "H. J. Katzenstein, The History of Tyre, 2nd ed. (1997)"
+  - polity: Judea
+    # Kedesh, as above.
+    without:
+      - [35.5, 33.09]
+      - [35.58, 33.09]
+      - [35.58, 33.15]
+      - [35.5, 33.15]
+    first_year: "92 BC"
+    last_year: "79 BC"
+    leaves_blank: true
+    reason: >-
+      Cliopatria's Hasmonean and Herodian Judea covers Kedesh from 92 BC to AD 5. Kedesh was never Hasmonean or Herod's: it lay in Tyre's land, beyond the Galilee that Aristobulus I joined to Judea, and Alexander Jannaeus's possessions as Josephus lists them leave it out. In 92-79 BC it goes with free Tyre, without a state.
+    sources:
+      - "Josephus, Antiquities 13.395-397; Jewish War 4.104-105"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Kedesh, as above.
+    without:
+      - [35.5, 33.09]
+      - [35.58, 33.09]
+      - [35.58, 33.15]
+      - [35.5, 33.15]
+    first_year: "78 BC"
+    last_year: "68 BC"
+    to: Kingdom of Armenia
+    reason: >-
+      As above; in 78-68 BC Kedesh is drawn as Tyre is, in Tigranes's Syria.
+    sources:
+      - "Josephus, Jewish War 4.104-105"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Judea
+    # Kedesh, as above.
+    without:
+      - [35.5, 33.09]
+      - [35.58, 33.09]
+      - [35.58, 33.15]
+      - [35.5, 33.15]
+    first_year: "67 BC"
+    last_year: "65 BC"
+    to: Seleucid Empire
+    reason: >-
+      As above; in 67-65 BC, as Tyre, under the last Seleucids.
+    sources:
+      - "Josephus, Jewish War 4.104-105"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Judea
+    # Kedesh, as above.
+    without:
+      - [35.5, 33.09]
+      - [35.58, 33.09]
+      - [35.58, 33.15]
+      - [35.5, 33.15]
+    first_year: "64 BC"
+    last_year: "33 BC"
+    to: Roman Republic
+    reason: >-
+      As above; from Pompey's settlement Kedesh is drawn with Tyre in Rome's Syria, Parthian invasion of 40 BC included: Tyre held out against Pacorus (the anchor Tyre under Antony).
+    sources:
+      - "Josephus, Jewish War 1.248-250; 4.104-105"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Kedesh, as above.
+    without:
+      - [35.5, 33.09]
+      - [35.58, 33.09]
+      - [35.58, 33.15]
+      - [35.5, 33.15]
+    first_year: "32 BC"
+    last_year: "AD 5"
+    to: Roman Empire
+    reason: >-
+      As above; Herod's kingdom and, after 4 BC, Antipas's Galilee stopped at the hills below Tyre's land (the drawn tetrarchy), and Kedesh stays with Tyre under Rome.
+    sources:
+      - "Josephus, Jewish War 2.459; 4.104-105"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Beth-shan (Scythopolis) and its land.
+    without:
+      - [35.45, 32.46]
+      - [35.56, 32.46]
+      - [35.56, 32.55]
+      - [35.45, 32.55]
+    first_year: "127 BC"
+    last_year: "108 BC"
+    to: Seleucid Empire
+    reason: >-
+      Cliopatria draws Scythopolis in Hasmonean Judea from 127 BC. The Greek city stayed in the Seleucid realm until Epicrates, Antiochus IX's general, betrayed it to John Hyrcanus's sons about 107 BC (the Beth-shan article); drawn as Judea from 107 BC.
+    sources:
+      - "Josephus, Antiquities 13.280; 13.396; 14.75-76; Jewish War 1.156"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Beth-shan, as above.
+    without:
+      - [35.45, 32.46]
+      - [35.56, 32.46]
+      - [35.56, 32.55]
+      - [35.45, 32.55]
+    first_year: "63 BC"
+    last_year: "41 BC"
+    to: Roman Republic
+    reason: >-
+      Pompey freed Scythopolis from Jewish rule in 63 BC and Gabinius rebuilt it (the Beth-shan article); it was the largest city of the Decapolis, in the province of Syria, and never Herod's. Drawn as Rome's in these years.
+    sources:
+      - "Josephus, Antiquities 13.280; 13.396; 14.75-76; Jewish War 1.156"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Beth-shan, as above.
+    without:
+      - [35.45, 32.46]
+      - [35.56, 32.46]
+      - [35.56, 32.55]
+      - [35.45, 32.55]
+    first_year: "40 BC"
+    last_year: "38 BC"
+    to: Parthian Empire
+    reason: >-
+      In 40-38 BC, when the Parthians overran Syria, it is drawn as theirs, as Gadara and Gerasa are.
+    sources:
+      - "Josephus, Antiquities 13.280; 13.396; 14.75-76; Jewish War 1.156"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Beth-shan, as above.
+    without:
+      - [35.45, 32.46]
+      - [35.56, 32.46]
+      - [35.56, 32.55]
+      - [35.45, 32.55]
+    first_year: "37 BC"
+    last_year: "33 BC"
+    to: Roman Republic
+    reason: >-
+      Drawn as Rome's in these years.
+    sources:
+      - "Josephus, Antiquities 13.280; 13.396; 14.75-76; Jewish War 1.156"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Beth-shan, as above.
+    without:
+      - [35.45, 32.46]
+      - [35.56, 32.46]
+      - [35.56, 32.55]
+      - [35.45, 32.55]
+    first_year: "32 BC"
+    last_year: "AD 5"
+    to: Roman Empire
+    reason: >-
+      Drawn as Rome's: Augustus gave Herod Gadara and Hippos in 30 BC, not Scythopolis.
+    sources:
+      - "Josephus, Antiquities 13.280; 13.396; 14.75-76; Jewish War 1.156"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+      - "Josephus, Antiquities 15.217"
+  - polity: Judea
+    # The Decapolis between Gadara and Abila, east of the Gadara box.
+    without:
+      - [35.78, 32.66]
+      - [35.92, 32.66]
+      - [35.92, 32.75]
+      - [35.78, 32.75]
+    first_year: "63 BC"
+    last_year: "41 BC"
+    to: Roman Republic
+    reason: >-
+      Cliopatria draws the land between Gadara and Abila in Judea to AD 5. Pompey freed the Decapolis cities from Jewish rule in 63 BC (the Decapolis article); Abila was never Herod's. Drawn as Rome's in these years, as Gerasa.
+    sources:
+      - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
+      - "Pliny, Natural History 5.74"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # The Decapolis, as above.
+    without:
+      - [35.78, 32.66]
+      - [35.92, 32.66]
+      - [35.92, 32.75]
+      - [35.78, 32.75]
+    first_year: "40 BC"
+    last_year: "38 BC"
+    to: Parthian Empire
+    reason: >-
+      In 40-38 BC, when the Parthians overran Syria, it is drawn as theirs, as Gadara and Gerasa are.
+    sources:
+      - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
+      - "Pliny, Natural History 5.74"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # The Decapolis, as above.
+    without:
+      - [35.78, 32.66]
+      - [35.92, 32.66]
+      - [35.92, 32.75]
+      - [35.78, 32.75]
+    first_year: "37 BC"
+    last_year: "33 BC"
+    to: Roman Republic
+    reason: >-
+      Drawn as Rome's in these years.
+    sources:
+      - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
+      - "Pliny, Natural History 5.74"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # The Decapolis, as above.
+    without:
+      - [35.78, 32.66]
+      - [35.92, 32.66]
+      - [35.92, 32.75]
+      - [35.78, 32.75]
+    first_year: "32 BC"
+    last_year: "AD 5"
+    to: Roman Empire
+    reason: >-
+      Drawn as Rome's, as Gerasa; Augustus's gift of 30 BC to Herod was Gadara and Hippos (the box west of this one).
+    sources:
+      - "Josephus, Antiquities 14.74-76; Jewish War 1.155-157"
+      - "Pliny, Natural History 5.74"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+      - "Josephus, Antiquities 15.217"
+  - polity: Judea
+    # Rabbah (Philadelphia) and its land.
+    without:
+      - [35.88, 31.9]
+      - [36.0, 31.9]
+      - [36.0, 32.0]
+      - [35.88, 32.0]
+    first_year: "78 BC"
+    last_year: "64 BC"
+    leaves_blank: true
+    reason: >-
+      Cliopatria draws Philadelphia in Hasmonean Judea from 78 BC and in Herod's kingdom to 28 BC. No source gives it to Alexander Jannaeus or to Herod: Josephus's list of Jannaeus's towns leaves it out, and he makes Philadelphia the eastern limit of Perea, outside it. Before Pompey the city of the tyrants Zeno Cotylas and his son is left without a state.
+    sources:
+      - "Josephus, Antiquities 13.235; 13.393-397; Jewish War 3.46-47"
+      - "Pliny, Natural History 5.74"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Philadelphia, as above.
+    without:
+      - [35.88, 31.9]
+      - [36.0, 31.9]
+      - [36.0, 32.0]
+      - [35.88, 32.0]
+    first_year: "63 BC"
+    last_year: "41 BC"
+    to: Roman Republic
+    reason: >-
+      Philadelphia counted its years from Pompey's settlement of 63 BC and is one of Pliny's Decapolis cities (the Rabbah article). Drawn as Rome's in these years.
+    sources:
+      - "Josephus, Antiquities 13.235; 13.393-397; Jewish War 3.46-47"
+      - "Pliny, Natural History 5.74"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Philadelphia, as above.
+    without:
+      - [35.88, 31.9]
+      - [36.0, 31.9]
+      - [36.0, 32.0]
+      - [35.88, 32.0]
+    first_year: "37 BC"
+    last_year: "33 BC"
+    to: Roman Republic
+    reason: >-
+      Drawn as Rome's in these years; in 40-38 BC the data's Parthian shape holds the city.
+    sources:
+      - "Josephus, Antiquities 13.235; 13.393-397; Jewish War 3.46-47"
+      - "Pliny, Natural History 5.74"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Philadelphia, as above.
+    without:
+      - [35.88, 31.9]
+      - [36.0, 31.9]
+      - [36.0, 32.0]
+      - [35.88, 32.0]
+    first_year: "32 BC"
+    last_year: "28 BC"
+    to: Roman Empire
+    reason: >-
+      Drawn as Rome's, as the data draws it from 27 BC.
+    sources:
+      - "Josephus, Antiquities 13.235; 13.393-397; Jewish War 3.46-47"
+      - "Pliny, Natural History 5.74"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Nabataeans
+    # Gilead on the Jabbok: Penuel and Mahanaim, the region point.
+    without:
+      - [35.66, 32.16]
+      - [35.72, 32.16]
+      - [35.72, 32.21]
+      - [35.66, 32.21]
+    first_year: "165 BC"
+    last_year: "146 BC"
+    to: Seleucid Empire
+    reason: >-
+      Cliopatria draws Gilead as Nabataean in 165-146 BC. In 163 BC Gilead was in the Seleucid realm: Timothy's forces besieged the Jews there and Judas Maccabaeus led them out to Judea, the Nabataeans meeting him as friends. Drawn as Seleucid.
+    sources:
+      - "1 Macc 5:9-13, 24-45"
+      - "Josephus, Antiquities 13.356; 13.374-375; 13.393-397"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Judea
+    # Gilead, as above.
+    without:
+      - [35.66, 32.16]
+      - [35.72, 32.16]
+      - [35.72, 32.21]
+      - [35.66, 32.21]
+    first_year: "142 BC"
+    last_year: "101 BC"
+    to: Seleucid Empire
+    reason: >-
+      Cliopatria draws Gilead in Hasmonean Judea from 142 BC. The freedom won under Simon did not reach beyond the Jordan; Alexander Jannaeus took Amathus and the land of Gilead about 101-100 BC and made the Gileadites tributary. Drawn as Judea's from 100 BC.
+    sources:
+      - "1 Macc 5:9-13, 24-45"
+      - "Josephus, Antiquities 13.356; 13.374-375; 13.393-397"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Nabataeans
+    # Jazer and its land, west of Rabbah.
+    without:
+      - [35.8, 31.92]
+      - [35.86, 31.92]
+      - [35.86, 31.97]
+      - [35.8, 31.97]
+    first_year: "165 BC"
+    last_year: "146 BC"
+    to: Seleucid Empire
+    reason: >-
+      Cliopatria draws Jazer as Nabataean in 165-146 BC. In 163 BC Judas took Jazer from the Ammonites under Timothy, in the Seleucid realm, while the Nabataeans met him as friends (the Jazer article). Drawn as Seleucid.
+    sources:
+      - "1 Macc 5:6-8, 25"
+      - "Josephus, Antiquities 13.374-375; 13.393-397"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Judea
+    # Jazer, as above.
+    without:
+      - [35.8, 31.92]
+      - [35.86, 31.92]
+      - [35.86, 31.97]
+      - [35.8, 31.97]
+    first_year: "142 BC"
+    last_year: "93 BC"
+    to: Seleucid Empire
+    reason: >-
+      Cliopatria draws Jazer in Hasmonean Judea from 142 BC. Judea did not reach across the Jordan under Simon; Jannaeus subdued the Moabites and the Gileadites about 93 BC. Drawn as Judea's from 92 BC, as Elealeh, Bezer and the plateau around them.
+    sources:
+      - "1 Macc 5:6-8, 25"
+      - "Josephus, Antiquities 13.374-375; 13.393-397"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Roman Empire
+    # Trachonitis, Batanea and Auranitis, with the Hauran: Philip's later tetrarchy east of Gaulanitis and Paneas.
+    without:
+      - [35.85, 33.0]
+      - [35.8, 32.8]
+      - [36.0, 32.65]
+      - [36.6, 32.65]
+      - [36.8, 32.85]
+      - [36.7, 33.2]
+      - [36.1, 33.35]
+      - [35.9, 33.35]
+    first_year: "23 BC"
+    last_year: "5 BC"
+    to: Judea
+    reason: >-
+      Augustus took Trachonitis, Batanea and Auranitis from Zenodorus and gave them to Herod, about 23 BC; Herod settled Idumaeans in Trachonitis and Zamaris's Babylonian Jews at Bathyra in Batanea, and at his death in 4 BC the lands went to Philip because they were his (the Trachonitis and Hauran articles). Paneas and the Huleh basin followed in 20 BC (above). Drawn as Herod's Judea in 23-5 BC.
+    sources:
+      - "Josephus, Antiquities 15.343-348; 17.23-28; Jewish War 1.398-400"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Kingdom of Israel
+    # Mesha's kingdom north to Nebo and Bezer, as drawn for Moab in 852-734 BC.
+    without:
+      - [35.56, 31.06]
+      - [35.95, 31.02]
+      - [36.1, 31.3]
+      - [36.0, 31.72]
+      - [36.0, 31.79]
+      - [35.88, 31.795]
+      - [35.8, 31.78]
+      - [35.745, 31.774]
+      - [35.6, 31.775]
+      - [35.57, 31.47]
+    first_year: "852 BC"
+    last_year: "734 BC"
+    reason: >-
+      Cliopatria's Israel holds Nebo and its ridge until 733 BC. Mesha says he took Nebo from Israel and slew its people, and that he built Qiryaten and Bezer (Mesha Stele 10, 14-18, 27); the land is drawn as Moab's from his revolt (drawn).
+    sources:
+      - "Mesha Stele (KAI 181), 10, 14-18, 27"
+      - "Isa 15:2; Jer 48:1, 22-24"
+      - "B. Routledge, Moab in the Iron Age: Hegemony, Polity, Archaeology (2004)"
+  - polity: Kingdom of Israel
+    # Ramoth-gilead.
+    without:
+      - [35.97, 32.46]
+      - [36.06, 32.46]
+      - [36.06, 32.54]
+      - [35.97, 32.54]
+    first_year: "855 BC"
+    last_year: "843 BC"
+    reason: >-
+      Ahab went up in 853 BC to take Ramoth-gilead back from the king of Syria and died there (battle ramoth-gilead-ahab); in 841 BC Joram was keeping it against Hazael (2 Kgs 9:14; battle ramoth-gilead-joram). When Israel lost it and won it back is not recorded: the town is drawn as Aram's from about 855 BC to 843 BC (drawn) and as Israel's again from 842 BC.
+    sources:
+      - "1 Kgs 22:3-36"
+      - "2 Kgs 8:28-29; 9:14"
+      - "E. Lipiński, The Aramaeans (2000)"
+  - polity: Kingdom of Israel
+    # Gilead and Bashan east of the Jordan, from Moab's line to the Yarmuk and the Golan, Ammon left out.
+    without:
+      - [35.555, 31.775]
+      - [35.6, 31.775]
+      - [35.745, 31.774]
+      - [35.8, 31.78]
+      - [35.88, 31.795]
+      - [36.0, 31.79]
+      - [36.0, 31.798]
+      - [35.8, 31.85]
+      - [35.82, 32.05]
+      - [35.95, 32.25]
+      - [36.25, 32.25]
+      - [36.45, 32.45]
+      - [36.1, 32.75]
+      - [36.05, 33.0]
+      - [35.62, 32.94]
+      - [35.625, 32.72]
+      - [35.58, 32.62]
+      - [35.573, 32.2]
+      - [35.555, 31.9]
+    first_year: "830 BC"
+    last_year: "786 BC"
+    reason: >-
+      "In those days" of Jehu Hazael smote Israel "from Jordan eastward, all the land of Gilead ... from Aroer, which is by the river Arnon, even Gilead and Bashan" (the Bashan and Aroer articles). Israel won its towns back under Joash and Jeroboam II, who took Lo-debar and Karnaim. Both dates are approximate: Aram's from about 830 BC to about 786 BC (drawn).
+    sources:
+      - "2 Kgs 10:32-33; 13:22-25; 14:25"
+      - "Amos 1:3; 6:13"
+      - "E. Lipiński, The Aramaeans (2000)"
+      - "W. T. Pitard, Ancient Damascus (1987)"
+  - polity: Phoenicia
+    # Zobah (Berothai) in the northern Beqaa.
+    without:
+      - [36.08, 33.88]
+      - [36.2, 33.88]
+      - [36.2, 33.98]
+      - [36.08, 33.98]
+    first_year: "1151 BC"
+    last_year: "801 BC"
+    leaves_blank: true
+    reason: >-
+      Cliopatria draws the northern Beqaa as Phoenician until 801 BC. Zobah was an Aramaean kingdom, Hadadezer's, not a Phoenician one (the Zobah article); its own kingdom is not drawn, and the land is left without a state until Damascus is drawn over it from 842 BC (drawn).
+    sources:
+      - "2 Sam 8:3-8; 10:6-19"
+      - "E. Lipiński, The Aramaeans (2000)"
+  - polity: Kingdom of Israel
+    # The plain of Acco from below Carmel to Ras en-Naqura: Acco, Aphek and Achzib.
+    without:
+      - [35.0, 32.84]
+      - [35.13, 32.84]
+      - [35.13, 33.09]
+      - [35.0, 33.09]
+    first_year: "931 BC"
+    last_year: "734 BC"
+    to: Phoenicia
+    reason: >-
+      Cliopatria draws the plain of Acco in Israel. Asher did not drive out "the inhabitants of Accho ... nor of Achzib ... nor of Aphik", and in 701 BC Sennacherib names Akku and Akzibu among the fortified towns of Luli, king of Sidon (the Achzib article). Drawn as Phoenician until Sidon fell in 677 BC (extends, below).
+    sources:
+      - "Judg 1:31"
+      - "RINAP 3/1, Sennacherib 4, 32-33 (A. K. Grayson and J. Novotny, The Royal Inscriptions of Sennacherib, 2012)"
+      - "SAA 2, no. 5 (Esarhaddon's treaty with Baal of Tyre) (S. Parpola and K. Watanabe, Neo-Assyrian Treaties and Loyalty Oaths, 1988)"
+  - polity: Neo-Assyrian Empire
+    # The plain of Acco, as above.
+    without:
+      - [35.0, 32.84]
+      - [35.13, 32.84]
+      - [35.13, 33.09]
+      - [35.0, 33.09]
+    first_year: "701 BC"
+    last_year: "678 BC"
+    to: Phoenicia
+    reason: >-
+      Sennacherib gave Luli's towns to Ethbaal, his king at Sidon, in 701 BC; they were Assyrian only after Esarhaddon took Sidon in 677 BC (clips above), and his treaty with Baal of Tyre names Acco among the empire's ports. Drawn as Phoenician to 678 BC.
+    sources:
+      - "Judg 1:31"
+      - "RINAP 3/1, Sennacherib 4, 32-33 (A. K. Grayson and J. Novotny, The Royal Inscriptions of Sennacherib, 2012)"
+      - "SAA 2, no. 5 (Esarhaddon's treaty with Baal of Tyre) (S. Parpola and K. Watanabe, Neo-Assyrian Treaties and Loyalty Oaths, 1988)"
+  - polity: Roman Empire
+    # Abilene, the tetrarchy of Lysanias in the Barada valley.
+    without:
+      - [36.02, 33.57]
+      - [36.2, 33.57]
+      - [36.2, 33.68]
+      - [36.02, 33.68]
+    first_year: "AD 37"
+    last_year: "AD 44"
+    reason: >-
+      Caligula gave Agrippa I the tetrarchy of Lysanias with Philip's in AD 37, and Claudius confirmed Abila to him in 41 (the Abilene article); drawn as his kingdom's until his death in 44 (drawn).
+    sources:
+      - "Josephus, Antiquities 18.237; 19.275; 20.104, 138, 159; Jewish War 2.215, 223, 247, 252"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Roman Empire
+    # Chalcis under Lebanon (Anjar) and its land.
+    without:
+      - [35.86, 33.66]
+      - [36.0, 33.66]
+      - [36.0, 33.78]
+      - [35.86, 33.78]
+    first_year: "AD 41"
+    last_year: "AD 52"
+    reason: >-
+      Claudius gave Chalcis to Herod, Agrippa I's brother, in AD 41; on Herod's death in 48 it passed to Agrippa II, who gave it up in 53 for Philip's tetrarchy (drawn).
+    sources:
+      - "Josephus, Antiquities 18.237; 19.275; 20.104, 138, 159; Jewish War 2.215, 223, 247, 252"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Roman Empire
+    # Philip's tetrarchy, as above.
+    without:
+      - [35.625, 32.89]
+      - [35.65, 32.83]
+      - [35.8, 32.8]
+      - [36.0, 32.65]
+      - [36.6, 32.65]
+      - [36.8, 32.85]
+      - [36.7, 33.2]
+      - [36.1, 33.35]
+      - [35.75, 33.35]
+      - [35.63, 33.3]
+      - [35.62, 33.08]
+    first_year: "AD 53"
+    last_year: "AD 92"
+    reason: >-
+      When Claudius had completed his twelfth year, early in AD 53, he gave Agrippa II Philip's tetrarchy, Batanea and Trachonitis with Abila; Agrippa made Paneas his capital as Neronias and hosted Vespasian there in AD 67 (the Caesarea Philippi article). Drawn as his until his death, about AD 92-93 (K. Kokkinos); Photius, from Justus of Tiberias, puts it in AD 100 (drawn).
+    sources:
+      - "Josephus, Antiquities 18.237; 19.275; 20.104, 138, 159; Jewish War 2.215, 223, 247, 252"
+      - "N. Kokkinos, The Herodian Dynasty (1998)"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Roman Empire
+    # Abilene, as above.
+    without:
+      - [36.02, 33.57]
+      - [36.2, 33.57]
+      - [36.2, 33.68]
+      - [36.02, 33.68]
+    first_year: "AD 53"
+    last_year: "AD 92"
+    reason: >-
+      Abila, Lysanias's tetrarchy, passed to Agrippa II with Philip's in AD 53 (the Abilene article); drawn as his to about AD 92 (drawn).
+    sources:
+      - "Josephus, Antiquities 18.237; 19.275; 20.104, 138, 159; Jewish War 2.215, 223, 247, 252"
+      - "N. Kokkinos, The Herodian Dynasty (1998)"
+  - polity: Roman Empire
+    # Tiberias and Tarichaea (Magdala) on the west shore of the Sea of Galilee.
+    without:
+      - [35.535, 32.73]
+      - [35.57, 32.73]
+      - [35.57, 32.79]
+      - [35.53, 32.86]
+      - [35.49, 32.86]
+      - [35.5, 32.8]
+      - [35.535, 32.78]
+    first_year: "AD 54"
+    last_year: "AD 92"
+    reason: >-
+      Soon after his accession Nero added Tiberias and Tarichaea with their toparchies to Agrippa II's kingdom (the Tiberias and Magdala articles); Vespasian gave Tiberias back to him in AD 67. Drawn as his from AD 54 (some date the grant to 61, from his coins) to about AD 92 (drawn).
+    sources:
+      - "Josephus, Antiquities 18.237; 19.275; 20.104, 138, 159; Jewish War 2.215, 223, 247, 252"
+      - "Josephus, Jewish War 3.445-461; Life 38"
+      - "N. Kokkinos, The Herodian Dynasty (1998)"
+  - polity: Roman Empire
+    # Julias (Livias, Beth-haram) and Abila (Abel-shittim) in Perea.
+    without:
+      - [35.63, 31.8]
+      - [35.72, 31.8]
+      - [35.72, 31.86]
+      - [35.63, 31.86]
+    first_year: "AD 54"
+    last_year: "AD 92"
+    reason: >-
+      With Tiberias and Tarichaea Nero gave Agrippa II "Abila and Julias in Perea, and fourteen villages" (the Beth-haram and Shittim articles). Drawn as his from AD 54 to about AD 92 (drawn).
+    sources:
+      - "Josephus, Antiquities 18.237; 19.275; 20.104, 138, 159; Jewish War 2.215, 223, 247, 252"
+      - "N. Kokkinos, The Herodian Dynasty (1998)"
+  # Map sweep, third batch (2026-11-24): the coast of Judea under the Hasmoneans and Pompey.
+  - polity: Seleucid Empire
+    # Joppa and its harbour.
+    without:
+      - [34.7, 32.0]
+      - [34.79, 32.0]
+      - [34.79, 32.1]
+      - [34.7, 32.1]
+    first_year: "142 BC"
+    last_year: "128 BC"
+    to: Judea
+    reason: >-
+      Cliopatria draws Joppa as Seleucid until 128 BC. Jonathan took the city, and Simon put a garrison in it and made it the Jews' port in 142 BC, the year Demetrius II freed Judea of tribute (the Joppa article). Antiochus VII later made John Hyrcanus pay tribute for Joppa, but the city stayed Jewish. Drawn as Judea's from 142 BC, as Jerusalem is.
+    sources:
+      - "1 Macc 12:33-34; 13:11; 14:5, 34; 15:28-35"
+      - "Josephus, Antiquities 13.261"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    # Joppa, as above.
+    without:
+      - [34.7, 32.0]
+      - [34.79, 32.0]
+      - [34.79, 32.1]
+      - [34.7, 32.1]
+    first_year: "63 BC"
+    last_year: "48 BC"
+    to: Roman Republic
+    reason: >-
+      Pompey took Joppa from the Jews in 63 BC with the other coastal cities and joined it to the province of Syria; Julius Caesar gave it back to Hyrcanus II in 47 BC (the Joppa article).
+    sources:
+      - "Josephus, Antiquities 14.76; 14.202-205; Jewish War 1.156"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  # Azotus (Ashdod) and Jamnia, each with its harbour, freed by Pompey in 63 BC and rebuilt by
+  # Gabinius. They were Herod's later and he left them to his sister Salome; when he got them
+  # is not recorded, and the map gives them to him with Strato's Tower and Joppa in 30 BC.
+  # Until then they take the state of the coast of these years: Rome's, the Parthians' in
+  # 40-38 BC, then Rome's again.
+  - polity: Judea
+    without:
+      - [34.6, 31.72]
+      - [34.69, 31.72]
+      - [34.69, 31.79]
+      - [34.755, 31.84]
+      - [34.755, 31.9]
+      - [34.7, 31.9]
+      - [34.6, 31.79]
+    first_year: "63 BC"
+    last_year: "41 BC"
+    to: Roman Republic
+    reason: >-
+      Josephus names Azotus and Jamnia among the cities Pompey took from the Jews in 63 BC and among those Gabinius rebuilt (the Ashdod article). Cliopatria draws them in Judea without a break.
+    sources:
+      - "Josephus, Antiquities 14.75-76, 88; Jewish War 1.156, 166"
+      - "Josephus, Antiquities 17.189 (Herod leaves Jamnia, Azotus and Phasaelis to Salome)"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Judea
+    without:
+      - [34.6, 31.72]
+      - [34.69, 31.72]
+      - [34.69, 31.79]
+      - [34.755, 31.84]
+      - [34.755, 31.9]
+      - [34.7, 31.9]
+      - [34.6, 31.79]
+    first_year: "40 BC"
+    last_year: "38 BC"
+    to: Parthian Empire
+    reason: >-
+      As above; in 40-38 BC the coast north of them is drawn as Parthian, Pacorus' invasion of Syria and Palestine (the Dor band), and these two cities with it.
+    sources:
+      - "Josephus, Antiquities 14.330-332; Jewish War 1.248-249"
+  - polity: Judea
+    without:
+      - [34.6, 31.72]
+      - [34.69, 31.72]
+      - [34.69, 31.79]
+      - [34.755, 31.84]
+      - [34.755, 31.9]
+      - [34.7, 31.9]
+      - [34.6, 31.79]
+    first_year: "37 BC"
+    last_year: "33 BC"
+    to: Roman Republic
+    reason: >-
+      As above, Rome's again after Ventidius drove out the Parthians.
+    sources:
+      - "Josephus, Antiquities 14.75-76, 88"
+  - polity: Judea
+    without:
+      - [34.6, 31.72]
+      - [34.69, 31.72]
+      - [34.69, 31.79]
+      - [34.755, 31.84]
+      - [34.755, 31.9]
+      - [34.7, 31.9]
+      - [34.6, 31.79]
+    first_year: "32 BC"
+    last_year: "31 BC"
+    to: Roman Empire
+    reason: >-
+      As above, until Herod held them, drawn from 30 BC with Strato's Tower and Joppa (Antiquities 15.217).
+    sources:
+      - "Josephus, Antiquities 15.217; 17.189"
+  # Dora and Strato's Tower (Caesarea), which the tyrant Zoilus gave up to Alexander
+  # Jannaeus about 100 BC and Pompey freed in 63 BC.
+  - polity: Seleucid Empire
+    without:
+      - [34.84, 32.44]
+      - [34.98, 32.44]
+      - [34.98, 32.66]
+      - [34.84, 32.66]
+    first_year: "100 BC"
+    last_year: "65 BC"
+    to: Judea
+    reason: >-
+      Cliopatria draws Dor and Strato's Tower as Seleucid until 79 BC and again in 67-65 BC. Alexander Jannaeus got Strato's Tower and Dora from the tyrant Zoilus about 100 BC (the exact year is not known, c. 103-100 BC), and Josephus lists both among the cities of the Jews at the end of his reign; Pompey freed Dora from the Hasmoneans in 63 BC (the Dor article). Drawn as Judea's from 100 BC to 64 BC (with the years between, below).
+    sources:
+      - "Josephus, Antiquities 13.324-335, 395"
+      - "Josephus, Antiquities 14.76; Jewish War 1.156"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 2 (1979), section 23"
+  - polity: Roman Republic
+    without:
+      - [34.84, 32.44]
+      - [34.98, 32.44]
+      - [34.98, 32.66]
+      - [34.84, 32.66]
+    first_year: "64 BC"
+    last_year: "64 BC"
+    to: Judea
+    reason: >-
+      Cliopatria draws the Roman province of Syria from 64 BC, the year Pompey made it one. Dora and Strato's Tower were taken from the Jews with Joppa, Azotus and Jamnia in Pompey's settlement of Judea in 63 BC, the year of the event pompey: Judea's until 64 BC.
+    sources:
+      - "Josephus, Antiquities 14.76; Jewish War 1.156"
+  # Panium, 200 BC: the place of the battle passes to the Seleucids in its year.
+  - polity: Ptolemaic Kingdom
+    # Panias (Caesarea Philippi) and Dan, at the springs of the Jordan.
+    without:
+      - [35.6, 33.18]
+      - [35.8, 33.18]
+      - [35.8, 33.32]
+      - [35.6, 33.32]
+    first_year: "200 BC"
+    last_year: "199 BC"
+    to: Seleucid Empire
+    reason: >-
+      Antiochus III defeated Scopas at Panium, by the springs of the Jordan between Dan and Panias, in 200 BC (event panium, battle panium-200); Cliopatria keeps the land Ptolemaic until 199 BC. Drawn as Seleucid from the year of the battle. Jerusalem stays Ptolemaic until 198 BC, when Antiochus entered it and its people helped him take the Ptolemaic garrison in the citadel.
+    sources:
+      - "Polybius 16.18-19"
+      - "Josephus, Antiquities 12.132-138"
+      - "B. Bar-Kochva, The Seleucid Army (1976), 146-157"
+  - polity: Ptolemaic Kingdom
+    # The plain of Acco, as cut from Israel (above).
+    without:
+      - [35.0, 32.84]
+      - [35.13, 32.84]
+      - [35.13, 33.09]
+      - [35.0, 33.09]
+    first_year: "200 BC"
+    last_year: "199 BC"
+    to: Seleucid Empire
+    reason: >-
+      Ptolemais lay between Panium and Sidon, where the beaten Scopas fled and was besieged; the Ptolemais article has it Seleucid from about 200 BC. Drawn as Seleucid from the year of the battle, with Panias.
+    sources:
+      - "Polybius 16.18-19"
+      - "Josephus, Antiquities 12.132-136"
+      - "B. Bar-Kochva, The Seleucid Army (1976), 146-157"
+  # Iron Age Israel and Judah.
+  - polity: Kingdom of Israel
+    # Rabbah of the Ammonites and its land, drawn for Ammon in these years.
+    without:
+      - [35.88, 31.9]
+      - [36.05, 31.9]
+      - [36.05, 32.02]
+      - [35.88, 32.02]
+    first_year: "1010 BC"
+    last_year: "991 BC"
+    reason: >-
+      Cliopatria's shape of David's kingdom holds Rabbah from 1010 BC. Rabbah was the Ammonite capital until Joab besieged it and David took it, about 990 BC (battle rabbah), in a war that 2 Samuel puts after David reigned in Jerusalem. Drawn as Ammon's until then (drawn).
+    sources:
+      - "2 Sam 10:1-14; 11:1; 12:26-31"
+      - "E. R. Thiele, The Mysterious Numbers of the Hebrew Kings, new rev. ed. (1983)"
+  - polity: Kingdom of Judah
+    # Jericho and its oasis, with Gilgal.
+    without:
+      - [35.4, 31.84]
+      - [35.49, 31.84]
+      - [35.49, 31.93]
+      - [35.4, 31.93]
+    first_year: "931 BC"
+    last_year: "723 BC"
+    to: Kingdom of Israel
+    reason: >-
+      Cliopatria draws Jericho in Judah from the division of the kingdom. It lay in Benjamin's allotment on Ephraim's border, and every text of the 9th and 8th centuries puts it on Israel's side: Hiel of Bethel rebuilt it in Ahab's days, Elisha and the sons of the prophets were there, and under Pekah the men of Samaria brought Judah's captives back to Jericho (the Jericho article). The atlases draw it in Israel. Tiglath-pileser III's campaign of 733 BC left Hoshea the hill country around Samaria down to Bethel, by Jericho, and no source names Jericho among the towns he took. Drawn as Israel's until Samaria fell, a city passing in the year of the event (below).
+    sources:
+      - "Josh 16:1, 7; 18:12, 21"
+      - "1 Kgs 16:34; 2 Kgs 2:4-22; 15:29; 17:1-6; 2 Chr 28:15"
+      - "Y. Aharoni, The Land of the Bible: A Historical Geography, rev. ed. (1979)"
+  - polity: Kingdom of Judah
+    without:
+      - [35.4, 31.84]
+      - [35.49, 31.84]
+      - [35.49, 31.93]
+      - [35.4, 31.93]
+    first_year: "722 BC"
+    last_year: "630 BC"
+    to: Neo-Assyrian Empire
+    reason: >-
+      Jericho was Assyria's after Samaria fell in 722 BC, with Bethel in the province of Samaria. Judah held it again under Josiah, from 629 BC, when the map ends Assyrian rule in the hills; Zedekiah fled to the plains of Jericho when Jerusalem fell.
+    sources:
+      - "2 Kgs 17:5-6, 24; 23:15; 25:4-5"
+      - "Y. Aharoni, The Land of the Bible: A Historical Geography, rev. ed. (1979)"
+  # Lydia, Babylonia, Mesopotamia, Syria and Egypt.
+  - polity: Greek City-States
+    # Smyrna.
+    without:
+      - [26.9, 38.3]
+      - [27.35, 38.3]
+      - [27.35, 38.6]
+      - [26.9, 38.6]
+    first_year: "600 BC"
+    last_year: "542 BC"
+    to: Lydia
+    reason: >-
+      Cliopatria draws Smyrna as a Greek city-state until the Persian conquest. The Lydian king Alyattes took and sacked it about 600 BC, and its people lived in villages for some four centuries after (the Smyrna article): a conquest, not a tribute. Ephesus, which paid Croesus tribute and kept its own government, stays a Greek city.
+    sources:
+      - "Herodotus 1.16"
+      - "Strabo, Geography 14.1.37"
+  - polity: Macedonian Empire
+    # Babylonia, west of the border Cliopatria draws with Elam in the Khuzestan lowland.
+    without:
+      - [43.4, 29.0]
+      - [51.33, 29.0]
+      - [49.29, 30.63]
+      - [48.25, 31.46]
+      - [47.86, 32.56]
+      - [47.6, 33.5]
+      - [47.6, 34.1]
+      - [43.4, 34.1]
+    first_year: "312 BC"
+    last_year: "309 BC"
+    to: Seleucid Empire
+    drawn_from_cut: true
+    reason: >-
+      Cliopatria draws Antigonus' empire over Babylonia until 309 BC. Seleucus won Babylon back in 312 BC, the start of the Seleucid era (event seleucid-era), and held the city through the Babylonian War with Antigonus' generals, which ended in 309/308 BC. The land cut away is drawn as Seleucid from 312 BC.
+    sources:
+      - "Diodorus Siculus 19.90-92"
+      - "Chronicle of the Diadochi (BCHP 3) (livius.org)"
+      - "J. D. Grainger, Seleukos Nikator (1990), ch. 6"
+  - polity: Parthian Empire
+    # Babylonia, as above.
+    without:
+      - [38.0, 28.0]
+      - [52.6, 28.0]
+      - [52.0, 28.47]
+      - [49.29, 30.63]
+      - [48.25, 31.46]
+      - [47.86, 32.56]
+      - [47.6, 33.5]
+      - [47.6, 34.1]
+      - [38.0, 34.1]
+    first_year: "145 BC"
+    last_year: "142 BC"
+    to: Seleucid Empire
+    reason: >-
+      Cliopatria draws the Parthians over Babylonia from 145 BC. Babylonian documents are dated by the Seleucid king Demetrius II until Mithridates I entered Seleucia in July 141 BC (the Erech article: the Parthians took Babylonia in 141 BC), the year from which the map shows Assyria as Parthian too.
+    sources:
+      - "A. J. Sachs and H. Hunger, Astronomical Diaries and Related Texts from Babylonia, vol. 3 (1996), no. -140"
+      - "Wikipedia, Mithridates I of Parthia (Babylonia 141 BC)"
+  - polity: Elam
+    # East of the border of Cliopatria's Babylonia in the Khuzestan lowland, as in the clip
+    # of 801-730 BC.
+    within:
+      - [47.6, 40.0]
+      - [47.6, 33.5]
+      - [47.86, 32.56]
+      - [48.25, 31.46]
+      - [49.29, 30.63]
+      - [52.0, 28.47]
+      - [60.0, 25.0]
+      - [60.0, 40.0]
+    first_year: "1151 BC"
+    last_year: "1102 BC"
+    reason: >-
+      Cliopatria draws Elam over Babylonia for 1151-1102 BC. Elam's hold on Babylon was brief: Kutir-Nahhunte ended the Kassite dynasty about 1155 BC and carried off Marduk's statue, and the Second Dynasty of Isin, founded about 1157 BC, soon ruled Babylonia; Nebuchadnezzar I was king of Babylon from about 1126 BC (event nebuchadnezzar-i) and beat Elam. Babylonia is drawn in these years (bridges), Elam east of the line the two shapes share.
+    sources:
+      - "J. A. Brinkman, A Political History of Post-Kassite Babylonia, 1158-722 B.C. (1968)"
+      - "The Cambridge Ancient History, 3rd ed., vol. II/2 (1975), ch. 31"
+  - polity: Mitanni
+    # Carchemish and its land west of the Euphrates.
+    without:
+      - [37.6, 36.4]
+      - [38.05, 36.4]
+      - [38.05, 37.2]
+      - [37.6, 37.2]
+    first_year: "1327 BC"
+    last_year: "1301 BC"
+    to: Hittites
+    reason: >-
+      Cliopatria keeps Carchemish in Mitanni until 1301 BC. Suppiluliuma I took it on the eighth day of a siege, about 1327 BC (event carchemish-hittite), and made his son Piyassili (Sharri-Kushuh) its king, the Hittites' viceroy in Syria (the Carchemish article).
+    sources:
+      - "H. G. Güterbock, The Deeds of Suppiluliuma as Told by His Son, Mursili II, Journal of Cuneiform Studies 10 (1956), fragment 28"
+      - "T. Bryce, The Kingdom of the Hittites, new ed. (2005), 183-185"
+  - polity: Neo-Assyrian Empire
+    # The Nile valley and the Delta, from Pelusium to the First Cataract; Sinai out.
+    without:
+      - [28.0, 23.4]
+      - [33.3, 23.4]
+      - [33.3, 26.5]
+      - [32.75, 28.0]
+      - [32.62, 29.6]
+      - [32.6, 31.6]
+      - [28.0, 31.6]
+    first_year: "676 BC"
+    last_year: "672 BC"
+    to: Kingdom of Kush
+    reason: >-
+      Cliopatria draws Egypt as Assyria's from 676 BC. Esarhaddon's first attack on Egypt was beaten off in 674 or 673 BC; he took Memphis from the Kushite king Taharqa in 671 BC (event memphis-taken). Egypt is drawn as Kush's until then.
+    sources:
+      - "Babylonian Chronicle ABC 1, col. iv; Esarhaddon Chronicle ABC 14 (A. K. Grayson, Assyrian and Babylonian Chronicles, 1975)"
+      - "K. A. Kitchen, The Third Intermediate Period in Egypt (1100-650 BC), 2nd ed. (1986), sections 349-350"
+  - polity: Neo-Assyrian Empire
+    # Upper Egypt, the Thebaid, south of 26.5 degrees N.
+    without:
+      - [30.0, 23.4]
+      - [33.6, 23.4]
+      - [33.6, 26.5]
+      - [30.0, 26.5]
+    first_year: "671 BC"
+    last_year: "664 BC"
+    to: Kingdom of Kush
+    reason: >-
+      Esarhaddon's conquest of 671 BC reached Memphis and the Delta; Thebes stayed with Taharqa and his successor Tanutamun until Ashurbanipal pursued Tanutamun there and sacked the city, in 664 or 663 BC (event thebes-sacked, the Thebes article). Drawn as Kush's until then.
+    sources:
+      - "Ashurbanipal, Prism A ii 28-48 (Rassam Cylinder)"
+      - "K. A. Kitchen, The Third Intermediate Period in Egypt (1100-650 BC), 2nd ed. (1986), sections 355-357"
+  # Italy, Sicily, Malta and Greece.
+  - polity: Carthage
+    # Puteoli, Cumae and Neapolis on the bay.
+    without:
+      - [13.9, 40.6]
+      - [14.4, 40.6]
+      - [14.4, 40.92]
+      - [13.9, 40.92]
+    first_year: "217 BC"
+    last_year: "209 BC"
+    to: Roman Republic
+    reason: >-
+      Cliopatria draws the Campanian coast as Carthaginian in 217-209 BC, the land of Capua, which went over to Hannibal. Hannibal never held Puteoli: Rome fortified and garrisoned it in 215 BC and his attempt on it in 214 BC failed (the Puteoli article); Cumae and Neapolis held out too.
+    sources:
+      - "Livy 23.15; 23.35-37; 24.7.10; 24.13"
+  - polity: Carthage
+    # Malta and Gozo.
+    without:
+      - [14.1, 35.75]
+      - [14.65, 35.75]
+      - [14.65, 36.15]
+      - [14.1, 36.15]
+    first_year: "218 BC"
+    last_year: "218 BC"
+    to: Roman Republic
+    reason: >-
+      In 218 BC, at the start of the Second Punic War, the Carthaginian garrison of Malta surrendered the island to the consul Tiberius Sempronius Longus (the Malta article); Cliopatria makes it Roman from 217 BC.
+    sources:
+      - "Livy 21.51.1-2"
+  - polity: Greek City-States
+    # Sicily: Syracuse and its kingdom.
+    without:
+      - [12.0, 36.5]
+      - [15.7, 36.5]
+      - [15.7, 38.35]
+      - [12.0, 38.35]
+    first_year: "212 BC"
+    last_year: "212 BC"
+    to: Roman Republic
+    reason: >-
+      Marcellus took Syracuse in the autumn of 212 BC after a long siege (the Syracuse article); Cliopatria makes it Roman from 211 BC.
+    sources:
+      - "Livy 25.23-31"
+  - polity: Greek City-States
+    # Macedonia, Epirus and Greece south to the Peloponnese; Attica, northern Euboea and
+    # the islands, still Greek city-states in Cliopatria's shapes of 145 BC, out.
+    without:
+      - [19.0, 42.5]
+      - [24.45, 42.5]
+      - [24.45, 40.0]
+      - [23.75, 39.15]
+      - [23.85, 38.72]
+      - [24.5, 38.72]
+      - [24.5, 38.15]
+      - [24.1, 38.15]
+      - [24.05, 38.38]
+      - [23.85, 38.47]
+      - [23.38, 38.4]
+      - [23.38, 36.3]
+      - [19.0, 36.3]
+    first_year: "146 BC"
+    last_year: "146 BC"
+    to: Roman Republic
+    reason: >-
+      Cliopatria draws Macedonia's four republics and the Greek states as Roman from 145 BC. After Andriscus' revolt Macedonia was made a province with its seat at Thessalonica, in 146 BC as the Macedonia and Thessalonica articles date it (some put it in 148); Mummius crushed the Achaean League and destroyed Corinth in 146 BC, and Greece was put under the governor of Macedonia (the Achaia article). Drawn as Rome's from 146 BC, as Corinth and Carthage are.
+    sources:
+      - "Livy, Periochae 50-52 (livius.org)"
+      - "Velleius Paterculus 1.11 (LacusCurtius)"
+      - "Pausanias 7.16.9-10"
+  # Map sweep, fourth batch (2026-11-24): Macedonia and Thrace.
+  - polity: Achaemenid Empire
+    # Thrace west of the Nestos: the lower Strymon with Eion, Bisaltia and Mygdonia.
+    without:
+      - [22.5, 40.3]
+      - [24.8, 40.3]
+      - [24.8, 42.0]
+      - [22.5, 42.0]
+    first_year: "476 BC"
+    last_year: "452 BC"
+    leaves_blank: true
+    reason: >-
+      Cliopatria draws Persian Thrace to the Strymon until 452 BC. After Xerxes' defeat the Greeks drove out the Persian governors of Thrace, all but Mascames at Doriscus; Boges held Eion on the Strymon until Cimon took it in 476/475 BC, the first act of the Delian League (the Amphipolis article dates the first Athenian colony there about 465 BC). Left blank from 476 BC, as the Greek world is in these years: no state of the League's is drawn.
+    sources:
+      - "Herodotus 7.106-107"
+      - "Thucydides 1.98"
+      - "Plutarch, Cimon 7"
+  - polity: Second Athenian League
+    # Amphipolis and the lower Strymon.
+    without:
+      - [23.65, 40.7]
+      - [24.0, 40.7]
+      - [24.0, 41.0]
+      - [23.65, 41.0]
+    first_year: "367 BC"
+    last_year: "358 BC"
+    to: Greek City-States
+    reason: >-
+      Cliopatria draws Amphipolis in the Second Athenian League from 367 BC. Athens lost the city to Brasidas in 424 BC and never won it back, though it tried again in the 360s; Amphipolis was independent until Philip II took it in 357 BC (the Amphipolis article).
+    sources:
+      - "Thucydides 4.102-108"
+      - "Diodorus Siculus 16.8.2"
+      - "Demosthenes, Olynthiac 1.8"
+  - polity: Second Athenian League
+    # As above.
+    without:
+      - [23.65, 40.7]
+      - [24.0, 40.7]
+      - [24.0, 41.0]
+      - [23.65, 41.0]
+    first_year: "357 BC"
+    last_year: "352 BC"
+    to: Macedonian Empire
+    reason: >-
+      Philip II took Amphipolis in 357 BC (the Amphipolis article); Cliopatria makes it Macedonian only from 351 BC.
+    sources:
+      - "Diodorus Siculus 16.8.2"
+  - polity: Second Athenian League
+    # Crenides (Philippi) and its plain east of Mount Pangaion; Neapolis on the coast out.
+    without:
+      - [24.0, 40.97]
+      - [24.36, 40.97]
+      - [24.36, 41.25]
+      - [24.0, 41.25]
+    first_year: "367 BC"
+    last_year: "357 BC"
+    to: Greek City-States
+    reason: >-
+      Cliopatria draws the plain of Philippi in the Second Athenian League from 367 BC. Settlers from Thasos founded Crenides there about 360 BC (the Philippi article), and it was Thasian until Philip II took it in 356 BC.
+    sources:
+      - "Diodorus Siculus 16.3.7; 16.8.6"
+  - polity: Second Athenian League
+    # As above.
+    without:
+      - [24.0, 40.97]
+      - [24.36, 40.97]
+      - [24.36, 41.25]
+      - [24.0, 41.25]
+    first_year: "356 BC"
+    last_year: "352 BC"
+    to: Macedonian Empire
+    reason: >-
+      Philip II took Crenides in 356 BC, enlarged it and named it Philippi after himself (the Philippi and Neapolis articles); Cliopatria makes it Macedonian only from 351 BC. Neapolis, an ally of Athens whose fall to Philip is not dated, is left as drawn.
+    sources:
+      - "Diodorus Siculus 16.8.6"
+  - polity: Greek City-States
+    # Macedonia east of Chalcidice: Mygdonia with Apollonia, the lower Strymon with Amphipolis
+    # and the land to the Nestos with Philippi and Neapolis; Chalcidice and Thasos out.
+    without:
+      - [23.4, 40.58]
+      - [24.8, 40.75]
+      - [24.8, 41.5]
+      - [23.4, 41.5]
+    first_year: "198 BC"
+    last_year: "169 BC"
+    to: Antigonid Macedonia
+    reason: >-
+      Cliopatria draws Macedonia east of Thessalonica as Greek city-states from 198 BC. The peace after Cynoscephalae (197-196 BC) left Philip V his kingdom of Macedonia; Amphipolis was still Perseus' own city, to which he fled from Pydna in 168 BC, and there Aemilius Paullus announced the settlement of Macedonia (the Amphipolis article). Drawn as the Antigonids' until Pydna, as Thessalonica and Berea are.
+    sources:
+      - "Livy 33.30 (Perseus)"
+      - "Livy 44.43-45; 45.29"
+  - polity: Greek City-States
+    # As above.
+    without:
+      - [23.4, 40.58]
+      - [24.8, 40.75]
+      - [24.8, 41.5]
+      - [23.4, 41.5]
+    first_year: "168 BC"
+    last_year: "166 BC"
+    reason: >-
+      After Pydna the land of the kingdom is drawn as the four republics' from its last shape (annexed), which now reaches the Nestos; Cliopatria's own shape of the same land is cut out of these years so that it is not drawn twice.
+    sources:
+      - "Livy 45.29-30"
+  # Asia Minor.
+  - polity: Kingdom of Cappadocia
+    # Derbe (Kerti Hüyük) and its land; Laranda out.
+    without:
+      - [32.9, 37.25]
+      - [33.55, 37.25]
+      - [33.55, 37.5]
+      - [32.9, 37.5]
+    first_year: "25 BC"
+    last_year: "AD 16"
+    reason: >-
+      Cliopatria draws Derbe in the kingdom of Cappadocia until AD 17. Derbe was the seat of Antipater until Amyntas of Galatia killed him, and on Amyntas' death in 25 BC it passed to the province of Galatia (the Derbe article; the question where-was-derbe); Archelaus' Cappadocian strategia reached only as far as Derbe. Drawn as Rome's from 25 BC (extends); the years of Antipater and of Amyntas before it are not dated closely enough to draw.
+    sources:
+      - "Strabo, Geography 12.1.4; 12.6.3"
+      - "S. Mitchell, Anatolia: Land, Men, and Gods in Asia Minor, vol. 2 (1993)"
+  - polity: Kingdom of Cappadocia
+    # Derbe, as above.
+    without:
+      - [32.9, 37.25]
+      - [33.55, 37.25]
+      - [33.55, 37.5]
+      - [32.9, 37.5]
+    first_year: "127 BC"
+    last_year: "26 BC"
+    leaves_blank: true
+    reason: >-
+      Cliopatria draws Derbe in the kingdom of Cappadocia from 127 BC. Whether Derbe was ever Cappadocian is disputed: Justin gives Lycaonia to the kings of Cappadocia after Aristonicus' revolt (129 BC), but Lycaonia soon appears as a district under the governor of Asia, and by the 50s BC under the governor of Cilicia; A. H. M. Jones put Derbe in the Cappadocian "eleventh strategia", while Ballance and Dmitriev, reading Strabo's "up to Derbe", leave it out, and Strabo names Derbe only as "the royal seat of the tyrant Antipater". The Derbe article gives the town in the first century BC to Antipater, Cicero's guest-friend, who also held Laranda, a principality Syme and Magie take to be Pompey's grant of about 63 BC; Strabo says Amyntas of Galatia attacked and killed him and took Derbe, and the town passed to the province of Galatia on Amyntas' death in 25 BC. The year Amyntas took the town is not known: Strabo gives none, and Syme puts it at some time after Antony gave Amyntas Lycaonia in 36 BC, probably after Actium; a Galatian span would need a first year no source gives, and Antipater has no state of his own on the map. Derbe is therefore drawn with Lycaonia's other towns, Iconium and Lystra, as Rome's in 84-64 BC (Sulla's settlement of the old Attalid lands, annexed, and extends), without a state in 63-26 BC, the years of Antipater and Amyntas, and as Rome's from 25 BC (above). Before 84 BC, when the sources do not settle whether it was Cappadocian or Roman, it is left without a state.
+    sources:
+      - "Strabo, Geography 12.1.4; 12.6.3"
+      - "Justin, Epitome 37.1.2"
+      - "Cicero, Letters to Friends 13.73; 15.2; 15.4"
+      - "R. Syme, Roman Papers, vol. 1 (1979), 128-131"
+      - "D. Magie, Roman Rule in Asia Minor (1950), vol. 1, 375"
+      - "S. Dmitriev, Observations on the Historical Geography of Roman Lycaonia, Greek, Roman, and Byzantine Studies 41 (2000) 349-375 (https://grbs.library.duke.edu/index.php/grbs/article/download/2041/3231/12181)"
+      - "Wikipedia, Antipater of Derbe (killed by Amyntas some time after 36 BC, probably after Actium)"
+  - polity: Kingdom of Pontus
+    # Derbe, as above.
+    without:
+      - [32.9, 37.25]
+      - [33.55, 37.25]
+      - [33.55, 37.5]
+      - [32.9, 37.5]
+    first_year: "88 BC"
+    last_year: "85 BC"
+    leaves_blank: true
+    reason: >-
+      Cliopatria draws Derbe in the kingdom of Pontus in 88-85 BC, as the Cappadocian land Mithridates VI overran in the First Mithridatic War; Derbe was not Cappadocian (above), and no source puts it under Mithridates. Left without a state, as in the years before and after.
+    sources:
+      - "Strabo, Geography 12.6.3"
+      - "Appian, Mithridatic Wars 17-21"
+  - polity: Galatia
+    # Lycaonia: Iconium, Lystra and the plain east of them; Pisidian Antioch out.
+    without:
+      - [31.9, 36.9]
+      - [33.6, 36.9]
+      - [33.6, 38.4]
+      - [31.9, 38.4]
+    first_year: "78 BC"
+    last_year: "37 BC"
+    to: Roman Republic
+    reason: >-
+      Cliopatria draws Lycaonia in the kingdom of Galatia from 78 BC. After Servilius Isauricus' campaigns of 78-75 BC it belonged to the province of Cilicia: Cicero, its governor, mustered his army at Iconium in 51 BC. Antony gave Iconium to Polemon in 39 BC and Lycaonia to Amyntas of Galatia in 36 BC (the Iconium article). Polemon's years, his holding not being drawn, are drawn as Rome's.
+    sources:
+      - "Cicero, Letters to Friends 15.2.1; 15.4.2"
+      - "Strabo, Geography 12.6.1"
+      - "Appian, Civil Wars 5.75"
+      - "Cassius Dio 49.32.3"
+  - polity: Kingdom of Pergamon
+    # Lydia: the Hermus valley with Sardis, Thyatira and Magnesia under Sipylus; Pergamon,
+    # Smyrna and the coast out.
+    without:
+      - [27.35, 38.3]
+      - [27.9, 38.3]
+      - [27.9, 38.0]
+      - [29.3, 38.0]
+      - [29.3, 39.05]
+      - [27.35, 39.05]
+    first_year: "222 BC"
+    last_year: "191 BC"
+    to: Seleucid Empire
+    reason: >-
+      Cliopatria draws Lydia in the kingdom of Pergamon from 226 BC. Attalus I held the Seleucid lands of Asia Minor only about 228-223 BC; Achaeus drove him back to Pergamon in 223-222 BC and ruled from Sardis, which Antiochus III took from him about 214 BC (the Sardis article). Antiochus held Lydia until his defeat at Magnesia in 190 BC, after which Thyatira surrendered to the Romans and passed to the Attalids (the Thyatira article). Smyrna, which held to Attalus and resisted Antiochus, is left as drawn.
+    sources:
+      - "Polybius 4.48; 5.77; 7.15-18"
+      - "Livy 37.44"
+      - "R. E. Allen, The Attalid Kingdom: A Constitutional History (1983)"
+  - polity: Kingdom of Pergamon
+    # Lycia, from the Xanthos valley to Phaselis; Telmessos, which Eumenes kept, out.
+    without:
+      - [29.2, 36.15]
+      - [30.7, 36.15]
+      - [30.62, 36.6]
+      - [30.3, 36.95]
+      - [29.2, 36.95]
+    first_year: "189 BC"
+    last_year: "168 BC"
+    to: Rhodes
+    reason: >-
+      Cliopatria draws inland Lycia as Attalid from 189 BC. In the settlement after Magnesia Rome gave Lycia to Rhodes, all but Telmessos, which went to Eumenes; in 167 BC it freed the Lycians from Rhodes (the Lycia article).
+    sources:
+      - "Polybius 22.5; 30.5"
+      - "Livy 37.55-56"
+  - polity: Kingdom of Pergamon
+    # As above.
+    without:
+      - [29.2, 36.15]
+      - [30.7, 36.15]
+      - [30.62, 36.6]
+      - [30.3, 36.95]
+      - [29.2, 36.95]
+    first_year: "167 BC"
+    last_year: "134 BC"
+    reason: >-
+      From 167 BC Lycia was free, the Lycian League, Rome's ally (drawn); it was never the Attalids'.
+    sources:
+      - "Polybius 30.5"
+      - "Strabo, Geography 14.3.3"
+  - polity: Kingdom of Pontus
+    # Lycia, as above.
+    without:
+      - [29.2, 36.15]
+      - [30.7, 36.15]
+      - [30.62, 36.6]
+      - [30.3, 36.95]
+      - [29.2, 36.95]
+    first_year: "88 BC"
+    last_year: "85 BC"
+    reason: >-
+      The Lycians held out against Mithridates VI, who besieged Patara in 88 BC and gave the siege up; Lycia is drawn as the Lycian League (drawn), not as Pontic.
+    sources:
+      - "Appian, Mithridatic Wars 20 (livius.org)"
+  - polity: Rhodes
+    # The island of Rhodes.
+    within:
+      - [27.65, 35.85]
+      - [28.3, 35.85]
+      - [28.3, 36.5]
+      - [27.65, 36.5]
+    first_year: "167 BC"
+    last_year: "166 BC"
+    to: Roman Republic
+    reason: >-
+      In 167 BC the Senate declared Lycia and Caria free of Rhodes; Cliopatria draws them as Roman from 165 BC and Rhodes with them until then. They are drawn as Rome's from 167 BC (Lycia as the Lycian League, drawn) and Rhodes as the island alone.
+    sources:
+      - "Polybius 30.5"
+      - "Livy 45.25"
+  - polity: Rhodes
+    # As above.
+    within:
+      - [27.65, 35.85]
+      - [28.3, 35.85]
+      - [28.3, 36.5]
+      - [27.65, 36.5]
+    first_year: "165 BC"
+    last_year: "AD 43"
+    reason: >-
+      Rhodes drawn on as the island alone (overrides); Caria was Rome's from 165 BC in Cliopatria's shapes, Lycia the Lycian League's (drawn).
+    sources:
+      - "Polybius 30.5; 30.31"
+  - polity: Kingdom of Pontus
+    # Attica.
+    without:
+      - [23.25, 37.6]
+      - [24.15, 37.6]
+      - [24.15, 38.35]
+      - [23.25, 38.35]
+    first_year: "86 BC"
+    last_year: "85 BC"
+    to: Roman Republic
+    reason: >-
+      Cliopatria draws Athens, which had gone over to Mithridates, as Pontic until 85 BC. Sulla stormed the city on 1 March 86 BC (the Athens article) and won Greece back at Chaeronea that year; Athens is drawn as Rome's from 86 BC, and in 84-79 BC too, where no shape of those years reaches it (extends).
+    sources:
+      - "Plutarch, Sulla 14"
+      - "Appian, Mithridatic Wars 38-39 (livius.org)"
+  - polity: Achaemenid Empire
+    # Miletus and the Milesia, with Priene and Mycale.
+    without:
+      - [26.95, 37.3]
+      - [27.6, 37.3]
+      - [27.6, 37.72]
+      - [26.95, 37.72]
+    first_year: "499 BC"
+    last_year: "495 BC"
+    to: Greek City-States
+    reason: >-
+      Cliopatria draws Miletus as Persian without a break from 541 to 452 BC. Aristagoras led Miletus into revolt in 499 BC, and the city held out until the Persians took it in 494 BC (event miletus-falls; the Miletus article).
+    sources:
+      - "Herodotus 5.35-38; 6.6-21"
+  - polity: Achaemenid Empire
+    # As above.
+    without:
+      - [26.95, 37.3]
+      - [27.6, 37.3]
+      - [27.6, 37.72]
+      - [26.95, 37.72]
+    first_year: "479 BC"
+    last_year: "452 BC"
+    leaves_blank: true
+    reason: >-
+      At Mycale in 479 BC the Milesians in the Persian camp turned on the Persians, and Miletus was free of Persia from then; it is in the Athenian tribute lists from 454 BC. Left blank, as the Greek world is in these years: no state of the Delian League is drawn.
+    sources:
+      - "Herodotus 9.99; 9.104"
+      - "R. Meiggs, The Athenian Empire (1972)"
+  # Cyprus and Cyrenaica.
+  - polity: Ptolemaic Kingdom
+    # Cyprus.
+    without:
+      - [32.0, 34.4]
+      - [34.75, 34.4]
+      - [34.75, 35.8]
+      - [32.0, 35.8]
+    first_year: "306 BC"
+    last_year: "303 BC"
+    to: Macedonian Empire
+    reason: >-
+      Cliopatria keeps Cyprus Ptolemaic until 303 BC. Demetrius, son of Antigonus, besieged Salamis and destroyed Ptolemy's fleet off it in 306 BC (the Salamis article), and the whole island went over to him; Antigonus' realm is drawn under the name Cliopatria gives it.
+    sources:
+      - "Diodorus Siculus 20.47-53"
+      - "Plutarch, Demetrius 15-17"
+  - polity: Macedonian Empire
+    # Cyprus.
+    without:
+      - [32.0, 34.4]
+      - [34.75, 34.4]
+      - [34.75, 35.8]
+      - [32.0, 35.8]
+    first_year: "294 BC"
+    last_year: "293 BC"
+    to: Ptolemaic Kingdom
+    reason: >-
+      Ptolemy took Cyprus back from Demetrius in 295/294 BC, Salamis last, after a siege; Cliopatria draws the island as Ptolemaic again only from 292 BC.
+    sources:
+      - "Plutarch, Demetrius 35; 38"
+  - polity: Phoenicia
+    # Salamis and the plain behind it; Kition and the south coast out.
+    without:
+      - [33.75, 35.05]
+      - [34.1, 35.05]
+      - [34.1, 35.4]
+      - [33.75, 35.4]
+    first_year: "801 BC"
+    last_year: "702 BC"
+    to: Greek City-States
+    reason: >-
+      Cliopatria draws eastern Cyprus, Salamis with Kition, as Phoenician. Phoenician Cyprus was Kition; Salamis was the leading Greek kingdom of the island, Teucer's city by legend, and its king Kisu is one of the ten kings of Cyprus in Esarhaddon's list (the Salamis article). Drawn as the rest of the island is: Greek city-states, Assyrian from 701 BC, Egyptian under Amasis from 551 BC (Cliopatria's year for the island; Herodotus makes Amasis its first conqueror, about 569-560 BC).
+    sources:
+      - "Esarhaddon, Prism Nineveh A v 63-72 (RINAP 4, Esarhaddon 1)"
+      - "Herodotus 2.182; 5.104"
+      - "V. Karageorghis, Salamis in Cyprus: Homeric, Hellenistic and Roman (1969)"
+  - polity: Phoenicia
+    # As above.
+    without:
+      - [33.75, 35.05]
+      - [34.1, 35.05]
+      - [34.1, 35.4]
+      - [33.75, 35.4]
+    first_year: "701 BC"
+    last_year: "677 BC"
+    to: Neo-Assyrian Empire
+    reason: >-
+      As above: Assyrian, as the rest of the island is from 701 BC.
+    sources:
+      - "Esarhaddon, Prism Nineveh A v 63-72 (RINAP 4, Esarhaddon 1)"
+  - polity: Phoenician Colonies
+    # As above.
+    without:
+      - [33.75, 35.05]
+      - [34.1, 35.05]
+      - [34.1, 35.4]
+      - [33.75, 35.4]
+    first_year: "651 BC"
+    last_year: "617 BC"
+    to: Greek City-States
+    reason: >-
+      As above: a Greek kingdom, as the rest of the island is drawn.
+    sources:
+      - "V. Karageorghis, Salamis in Cyprus: Homeric, Hellenistic and Roman (1969)"
+  - polity: Phoenicia
+    # As above.
+    without:
+      - [33.75, 35.05]
+      - [34.1, 35.05]
+      - [34.1, 35.4]
+      - [33.75, 35.4]
+    first_year: "616 BC"
+    last_year: "552 BC"
+    to: Greek City-States
+    reason: >-
+      As above: a Greek kingdom, as the rest of the island is drawn.
+    sources:
+      - "V. Karageorghis, Salamis in Cyprus: Homeric, Hellenistic and Roman (1969)"
+  - polity: Phoenicia
+    # As above.
+    without:
+      - [33.75, 35.05]
+      - [34.1, 35.05]
+      - [34.1, 35.4]
+      - [33.75, 35.4]
+    first_year: "551 BC"
+    last_year: "532 BC"
+    to: Twenty-sixth Dynasty of Egypt
+    reason: >-
+      As above: Egypt's under Amasis, as the rest of the island is drawn.
+    sources:
+      - "Herodotus 2.182"
+  - polity: Achaemenid Empire
+    # Cyprus.
+    without:
+      - [32.0, 34.4]
+      - [34.75, 34.4]
+      - [34.75, 35.8]
+      - [32.0, 35.8]
+    first_year: "391 BC"
+    last_year: "385 BC"
+    to: Greek City-States
+    reason: >-
+      Cliopatria draws Cyprus as Persian until 385 BC and free from 384. Evagoras of Salamis made himself master of most of the island and was at war with Persia from about 391 BC; after his defeat off Kition he made peace in 380 BC as king of Salamis alone, paying tribute to the Great King (the Salamis article). Drawn as Greek city-states in 391-381 BC and as Persian from 380 (below).
+    sources:
+      - "Diodorus Siculus 14.98; 15.2-4; 15.8-9"
+      - "Isocrates, Evagoras 62-64"
+  - polity: Greek City-States
+    # Cyprus.
+    without:
+      - [32.0, 34.4]
+      - [34.75, 34.4]
+      - [34.75, 35.8]
+      - [32.0, 35.8]
+    first_year: "380 BC"
+    last_year: "368 BC"
+    to: Achaemenid Empire
+    reason: >-
+      As above: from the peace of 380 BC Evagoras and the other kings of Cyprus were tributaries of Persia; Cliopatria makes the island Persian again only from 367 BC.
+    sources:
+      - "Diodorus Siculus 15.9"
+  - polity: Macedonian Empire
+    # Egypt: from Catabathmus (25.1 degrees E) to a line from the sea off Gaza through Raphia
+    # to Aila.
+    without:
+      - [25.1, 15.0]
+      - [40.0, 15.0]
+      - [35.0, 29.4]
+      - [34.25, 31.25]
+      - [34.0, 32.0]
+      - [25.1, 33.0]
+    first_year: "323 BC"
+    last_year: "309 BC"
+    to: Ptolemaic Kingdom
+    drawn_from_cut: true
+    reason: >-
+      Cliopatria draws Egypt inside the Macedonian Empire until 309 BC and the Ptolemaic shapes only from 308 BC. At the settlement in Babylon after Alexander's death in 323 BC (event alexander-dies) Ptolemy was given Egypt as satrap, went there at once and ruled it as his own, putting Cleomenes to death and fighting off Perdiccas' invasion in 321/320 BC; he took the title of king only in 305 BC. The site counts the Ptolemies' rule from then: the Cyrene article has Cyrene the Ptolemies' from 322 BC, and no article, event or tour dates the kingdom from 305 BC. Egypt is drawn as the Ptolemaic Kingdom from 323 BC; the lands Ptolemy held for a time outside it in these years, Coele-Syria (320/319-315 BC) and Cyprus (from 313/312 BC), are left as the data draws them.
+    sources:
+      - "Diodorus Siculus 18.3.1; 18.14.1; 18.33-36; 18.43; 19.79; 20.53.2-4"
+      - "Arrian, Events after Alexander (FGrH 156 F 1.5)"
+      - "G. Hölbl, A History of the Ptolemaic Empire (2001), ch. 1"
+  - polity: Cyrenaica
+    # Cyrenaica, west of Catabathmus.
+    without:
+      - [15.0, 15.0]
+      - [25.1, 15.0]
+      - [25.1, 34.0]
+      - [15.0, 34.0]
+    first_year: "322 BC"
+    last_year: "309 BC"
+    to: Ptolemaic Kingdom
+    reason: >-
+      Cliopatria draws Cyrenaica as independent in 332-293 BC. Ophellas took Cyrene for Ptolemy in 322 BC and the Ptolemies held it from then (the Cyrene article), save for short breaks that are not drawn: the revolt of 313-312 BC, Ophellas' own rule until his death in 308 BC and the city's breakaway that Magas put down. Drawn as the Ptolemies' from 322 BC, joined to their Egypt of these years (above) and to their own shapes from 308 BC (below).
+    sources:
+      - "Diodorus Siculus 18.21.6-9; 19.79; 20.40-42"
+      - "Pausanias 1.6.8"
+  - polity: Cyrenaica
+    # As above.
+    without:
+      - [15.0, 15.0]
+      - [25.1, 15.0]
+      - [25.1, 34.0]
+      - [15.0, 34.0]
+    first_year: "308 BC"
+    last_year: "293 BC"
+    to: Ptolemaic Kingdom
+    reason: >-
+      As above.
+    sources:
+      - "Diodorus Siculus 18.21.6-9; 19.79; 20.40-42"
+      - "Pausanias 1.6.8"
+  # Syria, Mesopotamia and Iran.
+  - polity: Achaemenid Empire
+    # Harran and the Balikh, as drawn for Ashur-uballit II in 612-611 BC (clips).
+    without:
+      - [38.3, 36.0]
+      - [40.6, 36.0]
+      - [40.6, 37.7]
+      - [38.3, 37.7]
+    first_year: "550 BC"
+    last_year: "540 BC"
+    to: Neo-Babylonian Empire
+    reason: >-
+      Cliopatria draws Harran as Persian from 550 BC, the year Cyrus took Ecbatana. Harran stayed Babylon's until Cyrus took Babylon in 539 BC: Nabonidus, the last king of Babylon, rebuilt Ehulhul, the temple of Sin at Harran (the Haran article), after the Medes who had held the land around it withdrew on Cyrus' rising against Astyages. Drawn as Babylon's until 540 BC and as Persian from 539 BC, as Babylon itself is.
+    sources:
+      - "Nabonidus Cylinder from Sippar, col. i-ii (the rebuilding of Ehulhul)"
+      - "P.-A. Beaulieu, The Reign of Nabonidus, King of Babylon 556-539 B.C. (1989)"
+  - polity: Seleucid Empire
+    # Seleucia in Pieria and its harbour, at the mouth of the Orontes.
+    without:
+      - [35.75, 36.03]
+      - [36.0, 36.03]
+      - [36.0, 36.22]
+      - [35.75, 36.22]
+    first_year: "246 BC"
+    last_year: "241 BC"
+    to: Ptolemaic Kingdom
+    reason: >-
+      Ptolemy III seized Seleucia at the start of the Third Syrian War, in 246 BC, and it kept an Egyptian garrison until Antiochus III took it back in 219 BC (the Seleucia article); Cliopatria makes it Ptolemaic only from 240 BC.
+    sources:
+      - "Gurob papyrus (FGrH 160)"
+      - "Polybius 5.58-61"
+  - polity: Ptolemaic Kingdom
+    # Northern Syria from the Gulf of Issus to the Euphrates, with Antioch; Seleucia and the
+    # coast of Cilicia out.
+    without:
+      - [35.8, 36.7]
+      - [36.05, 36.7]
+      - [36.05, 37.75]
+      - [37.5, 37.75]
+      - [37.5, 35.8]
+      - [35.85, 35.8]
+      - [35.85, 36.03]
+      - [36.0, 36.03]
+      - [36.0, 36.22]
+      - [35.8, 36.3]
+    first_year: "240 BC"
+    last_year: "220 BC"
+    to: Seleucid Empire
+    reason: >-
+      Cliopatria draws northern Syria, Antioch included, as Ptolemaic in 240-220 BC. Ptolemy III was received in Antioch in 246 BC, but Seleucus II won northern Syria back within a few years and Antioch stayed the Seleucid capital (the North article); in 219 BC Antiochus III's council resolved to take Seleucia, the one city of Syria the Ptolemies held (the Seleucia article). Only Seleucia is drawn as theirs.
+    sources:
+      - "Polybius 5.58-60"
+      - "J. D. Grainger, The Syrian Wars (2010), ch. 6-7"
+  - polity: Neo-Assyrian Empire
+    # Unqi (Patina) in the Amuq plain, with Kullania (Calneh); Arpad out.
+    without:
+      - [35.75, 36.0]
+      - [36.75, 36.0]
+      - [36.75, 36.7]
+      - [35.75, 36.7]
+    first_year: "740 BC"
+    last_year: "739 BC"
+    to: Neo-Hittite states
+    drawn_from_cut: true
+    reason: >-
+      The Neo-Hittite states are drawn to 741 BC and Assyria from 740, the year Arpad fell. Unqi was annexed two years later: the Eponym Chronicle has Kullani taken in 738 BC, and Tiglath-pileser III's annals put the provinces of Unqi and Hatarikka in his eighth year (the Calneh article). Drawn as Neo-Hittite until then.
+    sources:
+      - "Eponym Chronicle, 738 BC (A. Millard, The Eponyms of the Assyrian Empire 910-612 BC, 1994)"
+      - "H. Tadmor, The Inscriptions of Tiglath-pileser III, King of Assyria (1994), Ann. 19-21"
+  - polity: Neo-Assyrian Empire
+    # Hatarikka (Hadrach), south-west of Aleppo.
+    without:
+      - [36.5, 35.7]
+      - [37.0, 35.7]
+      - [37.0, 36.0]
+      - [36.5, 36.0]
+    first_year: "740 BC"
+    last_year: "739 BC"
+    leaves_blank: true
+    reason: >-
+      Tiglath-pileser III took Hatarikka with Unqi in 738 BC (the Hadrach article). Before it Hadrach is drawn without a state, as in the years before 740 BC: the data draws no state of the Aramaean kingdoms there.
+    sources:
+      - "H. Tadmor, The Inscriptions of Tiglath-pileser III, King of Assyria (1994), Ann. 19-21"
+  - polity: Roman Empire
+    # Zenobia's realm as Cliopatria draws it in 265-269: Egypt, Arabia, Syria and Asia Minor east
+    # of Pamphylia and Phrygia; Cyprus out. The line follows that shape, to about 10 km, where
+    # it meets Rome's land, and runs through the sea and the desert elsewhere.
+    without:
+      - [40.66, 39.19]
+      - [40.51, 39.26]
+      - [40.55, 39.51]
+      - [39.85, 39.58]
+      - [39.75, 39.45]
+      - [39.21, 39.51]
+      - [38.95, 39.39]
+      - [38.74, 39.58]
+      - [38.93, 39.77]
+      - [38.2, 40.23]
+      - [35.93, 40.35]
+      - [35.71, 40.49]
+      - [35.31, 40.49]
+      - [35.17, 40.61]
+      - [34.46, 40.61]
+      - [34.03, 40.35]
+      - [32.3, 40.49]
+      - [32.11, 40.16]
+      - [31.31, 40.03]
+      - [31.23, 39.32]
+      - [31.44, 39.06]
+      - [31.39, 38.48]
+      - [30.16, 37.96]
+      - [30.15, 37.84]
+      - [30.53, 37.71]
+      - [30.82, 37.38]
+      - [30.62, 36.81]
+      - [31.33, 36.75]
+      - [31.3, 36.35]
+      - [32.3, 35.85]
+      - [34.8, 35.85]
+      - [34.95, 34.45]
+      - [32.1, 34.35]
+      - [31.0, 33.5]
+      - [29.6, 31.6]
+      - [29.3, 31.3]
+      - [29.34, 31.06]
+      - [29.09, 30.86]
+      - [29.04, 29.99]
+      - [28.54, 29.09]
+      - [28.52, 28.77]
+      - [28.11, 28.12]
+      - [27.65, 27.8]
+      - [27.79, 27.67]
+      - [27.71, 27.54]
+      - [27.94, 27.54]
+      - [28.22, 27.16]
+      - [28.3, 21.5]
+      - [37.5, 21.5]
+      - [44.0, 30.0]
+      - [42.5, 36.5]
+      - [41.6, 38.8]
+    first_year: "AD 270"
+    last_year: "AD 271"
+    to: Palmyrene Empire
+    drawn_from_cut: true
+    reason: >-
+      Cliopatria ends the Palmyrene Empire in AD 269. Zenobia's realm was at its height in 270-271, when her armies held Egypt and much of Asia Minor; Aurelian won it back in 272, beating her at Immae and Emesa and taking Palmyra (event palmyra-taken; the Tadmor article: until Aurelian took the city in 272). Drawn as Palmyrene to AD 271, with Cliopatria's last shape of it.
+    sources:
+      - "Zosimus, New History 1.44-61"
+      - "Historia Augusta, Aurelian 22-31"
+      - "Wikipedia, Palmyrene Empire (270-273)"
+  - polity: Roman Empire
+    # Osroene as Cliopatria draws the kingdom before and after: Edessa, Carrhae (Harran) and
+    # the land to the Khabur.
+    without:
+      - [41.28, 36.35]
+      - [40.81, 36.29]
+      - [39.75, 35.9]
+      - [39.5, 35.71]
+      - [38.43, 35.84]
+      - [38.13, 35.97]
+      - [38.18, 37.0]
+      - [37.96, 37.13]
+      - [37.99, 37.38]
+      - [38.33, 37.64]
+      - [38.35, 37.77]
+      - [39.12, 37.71]
+      - [39.38, 37.9]
+      - [39.46, 37.9]
+      - [39.5, 37.58]
+      - [40.18, 37.45]
+      - [41.18, 37.32]
+      - [41.21, 37.0]
+      - [41.54, 36.55]
+    first_year: "AD 117"
+    last_year: "AD 126"
+    reason: >-
+      Cliopatria draws Trajan's conquests east of the Euphrates as Roman until AD 126. Trajan made Mesopotamia a province in 116 and Hadrian gave it up on his accession in 117 (the Mesopotamia article); Osroene was a kingdom again, under Parthamaspates and then Ma'nu VII. Osroene is drawn in those years with its shape of AD 78-113 (bridges); Cliopatria's Roman shape of these years over Armenia and Mesopotamia beyond it is left as it is.
+    sources:
+      - "Historia Augusta, Hadrian 5.1-4"
+      - "Cassius Dio 68.33; 68.30"
+      - "Wikipedia, Osroene"
+  - polity: Kingdom of Osroene
+    # The south of the kingdom, with Carrhae (Harran); Edessa out.
+    without:
+      - [38.0, 35.5]
+      - [41.7, 35.5]
+      - [41.7, 37.0]
+      - [38.0, 37.0]
+    first_year: "AD 195"
+    last_year: "AD 214"
+    to: Roman Empire
+    reason: >-
+      Septimius Severus made Osroene a Roman province in AD 195, leaving Abgar VIII Edessa and its land until the kingdom was abolished in 214 (the Mesopotamia article: Roman again under Severus in the 190s); Carrhae became a Roman colony. Cliopatria draws the whole kingdom until AD 214.
+    sources:
+      - "Cassius Dio 75.1-3"
+      - "F. Millar, The Roman Near East, 31 BC-AD 337 (1993), 125-127"
+  - polity: Akkadian Empire
+    # Sumer, from Nippur to the Gulf; Akkad and Susa out.
+    without:
+      - [44.9, 29.8]
+      - [47.6, 29.8]
+      - [47.6, 32.4]
+      - [44.9, 32.4]
+    first_year: "2154 BC"
+    last_year: "2113 BC"
+    to: Sumerian City-States
+    drawn_from_cut: true
+    reason: >-
+      Cliopatria draws the Akkadian Empire over Sumer until 2102 BC. The dynasty of Akkad ended about 2154 BC (middle chronology), and Sumer was a land of city-states under the Gutians, Lagash under Gudea and Uruk under Utu-hengal, until Ur-Nammu founded the Third Dynasty of Ur about 2112 BC (event ur-iii; the Ur article). Drawn as Sumerian city-states until then.
+    sources:
+      - "M. Van De Mieroop, A History of the Ancient Near East, ca. 3000-323 BC, 3rd ed. (2016), ch. 4-5"
+      - "The Cambridge Ancient History, 3rd ed., vol. I/2 (1971), ch. 19 and 22"
+  - polity: Akkadian Empire
+    # As above.
+    without:
+      - [44.9, 29.8]
+      - [47.6, 29.8]
+      - [47.6, 32.4]
+      - [44.9, 32.4]
+    first_year: "2112 BC"
+    last_year: "2102 BC"
+    to: Gutian Dynasty
+    drawn_from_cut: true
+    reason: >-
+      Ur-Nammu founded the Third Dynasty of Ur about 2112 BC (event ur-iii); Cliopatria's shape of his state, under the Gutians' name in the data and renamed (renamed), begins in 2101 BC. Sumer is drawn as his from 2112 BC.
+    sources:
+      - "M. Van De Mieroop, A History of the Ancient Near East, ca. 3000-323 BC, 3rd ed. (2016), ch. 4-5"
+      - "The Cambridge Ancient History, 3rd ed., vol. I/2 (1971), ch. 19 and 22"
+  - polity: Gutian Dynasty
+    # Sumer, as above.
+    without:
+      - [44.9, 29.8]
+      - [47.6, 29.8]
+      - [47.6, 32.4]
+      - [44.9, 32.4]
+    first_year: "2004 BC"
+    last_year: "2002 BC"
+    to: Sumerian City-States
+    reason: >-
+      An Elamite army took Ur and carried off Ibbi-Sin about 2004 BC, the end of the Third Dynasty of Ur (event ur-falls; the Ur article); Cliopatria draws it to 2002 BC. Sumer is drawn as city-states from 2004 BC, as Cliopatria draws it after.
+    sources:
+      - "M. Van De Mieroop, A History of the Ancient Near East, ca. 3000-323 BC, 3rd ed. (2016), ch. 4-5"
+      - "The Cambridge Ancient History, 3rd ed., vol. I/2 (1971), ch. 19 and 22"
+  # Dalmatia.
+  - polity: Roman Republic
+    # The land of the Delmatae, from the Krka to the Neretva and inland to the Dinara and Livno,
+    # with Salona on the coast.
+    without:
+      - [15.95, 43.72]
+      - [16.15, 43.62]
+      - [16.38, 43.6]
+      - [16.38, 43.5]
+      - [16.6, 43.5]
+      - [16.6, 43.58]
+      - [16.95, 43.42]
+      - [17.35, 43.25]
+      - [17.6, 43.35]
+      - [17.6, 43.95]
+      - [17.0, 44.25]
+      - [16.4, 44.25]
+      - [15.95, 44.0]
+    first_year: "165 BC"
+    last_year: "77 BC"
+    leaves_blank: true
+    reason: >-
+      Cliopatria draws the Illyrian coast as Roman from 165 BC, after the defeat of Genthius. The Delmatae, who had broken away from Genthius, were not Rome's: they fought Rome in 156-155 BC, 119-117 and 78-76 BC, beat Gabinius in 48 BC and held out against Vatinius until Octavian subdued them in 34-33 BC (the Dalmatia article). Their port of Salona fell to C. Cosconius after a two-year siege, in 76 BC. Left blank: no state of theirs is drawn.
+    sources:
+      - "Polybius 32.9-13"
+      - "Appian, Illyrian Wars 11; 25-28"
+      - "Eutropius 6.4"
+      - "J. J. Wilkes, Dalmatia (1969), ch. 2-3"
+  - polity: Roman Republic
+    # The land of the Delmatae, as above, without Salona.
+    without:
+      - [15.95, 43.72]
+      - [16.15, 43.62]
+      - [16.38, 43.6]
+      - [16.6, 43.58]
+      - [16.95, 43.42]
+      - [17.35, 43.25]
+      - [17.6, 43.35]
+      - [17.6, 43.95]
+      - [17.0, 44.25]
+      - [16.4, 44.25]
+      - [15.95, 44.0]
+    first_year: "76 BC"
+    last_year: "34 BC"
+    leaves_blank: true
+    reason: >-
+      As above: Rome held Salona from 76 BC; the Delmatae surrendered to Octavian in 33 BC.
+    sources:
+      - "Appian, Illyrian Wars 27-28"
+      - "Eutropius 6.4"
 # Land a polity held that Cliopatria's shape of it leaves out: the outline is joined to its
 # shapes of those years. Approximate, to the precision of the sources.
 extends:
@@ -2758,6 +4609,35 @@ extends:
       Alexander held Babylon and Susa from the autumn of 331 BC; Cliopatria's shape of his empire reaches Mesopotamia only from 327 BC, and the Achaemenid shape drawn as his in 330-328 BC (annexed) is the one cut in 331.
     sources:
       - "Arrian, Anabasis 3.16"
+  - polity: Roman Republic
+    first_year: "78 BC"
+    last_year: "64 BC"
+    # Derbe, as cut from Cappadocia (clips).
+    outline:
+      - [32.9, 37.25]
+      - [33.55, 37.25]
+      - [33.55, 37.5]
+      - [32.9, 37.5]
+    reason: >-
+      Derbe is drawn with Lycaonia, Iconium and Lystra, as Rome's from Sulla's settlement until the town passed to Antipater, probably by Pompey's grant of about 63 BC (clips). In 84-79 BC the old Attalid lands drawn as Rome's already hold it (annexed); Cliopatria's Roman shape of 78-64 BC does not reach it.
+    sources:
+      - "Justin, Epitome 37.1.2"
+      - "R. Syme, Roman Papers, vol. 1 (1979), 128-131"
+      - "S. Dmitriev, Observations on the Historical Geography of Roman Lycaonia, Greek, Roman, and Byzantine Studies 41 (2000) 349-375"
+  - polity: Neo-Babylonian Empire
+    first_year: "551 BC"
+    last_year: "551 BC"
+    # Harran and the Balikh, as for Babylonia in 610-602 BC (below).
+    outline:
+      - [38.3, 36.0]
+      - [40.6, 36.0]
+      - [40.6, 37.7]
+      - [38.3, 37.7]
+    reason: >-
+      Harran was Babylon's in 551 BC, between Nabonidus' rebuilding of Ehulhul and the fall of Babylon (clips); neither Cliopatria's Babylonian shape of these years nor its Median one, drawn to 551 BC, reaches it, and the Persian shape that holds it begins in 550 BC (starts), so the city showed no state.
+    sources:
+      - "Nabonidus Cylinder from Sippar, col. i-ii"
+      - "P.-A. Beaulieu, The Reign of Nabonidus, King of Babylon 556-539 B.C. (1989)"
   - polity: Babylonia
     first_year: "610 BC"
     last_year: "602 BC"
@@ -2849,15 +4729,286 @@ extends:
     sources:
       - "1 Sam 27:6"
       - "Josh 19:5; 1 Chr 4:30-31"
+  - polity: Neo-Assyrian Empire
+    # Damascus's southern lands: the Hauran, Bashan with Ashtaroth and Qarnaim, Trachonitis and Kenath.
+    first_year: "732 BC"
+    last_year: "615 BC"
+    outline:
+      - [36.05, 33.05]
+      - [35.98, 32.78]
+      - [36.1, 32.7]
+      - [36.45, 32.5]
+      - [36.85, 32.5]
+      - [37.15, 32.75]
+      - [37.2, 33.3]
+      - [36.4, 33.3]
+    reason: >-
+      Cliopatria's Assyrian shape reaches the Hauran only from 701 BC and Kenath not at all, so the land showed without a state after Damascus fell. Tiglath-pileser III took Damascus in 732 BC and made its kingdom provinces, among them Hauran (Haurina) and Qarnaim (Qarnina) (the Hauran and Ashteroth-karnaim articles). Drawn as Assyria's from 732 BC to the empire's last years in the west.
+    sources:
+      - "2 Kgs 16:9"
+      - "E. Forrer, Die Provinzeinteilung des assyrischen Reiches (1920), 62-69"
+      - "K. Radner, Provinz. C. Assyrien, in Reallexikon der Assyriologie, vol. 11 (2006-2008)"
+  - polity: Kingdom of Israel
+    # Ataroth and the land around it, north of Dibon.
+    first_year: "931 BC"
+    last_year: "853 BC"
+    outline:
+      - [35.635, 31.55]
+      - [35.7, 31.55]
+      - [35.7, 31.6]
+      - [35.635, 31.6]
+    reason: >-
+      Mesha says that "the men of Gad had dwelt in the land of Ataroth from of old, and the king of Israel built Ataroth for himself" before he took it (the Ataroth article). Cliopatria's Israel does not reach it, and the drawn Moab before Mesha did: drawn as Israel's until Mesha's revolt.
+    sources:
+      - "Mesha Stele (KAI 181), 10-13"
+      - "Num 32:3, 34"
+      - "B. Routledge, Moab in the Iron Age: Hegemony, Polity, Archaeology (2004)"
+  - polity: Kingdom of Israel
+    # The plain of Medeba: Medeba, Baal-meon, Beth-diblathaim and Jahaz.
+    first_year: "885 BC"
+    last_year: "853 BC"
+    outline:
+      - [35.6, 31.58]
+      - [35.96, 31.58]
+      - [35.97, 31.66]
+      - [35.92, 31.74]
+      - [35.8, 31.765]
+      - [35.6, 31.775]
+    reason: >-
+      "Omri had taken possession of the land of Medeba, and Israel dwelt in it his days and half the days of his son, forty years"; the king of Israel built Jahaz and stayed in it while he fought Mesha (the Medeba and Jahaz articles). Drawn as Israel's from Omri's accession, about 885 BC, to Ahab's death; before Omri the plain is left blank, as the sources do not say whose it was.
+    sources:
+      - "Mesha Stele (KAI 181), 7-9, 18-21, 30"
+      - "1 Kgs 16:23"
+      - "E. R. Thiele, The Mysterious Numbers of the Hebrew Kings, new rev. ed. (1983)"
+      - "B. Routledge, Moab in the Iron Age: Hegemony, Polity, Archaeology (2004)"
+  - polity: Phoenicia
+    # The plain of Acco, as cut from Israel (clips).
+    first_year: "733 BC"
+    last_year: "702 BC"
+    outline:
+      - [35.0, 32.84]
+      - [35.13, 32.84]
+      - [35.13, 33.09]
+      - [35.0, 33.09]
+    reason: >-
+      Acco, Aphek and Achzib were Phoenician towns, Luli of Sidon's in 701 BC (clips); Tiglath-pileser III's provinces of 733-732 BC were Megiddo, Dor and Gilead, not the plain of Acco. The land is drawn as Phoenicia's in the years the map draws Israel's last shape as Assyria's (annexed).
+    sources:
+      - "Judg 1:31"
+      - "RINAP 3/1, Sennacherib 4, 32-33 (A. K. Grayson and J. Novotny, The Royal Inscriptions of Sennacherib, 2012)"
+      - "Y. Aharoni, The Land of the Bible: A Historical Geography, rev. ed. (1979)"
+  # Map sweep, third batch (2026-11-24).
+  - polity: Judea
+    # Dora and Strato's Tower, as in the clips above.
+    first_year: "78 BC"
+    last_year: "68 BC"
+    outline:
+      - [34.84, 32.44]
+      - [34.98, 32.44]
+      - [34.98, 32.66]
+      - [34.84, 32.66]
+    reason: >-
+      Dora and Strato's Tower were Hasmonean from about 100 BC until Pompey freed them in 63 BC (clips); in 78-68 BC no shape of the data holds Dor, and the land is drawn as Judea's.
+    sources:
+      - "Josephus, Antiquities 13.324-335, 395; 14.76"
+  - polity: Kingdom of Judah
+    # Libnah, in the strip between Philistia's line (clips) and Cliopatria's Judah.
+    first_year: "931 BC"
+    last_year: "846 BC"
+    outline:
+      - [34.856, 31.612]
+      - [34.89, 31.612]
+      - [34.89, 31.648]
+      - [34.856, 31.648]
+    reason: >-
+      Libnah, a town of Judah in the Shephelah and a Levitical city, falls between Philistia's line and Cliopatria's Judah of 931-801 BC and showed without a state. Under Jehoram, when Edom revolted, "Libnah revolted at the same time" (the Libnah article), which it could only do from Judah. Drawn as Judah's until 846 BC; from 845 BC, the year the map gives Edom's revolt, it is left blank, its state unknown, until Cliopatria's Judah of 801 BC holds it.
+    sources:
+      - "Josh 15:42; 21:13"
+      - "2 Kgs 8:22; 2 Chr 21:10"
+  - polity: Kingdom of Judah
+    # Elath at the head of the Gulf of Aqaba.
+    first_year: "767 BC"
+    last_year: "735 BC"
+    outline:
+      - [34.95, 29.49]
+      - [35.06, 29.49]
+      - [35.06, 29.58]
+      - [34.95, 29.58]
+    reason: >-
+      Azariah (Uzziah) "built Elath, and restored it to Judah" after his father's death, about 767 BC by Thiele's dates, and Judah lost it in the Syro-Ephraimite war under Ahaz, about 735 BC (the Elath article). Drawn as Judah's port in those years, apart from Cliopatria's shape of Judah, which does not reach the gulf. After it the point is left blank until Assyria: the Edomites "came to Elath, and dwelt there" (2 Kgs 16:6, qere), but the map's Edom is drawn on the plateau only.
+    sources:
+      - "2 Kgs 14:21-22; 16:6; 2 Chr 26:2"
+      - "E. R. Thiele, The Mysterious Numbers of the Hebrew Kings, new rev. ed. (1983)"
+      - "G. D. Pratico, Nelson Glueck's 1938-1940 Excavations at Tell el-Kheleifeh: A Reappraisal (1993)"
+  - polity: Kingdom of Israel
+    # Ezion-geber at Tell el-Kheleifeh, on the shore of the Gulf of Aqaba west of Elath.
+    first_year: "970 BC"
+    last_year: "932 BC"
+    outline:
+      - [34.96, 29.535]
+      - [34.99, 29.535]
+      - [34.99, 29.56]
+      - [34.96, 29.56]
+    reason: >-
+      Solomon "made a navy of ships in Ezion-geber, which is beside Eloth, on the shore of the Red sea" (the Ezion-geber article: Israel's port on the Red Sea). Drawn as Israel's port in his reign, apart from Cliopatria's shape of the kingdom. The site is disputed (Tell el-Kheleifeh has no remains of the 10th century; Jezirat Faraun is another candidate), so the point is approximate.
+    sources:
+      - "1 Kgs 9:26-28; 2 Chr 8:17-18"
+      - "G. D. Pratico, Nelson Glueck's 1938-1940 Excavations at Tell el-Kheleifeh: A Reappraisal (1993)"
+  - polity: Kingdom of Judah
+    # Ezion-geber, as above.
+    first_year: "870 BC"
+    last_year: "846 BC"
+    outline:
+      - [34.96, 29.535]
+      - [34.99, 29.535]
+      - [34.99, 29.56]
+      - [34.96, 29.56]
+    reason: >-
+      In Jehoshaphat's reign "there was then no king in Edom: a deputy was king", and his ships of Tharshish were broken at Ezion-geber (the Ezion-geber article). Drawn as Judah's from his accession, about 870 BC, until 846 BC; Edom revolted under his son Jehoram, in 845 BC on the map.
+    sources:
+      - "1 Kgs 22:47-48; 2 Chr 20:35-37; 2 Kgs 8:20-22"
+      - "E. R. Thiele, The Mysterious Numbers of the Hebrew Kings, new rev. ed. (1983)"
+  - polity: Neo-Assyrian Empire
+    # Til Barsip (Tell Ahmar) and Bit-Adini east of the Euphrates, south of Carchemish.
+    first_year: "856 BC"
+    last_year: "802 BC"
+    outline:
+      - [38.05, 36.45]
+      - [38.6, 36.45]
+      - [38.6, 36.95]
+      - [38.05, 36.95]
+    reason: >-
+      Shalmaneser III besieged Til Barsip, the capital of Bit-Adini, took it in 856 BC and renamed it Kar-Shalmaneser; from then it was an Assyrian province, in the 8th century the seat of the turtanu Shamshi-ilu (the Eden and Telassar articles). Cliopatria's Assyria of 900-801 BC stops short of it; drawn as Assyria's from 856 BC. Before that, Bit-Adini was an Aramean kingdom, not Carchemish's (drawn), which the data does not draw.
+    sources:
+      - "Kurkh Monolith of Shalmaneser III, ii 30-35 (A. K. Grayson, RIMA 3 (1996), A.0.102.2)"
+      - "F. Thureau-Dangin and M. Dunand, Til-Barsib (1936)"
+      - "J. D. Hawkins, Til-Barsip, in Reallexikon der Assyriologie"
+  - polity: Kingdom of Kush
+    # Thebes and the Thebaid east of Cliopatria's shape of Upper Egypt, to Syene.
+    first_year: "750 BC"
+    last_year: "677 BC"
+    outline:
+      - [32.45, 23.75]
+      - [33.2, 23.75]
+      - [33.2, 26.15]
+      - [32.45, 26.15]
+    reason: >-
+      Cliopatria's shapes of Upper Egypt stop west of Thebes, which showed without a state from 801 BC. Thebes was the Kushite kings' from Kashta, who had his daughter Amenirdis adopted as heir to the God's Wife of Amun there about 750 BC, and Piye's campaign started from it; it stayed theirs until Ashurbanipal took it (clips). Drawn as Kush's from about 750 BC.
+    sources:
+      - "K. A. Kitchen, The Third Intermediate Period in Egypt (1100-650 BC), 2nd ed. (1986), part IV"
+      - "I. Shaw (ed.), The Oxford History of Ancient Egypt (2000), ch. 12 (J. Taylor)"
+  - polity: Roman Kingdom
+    # Rome on the Tiber, east of Cliopatria's shape of the Roman state.
+    first_year: "551 BC"
+    last_year: "482 BC"
+    outline:
+      - [12.35, 41.8]
+      - [12.6, 41.8]
+      - [12.6, 41.98]
+      - [12.35, 41.98]
+    reason: >-
+      Cliopatria's shapes of the Roman Kingdom and the early Republic stop a few kilometres west of the city's point, so Rome showed without a state from 551 BC, after the Etruscan shape, until 338 BC. Rome was a Roman state throughout: kings until, traditionally, 509 BC (renamed), then the Republic (the Rome article). The city is joined to the shape; the towns south-east of it, Forum of Appius and Three Taverns, are left as they are: they lay in Volscian land until the 4th century.
+    sources:
+      - "Livy 1.57-60; 2.1"
+      - "T. J. Cornell, The Beginnings of Rome (1995)"
+  - polity: Roman Republic
+    # Rome, as above.
+    first_year: "481 BC"
+    last_year: "339 BC"
+    outline:
+      - [12.35, 41.8]
+      - [12.6, 41.8]
+      - [12.6, 41.98]
+      - [12.35, 41.98]
+    reason: >-
+      As above, for the Republic's shape of 481-338 BC; through the Gallic sack of about 390 BC Rome stayed the Republic's.
+    sources:
+      - "Livy 2.1; 5.35-55"
+      - "T. J. Cornell, The Beginnings of Rome (1995)"
+  # Map sweep, fourth batch (2026-11-24).
+  - polity: Roman Empire
+    first_year: "25 BC"
+    last_year: "AD 22"
+    # Derbe, as cut from Cappadocia (clips).
+    outline:
+      - [32.9, 37.25]
+      - [33.55, 37.25]
+      - [33.55, 37.5]
+      - [32.9, 37.5]
+    reason: >-
+      Derbe belonged to the province of Galatia from 25 BC (clips); Cliopatria's Roman shape does not reach it before AD 23, and the kingdom of Cappadocia annexed in AD 17-22 is drawn from its last shape, without Derbe.
+    sources:
+      - "Strabo, Geography 12.6.3"
+      - "S. Mitchell, Anatolia: Land, Men, and Gods in Asia Minor, vol. 2 (1993)"
+  - polity: Roman Republic
+    first_year: "84 BC"
+    last_year: "79 BC"
+    # Attica, as cut from Pontus (clips), north of the Laurion coast; Aegina left out.
+    outline:
+      - [23.25, 37.77]
+      - [23.98, 37.765]
+      - [24.02, 37.805]
+      - [24.15, 37.805]
+      - [24.15, 38.35]
+      - [23.25, 38.35]
+    reason: >-
+      Athens was Rome's after Sulla took it in 86 BC (the Athens article); Cliopatria's shapes of 84-79 BC leave Attica without a state, Pontus being cut back to its homeland in those years (clips). Like the Roman shapes of 86 and 78 BC, the outline leaves out the south of Attica, from Anaphlystos and Thorikos to Sounion, and Aegina, which those shapes do not hold either.
+    sources:
+      - "Plutarch, Sulla 14"
+      - "Appian, Mithridatic Wars 38-39 (livius.org)"
 # States Cliopatria does not draw: our approximate outline, less the land of the polities
 # in `minus` standing in the same years. Moab and Ammon are drawn from 931 BC, when the
 # divided kingdoms begin (seams), Edom from 845 BC; under David and Solomon the data's
-# Israel covers them.
+# Israel covers them, save Rabbah before David took it.
 drawn:
   - polity: Aram-Damascus
+    # The Damascus basin and the Hauran, to the Anti-Lebanon and the desert edge; Zobah left out.
     first_year: "950 BC"
-    last_year: "733 BC"
-    # The Damascus basin and the Hauran, to the Anti-Lebanon and the desert edge.
+    last_year: "843 BC"
+    outline:
+      - [35.8, 33.35]
+      - [36.05, 33.05]
+      - [36.1, 32.75]
+      - [36.45, 32.45]
+      - [36.85, 32.45]
+      - [37.15, 32.75]
+      - [37.2, 33.3]
+      - [36.95, 33.85]
+      - [36.6, 34.15]
+      - [36.25, 34.15]
+      - [36.14, 33.98]
+      - [36.2, 33.98]
+      - [36.2, 33.88]
+      - [36.08, 33.88]
+      - [36.0, 33.75]
+    label: [36.45, 33.25]
+    minus: [Kingdom of Israel, Phoenicia, Neo-Assyrian Empire]
+    reason: >-
+      The Aramaean kingdom of Damascus, Israel's neighbour and rival, rose under Rezon in Solomon's days and was the leading state of southern Syria under Hadadezer, Hazael and Rezin, until Tiglath-pileser III took Damascus in 732 BC. Cliopatria does not draw it. The outline is the land it held throughout, the Damascus basin and the Hauran; Zobah in the northern Beqaa, Hadadezer's Aramaean kingdom, is left out until Damascus is known to have held the Beqaa, under Hazael (below). Bashan and Gilead, which Damascus held only for a time, are drawn in those years (below); its hold over Israel and Philistia is not drawn.
+    sources:
+      - "1 Kgs 11:23-25; 15:18-20; 20:1-34; 2 Kgs 8:7-15; 10:32-33; 16:9"
+      - "E. Lipiński, The Aramaeans: Their Ancient History, Culture, Religion (2000)"
+      - "W. T. Pitard, Ancient Damascus (1987)"
+      - "2 Sam 8:3-8"
+  - polity: Aram-Damascus
+    # Ramoth-gilead.
+    first_year: "855 BC"
+    last_year: "843 BC"
+    outline:
+      - [35.97, 32.46]
+      - [36.06, 32.46]
+      - [36.06, 32.54]
+      - [35.97, 32.54]
+    label: [36.015, 32.5]
+    minus: [Kingdom of Israel]
+    reason: >-
+      Ramoth-gilead was Aram's when Ahab died trying to take it back in 853 BC, and Israel's again when Joram kept it against Hazael in 841 BC; drawn as Aram's from about 855 to 843 BC (clips).
+    sources:
+      - "1 Kgs 22:3-36; 2 Kgs 8:28-29; 9:14"
+      - "E. Lipiński, The Aramaeans (2000)"
+  - polity: Aram-Damascus
+    # The Damascus basin and the Hauran, as above, with Zobah.
+    first_year: "842 BC"
+    last_year: "831 BC"
     outline:
       - [35.8, 33.35]
       - [36.05, 33.05]
@@ -2873,7 +5024,72 @@ drawn:
     label: [36.45, 33.25]
     minus: [Kingdom of Israel, Phoenicia, Neo-Assyrian Empire]
     reason: >-
-      The Aramaean kingdom of Damascus, Israel's neighbour and rival, rose under Rezon in Solomon's days and was the leading state of southern Syria under Hadadezer, Hazael and Rezin, until Tiglath-pileser III took Damascus in 732 BC. Cliopatria does not draw it. The outline is the land it held throughout, the Damascus basin and the Hauran; Bashan and Gilead, which Hazael took from Israel for a time, and its hold over Israel and Philistia are not drawn.
+      The Aramaean kingdom of Damascus, Israel's neighbour and rival, rose under Rezon in Solomon's days and was the leading state of southern Syria under Hadadezer, Hazael and Rezin, until Tiglath-pileser III took Damascus in 732 BC. Cliopatria does not draw it. The outline is the land it held throughout, the Damascus basin and the Hauran; under Hazael, king from about 842 BC, with the Beqaa and Zobah, which became an Assyrian province after Damascus (the Zobah article).
+    sources:
+      - "1 Kgs 11:23-25; 15:18-20; 20:1-34; 2 Kgs 8:7-15; 10:32-33; 16:9"
+      - "E. Lipiński, The Aramaeans: Their Ancient History, Culture, Religion (2000)"
+      - "W. T. Pitard, Ancient Damascus (1987)"
+      - "E. Lipiński, The Aramaeans (2000), Zobah"
+  - polity: Aram-Damascus
+    # The Damascus basin and the Hauran, with Gilead and Bashan.
+    first_year: "830 BC"
+    last_year: "786 BC"
+    outline:
+      - [35.8, 33.35]
+      - [36.05, 33.05]
+      - [35.62, 32.94]
+      - [35.625, 32.72]
+      - [35.58, 32.62]
+      - [35.573, 32.2]
+      - [35.555, 31.9]
+      - [35.555, 31.775]
+      - [35.6, 31.775]
+      - [35.745, 31.774]
+      - [35.8, 31.78]
+      - [35.88, 31.795]
+      - [36.0, 31.79]
+      - [36.0, 31.798]
+      - [35.8, 31.85]
+      - [35.82, 32.05]
+      - [35.95, 32.25]
+      - [36.25, 32.25]
+      - [36.45, 32.45]
+      - [36.85, 32.45]
+      - [37.15, 32.75]
+      - [37.2, 33.3]
+      - [36.95, 33.85]
+      - [36.6, 34.15]
+      - [36.25, 34.15]
+      - [36.0, 33.75]
+    label: [36.45, 33.25]
+    minus: [Kingdom of Israel, Phoenicia, Neo-Assyrian Empire]
+    reason: >-
+      As above, with the land east of the Jordan that Hazael took from Israel in Jehu's days, "all the land of Gilead ... from Aroer, which is by the river Arnon, even Gilead and Bashan", until Joash and Jeroboam II won it back; Moab and Ammon, which kept their own kings, are left out. Both dates are approximate (clips).
+    sources:
+      - "2 Kgs 10:32-33; 13:22-25; 14:25"
+      - "Amos 1:3; 6:13"
+      - "E. Lipiński, The Aramaeans (2000)"
+      - "W. T. Pitard, Ancient Damascus (1987)"
+  - polity: Aram-Damascus
+    # The Damascus basin and the Hauran, with Zobah, as above.
+    first_year: "785 BC"
+    last_year: "733 BC"
+    outline:
+      - [35.8, 33.35]
+      - [36.05, 33.05]
+      - [36.1, 32.75]
+      - [36.45, 32.45]
+      - [36.85, 32.45]
+      - [37.15, 32.75]
+      - [37.2, 33.3]
+      - [36.95, 33.85]
+      - [36.6, 34.15]
+      - [36.25, 34.15]
+      - [36.0, 33.75]
+    label: [36.45, 33.25]
+    minus: [Kingdom of Israel, Phoenicia, Neo-Assyrian Empire]
+    reason: >-
+      The Aramaean kingdom of Damascus, Israel's neighbour and rival, rose under Rezon in Solomon's days and was the leading state of southern Syria under Hadadezer, Hazael and Rezin, until Tiglath-pileser III took Damascus in 732 BC. Cliopatria does not draw it. The outline is the land it held throughout, the Damascus basin and the Hauran, with the Beqaa, until Damascus fell in 732 BC.
     sources:
       - "1 Kgs 11:23-25; 15:18-20; 20:1-34; 2 Kgs 8:7-15; 10:32-33; 16:9"
       - "E. Lipiński, The Aramaeans: Their Ancient History, Culture, Religion (2000)"
@@ -2923,18 +5139,21 @@ drawn:
   - polity: Carchemish
     first_year: "1000 BC"
     last_year: "741 BC"
-    # The Euphrates around Carchemish, west to the Sajur.
+    # The Euphrates around Carchemish, west to the Sajur; Til Barsip, downstream on the east
+    # bank, out (Bit-Adini, then Assyria's: extends).
     outline:
       - [37.55, 36.45]
-      - [38.05, 36.4]
-      - [38.2, 36.75]
+      - [38.0, 36.42]
+      - [38.04, 36.62]
+      - [38.05, 36.78]
+      - [38.15, 36.85]
       - [38.1, 37.15]
       - [37.75, 37.25]
       - [37.45, 36.95]
     label: [37.82, 36.85]
     minus: [Neo-Hittite states, Neo-Assyrian Empire, Assyria]
     reason: >-
-      Carchemish on the Euphrates was the greatest of the Neo-Hittite kingdoms, ruled by the house of Suhi and then of Astiruwa, a tributary of Assyria at times from the 9th century, until Sargon II took it in 717 BC. Cliopatria's Neo-Hittite shape leaves it out. The outline is the city's land along the river, the conservative extent; its sway over its neighbours is not drawn.
+      Carchemish on the Euphrates was the greatest of the Neo-Hittite kingdoms, ruled by the house of Suhi and then of Astiruwa, a tributary of Assyria at times from the 9th century, until Sargon II took it in 717 BC. Cliopatria's Neo-Hittite shape leaves it out. The outline is the city's land along the river, the conservative extent; its sway over its neighbours is not drawn. Til Barsip, 20 km downstream on the east bank, was the capital of the Aramean Bit-Adini until Shalmaneser III took it in 856 BC, never Carchemish's (the Eden article), and is left out.
     sources:
       - "Isa 10:9; Jer 46:2"
       - "J. D. Hawkins, Corpus of Hieroglyphic Luwian Inscriptions, vol. 1 (2000), Carchemish"
@@ -2944,8 +5163,10 @@ drawn:
     last_year: "718 BC"
     outline:
       - [37.55, 36.45]
-      - [38.05, 36.4]
-      - [38.2, 36.75]
+      - [38.0, 36.42]
+      - [38.04, 36.62]
+      - [38.05, 36.78]
+      - [38.15, 36.85]
       - [38.1, 37.15]
       - [37.75, 37.25]
       - [37.45, 36.95]
@@ -2956,6 +5177,23 @@ drawn:
     sources:
       - "A. Fuchs, Die Inschriften Sargons II. aus Khorsabad (1994), Annals (Pisiri of Carchemish, 717 BC)"
       - "J. D. Hawkins, Corpus of Hieroglyphic Luwian Inscriptions, vol. 1 (2000), Carchemish"
+  - polity: Ammon
+    first_year: "1010 BC"
+    last_year: "991 BC"
+    # Rabbah and its land, as cut from Israel (clips).
+    outline:
+      - [35.88, 31.9]
+      - [36.05, 31.9]
+      - [36.05, 32.02]
+      - [35.88, 32.02]
+    label: [35.97, 31.96]
+    minus: [Kingdom of Israel]
+    reason: >-
+      Ammon under Nahash and his son Hanun, with its capital Rabbah, until Joab and David took the city about 990 BC (battle rabbah; clips). Drawn around Rabbah only, the conservative extent: Gad's towns Jazer and Aroer before Rabbah stay Israel's.
+    sources:
+      - "1 Sam 11:1-11; 2 Sam 10:1-4; 12:26-31"
+      - "Josh 13:25"
+      - "B. MacDonald and R. W. Younker (eds.), Ancient Ammon (1999)"
   - polity: Ammon
     first_year: "931 BC"
     last_year: "582 BC"
@@ -2995,23 +5233,52 @@ drawn:
       - "2 Kgs 3:4-5"
       - "B. Routledge, Moab in the Iron Age: Hegemony, Polity, Archaeology (2004)"
   - polity: Moab
+    # Mesha's kingdom: north to Medeba, Nebo and Bezer (Heshbon, Elealeh and Sibmah stay with the data's Israel).
     first_year: "852 BC"
-    last_year: "582 BC"
-    # Mesha's kingdom: north to Medeba (Nebo and Heshbon stay with the data's Israel).
+    last_year: "734 BC"
     outline:
       - [35.56, 31.06]
       - [35.95, 31.02]
       - [36.1, 31.3]
       - [36.0, 31.72]
-      - [35.6, 31.76]
+      - [36.0, 31.79]
+      - [35.88, 31.795]
+      - [35.8, 31.78]
+      - [35.745, 31.774]
+      - [35.6, 31.775]
       - [35.57, 31.47]
     label: [35.8, 31.35]
     minus: [Kingdom of Israel, Kingdom of Judah, Ammon]
     reason: >-
-      After Ahab's death Mesha threw off Israel's rule and took the plain north to Medeba and Nebo; Isaiah and Jeremiah name its towns as Moab's. Tributary to Assyria and Babylon, Moab fell to Nebuchadnezzar's campaign of 582 BC. The outline is the plateau from the Zered to Medeba, the conservative extent; Nebo, which Mesha says he took, and Heshbon, disputed with Israel and Ammon, lie inside Cliopatria's Israel, and after 722 BC inside its Assyria, and are left to them.
+      After Ahab's death Mesha threw off Israel's rule and took the plain north to Medeba: he says he took Ataroth, Nebo and Jahaz from Israel and built Qiryaten (Kiriathaim) and Bezer (the Nebo, Kiriathaim and Bezer articles); Isaiah and Jeremiah name these towns as Moab's. The outline is the plateau from the Zered to Medeba, with the Nebo ridge and Bezer, cut from Israel (clips); Heshbon, Elealeh and Sibmah, which the stele does not name, stay with the data's Israel until 734 BC.
     sources:
-      - "Mesha Stele (KAI 181), 7-21"
+      - "Mesha Stele (KAI 181), 7-21, 27"
       - "2 Kgs 1:1; 3:4-27; Isa 15-16; Jer 48"
+      - "Josephus, Jewish Antiquities 10.181-182"
+      - "B. Routledge, Moab in the Iron Age: Hegemony, Polity, Archaeology (2004)"
+  - polity: Moab
+    # Moab from Tiglath-pileser III's campaign: north to Heshbon and Elealeh.
+    first_year: "733 BC"
+    last_year: "582 BC"
+    outline:
+      - [35.56, 31.06]
+      - [35.95, 31.02]
+      - [36.1, 31.3]
+      - [36.0, 31.72]
+      - [36.0, 31.79]
+      - [35.9, 31.8]
+      - [35.86, 31.815]
+      - [35.81, 31.83]
+      - [35.75, 31.795]
+      - [35.745, 31.774]
+      - [35.6, 31.775]
+      - [35.57, 31.47]
+    label: [35.8, 31.35]
+    minus: [Kingdom of Israel, Kingdom of Judah, Ammon]
+    reason: >-
+      When Tiglath-pileser III took Gilead from Israel in 733 BC, Moab, his tributary, held the plateau to Heshbon and Elealeh: in Isaiah and Jeremiah Heshbon, Elealeh and Sibmah are Moab's towns (the Heshbon, Elealeh and Sibmah articles). Jeremiah also bids Heshbon howl in his oracle against Ammon; it is drawn with Moab, where the prophets mostly put it, not as an Assyrian province. Tributary to Assyria and Babylon, Moab fell to Nebuchadnezzar's campaign of 582 BC.
+    sources:
+      - "Isa 15:4; 16:8-9; Jer 48:2, 32-34, 45; 49:3"
       - "Josephus, Jewish Antiquities 10.181-182"
       - "B. Routledge, Moab in the Iron Age: Hegemony, Polity, Archaeology (2004)"
   - polity: Edom
@@ -3267,6 +5534,147 @@ drawn:
       - "Acts 12:1-23"
       - "Josephus, Antiquities 19.274-275, 343-352; Jewish War 2.214-219"
       - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Kingdom of Agrippa I
+    # Abilene, as cut from the Roman shape (clips).
+    first_year: "AD 37"
+    last_year: "AD 44"
+    outline:
+      - [36.02, 33.57]
+      - [36.2, 33.57]
+      - [36.2, 33.68]
+      - [36.02, 33.68]
+    label: [36.11, 33.625]
+    reason: >-
+      Caligula gave Agrippa I the tetrarchy of Lysanias with Philip's in AD 37, and Claudius confirmed Abila to him in AD 41 (the Abilene article). Drawn approximately: the Barada valley around Abila.
+    sources:
+      - "Josephus, Antiquities 18.237; 19.275; Jewish War 2.215"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Kingdom of Chalcis
+    # Chalcis under Lebanon (Anjar) and its land.
+    first_year: "AD 41"
+    last_year: "AD 47"
+    outline:
+      - [35.86, 33.66]
+      - [36.0, 33.66]
+      - [36.0, 33.78]
+      - [35.86, 33.78]
+    label: [35.93, 33.72]
+    reason: >-
+      Claudius made Herod, Agrippa I's brother, king of Chalcis in AD 41; he ruled it, with the oversight of the Temple, until his death in the eighth year of Claudius, AD 48. Cliopatria draws the land as Roman. Drawn approximately: the southern Beqaa around Anjar; whether Chalcis stood at Anjar or at Majdal Anjar is uncertain, and the Ituraean principality before 41 is not drawn.
+    sources:
+      - "Josephus, Antiquities 19.277; 20.104; Jewish War 2.217, 221"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Kingdom of Agrippa II
+    # Chalcis, as above.
+    first_year: "AD 48"
+    last_year: "AD 52"
+    outline:
+      - [35.86, 33.66]
+      - [36.0, 33.66]
+      - [36.0, 33.78]
+      - [35.86, 33.78]
+    label: [35.93, 33.72]
+    reason: >-
+      On his uncle Herod's death in AD 48 Claudius gave Chalcis to Agrippa II, son of Agrippa I; he held it until AD 53, when he gave it up for Philip's tetrarchy (some date the grant to 49/50).
+    sources:
+      - "Josephus, Antiquities 20.104, 138, 159; Jewish War 2.223, 247, 252"
+      - "N. Kokkinos, The Herodian Dynasty (1998)"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Kingdom of Agrippa II
+    # Philip's tetrarchy, as drawn for him.
+    first_year: "AD 53"
+    last_year: "AD 92"
+    outline:
+      - [35.625, 32.89]
+      - [35.65, 32.83]
+      - [35.8, 32.8]
+      - [36.0, 32.65]
+      - [36.6, 32.65]
+      - [36.8, 32.85]
+      - [36.7, 33.2]
+      - [36.1, 33.35]
+      - [35.75, 33.35]
+      - [35.63, 33.3]
+      - [35.62, 33.08]
+    label: [36.3, 32.98]
+    reason: >-
+      Early in AD 53 Claudius gave Agrippa II Philip's tetrarchy, Batanea and Trachonitis, with Abila; he made Paneas his capital as Neronias, hosted Vespasian there in AD 67, and ruled as Rome's client king until his death, which most now put about AD 92-93 (N. Kokkinos), Photius, from Justus of Tiberias, in AD 100. Drawn approximately, as Philip's tetrarchy; Kanatha (Kenath), inside it, is counted among the Decapolis by Pliny.
+    sources:
+      - "Josephus, Antiquities 20.104, 138, 159; Jewish War 2.223, 247, 252"
+      - "N. Kokkinos, The Herodian Dynasty (1998)"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+      - "Pliny, Natural History 5.74"
+  - polity: Kingdom of Agrippa II
+    # Abilene, as above.
+    first_year: "AD 53"
+    last_year: "AD 92"
+    outline:
+      - [36.02, 33.57]
+      - [36.2, 33.57]
+      - [36.2, 33.68]
+      - [36.02, 33.68]
+    label: [36.11, 33.625]
+    reason: >-
+      Abila, the tetrarchy of Lysanias, passed to Agrippa II with Philip's in AD 53 (the Abilene article).
+    sources:
+      - "Josephus, Antiquities 20.104, 138, 159; Jewish War 2.223, 247, 252"
+      - "N. Kokkinos, The Herodian Dynasty (1998)"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  - polity: Kingdom of Agrippa II
+    # Tiberias and Tarichaea on the west shore of the Sea of Galilee.
+    first_year: "AD 54"
+    last_year: "AD 92"
+    outline:
+      - [35.535, 32.73]
+      - [35.57, 32.73]
+      - [35.57, 32.79]
+      - [35.53, 32.86]
+      - [35.49, 32.86]
+      - [35.5, 32.8]
+      - [35.535, 32.78]
+    label: [35.54, 32.79]
+    reason: >-
+      Nero, soon after his accession, gave Agrippa II Tiberias and Tarichaea with their toparchies (the Tiberias and Magdala articles); Vespasian gave Tiberias back to him in AD 67. Some date the grant to AD 61, the era of his coins.
+    sources:
+      - "Josephus, Antiquities 20.104, 138, 159; Jewish War 2.223, 247, 252"
+      - "N. Kokkinos, The Herodian Dynasty (1998)"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+      - "Josephus, Jewish War 3.445-461"
+  - polity: Kingdom of Agrippa II
+    # Julias (Livias) and Abila in Perea.
+    first_year: "AD 54"
+    last_year: "AD 92"
+    outline:
+      - [35.63, 31.8]
+      - [35.72, 31.8]
+      - [35.72, 31.86]
+      - [35.63, 31.86]
+    label: [35.675, 31.83]
+    reason: >-
+      With Tiberias and Tarichaea Nero gave Agrippa II "Abila and Julias in Perea, and fourteen villages" (the Beth-haram and Shittim articles). Drawn approximately: the Jordan valley opposite Jericho around Julias and Abila.
+    sources:
+      - "Josephus, Antiquities 20.104, 138, 159; Jewish War 2.223, 247, 252"
+      - "N. Kokkinos, The Herodian Dynasty (1998)"
+      - "E. Schürer, The History of the Jewish People in the Age of Jesus Christ, rev. ed. G. Vermes and F. Millar, vol. 1 (1973)"
+  # Map sweep, fourth batch (2026-11-24).
+  - polity: Lycian League
+    # Lycia, from the Xanthos valley to Phaselis, as cut from Pergamon and Pontus (clips).
+    first_year: "167 BC"
+    last_year: "AD 42"
+    outline:
+      - [29.2, 36.15]
+      - [30.7, 36.15]
+      - [30.62, 36.6]
+      - [30.3, 36.95]
+      - [29.2, 36.95]
+    label: [29.85, 36.6]
+    reason: >-
+      Cliopatria draws Lycia under Pergamon, Rome and Pontus by turns. Freed from Rhodes in 167 BC, the Lycian cities formed a federal league, Rome's ally, with a treaty of 46 BC, and kept their freedom until Claudius made Lycia a province in AD 43, after strife in which Romans were killed (the Lycia article). Drawn approximately, as Lycia between Telmessos and Phaselis, under Rome (vassals).
+    sources:
+      - "Strabo, Geography 14.3.3"
+      - "Cassius Dio 60.17.3"
+      - "Suetonius, Claudius 25.3"
+      - "S. Mitchell, The Treaty between Rome and Lycia of 46 BC (MS 2070), in R. Pintaudi (ed.), Papyri Graecae Schøyen I (2005)"
 # A polity the data names by one era for longer than it lasted (build-content.ts): a new
 # name from the year given.
 renamed:
@@ -3343,7 +5751,7 @@ renamed:
     first_year: "323 BC"
     name: Ptolemaic Kingdom
     reason: >-
-      Step 2 of 3: the shapes from 308 BC on are the Ptolemies' own.
+      Step 2 of 3: the shapes from 323 BC on are the Ptolemies' own (Egypt as cut from the Macedonian Empire in 323-309 BC, clips; Cliopatria's own from 308 BC).
     sources:
       - "Wikipedia, Ptolemaic Kingdom"
   - polity: Ptolemaic Kingdom (rename step)
@@ -3354,6 +5762,34 @@ renamed:
     sources:
       - "Wikipedia, Ptolemaic Kingdom (satrap 323, king 305 BC)"
       - "Wikipedia, Ptolemy I Soter"
+  # Cliopatria names Rome "Roman Empire" from 32 BC, the year before Actium. The site dates
+  # the Empire from 27 BC: the Senate named Octavian Augustus that year (event
+  # augustus-named) and the Rome article has him "the first emperor in 27 BC". Renamed in
+  # three steps through a name used for nothing else, so that Rome is the Roman Republic
+  # in 32-28 BC and the Roman Empire from 27 BC.
+  - polity: Roman Empire
+    first_year: "32 BC"
+    name: Roman Empire (rename step)
+    reason: >-
+      Step 1 of 3 (see the comment above).
+    sources:
+      - "Cassius Dio 53.16.6-8 (the name Augustus, January 27 BC)"
+  - polity: Roman Empire (rename step)
+    first_year: "27 BC"
+    name: Roman Empire
+    reason: >-
+      Step 2 of 3: from 27 BC, when the Senate named Octavian Augustus (event augustus-named; the Rome article: "Augustus became the first emperor in 27 BC"), Rome is the Roman Empire.
+    sources:
+      - "Cassius Dio 53.16.6-8"
+      - "Res Gestae Divi Augusti 34"
+  - polity: Roman Empire (rename step)
+    first_year: "32 BC"
+    name: Roman Republic
+    reason: >-
+      Step 3 of 3: in 32-28 BC, the years of the war with Antony and Cleopatra, Actium (31 BC, event actium) and the taking of Egypt (30 BC, event egypt-roman), Rome is drawn as the Roman Republic, as the site's events and the Rome article have it until 27 BC.
+    sources:
+      - "Cassius Dio 50.1-53.16"
+      - "Res Gestae Divi Augusti 34"
   - polity: Kingdom of Armenia
     first_year: "AD 638"
     name: Principality of Armenia
@@ -3450,6 +5886,14 @@ absent:
 # Years the data leaves a polity off the map although it existed (build-content.ts): its
 # shape from just before is drawn on through them.
 bridges:
+  - polity: Babylonia
+    first_year: "1151 BC"
+    last_year: "1102 BC"
+    reason: >-
+      Cliopatria draws Elam over Babylonia in 1151-1102 BC (clips). The Second Dynasty of Isin ruled Babylonia after the brief Elamite occupation that ended the Kassites about 1155 BC; Nebuchadnezzar I, king of Babylon from about 1126 BC (event nebuchadnezzar-i), took the war to Elam and brought Marduk's statue back. Babylonia is drawn with its shape of 1200-1151 BC.
+    sources:
+      - "J. A. Brinkman, A Political History of Post-Kassite Babylonia, 1158-722 B.C. (1968)"
+      - "The Cambridge Ancient History, 3rd ed., vol. II/2 (1975), ch. 31"
   - polity: Babylonia
     first_year: "626 BC"
     last_year: "617 BC"
@@ -3551,6 +5995,24 @@ bridges:
       Cliopatria leaves Armenia off the map in AD 161-164 and draws Parthia over it. It remained a kingdom: Pacorus (Bakur), set up by Vologases IV, reigned in 161-163 and Sohaemus was restored by the Romans in 163 or 164.
     sources:
       - "Wikipedia, Pacorus of Armenia; Sohaemus of Armenia"
+  # Map sweep, fourth batch (2026-11-24).
+  - polity: Kingdom of Osroene
+    first_year: "AD 117"
+    last_year: "AD 126"
+    reason: >-
+      Cliopatria leaves Osroene off the map in AD 114-126 and draws it as Roman. Trajan held it from 114/116, but Hadrian gave up Mesopotamia on his accession in 117 and Osroene was a kingdom again, under Parthamaspates and then Ma'nu VII (the Mesopotamia article); Rome's shape is cut back from it in these years (clips).
+    sources:
+      - "Historia Augusta, Hadrian 5.1-4"
+      - "Wikipedia, Osroene"
+  - polity: Rhodes
+    first_year: "AD 53"
+    last_year: "AD 72"
+    reason: >-
+      Claudius took Rhodes' freedom away in AD 44 and gave it back in 53, on the plea of the young Nero; Vespasian made the island part of a province early in the 70s (Suetonius names Rhodes among the free states he reduced; the year is not recorded, about AD 73 is usual). Drawn as a free state under Rome (vassals) in AD 53-72, with its shape of AD 43, the island alone.
+    sources:
+      - "Tacitus, Annals 12.58"
+      - "Suetonius, Vespasian 8.4"
+      - "R. M. Berthold, Rhodes in the Hellenistic Age (1984)"
 
 # Lands an empire took over when a polity ended (build-content.ts): the polity's last shape
 # drawn as the empire's for those years, where the empire's own shape does not reach yet.
@@ -3583,7 +6045,7 @@ annexed:
       - "Wikipedia, Polemon II of Pontus; Cappadocia (Roman province) (Pontus added to the province)"
   - polity: Kingdom of Cappadocia
     by: Roman Empire
-    first_year: "AD 18"
+    first_year: "AD 17"
     last_year: "AD 22"
     reason: >-
       Cappadocia was a Roman province from AD 17; the data's Roman shape reaches it only from AD 23.
@@ -3616,7 +6078,7 @@ annexed:
       - "Wikipedia, Darius III"
   - polity: Kingdom of Bithynia
     by: Roman Republic
-    first_year: "73 BC"
+    first_year: "74 BC"
     last_year: "68 BC"
     reason: >-
       Bithynia was Roman from the bequest of Nicomedes IV in 74 BC (overrun by Mithridates VI at the start of the Third Mithridatic War and won back by Rome); Cliopatria's Roman shape reaches it only from 67 BC.
@@ -3678,7 +6140,7 @@ annexed:
       - "Wikipedia, Macedonia (Roman province) (four client republics, merides)"
   - polity: Cyrenaica
     by: Roman Republic
-    first_year: "95 BC"
+    first_year: "96 BC"
     last_year: "93 BC"
     reason: >-
       Rome inherited Cyrenaica by Ptolemy Apion's will in 96 BC; Cliopatria's Roman shape reaches it only from 92 BC.
@@ -3686,11 +6148,11 @@ annexed:
       - "Livy, Periochae 70.5"
       - "Wikipedia, Ptolemy Apion"
   - polity: Ptolemaic Kingdom
-    by: Roman Empire
+    by: Roman Republic
     first_year: "30 BC"
     last_year: "29 BC"
     reason: >-
-      Egypt was a Roman province from 30 BC; Cliopatria's Roman shape reaches it only from 28 BC.
+      Egypt was a Roman province from 30 BC; Cliopatria's Roman shape reaches it only from 28 BC. Drawn under the Roman Republic, as Rome is drawn until Octavian was named Augustus in 27 BC (renamed).
     sources:
       - "Cassius Dio 51.17.1"
       - "Wikipedia, Egypt (Roman province) (province from 30 BC)"
@@ -4086,7 +6548,7 @@ vassals:
   - polity: Nabataeans
     of: Roman Republic
     first_year: "62 BC"
-    last_year: "33 BC"
+    last_year: "28 BC"
     label:
       en: "under Rome"
       ru: "под Римом"
@@ -4117,7 +6579,7 @@ vassals:
 
   - polity: Nabataeans
     of: Roman Empire
-    first_year: "32 BC"
+    first_year: "27 BC"
     last_year: "AD 106"
     label:
       en: "under Rome"
@@ -4242,7 +6704,7 @@ vassals:
   - polity: Judea
     of: Roman Republic
     first_year: "37 BC"
-    last_year: "33 BC"
+    last_year: "28 BC"
     label:
       en: "under Rome"
       ru: "под Римом"
@@ -4266,13 +6728,13 @@ vassals:
       ro: "sub Roma"
       bg: "под властта на Рим"
     reason: >-
-      Herod the Great ruled from 37 BC as a client king of Rome, having been made king of Judea by the Senate in 40 BC. The data draws the Roman Republic to 33 BC and the Empire from 32 BC.
+      Herod the Great ruled from 37 BC as a client king of Rome, having been made king of Judea by the Senate in 40 BC. The map draws the Roman Republic to 28 BC and the Empire from 27 BC, when Octavian was named Augustus (renamed).
     sources:
       - "Josephus, Antiquities 14.14-16"
       - "Wikipedia, Herodian kingdom (client state of Rome, 37-4 BC)"
   - polity: Judea
     of: Roman Empire
-    first_year: "32 BC"
+    first_year: "27 BC"
     last_year: "AD 5"
     label:
       en: "under Rome"
@@ -4304,7 +6766,7 @@ vassals:
   - polity: Kingdom of Pontus
     of: Roman Republic
     first_year: "37 BC"
-    last_year: "33 BC"
+    last_year: "28 BC"
     label:
       en: "under Rome"
       ru: "под Римом"
@@ -4328,12 +6790,12 @@ vassals:
       ro: "sub Roma"
       bg: "под властта на Рим"
     reason: >-
-      Mark Antony set up client kings in Anatolia on condition that they paid tribute, Darius son of Pharnaces II in Pontus among them (37 BC, according to Appian); Polemon I followed him. The data draws the Roman Republic to 33 BC and the Empire from 32 BC.
+      Mark Antony set up client kings in Anatolia on condition that they paid tribute, Darius son of Pharnaces II in Pontus among them (37 BC, according to Appian); Polemon I followed him. The map draws the Roman Republic to 28 BC and the Empire from 27 BC, when Octavian was named Augustus (renamed).
     sources:
       - "Wikipedia, Darius of Pontus; Polemon I of Pontus"
   - polity: Kingdom of Pontus
     of: Roman Empire
-    first_year: "32 BC"
+    first_year: "27 BC"
     last_year: "AD 62"
     label:
       en: "under Rome"
@@ -4366,7 +6828,7 @@ vassals:
   - polity: Kingdom of Cappadocia
     of: Roman Republic
     first_year: "63 BC"
-    last_year: "33 BC"
+    last_year: "28 BC"
     label:
       en: "under Rome"
       ru: "под Римом"
@@ -4396,8 +6858,8 @@ vassals:
       - "Wikipedia, Ariobarzanes I of Cappadocia; Archelaus of Cappadocia"
   - polity: Kingdom of Cappadocia
     of: Roman Empire
-    first_year: "32 BC"
-    last_year: "AD 17"
+    first_year: "27 BC"
+    last_year: "AD 16"
     label:
       en: "under Rome"
       ru: "под Римом"
@@ -4428,7 +6890,7 @@ vassals:
   - polity: Galatia
     of: Roman Republic
     first_year: "c. 63 BC"
-    last_year: "33 BC"
+    last_year: "28 BC"
     label:
       en: "under Rome"
       ru: "под Римом"
@@ -4458,8 +6920,8 @@ vassals:
       - "Wikipedia, Amyntas of Galatia (king 36-25 BC, client ruler of Antony)"
   - polity: Galatia
     of: Roman Empire
-    first_year: "32 BC"
-    last_year: "25 BC"
+    first_year: "27 BC"
+    last_year: "26 BC"
     label:
       en: "under Rome"
       ru: "под Римом"
@@ -5438,3 +7900,220 @@ vassals:
     sources:
       - "Josephus, Antiquities 18.237; 19.274-275"
       - "Acts 12:1-23"
+  - polity: Kingdom of Chalcis
+    of: Roman Empire
+    first_year: "AD 41"
+    last_year: "AD 47"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+      uk: "під Римом"
+      es: "bajo Roma"
+      pt: "sob Roma"
+      de: "unter Rom"
+      fr: "sous Rome"
+      pl: "pod władzą Rzymu"
+      it: "sotto Roma"
+      nl: "onder Rome"
+      cs: "pod Římem"
+      sv: "under Rom"
+      nb: "under Roma"
+      tl: "sa ilalim ng Roma"
+      da: "under Rom"
+      sr: "под Римом"
+      hu: "Róma alatt"
+      fi: "Rooman alaisuudessa"
+      vi: "thuộc Rô-ma"
+      ro: "sub Roma"
+      bg: "под властта на Рим"
+    reason: >-
+      Herod of Chalcis was made king by Claudius in AD 41 and reigned as Rome's client until his death in AD 48.
+    sources:
+      - "Josephus, Antiquities 19.277; 20.104"
+  - polity: Kingdom of Agrippa II
+    of: Roman Empire
+    first_year: "AD 48"
+    last_year: "AD 92"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+      uk: "під Римом"
+      es: "bajo Roma"
+      pt: "sob Roma"
+      de: "unter Rom"
+      fr: "sous Rome"
+      pl: "pod władzą Rzymu"
+      it: "sotto Roma"
+      nl: "onder Rome"
+      cs: "pod Římem"
+      sv: "under Rom"
+      nb: "under Roma"
+      tl: "sa ilalim ng Roma"
+      da: "under Rom"
+      sr: "под Римом"
+      hu: "Róma alatt"
+      fi: "Rooman alaisuudessa"
+      vi: "thuộc Rô-ma"
+      ro: "sub Roma"
+      bg: "под властта на Рим"
+    reason: >-
+      Agrippa II held Chalcis from AD 48 and Philip's tetrarchy from 53 by the grants of Claudius and Nero; he sided with Rome in the Jewish War and reigned as its client king until his death, about AD 92-93.
+    sources:
+      - "Josephus, Antiquities 20.104, 138, 159; Jewish War 2.223, 247, 252; 3.443-461"
+      - "N. Kokkinos, The Herodian Dynasty (1998)"
+
+  # Map sweep, fourth batch (2026-11-24).
+  - polity: Rhodes
+    of: Roman Republic
+    first_year: "164 BC"
+    last_year: "28 BC"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+      uk: "під Римом"
+      es: "bajo Roma"
+      pt: "sob Roma"
+      de: "unter Rom"
+      fr: "sous Rome"
+      pl: "pod władzą Rzymu"
+      it: "sotto Roma"
+      nl: "onder Rome"
+      cs: "pod Římem"
+      sv: "under Rom"
+      nb: "under Roma"
+      tl: "sa ilalim ng Roma"
+      da: "under Rom"
+      sr: "под Римом"
+      hu: "Róma alatt"
+      fi: "Rooman alaisuudessa"
+      vi: "thuộc Rô-ma"
+      ro: "sub Roma"
+      bg: "под властта на Рим"
+    reason: >-
+      After losing Lycia and Caria in 167 BC Rhodes sought Rome's alliance and obtained it by treaty in 164 BC; the island remained a free city, Rome's ally (the Rhodes article: a friend of Rome), though Cassius took and plundered it in 43/42 BC.
+    sources:
+      - "Polybius 30.5; 30.31"
+      - "R. M. Berthold, Rhodes in the Hellenistic Age (1984)"
+  - polity: Rhodes
+    of: Roman Empire
+    first_year: "27 BC"
+    last_year: "AD 43"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+      uk: "під Римом"
+      es: "bajo Roma"
+      pt: "sob Roma"
+      de: "unter Rom"
+      fr: "sous Rome"
+      pl: "pod władzą Rzymu"
+      it: "sotto Roma"
+      nl: "onder Rome"
+      cs: "pod Římem"
+      sv: "under Rom"
+      nb: "under Roma"
+      tl: "sa ilalim ng Roma"
+      da: "under Rom"
+      sr: "под Римом"
+      hu: "Róma alatt"
+      fi: "Rooman alaisuudessa"
+      vi: "thuộc Rô-ma"
+      ro: "sub Roma"
+      bg: "под властта на Рим"
+    reason: >-
+      As above, until Claudius took Rhodes' freedom away in AD 44.
+    sources:
+      - "Cassius Dio 60.24.4"
+  - polity: Rhodes
+    of: Roman Empire
+    first_year: "AD 53"
+    last_year: "AD 72"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+      uk: "під Римом"
+      es: "bajo Roma"
+      pt: "sob Roma"
+      de: "unter Rom"
+      fr: "sous Rome"
+      pl: "pod władzą Rzymu"
+      it: "sotto Roma"
+      nl: "onder Rome"
+      cs: "pod Římem"
+      sv: "under Rom"
+      nb: "under Roma"
+      tl: "sa ilalim ng Roma"
+      da: "under Rom"
+      sr: "под Римом"
+      hu: "Róma alatt"
+      fi: "Rooman alaisuudessa"
+      vi: "thuộc Rô-ma"
+      ro: "sub Roma"
+      bg: "под властта на Рим"
+    reason: >-
+      Free again from AD 53 until Vespasian made the island part of a province (bridges).
+    sources:
+      - "Tacitus, Annals 12.58"
+      - "Suetonius, Vespasian 8.4"
+  - polity: Lycian League
+    of: Roman Republic
+    first_year: "167 BC"
+    last_year: "28 BC"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+      uk: "під Римом"
+      es: "bajo Roma"
+      pt: "sob Roma"
+      de: "unter Rom"
+      fr: "sous Rome"
+      pl: "pod władzą Rzymu"
+      it: "sotto Roma"
+      nl: "onder Rome"
+      cs: "pod Římem"
+      sv: "under Rom"
+      nb: "under Roma"
+      tl: "sa ilalim ng Roma"
+      da: "under Rom"
+      sr: "под Римом"
+      hu: "Róma alatt"
+      fi: "Rooman alaisuudessa"
+      vi: "thuộc Rô-ma"
+      ro: "sub Roma"
+      bg: "под властта на Рим"
+    reason: >-
+      The Lycian League was Rome's free ally from 167 BC; it stood by Rome against Mithridates VI and made a treaty with Caesar in 46 BC.
+    sources:
+      - "Polybius 30.5"
+      - "Appian, Mithridatic Wars 20 (livius.org)"
+      - "S. Mitchell, The Treaty between Rome and Lycia of 46 BC (MS 2070), in R. Pintaudi (ed.), Papyri Graecae Schøyen I (2005)"
+  - polity: Lycian League
+    of: Roman Empire
+    first_year: "27 BC"
+    last_year: "AD 42"
+    label:
+      en: "under Rome"
+      ru: "под Римом"
+      uk: "під Римом"
+      es: "bajo Roma"
+      pt: "sob Roma"
+      de: "unter Rom"
+      fr: "sous Rome"
+      pl: "pod władzą Rzymu"
+      it: "sotto Roma"
+      nl: "onder Rome"
+      cs: "pod Římem"
+      sv: "under Rom"
+      nb: "under Roma"
+      tl: "sa ilalim ng Roma"
+      da: "under Rom"
+      sr: "под Римом"
+      hu: "Róma alatt"
+      fi: "Rooman alaisuudessa"
+      vi: "thuộc Rô-ma"
+      ro: "sub Roma"
+      bg: "под властта на Рим"
+    reason: >-
+      As above, until Claudius made Lycia a province in AD 43.
+    sources:
+      - "Cassius Dio 60.17.3"

@@ -64,7 +64,6 @@ places:
   a94b661: Tiatira
   a815d89: Areópago
   abff59d: Betfagé
-  a9fc13a: Betsaida
   a581f0c: Canaã
   ae733a2: Decápolis
   ae7274b: Emaús
@@ -183,7 +182,6 @@ places:
   acf2fac: Quesil
   a0ff819: Quitlis
   a398e5d: Cós
-  ae8badb: Dibom
   ab9580e: Fonte do Dragão
   acd9b19: Ebez
   aacbcf0: Eglaim
@@ -304,9 +302,7 @@ places:
   ab635e4: Dotã
   a8eae19: En-Ganim
   aae626a: Bons Portos
-  a33cfcc: Geba
   a2f0f05: Gibeá
-  aa9c505: Hamate
   aeb09c0: Helã
   a878481: Índia
   a765bd8: Caim
@@ -330,7 +326,6 @@ places:
   ada3369: Almom
   a4bdea7: Anfípolis
   ac4f712: Afeque
-  a4cea2a: Arade
   a0e21ff: Atace
   a6d7a41: Avim
   a304bb7: Baal-Hamom
@@ -350,7 +345,6 @@ places:
   ab28e2e: En-Rimom
   a1230e5: Efrom
   a16596e: Eter
-  ae14b1d: Geba
   ac36af4: Gederotaim
   aed8df9: Gilgal
   a80bf37: Gômer
@@ -482,7 +476,6 @@ places:
   a721f7f: Torre dos Fornos
   a2109c3: Vale de Hamom-Gogue
   ae11a0d: Deserto de Maom
-  a190097: Zim
   a112fe3: Enom
   adbc931: Aim
   a2f1fa1: Amade
@@ -620,7 +613,6 @@ places:
   a728f1b: Gederote
   ab98f8c: Gitaim
   a1d1918: Helcate
-  a662eed: Quedes
   a8661e2: Madmana
   a2f0a70: Micmetate
   a38ad9f: Moré
@@ -720,7 +712,6 @@ places:
   ae46f2e: Aroer
   a4cc324: Arnom
   a6f33c5: Hazor
-  a075d61: Berseba
   af82614: Adulão
   a505743: Meribá
   a2a8df0: Bete-Seã
@@ -837,7 +828,6 @@ places:
   a51e3b0: Tanque Velho
   a8f60f3: Patmos
   a70e895: Porta dos Cacos
-  a75be6f: Ramá
   ada2a0b: Ramote
   a1b5486: Requém
   a655b28: Rimono
@@ -922,9 +912,7 @@ places:
   ae4d198: Imer
   ab86a69: Judeia
   a057d59: Estrada Real
-  a359997: Lude
   a57e0a0: Masreca
-  a15973c: Migdol
   aefaa2d: Monte Nebo
   ac1fef1: Neftoa
   ae67841: Perez-Uzá
@@ -1018,7 +1006,6 @@ places:
   a32a4f8: Caldeia
   a3e66cd: Arã
   ac6b210: Naamá
-  a63c70b: Ai
   a4e39f6: Galileia
   a2d3ca1: Geba
   ad0520f: Pute
@@ -1121,7 +1108,6 @@ places:
   a71d79b: Giom
   a763368: Gur-Baal
   ac5e5c4: Havilá
-  a1d9047: Havilá
   a8a8e54: Helbom
   a11bbbe: Hierápolis
   aedf531: Jabez
@@ -1150,7 +1136,6 @@ places:
   a897bdb: Rochedo da Separação
   a702ab6: Mar do Egito
   ad259d1: Mar de Jazer
-  a6343cc: Sela
   a5b01f4: Saazima
   a7b3f5d: Safir
   ab56451: Sila
@@ -1254,8 +1239,6 @@ places:
   a8e6824: Elom-Bete-Hanã
   a9a6f72: Efrom
   a764256: Gamade
-  a0ac467: Gate
-  a0a5b78: Gedera
   a2fc530: Gedor
   a607415: Hacefirim
   a1d5a28: Halá
@@ -1533,6 +1516,7 @@ polities:
   Kingdom of Adiabene: Reino de Adiabene
   Kingdom of Africa: Reino da África
   Kingdom of Agrippa I: Reino de Agripa I
+  Kingdom of Agrippa II: Reino de Agripa II
   Kingdom of Alamannia: Reino da Alamânia
   Kingdom of Aragon: Reino de Aragão
   Kingdom of Arles: Reino de Arles
@@ -1544,6 +1528,7 @@ polities:
   Kingdom of Brittany: Reino da Bretanha
   Kingdom of Cappadocia: Reino da Capadócia
   Kingdom of Castile: Reino de Castela
+  Kingdom of Chalcis: Reino de Cálcis
   Kingdom of Commagene: Reino de Comagena
   Kingdom of Croatia: Reino da Croácia
   Kingdom of Cyprus: Reino de Chipre
@@ -1600,6 +1585,7 @@ polities:
   Lombards: Lombardos
   Lower Burgundy: Baixa Borgonha
   Lower Egypt: Baixo Egito
+  Lycian League: Liga Lícia
   Lydia: Lídia
   Macedonian Empire: Império Macedônico
   Magadha - Shaishunaga dynasty: Magadha, dinastia Shishunaga
@@ -2863,7 +2849,6 @@ modern:
   m919c2c: Tell Miska
   m9c2d3a: Atlit
   ma66725: Wadi el-Joz
-  m1e3a5b: Trípoli
   m7e4070: Medinet-er-Ras
   m95f21e: Minya
   m7470bc: Khirbet Madin

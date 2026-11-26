@@ -138,6 +138,14 @@ description: Места, стихи, в которых они названы, с
     <code>"duplicate": true</code>; место со спорной локализацией — <code>"disputed": true</code>;
     событие, битва или экскурсия с приблизительным годом — <code>"approximate": true</code>.
   </li>
+  <li>
+    У места есть <code>certainty</code> (<code>settled</code>, <code>most likely</code>,
+    <code>tentative</code>, <code>disputed</code>) и <code>confidence</code> — оценка его
+    локализации по OpenBible.info от 0 до 1000, если OpenBible её даёт; если предложено больше
+    одного места, они перечислены в <code>sites</code>, у каждого — доля в оценке OpenBible: это
+    оценка, а не консенсус учёных. Запись, которую OpenBible завёл для одного места дважды, слита с
+    ним: её id указан в <code>aliases</code>, и ссылки с ним по-прежнему работают.
+  </li>
   <li>Файлы пересобираются с каждым выпуском данных; дата — в <code>index.json</code>.</li>
   <li>
     Первая версия только растёт: поля и файлы добавляются, но не переименовываются и не удаляются.

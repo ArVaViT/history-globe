@@ -45,7 +45,7 @@ import {
   licenceUrl,
 } from "../packages/model/src/photos.ts";
 import { LANDING, LISTS, T } from "./page-words.ts";
-import { siteCertainty } from "../packages/model/src/sites.ts";
+import { shareText, siteCertainty } from "../packages/model/src/sites.ts";
 import { loadAllLocaleData } from "../packages/model/src/locale-data.ts";
 import { placeSlugs } from "../packages/model/src/slugs.ts";
 import { distanceKm, roundKm } from "../packages/model/src/distance.ts";
@@ -93,6 +93,8 @@ interface Props {
   osis: string[];
   /** A second record of the same name on the same point (pipeline). */
   dup?: boolean;
+  /** Ids of OpenBible records merged into this place (ADR 0022). */
+  aliases?: string[];
   disputed: boolean;
   /** OpenBible's score of the shown identification, 0–1000. */
   confidence?: number;
@@ -222,13 +224,42 @@ const ui = Object.fromEntries(
 ) as Record<Lang, { kind: Record<string, string>; place: Record<string, string> }>;
 
 /**
+ * The candidate sites of a disputed place (sites.geojson), in OpenBible's order, as the place
+ * card's Sites tab lists them: a site OpenBible rates at 0 % is left out there too.
+ */
+interface SiteProps {
+  place: string;
+  label: string;
+  share?: number;
+  share_fine?: number;
+  [label: `label_${string}`]: string | undefined;
+}
+const sitesOf = new Map<string, SiteProps[]>();
+for (const f of (
+  JSON.parse(readFileSync(join(data, "sites.geojson"), "utf8")) as {
+    features: { properties: SiteProps }[];
+  }
+).features)
+  if (f.properties.share !== 0)
+    sitesOf.set(f.properties.place, [...(sitesOf.get(f.properties.place) ?? []), f.properties]);
+/** A counted text of the place card ("Disputed: 3 candidate sites") in the language's plural. */
+const counted = (l: Lang, key: string, n: number) => {
+  const t = ui[l].place;
+  const text = t[`${key}_${new Intl.PluralRules(l).select(n)}`] ?? t[`${key}_other`];
+  if (!text) throw new Error(`i18n ${l}: place.${key} has no form for ${String(n)}`);
+  return text.replace("{{count}}", String(n));
+};
+
+/**
  * How sure the location is, worded as in the place card (`siteCertainty`): nothing when
- * generally agreed.
+ * generally agreed. A disputed place says how many sites are proposed, listed below it.
  */
 function certaintyNote(p: Props, l: Lang): string {
   const t = ui[l].place;
   const c = siteCertainty(p);
-  if (c === "disputed") return T[l].disputed;
+  const versions = sitesOf.get(p.id) ?? [];
+  if (c === "disputed")
+    return versions.length > 1 ? counted(l, "sites", versions.length) : T[l].disputed;
   if (c === "agreed" || c === "unknown") return "";
   const text = c === "likely" ? t.likely_site : t.tentative_site;
   if (!text) throw new Error(`i18n ${l}: place.${c}_site is missing`);
@@ -667,6 +698,28 @@ for (const [id, langs] of Object.entries(namesakes)) {
       sameTitle.add(`namesakes.json: ${id} has an unknown language "${l}"`);
 }
 
+/**
+ * The proposed sites of a disputed place, as chips under its facts, each with OpenBible's
+ * share, and the card's note that the shares are OpenBible's estimate. Nothing for a place
+ * that is not disputed, or with fewer than two sites to show.
+ */
+function candidates(p: Props, l: Lang): string {
+  const versions = sitesOf.get(p.id) ?? [];
+  if (p.dup || siteCertainty(p) !== "disputed" || versions.length < 2) return "";
+  const note = ui[l].place.sites_note;
+  if (!note) throw new Error(`i18n ${l}: place.sites_note is missing`);
+  const items = versions.map((s) => {
+    // A site with no words in the page's language stands in English, as on the card: marked
+    // so, for a reader's voice and a translator.
+    const own = l === "en" ? undefined : s[`label_${l}`];
+    const english = own === undefined && l !== "en" ? ' lang="en"' : "";
+    return `<li${english}>${esc(own ?? s.label)}${s.share === undefined ? "" : ` <span>${shareText(l, { ...s, share: s.share })}%</span>`}</li>`;
+  });
+  return `
+      <ul class="facts">${items.join("")}</ul>
+      <p class="note">${esc(note)}.</p>`;
+}
+
 /** A page for every place with verses: its card as a page, with its article and photo. */
 function placePages(l: Lang): void {
   for (const f of shown) {
@@ -713,7 +766,7 @@ function placePages(l: Lang): void {
       ${statusLine({ l, reviews: reviewed("article", art.id), checked: T[l].checked, up: "../../../", methodology: `${docsPath(l, "methodology")}#review` })}`
           : ""
       }
-      <ul class="facts">${today ? `<li><span>${T[l].today}</span> ${esc(today)}</li>` : ""}${otherRecord ? `<li>${esc(otherRecord)}</li>` : ""}${l !== "en" && name !== p.name ? `<li><span>${T[l].english}</span> <span lang="en">${esc(p.name)}</span></li>` : ""}${note ? `<li class="warn">${esc(note)}</li>` : ""}</ul>
+      <ul class="facts">${today ? `<li><span>${T[l].today}</span> ${esc(today)}</li>` : ""}${otherRecord ? `<li>${esc(otherRecord)}</li>` : ""}${l !== "en" && name !== p.name ? `<li><span>${T[l].english}</span> <span lang="en">${esc(p.name)}</span></li>` : ""}${note ? `<li class="warn">${esc(note)}</li>` : ""}</ul>${candidates(p, l)}
       <p class="actions"><a class="button" href="../../../?place=${p.id}&amp;locale=${l}">${T[l].open} →</a></p>
       ${photoHtml(p.id, name, l)}
       ${lifeLine(content.life?.[p.id], l)}${
@@ -1312,6 +1365,35 @@ if (sameTitle.size > 0) {
 if (untranslated.size > 0) {
   for (const x of untranslated) console.error(`error: no today line in ${x}`);
   process.exit(1);
+}
+
+// A record merged into another place (ADR 0022) had a page of its own, "ai-a63c70b": the
+// address must lead to the place's page in every language (apps/web/vercel.json).
+{
+  const redirects = (
+    JSON.parse(readFileSync(join(root, "apps/web/vercel.json"), "utf8")) as {
+      redirects: { source: string; destination: string }[];
+    }
+  ).redirects;
+  // "/:lang(en|ru|…)/place/<path>" for every language of the site → the path.
+  const everyLang = (source: string) => {
+    const m = /^\/:lang\(([^)]+)\)\/place\/(.+)$/.exec(source);
+    const langs = new Set(m?.[1]?.split("|"));
+    return m && langs.size === LANGS.length && LANGS.every((l) => langs.has(l)) ? m[2] : undefined;
+  };
+  const missing: string[] = [];
+  for (const { properties: p } of places)
+    for (const alias of p.aliases ?? []) {
+      const old = `${placeSlugs([{ id: alias, name: p.name }]).get(alias) ?? alias}-${alias}`;
+      const to = `/:lang/place/${slugOf.get(p.id) ?? p.id}/`;
+      for (const path of [old, `${old}/`])
+        if (!redirects.some((r) => everyLang(r.source) === path && r.destination === to))
+          missing.push(`/<lang>/place/${path} -> ${to}`);
+    }
+  if (missing.length > 0) {
+    for (const x of missing) console.error(`error: no redirect in apps/web/vercel.json: ${x}`);
+    process.exit(1);
+  }
 }
 
 // The front page's pictures (public/shots/<lang>-<name>.jpg, taken from the app) and where

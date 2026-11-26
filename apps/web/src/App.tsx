@@ -507,7 +507,7 @@ export function App({ link }: { link: UrlView }) {
   const [linkMeasured, setLinkMeasured] = useState(false);
   if (data && initial.measure && !linkMeasured) {
     setLinkMeasured(true);
-    const [from, to] = initial.measure;
+    const [from, to] = initial.measure.map((id) => data.aliases.get(id) ?? id) as [string, string];
     if (data.byId.has(from) && data.byId.has(to)) {
       setTool("measure");
       setMeasure({ from, to });
