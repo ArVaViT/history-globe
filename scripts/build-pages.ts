@@ -45,7 +45,7 @@ import {
   licenceUrl,
 } from "../packages/model/src/photos.ts";
 import { LANDING, LISTS, T } from "./page-words.ts";
-import { siteCertainty } from "../packages/model/src/sites.ts";
+import { shareText, siteCertainty } from "../packages/model/src/sites.ts";
 import { loadAllLocaleData } from "../packages/model/src/locale-data.ts";
 import { placeSlugs } from "../packages/model/src/slugs.ts";
 import { distanceKm, roundKm } from "../packages/model/src/distance.ts";
@@ -231,6 +231,7 @@ interface SiteProps {
   place: string;
   label: string;
   share?: number;
+  share_fine?: number;
   [label: `label_${string}`]: string | undefined;
 }
 const sitesOf = new Map<string, SiteProps[]>();
@@ -712,7 +713,7 @@ function candidates(p: Props, l: Lang): string {
     // so, for a reader's voice and a translator.
     const own = l === "en" ? undefined : s[`label_${l}`];
     const english = own === undefined && l !== "en" ? ' lang="en"' : "";
-    return `<li${english}>${esc(own ?? s.label)}${s.share === undefined ? "" : ` <span>${String(s.share)}%</span>`}</li>`;
+    return `<li${english}>${esc(own ?? s.label)}${s.share === undefined ? "" : ` <span>${shareText(l, { ...s, share: s.share })}%</span>`}</li>`;
   });
   return `
       <ul class="facts">${items.join("")}</ul>

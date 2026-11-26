@@ -12,6 +12,7 @@ import {
   pick,
   formatRefOr,
   rebuiltIn,
+  shareText,
 } from "@hg/model";
 import { ArrowLeft, MapPin, Ruler, X, ZoomIn } from "./icons";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
@@ -621,7 +622,7 @@ export function PlaceCard({
                               />
                             </span>
                             <span className="w-9 shrink-0 text-right text-[12px] text-ink-soft tabular-nums">
-                              {s.share}%
+                              {shareText(locale, { ...s, share: s.share })}%
                             </span>
                           </>
                         )}

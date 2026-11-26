@@ -33,6 +33,10 @@ the data first (`pnpm data`).
   once. Content naming a retired id stops the build as any unknown id does, and
   `build-pages.ts` stops when the old page of a retired record has no redirect to the
   place's page in `apps/web/vercel.json`.
+- **The map's point is one of the candidates** (`pipeline/build_data.py`, `build_sites`): a
+  candidate "same place as X", or a circle or region around X, stands on the map's point for
+  X, and the candidate the map shows on the place's own point; a place whose point is none
+  of its candidates stops the build (the API's `sites` promise it).
 - **Water**: Natural Earth's ocean and lakes at 1:10m inside the map's region, 1:50m around
   it, without reservoirs (by type, and by id where a reservoir is tagged a lake).
 - **Water has no holes.** Islands are joined to the sea's outline by zero-width cuts

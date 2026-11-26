@@ -9,14 +9,43 @@ pull requests on GitHub have them.
 
 ## Unreleased
 
+- Places (`places.json`, `places.geojson`, the dataset): five more records OpenBible kept
+  twice for one place are merged (ADR 0022): Dibon 3 (Isa 15:9, "Dimon" in the Hebrew,
+  "Dibon" in the Isaiah scroll and the Vulgate) into Dibon 1, Lud 2 into Lud 1, Zin 2 into
+  Zin 1, Migdol 3 (Ezekiel's) into Migdol 2 (Jeremiah's) and Sela 3 into Sela 2. Their ids
+  are in `aliases` and their old pages redirect. Of records on one point under one name, one
+  with an article now keeps the label before one with more verses, so the Migdol of the
+  Exodus and Sela 1 keep `/place/migdol/` and `/place/sela/`. Bethel 3 (Jer 48:13, Zech 7:2)
+  stays apart until its reading is decided (item 17).
+- Places (`places.json` `sites`, `sites.geojson`): a candidate "same place as X", or a circle
+  or region around X, stands on the map's point for X, not where OpenBible puts X: Elath's
+  "same place as Ezion-geber" on Tell el-Kheleifeh, not Pharaoh's Island, and Dimonah's
+  "same place as Dibon" on the Dibon of Judah, not on Dhiban in Moab. The map's point of a
+  place is now always one of its candidates, as the API says (it was not for Bealoth,
+  Bethul, Canneh, Hukok, Ir-moab and the Sea of Jazer), and the build checks it. 41 places'
+  candidates move; Baalath-beer, Baal-hermon, the Bethel of the Negeb, Dimonah and Libnah
+  are no longer disputed.
+- `sites.geojson`: new field `share_fine`, a candidate's share to one decimal where it is
+  within half a point of the 20 % of the disputed rule. The map's card and the place pages
+  print it, so Nimrim's Wadi Nimrin reads 19.7 % (not disputed) and Debir's Umm ed Debar
+  20.2 % (disputed), not both 20 %.
+- Articles (`articles/<language>.json`), in all 21 languages: south says the Ptolemies ruled
+  Egypt from 323 BC "most of that time from Alexandria" (Memphis was the seat until about
+  313 BC); lud-lydia keeps Jeremiah's and Ezekiel's Lud, with its African reading, on the
+  one Lud; migdol-exodus says Jeremiah's and Ezekiel's Migdol are one place. The Eusebius
+  note on the Mount of Olives (`ancient.json`) says, as Life of Constantine 3.41-43 does,
+  that Helena's church was built in memory of the Ascension, over the cave where Jesus
+  taught his disciples, and that the Imbomon on the summit came later.
+
 - Places (`places.json`, `places.geojson`, the dataset): twelve records OpenBible kept twice
   for one place under one name on one point are merged into the other (ADR 0022): Ai,
   Arad, Beersheba, Bethsaida, Gath, Geba (two), Gederah, Hamath, Havilah,
   Kedesh, Ramah. The place takes every verse of the retired record, so
   `verses/<Book>.json` now names the place for them. The retired ids are listed in the
   place's new field `aliases` (also a column of the dataset's `places`); `?place=` and the
-  old pages (`/en/place/ai-a63c70b/`) still lead to the place. The other 38 pairs on one
-  point stay apart, with the reason (docs/crosswalk/their-errors.md, item 17).
+  old pages (`/en/place/ai-a63c70b/`) still lead to the place. Five more follow (below); the
+  other 38 records on the point of a record of the same name stay apart, each with its
+  reason (docs/crosswalk/their-errors.md, item 17).
 - Places (`places.json`): new fields `certainty` (`settled`, `most likely`, `tentative` or
   `disputed`, as the dataset's column), `confidence` (OpenBible.info's score of the
   identification, 0–1000) and `sites` (the candidate sites with their names, points and
@@ -25,11 +54,12 @@ pull requests on GitHub have them.
 - Places (`places.geojson`, `places.json`, the dataset): a place is `disputed` when the
   candidate sites more than 5 km from the leading one together hold at least 20 % of
   OpenBible.info's assessment of the sites shown (or none is assessed); before, when the
-  runner-up alone held 10 %. Rivals on the same ruin and scattered minor proposals no longer
-  make a place disputed: 275 places are, against 478 before. `certainty` follows.
+  runner-up alone held 10 %. Rival sites within 5 km of each other and scattered minor
+  proposals no longer make a place disputed: 267 places are, against 478 before.
+  `certainty` follows.
 - Tours (`constantine`): the Mount of Olives stop calls Helena's church "later known as the
   Eleona" (Eusebius does not name it; the name is first in Egeria, in the 380s) and cites
-  Eusebius, Life of Constantine 3.41–43.
+  Eusebius, Life of Constantine 3.41-43.
 - Ezion-geber is on Tell el-Kheleifeh, which most reference works, OpenBible's votes
   (28 to 15) and Wikidata hold, instead of Jezirat Faraun, which leads only by
   OpenBible's recent-trend weighting; it stays disputed, Jezirat Faraun and Elath its other
@@ -37,9 +67,10 @@ pull requests on GitHub have them.
 
 - Tours (`constantine`): Helena's church on the Mount of Olives, the Eleona, has its own stop
   after Bethlehem, over the cave where Jesus was remembered as teaching his disciples; the
-  Bethlehem stop keeps the Nativity cave alone, and neither says the church marked the
-  ascension. The Eusebius note on the Mount of Olives reads the same way. Thanks to a
-  reader's correction.
+  Bethlehem stop keeps the Nativity cave alone. Eusebius says Helena built it in memory of
+  the Ascension, over that cave; the Eusebius note on the Mount of Olives says so, and that
+  the separate Ascension shrine on the summit, the Imbomon, came later in the fourth
+  century. Thanks to a reader's correction.
 - States (`polities*.geojson`, `rulers.json`): the borders audit of 2026-11-23 brought the
   map's state for each place in line with the articles, a place passing to the new state in
   the year of the event. Galilee, Dor, Megiddo, Gilead and the upper Jordan are Assyria's

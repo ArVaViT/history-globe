@@ -12,6 +12,7 @@ from pipeline.build_data import (
     banned_lonlats,
     build_coast,
     build_places,
+    build_sites,
     load_aliases,
     load_place_points,
     merge_aliases,
@@ -191,6 +192,13 @@ class BuildPlacesWithChosenSite(unittest.TestCase):
         self.assertEqual(p["properties"]["confidence"], 142)
         self.assertEqual((p["properties"]["where"], p["properties"]["where_ref"]), ("m_yaquq", "m_yaquq"))
 
+    def test_of_two_records_on_one_point_the_one_with_an_article_keeps_the_label(self) -> None:
+        more = dict(HUKKOK, id="h2", friendly_id="Hukkok 2", verses=[{"osis": "Josh.19.34"}, {"osis": "Josh.19.35"}])
+        places, _, _ = build_places([HUKKOK, more], MODERN, {}, set())
+        self.assertEqual({f["properties"]["id"] for f in places["features"] if f["properties"].get("dup")}, {"hukkok"})
+        places, _, _ = build_places([HUKKOK, more], MODERN, {}, set(), articles={"hukkok"})
+        self.assertEqual({f["properties"]["id"] for f in places["features"] if f["properties"].get("dup")}, {"h2"})
+
     def test_without_a_choice_the_first_identification_is_shown(self) -> None:
         places, _, _ = build_places([HUKKOK], MODERN, {}, set())
         p = places["features"][0]
@@ -221,6 +229,45 @@ class BuildPlacesWithChosenSite(unittest.TestCase):
         record = dict(HUKKOK, identifications=[ident("m_jem", "35.26,32.86", 283), ident("m_osm", "35.1,31.1", 1)])
         with self.assertRaises(SystemExit):
             build_places([record], MODERN, {}, set(), None, {"hukkok": "m_osm"})
+
+
+class BuildSitesOnTheMapsPoints(unittest.TestCase):
+    @staticmethod
+    def ident(description: str, lonlat: str, score: int) -> dict:
+        return {"description": description, "resolutions": [res("m_wd", lonlat)], "score": {"time_total": score}}
+
+    def sites(self, record: dict, points: dict) -> list[list[float]]:
+        fc, _, _ = build_sites([record], MODERN, points, {"old": "ezion"})
+        return [f["geometry"]["coordinates"] for f in fc["features"]]
+
+    def test_same_place_as_x_stands_on_the_maps_x(self) -> None:
+        # Elath: OpenBible resolves Ezion-geber to the island; the map has it on the tell.
+        elath = {
+            "id": "elath",
+            "friendly_id": "Elath",
+            "identifications": [
+                self.ident('<modern id="m_wd">Aqaba</modern>', "35.3,31.3", 700),
+                self.ident('another name for <ancient id="ezion">Ezion-geber</ancient>', "35.01,31.01", 100),
+                self.ident('within 5 km of <ancient id="old">Ezion-geber</ancient>', "35.02,31.02", 50),
+            ],
+        }
+        points = {"elath": (35.3, 31.3), "ezion": (35.4, 31.4)}
+        self.assertEqual(self.sites(elath, points), [[35.3, 31.3], [35.4, 31.4], [35.4, 31.4]])
+        # Without the map's points (the first pass) OpenBible's own are kept.
+        self.assertEqual(self.sites(elath, {}), [[35.3, 31.3], [35.01, 31.01], [35.02, 31.02]])
+
+    def test_the_shown_candidate_stays_on_the_places_own_point(self) -> None:
+        # Cabbon and Machbenah: each "another name" for the other, on two points.
+        cabbon = {
+            "id": "cabbon",
+            "friendly_id": "Cabbon",
+            "identifications": [
+                self.ident('another name for <ancient id="machbenah">Machbenah</ancient>', "35.1,31.1", 600),
+                self.ident('<modern id="m_wd">Khirbet</modern>', "35.6,31.6", 300),
+            ],
+        }
+        points = {"cabbon": (35.11, 31.11), "machbenah": (35.5, 31.5)}
+        self.assertEqual(self.sites(cabbon, points), [[35.11, 31.11], [35.6, 31.6]])
 
 
 class LoadPlacePoints(unittest.TestCase):
@@ -317,7 +364,7 @@ class Disputed(unittest.TestCase):
         self.assertFalse(is_disputed([self.cand(35.0, 81), self.cand(35.1, 19)]))
 
     def test_a_rival_next_door_does_not(self) -> None:
-        # 0.03 degree is under 3 km: the same ruin's neighbourhood.
+        # 0.03 degree is under 3 km: a rival site nearby, inside the 5 km.
         self.assertFalse(is_disputed([self.cand(35.0, 50), self.cand(35.03, 50)]))
 
     def test_minor_far_rivals_count_together(self) -> None:

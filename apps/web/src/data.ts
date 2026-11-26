@@ -87,6 +87,8 @@ export interface Site {
   readonly labels?: Readonly<Record<string, string>>;
   /** null when OpenBible has rated none of the candidates. */
   readonly share: number | null;
+  /** The share to one decimal, near the disputed rule's 20 % (`shareText`). */
+  readonly share_fine?: number;
   readonly at: readonly [number, number];
 }
 
@@ -165,9 +167,24 @@ export interface LoadedData {
 // Under the app's base path, so it also works when served from a sub-path.
 export const DATA_URL = `${import.meta.env.BASE_URL}data`;
 
-type SiteProps = { place: string; label: string; label_ru?: string; share?: number } & Readonly<
-  Record<`label_${string}`, unknown>
->;
+type SiteProps = {
+  place: string;
+  label: string;
+  label_ru?: string;
+  share?: number;
+  share_fine?: number;
+} & Readonly<Record<`label_${string}`, unknown>>;
+
+/** Each retired id of a merged record (ADR 0022) → the place it is merged into. */
+export function aliasesOf(
+  features: readonly { readonly properties: Pick<PlaceProps, "id" | "aliases"> }[],
+): Map<string, string> {
+  return new Map(
+    features.flatMap((f) =>
+      (f.properties.aliases ?? []).map((a): [string, string] => [a, f.properties.id]),
+    ),
+  );
+}
 
 export function groupSites(fc: FeatureCollection<Point, SiteProps>): Map<string, Site[]> {
   const sites = new Map<string, Site[]>();
@@ -184,6 +201,7 @@ export function groupSites(fc: FeatureCollection<Point, SiteProps>): Map<string,
       ...(labelRu ? { labelRu } : {}),
       labels,
       share: f.properties.share ?? null,
+      ...(f.properties.share_fine !== undefined ? { share_fine: f.properties.share_fine } : {}),
       at: [lon, lat],
     });
     sites.set(f.properties.place, list);
@@ -470,7 +488,12 @@ export async function loadData(): Promise<LoadedData> {
   // A lesson in the address (lesson.ts): its code loads only then.
   if (typeof window !== "undefined" && /[?&]lesson=/.test(window.location.search)) {
     const { lessonTour } = await import("./lesson-tour");
-    const lesson = lessonTour(window.location.search, byId, content.chapter_years ?? {});
+    const lesson = lessonTour(
+      window.location.search,
+      byId,
+      content.chapter_years ?? {},
+      aliasesOf(places.features),
+    );
     if (lesson) tours.unshift(lesson);
   }
   const marked = new Set(
@@ -494,9 +517,7 @@ export async function loadData(): Promise<LoadedData> {
   return {
     places,
     byId,
-    aliases: new Map(
-      places.features.flatMap((f) => (f.properties.aliases ?? []).map((a) => [a, f.properties.id])),
-    ),
+    aliases: aliasesOf(places.features),
     tours,
     sites,
     alsoHere: here,
