@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { formatRef, yearOfRef, type Locale } from "@hg/model";
 import type { LoadedData } from "./data";
 

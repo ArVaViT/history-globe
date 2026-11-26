@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { polityText, type BattleInfo, type PolityName, type Renderer } from "@hg/core";
 import { useEffect, useState } from "react";
 import { formatYear, type Locale, placeName, pick } from "@hg/model";

@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { isLocale } from "@hg/model";
 import type { Camera, Engine, Renderer } from "@hg/core";
 import { chapterFocus, chapterOf, withoutYear } from "./chapter";

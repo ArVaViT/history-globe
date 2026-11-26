@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 // Checks of the source lines in every language (content/sources-<code>.yaml), run by
 // build-content.ts. Each takes the English line and one translation and returns what is wrong.
 

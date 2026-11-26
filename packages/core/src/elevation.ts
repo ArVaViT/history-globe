@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import type { LonLat } from "./renderer.ts";
 
 /** The relief's tiles are 512 px across. */

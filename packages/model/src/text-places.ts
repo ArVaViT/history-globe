@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Finding the places a text names with the index of scripts/build-text-places.ts (the one
  * public/hg-places.js uses on other sites): only names that point to one place, in every

@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Writes apps/web/public/data/verses/<locale>/<Book>.json: the text of every verse the
  * places cite, keyed by its English (OSIS) reference, so the place card can show a

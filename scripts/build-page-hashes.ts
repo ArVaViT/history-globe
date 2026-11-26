@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * page-hashes.json: a short hash of every page the sitemap lists, by its path from the site
  * root ("de/place/jerusalem/" → "3f9c0a1b2c4d"), published with the site. IndexNow

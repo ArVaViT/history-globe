@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """Step 7: the wave's content file, content/ancient-sites-wave<WAVE>.json: names no other place
 on the map has, in every language Wikidata gives a fitting one, and years fixed by hand where
 the periods cannot give them.

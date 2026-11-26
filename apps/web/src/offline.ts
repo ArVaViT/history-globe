@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The globe without a network (public/sw.js): the service worker keeps what was fetched, and
  * a save fetches the rest ahead — the data, the photos and the relief of the lands the

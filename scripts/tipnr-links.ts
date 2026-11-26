@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * content/tipnr.json: each place's record in STEPBible's TIPNR, from OpenBible's link
  * (ancient.jsonl, `linked_data`, source "tipnr") brought to the TIPNR the people build parsed

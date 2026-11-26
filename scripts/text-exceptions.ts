@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The records the text checks (text-checks.ts) still let through, each waiting for its
  * rewrite: the lists only shrink, and the build fails on an entry that passes now.

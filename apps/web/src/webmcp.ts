@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * WebMCP, an experiment: the map's read-only tools for AI agents in the reader's browser
  * (agent-tools.ts). The API is `document.modelContext` since Chrome 150 and was

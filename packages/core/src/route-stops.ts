@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import type { LonLat } from "./renderer.ts";
 
 /** Items grouped by the point they stand at (to 0.0001°), in the order each point first comes. */

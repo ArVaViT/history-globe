@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /** Handlers by event name, as each renderer keeps them for `Renderer.on`. */
 export class Emitter<E extends Record<keyof E, (...args: never[]) => void>> {
   private readonly handlers = new Map<keyof E, Set<E[keyof E]>>();

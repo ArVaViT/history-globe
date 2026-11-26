@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * What the static pages (build-pages.ts) and the documentation (build-docs.ts) share in
  * their head: the description, the canonical address, the same page in every language

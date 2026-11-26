@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import "@fontsource-variable/golos-text";
 import "@fontsource-variable/literata";
 import "maplibre-gl/dist/maplibre-gl.css";

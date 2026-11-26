@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Downloads the photos of content/photos.yaml from Wikimedia Commons, 960 px wide, into
  * apps/web/public/data/photos/<place id>.jpg, so readers load them from the site and not

@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Short content hashes: the 12 hex digits of a SHA-256. One function for the built pages
  * (build-page-hashes.ts, which IndexNow compares) and for the reviewed items (reviews.ts),

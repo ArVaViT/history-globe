@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The words of reviews by scholars on the static pages (build-pages.ts, review-pages.ts):
  * the line under an article's or a question's title, the list of reviews and each review's

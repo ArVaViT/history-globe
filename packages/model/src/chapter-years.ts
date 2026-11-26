@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { VERSES } from "./versification.ts";
 
 /** A run of chapters and its year, as content/chapter-years.yaml gives it. */

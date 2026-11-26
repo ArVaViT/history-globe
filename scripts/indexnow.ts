@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Sends the pages that changed since the last run to IndexNow (scripts/indexnow-core.ts says
  * how they are chosen). Run by .github/workflows/indexnow.yml after a production deploy, and

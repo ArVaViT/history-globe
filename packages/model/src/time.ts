@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 // Time model (ADR 0003). All years are astronomical integers: 1 BC = 0, 2 BC = -1,
 // AD 1 = 1. Intervals are half-open [from, to). Conversion to "BC/AD" labels happens
 // only here. JavaScript Date is never used for historical years.

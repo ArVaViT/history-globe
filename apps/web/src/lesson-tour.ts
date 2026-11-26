@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import type { LonLat, PlaceInfo } from "@hg/core";
 import { medianYear, yearOfRef, type ChapterYears, LOCALES } from "@hg/model";
 import { translate } from "./i18n";

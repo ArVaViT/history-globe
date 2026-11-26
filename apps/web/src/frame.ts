@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { createContext, useContext } from "react";
 
 /** How the app is framed, read once from the address (main.tsx): `embed=1` and `ui=map`. */

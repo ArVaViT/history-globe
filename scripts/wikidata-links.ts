@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * content/wikidata.json: each place's Wikidata item, as OpenBible links it (ancient.jsonl,
  * `linked_data`, source "wikidata"). Only a plain link counts: OpenBible marks some links

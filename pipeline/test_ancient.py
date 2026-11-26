@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """The wave scripts of pipeline/ancient: their years, kinds and names, and two steps run on a
 small work directory, without the network."""
 

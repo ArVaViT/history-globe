@@ -52,3 +52,7 @@ apps/web/maps/
 
 # Vercel CLI (project link and local builds; deploys are prebuilt, ADR 0012)
 .vercel/
+
+# The reservation of text and data mining (scripts/build-pages.ts, packages/model/src/reservation.ts)
+apps/web/public/robots.txt
+apps/web/public/.well-known/tdmrep.json

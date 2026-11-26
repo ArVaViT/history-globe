@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """Build the Roman roads layer for History Globe from the Itiner-e dataset.
 
 Source: Zenodo 10.5281/zenodo.17122148, file itinere_roads.geojson

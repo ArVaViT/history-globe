@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The open data as static JSON, for other sites and apps (docs/…/api.html): which places a
  * verse names, the places with their coordinates and names in every language of the site,

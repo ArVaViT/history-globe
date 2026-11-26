@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { describe, expect, it } from "vitest";
 import { parseYearInput, PERIODS } from "@hg/model";
 import { AGE_SPANS, AGES, clampView, FULL_VIEW, ticksFor, zoomView } from "./Timeline";

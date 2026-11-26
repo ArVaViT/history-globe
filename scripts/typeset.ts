@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Each language's typography for the text of a page: a number keeps its unit and its era, a
  * date's era stays whole («до н. э.»), a dash keeps the word before it. Run over the

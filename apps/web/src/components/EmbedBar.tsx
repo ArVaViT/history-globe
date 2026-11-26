@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { useRef, useState } from "react";
 import { useDismiss } from "../app-hooks";
 import { formatRef, type Locale, placeName } from "@hg/model";

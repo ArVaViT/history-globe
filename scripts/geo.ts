@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /** Plane geometry on lon/lat rings, shared by the states' build and the rulers' bands. */
 
 export type Ring = [number, number][];

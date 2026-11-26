@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * A tour's leg as its card draws it: the relief along the way from the stop before, and
  * whether the leg is a walk at all.

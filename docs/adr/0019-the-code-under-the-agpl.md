@@ -41,7 +41,11 @@ licence can change without anyone else's consent.
   permit it (ADR 0016); the data stays CC BY 4.0 (ADR 0014); the reviews belong to their
   authors; the name, the logo and the project's own part of the preview images stay
   reserved. The reservation of text and data mining no
-  longer covers the code: the AGPL forbids further restrictions (sections 7 and 10).
+  longer covers the code: the AGPL forbids further restrictions (sections 7 and 10). Nor is
+  it stated any longer for the whole site: `robots.txt`, `tdmrep.json` and the
+  `tdm-reservation` header and meta tag name the article and question pages,
+  `data/articles/` and `api/v1/questions.json` alone, so that the data, the API, the map and
+  the dataset are free of it in machine-readable form as in their licence.
 - **The beacon is the production build's alone** (ADR 0017): a build from the source for
   any other address carries no script that reports to historyglobe.app.
 

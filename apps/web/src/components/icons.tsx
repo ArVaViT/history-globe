@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The UI icons, copied as plain SVG from Lucide (https://lucide.dev, ISC); many of them
  * derive from Feather (MIT). Both notices ship with the app in

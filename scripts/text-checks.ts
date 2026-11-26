@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Checks on the texts of every language (ADR 0015), run by build-content.ts:
  * - each language speaks of its own Bible: no other edition named (the Synodal text outside

@@ -1,7 +1,11 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { HONEYPOT_PATH, honeypotLink } from "./honeypot.ts";
+import { patternMatches, robotsTxt } from "./reservation.ts";
 
 const web = join(import.meta.dirname, "../../../apps/web");
 const read = (file: string) => readFileSync(join(web, file), "utf8");
@@ -34,11 +38,14 @@ function groups(text: string): Group[] {
   return out;
 }
 
-/** What the group says of a path: the most specific rule wins, Allow on a tie, allowed by default. */
+/**
+ * What the group says of a path: the most specific rule wins, Allow on a tie, allowed by
+ * default (RFC 9309, with its `*` and `$`).
+ */
 function allowed(g: Group, path: string): boolean {
   let best: { allow: boolean; path: string } | undefined;
   for (const r of g.rules) {
-    if (r.path === "" || !path.startsWith(r.path)) continue;
+    if (r.path === "" || !patternMatches(r.path, path)) continue;
     if (
       !best ||
       r.path.length > best.path.length ||
@@ -50,7 +57,8 @@ function allowed(g: Group, path: string): boolean {
 }
 
 describe("the honeypot", () => {
-  const robots = groups(read("public/robots.txt"));
+  // robots.txt as scripts/build-pages.ts writes it, with Jerusalem's article.
+  const robots = groups(robotsTxt(["jerusalem"]));
 
   it("is disallowed for every crawler in robots.txt, and the places are not", () => {
     expect(robots.length).toBeGreaterThan(1);
@@ -64,10 +72,14 @@ describe("the honeypot", () => {
   });
 
   // The API's data is CC BY 4.0 and open to every crawler, the training crawlers too; the
-  // answers (questions.json, CC BY-NC-ND 4.0) and the site itself stay closed to those.
-  it("leaves the open API to every crawler, but the answers to no training crawler", () => {
+  // articles and the answers (CC BY-NC-ND 4.0) stay closed to those.
+  it("leaves the open API to every crawler, but the articles and the answers to no training crawler", () => {
     const training = robots.find((g) => g.agents.includes("GPTBot"));
     expect(training && allowed(training, "/en/place/jerusalem/")).toBe(false);
+    expect(training && allowed(training, "/uk/place/jerusalem/")).toBe(false);
+    expect(training && allowed(training, "/en/q/from-dan-to-beersheba/")).toBe(false);
+    expect(training && allowed(training, "/en/place/bethel/")).toBe(true);
+    expect(training && allowed(training, "/en/tour/paul-1/")).toBe(true);
     for (const g of robots) {
       expect(allowed(g, "/api/v1/places.json"), g.agents.join(", ")).toBe(true);
       expect(allowed(g, "/api/v1/index.json"), g.agents.join(", ")).toBe(true);

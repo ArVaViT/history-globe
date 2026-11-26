@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Map icons for kinds of places, drawn on a canvas at load time: no sprite files to
  * ship or license. Shapes are single-colour (SDF) so the style can tint them, highlight

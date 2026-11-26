@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Every link and image of the site's own pages (apps/web/public: the documentation, the
  * static pages in each language, and the pages at the root, the embed and the licences)

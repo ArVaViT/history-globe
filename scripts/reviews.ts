@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Reviews by scholars (content/reviews/*.yaml): read, checked against the content they
  * cover, and told what has changed since. build-content.ts calls it and writes the result

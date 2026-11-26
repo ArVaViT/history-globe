@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * What the repository's own front pages say of the data, checked against the build
  * (build-docs.ts runs both checks, so `pnpm content` and `pnpm gate` refuse a stale page):

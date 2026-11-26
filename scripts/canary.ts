@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Canary marks in the published data and texts (ADR 0017): small, deterministic choices
  * that change neither what a reader sees nor what the data says, only how it is written

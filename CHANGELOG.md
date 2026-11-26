@@ -9,6 +9,10 @@ pull requests on GitHub have them.
 
 ## Unreleased
 
+- The reservation of text and data mining is stated only where the articles and the answers
+  are: `questions.json` and `articles/<language>.json` are sent with `tdm-reservation: 1`; the
+  rest of the API and the data no longer are, and `/.well-known/tdmrep.json` says so. The
+  notice in `index.json` says the same.
 - Places (`places.json`, `places.geojson`, the dataset): five more records OpenBible kept
   twice for one place are merged (ADR 0022): Dibon 3 (Isa 15:9, "Dimon" in the Hebrew,
   "Dibon" in the Isaiah scroll and the Vulgate) into Dibon 1, Lud 2 into Lud 1, Zin 2 into

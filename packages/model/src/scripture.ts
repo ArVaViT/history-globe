@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { localeData } from "./locale-data.ts";
 import type { Locale } from "./locales.ts";
 import { fromSynodalChapter, synodalChapterEnd, toSynodal } from "./synodal.ts";

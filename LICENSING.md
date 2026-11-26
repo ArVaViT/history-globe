@@ -47,6 +47,17 @@ documentation pages in `content/docs/`).
 > You should have received a copy of the GNU Affero General Public License along with this
 > program, in the file `LICENSE`. If not, see <https://www.gnu.org/licenses/>.
 
+Each source file of the code carries a short notice at its top, in its own comment syntax:
+
+```
+SPDX-License-Identifier: AGPL-3.0-or-later
+Additional terms under section 7: see LICENSING.md
+```
+
+The notice points here; it does not replace this file. The files under another licence (the
+places-in-any-text script, the articles, the data) and the generated files carry none, and
+`scripts/spdx-headers.ts` checks that every other source file has it.
+
 ### Additional terms under section 7
 
 These are additional terms of the licence of the code, as section 7 of the GNU Affero General
@@ -106,11 +117,18 @@ CC BY-NC-ND 4.0.
 For these texts, the copyright holder reserves the right to reproduce and extract them for text
 and data mining, within the meaning of Article 4(3) of Directive (EU) 2019/790, including for
 the training, fine-tuning or evaluation of machine-learning models, as far as the licence above
-does not already permit the use. The site states the reservation in its `robots.txt` (the
-Disallow lines for training crawlers and the Content-Signal line, `ai-train=no`) and in the
-`tdm-reservation: 1` header. Both are sent for the whole site, but the reservation covers this
-part only. Every other part is under its own licence, which governs it and which the
-reservation does not narrow; the open data of the API stays open to every crawler.
+does not already permit the use.
+
+The reservation stands where these texts are published, and nowhere else: the place pages that
+carry an article (`/{language}/place/{slug}/`), the question pages and their list
+(`/{language}/q/{slug}/`, `/{language}/questions/`), the articles as the map loads them
+(`/data/articles/`) and the answers in the API (`/api/v1/questions.json`), in every language.
+The site states it there in machine-readable form: `robots.txt` disallows these paths to the
+crawlers that gather text for training, `/.well-known/tdmrep.json` lists them (W3C TDMRep),
+and they are sent with the `tdm-reservation: 1` header or carry the `tdm-reservation` meta tag.
+The data, the rest of the API, the other place pages, the map, the downloads and the dataset
+carry no reservation: every other part is under its own licence, which governs it and which the
+reservation does not narrow.
 
 ## Part 3. The data: CC BY 4.0
 

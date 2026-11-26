@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The words of the static pages (build-pages.ts), one block per site language; the
  * documentation (build-docs.ts) takes the ones it shares with them, the skip link and the

@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * What this browser remembers for the reader: settings in localStorage, a visit's state in
  * sessionStorage. Storage may be refused (a private window, blocked site data): a read then

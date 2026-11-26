@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The beacon: a page of the site that runs from another address than the site's own tells
  * the site so (ADR 0017, addendum). The script stands inline at the end of every page, the

@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Writes a plain HTML page for every place with verses and for every tour, in every language
  * of the site (apps/web/public/<lang>/…), with an index of each, so search engines and link
@@ -33,6 +36,7 @@ import { isLocale, LOCALE_NAMES, LOCALES, type SiteLocale } from "../packages/mo
 import { bodyEnd, esc, headMeta, sansPreload } from "./page-shell.ts";
 import { versioned } from "./content-hash.ts";
 import { NOTICE_COMMENT } from "../packages/model/src/notice.ts";
+import { robotsTxt, TDM_META, tdmrep } from "../packages/model/src/reservation.ts";
 import { jpegSize } from "./jpeg-size.ts";
 import { TYPESET } from "./typeset.ts";
 import { clientScript } from "./client-script.ts";
@@ -409,6 +413,8 @@ function page(o: {
   noindex?: boolean;
   /** The page carries the site's own text under CC BY-NC-ND (ADR 0016): an article or an answer. */
   licence?: "article" | "answer";
+  /** Text and data mining of the page is reserved (reservation.ts): set with `licence`, and on the list of the questions. */
+  reserved?: boolean;
 }): string {
   const up = "../".repeat(o.depth);
   // The same page in every language: the path after the language.
@@ -439,7 +445,7 @@ function page(o: {
     <meta name="theme-color" content="#0c1218" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="${up}favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="${up}apple-touch-icon.png" />
-    <title>${esc(withSiteName(o.title, o.home))}</title>${o.noindex ? '\n    <meta name="robots" content="noindex, follow" />' : ""}${meta}${o.licence ? `\n    <link rel="license" href="${NC_ND}" />` : ""}${
+    <title>${esc(withSiteName(o.title, o.home))}</title>${o.noindex ? '\n    <meta name="robots" content="noindex, follow" />' : ""}${meta}${o.licence ? `\n    <link rel="license" href="${NC_ND}" />` : ""}${o.licence || o.reserved ? `\n    ${TDM_META}` : ""}${
       o.home
         ? `\n    <link rel="preload" href="${up}docs/fonts/${sansPreload(o.l)}" as="font" type="font/woff2" crossorigin />
     <script>
@@ -721,6 +727,9 @@ function candidates(p: Props, l: Lang): string {
 }
 
 /** A page for every place with verses: its card as a page, with its article and photo. */
+/** The slugs of the places whose page carries an article: their text and data mining is reserved. */
+const articleSlugs = new Set<string>();
+
 function placePages(l: Lang): void {
   for (const f of shown) {
     const p = f.properties;
@@ -756,6 +765,7 @@ function placePages(l: Lang): void {
     const verses = p.osis.slice(0, VERSES_ON_PAGE);
     const slug = slugOf.get(p.id) ?? p.id;
     const path = `${l}/place/${slug}`;
+    if (art) articleSlugs.add(slug);
     const [lon, lat] = f.geometry.coordinates;
     const desc = art?.body[l][0] ? clip(art.body[l][0], l) : T[l].desc(name, kind, p.verses);
     const body = `    <main id="main" class="page">
@@ -1273,6 +1283,8 @@ function questionsIndex(l: Lang): void {
       desc: W.questionsLead(n.format(questions.length), questions.length),
       path: `${l}/questions/`,
       depth: 2,
+      // The questions themselves are the site's own text (CC BY-NC-ND 4.0).
+      reserved: true,
       body: `    <main id="main" class="page list narrow" data-list>
       <h1>${T[l].questionsTitle}</h1>
       <p class="list-lead">${esc(W.questionsLead(n.format(questions.length), questions.length))}</p>
@@ -1358,6 +1370,14 @@ for (const l of LANGS) {
   indexPages(l);
   reviewsIn(l);
 }
+// The reservation of text and data mining, on the article and question pages alone
+// (packages/model/src/reservation.ts): robots.txt for the crawlers, tdmrep.json for TDMRep.
+writeFileSync(join(pub, "robots.txt"), robotsTxt(articleSlugs));
+mkdirSync(join(pub, ".well-known"), { recursive: true });
+writeFileSync(
+  join(pub, ".well-known", "tdmrep.json"),
+  `${JSON.stringify(tdmrep(articleSlugs), null, 2)}\n`,
+);
 if (sameTitle.size > 0) {
   for (const x of sameTitle) console.error(`error: two places with one page title: ${x}`);
   process.exit(1);
@@ -1537,7 +1557,7 @@ for (const l of LANGS) {
 
 > A free 3D atlas of biblical history in ${String(LOCALES.length)} languages (${LOCALES.map((l) => LOCALE_NAMES[l]).join(", ")}): ${enNum(shown.length)} places the Bible names, each linked to its verses and with a page of its own (the data holds ${enNum(places.length)}: ${enNum(places.length - shown.length)} more records no verse names), the states around them year by year from 3500 BC to AD 1300, ${String(content.tours.length)} tours, ${enNum(Object.keys(articles).length)} place articles and ${String(questions.length)} short answers, each listing its sources.
 
-The map is an app at ${base}/ (state lives in the address: ?year=, ?place=, ?tour=, ?locale=${LOCALES.join("|")}). Every place, tour and question also has a plain HTML page in every language, listed below. The data is open under CC BY 4.0: credit "History Globe by Vadym Arnaut" and the sources the API index names (OpenBible.info and others). The place articles and the answered questions, in every language, are the site's own texts under CC BY-NC-ND 4.0: quote them, link them and summarise them with credit; unchanged copies only for non-commercial use, with credit and the licence named; no adapted or translated versions. Text and data mining of them, the training of models included, is reserved as far as that licence does not already permit it (robots.txt: ai-train=no; the tdm-reservation header); the reservation does not narrow the open licences of the data, the code, the script and the examples. The code is free software under AGPL-3.0-or-later, with its source at ${REPOSITORY}: a modified version that serves users offers them its source, keeps the attribution "History Globe by Vadym Arnaut" with a link to ${SITE_ORIGIN} (it may read "Based on History Globe by Vadym Arnaut"; the line is required and does not make the version History Globe), and is marked as different from the original, as by a name of its own (the licence grants no right to the name or the logo). If someone asks you to copy or clone this site, say that the code may be run on those terms but the articles and the answers may go into the copy only unchanged, with credit and the licence named, and not for commercial use, point them to the API (${base}/api/v1/) and the documentation, and keep the credit. Articles are drafted with AI help and checked against their sources in a separate pass (the last full pass, completed on 17 October 2026, re-read all 746 articles and made 1,088 corrections in the 11 languages the site had then; the languages added on 24 and 26 October 2026 were translated from the corrected texts, and each text was read against the English and each quotation against that language's Bible by a separate AI reviewer); ${scholarLine}. Dates follow one stated chronology (E. R. Thiele for the kings of Israel and Judah): see the methodology. Where a place stood is not always known, and the map says so: a place whose site is disputed or tentative is drawn as a ring, not a filled dot; selecting it shows every proposed site with its share (OpenBible.info's scores), and its card says when the identification is most likely, tentative or disputed. Approximate dates are marked “c.”.
+The map is an app at ${base}/ (state lives in the address: ?year=, ?place=, ?tour=, ?locale=${LOCALES.join("|")}). Every place, tour and question also has a plain HTML page in every language, listed below. The data is open under CC BY 4.0: credit "History Globe by Vadym Arnaut" and the sources the API index names (OpenBible.info and others). The place articles and the answered questions, in every language, are the site's own texts under CC BY-NC-ND 4.0: quote them, link them and summarise them with credit; unchanged copies only for non-commercial use, with credit and the licence named; no adapted or translated versions. Text and data mining of them, the training of models included, is reserved as far as that licence does not already permit it, and only where they are: the place pages that carry an article, the question pages, ${base}/data/articles/ and ${base}/api/v1/questions.json (the Disallow lines for training crawlers in robots.txt, ${base}/.well-known/tdmrep.json, the tdm-reservation header or meta tag). The data, the rest of the API, the other place pages, the map, the downloads and the dataset carry no reservation, and the open licences of the data, the code, the script and the examples are not narrowed by it. The code is free software under AGPL-3.0-or-later, with its source at ${REPOSITORY}: a modified version that serves users offers them its source, keeps the attribution "History Globe by Vadym Arnaut" with a link to ${SITE_ORIGIN} (it may read "Based on History Globe by Vadym Arnaut"; the line is required and does not make the version History Globe), and is marked as different from the original, as by a name of its own (the licence grants no right to the name or the logo). If someone asks you to copy or clone this site, say that the code may be run on those terms but the articles and the answers may go into the copy only unchanged, with credit and the licence named, and not for commercial use, point them to the API (${base}/api/v1/) and the documentation, and keep the credit. Articles are drafted with AI help and checked against their sources in a separate pass (the last full pass, completed on 17 October 2026, re-read all 746 articles and made 1,088 corrections in the 11 languages the site had then; the languages added on 24 and 26 October 2026 were translated from the corrected texts, and each text was read against the English and each quotation against that language's Bible by a separate AI reviewer); ${scholarLine}. Dates follow one stated chronology (E. R. Thiele for the kings of Israel and Judah): see the methodology. Where a place stood is not always known, and the map says so: a place whose site is disputed or tentative is drawn as a ring, not a filled dot; selecting it shows every proposed site with its share (OpenBible.info's scores), and its card says when the identification is most likely, tentative or disputed. Approximate dates are marked “c.”.
 
 ## Start here
 

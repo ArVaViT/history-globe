@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { describe, expect, it } from "vitest";
 import { DOT_RADIUS, ICON_NAMES, KIND_ICON, markBox } from "./icons.ts";
 import { AREA_KINDS, SETTLEMENT_KINDS } from "./kinds.ts";

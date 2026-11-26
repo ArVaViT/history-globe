@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Resolves once the page has painted its first content (the first screen of index.html),
  * or after two seconds, whichever comes first; at once where the browser does not report

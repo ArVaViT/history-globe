@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The comparison behind scripts/check-photo-credits.ts: what a photo in content/photos.yaml
  * must say for the file's Wikimedia Commons metadata (the `extmetadata` of its image info).

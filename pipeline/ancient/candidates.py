@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """Step 3: the wave's candidates (wave/candidates.json). Pleiades' places with a precise point
 inside the focus ellipse, settlements, sanctuaries and ports, linked to a Wikidata item, none
 within 3 km of a place on the map, nor already a site or refused.

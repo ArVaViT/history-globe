@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Every place of the built data, selected, is named beside its ring at the zoom the camera
  * flies to (engine.ts: zoomForKind). A reader of a host page (STEPBible) picks places from

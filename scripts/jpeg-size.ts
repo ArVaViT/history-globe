@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The pixel size a JPEG file declares in its frame header, so a page can give an <img> its
  * width and height without an image library. Null for anything that is not a JPEG or has

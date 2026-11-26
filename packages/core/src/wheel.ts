@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * What a wheel event means on the globe. On a Mac trackpad two fingers moving pan the
  * map, and a pinch arrives as a wheel event with ctrlKey set: that zooms. A mouse wheel

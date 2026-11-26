@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 // Eras for the time slider, Southern Levant, mainstream Israeli scheme (Mazar, NEAEHL).
 // All boundaries are approximate; where chronology is disputed the era says so.
 

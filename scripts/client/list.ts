@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 // The search on the static index pages (build-pages.ts), a progressive enhancement: without
 // it every name is a link on the page, and the search box and the filter stay hidden. A name
 // matches as the app's search matches it (packages/model/src/fold.ts: whatever the case,

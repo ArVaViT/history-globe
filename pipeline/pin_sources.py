@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """Move the pins of pipeline/sources.json to the latest commit of each upstream file.
 
     python3 -m pipeline.pin_sources                 # show what has moved upstream, change nothing

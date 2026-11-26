@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Who ruled each place, century by century, for the card's band (data/rulers.json): the
  * states whose shape holds its point, the smallest where several overlap (Judah inside the

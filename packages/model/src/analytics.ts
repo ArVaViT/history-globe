@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Anonymous visit counts: Vercel Web Analytics, no cookies, no IP kept (the privacy page,
  * content/docs/<lang>/privacy.html). The app's page and every built page carry this one

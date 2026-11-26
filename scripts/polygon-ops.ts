@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Boolean operations and repairs on lon/lat polygons, for the corrections to the states'
  * shapes (scripts/build-polities.ts): a state drawn by hand, land added to a state's shape,

@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Writes the documentation site, apps/web/public/docs/ (English) and docs/<lang>/ (every
  * other language), from the page sources in content/docs/<lang>/*.html: what the globe is, how its data

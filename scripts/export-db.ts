@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * A built data release as CSV, one file per table of db/migrations, for `\copy` into
  * Supabase (db/README.md). Reads apps/web/public/data after `pnpm data`;

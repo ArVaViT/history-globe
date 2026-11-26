@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The tours' route pictures (1200×630, no words, so one serves every language): land and
  * lakes from Natural Earth (public domain, pipeline/.cache from `pnpm data`), the way and

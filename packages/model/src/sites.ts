@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { localeData } from "./locale-data.ts";
 
 /** A candidate site as the data build writes it (sites.geojson properties). */

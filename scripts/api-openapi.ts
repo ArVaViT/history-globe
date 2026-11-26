@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The open data API (scripts/build-api.ts) described in OpenAPI 3.1: api/v1/openapi.json.
  * Static files, no key, no server; every path is a GET of a JSON file. The schemas say what

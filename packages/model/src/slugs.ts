@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * A place page's slug from the English name. It must not move when the data is rebuilt,
  * so it depends on names only: a name held by one place (its duplicates aside) is the

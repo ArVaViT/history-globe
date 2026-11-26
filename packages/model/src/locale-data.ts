@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { ALL_LOCALES, type Locale } from "./locales.ts";
 
 /** How a language writes a year and a century (time.ts formatYear, formatCentury). */

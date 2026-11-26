@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The reviewer's packet (docs/reviews/README.md): the articles, answered questions and tours
  * a scholar has agreed to read, as one PDF to print or annotate — numbered paragraphs, the

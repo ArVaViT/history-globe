@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The documentation's page sources (content/docs/<lang>/*.html) go into the built pages as
  * HTML, unescaped (scripts/build-docs.ts), and the pages run on the site's own origin. So a

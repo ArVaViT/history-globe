@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { describe, expect, it } from "vitest";
 import { BOOKS, DEUTEROCANON } from "../packages/model/src/scripture.ts";
 import { STEP_TO_OSIS, USFM_TO_OSIS } from "./bible-books.ts";

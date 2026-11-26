@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /** What a key press does on the map, or null when it belongs to the focused control. */
 export type KeyAction =
   | { readonly kind: "year"; readonly delta: number }

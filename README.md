@@ -80,8 +80,8 @@ breach the other two terms; it is marked in reasonable ways as different from th
 by a name of its own (7(c)); and the licence grants no trademark rights to the name or the logo
 (7(e)). The articles and the answers may be copied and shared unchanged, with credit and the
 licence named, and not for commercial use; changed or translated versions may not be shared.
-Text and data mining of them is reserved as far as their licence does not already permit it; the
-reservation does not narrow the open licences of the other parts. Third-party data keeps its own
+Text and data mining of them is reserved as far as their licence does not already permit it, on
+their pages alone; the data, the API, the map and the dataset carry no reservation. Third-party data keeps its own
 licence (`docs/ATTRIBUTIONS.md`). The crosswalk tables cite Theographic Bible Metadata and
 are under its CC BY-SA 4.0; they are not part of the site, the API or the dataset. Which
 licence covers which path, and how a contribution is licensed: [`LICENSING.md`](LICENSING.md),

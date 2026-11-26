@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The length of each leg of the Roman-era tours along the Roman roads (Itiner-e, the
  * map's roads layer): how far Paul walked from Lystra to Iconium, not the straight line.

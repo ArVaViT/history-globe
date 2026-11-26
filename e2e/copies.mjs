@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The beacon and the honeypot (ADR 0017, addendum) in a real browser, against a build of the
  * site (vite preview). The site itself, its embed, a preview and Google Translate's proxy

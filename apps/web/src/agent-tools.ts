@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * WebMCP tools (webmachinelearning.github.io/webmcp): what an AI agent working in the
  * reader's browser can ask the map, without clicking through it. Two tools, both read-only:

@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { formatRef, formatYear, type HistoryEvent, type Locale, pick } from "@hg/model";
 import { useEffect, useEffectEvent, useRef } from "react";
 import { useTranslation } from "../i18n";

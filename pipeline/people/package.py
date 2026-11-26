@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """People of the Bible for the app: apps/web/public/data/people.json, loaded on demand.
 
 From the TIPNR build in pipeline/.cache/people (parse_tipnr.py, then build.py) and the

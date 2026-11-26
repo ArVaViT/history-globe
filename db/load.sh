@@ -1,4 +1,7 @@
 #!/bin/bash
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 # Load db/seed/*.csv (node scripts/export-db.ts) into a database made from db/migrations.
 # Usage: DATABASE_URL=postgres://... db/load.sh   (Supabase: the session pooler or direct URL)
 # Tables are emptied first and filled in dependency order, in one transaction.

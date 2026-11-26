@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The Content-Security-Policy's `script-src` (apps/web/vercel.json) allows the site's own
  * scripts and, by hash, each inline script its pages carry. A page whose inline script

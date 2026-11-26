@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import type { PlaceLife } from "./content.ts";
 
 /** What the link resolution needs of a place (places.geojson properties). */
