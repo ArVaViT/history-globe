@@ -31,7 +31,9 @@ function defaultTitle(): Words {
 
 /**
  * The tour of a lesson in the address (lesson.ts): its places in order, each at the year it
- * was picked in, with the place's verse nearest that year; null under two places.
+ * was picked in, with the place's verse nearest that year; null under two places. A link
+ * made before a record was merged into another place (ADR 0022) names the retired id:
+ * `aliases` leads it to the place, as `?place=` does, and the place counts once.
  */
 export function lessonTour(
   search: string,
@@ -40,8 +42,12 @@ export function lessonTour(
     { readonly props: { readonly osis: readonly string[] }; readonly info: PlaceInfo }
   >,
   table: ChapterYears,
+  aliases: ReadonlyMap<string, string> = new Map(),
 ): LessonTour | null {
+  const seen = new Set<string>();
   const picked = lessonStops(search)
+    .map((s) => ({ ...s, id: aliases.get(s.id) ?? s.id }))
+    .filter((s) => !seen.has(s.id) && Boolean(seen.add(s.id)))
     .map((s) => ({ ...s, osis: byId.get(s.id)?.props.osis ?? [] }))
     .filter((s) => s.osis.length > 0);
   if (picked.length < 2) return null;

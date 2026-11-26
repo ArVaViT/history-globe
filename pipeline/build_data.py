@@ -431,12 +431,14 @@ def build_places(
     items: dict[str, str] | None = None,
     fame: dict[str, int] | None = None,
     region_points: dict[str, list[float]] | None = None,
+    articles: set[str] | None = None,
 ) -> tuple[dict, dict, list[str]]:
     """`items` is each place's Wikidata item as content/wikidata.json has it: OpenBible's
     links checked against Wikidata, so a point or a rank never comes from another place's
     item. `fame` is the Wikipedia articles of an item (content/fame.json, fame_rank).
     `region_points` is the Wikidata point of a land OpenBible puts on a city's point
-    (content/place-points.json, `wikidata`: Judea on Jerusalem), already fetched."""
+    (content/place-points.json, `wikidata`: Judea on Jerusalem), already fetched.
+    `articles` is the places with an article (content/articles), which keep their label."""
     items, fame, region_points = items or {}, fame or {}, region_points or {}
 
     def shown(r: dict) -> dict | None:
@@ -526,18 +528,21 @@ def build_places(
     # OpenBible splits one location into several records by referent (Bethel 1 and 2 on one
     # point). On the map they would print the same name twice: only the most mentioned of
     # each name at a point keeps its label; the others are marked `dup` and keep their dot.
+    # A record with an article keeps it before one with more verses: its page and address
+    # stay when a merge (ADR 0022) gives its namesake more verses (the Migdol of the Exodus).
     groups: dict[tuple, list[dict]] = {}
     for f in feats:
         groups.setdefault((*f["geometry"]["coordinates"], f["properties"]["name"]), []).append(f)
     duplicates = 0
     for group in groups.values():
-        for f in sorted(group, key=lambda f: -f["properties"]["verses"])[1:]:
+        group.sort(key=lambda f: (f["properties"]["id"] not in (articles or set()), -f["properties"]["verses"]))
+        for f in group[1:]:
             f["properties"]["dup"] = True
             duplicates += 1
         # The label stands for all of them: it takes the rank fame gave one of them (Ur the land,
         # in four verses, carries the fame of Ur the city on its point).
         best = min(group, key=lambda f: f["properties"]["rank"])["properties"]
-        head = max(group, key=lambda f: f["properties"]["verses"])["properties"]
+        head = group[0]["properties"]
         if best is not head and "weight" in best and best["rank"] < head["rank"]:
             head["rank"] = best["rank"]
             head["weight"] = max(head["verses"], best.get("weight", 0))
@@ -1112,9 +1117,10 @@ MAX_SITES = 6
 # A place is disputed when the candidates more than DISPUTED_MIN_KM from the leading one (the
 # largest share) together hold at least DISPUTED_MIN_SHARE % of OpenBible's assessment of the
 # candidates shown, or when none is rated. Capernaum, Tell Hum 100 % against Khirbet Minyeh
-# 0 %, is not; nor is a place whose rivals are the same ruin a few hundred metres off, or
-# several minor proposals that are not one rival together (decided by the owner, 2026-11-25:
-# the runner-up at 10 % had made 478 places disputed, now about 280).
+# 0 %, is not; nor is a place whose rivals lie within 5 km of the leading site (et-Tell and
+# el-Araj for Bethsaida, some 2 km apart), or several minor proposals that are not one
+# rival together (decided by the owner, 2026-11-25: the runner-up at 10 % had made 478
+# places disputed, now about 280).
 DISPUTED_MIN_SHARE = 20
 DISPUTED_MIN_KM = 5
 
@@ -1187,7 +1193,13 @@ def identification_confidence(ident: dict) -> int | None:
     return max(0, min(1000, round(float(total))))
 
 
-def build_sites(records: list[dict], modern: dict[str, dict]) -> tuple[dict, dict[str, tuple[int, bool]], dict]:
+def build_sites(
+    records: list[dict],
+    modern: dict[str, dict],
+    points: dict[str, tuple[float, float]] | None = None,
+    aliases: dict[str, str] | None = None,
+    chosen: dict[str, str] | None = None,
+) -> tuple[dict, dict[str, tuple[int, bool]], dict]:
     """Candidate locations of disputed places (ADR 0007: a place ≠ a site).
 
     OpenBible scores each identification (`score.time_total`, weighted towards recent
@@ -1195,20 +1207,43 @@ def build_sites(records: list[dict], modern: dict[str, dict]) -> tuple[dict, dic
     MAX_SITES, and turn their positive scores into shares of what is shown, labelled in
     the UI as "OpenBible's assessment", not as a scholarly consensus. When no shown
     candidate has a positive score, `share` is omitted: "not assessed", not "0 %".
+
+    `points` is the map's point of each place: a candidate "same place as X" stands on X's
+    point there, not on the site OpenBible resolves X to, which the map may have moved
+    (Ezion-geber, content/place-points.json); so does a circle or region around X. When that candidate is the one the map shows
+    (`chosen` as content/place-points.json's `site`, else the first), it stands on the
+    place's own point instead, so the map's point is always one of the candidates, also for
+    two records OpenBible calls each other's other name on two points (Cabbon and
+    Machbenah). `aliases` leads a retired X to its place (ADR 0022).
     """
     banned = banned_lonlats(modern)
+    points, aliases = points or {}, aliases or {}
     feats, per_place = [], {}
     for r in records:
         ids = r.get("identifications") or []
+        shown = (pick_site(r, chosen) or (ids[0] if ids else None)) if points else None
         cands = []
         for i, ident in enumerate(ids):
             res = first_point(ident)
-            if res is None or coord_banned(res, modern, banned):
+            if res is None:
                 continue
-            lon, lat = parse_lonlat(res["lonlat"])
-            score = float((ident.get("score") or {}).get("time_total") or 0)
             base = NUMBER_SUFFIX.sub("", r["friendly_id"])
-            cands.append({"i": i, "lon": lon, "lat": lat, "score": score, **site_label(ident.get("description", ""), base)})
+            label = site_label(ident.get("description", ""), base)
+            ref = aliases.get(label.get("ref", ""), label.get("ref", ""))
+            ours = None
+            if label.get("tpl") in ("same", "same_name"):
+                ours = points.get(r["id"]) if ident is shown else points.get(ref)
+            elif label.get("tpl") in ("within", "around", "region") and ident is not shown:
+                # "Within 30 km of Jazer" is centred on Jazer: on the map's Jazer.
+                ours = points.get(ref)
+            if ours is not None:
+                lon, lat = ours
+            elif coord_banned(res, modern, banned):
+                continue
+            else:
+                lon, lat = parse_lonlat(res["lonlat"])
+            score = float((ident.get("score") or {}).get("time_total") or 0)
+            cands.append({"i": i, "lon": lon, "lat": lat, "score": score, **label})
         cands = cands[:MAX_SITES]
         if len(cands) < 2:
             continue
@@ -1225,6 +1260,13 @@ def build_sites(records: list[dict], modern: dict[str, dict]) -> tuple[dict, dic
                     "label": c["label"],
                     **{k: c[k] for k in ("tpl", "ref", "ref_text", "n", "unit") if k in c},
                     **({"share": round(100 * max(c["score"], 0) / total)} if total > 0 else {}),
+                    # Near the disputed rule's 20 % a whole per cent hides which side a share is
+                    # on (Nimrim 19.7, Lo-debar's Debir 20.2): the card and the pages print this.
+                    **(
+                        {"share_fine": round(100 * max(c["score"], 0) / total, 1)}
+                        if total > 0 and abs(100 * max(c["score"], 0) / total - DISPUTED_MIN_SHARE) < 0.5
+                        else {}
+                    ),
                 },
             })
     stats = {"places_with_sites": len(per_place), "sites": len(feats)}
@@ -1238,7 +1280,6 @@ def main() -> None:
     aliases = load_aliases(ROOT / "content" / "place-aliases.json")
     records, aliases_of = merge_aliases(records, aliases)
     modern = load_modern()
-    sites, sites_per_place, site_stats = build_sites(records, modern)
     rivers, river_labels, river_stats = build_rivers()
     river_places = {f["properties"]["place"] for f in rivers["features"] if "place" in f["properties"]}
     same_as, chosen_sites, region_items = load_place_points(ROOT / "content" / "place-points.json")
@@ -1252,8 +1293,21 @@ def main() -> None:
     if missing:
         raise SystemExit(f"place-points: no Wikidata point for {', '.join(missing)}")
     region_points = {pid: coords[q] for pid, q in region_items.items()}
+    articles = {
+        m.group(1)
+        for f in (ROOT / "content" / "articles").glob("*.yaml")
+        if (m := re.search(r"^place: (a[0-9a-f]+)", f.read_text(encoding="utf-8"), re.M))
+    }
+    # A place's point does not depend on its candidates, but its candidates "same place as X"
+    # stand on X's point: the points first, then the candidates, then the places with them.
+    sites, sites_per_place, _ = build_sites(records, modern)
+    first, _, _ = build_places(
+        records, modern, sites_per_place, river_places, same_as, chosen_sites, items, fame, region_points, articles
+    )
+    points = {f["properties"]["id"]: tuple(f["geometry"]["coordinates"]) for f in first["features"]}
+    sites, sites_per_place, site_stats = build_sites(records, modern, points, aliases, chosen_sites)
     places, place_stats, excluded_places = build_places(
-        records, modern, sites_per_place, river_places, same_as, chosen_sites, items, fame, region_points
+        records, modern, sites_per_place, river_places, same_as, chosen_sites, items, fame, region_points, articles
     )
     # The ids of the records merged into a place (ADR 0022): a link that names one still opens it.
     for f in places["features"]:
@@ -1265,6 +1319,12 @@ def main() -> None:
     shipped = {f["properties"]["id"] for f in places["features"]}
     sites["features"] = [f for f in sites["features"] if f["properties"]["place"] in shipped]
     site_stats["sites"] = len(sites["features"])
+    # The API promises that the map's point is one of a place's candidates (scripts/api-openapi.ts).
+    at = {f["properties"]["id"]: f["geometry"]["coordinates"] for f in places["features"]}
+    on = {(f["properties"]["place"], tuple(f["geometry"]["coordinates"])) for f in sites["features"]}
+    off = sorted({p for p, _ in on if (p, tuple(at[p])) not in on})
+    if off:
+        raise SystemExit(f"sites: the map's point is none of the candidates of {', '.join(off)}")
     assert_no_banned_points({"places.geojson": places, "sites.geojson": sites}, modern)
     polities, polity_labels, polity_stats = build_polities()
     water, coast = build_water()

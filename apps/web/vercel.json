@@ -169,6 +169,56 @@
       "permanent": true
     },
     {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/dibon-ae8badb",
+      "destination": "/:lang/place/dibon-a0d784a/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/dibon-ae8badb/",
+      "destination": "/:lang/place/dibon-a0d784a/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/lud-a359997",
+      "destination": "/:lang/place/lud/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/lud-a359997/",
+      "destination": "/:lang/place/lud/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/zin-a190097",
+      "destination": "/:lang/place/zin/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/zin-a190097/",
+      "destination": "/:lang/place/zin/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/migdol-a15973c",
+      "destination": "/:lang/place/migdol-aa6d1bd/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/migdol-a15973c/",
+      "destination": "/:lang/place/migdol-aa6d1bd/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/sela-a6343cc",
+      "destination": "/:lang/place/sela-af8ce6a/",
+      "permanent": true
+    },
+    {
+      "source": "/:lang(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/place/sela-a6343cc/",
+      "destination": "/:lang/place/sela-af8ce6a/",
+      "permanent": true
+    },
+    {
       "source": "/:file((?:[^/]+/)*[^/]+\\.html)/",
       "destination": "/:file",
       "permanent": true

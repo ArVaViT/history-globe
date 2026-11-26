@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { siteLabelIn } from "./sites.ts";
+import { shareText, siteLabelIn } from "./sites.ts";
 
 const ru = (id: string) => ({ a818a40: "Авила", a217d18: "Вавилон" })[id];
 
@@ -80,5 +80,14 @@ describe("siteLabelIn", () => {
         ru,
       ),
     ).toBe("там же, где Авила в других стихах");
+  });
+});
+
+describe("shareText", () => {
+  it("prints whole per cent, and one decimal where the build gives it", () => {
+    expect(shareText("en", { share: 80 })).toBe("80");
+    expect(shareText("en", { share: 20, share_fine: 19.7 })).toBe("19.7");
+    expect(shareText("ru", { share: 20, share_fine: 20.2 })).toBe("20,2");
+    expect(shareText("de", { share: 20, share_fine: 20 })).toBe("20,0");
   });
 });

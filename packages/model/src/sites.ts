@@ -67,3 +67,19 @@ export function siteCertainty(place: {
   if (c >= 800) return "agreed";
   return c >= 600 ? "likely" : "tentative";
 }
+
+/**
+ * A candidate's share of OpenBible's assessment as the card and the place pages print it,
+ * without the per cent sign: whole per cent, but one decimal where the data build gives one
+ * (`share_fine`, near the 20 % of the disputed rule), so 19.7 and 20.2 do not both read 20.
+ */
+export function shareText(
+  locale: string,
+  site: { readonly share: number; readonly share_fine?: number | undefined },
+): string {
+  return site.share_fine === undefined
+    ? new Intl.NumberFormat(locale).format(site.share)
+    : new Intl.NumberFormat(locale, { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(
+        site.share_fine,
+      );
+}

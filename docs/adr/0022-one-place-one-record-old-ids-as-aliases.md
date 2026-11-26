@@ -44,7 +44,16 @@ pages (`/en/place/ai-a63c70b/`), tours and links people keep.
   A reader that kept a retired id finds it under `aliases`.
 - The retired record's own minority identification is no longer a candidate of its own; the
   article may say it. Gath 3 (Obed-edom the Gittite) loses Gath-rimmon (6 of its 20 votes
-  on OpenBible; votes are OpenBible's `vote_count`, not distinct sources).
+  on OpenBible; votes are OpenBible's `vote_count`, not distinct sources). Of the five merged
+  on 2026-11-26, Lud 2 loses an African Lud ("about 500 km around Tripoli", 10 of 25; the
+  Lud article names that reading), Dibon 3 loses Dimnah (4) and Madmen (5), Zin 2 "in Zin 1"
+  (5), Migdol 3 Magdolum (2).
+- A merge must not move a page: the record with the most verses at a point carries the label
+  and the plain address, but one with an article comes first. Migdol 2 and Sela 2, with
+  more verses after the merges of 2026-11-26, stay `dup` beside the Migdol of the Exodus
+  and Sela 1, which keep their articles and /place/migdol/ and /place/sela/.
+- Bethel 3 (Jer 48:13, Zech 7:2) passes the rule but stays apart until its reading is
+  decided: many read the god Bethel in Jer 48:13, and Zech 7:2 as the name Bethel-sharezer.
 - The rule is necessary, not sufficient: each pair is read against its verses, and two that
   pass it stay apart. Bealoth 2 (1 Kgs 4:16): Baanah's district "in Asher and in Aloth" is in
   the north, not the Negeb town of Josh 15:24; on OpenBible "not a proper name" has a vote
