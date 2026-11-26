@@ -152,7 +152,7 @@ describe("vercel.json", () => {
     // Every fixed path reservation.ts names has the header, in every language.
     for (const pattern of RESERVED_FIXED)
       for (const l of ["en", "vi"]) {
-        const path = pattern.replace("*", l) + (pattern.endsWith("/") ? "x/" : "");
+        const path = pattern.replaceAll("*", l) + (pattern.endsWith("/") ? "x/" : "");
         expect(reserved(path), path).toBe("1");
       }
   });
