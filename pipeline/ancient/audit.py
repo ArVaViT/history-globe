@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """The years of content/ancient-sites.json, the sites chosen by hand before the waves, against
 Wikidata's and Pleiades' (wave/audit.json): a site that ends long after Wikidata's end or
 Pleiades' last period, or starts far from either, is listed to be read one by one.

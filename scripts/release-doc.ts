@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * docs/data-release.md names every field the release carries, for whoever builds on it. The
  * content build checks what it writes against it (the states, content.json, the articles):

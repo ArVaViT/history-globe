@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The beacon and the honeypot (ADR 0017, addendum) in a real browser, against a build of the
  * site (vite preview). The site itself, its embed, a preview and Google Translate's proxy
@@ -7,8 +10,9 @@
  * shows where the original is. The other hosts are played by routes: nothing leaves the
  * machine.
  *
- * Usage: HG_URL=http://localhost:4173/ pnpm e2e:copies (with `vite preview` of a build
- * running; see e2e/browser.mjs)
+ * Usage: HG_URL=http://localhost:4173/ pnpm e2e:copies (with `vite preview` of a production
+ * build running: SITE_URL=https://historyglobe.app, without which the build carries no
+ * beacon; see e2e/browser.mjs)
  */
 import { readFileSync } from "node:fs";
 import { BASE, launch } from "./browser.mjs";

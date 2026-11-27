@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """Itiner-e's roads (Zenodo 10.5281/zenodo.17122148, v1.3, CC BY 4.0) into the pipeline cache.
 
 78 MB, fetched once and checked against the MD5 Zenodo publishes for the file; build_roads.py

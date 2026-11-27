@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Every place of the built data, selected, is flown to close enough to stand apart from the
  * great town beside it (engine.ts selectedZoom), and the town stays in view. Golgotha, 460 m

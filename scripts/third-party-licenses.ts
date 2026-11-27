@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Writes apps/web/public/licenses/third-party.txt: the licence text, with its copyright, of
  * every package whose code or files the site ships. The list is read from the build, not

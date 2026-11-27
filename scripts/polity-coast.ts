@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The states' shapes brought out to the coast (scripts/build-polities.ts). Cliopatria's
  * outlines are drawn at a scale where a coast may run a few kilometres inland of the real

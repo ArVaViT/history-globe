@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 // English (OSIS) chapter and verse → the Synodal numbering, for references shown in
 // Russian. Data and links keep the English numbering (BibleGateway's RUSV reads it and
 // shows the Synodal verse); a Russian reader with a printed Bible looks for Ps 67:16,

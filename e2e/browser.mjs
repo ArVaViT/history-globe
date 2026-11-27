@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * What the browser checks share: the address of the running app, a Chromium, a page whose
  * relief does not come from the network, and the wait for the map's first frame.

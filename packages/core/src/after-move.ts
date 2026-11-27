@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /** The part of a MapLibre map `afterMoveEnd` listens to. */
 export interface MoveEnds {
   once(type: "moveend", listener: () => void): unknown;

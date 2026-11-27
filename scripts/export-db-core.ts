@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * A built data release as the tables of db/migrations, and the keys that loading them into
  * Postgres would check. The pure part of scripts/export-db.ts, kept apart so the tests

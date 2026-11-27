@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 // The honeypot: one address set apart for the programs that ignore robots.txt (ADR 0017,
 // addendum). robots.txt disallows it for every crawler, and every page links to it with a
 // link no reader sees: hidden, out of the tab order, out of the accessibility tree, and

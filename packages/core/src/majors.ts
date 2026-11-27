@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The great towns (rank 0) kept on the map at each zoom. Their rings are drawn whatever
  * names, states, battles or seas lie near (style.ts place-label-major), so MapLibre's

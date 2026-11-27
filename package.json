@@ -1,6 +1,7 @@
 {
   "name": "history-globe",
   "private": true,
+  "license": "AGPL-3.0-or-later",
   "type": "module",
   "packageManager": "pnpm@11.27.1",
   "engines": {
@@ -15,7 +16,7 @@
     "format:check": "prettier --check .",
     "test": "vitest run",
     "data": "python3 -m pipeline.build_data && pnpm people && pnpm roads && node scripts/build-verses.ts && node scripts/build-content.ts && node scripts/build-photos.ts",
-    "gate": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm test:pipeline && pnpm content && node scripts/check-links.ts && node scripts/check-pages.ts && pnpm build && node scripts/third-party-licenses.ts --check && node scripts/check-csp.ts && node scripts/check-budget.ts",
+    "gate": "pnpm format:check && node scripts/spdx-headers.ts && pnpm lint && pnpm typecheck && pnpm test && pnpm test:pipeline && pnpm content && node scripts/check-links.ts && node scripts/check-pages.ts && pnpm build && node scripts/third-party-licenses.ts --check && node scripts/check-csp.ts && node scripts/check-budget.ts",
     "gate:full": "pnpm data && pnpm gate",
     "roads": "python3 -m pipeline.roads.fetch && python3 -m pipeline.roads.build_roads pipeline/.cache/itinere_roads.geojson --outdir apps/web/public/data",
     "people": "python3 -m pipeline.people.parse_tipnr && python3 -m pipeline.people.build > /dev/null && python3 -m pipeline.people.package",
@@ -28,7 +29,8 @@
     "sources": "node scripts/sources.ts",
     "licenses": "node scripts/third-party-licenses.ts",
     "photo-credits": "node scripts/check-photo-credits.ts",
-    "tour-images": "node scripts/tour-images.mjs"
+    "tour-images": "node scripts/tour-images.mjs",
+    "headers": "node scripts/spdx-headers.ts --fix"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",

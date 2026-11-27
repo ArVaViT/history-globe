@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { expression } from "@maplibre/maplibre-gl-style-spec";
 import fc from "fast-check";
 import type { Feature, FeatureCollection, Point } from "geojson";

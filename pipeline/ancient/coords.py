@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """Step 9: the sites' points against their Wikidata items' (P625), those more than 5 km apart
 printed farthest first. Most are Wikidata's rough points or a disputed site; the rest are a
 wrong pairing of Pleiades and Wikidata (Lycian Korykos as the Cilician city) or a wrong

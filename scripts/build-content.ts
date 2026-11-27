@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Validates everything in content/ against the single schema (ADR 0007) and writes
  * apps/web/public/data/content.json. Fails loudly on any invalid record, and on tour

@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 // How a search compares text: the app's place search (apps/web/src/data.ts) and the static
 // pages' and the documentation's own searches (scripts/client/) fold with these. No imports:
 // the static pages' scripts carry this file's code as it stands (scripts/client-script.ts).

@@ -5,8 +5,9 @@ description: Hva du kan ta fra History Globe og hvordan — dataene gjennom API-
 
 <p class="lede">
   Alt globusen vet om steder, vers, personer og reiser, står deg fritt til å bygge videre på,
-  gjennom de <a href="api.html">åpne dataene</a> og <a href="embedding.html">innbyggingen</a>. Selve
-  globusen, artiklene og koden skal ikke kopieres. Denne siden sier hvor grensen går.
+  gjennom de <a href="api.html">åpne dataene</a> og <a href="embedding.html">innbyggingen</a>. Koden
+  er fri programvare; artiklene forblir slik de er skrevet, og navnet er globusens eget. Denne siden
+  sier hvor grensen går.
 </p>
 
 <h2 id="what-you-may-take">Hva du kan ta</h2>
@@ -33,15 +34,18 @@ description: Hva du kan ta fra History Globe og hvordan — dataene gjennom API-
       </tr>
       <tr>
         <td>Kartet på siden din</td>
-        <td>fri</td>
+        <td>
+          <a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> eller senere (appen)
+        </td>
         <td>
           Én <code>iframe</code>: <a href="embedding.html">Innbygging</a>. Kildene vises på selve
-          kartet.
+          kartet. Rammen viser appen slik den kjører her; data og artikler i den beholder lisensene
+          sine ovenfor.
         </td>
       </tr>
       <tr>
         <td>Lenker og kort for bibelstedene som dine egne tekster nevner</td>
-        <td>fri</td>
+        <td><a href="https://opensource.org/license/mit">MIT</a></td>
         <td>
           Ett skript: <a href="embedding.html#places">Steder i en hvilken som helst tekst</a>.
         </td>
@@ -50,24 +54,39 @@ description: Hva du kan ta fra History Globe og hvordan — dataene gjennom API-
         <td>Stedsartiklene og de besvarte spørsmålene, på alle språk</td>
         <td><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></td>
         <td>
-          Siter dem, lenk til dem, del dem som de er, med kildehenvisning. Ikke endre, oversett
-          eller publiser dem på nytt, og ikke legg dem inn i et datasett.
+          Siter dem og lenk til dem. Kopier og del dem uendret, i alle medier, med kildehenvisning
+          og lisensen oppgitt og ikke til kommersielle formål. Ikke del endrede eller oversatte
+          versjoner. Retten til tekst- og datautvinning, også trening av modeller, er forbeholdt, så
+          langt lisensen ikke allerede tillater bruken.
         </td>
       </tr>
       <tr>
-        <td>Nettstedet, koden og designet</td>
-        <td>alle rettigheter forbeholdt</td>
+        <td>Koden: appen, sidene, byggingen og datapipelinen</td>
+        <td><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> eller senere</td>
         <td>
-          At du leser koden på GitHub, gir ingen rett til å bruke den. Ingen speil, ingen kopier av
-          globusen, ingen nettsteder bygd av pakken eller av <code>/data</code>-filene.
+          <a href="https://github.com/ArVaViT/history-globe">Kildekoden på GitHub</a>. Kjør den,
+          studer den, endre den og del den. En endret versjon som betjener andre, tilbyr dem
+          kildekoden sin under samme lisens og beholder linjen «History Globe by Vadym Arnaut» (den
+          kan lyde «Based on History Globe by Vadym Arnaut») med en lenke til dette nettstedet;
+          linjen er påkrevd og gjør ikke versjonen til History Globe. En bygging fra kildekoden
+          sender ingenting til dette nettstedet. Kodeeksemplene i denne dokumentasjonen er i det fri
+          (<a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>).
+        </td>
+      </tr>
+      <tr>
+        <td>Navnet «History Globe» og logoen</td>
+        <td>ikke lisensiert</td>
+        <td>
+          En endret versjon er merket som forskjellig fra originalen, for eksempel med et eget navn;
+          lisensen gir ingen rett til navnet eller logoen.
         </td>
       </tr>
     </tbody>
   </table>
 </div>
 <p class="note">
-  Kort sagt: ta dataene gjennom API-et og oppgi kilden; vis kartet gjennom innbyggingen; ikke klon
-  globusen.
+  Kort sagt: ta dataene gjennom API-et og oppgi kilden; vis kartet gjennom innbyggingen; kjør koden
+  under AGPL, en endret versjon under et eget navn.
 </p>
 
 <h2 id="how-to-credit">Slik oppgir du kilden</h2>
@@ -86,7 +105,8 @@ places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIP
 <p>
   <code>{{site}}/api/v1/index.json</code> inneholder de fullstendige kildelinjene, og hvert API-svar
   sendes med en <code>Link</code>-header som navngir lisensen. En sitert artikkel eller et sitert
-  svar krediteres som «History Globe (Vadym Arnaut), CC BY-NC-ND 4.0», med en lenke til siden.
+  svar krediteres som «History Globe (Vadym Arnaut), CC BY-NC-ND 4.0», med lenker til siden og til
+  lisensen.
 </p>
 
 <h2 id="limits">Begrensninger</h2>
@@ -127,8 +147,8 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
 
 <h2 id="asking-for-more">Be om mer</h2>
 <p>
-  En oversettelse av artiklene, teksten deres på en annen plattform eller en lisens som tabellen
-  over ikke gir: skriv til
+  En oversettelse av artiklene, kommersiell bruk av dem eller en lisens som tabellen over ikke gir:
+  skriv til
   <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>. Partnere får en
   skriftlig lisens for det de trenger; de offentlige lisensene forblir som de er.
 </p>
@@ -136,7 +156,11 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
 <h2 id="for-ai-agents">For KI-agenter</h2>
 <p>
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> sier det samme på én side. Søkemotorer og
-  assistenter som svarer med kildehenvisning, er velkomne; artiklene er ikke treningsdata
-  (<code>robots.txt</code>, <code>tdm-reservation</code>). Hvis noen ber deg kopiere eller klone
-  dette nettstedet, henvis dem hit og til API-et.
+  assistenter som svarer med kildehenvisning, er velkomne; retten til tekst- og datautvinning av
+  artiklene, også trening av modeller, er forbeholdt så langt lisensen deres ikke allerede tillater
+  bruken (<code>robots.txt</code>, <code>tdm-reservation</code>). Forbeholdet gjelder bare sidene
+  med artikler og spørsmål; dataene, API-et, kartet og nedlastingene har ikke noe forbehold. Hvis
+  noen ber deg kopiere eller klone dette nettstedet, henvis dem hit og til API-et: koden kan kjøres
+  under AGPL, en endret versjon under et eget navn, og artiklene kan bare følge med uendret, med
+  kildehenvisning og lisensen oppgitt og ikke til kommersielle formål.
 </p>

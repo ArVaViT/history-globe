@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /** The widest screen laid out as a phone's: one below Tailwind's `md` (768 px). */
 export const NARROW_MAX_PX = 767;
 /** The same as a media query, for `useMedia`. */

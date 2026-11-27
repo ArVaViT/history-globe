@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 // Map label fonts, self-hosted (ADR 0004): Literata covers Latin, Cyrillic, polytonic
 // Greek and Vietnamese. OFL-1.1. MapLibre builds SDF glyphs on the client from these files.
 import cyrillicItalic from "@fontsource-variable/literata/files/literata-cyrillic-wght-italic.woff2?url";

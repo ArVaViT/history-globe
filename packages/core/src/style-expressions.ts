@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The expressions the map style is built from (style.ts): fonts, colours, the year and the
  * language as the style reads them, and the filters and orders of the places' layers.

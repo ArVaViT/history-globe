@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """Match TIPNR's people and places (tipnr-parsed.json, parse_tipnr.py) to the places of
 apps/web/public/data/places.geojson, read only.
 

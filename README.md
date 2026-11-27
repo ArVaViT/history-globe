@@ -61,14 +61,31 @@ with their evidence in [`docs/crosswalk/their-errors.md`](docs/crosswalk/their-e
 
 ## Licences
 
-| What                                                 | Licence                             |
-| ---------------------------------------------------- | ----------------------------------- |
-| The data (places, names, tours, events, people, API) | CC BY 4.0                           |
-| The place articles and the answered questions        | CC BY-NC-ND 4.0                     |
-| The code, the site and its design                    | all rights reserved; public to read |
+| What                                                                     | Licence                       |
+| ------------------------------------------------------------------------ | ----------------------------- |
+| The code                                                                 | AGPL-3.0-or-later (`LICENSE`) |
+| The places-in-any-text script (`hg-places.js` and its released versions) | MIT                           |
+| The code examples on the documentation pages                             | CC0 1.0                       |
+| The data (places, names, tours, events, people, API)                     | CC BY 4.0                     |
+| The crosswalk tables (`docs/crosswalk/*.csv`)                            | CC BY-SA 4.0                  |
+| The place articles and the answered questions                            | CC BY-NC-ND 4.0               |
+| The reviews                                                              | their authors'                |
+| The photographs and other third-party material                           | their own                     |
+| The name "History Globe" and its logo                                    | not licensed                  |
 
-Third-party data keeps its own licence (`docs/ATTRIBUTIONS.md`). Details: `LICENSE`, ADR 0014
-and ADR 0016.
+The additional terms under section 7 of the AGPL (`LICENSING.md`, part 1), for a modified version: it
+keeps the line "History Globe by Vadym Arnaut" with a link to https://historyglobe.app in what
+it shows its users (7(b)), which may read "Based on History Globe by Vadym Arnaut" and does not
+breach the other two terms; it is marked in reasonable ways as different from the original, as
+by a name of its own (7(c)); and the licence grants no trademark rights to the name or the logo
+(7(e)). The articles and the answers may be copied and shared unchanged, with credit and the
+licence named, and not for commercial use; changed or translated versions may not be shared.
+Text and data mining of them is reserved as far as their licence does not already permit it, on
+their pages alone; the data, the API, the map and the dataset carry no reservation. Third-party data keeps its own
+licence (`docs/ATTRIBUTIONS.md`). The crosswalk tables cite Theographic Bible Metadata and
+are under its CC BY-SA 4.0; they are not part of the site, the API or the dataset. Which
+licence covers which path, and how a contribution is licensed: [`LICENSING.md`](LICENSING.md),
+and for tools `REUSE.toml`; the text of the AGPL: `LICENSE`; the decisions: ADR 0016 and ADR 0019.
 
 ## How to cite
 
@@ -137,6 +154,16 @@ pull request; the whole gate runs locally before a merge, and releases are deplo
 (ADR 0012). What the data and content checks refuse, and why: `docs/data-checks.md`. The
 browser checks: `e2e/README.md`. How to contribute: `CONTRIBUTING.md`.
 
+### Running your own copy
+
+The code is yours to run under the AGPL. A modified version that serves others over a
+network must offer them its source (section 13), keep the attribution line above and be marked
+as different from the original, as by a name of its own. The build needs no secret:
+`pnpm data && pnpm content && pnpm build` makes a complete site from the open data. Without
+`content/articles/` and `content/questions/` it builds without them; a copy may carry them
+only unchanged, with credit and the licence named, and not for commercial use (CC BY-NC-ND). The origin beacon (ADR 0017) is written only into a build for
+`SITE_URL=https://historyglobe.app`, so a copy built from the source sends nothing to it.
+
 Keys in the app: `[` `]` move the year by 10 (with Shift by 100), Space plays, `/` searches,
 `←` `→` step through a tour, `N` turns north up, Esc closes.
 
@@ -166,13 +193,17 @@ maintainers' credentials; none of it is needed to work on the code or the conten
 - **Scripture speaks for itself.** The Bible is a separate layer, never pulled into
   scholarly disputes.
 - **Clean data provenance.** The data we take in is public domain, CC0 or CC BY only;
-  nothing share-alike or non-commercial (ADR 0008).
+  nothing share-alike or non-commercial reaches the site, the API or the dataset (ADR 0008).
+  The one share-alike part of the repository is the two crosswalk tables, which cite
+  Theographic's record ids and are under its CC BY-SA 4.0.
 - **Decisions that are expensive to reverse are recorded** in `docs/adr/`; a change of mind
   is a new record.
 
 ### Docs
 
 - `AGENTS.md` — rules for coding agents (and humans).
+- `CONTRIBUTING.md` — how to contribute, and how a contribution is licensed (DCO).
+- `LICENSING.md` — which licence covers which part, and the AGPL's additional terms.
 - [`docs/adr/`](docs/adr/README.md) — architecture decisions, with their index and status.
 - `docs/content-guide.md` — how articles, tours, events and the years of towns are written.
 - `docs/data-checks.md` — what the build refuses, and why.

@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Accessibility: axe-core over the states of the app listed below, from the first frame to
  * an open person, the overview and settings, on a phone in languages with long words, and

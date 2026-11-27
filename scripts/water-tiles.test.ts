@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The sea as MapLibre draws it: water.geojson cut into tiles by geojson-vt with the
  * options MapLibre gives a GeoJSON source, and each tile's polygons triangulated by earcut

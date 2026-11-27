@@ -1,3 +1,4 @@
+/*! hg-places 1.7.1 | (c) 2026 Vadym Arnaut | MIT | SPDX-License-Identifier: MIT */
 /*
  * History Globe \u2014 places in any text.
  *

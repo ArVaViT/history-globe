@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -21,6 +24,13 @@ describe("hg-places releases", () => {
   it("keeps every released version exactly as it was published", () => {
     for (const [version, hash] of Object.entries(releases.versions))
       expect(sri(join(pub, `hg-places-${version}.js`)), version).toBe(hash);
+  });
+
+  // MIT asks that the notice travel with the file: the first line names it.
+  it("names its version and the MIT licence in its first line", () => {
+    expect(readFileSync(join(pub, "hg-places.js"), "utf8").split("\n")[0]).toBe(
+      `/*! hg-places ${releases.latest} | (c) 2026 Vadym Arnaut | MIT | SPDX-License-Identifier: MIT */`,
+    );
   });
 
   it("has the current script as its newest version", () => {

@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The lesson a teacher builds place by place (lesson.ts), kept in this browser until it is
  * cleared, and shared by every view of it (the place card's button, the lesson tool): one

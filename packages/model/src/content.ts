@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 // The single content schema (ADR 0007). Validation here is shape + meaning.
 
 import { z } from "zod";

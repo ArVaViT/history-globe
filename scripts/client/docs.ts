@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 // The documentation's script (docs.js), one file for every page and language: the phone
 // menu, the search, the outline that follows the reader, and the copy buttons. Without it
 // the pages read and link as they are. Served as JavaScript by scripts/client-script.ts.

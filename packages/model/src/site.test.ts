@@ -1,9 +1,13 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { execFileSync } from "node:child_process";
+import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { BEACON_SCRIPT } from "./beacon.ts";
-import { NOTICE, SITE } from "./notice.ts";
-import { SITE_ORIGIN } from "./site.ts";
+import { NOTICE } from "./notice.ts";
+import { SITE_HOST, SITE_ORIGIN } from "./site.ts";
 
 const root = join(import.meta.dirname, "../../..");
 
@@ -36,8 +40,14 @@ describe("the site's address", () => {
     expect(files.filter((f) => !WRITTEN_OUT.has(f))).toEqual([]);
   });
 
-  it("is the one the notice and the beacon name", () => {
-    expect(SITE).toBe(SITE_ORIGIN);
+  it("is the one the notice, the beacon and the files that write it out name", () => {
+    expect(SITE_ORIGIN).toBe(`https://${SITE_HOST}`);
+    // The files that spell the address out name the one SITE_ORIGIN gives, and no other.
+    const spelled = [...WRITTEN_OUT].flatMap(
+      (f) => readFileSync(join(root, f), "utf8").match(/https:\/\/historyglobe\.[a-z]+/g) ?? [],
+    );
+    expect(spelled.length).toBeGreaterThan(0);
+    expect(new Set(spelled)).toEqual(new Set([SITE_ORIGIN]));
     expect(NOTICE).toContain(`${SITE_ORIGIN}/api/v1/`);
     expect(BEACON_SCRIPT).toContain(`"${SITE_ORIGIN}/"`);
   });

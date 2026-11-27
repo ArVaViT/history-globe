@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { POLITY_SPLIT_YEAR, type Locale } from "@hg/model";
 import type { Feature, FeatureCollection } from "geojson";
 import * as maplibregl from "maplibre-gl";

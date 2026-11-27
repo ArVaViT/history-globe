@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The Bible's books (pipeline/bible-books.json, which the pipeline reads too): the codes two
  * sources use for them, to OSIS, in the canon's order.

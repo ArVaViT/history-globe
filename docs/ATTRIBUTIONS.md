@@ -4,7 +4,9 @@ The third-party data and software the product ships with, as of 2026-10-25. Ever
 source was checked against its licence text (2026-09-28, rechecked 2026-10-01; the Bible
 editions and the photo licences again on 2026-10-25). The public credits are on the
 sources page (docs/sources.html, in every language), with each licence linked.
-Sources under share-alike or non-commercial licences are deliberately absent (ADR 0008).
+Sources under share-alike or non-commercial licences are deliberately absent from the
+site, the API and the dataset (ADR 0008). The one share-alike part of the repository is
+the crosswalk tables, which cite Theographic Bible Metadata (see Crosswalk below).
 Sources researched but not used (OpenHistoricalMap, GEBCO, the BSB) are
 listed again only when they are imported. STEPBible TIPNR, Pleiades and Itiner-e were
 imported on 2026-10-02.
@@ -35,13 +37,12 @@ Roman roads
   12W-75E, 8N-50N, geometry simplified, segments merged by name (pipeline/roads).
 
 Periods in which places are attested
-  Pleiades: A Gazetteer of Past Places. Ed. by Tom Elliott, Sean Gillies,
-  Jeffrey Becker et al. Institute for the Study of the Ancient World, New York
-  University, 2006–. https://pleiades.stoa.org. Data downloaded 2 October 2026.
-  Licensed CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/us/).
-  Modified: matched to our places, periods reduced to a span of years.
-  Pleiades' own form of citation: Roger Bagnall et al. (eds.), Pleiades: A Gazetteer
-  of Past Places (https://pleiades.stoa.org), with the date of access.
+  Roger Bagnall et al. (eds.), Pleiades: A Gazetteer of Past Places,
+  https://pleiades.stoa.org (the form of citation Pleiades asks for). Data
+  downloaded 2 October 2026. Copyright Ancient World Mapping Center and Institute
+  for the Study of the Ancient World, New York University; licensed CC BY 3.0
+  (https://creativecommons.org/licenses/by/3.0/us/). Modified: matched to our
+  places, periods reduced to a span of years.
 
 Ancient sites outside the Bible (the "Ancient world" layer)
   Points and identifiers from Pleiades (as above, CC BY 3.0), selected and checked
@@ -147,23 +148,37 @@ Photos
 
 Articles, answers and events
   Written for the project; the sources each one rests on are listed with it
-  (content/articles, content/questions, content/events.yaml). Quotations come only
-  from the public-domain edition of each language listed under Scripture.
+  (content/articles, content/questions, content/events.yaml). Quotations of the
+  Bible come only from the public-domain edition of each language listed under
+  Scripture. Other works are quoted briefly, as quotations with the work named in
+  the text's list of sources: ancient texts (Josephus in William Whiston's
+  public-domain translation, the Mishnah and the Talmud, the chronicles and
+  inscriptions of Assyria and Babylon, and others) and modern scholars.
+
+Crosswalk (docs/crosswalk/places.csv and docs/crosswalk/people.csv, not shipped
+with the site)
+  The theographic_* columns of both files cite Theographic Bible Metadata by Robert
+  Rouse (https://github.com/robertrouse/theographic-bible-metadata, CC BY-SA 4.0) by
+  its record ids and lookup names (theographic_id, theographic_lookup), and in
+  places.csv also the records it takes for the same place, as evidence. Each of the
+  two files is therefore licensed whole under CC BY-SA 4.0 (LICENSING.md, part 4).
+  None of Theographic's coordinates or other data is imported (ADR 0008).
 
 Software
   MapLibre GL JS — Copyright (c) 2023, MapLibre contributors, BSD-3-Clause;
   includes code from mapbox-gl-js v1.13 and earlier (Copyright (c) 2020,
   Mapbox, BSD-3-Clause), glfx.js (MIT) and d3-color. Full license text:
   vendor/maplibre-gl-<version>/LICENSE.txt in the build.
-  React, react-dom, scheduler (MIT) and the Golos Text, Literata and Onest fonts (OFL 1.1;
-  Onest sets Vietnamese, which Golos Text lacks):
-  licence texts in apps/web/public/licenses/third-party.txt, written by
-  scripts/third-party-licenses.ts (pnpm licenses) and linked from the sources page.
+  React, react-dom, scheduler, Tailwind CSS (its preflight is in the built CSS; all
+  MIT) and the Golos Text, Literata and Onest fonts (OFL 1.1; Onest sets Vietnamese,
+  which Golos Text lacks): licence texts in apps/web/public/licenses/third-party.txt,
+  written by scripts/third-party-licenses.ts and linked from the sources page.
   The MapLibre files are shipped as published (only the source-map pointer at the
   end of each is dropped, with the maps), with their LICENSE.txt, under
   vendor/maplibre-gl-<version>/ in the build.
-  Lucide icons — Copyright (c) 2026 Lucide Icons and Contributors, ISC; nine of
-  the fifteen icons derive from Feather, Copyright (c) 2013-present Cole Bemis, MIT.
+  Lucide icons — Copyright (c) 2026 Lucide Icons and Contributors, ISC; some of
+  them derive from Feather, Copyright (c) 2013-present Cole Bemis, MIT (the list is
+  in lucide-icons.txt).
   Copied as SVG (apps/web/src/components/icons.tsx); both licences ship in
   licenses/lucide-icons.txt.
 

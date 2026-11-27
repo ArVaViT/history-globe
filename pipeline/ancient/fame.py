@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """Step 8: how well known each ancient place is, the Wikipedia articles (sitelinks) of its
 Wikidata item where that item is the ancient place itself (an archaeological site, an ancient
 city, a tell), not a modern town on it: Amman's articles are not Rabbah's. Writes

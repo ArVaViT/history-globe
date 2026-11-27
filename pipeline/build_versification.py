@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """Verse counts per chapter for the reference checker (ADR 0007: every verse exists).
 
 Counted from the World English Bible in USFM (public domain, eBible.org), whose English

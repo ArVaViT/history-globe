@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """Wikidata classes (English labels) that make an item an ancient site, and those that make it a
 modern place too; shared by select.py and fame.py."""
 

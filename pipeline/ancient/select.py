@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """Step 5: of the candidates, the ancient sites only, never a modern town, museum or castle; one
 per 3 km, the better known (wave/wave.json).
 

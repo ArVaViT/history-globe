@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Compares every photo of content/photos.yaml with its file's current metadata on Wikimedia
  * Commons: the licence and its version, the licence link, and the credit the author asks for

@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """The biblical rivers, small (Jabbok, Arnon, Kishon, …) and large (Jordan, Euphrates, Tigris),
 from RiverATLAS v1.0, the HydroRIVERS
 network with its attributes, released under CC BY 4.0 (Linke et al. 2019, Scientific Data 6: 283,

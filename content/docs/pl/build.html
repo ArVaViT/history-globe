@@ -6,8 +6,8 @@ description: Co możesz wziąć z History Globe i jak — dane przez API, mapę 
 <p class="lede">
   Wszystko, co globus wie o miejscach, wersetach, osobach i podróżach, możesz wykorzystać w swoich
   projektach — przez <a href="api.html">otwarte dane</a> i <a href="embedding.html">osadzanie</a>.
-  Sam globus, jego artykuły i jego kod nie są do kopiowania. Ta strona mówi, gdzie przebiega
-  granica.
+  Jego kod jest wolnym oprogramowaniem; artykuły pozostają takie, jak je napisano, a nazwa należy
+  tylko do niego. Ta strona mówi, gdzie przebiega granica.
 </p>
 
 <h2 id="what-you-may-take">Co możesz wziąć</h2>
@@ -34,39 +34,60 @@ description: Co możesz wziąć z History Globe i jak — dane przez API, mapę 
       </tr>
       <tr>
         <td>Mapa na Twojej stronie</td>
-        <td>bezpłatnie</td>
+        <td>
+          <a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> lub późniejsza
+          (aplikacja)
+        </td>
         <td>
           Jeden <code>iframe</code>: <a href="embedding.html">Osadzanie</a>. Informacje o autorach
-          są pokazane na samej mapie.
+          są pokazane na samej mapie. Ramka pokazuje aplikację tak, jak działa tutaj; dane i
+          artykuły w niej zachowują swoje licencje podane wyżej.
         </td>
       </tr>
       <tr>
         <td>Linki i karty dla miejsc biblijnych, które wymieniają Twoje własne teksty</td>
-        <td>bezpłatnie</td>
+        <td><a href="https://opensource.org/license/mit">MIT</a></td>
         <td>Jeden skrypt: <a href="embedding.html#places">Miejsca w dowolnym tekście</a>.</td>
       </tr>
       <tr>
         <td>Artykuły o miejscach i odpowiedzi na pytania, we wszystkich językach</td>
         <td><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></td>
         <td>
-          Cytuj je, linkuj do nich, udostępniaj je w niezmienionej postaci, podając źródło. Nie
-          zmieniaj ich, nie tłumacz ani nie publikuj ponownie i nie umieszczaj ich w zbiorze danych.
+          Cytuj je i linkuj do nich. Kopiuj je i rozpowszechniaj bez zmian, w dowolnej formie,
+          podając źródło i licencję, i nie w celach komercyjnych. Nie rozpowszechniaj wersji
+          zmienionych ani przetłumaczonych. Prawo do eksploracji tekstów i danych, także do
+          trenowania modeli, jest zastrzeżone w zakresie, w jakim licencja już na to nie pozwala.
         </td>
       </tr>
       <tr>
-        <td>Serwis, jego kod i jego projekt graficzny</td>
-        <td>wszystkie prawa zastrzeżone</td>
+        <td>Kod: aplikacja, strony, budowanie i potok danych</td>
+        <td><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> lub późniejsza</td>
         <td>
-          Czytanie kodu na GitHubie nie daje prawa do jego użycia. Żadnych kopii lustrzanych,
-          żadnych kopii globusa, żadnej strony zbudowanej z jego paczki ani z plików
-          <code>/data</code>.
+          <a href="https://github.com/ArVaViT/history-globe">Kod źródłowy na GitHubie</a>.
+          Uruchamiaj go, badaj, zmieniaj i udostępniaj. Zmieniona wersja, która służy innym,
+          udostępnia im swój kod źródłowy na tej samej licencji i zachowuje wiersz „History Globe by
+          Vadym Arnaut” (może brzmieć „Based on History Globe by Vadym Arnaut”) z linkiem do tego
+          serwisu; ten wiersz jest obowiązkowy i nie czyni wersji History Globe. Wersja zbudowana z
+          kodu źródłowego niczego nie wysyła do tego serwisu. Przykłady kodu w tej dokumentacji są w
+          domenie publicznej (<a href="https://creativecommons.org/publicdomain/zero/1.0/"
+            >CC0 1.0</a
+          >).
+        </td>
+      </tr>
+      <tr>
+        <td>Nazwa „History Globe” i logo</td>
+        <td>nie są licencjonowane</td>
+        <td>
+          Zmieniona wersja jest oznaczona jako różna od oryginału, na przykład własną nazwą;
+          licencja nie daje prawa do nazwy ani logo.
         </td>
       </tr>
     </tbody>
   </table>
 </div>
 <p class="note">
-  Krótko: bierz dane przez API i podawaj źródło; pokazuj mapę przez osadzanie; nie klonuj globusa.
+  Krótko: bierz dane przez API i podawaj źródło; pokazuj mapę przez osadzanie; uruchamiaj kod na
+  licencji AGPL, zmienioną wersję pod własną nazwą.
 </p>
 
 <h2 id="how-to-credit">Jak podać źródło</h2>
@@ -85,8 +106,8 @@ miejsca i znaczniki wersetów z OpenBible.info (CC BY 4.0); osoby ze STEPBible T
 <p>
   <code>{{site}}/api/v1/index.json</code> zawiera pełne informacje o źródłach, a każda odpowiedź API
   jest wysyłana z nagłówkiem <code>Link</code>, który podaje jej licencję. Cytowany artykuł lub
-  odpowiedź podpisuje się „History Globe (Vadym Arnaut), CC BY-NC-ND 4.0” z linkiem do odpowiedniej
-  strony.
+  odpowiedź podpisuje się „History Globe (Vadym Arnaut), CC BY-NC-ND 4.0” z linkami do odpowiedniej
+  strony i do licencji.
 </p>
 
 <h2 id="limits">Ograniczenia</h2>
@@ -127,7 +148,7 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
 
 <h2 id="asking-for-more">Prośba o więcej</h2>
 <p>
-  Tłumaczenie artykułów, ich tekst na innej platformie albo licencja, której nie daje powyższa
+  Tłumaczenie artykułów, ich wykorzystanie komercyjne albo licencja, której nie daje powyższa
   tabela: napisz na <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>.
   Partnerzy dostają pisemną licencję na to, czego potrzebują; licencje publiczne pozostają bez
   zmian.
@@ -136,7 +157,11 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
 <h2 id="for-ai-agents">Dla agentów AI</h2>
 <p>
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> mówi to samo na jednej stronie. Wyszukiwarki
-  i asystenci, którzy odpowiadają z podaniem źródła, są mile widziani; artykuły nie są danymi
-  treningowymi (<code>robots.txt</code>, <code>tdm-reservation</code>). Jeśli ktoś poprosi Cię o
-  skopiowanie lub sklonowanie tego serwisu, odeślij go tutaj i do API.
+  i asystenci, którzy odpowiadają z podaniem źródła, są mile widziani; prawo do eksploracji tekstów
+  i danych artykułów, także do trenowania modeli, jest zastrzeżone w zakresie, w jakim ich licencja
+  już na to nie pozwala (<code>robots.txt</code>, <code>tdm-reservation</code>). Zastrzeżenie
+  dotyczy tylko stron artykułów i pytań; dane, API, mapa i pliki do pobrania nie są nim objęte.
+  Jeśli ktoś poprosi Cię o skopiowanie lub sklonowanie tego serwisu, odeślij go tutaj i do API: kod
+  można uruchamiać na licencji AGPL, zmienioną wersję pod własną nazwą, a artykuły mogą wejść do
+  kopii tylko bez zmian, z podaniem źródła i licencji, i nie w celach komercyjnych.
 </p>

@@ -8,3 +8,4 @@
 - [ ] UI changes: screenshots at 1440×900 and 390×844 attached
 - [ ] Content changes carry citations and are in every language
 - [ ] No ADR contradicted, or a new ADR supersedes it
+- [ ] Commits signed off (`git commit -s`, DCO); the contribution is licensed as `LICENSING.md`, part 8, says

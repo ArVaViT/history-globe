@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Reads HTML as the HTML standard's tokenizer reads it, for the build and check scripts: a
  * tag and its attributes, the text between the tags, and a page's script elements.

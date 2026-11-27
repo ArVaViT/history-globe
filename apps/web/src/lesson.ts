@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * A teacher's own tour, built from place cards and shared as a link:
  * `?lesson=<place id>~<year>.<place id>~<year>…&tour=lesson`. Each place keeps the year

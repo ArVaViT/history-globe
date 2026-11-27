@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The forms of a Russian place name in running text, for places in any text
  * (scripts/build-text-places.ts) and a quiz's choices (apps/web/src/quiz.ts): «Иерусалим» is

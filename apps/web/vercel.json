@@ -290,6 +290,19 @@
         {
           "key": "Link",
           "value": "<https://creativecommons.org/licenses/by-nc-nd/4.0/>; rel=\"license\""
+        },
+        {
+          "key": "tdm-reservation",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "source": "/(en|ru|uk|es|pt|de|fr|it|nl|pl|cs|sv|nb|tl|da|sr|hu|fi|vi|ro|bg)/(q|questions)/(.*)",
+      "headers": [
+        {
+          "key": "tdm-reservation",
+          "value": "1"
         }
       ]
     },
@@ -348,6 +361,10 @@
         {
           "key": "Link",
           "value": "<https://creativecommons.org/licenses/by-nc-nd/4.0/>; rel=\"license\", <https://historyglobe.app/api/v1/openapi.json>; rel=\"service-desc\", <https://historyglobe.app/docs/build.html>; rel=\"service-doc\""
+        },
+        {
+          "key": "tdm-reservation",
+          "value": "1"
         }
       ]
     },
@@ -408,10 +425,6 @@
         {
           "key": "Permissions-Policy",
           "value": "camera=(), microphone=(), geolocation=(), payment=()"
-        },
-        {
-          "key": "tdm-reservation",
-          "value": "1"
         }
       ]
     },

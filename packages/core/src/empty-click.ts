@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Whether a click that hit no place is a click on the map itself (the renderer's `pickNone`)
  * and not the tail of something else. MapLibre fires `click` on a release after a drag that a

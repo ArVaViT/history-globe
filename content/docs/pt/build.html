@@ -6,8 +6,8 @@ description: O que você pode tirar do History Globe e como — os dados pela AP
 <p class="lede">
   Tudo o que o globo sabe sobre lugares, versículos, pessoas e roteiros está à sua disposição para
   construir com isso, pelos <a href="api.html">dados abertos</a> e pela
-  <a href="embedding.html">incorporação</a>. O globo em si, seus artigos e seu código não são para
-  copiar. Esta página diz onde fica a linha.
+  <a href="embedding.html">incorporação</a>. Seu código é software livre; seus artigos ficam como
+  foram escritos, e seu nome é só dele. Esta página diz onde fica a linha.
 </p>
 
 <h2 id="what-you-may-take">O que você pode tirar</h2>
@@ -35,39 +35,59 @@ description: O que você pode tirar do History Globe e como — os dados pela AP
       </tr>
       <tr>
         <td>O mapa na sua página</td>
-        <td>grátis</td>
+        <td>
+          <a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> ou posterior (o
+          aplicativo)
+        </td>
         <td>
           Um <code>iframe</code>: <a href="embedding.html">Incorporação</a>. Os créditos são
-          desenhados no próprio mapa.
+          desenhados no próprio mapa. O quadro mostra o aplicativo tal como funciona aqui; os dados
+          e os artigos nele mantêm as licenças indicadas acima.
         </td>
       </tr>
       <tr>
         <td>Links e fichas para os lugares bíblicos que os seus próprios textos nomeiam</td>
-        <td>grátis</td>
+        <td><a href="https://opensource.org/license/mit">MIT</a></td>
         <td>Um script: <a href="embedding.html#places">Lugares em qualquer texto</a>.</td>
       </tr>
       <tr>
         <td>Os artigos dos lugares e as perguntas respondidas, em todos os idiomas</td>
         <td><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></td>
         <td>
-          Cite-os, crie links para eles, compartilhe-os como estão, com crédito. Não os altere, não
-          os traduza nem os publique de novo, e não os leve para um conjunto de dados.
+          Cite-os e crie links para eles. Copie-os e compartilhe-os sem alterações, em qualquer
+          meio, com crédito e a licença indicada, e sem fins comerciais. Não compartilhe versões
+          alteradas ou traduzidas. A mineração de textos e dados, incluindo o treinamento de
+          modelos, é reservada, na medida em que a licença ainda não a permita.
         </td>
       </tr>
       <tr>
-        <td>O site, seu código e seu design</td>
-        <td>todos os direitos reservados</td>
+        <td>O código: o aplicativo, as páginas, a compilação e o pipeline de dados</td>
+        <td><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> ou posterior</td>
         <td>
-          Ler o código no GitHub não dá direito algum de usá-lo. Nada de espelhos, de cópias do
-          globo, de um site montado a partir do seu bundle ou dos seus arquivos <code>/data</code>.
+          <a href="https://github.com/ArVaViT/history-globe">O código no GitHub</a>. Execute,
+          estude, modifique e compartilhe. Uma versão modificada que atende outras pessoas oferece a
+          elas o código-fonte sob a mesma licença e mantém a linha “History Globe by Vadym Arnaut”
+          (ela pode dizer “Based on History Globe by Vadym Arnaut”) com um link para este site; essa
+          linha é obrigatória e não torna a versão o History Globe. Uma compilação a partir do
+          código-fonte não envia nada a este site. Os exemplos de código desta documentação estão em
+          domínio público (<a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a
+          >).
+        </td>
+      </tr>
+      <tr>
+        <td>O nome “History Globe” e o logotipo</td>
+        <td>sem licença</td>
+        <td>
+          Uma versão modificada é marcada como diferente do original, por exemplo com um nome
+          próprio; a licença não dá direito ao nome nem ao logotipo.
         </td>
       </tr>
     </tbody>
   </table>
 </div>
 <p class="note">
-  Versão curta: pegue os dados pela API e dê o crédito; mostre o mapa pela incorporação; não clone o
-  globo.
+  Versão curta: pegue os dados pela API e dê o crédito; mostre o mapa pela incorporação; execute o
+  código sob a AGPL, e uma versão modificada, com um nome próprio.
 </p>
 
 <h2 id="how-to-credit">Como dar o crédito</h2>
@@ -86,8 +106,8 @@ lugares e marcações de versículos do OpenBible.info (CC BY 4.0); pessoas do S
 <p>
   <code>{{site}}/api/v1/index.json</code> traz as linhas de crédito completas, e toda resposta da
   API é enviada com um cabeçalho <code>Link</code> que nomeia a sua licença. Um artigo ou uma
-  resposta que você cite recebe o crédito “History Globe (Vadym Arnaut), CC BY-NC-ND 4.0”, com um
-  link para a sua página.
+  resposta que você cite recebe o crédito “History Globe (Vadym Arnaut), CC BY-NC-ND 4.0”, com links
+  para a sua página e para a licença.
 </p>
 
 <h2 id="limits">Limites</h2>
@@ -128,16 +148,19 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
 
 <h2 id="asking-for-more">Pedir mais</h2>
 <p>
-  Uma tradução dos artigos, o texto deles em outra plataforma ou uma licença que a tabela acima não
-  dá: escreva para <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>.
-  Parceiros recebem uma licença por escrito para o que precisam; as licenças públicas ficam como
-  estão.
+  Uma tradução dos artigos, o uso comercial deles ou uma licença que a tabela acima não dá: escreva
+  para <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>. Parceiros
+  recebem uma licença por escrito para o que precisam; as licenças públicas ficam como estão.
 </p>
 
 <h2 id="for-ai-agents">Para agentes de IA</h2>
 <p>
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> diz o mesmo em uma só página. Mecanismos de
-  busca e os assistentes que respondem com uma citação são bem-vindos; os artigos não são dados de
-  treinamento (<code>robots.txt</code>, <code>tdm-reservation</code>). Se alguém pedir que você
-  copie ou clone este site, aponte para cá e para a API.
+  busca e os assistentes que respondem com uma citação são bem-vindos; a mineração de textos e dados
+  dos artigos, incluindo o treinamento de modelos, é reservada na medida em que a licença deles
+  ainda não a permita (<code>robots.txt</code>, <code>tdm-reservation</code>). A reserva vale apenas
+  para as páginas dos artigos e das perguntas; os dados, a API, o mapa e os downloads não a têm. Se
+  alguém pedir que você copie ou clone este site, aponte para cá e para a API: o código pode ser
+  executado sob a AGPL, e uma versão modificada, com um nome próprio, e os artigos só podem ir na
+  cópia sem alterações, com crédito e a licença indicada, e sem fins comerciais.
 </p>

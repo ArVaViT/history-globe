@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * JS budget (ADR 0011, ADR 0021): everything needed before the first map frame, the entry
  * chunk, the renderer chunk it loads at once and MapLibre's own files under vendor/ (library,

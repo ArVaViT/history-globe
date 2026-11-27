@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """Parse TIPNR (STEPBible) into the intermediate tipnr-parsed.json.
 
 A record starts with a "$========== <TYPE>" line, then a header line (tab-separated fields),

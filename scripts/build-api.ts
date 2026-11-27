@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The open data as static JSON, for other sites and apps (docs/…/api.html): which places a
  * verse names, the places with their coordinates and names in every language of the site,
@@ -114,9 +117,9 @@ const CREDIT = [
   "Names in the other languages: History Globe (CC BY 4.0)",
   "Third-party parts keep their own licences: https://historyglobe.app/docs/sources.html",
   "People and the verses that name them: STEPBible TIPNR by Tyndale House Cambridge (www.STEPBible.org), CC BY 4.0, modified",
-  "Pleiades ids: Pleiades (https://pleiades.stoa.org), CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/us/); Wikidata ids: Wikidata (CC0), from OpenBible's links, checked against Wikidata: wrong ones left out, merged items followed",
+  "Pleiades ids: Roger Bagnall et al. (eds.), Pleiades: A Gazetteer of Past Places (https://pleiades.stoa.org), CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/us/); Wikidata ids: Wikidata (CC0), from OpenBible's links, checked against Wikidata: wrong ones left out, merged items followed",
   "TIPNR ids of the places: STEPBible TIPNR (CC BY 4.0), as OpenBible links them, brought to the current TIPNR names",
-  "Except questions.json: the answers are History Globe's own texts, CC BY-NC-ND 4.0 (https://creativecommons.org/licenses/by-nc-nd/4.0/): quote and link them with credit, do not change, translate or republish them",
+  "Except questions.json: the answers are History Globe's own texts, CC BY-NC-ND 4.0 (https://creativecommons.org/licenses/by-nc-nd/4.0/): copy and share them unchanged, with credit and the licence named, not for commercial use; do not share changed or translated versions. Text and data mining of them is reserved as far as that licence does not already permit it",
 ];
 
 // Fresh each build: a book or file that is gone must not linger.

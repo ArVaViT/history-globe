@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The index for places in any text (apps/web/public/hg-places.js, the place cards' verses and
  * the static pages): the forms of each place's name a reader meets in running text, in every

@@ -1,6 +1,10 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { RESERVED_FIXED } from "../packages/model/src/reservation.ts";
 
 // What apps/web/vercel.json promises the reader and a host page, held so that a later edit
 // cannot drop it unnoticed. Vercel matches a source with path-to-regexp, strict and
@@ -115,5 +119,41 @@ describe("vercel.json", () => {
     );
     expect(headersFor("/data/places.geojson", false).get("cache-control")).toBe("public, no-cache");
     expect(headersFor("/sw.js", false).get("cache-control")).toBe("public, no-cache");
+  });
+
+  // The reservation of text and data mining stands on the articles and the answers alone
+  // (packages/model/src/reservation.ts): the data, the API, the map and the other pages are
+  // sent without it. The place pages that carry an article say it in their own head.
+  it("sends tdm-reservation on the articles' and the answers' fixed paths, and nowhere else", () => {
+    const reserved = (path: string) => headersFor(path, false).get("tdm-reservation");
+    for (const path of [
+      "/data/articles/en.json",
+      "/api/v1/questions.json",
+      "/en/q/from-dan-to-beersheba/",
+      "/uk/q/from-dan-to-beersheba/",
+      "/en/questions/",
+      "/bg/questions/",
+    ])
+      expect(reserved(path), path).toBe("1");
+    for (const path of [
+      "/",
+      "/api/v1/places.json",
+      "/api/v1/index.json",
+      "/data/places.geojson",
+      "/en/place/bethel/",
+      "/en/places/",
+      "/en/tour/paul-1/",
+      "/embed/v1",
+      "/docs/build.html",
+      "/.well-known/tdmrep.json",
+      "/robots.txt",
+    ])
+      expect(reserved(path), path).toBeUndefined();
+    // Every fixed path reservation.ts names has the header, in every language.
+    for (const pattern of RESERVED_FIXED)
+      for (const l of ["en", "vi"]) {
+        const path = pattern.replaceAll("*", l) + (pattern.endsWith("/") ? "x/" : "");
+        expect(reserved(path), path).toBe("1");
+      }
   });
 });

@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The app's main ways through, in a real browser: search, a place card and its verses,
  * keys, layers, tours, events, the overview, people, languages, bad links. Each step

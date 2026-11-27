@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The whole Bible from one of eBible.org's USFM zips or a CrossWire SWORD module
  * (pipeline/.cache): verse texts keyed "Gen.12.6", in the edition's own numbering. Used by

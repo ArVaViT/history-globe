@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """Pleiades' time periods as spans of astronomical years: the approximate bounds of its
 vocabulary. Read by periods.py, which dates the sites of a wave, and audit.py."""
 

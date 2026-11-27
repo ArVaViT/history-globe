@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The forms of a place name in running text in the languages beyond Russian
  * (scripts/build-text-places.ts; Russian is packages/model/src/russian-forms.ts): the cases of a

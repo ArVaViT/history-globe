@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { Suspense, useEffect, useRef, useState, type ReactNode } from "react";
 import { useTranslation } from "../i18n";
 import { Panel } from "./Panel";

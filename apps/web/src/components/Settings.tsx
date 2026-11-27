@@ -1,5 +1,8 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import type { LayerVisibility } from "@hg/core";
-import { docsPath, LOCALE_NAMES, LOCALES, type Locale } from "@hg/model";
+import { docsPath, LOCALE_NAMES, LOCALES, REPOSITORY, type Locale } from "@hg/model";
 import { useEffect, useState, type ReactNode } from "react";
 import { useTranslation } from "../i18n";
 import { canSave, saveOffline, saveSize, type SaveProgress } from "../offline";
@@ -43,12 +46,13 @@ export function SettingsDialog({
     </span>
   );
   // Pages of their own, in a new tab: the arrow says the link leaves the map.
-  const page = (path: string, text: string) => (
-    <a className={link} href={`${import.meta.env.BASE_URL}${path}`} target="_blank" rel="noopener">
+  const page = (href: string, text: string) => (
+    <a className={link} href={href} target="_blank" rel="noopener">
       {text}
       <ArrowUpRight className="size-4 text-ink-soft" />
     </a>
   );
+  const docs = (path: string) => `${import.meta.env.BASE_URL}${path}`;
   return (
     <>
       <Modal open={open && !legend} title={t("settings.title")} onClose={onClose} wide>
@@ -103,8 +107,10 @@ export function SettingsDialog({
               {t("legend.title")}
               <ChevronRight className="size-4 text-ink-soft" />
             </button>
-            {page(docsPath(locale), t("settings.help"))}
-            {page(docsPath(locale, "privacy"), t("settings.privacy"))}
+            {page(docs(docsPath(locale)), t("settings.help"))}
+            {page(docs(docsPath(locale, "privacy")), t("settings.privacy"))}
+            {/* The AGPL's section 13: the site offers its users its source (ADR 0019). */}
+            {page(REPOSITORY, `${t("settings.source")} · AGPL-3.0-or-later`)}
           </div>
         </div>
       </Modal>

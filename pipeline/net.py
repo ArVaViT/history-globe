@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """Requests the pipeline makes: one User-Agent, and Wikidata asked politely.
 
 Wikimedia asks every client to identify itself; the project's repository is the contact.

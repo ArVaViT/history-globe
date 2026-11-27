@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * A picture of the map for a lesson or a sermon slide: the view as drawn, with a band
  * under it naming what is shown and the year, the site, and the map's attribution (the

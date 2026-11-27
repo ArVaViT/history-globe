@@ -5,8 +5,9 @@ description: Mit vehet át a History Globe-ból és hogyan — az adatokat az AP
 
 <p class="lede">
   Mindaz, amit a földgömb a helyekről, versekről, személyekről és utakról tud, az Öné, hogy építsen
-  rá, a <a href="api.html">nyílt adatokon</a> és a <a href="embedding.html">beágyazáson</a> át. Maga
-  a földgömb, a cikkei és a kódja nem másolhatók. Ez az oldal megmondja, hol húzódik a határ.
+  rá, a <a href="api.html">nyílt adatokon</a> és a <a href="embedding.html">beágyazáson</a> át. A
+  kódja szabad szoftver; a cikkei úgy maradnak, ahogy megírták őket, a neve pedig csak az övé. Ez az
+  oldal megmondja, hol húzódik a határ.
 </p>
 
 <h2 id="what-you-may-take">Mit vehet át</h2>
@@ -33,10 +34,14 @@ description: Mit vehet át a History Globe-ból és hogyan — az adatokat az AP
       </tr>
       <tr>
         <td>A térkép az Ön oldalán</td>
-        <td>szabad</td>
+        <td>
+          <a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> vagy későbbi (az
+          alkalmazás)
+        </td>
         <td>
           Egyetlen <code>iframe</code>: <a href="embedding.html">Beágyazás</a>. A forrásmegjelölések
-          magán a térképen láthatók.
+          magán a térképen láthatók. A keret az alkalmazást mutatja, ahogy itt fut; a benne lévő
+          adatok és cikkek megtartják a fent megadott licencüket.
         </td>
       </tr>
       <tr>
@@ -44,24 +49,40 @@ description: Mit vehet át a History Globe-ból és hogyan — az adatokat az AP
           Hivatkozások és kártyák azokhoz a bibliai helyekhez, amelyeket a saját szövegei
           megneveznek
         </td>
-        <td>szabad</td>
+        <td><a href="https://opensource.org/license/mit">MIT</a></td>
         <td>Egyetlen szkript: <a href="embedding.html#places">Helyek bármilyen szövegben</a>.</td>
       </tr>
       <tr>
         <td>A helycikkek és a megválaszolt kérdések, minden nyelven</td>
         <td><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></td>
         <td>
-          Idézheti őket, hivatkozhat rájuk, és megoszthatja őket úgy, ahogy vannak, a forrás
-          megjelölésével. Ne módosítsa, ne fordítsa le és ne tegye közzé újra őket, és ne tegye őket
-          adatkészletbe.
+          Idézheti őket, és hivatkozhat rájuk. Változatlanul, bármilyen formában másolhatja és
+          megoszthatja őket, a forrás és a licenc megjelölésével és nem kereskedelmi célra.
+          Módosított vagy lefordított változatot ne osszon meg. A szöveg- és adatbányászat joga, a
+          modellek tanítását is beleértve, fenntartva, amennyiben a licenc ezt nem engedi meg eleve.
         </td>
       </tr>
       <tr>
-        <td>Az oldal, a kódja és a dizájnja</td>
-        <td>minden jog fenntartva</td>
+        <td>A kód: az alkalmazás, az oldalak, a build és az adatfeldolgozás</td>
+        <td><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> vagy későbbi</td>
         <td>
-          A kód olvasása a GitHubon nem ad jogot a használatára. Nem megengedettek a tükrök, a
-          földgömb másolatai és a csomagjából vagy a <code>/data</code> fájljaiból épített oldalak.
+          <a href="https://github.com/ArVaViT/history-globe">A forráskód a GitHubon</a>. Futtassa,
+          tanulmányozza, módosítsa és ossza meg. Az a módosított változat, amely másokat szolgál ki,
+          ugyanazon licenc alatt felkínálja nekik a forráskódját, és megtartja a „History Globe by
+          Vadym Arnaut” sort (szólhat így is: „Based on History Globe by Vadym Arnaut”) egy erre az
+          oldalra mutató hivatkozással; ez a sor kötelező, és nem teszi a változatot History
+          Globe-bá. A forráskódból készült build semmit sem küld erre az oldalra. A dokumentáció
+          kódpéldái közkincsek (<a href="https://creativecommons.org/publicdomain/zero/1.0/"
+            >CC0 1.0</a
+          >).
+        </td>
+      </tr>
+      <tr>
+        <td>A „History Globe” név és a logó</td>
+        <td>nem licencelt</td>
+        <td>
+          A módosított változatot meg kell különböztetni az eredetitől, például saját névvel; a
+          licenc nem ad jogot a névre és a logóra.
         </td>
       </tr>
     </tbody>
@@ -69,7 +90,7 @@ description: Mit vehet át a History Globe-ból és hogyan — az adatokat az AP
 </div>
 <p class="note">
   Röviden: az adatokat az API-n át vegye át, és jelölje meg a forrást; a térképet a beágyazáson át
-  jelenítse meg; a földgömböt ne klónozza.
+  jelenítse meg; a kódot az AGPL alatt futtassa, módosított változatát saját néven.
 </p>
 
 <h2 id="how-to-credit">Hogyan jelölje meg a forrást</h2>
@@ -88,8 +109,8 @@ places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIP
 <p>
   A <code>{{site}}/api/v1/index.json</code> a teljes forrásmegjelölési sorokat tartalmazza, és
   minden API-válasz egy <code>Link</code> fejléccel megy ki, amely megnevezi a licencét. Az idézett
-  cikket vagy választ így jelölje: „History Globe (Vadym Arnaut), CC BY-NC-ND 4.0”, az oldalára
-  mutató hivatkozással.
+  cikket vagy választ így jelölje: „History Globe (Vadym Arnaut), CC BY-NC-ND 4.0”, az oldalára és a
+  licencre mutató hivatkozással.
 </p>
 
 <h2 id="limits">Korlátok</h2>
@@ -130,8 +151,8 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
 
 <h2 id="asking-for-more">További kérések</h2>
 <p>
-  A cikkek fordítása, a szövegük egy másik platformon, vagy olyan licenc, amelyet a fenti táblázat
-  nem ad: írjon a
+  A cikkek fordítása, a kereskedelmi felhasználásuk, vagy olyan licenc, amelyet a fenti táblázat nem
+  ad: írjon a
   <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a> címre. A partnerek
   írásos licencet kapnak arra, amire szükségük van; a nyilvános licencek változatlanok maradnak.
 </p>
@@ -139,7 +160,12 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
 <h2 id="for-ai-agents">MI-ágenseknek</h2>
 <p>
   Az <a href="{{site}}/llms.txt"><code>llms.txt</code></a> ugyanezt mondja el egy oldalon. A
-  keresőmotorok és a hivatkozással válaszoló asszisztensek szívesen látottak; a cikkek nem
-  tanítóadatok (<code>robots.txt</code>, <code>tdm-reservation</code>). Ha valaki arra kéri Önt,
-  hogy másolja vagy klónozza ezt az oldalt, irányítsa ide és az API-hoz.
+  keresőmotorok és a hivatkozással válaszoló asszisztensek szívesen látottak; a cikkek szöveg- és
+  adatbányászatának joga, a modellek tanítását is beleértve, fenntartva, amennyiben licencük ezt nem
+  engedi meg eleve (<code>robots.txt</code>, <code>tdm-reservation</code>). A fenntartás csak a
+  cikkek és a kérdések oldalaira vonatkozik; az adatokra, az API-ra, a térképre és a letölthető
+  fájlokra nem. Ha valaki arra kéri Önt, hogy másolja vagy klónozza ezt az oldalt, irányítsa ide és
+  az API-hoz: a kód az AGPL alatt futtatható, módosított változata saját néven, a cikkek pedig csak
+  változatlanul, a forrás és a licenc megjelölésével és nem kereskedelmi célra kerülhetnek a
+  másolatba.
 </p>

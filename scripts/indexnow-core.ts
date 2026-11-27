@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * IndexNow (indexnow.org): telling Bing, Yandex, Seznam, Naver and the other engines that
  * share it which pages changed, so they recrawl those instead of waiting. The pure part of

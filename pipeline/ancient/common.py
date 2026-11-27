@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """What the wave scripts share: where things are, the content's sites, Wikidata's class labels.
 
 A wave works in a directory outside the repository (`work`), which holds Pleiades' dumps and

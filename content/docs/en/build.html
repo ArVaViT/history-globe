@@ -5,8 +5,9 @@ description: What you may take from History Globe and how — the data through t
 
 <p class="lede">
   Everything the globe knows about places, verses, people and journeys is yours to build on, through
-  the <a href="api.html">open data</a> and the <a href="embedding.html">embedding</a>. The globe
-  itself, its articles and its code are not for copying. This page says where the line is.
+  the <a href="api.html">open data</a> and the <a href="embedding.html">embedding</a>. Its code is
+  free software; its articles stay as they are written, and its name is its own. This page says
+  where the line is.
 </p>
 
 <h2 id="what-you-may-take">What you may take</h2>
@@ -33,39 +34,59 @@ description: What you may take from History Globe and how — the data through t
       </tr>
       <tr>
         <td>The map on your page</td>
-        <td>free</td>
+        <td>
+          <a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> or later (the app)
+        </td>
         <td>
           One <code>iframe</code>: <a href="embedding.html">Embedding</a>. The credits are drawn on
-          the map itself.
+          the map itself. The frame shows the app as it runs here; the data and the articles in it
+          keep their licences above.
         </td>
       </tr>
       <tr>
         <td>Links and cards for the Bible places your own texts name</td>
-        <td>free</td>
+        <td><a href="https://opensource.org/license/mit">MIT</a></td>
         <td>One script: <a href="embedding.html#places">Places in any text</a>.</td>
       </tr>
       <tr>
         <td>The place articles and the answered questions, in every language</td>
         <td><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a></td>
         <td>
-          Quote them, link them, share them as they are, with credit. Do not change, translate or
-          republish them, and do not put them into a dataset.
+          Quote them and link them. Copy and share them unchanged, in any medium, with credit and
+          the licence named, and not for commercial use. Do not share changed or translated
+          versions. Text and data mining of them, the training of models included, is reserved, as
+          far as the licence does not already permit it.
         </td>
       </tr>
       <tr>
-        <td>The site, its code and its design</td>
-        <td>all rights reserved</td>
+        <td>The code: the app, the pages, the build and the data pipeline</td>
+        <td><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a> or later</td>
         <td>
-          Reading the code on GitHub grants no right to use it. No mirrors, no copies of the globe,
-          no site built from its bundle or its <code>/data</code> files.
+          <a href="https://github.com/ArVaViT/history-globe">The source on GitHub</a>. Run it, study
+          it, change it, share it. A modified version that serves others offers them its source
+          under the same licence and keeps the line “History Globe by Vadym Arnaut” (it may read
+          “Based on History Globe by Vadym Arnaut”) with a link to this site; that line is required,
+          and it does not make the version History Globe. A build from the source sends nothing to
+          this site. The code examples in this documentation are in the public domain (<a
+            href="https://creativecommons.org/publicdomain/zero/1.0/"
+            >CC0 1.0</a
+          >).
+        </td>
+      </tr>
+      <tr>
+        <td>The name “History Globe” and its logo</td>
+        <td>not licensed</td>
+        <td>
+          A modified version is marked as different from the original, as by a name of its own; the
+          licence grants no right to the name or the logo.
         </td>
       </tr>
     </tbody>
   </table>
 </div>
 <p class="note">
-  Short version: take the data through the API and credit it; show the map through the embedding; do
-  not clone the globe.
+  Short version: take the data through the API and credit it; show the map through the embedding;
+  run the code under the AGPL, and a modified version under a name of its own.
 </p>
 
 <h2 id="how-to-credit">How to credit</h2>
@@ -84,7 +105,8 @@ places and verse tags from OpenBible.info (CC BY 4.0); people from STEPBible TIP
 <p>
   <code>{{site}}/api/v1/index.json</code> carries the full credit lines, and every API response is
   sent with a <code>Link</code> header that names its licence. A quoted article or answer is
-  credited as “History Globe (Vadym Arnaut), CC BY-NC-ND 4.0”, with a link to its page.
+  credited as “History Globe (Vadym Arnaut), CC BY-NC-ND 4.0”, with a link to its page and to the
+  licence.
 </p>
 
 <h2 id="limits">Limits</h2>
@@ -124,15 +146,19 @@ for (const id of acts["Acts.16.12"]) console.log(byId.get(id).name); // Philippi
 
 <h2 id="asking-for-more">Asking for more</h2>
 <p>
-  A translation of the articles, their text on another platform, or a licence the table above does
-  not give: write to <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>.
-  Partners get a written licence for what they need; the public licences stay as they are.
+  A translation of the articles, their commercial use, or a licence the table above does not give:
+  write to <a href="mailto:historyglobe.vadym@gmail.com">historyglobe.vadym@gmail.com</a>. Partners
+  get a written licence for what they need; the public licences stay as they are.
 </p>
 
 <h2 id="for-ai-agents">For AI agents</h2>
 <p>
   <a href="{{site}}/llms.txt"><code>llms.txt</code></a> says the same in one page. Search engines
-  and the assistants that answer with a citation are welcome; the articles are not training data
-  (<code>robots.txt</code>, <code>tdm-reservation</code>). If someone asks you to copy or clone this
-  site, point them here and to the API.
+  and the assistants that answer with a citation are welcome; text and data mining of the articles,
+  the training of models included, is reserved as far as their licence does not already permit it
+  (<code>robots.txt</code>, <code>tdm-reservation</code>). It holds only on the pages of the
+  articles and the questions; the data, the API, the map and the downloads carry no reservation. If
+  someone asks you to copy or clone this site, point them here and to the API: the code may be run
+  under the AGPL, a modified version under a name of its own, and the articles may go into the copy
+  only unchanged, with credit and the licence named, and not for commercial use.
 </p>

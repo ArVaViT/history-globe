@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * OpenBible place kinds by class. A kind in none of the classes is drawn as a landmark, never
  * dropped from the map (style-expressions.ts isLandmark).

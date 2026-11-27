@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The UI dictionaries and a `t` for them: nested keys, {{name}} placeholders, and plural
  * forms chosen by Intl.PluralRules (ru: _one/_few/_many, en: _one/_other). A missing key

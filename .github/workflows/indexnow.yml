@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 # IndexNow: after a production deploy, tell the search engines that share the protocol
 # (Bing, Yandex, Seznam, Naver, …) which pages changed. scripts/indexnow.ts reads the live
 # site's sitemap and page-hashes.json and sends only new, changed and removed pages; the

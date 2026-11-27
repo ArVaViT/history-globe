@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { placeName } from "@hg/model";
 import type { PlaceProps } from "./data";
 import { REPORT_EMAIL, REPOSITORY, SITE_ORIGIN } from "./site";

@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """Step 6: each site's years, the span of the periods Pleiades attests it in, modern ones left
 out, narrowed by Wikidata's founding and end (wave/wave.json, rewritten).
 

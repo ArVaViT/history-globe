@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 // The site's documentation: its pages, and where each stands for a language (English at
 // the root of docs/, every other language in its own folder). Shared by the docs build, the
 // static pages, the sitemap and the app's settings.

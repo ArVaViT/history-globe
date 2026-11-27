@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 // Lists the ancient works that one language names in more than one way in its source lines
 // (content/sources-<code>.yaml), so that a translator can settle each on one name. A work is
 // the part of an English line before its first locator ("Josephus, Antiquities" in

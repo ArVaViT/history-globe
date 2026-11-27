@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { formatRef, formatYear, isLocale, NT_BOOKS, pick, type Locale } from "@hg/model";
 import { useTranslation } from "../i18n";
 import { Section } from "./Panel";

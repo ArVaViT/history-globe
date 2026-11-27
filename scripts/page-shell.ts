@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * What the static pages (build-pages.ts) and the documentation (build-docs.ts) share in
  * their head: the description, the canonical address, the same page in every language
@@ -5,7 +8,7 @@
  * data and the visit counter. One place, so the two sets of pages cannot drift apart.
  */
 import { ANALYTICS_TAG } from "../packages/model/src/analytics.ts";
-import { BEACON_TAG } from "../packages/model/src/beacon.ts";
+import { beaconTag } from "../packages/model/src/beacon.ts";
 import { honeypotLink } from "../packages/model/src/honeypot.ts";
 import { LOCALES, type SiteLocale } from "../packages/model/src/locales.ts";
 
@@ -52,12 +55,14 @@ export function headMeta(o: {
 
 /**
  * What every built page ends its body with (ADR 0017, addendum): the link no reader sees to
- * the address robots.txt disallows, and the script that tells the site when the page runs
- * from another address. `root` is the path from the page up to the site's root.
+ * the address robots.txt disallows, and, in the production build, the script that tells the
+ * site when the page runs from another address. `root` is the path from the page up to the
+ * site's root; `site` is the build's address (SITE_URL).
  */
-export const bodyEnd = (root: string): string =>
-  `    ${honeypotLink(root)}
-    ${BEACON_TAG}`;
+export const bodyEnd = (root: string, site: string): string => {
+  const beacon = beaconTag(site);
+  return `    ${honeypotLink(root)}${beacon ? `\n    ${beacon}` : ""}`;
+};
 
 /** The languages written in Cyrillic, which preload that font. */
 const CYRILLIC: ReadonlySet<string> = new Set(["ru", "uk", "sr", "bg"]);

@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * A quiz on a tour (or a lesson): for each stop, what happened there with the place taken
  * out, and four places to choose from. Played on screen (QuizPanel) or printed (print.ts).

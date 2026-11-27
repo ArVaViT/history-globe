@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { LOCALES, NOTICE_COMMENT } from "@hg/model";
@@ -22,7 +25,7 @@ describe("the static pages", () => {
   });
 
   it("carry the notice to the programs that read them, as the built pages do", () => {
-    for (const file of ["index.html", "public/404.html"])
+    for (const file of ["index.html", "public/404.html", "public/export/index.html"])
       expect(read(file), file).toContain(`<head>\n    ${NOTICE_COMMENT}\n`);
   });
 

@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """Licence rules of the pipeline (ADR 0008). Run: python3 -m unittest discover -s pipeline"""
 
 import json

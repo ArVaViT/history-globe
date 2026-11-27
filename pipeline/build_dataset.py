@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """Build the Hugging Face dataset (huggingface.co/datasets/ArVaViT/history-globe) from a release.
 
 Reads the open API and the map data that `pnpm data && pnpm content` write, and writes nine

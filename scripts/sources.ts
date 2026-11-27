@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * A copy of every source the data is built from, kept outside the repo: should a source
  * move, change or close (a GitHub repo deleted, an API turned off), the map can still be

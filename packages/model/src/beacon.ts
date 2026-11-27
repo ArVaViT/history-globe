@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The beacon: a page of the site that runs from another address than the site's own tells
  * the site so (ADR 0017, addendum). The script stands inline at the end of every page, the
@@ -11,8 +14,11 @@
  * not carry the script. Nor is a page shown through Google Translate (*.translate.goog) or by
  * the Wayback Machine a copy: both name the original themselves, and a line from us would be
  * clutter to their reader and noise in the log. A private network address is a developer's
- * machine seen from a phone, or a classroom's own mirror; it is silent too.
+ * machine seen from a phone, or a classroom's own mirror; it is silent too. Only the
+ * production build carries the script (`beaconTag`): a site built from the source for
+ * another address is a lawful copy under the AGPL and reports to no one.
  */
+import { SITE_ORIGIN } from "./site.ts";
 
 /** Where the beacon's request goes: the path, then the copy's host. */
 export const BEACON_PATH = "/origin/";
@@ -34,10 +40,10 @@ export const BEACON_SCRIPT = `(function () {
   if (!/^https?:$/.test(location.protocol) || /${OWN_HOSTS.source}/.test(h)) return;
   var i = new Image();
   i.referrerPolicy = "no-referrer";
-  i.src = "https://historyglobe.app${BEACON_PATH}" + encodeURIComponent(h);
+  i.src = "${SITE_ORIGIN}${BEACON_PATH}" + encodeURIComponent(h);
   var a = document.createElement("a");
-  a.href = "https://historyglobe.app/";
-  a.textContent = "Original: historyglobe.app";
+  a.href = "${SITE_ORIGIN}/";
+  a.textContent = "Original: ${new URL(SITE_ORIGIN).host}";
   a.style.cssText =
     "position:fixed;left:12px;bottom:12px;z-index:2147483647;font:13px/1.4 system-ui,sans-serif;color:#0c1520;background:#f6efe1;border:1px solid rgba(12,21,32,0.3);border-radius:999px;padding:4px 12px;text-decoration:none";
   document.body.appendChild(a);
@@ -45,3 +51,7 @@ export const BEACON_SCRIPT = `(function () {
 
 /** The script as a page carries it, at the end of its body. */
 export const BEACON_TAG = `<script>${BEACON_SCRIPT}</script>`;
+
+/** The tag for a build whose address is `site` (SITE_URL): the production build's alone. */
+export const beaconTag = (site: string | undefined): string =>
+  site?.replace(/\/+$/, "") === SITE_ORIGIN ? BEACON_TAG : "";

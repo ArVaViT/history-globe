@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Works without a network once the reader has saved the globe (Settings → "Save for use
  * offline") or simply opened it before: what was fetched is kept and served when the network

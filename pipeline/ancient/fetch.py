@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """Step 4: Wikidata's classes, labels in the site's languages, and founding and end dates of the
 wave's candidates (wave/wd.json, kept between runs), and the English labels of those classes
 (wave/classes.json).

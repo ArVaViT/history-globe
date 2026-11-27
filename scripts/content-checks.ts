@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Checks that hold the content's layers to one another (scripts/build-content.ts runs them):
  * a point in the drawn water, an item on a place the map draws faded in its year, the same

@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /** The relief's tiles: Mapterhorn's public set (ADR 0020). */
 export const TERRAIN_TILES = "https://tiles.mapterhorn.com/{z}/{x}/{y}.webp";
 

@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * The open data API (scripts/build-api.ts) described in OpenAPI 3.1: api/v1/openapi.json.
  * Static files, no key, no server; every path is a GET of a JSON file. The schemas say what
@@ -94,7 +97,7 @@ export function openApi(version: string): object {
       }),
       "/questions.json": get(
         "Questions people ask",
-        "Answered in every language, with the view of the map that shows the answer. The answers are History Globe's own texts under CC BY-NC-ND 4.0 (https://creativecommons.org/licenses/by-nc-nd/4.0/), not CC BY: quote and link them with credit; do not change, translate or republish them.",
+        "Answered in every language, with the view of the map that shows the answer. The answers are History Globe's own texts under CC BY-NC-ND 4.0 (https://creativecommons.org/licenses/by-nc-nd/4.0/), not CC BY: copy and share them unchanged, with credit and the licence named, not for commercial use; do not share changed or translated versions.",
         { type: "array", items: ref("Question") },
       ),
       "/ancient.json": get(

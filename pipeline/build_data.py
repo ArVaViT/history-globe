@@ -1,3 +1,6 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Additional terms under section 7: see LICENSING.md
+
 """Build the map data for apps/web from dated snapshots of allowlisted datasets.
 
 Standard library only (ADR 0020).
@@ -99,7 +102,7 @@ OTHER_SOURCES = {
     },
     "pleiades": {
         "license": "CC-BY-3.0",
-        "credit": "Pleiades: A Gazetteer of Past Places (ISAW, NYU), CC BY 3.0, modified",
+        "credit": "Roger Bagnall et al. (eds.), Pleiades: A Gazetteer of Past Places (ISAW, NYU, and the Ancient World Mapping Center), CC BY 3.0, modified",
         "url": "https://pleiades.stoa.org",
         "read_by": "content/pleiades.json, content/ancient-sites.json",
     },

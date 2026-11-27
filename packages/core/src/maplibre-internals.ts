@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Additional terms under section 7: see LICENSING.md
+
 /**
  * Every use of MapLibre's private members, in one place. MapLibre 6.11.2 (pinned, ADR 0004)
  * has no public way to change its controls' language, to reach the credits' box or to write

@@ -52,11 +52,10 @@ second-pass loop converges (95 of 95 evidence snippets confirmed in their source
 
 ## Consequences
 
-- While the repository is public, all committed content is public too — including
-  articles, review notes and prompts. The owner accepted this and will make the
-  repository private once the content becomes valuable; anything published before
-  that stays public through forks and archives.
-- Git on GitHub is the primary copy of the content; a periodic mirror goes to the
-  owner's archive disk.
+- The repository is public, so all committed content is public too, including articles,
+  review notes and prompts; each part is protected by its licence, not by secrecy
+  (`LICENSING.md`: code AGPL-3.0-or-later, articles CC BY-NC-ND 4.0, data CC BY 4.0; ADR 0019).
+- Git on GitHub is the primary copy of the content; a periodic mirror goes to an offline
+  disk.
 - Full copies of sources are stored only when they are public domain or openly
   licensed; otherwise a URL, a hash and our snippet.
