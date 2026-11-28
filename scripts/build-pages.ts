@@ -72,6 +72,8 @@ import {
 } from "./tour-page.ts";
 import type { TourTexts } from "./tour-texts.ts";
 import { TOUR_WORDS } from "./tour-words.ts";
+import { DUPLICATE_SHARE, indexPolicy, NEAR_SHARE, type IndexOverrides } from "./index-policy.ts";
+import { placeRelatedHtml } from "./place-related-html.ts";
 
 // Every language is written here, so every language's words are loaded first.
 await loadAllLocaleData();
@@ -196,6 +198,49 @@ const articles = existsSync(join(build, "articles.json"))
       Article
     >)
   : {};
+/** The pages kept out of search, thin articles and questions their article answers (ADR 0023). */
+const policy = indexPolicy(
+  Object.values(articles),
+  questions,
+  existsSync(join(root, "content/index-policy.json"))
+    ? (JSON.parse(readFileSync(join(root, "content/index-policy.json"), "utf8")) as IndexOverrides)
+    : {},
+  new Map(places.flatMap((f) => (f.properties.aliases ?? []).map((a) => [a, f.properties.id]))),
+);
+if (policy.errors.length > 0) {
+  for (const e of policy.errors) console.error(`error: ${e}`);
+  process.exit(1);
+}
+{
+  // The share is a measure of wording: an edit to an answer or an article can move a question
+  // across the line. The log names the ones near it and those whose decision moved since the
+  // last build (apps/web/build/index-policy.json, not kept in git).
+  const near = [...policy.shares]
+    .filter(([, s]) => s >= NEAR_SHARE && s < DUPLICATE_SHARE)
+    .sort((a, b) => b[1] - a[1]);
+  if (near.length > 0)
+    console.log(
+      `index policy: ${String(near.length)} questions near the line, kept in search: ${near.map(([id, s]) => `${id} ${s.toFixed(2)}`).join(", ")}`,
+    );
+  const last = join(build, "index-policy.json");
+  const now = { thin: [...policy.thinArticles].sort(), out: [...policy.duplicateQuestions].sort() };
+  if (existsSync(last)) {
+    const was = JSON.parse(readFileSync(last, "utf8")) as typeof now;
+    for (const kind of ["thin", "out"] as const) {
+      const before = new Set(was[kind]);
+      const after = new Set(now[kind]);
+      const moved = [
+        ...now[kind].filter((id) => !before.has(id)).map((id) => `+${id}`),
+        ...was[kind].filter((id) => !after.has(id)).map((id) => `-${id}`),
+      ];
+      if (moved.length > 0)
+        console.log(
+          `index policy: since the last build, ${kind === "thin" ? "thin articles" : "questions out of search"} ${moved.join(" ")}`,
+        );
+    }
+  }
+  writeFileSync(last, `${JSON.stringify(now)}\n`);
+}
 /** Reviews by scholars (content/reviews, via build-content.ts): none, and no page is built. */
 const reviews = (
   existsSync(join(build, "reviews.json"))
@@ -419,7 +464,7 @@ function page(o: {
   image?: string;
   /** The front page: one sans face, the docs in the bar, the entrance's script. */
   home?: boolean;
-  /** A thin page (a place with no article yet): open to readers, kept out of search. */
+  /** Open to readers, kept out of search: a place with no article or a thin one, a question its place's article answers (ADR 0023). */
   noindex?: boolean;
   /** The page carries the site's own text under CC BY-NC-ND (ADR 0016): an article or an answer. */
   licence?: "article" | "answer";
@@ -757,6 +802,35 @@ function candidates(p: Props, l: Lang): string {
       <p class="note">${esc(note)}.</p>`;
 }
 
+/**
+ * Whether a place's page is one search engines index (ADR 0023): it has an article, not a
+ * thin one, and is not a duplicate. Pages link only to these.
+ */
+function placeIndexed(id: string): boolean {
+  const a = articles[id];
+  return !!a && !byId.get(id)?.properties.dup && !policy.thinArticles.has(a.id);
+}
+
+/** The breadcrumb, map, linked article, questions and nearby places (place-related-html.ts). */
+const relatedHtml = placeRelatedHtml({
+  root,
+  data,
+  site,
+  places,
+  byId,
+  slugOf,
+  nameOf,
+  // Only pages search engines index (ADR 0023): not a thin article's, not a question its
+  // place's article answers.
+  indexed: placeIndexed,
+  questionIndexed: (id) => !policy.duplicateQuestions.has(id),
+  samePoint,
+  questions,
+  textPlaces,
+  ...(content.chapter_years ? { chapterYears: content.chapter_years } : {}),
+  ...(content.life ? { life: content.life } : {}),
+});
+
 /** A page for every place with verses: its card as a page, with its article and photo. */
 function placePages(l: Lang): void {
   for (const f of shown) {
@@ -784,7 +858,8 @@ function placePages(l: Lang): void {
       (e) => e.place === p.id && !(content.battles ?? []).some((b) => b.event === e.id),
     );
     const battles = (content.battles ?? []).filter((b) => b.place === p.id);
-    const asked = questions.filter((q) => q.map?.place === p.id);
+    const related = relatedHtml.forPlace(f, l);
+    const asked = related.questions;
     const writers = ancientAuthors[p.id] ?? [];
     const tours = (toursAt.get(p.id) ?? []).flatMap((id) => {
       const t = content.tours.find((x) => x.id === id);
@@ -796,6 +871,7 @@ function placePages(l: Lang): void {
     const [lon, lat] = f.geometry.coordinates;
     const desc = art?.body[l][0] ? clip(art.body[l][0], l) : T[l].desc(name, kind, p.verses);
     const body = `    <main id="main" class="page">
+      ${related.crumbs}
       <p class="kicker">${esc(kind)}</p>
       <h1>${esc(name)}</h1>${
         art
@@ -805,7 +881,7 @@ function placePages(l: Lang): void {
       }
       <ul class="facts">${today ? `<li><span>${T[l].today}</span> ${esc(today)}</li>` : ""}${otherRecord ? `<li>${esc(otherRecord)}</li>` : ""}${l !== "en" && name !== p.name ? `<li><span>${T[l].english}</span> <span lang="en">${esc(p.name)}</span></li>` : ""}${note ? `<li class="warn">${esc(note)}</li>` : ""}</ul>${candidates(p, l)}
       <p class="actions"><a class="button" href="../../../?place=${p.id}&amp;locale=${l}">${T[l].open} →</a></p>
-      ${photoHtml(p.id, name, l)}
+      ${photoHtml(p.id, name, l)}${related.map}
       ${lifeLine(content.life?.[p.id], l)}${
         events.length
           ? `
@@ -834,7 +910,7 @@ function placePages(l: Lang): void {
         art
           ? `
       <h2>${T[l].article}</h2>
-      ${art.body[l].map((para) => `<p>${esc(para)}</p>`).join("\n      ")}
+      ${related.article(art.body, art.id).join("\n      ")}
       <p class="note">${T[l].scripture}: ${art.scripture.map((r) => esc(refOf(r, l))).join("; ")}</p>
       <details class="note"><summary>${T[l].sources}</summary><ul>${sourcesOf(art, l)
         .map((s) => `<li>${esc(s)}</li>`)
@@ -857,7 +933,7 @@ function placePages(l: Lang): void {
       <h2>${T[l].tours}</h2>
       <ul class="cards">${tours.map((t) => `<li><a href="../../tour/${t.id}/">${esc(t.title[l] ?? t.title.en)} <span aria-hidden="true">→</span></a></li>`).join("")}</ul>`
           : ""
-      }
+      }${related.nearby}
     </main>`;
     write(
       path,
@@ -875,7 +951,7 @@ function placePages(l: Lang): void {
         ["Public domain", "CC0"].includes(content.photos[p.id]?.license ?? "")
           ? { image: `data/photos/${p.id}.jpg` }
           : {}),
-        ld: {
+        ld: related.ld({
           "@context": "https://schema.org",
           "@type": "Place",
           name,
@@ -900,11 +976,11 @@ function placePages(l: Lang): void {
           url: `${site}/${path}/`,
           hasMap: `${site}/?place=${p.id}&locale=${l}`,
           ...(art ? itemReviewLd(reviewed("article", art.id), reviewById, site, l) : {}),
-        },
-        noindex: !art,
+        }),
+        noindex: !art || policy.thinArticles.has(art.id),
         ...(art ? { licence: "article" as const } : {}),
       }),
-      !!art,
+      !!art && !policy.thinArticles.has(art.id),
       content.articles?.[p.id] ? `content/articles/${content.articles[p.id]}.yaml` : undefined,
     );
   }
@@ -917,17 +993,7 @@ function questionPages(l: Lang): void {
   for (const q of questions) {
     const path = `${l}/q/${q.id}`;
     const title = q.question[l];
-    const linked = (text: string) => {
-      const index = textPlaces[l];
-      if (!index) return esc(text);
-      return splitPlaces(text, index)
-        .map((seg) =>
-          seg.place && byId.get(seg.place)?.properties.verses
-            ? `<a href="../../place/${slugOf.get(seg.place) ?? seg.place}/">${esc(seg.text)}</a>`
-            : esc(seg.text),
-        )
-        .join("");
-    };
+    const related = relatedHtml.forQuestion(q, l);
     const view = new URLSearchParams({
       ...(q.map?.place ? { place: q.map.place } : {}),
       ...(q.map?.year ? { year: String(q.map.year.year) } : {}),
@@ -937,10 +1003,11 @@ function questionPages(l: Lang): void {
       locale: l,
     });
     const body = `    <main id="main" class="page">
+      ${related.crumbs}
       <p class="kicker">${T[l].question}</p>
       <h1>${esc(title)}</h1>
       ${statusLine({ l, reviews: reviewed("question", q.id), checked: T[l].checkedQ, up: "../../../", methodology: `${docsPath(l, "methodology")}#review` })}
-      ${q.answer[l].map((p) => `<p>${linked(p)}</p>`).join("\n      ")}
+      ${related.answer(q.answer).join("\n      ")}
       <p class="actions"><a class="button" href="../../../?${esc(view.toString())}">${T[l].showMap} →</a></p>
       <p class="note">${T[l].scripture}: ${q.scripture.map((r) => esc(refOf(r, l))).join("; ")}</p>
       <details class="note"><summary>${T[l].sources}</summary><ul>${sourcesOf(q, l)
@@ -956,7 +1023,7 @@ function questionPages(l: Lang): void {
         path: `${path}/`,
         body,
         depth: 3,
-        ld: {
+        ld: related.ld({
           "@context": "https://schema.org",
           "@type": "FAQPage",
           ...itemReviewLd(reviewed("question", q.id), reviewById, site, l),
@@ -967,10 +1034,11 @@ function questionPages(l: Lang): void {
               acceptedAnswer: { "@type": "Answer", text: plain(q.answer[l].join(" ")) },
             },
           ],
-        },
+        }),
         licence: "answer",
+        noindex: policy.duplicateQuestions.has(q.id),
       }),
-      true,
+      !policy.duplicateQuestions.has(q.id),
       `content/questions/${q.id}.yaml`,
     );
   }
@@ -1028,8 +1096,9 @@ function tourPages(l: Lang): void {
         .map((s, i) => {
           const f = byId.get(s.place);
           const n = stopName(s.place, l);
+          // Only places kept in search are linked (ADR 0023), as on the place pages.
           const link =
-            f && f.properties.verses > 0
+            f && f.properties.verses > 0 && placeIndexed(s.place)
               ? `<a href="../../place/${slugOf.get(s.place) ?? s.place}/">${esc(n)}</a>`
               : esc(n);
           const leg = legs[i] ? legLine(words, l, legs[i], t.walked !== false) : "";
@@ -1080,7 +1149,7 @@ function tourPages(l: Lang): void {
           stopName: (id) => stopName(id, l),
           pointOf,
           placePath: (id) =>
-            (byId.get(id)?.properties.verses ?? 0) > 0
+            (byId.get(id)?.properties.verses ?? 0) > 0 && placeIndexed(id)
               ? `${l}/place/${slugOf.get(id) ?? id}/`
               : undefined,
         }),
@@ -1681,6 +1750,15 @@ ${["", ...LANGS.flatMap((l) => DOC_PAGES.map((p) => docsPath(l, p))), ...urls]
 `,
   );
 } else rmSync(sitemap, { force: true });
+// The places' maps (place-map.ts): those of places no longer built removed, and their size.
+const maps = relatedHtml.finish();
+if (maps)
+  console.log(
+    `place maps: ${String(maps.count)}, ${String(maps.kb)} kB (largest ${String(maps.largestKb)} kB)${maps.removed ? `, ${String(maps.removed)} stale removed` : ""}`,
+  );
 console.log(
-  `pages: ${String(urls.length + unlisted.length)}, ${String(unlisted.length)} of them thin and kept out of search (${String(shown.length)} places and ${String(content.tours.length)} tours in ${String(LANGS.length)} languages)${site ? ", sitemap.xml" : "; no SITE_URL, so no sitemap or canonical links"}`,
+  `index policy: ${String(policy.thinArticles.size)} thin articles and ${String(policy.duplicateQuestions.size)} questions their place's article answers, kept out of search in every language; ${String(policy.keptSearched.size)} such questions kept in search for their impressions`,
+);
+console.log(
+  `pages: ${String(urls.length + unlisted.length)}, ${String(unlisted.length)} of them kept out of search (${String(shown.length)} places and ${String(content.tours.length)} tours in ${String(LANGS.length)} languages)${site ? ", sitemap.xml" : "; no SITE_URL, so no sitemap or canonical links"}`,
 );
