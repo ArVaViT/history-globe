@@ -259,7 +259,7 @@
       ]
     },
     {
-      "source": "/data/((?!articles/|photos/|maps/).*)",
+      "source": "/data/((?!articles/|photos/|maps/|tour-maps/).*)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -286,6 +286,34 @@
     },
     {
       "source": "/data/maps/(.*)",
+      "has": [
+        {
+          "type": "query",
+          "key": "v"
+        }
+      ],
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/data/tour-maps/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, no-cache"
+        },
+        {
+          "key": "Link",
+          "value": "<https://creativecommons.org/licenses/by/4.0/>; rel=\"license\""
+        }
+      ]
+    },
+    {
+      "source": "/data/tour-maps/(.*)",
       "has": [
         {
           "type": "query",
