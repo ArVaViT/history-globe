@@ -67,8 +67,10 @@ export interface RelatedContext<F extends Feature, Q extends Question> {
   readonly byId: ReadonlyMap<string, F>;
   readonly slugOf: ReadonlyMap<string, string>;
   readonly nameOf: (p: F["properties"], l: Lang) => string;
-  /** Whether a place's page is one search engines index (it has an article). */
+  /** Whether a place's page is one search engines index (it has an article, not a thin one: ADR 0023). */
   readonly indexed: (id: string) => boolean;
+  /** Whether a question's page is one search engines index (ADR 0023); all, if not given. */
+  readonly questionIndexed?: (id: string) => boolean;
   /** A place's other records on its point (not linked from its page). */
   readonly samePoint: (f: F) => readonly string[];
   readonly questions: readonly Q[];
@@ -244,7 +246,7 @@ export function placeRelatedHtml<
       crumbs: crumbsHtml(l, section, name),
       map,
       nearby,
-      questions: questionsAbout(p.id, c.questions),
+      questions: questionsAbout(p.id, c.questions).filter((q) => c.questionIndexed?.(q.id) ?? true),
       article: (texts: Readonly<Record<Lang, readonly string[]>>, id: string) =>
         linked(texts, l, { text: id, self: (o) => selfOf(f, o), up: "../" }).map(
           (h) => `<p>${h}</p>`,

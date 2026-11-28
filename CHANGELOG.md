@@ -9,6 +9,14 @@ pull requests on GitHub have them.
 
 ## Unreleased
 
+- Articles (`articles/<language>.json`), in all 21 languages: 26 short articles have a new
+  paragraph (two for Jeshanah, Libnah in the wilderness, Mysia, Ophrah of Benjamin and
+  Sepharad), each with its sources: Addon, Baal-peor, Dalmanutha, Elishah, Gibeah of Judah, Gob, Gomer, Hobah, India,
+  Jeshanah, Kain, Kanah of Asher, Kartah, Libnah in the wilderness, Madon, Mysia, Nahor,
+  Ophrah of Benjamin, Pelusium, Perez-uzzah, Pisidia, Rehoboth by the river, Rimmon-perez,
+  Sepharad, Tel-abib and the Valley of Lebanon. The site's pages of the articles still under
+  200 English words, and of the questions whose answer repeats their place's article, stay
+  for readers but out of search (ADR 0023); the data is unchanged by that.
 - Places (`places.json`, `places.geojson`, the dataset): five more records OpenBible kept
   twice for one place are merged (ADR 0022): Dibon 3 (Isa 15:9, "Dimon" in the Hebrew,
   "Dibon" in the Isaiah scroll and the Vulgate) into Dibon 1, Lud 2 into Lud 1, Zin 2 into

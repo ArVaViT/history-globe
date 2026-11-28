@@ -11,13 +11,14 @@ The articles and the questions are under CC BY-NC-ND 4.0, the rest under CC BY 4
 
 ## Texts
 
-| Path          | What                                                                           |
-| ------------- | ------------------------------------------------------------------------------ |
-| `articles/`   | the place articles, one file a place, in every language, with their sources    |
-| `questions/`  | the answered questions (the `/q/` pages), with the view of the map and sources |
-| `tours/`      | the tours, stop by stop, each stop with its passage or its ancient source      |
-| `reviews/`    | the scholars' reviews of articles, questions and tours, under their names      |
-| `docs/<lang>` | the documentation pages (`/docs/`), one folder a language, and `docs.css`      |
+| Path                | What                                                                                            |
+| ------------------- | ----------------------------------------------------------------------------------------------- |
+| `articles/`         | the place articles, one file a place, in every language, with their sources                     |
+| `questions/`        | the answered questions (the `/q/` pages), with the view of the map and sources                  |
+| `tours/`            | the tours, stop by stop, each stop with its passage or its ancient source                       |
+| `reviews/`          | the scholars' reviews of articles, questions and tours, under their names                       |
+| `index-policy.json` | exceptions to the rule that keeps thin articles and repeated questions out of search (ADR 0023) |
+| `docs/<lang>`       | the documentation pages (`/docs/`), one folder a language, and `docs.css`                       |
 
 `content/docs/` is the documentation the site publishes; `docs/` at the root of the
 repository is for those who work on it (decisions, checks, how the data is built).

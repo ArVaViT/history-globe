@@ -1,6 +1,7 @@
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { LOCALES } from "../packages/model/src/locales.ts";
+import { textPlacesFrom } from "../packages/model/src/text-places.ts";
 import {
   bounds,
   clipLine,
@@ -389,6 +390,69 @@ describe("the blocks as HTML", () => {
       "Все места",
       "Capernaum-ru",
     ]);
+  });
+});
+
+describe("links to pages search engines do not index (ADR 0023)", () => {
+  const f = (id: string, name: string, lon: number, lat: number) => ({
+    geometry: { coordinates: [lon, lat] as [number, number] },
+    properties: { id, name, kind: "settlement", verses: 5, disputed: false, confidence: 1000 },
+  });
+  const cap = f("cap", "Capernaum", 35.575, 32.88);
+  // Magdala's article is thin, so its page is noindex; Chorazin's is indexed.
+  const places = [cap, f("cho", "Chorazin", 35.564, 32.911), f("mag", "Magdala", 35.517, 32.825)];
+  const byId = new Map(places.map((p) => [p.properties.id, p]));
+  const q = (id: string) => ({
+    id,
+    question: Object.fromEntries(LOCALES.map((l) => [l, id])) as Record<
+      (typeof LOCALES)[number],
+      string
+    >,
+    map: { place: "cap" },
+  });
+  const html = placeRelatedHtml({
+    root: join(import.meta.dirname, ".."),
+    data: "/nowhere",
+    site: "",
+    places,
+    byId,
+    slugOf: new Map(places.map((p) => [p.properties.id, p.properties.name.toLowerCase()])),
+    nameOf: (p) => p.name,
+    indexed: (id) => id !== "mag",
+    questionIndexed: (id) => id !== "where-was-capernaum",
+    samePoint: (x) => [x.properties.id],
+    questions: [q("where-was-capernaum"), q("how-far-nazareth-to-capernaum")],
+    textPlaces: {
+      en: textPlacesFrom({ forms: { Chorazin: "cho", Magdala: "mag" }, names: [] }),
+    },
+    maps: {
+      render: () => undefined,
+      finish: () => ({ count: 0, kb: 0, largestKb: 0, removed: 0 }),
+    },
+  });
+  const page = html.forPlace(cap, "en");
+
+  it("links no thin article's place from the text, and lists it nowhere nearby", () => {
+    const [para] = page.article(
+      { en: ["Chorazin and Magdala lie near the lake."] } as never,
+      "cap",
+    );
+    expect(para).toContain('<a href="../chorazin/">Chorazin</a>');
+    expect(para).not.toContain("magdala/");
+    expect(page.nearby).toContain("../chorazin/");
+    expect(page.nearby).not.toContain("magdala/");
+  });
+
+  it("lists no question that is kept out of search", () => {
+    expect(page.questions.map((x) => x.id)).toEqual(["how-far-nazareth-to-capernaum"]);
+  });
+
+  it("links no thin article's place from an answer either", () => {
+    const [para] = html
+      .forQuestion(q("how-far-nazareth-to-capernaum"), "en")
+      .answer({ en: ["Past Magdala and Chorazin."] } as never);
+    expect(para).toContain("../../place/chorazin/");
+    expect(para).not.toContain("magdala/");
   });
 });
 

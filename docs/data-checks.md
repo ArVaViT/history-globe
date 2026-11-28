@@ -254,13 +254,21 @@ in a language (both Apheks were «Афек (Тель-Афек)»): a namesake's 
 or the word `content/namesakes.json` gives it («Афек (Антипатрида)», «Ефиопия (Нубия)»); where
 titles still meet, the place named in the most verses keeps its title and the other adds the
 kind of place («Babilonia (región)») or the chapter that first names it («Ефрафа (Руф 4)»).
+Which pages search engines are asked to index is decided in `scripts/index-policy.ts` (ADR 0023):
+a place whose article runs under 200 English words, and a "where" question whose answer shares at
+least 60 % of its content words with its place's article (unless it had 40 search impressions in
+the window `content/index-policy.json` records), are written with `noindex, follow` and left out of
+the sitemap, in every language at once. `content/index-policy.json` overrides either way with a
+reason; `scripts/build-pages.ts` stops on an override that names no page or one the rule already
+decides its way, and logs the questions near the line and the decisions that moved since the last
+build.
 **Links in the articles and the answers** (`scripts/article-links.ts`, tested): the places an
 article or an answer names link to their pages through the index of the verses' links (above),
 which drops rather than guesses, with the rules of a page of prose:
 
 - each place once, at its first mention in the whole text; never the page's own place, a record
   on its point or a namesake of its name; only a page search engines index (a place with an
-  article);
+  article that is not thin, ADR 0023);
 - nothing inside quotation marks, read as each language writes them (`QUOTES`: Danish »…«, read
   the other way round, linked inside Mark 3:8; Swedish ”…” open only before a word; an apostrophe
   is not the end of ‘…’), and a quotation left open runs to the paragraph's end;
@@ -289,7 +297,8 @@ was wrong but one (2026-11-27).
 places are towns and other point-like places with an indexed page, agreed or likely, within
 40 km, at most six, none on the place's own point (closer than 1 km), the distance in a
 straight line between our points; a place disputed or unknown, a land, a sea or a river gets
-none. The questions about a place are those whose map opens on it or measures from or to it.
+none. The questions about a place are those whose map opens on it or measures from or to it, less
+those kept out of search (ADR 0023).
 Each place's small map (`scripts/place-map.ts`, `data/maps/<id>.svg`) is drawn from our own
 data, without words, one file for every language: a town about 60 km round, an island 180 km
 (Cyprus and Crete whole), a land 450 km, a wider frame where a closer one shows nothing but land
@@ -305,7 +314,9 @@ places no longer built are removed.
 the translation numbers it otherwise, with its link (an empty row had stood under 3,108
 references); a page's description is neither its title nor opens with it; `pages.css` has the
 documentation's palette (`content/docs/docs.css`) with text colours at 4.5:1 at least, and every
-page, the 404 among them, colours the browser's bar with the paper.
+page, the 404 among them, colours the browser's bar with the paper. Where a sitemap was built, no
+page it lists says noindex and every page that does not is in it, and no indexed place or
+question page links a noindexed one from its text, its questions or its nearby places.
 
 ## Third-party notices
 
