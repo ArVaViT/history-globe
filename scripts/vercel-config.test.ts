@@ -116,4 +116,13 @@ describe("vercel.json", () => {
     expect(headersFor("/data/places.geojson", false).get("cache-control")).toBe("public, no-cache");
     expect(headersFor("/sw.js", false).get("cache-control")).toBe("public, no-cache");
   });
+
+  it("caches a place's map for good only at an address with its version", () => {
+    const path = "/data/maps/af2161c.svg";
+    expect(headersFor(path, false, { v: "3f9c0a1b2c4d" }).get("cache-control")).toContain(
+      "immutable",
+    );
+    expect(headersFor(path, false).get("cache-control")).toBe("public, no-cache");
+    expect(headersFor(path, false).get("link")).toContain("licenses/by/4.0");
+  });
 });
