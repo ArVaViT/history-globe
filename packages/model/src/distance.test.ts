@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { distanceKm, roundKm, routeKm, walkTime } from "./distance.ts";
+import { distanceKm, roundKm, routeKm, walkTime, wayKm } from "./distance.ts";
 
 const jerusalem = [35.2345, 31.7767] as const;
 const damascus = [36.3064, 33.5131] as const;
@@ -27,6 +27,13 @@ describe("distance", () => {
       2 * distanceKm(jerusalem, damascus),
     );
     expect(routeKm([jerusalem])).toBe(0);
+  });
+
+  it("measures a leg through its waypoints", () => {
+    expect(wayKm(jerusalem, rome)).toBeCloseTo(distanceKm(jerusalem, rome));
+    expect(wayKm(jerusalem, jerusalem, [damascus])).toBeCloseTo(
+      2 * distanceKm(jerusalem, damascus),
+    );
   });
 });
 

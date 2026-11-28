@@ -483,6 +483,7 @@ export async function loadData(): Promise<LoadedData> {
       ...(s.by === "sea" ? { sea: true } : {}),
       ...(s.by === "untold" ? { untold: true } : {}),
       ...(s.sailed ? { sailed: s.sailed } : {}),
+      ...(s.by === "sea" && s.via ? { via: s.via } : {}),
     })),
   }));
   // A lesson in the address (lesson.ts): its code loads only then.

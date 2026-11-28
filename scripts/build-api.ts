@@ -98,6 +98,9 @@ const content = JSON.parse(readFileSync(join(data, "content.json"), "utf8")) as 
       note: Record<string, string>;
       by?: string;
       sailed?: { days: number; about?: true; ref: string };
+      took?: { days: number; about?: true; ref: string };
+      via?: [number, number][];
+      within_next?: true;
     }[];
   }[];
 };
@@ -361,6 +364,11 @@ write(
       ...(s.by ? { by: s.by } : {}),
       // Days at sea, only where the text gives them.
       ...(s.sailed ? { sailed: s.sailed } : {}),
+      // Days on foot, only where the text gives them (1 Kgs 19:8).
+      ...(s.took ? { took: s.took } : {}),
+      // The points at sea a voyage keeps to, and a leg within the next one's days (Acts 27:16).
+      ...(s.via ? { via: s.via } : {}),
+      ...(s.within_next ? { within_next: true } : {}),
     })),
   })),
 );
@@ -559,7 +567,7 @@ write("index.json", {
     "ancient.json":
       "place id → what ancient writers outside the Bible say of it: author, work, passage, url, summary",
     "tours.json":
-      "tours: stops in order, each with its passage and note; by sea, and the days sailed where the text says",
+      "tours: stops in order, each with its passage and note; by sea, and the days sailed or walked where the text says",
     "people.json":
       "the people the Bible names (STEPBible TIPNR ids): name, names (other languages where the site has them), sex, verses, first (TIPNR's first verse, STEPBible abbreviations)",
     "chapters/{Book}.json":

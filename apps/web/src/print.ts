@@ -7,6 +7,7 @@ import {
   placeName,
   roundKm,
   pick,
+  wayKm,
 } from "@hg/model";
 import { chapterLabel, chapterOf, firstVerseIn, isPersonRef, readingOrder } from "./chapter";
 import type { LoadedData } from "./data";
@@ -327,9 +328,10 @@ export async function printForClass({
   const byRoad = (i: number) => (tour && roads ? roadKm(roads, tour, i) : null);
   const leg = (i: number) => {
     const a = tour?.stops[i - 1]?.at;
-    const b = tour?.stops[i]?.at;
-    if (!a || !b) return "";
-    const d = distanceKm(a, b);
+    const stop = tour?.stops[i];
+    if (!a || !stop) return "";
+    // A voyage through the points at sea it keeps to, as the stop's card measures it.
+    const d = wayKm(a, stop.at, stop.via);
     if (d < 2) return "";
     const n = new Intl.NumberFormat(s.locale).format(roundKm(d));
     const road = byRoad(i);

@@ -2310,3 +2310,21 @@ table.response td {
 p.cite {
   font: 15px/1.6 var(--serif);
 }
+
+/* A tour's facts under its title, and its route map: an image (data/tour-maps/<id>.svg,
+   scripts/route-map.ts) with its own colours for the reader's light or dark scheme. */
+p.tour-facts {
+  margin: 4px 0 14px;
+  color: var(--ink-soft);
+  font: 500 14px/1.5 var(--sans);
+}
+figure.tour-figure {
+  margin: 8px 0 24px;
+}
+img.tour-map {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 24px 48px -32px rgb(30 20 8 / 0.6);
+}

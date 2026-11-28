@@ -1,14 +1,5 @@
 import type { LonLat, Tour } from "@hg/core";
-import {
-  distanceKm,
-  formatRef,
-  type Locale,
-  placeName,
-  roundKm,
-  routeKm,
-  walkTime,
-  pick,
-} from "@hg/model";
+import { formatRef, type Locale, placeName, roundKm, walkTime, wayKm, pick } from "@hg/model";
 import { ArrowLeft, ArrowRight, X } from "./icons";
 import { useTranslation } from "../i18n";
 import type { PlaceProps } from "../data";
@@ -75,11 +66,18 @@ export function TourStopCard({
   const name = place ? placeName(place, locale) : stop.placeId;
   const last = tour.stops.length - 1;
   // How far this stop is from the one before, or, at the start, how long the route is:
-  // in a straight line, the only distance the data can vouch for.
+  // in a straight line, the only distance the data can vouch for (a voyage through the
+  // points at sea it keeps to, round a cape or an island, as the tour's page measures it).
   const prev = step > 0 ? tour.stops[step - 1] : undefined;
   const km = (n: number) => new Intl.NumberFormat(locale).format(roundKm(n));
-  const fromPrev = prev ? distanceKm(prev.at, stop.at) : 0;
-  const total = step === 0 ? routeKm(tour.stops.map((s) => s.at)) : 0;
+  const fromPrev = prev ? wayKm(prev.at, stop.at, stop.via) : 0;
+  const total =
+    step === 0
+      ? tour.stops.reduce((sum, s, i) => {
+          const before = tour.stops[i - 1];
+          return before ? sum + wayKm(before.at, s.at, s.via) : sum;
+        }, 0)
+      : 0;
   const distance =
     prev && fromPrev >= 2
       ? t("tours.distance_from", { km: km(fromPrev), from: stopName(prev.placeId) })

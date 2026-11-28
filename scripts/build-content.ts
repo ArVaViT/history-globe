@@ -39,6 +39,9 @@ import { LOCALES, type Locale } from "../packages/model/src/locales.ts";
 import { inheritLife } from "../packages/model/src/place-life-links.ts";
 import { buildPolities } from "./build-polities.ts";
 import { undocumented } from "./release-doc.ts";
+import { tourNameErrors } from "./tour-names.ts";
+import { seaLegErrors } from "./sea-legs.ts";
+import { type TourTexts, tourTextErrors, withoutTexts } from "./tour-texts.ts";
 import { Canaries } from "./canary.ts";
 import { packChapterYears } from "../packages/model/src/chapter-years.ts";
 import { YEAR_MAX, YEAR_MIN } from "../packages/core/src/engine.ts";
@@ -509,11 +512,35 @@ for (const file of readdirSync(join(root, "content/tours")).filter((f) => f.ends
       errors.push(`tours/${file}: stop ${i + 1} (${s.place}) is outside the site's years`);
     if (s.sailed && s.by !== "sea")
       errors.push(`tours/${file}: stop ${i + 1} (${s.place}) has days sailed but no "by: sea"`);
+    if (s.took && s.by)
+      errors.push(`tours/${file}: stop ${i + 1} (${s.place}) has days on foot but "by: ${s.by}"`);
     if (i > 0 && result.data.stops[i - 1]?.place === s.place) {
       errors.push(`tours/${file}: stop ${i + 1} repeats the previous place ${s.place}`);
     }
   });
+  errors.push(...tourTextErrors(result.data, LOCALES));
   tours.push(result.data);
+}
+// A tour with a page names its people and places as the names files do, in every language
+// (tour-names.ts); the tours without page texts are not held to it yet.
+{
+  const placesEn = Object.fromEntries(nameEntries.map((p) => [p.id, p.en]));
+  const peopleRu = (
+    JSON.parse(readFileSync(join(root, "content/people-ru.json"), "utf8")) as {
+      names: Record<string, { ru: string }>;
+    }
+  ).names;
+  const placesRu = Object.fromEntries(nameEntries.map((p) => [p.id, p.ru]));
+  for (const t of tours) {
+    if (!t.intro) continue;
+    const people = Object.fromEntries(Object.entries(peopleRu).map(([id, n]) => [id, n.ru]));
+    const polities = Object.keys(namesIn.de?.polities ?? {});
+    errors.push(...tourNameErrors(t, "ru", { people, places: placesRu }, placesEn, polities));
+    for (const l of NAME_LOCALES) {
+      const f = namesIn[l];
+      if (f) errors.push(...tourNameErrors(t, l, f, placesEn, polities));
+    }
+  }
 }
 // A tour's people are TIPNR's (people.json, from the data build): an id that is not
 // there names no one.
@@ -656,7 +683,16 @@ for (const id of WIKIPEDIA_ALONE)
     ...tours.map((t) => ({
       key: `tours/${t.id}`,
       texts: Object.fromEntries(
-        LOCALES.map((l) => [l, [t.title[l] ?? "", ...t.stops.map((s) => s.note[l] ?? "")]]),
+        LOCALES.map((l) => [
+          l,
+          [
+            t.title[l] ?? "",
+            ...t.stops.map((s) => s.note[l] ?? ""),
+            // The page's texts (tour-texts.ts), where the tour has them.
+            ...(t.intro?.[l] ?? []),
+            ...t.stops.flatMap((s) => (s.story ? [s.story[l] ?? ""] : [])),
+          ],
+        ]),
       ),
     })),
   ];
@@ -1378,6 +1414,17 @@ if (existsSync("content/ancient-sites.json")) {
   for (const id of IN_WATER.keys())
     if (!points.some(([p, , at]) => p === id && water.depthKm(at) > IN_WATER_KM))
       errors.push(`IN_WATER: ${id} is no longer in the water; take it out`);
+  // A tour's voyages keep to the water, through their `via` points (sea-legs.ts).
+  errors.push(
+    ...seaLegErrors(
+      tours,
+      (id) => {
+        const at = pointOf.get(id) ?? ancientPoints.get(id);
+        return at ? [at[0] ?? 0, at[1] ?? 0] : undefined;
+      },
+      water,
+    ),
+  );
 }
 
 // When the chapters happen: the map's year for a chapter or a person.
@@ -1442,6 +1489,24 @@ const articlesOut = articles.map((a) => ({
   ...translated(`articles/${a.id}`, a.sources),
   ...reviewsOf("article", a.id),
 }));
+// The tours' page texts (tour-texts.ts), for build-pages.ts: their sources in every language.
+const tourTexts: Record<string, TourTexts> = Object.fromEntries(
+  tours.flatMap((t) =>
+    t.intro && t.sources
+      ? [
+          [
+            t.id,
+            {
+              intro: t.intro,
+              stories: t.stops.map((s) => s.story ?? {}),
+              sources: t.sources,
+              ...translated(`tours/${t.id}`, t.sources),
+            },
+          ],
+        ]
+      : [],
+  ),
+);
 const questionsOut = questions.map((q) => ({
   ...q,
   answer: inEachLanguage(() => "api/v1/questions.json", q.id, q.answer),
@@ -1574,7 +1639,9 @@ for (const t of tours) {
   scriptOf(`tours/${t.id}`, t.title);
   t.stops.forEach((s, i) => {
     scriptOf(`tours/${t.id} stop ${String(i + 1)}`, s.note);
+    if (s.story) scriptOf(`tours/${t.id} stop ${String(i + 1)} story`, s.story);
   });
+  if (t.intro) scriptOf(`tours/${t.id} intro`, t.intro);
 }
 for (const [place, ms] of Object.entries(ancientByPlace))
   for (const m of ms) scriptOf(`ancient-authors.yaml: ${place} ${m.author.en}`, m.note);
@@ -1613,7 +1680,7 @@ const release: ContentRelease = {
   names: Object.fromEntries(
     Object.entries(names).map(([id, n]) => [id, canaries.keys("data/content.json", id, n)]),
   ),
-  tours,
+  tours: tours.map(withoutTexts),
   where_ru: whereRu,
   where_en: whereEn,
   where_in: whereIn,
@@ -1638,6 +1705,7 @@ if (unnamed.length > 0) {
   process.exit(1);
 }
 writeFileSync(join(build, "questions.json"), JSON.stringify(questionsOut));
+writeFileSync(join(build, "tour-texts.json"), JSON.stringify(tourTexts));
 // The reviews for their pages (build-pages.ts); none written when there are none.
 if (reviewed.reviews.length > 0)
   writeFileSync(join(build, "reviews.json"), JSON.stringify(reviewed.reviews));

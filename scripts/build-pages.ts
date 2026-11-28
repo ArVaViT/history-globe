@@ -21,7 +21,6 @@ import type { ContentRelease, PlaceLife } from "../packages/model/src/content.ts
 import {
   BOOKS,
   canonicalPosition,
-  formatRef,
   formatRefOr,
   NT_BOOKS,
 } from "../packages/model/src/scripture.ts";
@@ -48,7 +47,7 @@ import { LANDING, LISTS, T } from "./page-words.ts";
 import { shareText, siteCertainty } from "../packages/model/src/sites.ts";
 import { loadAllLocaleData } from "../packages/model/src/locale-data.ts";
 import { placeSlugs } from "../packages/model/src/slugs.ts";
-import { distanceKm, roundKm } from "../packages/model/src/distance.ts";
+import { roundKm, wayKm } from "../packages/model/src/distance.ts";
 import { splitPlaces, textPlacesFrom, type TextPlaces } from "../packages/model/src/text-places.ts";
 import {
   type ItemReview,
@@ -58,6 +57,21 @@ import {
 } from "../packages/model/src/reviews.ts";
 import { itemReviewLd, reviewPages, statusLine } from "./review-pages.ts";
 import { REVIEW_WORDS } from "./review-words.ts";
+import {
+  factsLine,
+  givesTime,
+  introHtml,
+  legLine,
+  legsOf,
+  loadMapLayers,
+  mapFigure,
+  sourcesHtml,
+  stopText,
+  tourLd,
+  tourMaps,
+} from "./tour-page.ts";
+import type { TourTexts } from "./tour-texts.ts";
+import { TOUR_WORDS } from "./tour-words.ts";
 import { DUPLICATE_SHARE, indexPolicy, NEAR_SHARE, type IndexOverrides } from "./index-policy.ts";
 import { placeRelatedHtml } from "./place-related-html.ts";
 
@@ -601,6 +615,29 @@ const stopName = (id: string, l: Lang) => {
   const a = ancient.get(id)?.properties;
   return a ? (a[l] ?? a.en) : id;
 };
+// A tour page's data (tour-page.ts): its texts (build-content.ts writes them apart from
+// content.json), the legs by road and their ways, the sea and the states for its map, and
+// the map's words for time on foot and at sea.
+const tourTexts = (
+  existsSync(join(build, "tour-texts.json"))
+    ? JSON.parse(readFileSync(join(build, "tour-texts.json"), "utf8"))
+    : {}
+) as Record<string, TourTexts | undefined>;
+const readData = <T>(file: string, empty: T): T =>
+  existsSync(join(data, file)) ? (JSON.parse(readFileSync(join(data, file), "utf8")) as T) : empty;
+const roadLegs = readData<Record<string, (number | null)[] | undefined>>("road-legs.json", {});
+const roadPaths = readData<Record<string, [number, number][] | undefined>>("road-paths.json", {});
+const mapLayers = loadMapLayers(data);
+/** The tours' maps, one file each for every language (tour-page.ts tourMaps). */
+const tourMapFiles = tourMaps(data, "../../../");
+const tourUi = Object.fromEntries(
+  LANGS.map((l) => [
+    l,
+    JSON.parse(readFileSync(join(root, `apps/web/src/i18n/${l}.json`), "utf8")) as {
+      tours: Record<string, string>;
+    },
+  ]),
+) as Record<Lang, { tours: Record<string, string> }>;
 const toursAt = new Map<string, string[]>();
 for (const t of content.tours)
   for (const s of t.stops) {
@@ -765,6 +802,15 @@ function candidates(p: Props, l: Lang): string {
       <p class="note">${esc(note)}.</p>`;
 }
 
+/**
+ * Whether a place's page is one search engines index (ADR 0023): it has an article, not a
+ * thin one, and is not a duplicate. Pages link only to these.
+ */
+function placeIndexed(id: string): boolean {
+  const a = articles[id];
+  return !!a && !byId.get(id)?.properties.dup && !policy.thinArticles.has(a.id);
+}
+
 /** The breadcrumb, map, linked article, questions and nearby places (place-related-html.ts). */
 const relatedHtml = placeRelatedHtml({
   root,
@@ -776,8 +822,7 @@ const relatedHtml = placeRelatedHtml({
   nameOf,
   // Only pages search engines index (ADR 0023): not a thin article's, not a question its
   // place's article answers.
-  indexed: (id) =>
-    !!articles[id] && !byId.get(id)?.properties.dup && !policy.thinArticles.has(articles[id].id),
+  indexed: placeIndexed,
   questionIndexed: (id) => !policy.duplicateQuestions.has(id),
   samePoint,
   questions,
@@ -1002,87 +1047,112 @@ function questionPages(l: Lang): void {
 
 /** A page for every tour, its stops and the way between them. */
 function tourPages(l: Lang): void {
-  // How far each stop is from the one before, as the tour's card says it: in a straight
-  // line, and along the Roman roads where the tour went by them (build-road-legs.ts).
-  const roadLegs = (
-    existsSync(join(data, "road-legs.json"))
-      ? JSON.parse(readFileSync(join(data, "road-legs.json"), "utf8"))
-      : {}
-  ) as Record<string, (number | null)[] | undefined>;
-  const legOf = (t: (typeof content.tours)[number], i: number) => {
-    const a = pointOf(t.stops[i - 1]?.place ?? "");
-    const b = pointOf(t.stops[i]?.place ?? "");
-    if (!a || !b) return "";
-    const d = distanceKm(a, b);
-    if (d < 2) return "";
-    const num = (km: number) => new Intl.NumberFormat(l).format(roundKm(km));
-    const stop = t.stops[i];
-    // A leg sailed or untold, or a tour not travelled, has no way by road.
-    const road = stop?.by || t.walked === false ? undefined : roadLegs[t.id]?.[i];
-    const sea =
-      stop?.by === "untold"
-        ? T[l].untold
-        : stop?.by === "sea"
-          ? T[l].sea(
-              stop.sailed?.days,
-              stop.sailed && formatRef(stop.sailed.ref, l),
-              stop.sailed?.about,
-            )
-          : "";
-    return T[l].leg(num(d), road ? num(road) : null, sea);
-  };
+  // The parts of the page are built in tour-page.ts: each leg's distance (in a straight line,
+  // and along the Roman roads where the tour went by them, build-road-legs.ts) and time, the
+  // route map, the intro and the stops' stories (tour-texts.ts), the structured data.
+  const words = { tours: tourUi[l].tours, place: ui[l].place };
   for (const t of content.tours) {
     const title = t.title[l] ?? t.title.en;
     const path = `${l}/tour/${t.id}`;
     // The way drawn (tour-images.mjs): the picture a search shows and a link previews.
     const image = hasTourImage(t.id) ? `og/tour/${t.id}.jpg` : undefined;
+    const texts = tourTexts[t.id];
+    const legs = legsOf(t, pointOf, roadLegs);
+    const when = year({ year: t.year, approximate: t.approximate === true }, l);
+    const facts = factsLine(words, l, t, legs);
+    const figure = mapFigure({
+      l,
+      t,
+      pointOf,
+      roadPaths,
+      layers: mapLayers,
+      label: T[l].route_alt(title),
+      yearLabel: when,
+      writeMap: tourMapFiles.writer(t.id),
+    });
     const body = `    <main id="main" class="page">
-      <p class="kicker">${T[l].tour} · ${esc(year({ year: t.year, approximate: t.approximate === true }, l))}</p>
+      <p class="kicker">${T[l].tour} · ${esc(when)}</p>
       <h1>${esc(title)}</h1>${
         reviewed("tour", t.id)
           ? `
       ${statusLine({ l, reviews: reviewed("tour", t.id), checked: "", up: "../../../", methodology: `${docsPath(l, "methodology")}#review` })}`
           : ""
       }
+      <p class="tour-facts">${facts.map((x) => esc(x)).join(" · ")}</p>
       <p class="actions"><a class="button" href="../../../?tour=${t.id}&amp;locale=${l}">${T[l].tour_open} →</a></p>${
-        image
+        figure
           ? `
-      <figure class="route-map"><img src="../../../${image}" alt="${esc(T[l].route_alt(title))}" width="1200" height="630" /></figure>`
+      ${figure}`
+          : ""
+      }${
+        // The map first, as people come for it ("Paul's journeys map"), then what the tour is.
+        texts
+          ? `
+      ${introHtml(texts, l)}`
           : ""
       }
+      <h2>${esc(TOUR_WORDS[l].stops)}</h2>
       <ol class="stops">${t.stops
         .map((s, i) => {
           const f = byId.get(s.place);
           const n = stopName(s.place, l);
+          // Only places kept in search are linked (ADR 0023), as on the place pages.
           const link =
-            f && f.properties.verses > 0
+            f && f.properties.verses > 0 && placeIndexed(s.place)
               ? `<a href="../../place/${slugOf.get(s.place) ?? s.place}/">${esc(n)}</a>`
               : esc(n);
-          const leg = legOf(t, i);
-          return `<li><p class="stop"><b>${link}</b> <span class="ref">${esc(s.ref ? refOf(s.ref, l) : (s.source?.cite[l] ?? s.source?.cite.en ?? ""))}${leg ? ` · ${esc(leg)}` : ""}</span></p><p>${esc(s.note[l] ?? s.note.en)}</p><a class="more" href="../../../?tour=${t.id}&amp;stop=${String(i + 1)}&amp;locale=${l}" aria-label="${esc(`${T[l].open}: ${n}`)}">${T[l].open} →</a></li>`;
+          const leg = legs[i] ? legLine(words, l, legs[i], t.walked !== false) : "";
+          return `<li><p class="stop"><b>${link}</b> <span class="ref">${esc(s.ref ? refOf(s.ref, l) : (s.source?.cite[l] ?? s.source?.cite.en ?? ""))}${leg ? ` · ${esc(leg)}` : ""}</span></p><p>${esc(stopText(texts, t, i, l))}</p><a class="more" href="../../../?tour=${t.id}&amp;stop=${String(i + 1)}&amp;locale=${l}" aria-label="${esc(`${T[l].open}: ${n}`)}">${T[l].open} →</a></li>`;
         })
-        .join("\n        ")}</ol>
+        .join("\n        ")}</ol>${
+        givesTime(t, legs)
+          ? `
+      <p class="note">${esc(TOUR_WORDS[l].note)} <a href="../../../${docsPath(l, "methodology")}#travel">${esc(TOUR_WORDS[l].how)}</a></p>`
+          : ""
+      }${
+        texts
+          ? `
+      ${sourcesHtml(texts, l)}`
+          : ""
+      }
     </main>`;
     const first = t.stops[0]?.note[l] ?? t.stops[0]?.note.en ?? "";
-    // What the tour covers, as its card in the list says it, then where it starts: the title
-    // is already the page's, and "Jacob: Jacob leaves…" had said the name twice.
+    // What the tour covers, as its card in the list says it, then what it is (the intro's
+    // first sentence where it has one, else where it starts): the title is already the
+    // page's, and "Jacob: Jacob leaves…" had said the name twice.
     const km = tourKm(t);
     const span = [
       tourSpan(t, l),
       LISTS[l].stops(t.stops.length),
       ...(km === null ? [] : [LISTS[l].km(new Intl.NumberFormat(l).format(roundKm(km)))]),
     ].join(" · ");
+    const desc = clip(`${span}. ${texts?.intro[l]?.[0] ?? first}`, l);
     write(
       path,
       page({
         l,
         // "Paul's first journey — map": what people search for, and what the page is.
         title: `${title} — ${T[l].tour_map}`,
-        desc: clip(`${span}. ${first}`, l),
+        desc,
         path: `${path}/`,
         body,
         depth: 3,
         ...(image ? { image } : {}),
+        ld: tourLd({
+          site,
+          l,
+          t,
+          title,
+          desc,
+          path: `${path}/`,
+          toursTitle: T[l].toursTitle,
+          stopName: (id) => stopName(id, l),
+          pointOf,
+          placePath: (id) =>
+            (byId.get(id)?.properties.verses ?? 0) > 0 && placeIndexed(id)
+              ? `${l}/place/${slugOf.get(id) ?? id}/`
+              : undefined,
+        }),
       }),
       true,
       `content/tours/${t.id}.yaml`,
@@ -1166,14 +1236,18 @@ function tourSpan(t: Tour, l: Lang): string {
   return `${chapter(b1, c1)}–${/\d+$/.exec(chapter(b2, c2))?.[0] ?? c2}`;
 }
 
-/** How far a tour goes, stop to stop in straight lines; nothing for a tour not travelled. */
+/**
+ * How far a tour goes, stop to stop in straight lines (a voyage through its `via`, as the
+ * tour's page measures it); nothing for a tour not travelled.
+ */
 function tourKm(t: Tour): number | null {
   if (t.walked === false) return null;
   let km = 0;
   for (let i = 1; i < t.stops.length; i++) {
+    const s = t.stops[i];
     const a = pointOf(t.stops[i - 1]?.place ?? "");
-    const b = pointOf(t.stops[i]?.place ?? "");
-    if (a && b) km += distanceKm(a, b);
+    const b = pointOf(s?.place ?? "");
+    if (a && b) km += wayKm(a, b, s?.by === "sea" ? s.via : []);
   }
   return km >= 2 ? km : null;
 }
@@ -1418,6 +1492,7 @@ for (const l of LANGS) {
   indexPages(l);
   reviewsIn(l);
 }
+tourMapFiles.finish();
 if (sameTitle.size > 0) {
   for (const x of sameTitle) console.error(`error: two places with one page title: ${x}`);
   process.exit(1);

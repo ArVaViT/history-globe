@@ -45,6 +45,12 @@ export interface TourStop {
   readonly year?: number;
   /** The leg to this stop was sailed. */
   readonly sea?: boolean;
+  /**
+   * The points at sea the voyage keeps to (Acts 27:4, under the lee of Cyprus): the card and
+   * the sheet measure the leg along them. The map's route stays a line from stop to stop, as
+   * it is on land, where it does not follow the roads either.
+   */
+  readonly via?: readonly LonLat[];
   /** The text does not trace the leg to this stop (regions crossed): no time on foot. */
   readonly untold?: boolean;
   /** How many days the voyage took, and the verse that says so. */
