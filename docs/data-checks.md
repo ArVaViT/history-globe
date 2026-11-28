@@ -254,6 +254,52 @@ in a language (both Apheks were «Афек (Тель-Афек)»): a namesake's 
 or the word `content/namesakes.json` gives it («Афек (Антипатрида)», «Ефиопия (Нубия)»); where
 titles still meet, the place named in the most verses keeps its title and the other adds the
 kind of place («Babilonia (región)») or the chapter that first names it («Ефрафа (Руф 4)»).
+**Links in the articles and the answers** (`scripts/article-links.ts`, tested): the places an
+article or an answer names link to their pages through the index of the verses' links (above),
+which drops rather than guesses, with the rules of a page of prose:
+
+- each place once, at its first mention in the whole text; never the page's own place, a record
+  on its point or a namesake of its name; only a page search engines index (a place with an
+  article);
+- nothing inside quotation marks, read as each language writes them (`QUOTES`: Danish »…«, read
+  the other way round, linked inside Mark 3:8; Swedish ”…” open only before a word; an apostrophe
+  is not the end of ‘…’), and a quotation left open runs to the paragraph's end;
+- nothing inside a longer name that is something else (`BLOCK`: the Damascus Gate, the Jerusalem
+  Talmud, Flavia Neapolis, Bethlehem of Galilee);
+- no mention the words around it make something else (`REFUSE`): a person (a first name before
+  it in English, Moshe Dothan, and then the name stays his in that text; a ruler's numeral after
+  it, Rameses II), a gate or a book named after the place («la Puerta de Susa», «Talmud de
+  Jérusalem»; not «una puerta de Jerusalén»), a son in a genealogy ("the brother of Elam");
+- **today's state is not the land of the Bible**: a land's name with a word of today in its
+  sentence ("modern", "today", «ныне», «сьогодні», "ma", "heute", up to twelve words before it or
+  three after), a part or a province of a modern state ("southern Syria", "the Homs governorate
+  of Syria") or "Jordan" without "the" (the kingdom, not the river) is not linked. A town is not
+  a state: "modern Jerusalem" is Jerusalem;
+- a place only some texts mean by its name is linked only from them (`ONLY_FROM`: Neapolis,
+  Philippi's port);
+- a translation links only the places its English text links, none the English refused
+  anywhere, and none of two places it names alike (Spanish «Babilonia» is Babylon and Babylonia);
+- the pairs read by eye and found wrong in their sentence (`DENY`, each with its reason: the
+  Salamis of 480 BC, Firmilian's Caesarea, the Gihon of Eden, the Heliopolis that is Baalbek).
+
+Every link into a namesake's page of the English articles was read by eye when the rules were
+written, and samples of 100 links in ten languages at a time were read until none in a hundred
+was wrong but one (2026-11-27).
+**Around a place** (`scripts/place-related.ts`, `place-related-html.ts`, tested): the nearby
+places are towns and other point-like places with an indexed page, agreed or likely, within
+40 km, at most six, none on the place's own point (closer than 1 km), the distance in a
+straight line between our points; a place disputed or unknown, a land, a sea or a river gets
+none. The questions about a place are those whose map opens on it or measures from or to it.
+Each place's small map (`scripts/place-map.ts`, `data/maps/<id>.svg`) is drawn from our own
+data, without words, one file for every language: a town about 60 km round, an island 180 km
+(Cyprus and Crete whole), a land 450 km, a wider frame where a closer one shows nothing but land
+(Tema, Dedan). Its year is the middle year of the chapters that name the place
+(`chapter-years.yaml`; Susa is Esther's, 474 BC), kept within the years the town stood
+(`place-life.yaml`), moved to the nearest year (within 150) in which a state holds it; the
+caption names that state as the card's band does (the smallest shape holding the point) from
+the same shapes the picture draws, and credits only the data drawn (Cliopatria and RiverATLAS,
+CC BY 4.0). The breadcrumb ends with the page itself, as its `BreadcrumbList` does. Maps of
+places no longer built are removed.
 `scripts/build-docs.ts` stops on a comment in a translated page's example code that is still the English one.
 `scripts/check-pages.ts` reads the built pages: every verse row has the verse or the note that
 the translation numbers it otherwise, with its link (an empty row had stood under 3,108
