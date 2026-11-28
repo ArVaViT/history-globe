@@ -58,6 +58,7 @@ import {
 } from "../packages/model/src/reviews.ts";
 import { itemReviewLd, reviewPages, statusLine } from "./review-pages.ts";
 import { REVIEW_WORDS } from "./review-words.ts";
+import { placeRelatedHtml } from "./place-related-html.ts";
 
 // Every language is written here, so every language's words are loaded first.
 await loadAllLocaleData();
@@ -720,6 +721,23 @@ function candidates(p: Props, l: Lang): string {
       <p class="note">${esc(note)}.</p>`;
 }
 
+/** The breadcrumb, map, linked article, questions and nearby places (place-related-html.ts). */
+const relatedHtml = placeRelatedHtml({
+  root,
+  data,
+  site,
+  places,
+  byId,
+  slugOf,
+  nameOf,
+  indexed: (id) => !!articles[id] && !byId.get(id)?.properties.dup,
+  samePoint,
+  questions,
+  textPlaces,
+  ...(content.chapter_years ? { chapterYears: content.chapter_years } : {}),
+  ...(content.life ? { life: content.life } : {}),
+});
+
 /** A page for every place with verses: its card as a page, with its article and photo. */
 function placePages(l: Lang): void {
   for (const f of shown) {
@@ -747,7 +765,8 @@ function placePages(l: Lang): void {
       (e) => e.place === p.id && !(content.battles ?? []).some((b) => b.event === e.id),
     );
     const battles = (content.battles ?? []).filter((b) => b.place === p.id);
-    const asked = questions.filter((q) => q.map?.place === p.id);
+    const related = relatedHtml.forPlace(f, l);
+    const asked = related.questions;
     const writers = ancientAuthors[p.id] ?? [];
     const tours = (toursAt.get(p.id) ?? []).flatMap((id) => {
       const t = content.tours.find((x) => x.id === id);
@@ -759,6 +778,7 @@ function placePages(l: Lang): void {
     const [lon, lat] = f.geometry.coordinates;
     const desc = art?.body[l][0] ? clip(art.body[l][0], l) : T[l].desc(name, kind, p.verses);
     const body = `    <main id="main" class="page">
+      ${related.crumbs}
       <p class="kicker">${esc(kind)}</p>
       <h1>${esc(name)}</h1>${
         art
@@ -768,7 +788,7 @@ function placePages(l: Lang): void {
       }
       <ul class="facts">${today ? `<li><span>${T[l].today}</span> ${esc(today)}</li>` : ""}${otherRecord ? `<li>${esc(otherRecord)}</li>` : ""}${l !== "en" && name !== p.name ? `<li><span>${T[l].english}</span> <span lang="en">${esc(p.name)}</span></li>` : ""}${note ? `<li class="warn">${esc(note)}</li>` : ""}</ul>${candidates(p, l)}
       <p class="actions"><a class="button" href="../../../?place=${p.id}&amp;locale=${l}">${T[l].open} →</a></p>
-      ${photoHtml(p.id, name, l)}
+      ${photoHtml(p.id, name, l)}${related.map}
       ${lifeLine(content.life?.[p.id], l)}${
         events.length
           ? `
@@ -797,7 +817,7 @@ function placePages(l: Lang): void {
         art
           ? `
       <h2>${T[l].article}</h2>
-      ${art.body[l].map((para) => `<p>${esc(para)}</p>`).join("\n      ")}
+      ${related.article(art.body, art.id).join("\n      ")}
       <p class="note">${T[l].scripture}: ${art.scripture.map((r) => esc(refOf(r, l))).join("; ")}</p>
       <details class="note"><summary>${T[l].sources}</summary><ul>${sourcesOf(art, l)
         .map((s) => `<li>${esc(s)}</li>`)
@@ -820,7 +840,7 @@ function placePages(l: Lang): void {
       <h2>${T[l].tours}</h2>
       <ul class="cards">${tours.map((t) => `<li><a href="../../tour/${t.id}/">${esc(t.title[l] ?? t.title.en)} <span aria-hidden="true">→</span></a></li>`).join("")}</ul>`
           : ""
-      }
+      }${related.nearby}
     </main>`;
     write(
       path,
@@ -838,7 +858,7 @@ function placePages(l: Lang): void {
         ["Public domain", "CC0"].includes(content.photos[p.id]?.license ?? "")
           ? { image: `data/photos/${p.id}.jpg` }
           : {}),
-        ld: {
+        ld: related.ld({
           "@context": "https://schema.org",
           "@type": "Place",
           name,
@@ -863,7 +883,7 @@ function placePages(l: Lang): void {
           url: `${site}/${path}/`,
           hasMap: `${site}/?place=${p.id}&locale=${l}`,
           ...(art ? itemReviewLd(reviewed("article", art.id), reviewById, site, l) : {}),
-        },
+        }),
         noindex: !art,
         ...(art ? { licence: "article" as const } : {}),
       }),
@@ -880,17 +900,7 @@ function questionPages(l: Lang): void {
   for (const q of questions) {
     const path = `${l}/q/${q.id}`;
     const title = q.question[l];
-    const linked = (text: string) => {
-      const index = textPlaces[l];
-      if (!index) return esc(text);
-      return splitPlaces(text, index)
-        .map((seg) =>
-          seg.place && byId.get(seg.place)?.properties.verses
-            ? `<a href="../../place/${slugOf.get(seg.place) ?? seg.place}/">${esc(seg.text)}</a>`
-            : esc(seg.text),
-        )
-        .join("");
-    };
+    const related = relatedHtml.forQuestion(q, l);
     const view = new URLSearchParams({
       ...(q.map?.place ? { place: q.map.place } : {}),
       ...(q.map?.year ? { year: String(q.map.year.year) } : {}),
@@ -900,10 +910,11 @@ function questionPages(l: Lang): void {
       locale: l,
     });
     const body = `    <main id="main" class="page">
+      ${related.crumbs}
       <p class="kicker">${T[l].question}</p>
       <h1>${esc(title)}</h1>
       ${statusLine({ l, reviews: reviewed("question", q.id), checked: T[l].checkedQ, up: "../../../", methodology: `${docsPath(l, "methodology")}#review` })}
-      ${q.answer[l].map((p) => `<p>${linked(p)}</p>`).join("\n      ")}
+      ${related.answer(q.answer).join("\n      ")}
       <p class="actions"><a class="button" href="../../../?${esc(view.toString())}">${T[l].showMap} →</a></p>
       <p class="note">${T[l].scripture}: ${q.scripture.map((r) => esc(refOf(r, l))).join("; ")}</p>
       <details class="note"><summary>${T[l].sources}</summary><ul>${sourcesOf(q, l)
@@ -919,7 +930,7 @@ function questionPages(l: Lang): void {
         path: `${path}/`,
         body,
         depth: 3,
-        ld: {
+        ld: related.ld({
           "@context": "https://schema.org",
           "@type": "FAQPage",
           ...itemReviewLd(reviewed("question", q.id), reviewById, site, l),
@@ -930,7 +941,7 @@ function questionPages(l: Lang): void {
               acceptedAnswer: { "@type": "Answer", text: plain(q.answer[l].join(" ")) },
             },
           ],
-        },
+        }),
         licence: "answer",
       }),
       true,
@@ -1615,6 +1626,12 @@ ${["", ...LANGS.flatMap((l) => DOC_PAGES.map((p) => docsPath(l, p))), ...urls]
 `,
   );
 } else rmSync(sitemap, { force: true });
+// The places' maps (place-map.ts): those of places no longer built removed, and their size.
+const maps = relatedHtml.finish();
+if (maps)
+  console.log(
+    `place maps: ${String(maps.count)}, ${String(maps.kb)} kB (largest ${String(maps.largestKb)} kB)${maps.removed ? `, ${String(maps.removed)} stale removed` : ""}`,
+  );
 console.log(
   `pages: ${String(urls.length + unlisted.length)}, ${String(unlisted.length)} of them thin and kept out of search (${String(shown.length)} places and ${String(content.tours.length)} tours in ${String(LANGS.length)} languages)${site ? ", sitemap.xml" : "; no SITE_URL, so no sitemap or canonical links"}`,
 );

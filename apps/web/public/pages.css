@@ -443,6 +443,60 @@ figure.route-map img {
   border-radius: 16px;
   box-shadow: 0 24px 48px -32px rgb(30 20 8 / 0.6);
 }
+/* A place's small map (scripts/place-map.ts): one SVG for every language, in the globe's
+   own colours, so the same in a light and a dark page, as the route pictures are. */
+figure.place-map {
+  max-width: 360px;
+  margin: 8px 0 24px;
+}
+figure.place-map img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+/* The way back up, above a place's or a question's title. */
+.crumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 14px;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+}
+.crumbs li {
+  margin: 0;
+}
+.crumbs li + li::before {
+  content: "›";
+  content: "›" / "";
+  margin: 0 8px;
+  color: var(--ink-faint);
+}
+.crumbs a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.crumbs a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+/* The page itself, last: named, not linked; a long question's title kept to one line. */
+.crumbs li[aria-current="page"] {
+  overflow: hidden;
+  max-width: 100%;
+  color: var(--ink-faint);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* How far a nearby place is, at the end of its card. */
+ul.cards .km {
+  color: var(--ink-soft);
+  font-size: 13.5px;
+  font-weight: 400;
+  white-space: nowrap;
+}
 .callout {
   margin: 24px 0;
   padding: 14px 18px;
