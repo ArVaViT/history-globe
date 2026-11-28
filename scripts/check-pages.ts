@@ -9,7 +9,9 @@
  *   leaves…"): it is what a search shows under the title;
  * - pages.css uses the documentation's palette (content/docs/docs.css), its text colours are
  *   legible (WCAG AA, 4.5:1 on the paper and on a card), and every page, the 404 among them,
- *   gives the browser's bar the paper's colour.
+ *   gives the browser's bar the paper's colour;
+ * - the sitemap and the robots meta agree (ADR 0023): no page the sitemap lists says
+ *   noindex, and every page that does not is listed (only when SITE_URL built a sitemap).
  *
  * Usage: node scripts/check-pages.ts  (after `pnpm content`)
  */
@@ -91,6 +93,16 @@ for (const dark of [false, true]) {
 
 const files = [...LOCALES.flatMap((l) => pages(join(pub, l))), join(pub, "404.html")];
 let rows = 0;
+// The sitemap's pages by their path from the site root ("en/place/capernaum/"), if built.
+const sitemapFile = join(pub, "sitemap.xml");
+const listed = existsSync(sitemapFile)
+  ? new Set(
+      [
+        ...readFileSync(sitemapFile, "utf8").matchAll(/<loc>https?:\/\/[^/<]+\/([^<]*)<\/loc>/g),
+      ].map(([, path = ""]) => path),
+    )
+  : undefined;
+let noindexed = 0;
 for (const file of files) {
   const html = readFileSync(file, "utf8");
   const at = relative(pub, file);
@@ -104,6 +116,13 @@ for (const file of files) {
       );
   }
   if (file.endsWith("404.html")) continue;
+  if (listed) {
+    const path = relative(pub, file).replace(/index\.html$/, "");
+    const noindex = html.includes('<meta name="robots" content="noindex');
+    if (noindex) noindexed++;
+    if (noindex && listed.has(path)) errors.push(`${at}: noindex, yet listed in the sitemap`);
+    if (!noindex && !listed.has(path)) errors.push(`${at}: open to search, yet not in the sitemap`);
+  }
   for (const [, dl = ""] of html.matchAll(/<dl class="verses">([\s\S]*?)<\/dl>/g))
     for (const [, ref = "", text = ""] of dl.matchAll(
       /<dt>([\s\S]*?)<\/dt><dd>([\s\S]*?)<\/dd>/g,
@@ -125,5 +144,5 @@ if (errors.length) {
   process.exit(1);
 }
 console.log(
-  `pages: ${String(files.length)} pages, ${String(rows)} verse rows, descriptions and palette checked`,
+  `pages: ${String(files.length)} pages, ${String(rows)} verse rows, descriptions and palette checked${listed ? `; ${String(noindexed)} noindex, none in the sitemap, every other page in it` : ""}`,
 );

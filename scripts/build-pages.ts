@@ -58,6 +58,7 @@ import {
 } from "../packages/model/src/reviews.ts";
 import { itemReviewLd, reviewPages, statusLine } from "./review-pages.ts";
 import { REVIEW_WORDS } from "./review-words.ts";
+import { DUPLICATE_SHARE, indexPolicy, NEAR_SHARE, type IndexOverrides } from "./index-policy.ts";
 
 // Every language is written here, so every language's words are loaded first.
 await loadAllLocaleData();
@@ -182,6 +183,49 @@ const articles = existsSync(join(build, "articles.json"))
       Article
     >)
   : {};
+/** The pages kept out of search, thin articles and questions their article answers (ADR 0023). */
+const policy = indexPolicy(
+  Object.values(articles),
+  questions,
+  existsSync(join(root, "content/index-policy.json"))
+    ? (JSON.parse(readFileSync(join(root, "content/index-policy.json"), "utf8")) as IndexOverrides)
+    : {},
+  new Map(places.flatMap((f) => (f.properties.aliases ?? []).map((a) => [a, f.properties.id]))),
+);
+if (policy.errors.length > 0) {
+  for (const e of policy.errors) console.error(`error: ${e}`);
+  process.exit(1);
+}
+{
+  // The share is a measure of wording: an edit to an answer or an article can move a question
+  // across the line. The log names the ones near it and those whose decision moved since the
+  // last build (apps/web/build/index-policy.json, not kept in git).
+  const near = [...policy.shares]
+    .filter(([, s]) => s >= NEAR_SHARE && s < DUPLICATE_SHARE)
+    .sort((a, b) => b[1] - a[1]);
+  if (near.length > 0)
+    console.log(
+      `index policy: ${String(near.length)} questions near the line, kept in search: ${near.map(([id, s]) => `${id} ${s.toFixed(2)}`).join(", ")}`,
+    );
+  const last = join(build, "index-policy.json");
+  const now = { thin: [...policy.thinArticles].sort(), out: [...policy.duplicateQuestions].sort() };
+  if (existsSync(last)) {
+    const was = JSON.parse(readFileSync(last, "utf8")) as typeof now;
+    for (const kind of ["thin", "out"] as const) {
+      const before = new Set(was[kind]);
+      const after = new Set(now[kind]);
+      const moved = [
+        ...now[kind].filter((id) => !before.has(id)).map((id) => `+${id}`),
+        ...was[kind].filter((id) => !after.has(id)).map((id) => `-${id}`),
+      ];
+      if (moved.length > 0)
+        console.log(
+          `index policy: since the last build, ${kind === "thin" ? "thin articles" : "questions out of search"} ${moved.join(" ")}`,
+        );
+    }
+  }
+  writeFileSync(last, `${JSON.stringify(now)}\n`);
+}
 /** Reviews by scholars (content/reviews, via build-content.ts): none, and no page is built. */
 const reviews = (
   existsSync(join(build, "reviews.json"))
@@ -405,7 +449,7 @@ function page(o: {
   image?: string;
   /** The front page: one sans face, the docs in the bar, the entrance's script. */
   home?: boolean;
-  /** A thin page (a place with no article yet): open to readers, kept out of search. */
+  /** Open to readers, kept out of search: a place with no article or a thin one, a question its place's article answers (ADR 0023). */
   noindex?: boolean;
   /** The page carries the site's own text under CC BY-NC-ND (ADR 0016): an article or an answer. */
   licence?: "article" | "answer";
@@ -864,10 +908,10 @@ function placePages(l: Lang): void {
           hasMap: `${site}/?place=${p.id}&locale=${l}`,
           ...(art ? itemReviewLd(reviewed("article", art.id), reviewById, site, l) : {}),
         },
-        noindex: !art,
+        noindex: !art || policy.thinArticles.has(art.id),
         ...(art ? { licence: "article" as const } : {}),
       }),
-      !!art,
+      !!art && !policy.thinArticles.has(art.id),
       content.articles?.[p.id] ? `content/articles/${content.articles[p.id]}.yaml` : undefined,
     );
   }
@@ -932,8 +976,9 @@ function questionPages(l: Lang): void {
           ],
         },
         licence: "answer",
+        noindex: policy.duplicateQuestions.has(q.id),
       }),
-      true,
+      !policy.duplicateQuestions.has(q.id),
       `content/questions/${q.id}.yaml`,
     );
   }
@@ -1616,5 +1661,8 @@ ${["", ...LANGS.flatMap((l) => DOC_PAGES.map((p) => docsPath(l, p))), ...urls]
   );
 } else rmSync(sitemap, { force: true });
 console.log(
-  `pages: ${String(urls.length + unlisted.length)}, ${String(unlisted.length)} of them thin and kept out of search (${String(shown.length)} places and ${String(content.tours.length)} tours in ${String(LANGS.length)} languages)${site ? ", sitemap.xml" : "; no SITE_URL, so no sitemap or canonical links"}`,
+  `index policy: ${String(policy.thinArticles.size)} thin articles and ${String(policy.duplicateQuestions.size)} questions their place's article answers, kept out of search in every language; ${String(policy.keptSearched.size)} such questions kept in search for their impressions`,
+);
+console.log(
+  `pages: ${String(urls.length + unlisted.length)}, ${String(unlisted.length)} of them kept out of search (${String(shown.length)} places and ${String(content.tours.length)} tours in ${String(LANGS.length)} languages)${site ? ", sitemap.xml" : "; no SITE_URL, so no sitemap or canonical links"}`,
 );

@@ -254,12 +254,21 @@ in a language (both Apheks were «Афек (Тель-Афек)»): a namesake's 
 or the word `content/namesakes.json` gives it («Афек (Антипатрида)», «Ефиопия (Нубия)»); where
 titles still meet, the place named in the most verses keeps its title and the other adds the
 kind of place («Babilonia (región)») or the chapter that first names it («Ефрафа (Руф 4)»).
+Which pages search engines are asked to index is decided in `scripts/index-policy.ts` (ADR 0023):
+a place whose article runs under 200 English words, and a "where" question whose answer shares at
+least 60 % of its content words with its place's article (unless it had 40 search impressions in
+the window `content/index-policy.json` records), are written with `noindex, follow` and left out of
+the sitemap, in every language at once. `content/index-policy.json` overrides either way with a
+reason; `scripts/build-pages.ts` stops on an override that names no page or one the rule already
+decides its way, and logs the questions near the line and the decisions that moved since the last
+build.
 `scripts/build-docs.ts` stops on a comment in a translated page's example code that is still the English one.
 `scripts/check-pages.ts` reads the built pages: every verse row has the verse or the note that
 the translation numbers it otherwise, with its link (an empty row had stood under 3,108
 references); a page's description is neither its title nor opens with it; `pages.css` has the
 documentation's palette (`content/docs/docs.css`) with text colours at 4.5:1 at least, and every
-page, the 404 among them, colours the browser's bar with the paper.
+page, the 404 among them, colours the browser's bar with the paper. Where a sitemap was built, no
+page it lists says noindex and every page that does not is in it.
 
 ## Third-party notices
 
