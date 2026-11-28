@@ -511,6 +511,16 @@ export const TourFile = z.strictObject({
   walked: z.boolean().optional(),
   /** Whose way it is: TIPNR person ids ("Paul@Act.7.58-2Pe"), so their card offers it. */
   people: z.array(z.string().regex(/^[^@\s]+@[\w.-]+$/)).optional(),
+  /**
+   * What the tour is, for its page: the passage or work it follows, its dates as scholarship
+   * gives them and what is uncertain, in one to three paragraphs (scripts/tour-page.ts).
+   * With it come `sources` and a `story` at every stop (build-content.ts checks both).
+   */
+  intro: inLanguages(z.array(z.string().min(60).max(1200)).min(1).max(3))
+    .refine(sameParagraphs, { message: "every language has as many paragraphs as the English" })
+    .optional(),
+  /** The works the intro and the stories rest on, beside the passages they retell. */
+  sources: z.array(z.string().min(3)).min(1).optional(),
   stops: z
     .array(
       z.strictObject({
@@ -529,6 +539,11 @@ export const TourFile = z.strictObject({
           })
           .optional(),
         note: localized,
+        /**
+         * The stop told on the tour's page: what the passage says happened here, retold in
+         * order and joined to the stop before (the `note` stays the map card's one line).
+         */
+        story: inLanguages(z.string().min(60).max(1600)).optional(),
         /** The map's year at this stop, where the text dates it apart from the tour's. */
         year: yearLabel.optional(),
         /**
@@ -539,7 +554,7 @@ export const TourFile = z.strictObject({
         by: z.enum(["sea", "untold"]).optional(),
         /**
          * How long the voyage took, where the text says (Acts 20:6 «дней в пять»): the days
-         * and the verse that gives them. No speed is guessed for the others.
+         * and the verse that gives them; for the others the tour page reckons a range (travel.ts).
          */
         sailed: z
           .strictObject({
@@ -549,12 +564,54 @@ export const TourFile = z.strictObject({
             ref: osis,
           })
           .optional(),
+        /**
+         * How long the way on foot took, where the text says (Gen 22:4, "on the third day";
+         * 1 Kgs 19:8, forty days to Horeb): shown instead of the reckoning (travel.ts).
+         */
+        took: z
+          .strictObject({
+            days: z.number().int().positive(),
+            about: z.literal(true).optional(),
+            ref: osis,
+          })
+          .optional(),
+        /**
+         * The points at sea, [lon, lat] in order, that a voyage keeps to where a straight line
+         * would cross the land (Acts 27:4, under the lee of Cyprus; round a cape): the map
+         * draws the leg through them and its km is measured along them (distance.ts wayKm).
+         * Only on a leg `by: sea`; build-content.ts checks that the way stays on the water.
+         */
+        via: z
+          .array(z.tuple([z.number().min(-180).max(180), z.number().min(-90).max(90)]))
+          .min(1)
+          .optional(),
+        /**
+         * The leg falls within the days the text gives for the next one (Acts 27:16, Cauda,
+         * passed on the fourteen days from Fair Havens, Acts 27:27): no time of its own, and
+         * counted in neither total (travel.ts).
+         */
+        within_next: z.literal(true).optional(),
       }),
     )
     .min(2)
     .refine((stops) => stops.every((s) => (s.ref === undefined) !== (s.source === undefined)), {
       message: "every stop has a verse (ref) or a source, not both",
-    }),
+    })
+    .refine((stops) => stops.every((s) => !s.via || s.by === "sea"), {
+      message: 'only a leg "by: sea" has waypoints (via)',
+    })
+    .refine(
+      (stops) =>
+        stops.every(
+          (s, i) =>
+            !s.within_next ||
+            (!s.sailed && !s.took && Boolean(stops[i + 1]?.sailed ?? stops[i + 1]?.took)),
+        ),
+      {
+        message:
+          "within_next only on a leg with no days of its own, before a leg whose days the text gives (sailed or took)",
+      },
+    ),
 });
 
 export type TourFile = z.output<typeof TourFile>;

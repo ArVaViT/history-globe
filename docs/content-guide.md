@@ -55,6 +55,33 @@ in `data-checks.md`; this is what it cannot check.
   and no way by road. `walked: false` on a tour whose stops are not a way travelled (the
   letters' readers). From 312 BC the build finds each walked leg's way along the Roman roads
   (`scripts/build-road-legs.ts`); a tour before then is given the straight line only.
+- `sailed:` and `took:` give a leg's days where the text gives them (Acts 20:6, "in five
+  days"; 1 Kgs 19:8, forty days to Horeb), with the verse; the tour page shows them instead of
+  its estimate (`packages/model/src/travel.ts`, methodology "Distances and travel time").
+- `via:` on a leg `by: sea` lists the points at sea, `[lon, lat]` in order, that the voyage
+  keeps to where a straight line would cross the land (Acts 27:4, under the lee of Cyprus;
+  round a cape, through a strait): the map draws the leg through them and its km is measured
+  along them. The content build fails a voyage that crosses the land the map draws
+  (`scripts/sea-legs.ts`); the landfall at a town inland (Perga, Antioch from Seleucia) is let
+  pass.
+- `within_next: true` on a leg passed within the days the text gives for the next one (Acts
+  27:16, Cauda, on the fourteen days from Fair Havens, Acts 27:27): it has no time of its own
+  and is counted in neither total, so the days are not counted twice.
+- **The tour page** (`intro`, a `story` at every stop, `sources`; all three or none, in every
+  language): the intro says what the tour is, what text or work it follows, its dates as
+  scholarship gives them and what is uncertain; each story retells the stop's passage in
+  order, joined to the stop before, without quoting (a paraphrase in quotation marks fails
+  the quotation check) and without adding to the text. Context about a place (where it is,
+  what it was then) comes from its checked article, with that article's source lines; a new
+  line gets its translation in every `sources-<code>.yaml`. The `note` stays the map card's
+  one line.
+- **Names in a tour's texts** (title, intro, notes, stories) are the site's: each language's
+  form from `names-<code>.yaml` (Russian: `people-ru.json`, `place-names.yaml`), inflected as
+  the language needs, not the form of that language's Bible where the two differ. The build
+  checks it for every tour with a page (`scripts/tour-names.ts`). The same holds for the words
+  of narration: in Dutch the Lord is "de Heer" ("de Heere" only inside a quotation of the
+  Statenvertaling), in Tagalog God is "Diyos" ("Dios" only inside a quotation of the Ang
+  Dating Biblia).
 - `people:` names the people whose route the tour follows, by TIPNR id (`Paul@Act.7.58-2Pe`), so their card
   offers it; the build fails on an id that is not in `people.json`. Only the tour's own
   subject: not everyone it mentions.

@@ -31,6 +31,18 @@ export function routeKm(points: readonly (readonly [number, number])[]): number 
   return total;
 }
 
+/**
+ * The length of one leg in km: in a straight line, or through the waypoints a voyage keeps
+ * to (a tour stop's `via`: under the lee of Cyprus, round a cape), each part a great circle.
+ */
+export function wayKm(
+  from: readonly [number, number],
+  to: readonly [number, number],
+  via: readonly (readonly [number, number])[] = [],
+): number {
+  return routeKm([from, ...via, to]);
+}
+
 /** A day on foot in antiquity: about 30 km, the usual estimate for a day's journey. */
 export const KM_PER_DAY = 30;
 

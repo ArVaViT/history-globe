@@ -320,6 +320,29 @@ export function openApi(version: string): object {
               },
               required: ["days", "ref"],
             },
+            took: {
+              type: "object",
+              description:
+                "Days on foot where the text gives them (1 Kgs 19:8, forty days to Horeb)",
+              properties: {
+                days: { type: "integer" },
+                about: { type: "boolean", const: true },
+                ref: ref("Osis"),
+              },
+              required: ["days", "ref"],
+            },
+            via: {
+              type: "array",
+              description:
+                "The points at sea, [lon, lat] in order, that a voyage keeps to (Acts 27:4, under the lee of Cyprus); its distance is measured along them",
+              items: { type: "array", items: { type: "number" }, minItems: 2, maxItems: 2 },
+            },
+            within_next: {
+              type: "boolean",
+              const: true,
+              description:
+                "The leg falls within the days the text gives for the next one (Acts 27:16, Cauda): no time of its own",
+            },
           },
           // A verse (ref) or, outside the Bible, a source: one of the two.
           required: ["place", "note"],
